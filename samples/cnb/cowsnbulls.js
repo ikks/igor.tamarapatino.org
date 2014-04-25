@@ -6,7 +6,7 @@
  This is the logic for playing against the computer cows and bulls
 */
 
-function Attempt(guess, cows, bulls) {
+function Attempt(guess, bulls, cows) {
     this.guess = guess;
     this.cows = cows;
     this.bulls = bulls;

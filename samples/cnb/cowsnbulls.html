@@ -1,15 +1,15 @@
 <html>
 <body>
 <h1>Cows n Bulls</h1>
-<p>You are guessing a number of <span data-bind="text: sizecnb"></span> digits
-<p>Cows: <span data-bind="text: cows"></span>
-<p>Bulls: <span data-bind="text: bulls"></span>
-<p>Your guess:<input data-bind="value: guess">
-<p>Attempts: <span data-bind="text: attempts"></span>
+<p>You are guessing a number of <span data-bind="text: sizecnb"></span> digits</p>
+<p>Cows: <span data-bind="text: cows"></span></p>
+<p>Bulls: <span data-bind="text: bulls"></span></p>
+<p>Your guess:<input data-bind="value: guess"></p>
 <p data-bind="visible: won" style="display:none;">Winner!!!!!!</p>
 <p>Help me!!! <input type="checkbox" data-bind="checked: usehelp" /></p>
+<p>Attempts: <span data-bind="text: attempts"></span></p>
 <div data-bind="visible: usehelp" style="display:none;">
-	<table>
+    <table>
     <thead>
         <tr><th>Guessing</th><th>Cows</th><th>Bulls</th></tr>
     </thead>
@@ -26,30 +26,30 @@
 <script type="text/javascript" src="cowsnbulls.js"></script>
 <script type="text/javascript">
 var ViewModel = function(nthing) {
-	var self = this;
-	var logic = new CowsBulls(nthing);
+    var self = this;
+    var logic = new CowsBulls(nthing);
 
-	self.won =  ko.observable(false);
-	self.cows = ko.observable(0);
-	self.bulls = ko.observable(0);
-	self.attempts = ko.observable(0);
-	self.sizecnb = ko.observable(nthing);
-	self.helper = ko.observable('XXXX');
-	self.usehelp = ko.observable(false);
-	self.guess = ko.computed({
-		read: function() {
-			return '';
-		},
-		write: function(value) {
-			result = logic.guess(value);
-			self.won(logic.won());
-			self.bulls(result[0]);
-			self.cows(result[1]);
-			self.attempts(logic.history.length);
-			self.helper(logic.history);
-		}
-	});
-	
+    self.won =  ko.observable(false);
+    self.cows = ko.observable(0);
+    self.bulls = ko.observable(0);
+    self.attempts = ko.observable(0);
+    self.sizecnb = ko.observable(nthing);
+    self.helper = ko.observable('XXXX');
+    self.usehelp = ko.observable(false);
+    self.guess = ko.computed({
+        read: function() {
+            return '';
+        },
+        write: function(value) {
+            result = logic.guess(value);
+            self.won(logic.won());
+            self.bulls(result[0]);
+            self.cows(result[1]);
+            self.attempts(logic.history.length);
+            self.helper(logic.history);
+        }
+    });
+    
 }
 ko.applyBindings(new ViewModel(4));
 </script>
