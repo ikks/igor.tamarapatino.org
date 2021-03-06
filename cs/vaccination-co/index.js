@@ -172,5 +172,14 @@ function initialize_graph(response) {
             name: "Asignadas"
         }]
     });
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    var option_place = document.getElementById("place");
+    if (urlParams.get('place') in column_names) {
+        option_place.value = urlParams.get('place');
+    }
+    else {
+        option_place.value = "Colombia";
+    }
     select_place();
   }
