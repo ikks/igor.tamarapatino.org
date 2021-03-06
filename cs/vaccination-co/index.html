@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.highcharts.com/9.0.1/highcharts.js"></script>
+    <style type="text/css">
+        #container {
+            height: 400px; 
+            min-width: 310px; 
+            max-width: 800px;
+            margin: 0 auto;
+        }
+                </style>
+</head>
+
+  <body>
+    <div id="container"></div>
+    <select id="place" onchange="select_place();" onfocus="this.selectedIndex = -1;"></select>
+    <h2>Créditos</h2>
+    <dl>
+        <dt>Consolidación de información</dt>
+        <dd><a href="https://twitter.com/mapisaro">María del Pilar Sáenz</a></dd>
+        <dt>Visualización</dt>
+        <dd><a href="https://github.com/ikks">Igor Támara</a></dd>
+    </dl>
+  </body>
+  <!-- https://docs.google.com/spreadsheets/d/e/2PACX-1vTq7Zg5TOhasKuYAYndphAR9oZM-QrisPR4GDuI6-cN3Pxd0tg1fXpDTOep9um6ou0U9Q4OTODV3MRl/pub?output=tsv -->
+  <script src="./index.js"></script>
+</html>
