@@ -7,9 +7,13 @@
     <meta name="description" content="Datos abiertos de vacunación covid-19 en Colombia, Bogotá, Antioquia, Barranquilla"/>
     <meta property="og:title" content="Transparencia con datos" />
     <meta property="og:description" content="Datos abiertos de vacunación covid-19 en Colombia, Bogotá, Antioquia, Barranquilla" />
-    <meta property="og:image" content="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png" />    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <meta property="og:image" content="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png" />
+    <link rel="apple-touch-icon" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png">
+    <link rel="icon" type="image/png" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png" sizes="512x512">
+
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.highcharts.com/9.0.1/highcharts.js"></script>
+
     <style type="text/css">
         #container {
             height: 400px; 
@@ -19,8 +23,8 @@
         }
     </style>
 </head>
-
   <body>
+    <h1>Información de Vacunación Covid-19</h1>
     <div id="container"></div>
     <select id="place" onchange="select_place();" onfocus="this.selectedIndex = -1;"></select>
     <h2>Créditos</h2>
@@ -30,7 +34,19 @@
         <dt>Visualización</dt>
         <dd><a href="https://github.com/ikks">Igor Támara</a></dd>
     </dl>
+    <h2>¿Cómo contribuir?</h2>
+    <p>Puedes hacerlo de varias formas:</p>
+    <ul>
+      <li>Compartiendo esta información con más personas</li>
+      <li>Si desarrollas software puedes <a href="https://github.com/ikks/ikks.github.io/tree/master/cs/vaccination-co">contribuir en github</a></li>
+      <li>Si escribes, usa la información aquí presente para hacer artículos</li>
+      <li>Si tienes ideas de cosas que se pueden calcular, <a href="https://twitter.com/ikks">Déjanos saber</a></li>
+    </ul>
+
+    <h2>Otros enlaces</h2>
+    <ul>
+      <li>Visualización en <a href="https://observablehq.com/@ikks/vacunacion-en-colombia-via-mapisaro">ObservableHQ</a></li>
+    </ul>
   </body>
-  <!-- https://docs.google.com/spreadsheets/d/e/2PACX-1vTq7Zg5TOhasKuYAYndphAR9oZM-QrisPR4GDuI6-cN3Pxd0tg1fXpDTOep9um6ou0U9Q4OTODV3MRl/pub?output=tsv -->
   <script src="./index.js"></script>
 </html>
