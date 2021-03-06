@@ -9,6 +9,16 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 * Visibilizar la información de eficiencia:
     * Porcentaje de dosis administradas
     * Días en los cuales no ha habido vacunación
+* Visibilizar información positiva
+    * Día en que más vacunas se aplicaron
+    * Los más eficientes
+
+* Comparación de departamentos, los que no han colocado ayer
+    * Los menos eficientes en colocar
+
+* Mapa de Colombia con departamentos
+    * Información más reciente on hover
+    * Seleccionar al hacer click
 
 # Cómo contribuir
 
