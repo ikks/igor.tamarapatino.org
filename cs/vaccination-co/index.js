@@ -172,5 +172,5 @@ function initialize_graph(response) {
             name: "Asignadas"
         }]
     });
-    update_chart(column_names["Colombia"]);
+    select_place();
   }
