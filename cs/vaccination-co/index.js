@@ -106,13 +106,7 @@ function initialize_graph(response) {
 
     day_chart = Highcharts.chart('container', {
         chart: {
-            type: 'area',
-            options3d: {
-                enabled: true,
-                alpha: 15,
-                beta: 30,
-                depth: 200
-            }
+            type: 'area'
         },
         title: {
             text: "Distribución de vacunas para Colombia"
