@@ -176,4 +176,62 @@ function initialize_graph(response) {
         option_place.value = "Colombia";
     }
     select_place();
+    funnel_setup();
   }
+
+function funnel_setup(){
+    Highcharts.chart('container-funnel', {
+        chart: {
+            type: 'funnel'
+        },
+        title: {
+            text: 'Ejecución plan de vacunación'
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b> ({point.y:,.0f})',
+                    softConnector: true
+                },
+                center: ['40%', '50%'],
+                neckWidth: '30%',
+                neckHeight: '25%',
+                width: '80%'
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+            name: 'Dosis',
+            data: [
+                ['Requeridas', 37000000 * 2],
+                ['Compradas', 4000000],
+                ['Recibidas', 1500000],
+                ['Asignadas', 400000],
+                ['Aplicadas', 200000],
+                ['Inmunización', 0]
+            ]
+        }],
+    
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    plotOptions: {
+                        series: {
+                            dataLabels: {
+                                inside: true
+                            },
+                            center: ['50%', '50%'],
+                            width: '100%'
+                        }
+                    }
+                }
+            }]
+        }
+    });
+}
