@@ -206,7 +206,7 @@ function funnel_setup(){
         series: [{
             name: 'Dosis',
             data: [
-                ['Requeridas', 37000000 * 2],
+                ['Requeridas', 1691366 * 2],
                 ['Compradas', 4000000],
                 ['Recibidas', 1500000],
                 ['Asignadas', 400000],
