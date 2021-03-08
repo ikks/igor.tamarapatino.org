@@ -157,7 +157,7 @@ function initialize_graph(response) {
             lineColor: 'rgb(120,160,180)',
             color: 'rgb(140,180,200)',
             fillColor: 'rgba(140,180,200,0.1)',
-            name: "Acumuladas"
+            name: "Aplicadas"
         }, {
             xAxis: 2,
             lineColor: 'rgb(200, 190, 140)',
