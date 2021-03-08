@@ -4,10 +4,12 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 # Para hacer en el futuro
 
+* [plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
+* Extraer la gráfica de dosis diarias
 * Estimar en cuánto tiempo se puede finalizar la vacunación
 * Colocar la última fecha de actualización de datos
 * Visibilizar la información de eficiencia:
-    * Porcentaje de dosis administradas
+    * [Porcentaje de dosis administradas](https://twitter.com/rundav5/status/1366560712349351936)
     * Días en los cuales no ha habido vacunación
 * Visibilizar información positiva
     * Día en que más vacunas se aplicaron
