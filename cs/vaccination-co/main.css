@@ -1,6 +1,6 @@
 /* Main graph */
 
-#container {
+.container-chart {
     height: 400px; 
     min-width: 310px; 
     max-width: 800px;

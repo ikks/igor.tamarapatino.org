@@ -5,6 +5,7 @@ var data;
 var data_2;
 var column_names = {};
 var day_chart;
+var cum_chart;
 var array;
 var array_2;
 
@@ -32,7 +33,7 @@ function select_place(){
     var option_place = document.getElementById("place");
     var i_col = column_names[option_place.value];
 
-    day_chart.setTitle({ text: option_place.value });
+    cum_chart.setTitle({ text: option_place.value });
 
     update_chart(i_col);
 }
@@ -50,7 +51,6 @@ function update_chart(i_col) {
             row.push(ele); 
         }
     }
-    console.log(array_2)
     for (r=3; r < array_2.length; r++){
         if (array_2[r][2] == "Acumuladas") {
 
@@ -58,7 +58,6 @@ function update_chart(i_col) {
             accum.push(ele);
         }
         else if (array_2[r][2] == "Aplicadas") {
-            console.log(accum);
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
             applied.push(ele);
             accum[accum.length - 1][1] -= ele[1];
@@ -74,8 +73,9 @@ function update_chart(i_col) {
 
     }
 
-    day_chart.series[1].setData(row);
-    day_chart.series[0].setData(remain);
+    cum_chart.series[1].setData(row);
+    cum_chart.series[0].setData(remain);
+    day_chart.series[0].setData(applied);
 }
 
 function processSheetsData(response) {
@@ -118,7 +118,7 @@ function initialize_graph(response) {
         array_2.push(row);
     }
 
-    day_chart = Highcharts.chart('container', {
+    cum_chart = Highcharts.chart('accum_chart', {
         chart: {
             type: 'area'
         },
@@ -166,16 +166,55 @@ function initialize_graph(response) {
         series: [{
             xAxis: 1,
             lineColor: 'rgb(200, 190, 140)',
-            color: 'rgb(140,180,200)',
             fillColor: 'rgb(230, 220, 180)',
+            color: 'rgb(200, 190, 140)',
             name: "Por aplicar"
         }, {
             xAxis: 2,
             lineColor: 'rgb(120,160,180)',
-            color: 'rgb(200, 190, 140)',
+            color: 'rgb(140,180,200)',
             fillColor: 'rgb(140,180,200)',
             name: "Aplicadas"
         }]
+    });
+
+    day_chart = Highcharts.chart('daily_chart', {
+
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Aplicación Diaria'
+        },
+        yAxis: {
+            title: {
+                text: 'Dosis'
+            }
+        },
+
+        xAxis: [{
+            visible: false
+        }],
+
+        series: [{
+            name: 'Dosis'
+        }],
+
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        layout: 'horizontal',
+                        align: 'center',
+                        verticalAlign: 'bottom'
+                    }
+                }
+            }]
+        }
+
     });
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
