@@ -41,27 +41,41 @@ function update_chart(i_col) {
     var row = [];
     var applied = [];
     var accum = [];
+    var remain = [];
+    var effectivity = [];
 
-    for (r=2; r < array.length; r++){
+    for (r=3; r < array.length; r++){
         if (array[r][2] == "-1") {
             var ele = [array[r][0], parseInt(array[r][i_col] || 0)];
             row.push(ele); 
         }
     }
-    for (r=2; r < array_2.length; r++){
+    console.log(array_2)
+    for (r=3; r < array_2.length; r++){
         if (array_2[r][2] == "Acumuladas") {
+
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
-            applied.push(ele); 
+            accum.push(ele);
         }
         else if (array_2[r][2] == "Aplicadas") {
+            console.log(accum);
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
-            accum.push(ele); 
+            applied.push(ele);
+            accum[accum.length - 1][1] -= ele[1];
         }
+        else if (array_2[r][2] == "Remanente") {
+            var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
+            remain.push(ele);
+        }
+        else if (array_2[r][2] == "Eficiencia") {
+            var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
+            effectivity.push(ele);
+        }
+
     }
 
-    day_chart.series[0].setData(accum);
     day_chart.series[1].setData(row);
-    day_chart.series[2].setData(applied);
+    day_chart.series[0].setData(remain);
 }
 
 function processSheetsData(response) {
@@ -122,7 +136,7 @@ function initialize_graph(response) {
             gridLineDashStyle: 'Dash'
         },
         xAxis: [{
-            visible: false
+            visible: true
         }, {
             visible: false
         }, {
@@ -130,6 +144,7 @@ function initialize_graph(response) {
         }],
         plotOptions: {
             area: {
+                stacking: 'normal',
                 depth: 100,
                 marker: {
                     enabled: false
@@ -145,25 +160,21 @@ function initialize_graph(response) {
             }
         },
         tooltip: {
+            split:true,
             valueSuffix: ''
         },
         series: [{
-            name: "Diarias",
-            lineColor: 'rgb(180,90,50)',
-            color: 'rgb(200,110,50)',
-            fillColor: 'rgba(200,110,50,0.1)'
-        }, {
             xAxis: 1,
-            lineColor: 'rgb(120,160,180)',
+            lineColor: 'rgb(200, 190, 140)',
             color: 'rgb(140,180,200)',
-            fillColor: 'rgba(140,180,200,0.1)',
-            name: "Aplicadas"
+            fillColor: 'rgb(230, 220, 180)',
+            name: "Por aplicar"
         }, {
             xAxis: 2,
-            lineColor: 'rgb(200, 190, 140)',
+            lineColor: 'rgb(120,160,180)',
             color: 'rgb(200, 190, 140)',
-            fillColor: 'rgba(230, 220, 180, 0.1)',
-            name: "Asignadas"
+            fillColor: 'rgb(140,180,200)',
+            name: "Aplicadas"
         }]
     });
     const queryString = window.location.search;
