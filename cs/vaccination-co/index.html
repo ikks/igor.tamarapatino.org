@@ -13,15 +13,19 @@
     <link rel="apple-touch-icon" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png">
     <link rel="icon" type="image/png" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png" sizes="512x512">
     <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://code.highcharts.com/9.0.1/highcharts.js"></script>
     <script src="https://code.highcharts.com/9.0.1/modules/funnel.js"></script>
-
+    <script type="text/javascript" src="colombia-geo.js"></script>
 </head>
-  <body>
+<body>
     <h1>Información de Vacunación Covid-19</h1>
     <p>En Colombia Se ha aplicado <span id="id-doze">0</span> dosis hasta el <span id="id-latest-date">2021-02-18</span>, de un total de las <span id="id-accumulated">0</span> que han llegado, para una efectividad del <span id="id-effectivity">0</span></p>
+    <div id='map'></div>
+
     <select id="place" onchange="select_place();" onfocus="this.selectedIndex = -1;"></select>
     <div id="accum_chart" class="container-chart"></div>
     <div id="daily_chart" class="container-chart"></div>
