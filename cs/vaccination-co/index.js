@@ -219,6 +219,17 @@ function initialize_graph(response) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     var option_place = document.getElementById("place");
+    var remaining = array_2[array_2.length - 1];
+    var efficiency = array_2[array_2.length - 2];
+    var applied = array_2[array_2.length - 3];
+    var accumulated = array_2[array_2.length - 4];
+    var latest_date = remaining[0]
+    var colombia = remaining.length - 1;
+    document.getElementById("id-doze").textContent=parseInt(accumulated[colombia]) - parseInt(remaining[colombia]);
+    document.getElementById("id-latest-date").textContent=latest_date;
+    document.getElementById("id-accumulated").textContent=accumulated[colombia];
+    document.getElementById("id-effectivity").textContent=efficiency[colombia];
+
     if (urlParams.get('place') in column_names) {
         option_place.value = urlParams.get('place');
     }
@@ -226,7 +237,6 @@ function initialize_graph(response) {
         option_place.value = "Colombia";
     }
     select_place();
-    funnel_setup();
   }
 
 function funnel_setup(){
