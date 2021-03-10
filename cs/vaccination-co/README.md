@@ -4,6 +4,7 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 # Para hacer en el futuro
 
+* Hacer mucho más discretos los créditos
 * [plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Estimar en cuánto tiempo se puede finalizar la vacunación
 * Visibilizar la información de eficiencia:

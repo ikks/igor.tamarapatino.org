@@ -16,7 +16,7 @@ function init() {
   var url =
     'https://docs.google.com/spreadsheets/d/1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E/edit#gid=0';
   var query = new google.visualization.Query(url);
-  setup_map();
+//   setup_map();
   query.setQuery('select * limit 100');
   query.send(processSheetsData);
 }
@@ -24,7 +24,8 @@ function init() {
 function setup_map() {
     map = L.map('map').setView([5.3, -73], 5);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
-		maxZoom: 10,
+        maxZoom: 10,
+        minZoom: 5,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/light-v9',
@@ -357,10 +358,10 @@ function initialize_graph(response) {
     }
     select_place();
 
-    geojson = L.geoJson(statesData, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
+    // geojson = L.geoJson(statesData, {
+	// 	style: style,
+	// 	onEachFeature: onEachFeature
+	// }).addTo(map);
 
 }
 
