@@ -1,8 +1,11 @@
-var data;
-var data_2;
-var column_names = {};
-var column_divip = {};
-var population = [];
+var meta_data = {
+    column_names: [],
+    column_divip: [],
+    population: [],
+    dept_names: [],
+    latest_vac: [],
+    perc_accum: [],
+}
 var day_chart;
 var cum_chart;
 var array = [];
@@ -15,6 +18,7 @@ const NAME_ROW = 0;
 const DP_ROW = 2;
 const POP_ROW = 3;
 const INI_VALUES = 10;
+const OPERATION = 2;
 
 const sheet_orig = 'Originales!A1:AQ200';
 const sheet_summ = 'Resumen!A1:AQ200';
@@ -70,7 +74,7 @@ function appendPre(message) {
  * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  */
 function loadsheet() {
-    setup_map();
+    // setup_map();
     gapi.client.sheets.spreadsheets.values.batchGet({
         spreadsheetId: spreadsheetid,
         ranges: [sheet_orig, sheet_summ],
@@ -128,7 +132,7 @@ function setup_map() {
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
-			'<b>' + props.divipola + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
+			'<b>' + meta_data.dept_names[meta_data.column_divip[props.divipola]] + '</b><br />' + meta_data.perc_accum[meta_data.column_divip[props.divipola]] + ' people / mi<sup>2</sup>'
 			: 'Seleccione departamento');
 	};
 
@@ -204,14 +208,26 @@ function get_place_names(data) {
         var option = document.createElement("option");
         option.text = data[NAME_ROW][i];
         option_place.add(option);
-        column_names[option.text] = i;
-        column_divip[data[DP_ROW][i]] = i;
+        meta_data.column_names[option.text] = i;
+        meta_data.column_divip[data[DP_ROW][i]] = i;
     }
+    meta_data.population = [...data[POP_ROW]];
+    meta_data.dept_names = [...data[NAME_ROW]];
+
+    var i = data.length - 1;
+    for (; i >= 0; i--){
+        if(data[i][OPERATION] == -1){
+            break;
+        }
+    }
+    meta_data.latest_vac = [...data[i]];
+    meta_data.perc_accum = meta_data.latest_vac.map( (v, idx) => v / meta_data.population[idx]);
+    console.log(meta_data.perc_accum);
 }
 
 function select_place(){
     var option_place = document.getElementById("place");
-    var i_col = column_names[option_place.value];
+    var i_col = meta_data.column_names[option_place.value];
 
     cum_chart.setTitle({ text: option_place.value });
 
@@ -226,13 +242,13 @@ function update_chart(i_col) {
     var effectivity = [];
 
 
-    for (r=4; r < array.length; r++){
+    for (r=0; r < array.length; r++){
         if (array[r][2] == "-1") {
             var ele = [array[r][0], parseInt(array[r][i_col] || 0)];
             row.push(ele); 
         }
     }
-    for (r=3; r < array_2.length; r++){
+    for (r=0; r < array_2.length; r++){
         if (array_2[r][2] == "Acumuladas") {
 
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
@@ -265,7 +281,8 @@ function processSheetsData(response) {
     var row = []
     var length = 0;
 
-    get_place_names(sheets.valueRanges[0].values)
+    get_place_names(sheets.valueRanges[0].values);
+
     for (var r = INI_VALUES; r < rows; r++) {
       row = [];
       length = sheets.valueRanges[0].values[r].length;
@@ -397,12 +414,12 @@ function prepare_charts() {
     var accumulated = array_2[array_2.length - 4];
     var latest_date = remaining[0]
     var colombia = remaining.length - 1;
-    document.getElementById("id-doze").textContent=parseInt(accumulated[colombia]) - parseInt(remaining[colombia]);
+    document.getElementById("id-doze").textContent=(parseInt(accumulated[colombia]) - parseInt(remaining[colombia])).toLocaleString();
     document.getElementById("id-latest-date").textContent=latest_date;
-    document.getElementById("id-accumulated").textContent=accumulated[colombia];
+    document.getElementById("id-accumulated").textContent=parseInt(accumulated[colombia]).toLocaleString();
     document.getElementById("id-effectivity").textContent=efficiency[colombia];
 
-    if (urlParams.get('place') in column_names) {
+    if (urlParams.get('place') in meta_data.column_names) {
         option_place.value = urlParams.get('place');
     }
     else {
@@ -410,10 +427,10 @@ function prepare_charts() {
     }
     select_place();
 
-    geojson = L.geoJson(statesData, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
+    // geojson = L.geoJson(statesData, {
+	// 	style: style,
+	// 	onEachFeature: onEachFeature
+	// }).addTo(map);
 
 }
 
