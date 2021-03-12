@@ -1,25 +1,84 @@
-google.charts.load('current');
-google.charts.setOnLoadCallback(init);
-
 var data;
 var data_2;
 var column_names = {};
+var column_divip = {};
+var population = [];
 var day_chart;
 var cum_chart;
-var array;
-var array_2;
+var array = [];
+var array_2 = [];
 var map;
 var geojson;
 var info;
 
-function init() {
-  var url =
-    'https://docs.google.com/spreadsheets/d/1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E/edit#gid=0';
-  var query = new google.visualization.Query(url);
-//   setup_map();
-  query.setQuery('select * limit 100');
-  query.send(processSheetsData);
+const NAME_ROW = 0;
+const DP_ROW = 2;
+const POP_ROW = 3;
+const INI_VALUES = 10;
+
+const sheet_orig = 'Originales!A1:AQ200';
+const sheet_summ = 'Resumen!A1:AQ200';
+
+// Client ID and API key from the Developer Console
+const CLIENT_ID = '75762908234-5om827gajcr4p5lplfhu3guhs732ob6u';
+const API_KEY = 'AIzaSyDKDzmSgUMCrs7Jh5dc3ud2ZHx4nhazY_U';
+// Array of API discovery doc URLs for APIs used by the quickstart
+const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
+// Authorization scopes required by the API; multiple scopes can be
+// included, separated by spaces.
+const SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+
+const spreadsheetid = '1vCzHueMlI5ZtI0J3AS7Cw4H-Y6XkBddmC54ROg57zAI';
+/**
+ *  On load, called to load the auth2 library and API client library.
+ */
+function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
 }
+
+/**
+ *  Initializes the API client library and sets up sign-in state
+ *  listeners.
+ */
+function initClient() {
+    gapi.client.init({
+        apiKey: API_KEY,
+        clientId: CLIENT_ID,
+        discoveryDocs: DISCOVERY_DOCS,
+        scope: SCOPES
+    }).then(function () {
+        loadsheet()
+    }, function(error) {
+        appendPre(JSON.stringify(error, null, 2));
+    });
+}
+
+/**
+ * Append a pre element to the body containing the given message
+ * as its text node. Used to display the results of the API call.
+ *
+ * @param {string} message Text to be placed in pre element.
+ */
+function appendPre(message) {
+    var pre = document.getElementById('content');
+    var textContent = document.createTextNode(message + '\n');
+    pre.appendChild(textContent);
+}
+
+/**
+ * Print the names and majors of students in a sample spreadsheet:
+ * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
+ */
+function loadsheet() {
+    setup_map();
+    gapi.client.sheets.spreadsheets.values.batchGet({
+        spreadsheetId: spreadsheetid,
+        ranges: [sheet_orig, sheet_summ],
+    }).then(processSheetsData, function(response) {
+        appendPre('Error: ' + response.result.error.message);
+    });
+}
+
 
 function setup_map() {
     map = L.map('map').setView([5.3, -73], 5);
@@ -96,56 +155,57 @@ function onEachFeature(feature, layer) {
     });
 }
 
-	// get color depending on population density value
-	function getColor(d) {
-		return d > 1000 ? '#800026' :
-				d > 500  ? '#BD0026' :
-				d > 200  ? '#E31A1C' :
-				d > 100  ? '#FC4E2A' :
-				d > 50   ? '#FD8D3C' :
-				d > 20   ? '#FEB24C' :
-				d > 10   ? '#FED976' :
-							'#FFEDA0';
-	}
+// get color depending on population density value
+function getColor(d) {
+    return d > 1000 ? '#800026' :
+            d > 500  ? '#BD0026' :
+            d > 200  ? '#E31A1C' :
+            d > 100  ? '#FC4E2A' :
+            d > 50   ? '#FD8D3C' :
+            d > 20   ? '#FEB24C' :
+            d > 10   ? '#FED976' :
+                        '#FFEDA0';
+}
 
-	function style(feature) {
-		return {
-			weight: 2,
-			opacity: 1,
-			color: 'white',
-			dashArray: '3',
-			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.density)
-		};
-	}
+function style(feature) {
+    return {
+        weight: 2,
+        opacity: 1,
+        color: 'white',
+        dashArray: '3',
+        fillOpacity: 0.7,
+        fillColor: getColor(feature.properties.density)
+    };
+}
 
-	function highlightFeature(e) {
-		var layer = e.target;
+function highlightFeature(e) {
+    var layer = e.target;
 
-		layer.setStyle({
-			weight: 5,
-			color: '#666',
-			dashArray: '',
-			fillOpacity: 0.7
-		});
+    layer.setStyle({
+        weight: 5,
+        color: '#666',
+        dashArray: '',
+        fillOpacity: 0.7
+    });
 
-		if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
-			layer.bringToFront();
-		}
+    if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+        layer.bringToFront();
+    }
 
-		info.update(layer.feature.properties);
-	}
+    info.update(layer.feature.properties);
+}
 
 
 function get_place_names(data) {
-    var columns = data.getNumberOfColumns();
+    var columns = data[0].length;
     var option_place = document.getElementById("place");
 
     for (var i=5; i < columns; i++){
         var option = document.createElement("option");
-        option.text = data.getColumnLabel(i);
+        option.text = data[NAME_ROW][i];
         option_place.add(option);
         column_names[option.text] = i;
+        column_divip[data[DP_ROW][i]] = i;
     }
 }
 
@@ -165,7 +225,8 @@ function update_chart(i_col) {
     var remain = [];
     var effectivity = [];
 
-    for (r=3; r < array.length; r++){
+
+    for (r=4; r < array.length; r++){
         if (array[r][2] == "-1") {
             var ele = [array[r][0], parseInt(array[r][i_col] || 0)];
             row.push(ele); 
@@ -199,45 +260,35 @@ function update_chart(i_col) {
 }
 
 function processSheetsData(response) {
-    var url =
-    'https://docs.google.com/spreadsheets/d/1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E/edit?gid=1933730809';
+    var sheets = response.result;
+    var rows = sheets.valueRanges[0].values.length;
+    var row = []
+    var length = 0;
 
-    array = [];
-    data = response.getDataTable();
-
-    var columns = data.getNumberOfColumns();
-    var rows = data.getNumberOfRows();
-    
-    
-    get_place_names(data)
-    
-    for (var r = 0; r < rows; r++) {
-      var row = [];
-      for (var c = 0; c < columns; c++) {
-        row.push(data.getFormattedValue(r, c));
+    get_place_names(sheets.valueRanges[0].values)
+    for (var r = INI_VALUES; r < rows; r++) {
+      row = [];
+      length = sheets.valueRanges[0].values[r].length;
+      for (var c = 0; c < length; c++) {
+        row.push(sheets.valueRanges[0].values[r][c]);
       }
       array.push(row);
     }
 
-    var query = new google.visualization.Query(url);
-    query.setQuery('select * limit 1000');
-    query.send(initialize_graph);
-}
-
-function initialize_graph(response) {
-    array_2 = [];
-    data_2 = response.getDataTable();
-    var columns = data_2.getNumberOfColumns();
-
-    var rows = data_2.getNumberOfRows();
-    for (var r = 0; r < rows; r++) {
-        var row = [];
-        for (var c = 0; c < columns; c++) {
-          row.push(data_2.getFormattedValue(r, c));
+    rows = sheets.valueRanges[1].values.length;
+    for (var r = INI_VALUES; r < rows; r++) {
+        row = [];
+        length = sheets.valueRanges[1].values[r].length;
+        for (var c = 0; c < length; c++) {
+          row.push(sheets.valueRanges[1].values[r][c]);
         }
         array_2.push(row);
     }
 
+    prepare_charts();
+}
+
+function prepare_charts() {
     cum_chart = Highcharts.chart('accum_chart', {
         chart: {
             type: 'area'
@@ -336,6 +387,7 @@ function initialize_graph(response) {
         }
 
     });
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     var option_place = document.getElementById("place");
@@ -358,10 +410,10 @@ function initialize_graph(response) {
     }
     select_place();
 
-    // geojson = L.geoJson(statesData, {
-	// 	style: style,
-	// 	onEachFeature: onEachFeature
-	// }).addTo(map);
+    geojson = L.geoJson(statesData, {
+		style: style,
+		onEachFeature: onEachFeature
+	}).addTo(map);
 
 }
 
