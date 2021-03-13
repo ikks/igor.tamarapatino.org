@@ -61,27 +61,77 @@
     <div class="container w-full mx-auto pt-20">
       <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
         <pre id="content" style="white-space: pre-wrap;"></pre>
-        <p>En Colombia Se ha aplicado <span id="id-doze">0</span> dosis hasta el , de un total de las <span id="id-accumulated">0</span> que han sido asignadas, para una efectividad del <span id="id-effectivity">0</span></p>
+        <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+
+          <!--Console Content-->
+
+          <div class="flex flex-wrap">
+              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                  <!--Metric Card-->
+                  <div class="bg-white border rounded shadow p-2">
+                      <div class="flex flex-row items-center">
+                          <div class="flex-shrink pr-4">
+                              <div class="rounded p-3 bg-green-600"><i class="fa fa-wallet fa-2x fa-fw fa-inverse"></i></div>
+                          </div>
+                          <div class="flex-1 text-right md:text-center">
+                              <h5 class="font-bold uppercase text-gray-500">Dosis Aplicadas</h5>
+                              <h3 class="font-bold text-3xl"><span id="id-doze">0</span> <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/Metric Card-->
+              </div>
+              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                  <!--Metric Card-->
+                  <div class="bg-white border rounded shadow p-2">
+                      <div class="flex flex-row items-center">
+                          <div class="flex-shrink pr-4">
+                              <div class="rounded p-3 bg-pink-600"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
+                          </div>
+                          <div class="flex-1 text-right md:text-center">
+                              <h5 class="font-bold uppercase text-gray-500">Efectividad</h5>
+                              <h3 class="font-bold text-3xl"><span id="id-effectivity">0</span> <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/Metric Card-->
+              </div>
+              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                  <!--Metric Card-->
+                  <div class="bg-white border rounded shadow p-2">
+                      <div class="flex flex-row items-center">
+                          <div class="flex-shrink pr-4">
+                              <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i></div>
+                          </div>
+                          <div class="flex-1 text-right md:text-center">
+                              <h5 class="font-bold uppercase text-gray-500">Asignadas</h5>
+                              <h3 class="font-bold text-3xl"><span id="id-accumulated">0</span> <span class="text-yellow-600"><i class="fas fa-caret-up"></i></span></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/Metric Card-->
+              </div>
+          </div>
+
+          <!--Divider-->
+          <hr class="border-b-2 border-gray-400 my-8 mx-4">
+
         <div class="flex flex-row flex-wrap flex-grow mt-2">
             <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-              <!--Graph Card-->
               <div class="bg-white border rounded shadow">
                   <div class="p-5">
                     <div id='map'>
                     </div>
                   </div>
               </div>
-              <!--/Template Card-->
             </div>
 
             <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-              <!--Template Card-->
               <div class="bg-white border rounded shadow">
                   <div class="p-5">
                     <div id="accum_chart" class="container-chart"></div>
                   </div>
               </div>
-              <!--/Template Card-->
             </div>
 
             <div class="w-full md:w-1/2 xl:w-1/3 p-3">
@@ -96,6 +146,41 @@
         </div>
       </div>
     </div>
+    <footer class="bg-white border-t border-gray-400 shadow">
+      <div class="container max-w-md mx-auto flex py-8">
+
+          <div class="w-full mx-auto flex flex-wrap">
+              <div class="flex w-full md:w-1/2 ">
+                  <div class="px-8">
+                      <h3 class="font-bold font-bold text-gray-900">Acerca de</h3>
+                      <p class="py-4 text-gray-600 text-sm">
+                          Los datos aquí presentados son tomados a dario de <a class="underline" href="https://www.minsalud.gov.co/salud/publica/Vacunacion/Paginas/Vacunacion-covid-19.aspx">MinSalud</a>. Si tienes ideas de cómo mejorar este tablero <a class="text-gray-600 underline hover:text-gray-900 hover:text-underline" href="https://twitter.com/ikks">déjanos saber</a>
+                      </p>
+                  </div>
+              </div>
+
+              <div class="flex w-full md:w-1/2">
+                  <div class="px-8">
+                      <h3 class="font-bold font-bold text-gray-900">Social</h3>
+                      <ul class="list-reset items-center text-sm pt-3">
+                          <li>
+                              <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://twitter.com/mapisaro">Análisis Diario</a>
+                          </li>
+                          <li>
+                              <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://docs.google.com/spreadsheets/d/1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E/edit#gid=0">Fuente de Datos</a>
+                          </li>
+                          <li>
+                              <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://github.com/ikks/ikks.github.io/tree/master/cs/vaccination-co">Github</a>
+                          </li>
+                          <li>
+                            <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://datastudio.google.com/u/0/reporting/76870d50-6089-4cfc-9db3-6b1ff3054866/page/BTV4B">Otra herramienta</a>
+                        </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
   </body>
   <script src="./index.js"></script>
   <script async defer src="https://apis.google.com/js/api.js"
