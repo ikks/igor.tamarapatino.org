@@ -5,7 +5,12 @@ var meta_data = {
     dept_names: [],
     latest_vac: [],
     perc_accum: [],
+    to_apply: [],
+    applied_today: [],
+    accumulated: [],
+    goal: [],
 }
+
 var day_chart;
 var cum_chart;
 var array = [];
@@ -13,6 +18,8 @@ var array_2 = [];
 var map;
 var geojson;
 var info;
+
+var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
 const NAME_ROW = 0;
 const DP_ROW = 2;
@@ -22,6 +29,13 @@ const OPERATION = 2;
 
 const sheet_orig = 'Originales!A1:AQ200';
 const sheet_summ = 'Resumen!A1:AQ200';
+
+const ID_ORIG = 0;
+const ID_SUMM = 1;
+
+const PERC_APPLIED = "Eficiencia";
+const ACCUMULATED = "Acumuladas";
+const APPLIED_TODAY = "Aplicadas";
 
 // Client ID and API key from the Developer Console
 const CLIENT_ID = '75762908234-5om827gajcr4p5lplfhu3guhs732ob6u';
@@ -74,7 +88,7 @@ function appendPre(message) {
  * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  */
 function loadsheet() {
-    // setup_map();
+    setup_map();
     gapi.client.sheets.spreadsheets.values.batchGet({
         spreadsheetId: spreadsheetid,
         ranges: [sheet_orig, sheet_summ],
@@ -111,17 +125,17 @@ function setup_map() {
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+			grades = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
 			labels = [],
 			from, to;
 
-		for (var i = 0; i < grades.length; i++) {
+		for (var i = 0; i < grades.length - 1; i++) {
 			from = grades[i];
 			to = grades[i + 1];
 
 			labels.push(
-				'<i style="background:' + getColor(from + 1) + '"></i> ' +
-				from + (to ? '&ndash;' + to : '+'));
+				'<i style="background:' + getColor(from) + '"></i> ' +
+				from + (to ? '&ndash;' + to : ''));
 		}
 
 		div.innerHTML = labels.join('<br>');
@@ -131,8 +145,11 @@ function setup_map() {
 	legend.addTo(map);
 
 	info.update = function (props) {
+        var idx;
+        if (props)
+            idx = meta_data.column_divip[props.divipola];
 		this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
-			'<b>' + meta_data.dept_names[meta_data.column_divip[props.divipola]] + '</b><br />' + meta_data.perc_accum[meta_data.column_divip[props.divipola]] + ' people / mi<sup>2</sup>'
+			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas'
 			: 'Seleccione departamento');
 	};
 
@@ -161,14 +178,7 @@ function onEachFeature(feature, layer) {
 
 // get color depending on population density value
 function getColor(d) {
-    return d > 1000 ? '#800026' :
-            d > 500  ? '#BD0026' :
-            d > 200  ? '#E31A1C' :
-            d > 100  ? '#FC4E2A' :
-            d > 50   ? '#FD8D3C' :
-            d > 20   ? '#FEB24C' :
-            d > 10   ? '#FED976' :
-                        '#FFEDA0';
+    return GRADIENT_COLORS[parseInt(d*11/100)];
 }
 
 function style(feature) {
@@ -178,7 +188,7 @@ function style(feature) {
         color: 'white',
         dashArray: '3',
         fillOpacity: 0.7,
-        fillColor: getColor(feature.properties.density)
+        fillColor: getColor(meta_data.perc_accum[meta_data.column_divip[feature.properties.divipola]])
     };
 }
 
@@ -220,9 +230,10 @@ function get_place_names(data) {
             break;
         }
     }
-    meta_data.latest_vac = [...data[i]];
-    meta_data.perc_accum = meta_data.latest_vac.map( (v, idx) => v / meta_data.population[idx]);
-    console.log(meta_data.perc_accum);
+    if (i >= 0) {
+        meta_data.latest_vac = [...data[i]];
+    }
+
 }
 
 function select_place(){
@@ -277,31 +288,50 @@ function update_chart(i_col) {
 
 function processSheetsData(response) {
     var sheets = response.result;
-    var rows = sheets.valueRanges[0].values.length;
+    var rows = sheets.valueRanges[ID_ORIG].values.length;
     var row = []
     var length = 0;
 
-    get_place_names(sheets.valueRanges[0].values);
+    get_place_names(sheets.valueRanges[ID_ORIG].values);
 
     for (var r = INI_VALUES; r < rows; r++) {
       row = [];
-      length = sheets.valueRanges[0].values[r].length;
+      length = sheets.valueRanges[ID_ORIG].values[r].length;
       for (var c = 0; c < length; c++) {
-        row.push(sheets.valueRanges[0].values[r][c]);
+        row.push(sheets.valueRanges[ID_ORIG].values[r][c]);
       }
       array.push(row);
     }
 
-    rows = sheets.valueRanges[1].values.length;
+    rows = sheets.valueRanges[ID_SUMM].values.length;
     for (var r = INI_VALUES; r < rows; r++) {
         row = [];
-        length = sheets.valueRanges[1].values[r].length;
+        length = sheets.valueRanges[ID_SUMM].values[r].length;
         for (var c = 0; c < length; c++) {
-          row.push(sheets.valueRanges[1].values[r][c]);
+          row.push(sheets.valueRanges[ID_SUMM].values[r][c]);
         }
         array_2.push(row);
     }
 
+    var i = sheets.valueRanges[ID_SUMM].values.length - 1;
+    for (; i >= 0; i--){
+        if(sheets.valueRanges[ID_SUMM].values[i][OPERATION] == PERC_APPLIED){
+            break;
+        }
+    }
+    if (i >= 0) {
+        meta_data.perc_accum = sheets.valueRanges[ID_SUMM].values[i].map(x => Number(x.replace(/\%$/, '')) ? parseFloat(x): x);
+    }
+
+    i = sheets.valueRanges[ID_SUMM].values.length - 1;
+    for (; i >= 0; i--){
+        if(sheets.valueRanges[ID_SUMM].values[i][OPERATION] == ACCUMULATED){
+            break;
+        }
+    }
+    if (i >= 0) {
+        meta_data.accumulated = sheets.valueRanges[ID_SUMM].values[i].map(x => parseInt(x));
+    }
     prepare_charts();
 }
 
@@ -427,10 +457,10 @@ function prepare_charts() {
     }
     select_place();
 
-    // geojson = L.geoJson(statesData, {
-	// 	style: style,
-	// 	onEachFeature: onEachFeature
-	// }).addTo(map);
+    geojson = L.geoJson(statesData, {
+		style: style,
+		onEachFeature: onEachFeature
+	}).addTo(map);
 
 }
 
