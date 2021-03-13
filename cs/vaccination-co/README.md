@@ -4,10 +4,16 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 # Para hacer en el futuro
 
-* Hacer mucho más discretos los créditos
 * Colocar mapa de metas
     * Finalizar fase I
     * Inmunizar a Colombia
+* Pasos
+    * Compra de vacunas
+    * Recepción: Cada vez que llega un cargamento al país
+    * Asignación: Resolución Ministerial para la entrega
+    * Distribución: Deben llegar a los sitios donde se aplica
+    * Aplicación: reportado en PAI
+    * Inmunización: Dependiendo del tipo de vacuna
 * Añadir información de inmunizados
 * [plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Estimar en cuánto tiempo se puede finalizar la vacunación
@@ -34,7 +40,7 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 # Cómo contribuir
 
 - Pull request son bienvenidos
-- Contactarme por Twitter, allí soy ikks, en [Telegram](https://t.me/ikks0) en caso de que tenga una sugerencia para mejorar lo que hay hasta el momento
+- Contactarme por [Twitter](https://twitter.com/ikks), en [Telegram](https://t.me/ikks0) en caso de que tenga una sugerencia para mejorar lo que hay hasta el momento
 
 ## Desarrollo local
 
@@ -44,8 +50,11 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 # Gracias a
 
-* Alojado en Github pages
-* Datos almacenados en Google Docs
-* Gráficas gracias a Highcharts
-* Tailwindcss y tailwindtoolbox
+* Github pages por alojamiento
+* Google Docs por facilitar almacenamiento de Datos y su API
+* Highcharts por las Gráficas
+* Openstreetmap por la cartografía base
+* John Alexis Guerra Gómez por el geojson
+* Leaflet por la librería para proyectar mapas
+* Tailwindcss y tailwindtoolbox por la facilidad para organizar el contenido y los estilos
 * [https://docs.google.com/spreadsheets/d/1RtLLkqkKDbJFKugmiCOv9uwNbceyTcnfwDhSQZeJKWA/edit?ts=603328dc#gid=2105845351](Datos recopilados) por [María del Pilar Sáenz](https://twitter.com/mapisaro/)
