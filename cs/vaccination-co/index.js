@@ -39,6 +39,7 @@ const PERC_APPLIED = "Eficiencia";
 const ACCUMULATED = "Acumuladas";
 const APPLIED_TODAY = "Aplicadas";
 const TO_APPLY = "Remanente";
+const ERROR_COLOR = '#cc00ff';
 
 // Client ID and API key from the Developer Console
 const CLIENT_ID = '75762908234-5om827gajcr4p5lplfhu3guhs732ob6u';
@@ -185,8 +186,7 @@ function onEachFeature(feature, layer) {
 
 // get color depending on population density value
 function getColor(d) {
-    console.log(d*11/100);
-    return d*11/100 > GRADIENT_COLORS.length ? '#cc00ff' : GRADIENT_COLORS[parseInt(d*11/100)];
+    return d*11/100 > GRADIENT_COLORS.length ? ERROR_COLOR : GRADIENT_COLORS[parseInt(d*11/100)];
 }
 
 function style(feature) {
