@@ -1,6 +1,6 @@
 var meta_data = {
-    column_names: [],
-    column_divip: [],
+    column_names: {},
+    column_divip: {},
     population: [],
     dept_names: [],
     latest_vac: [],
@@ -9,6 +9,7 @@ var meta_data = {
     applied_today: [],
     accumulated: [],
     goal: [],
+    layers: {},
 }
 
 var day_chart;
@@ -18,6 +19,7 @@ var array_2 = [];
 var map;
 var geojson;
 var info;
+var target_to_clean;
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
@@ -147,7 +149,7 @@ function setup_map() {
 	info.update = function (props) {
         var idx;
         if (props)
-            idx = meta_data.column_divip[props.divipola];
+            idx = meta_data.column_divip[props.divipola][0];
 		this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
 			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas'
 			: 'Seleccione departamento');
@@ -166,6 +168,10 @@ function resetHighlight(e) {
 
 function zoomToFeature(e) {
     map.fitBounds(e.target.getBounds());
+    var option_place = document.getElementById("place");
+
+    option_place.value = meta_data.column_divip[e.target.feature.properties.divipola][1];
+    select_place();
 }
 
 function onEachFeature(feature, layer) {
@@ -188,12 +194,14 @@ function style(feature) {
         color: 'white',
         dashArray: '3',
         fillOpacity: 0.7,
-        fillColor: getColor(meta_data.perc_accum[meta_data.column_divip[feature.properties.divipola]])
+        fillColor: getColor(meta_data.perc_accum[meta_data.column_divip[feature.properties.divipola][0]])
     };
 }
 
 function highlightFeature(e) {
     var layer = e.target;
+
+    target_to_clean = e.target;
 
     layer.setStyle({
         weight: 5,
@@ -218,8 +226,8 @@ function get_place_names(data) {
         var option = document.createElement("option");
         option.text = data[NAME_ROW][i];
         option_place.add(option);
-        meta_data.column_names[option.text] = i;
-        meta_data.column_divip[data[DP_ROW][i]] = i;
+        meta_data.column_names[option.text] = [i, data[DP_ROW][i]];
+        meta_data.column_divip[data[DP_ROW][i]] = [i, data[NAME_ROW][i]];
     }
     meta_data.population = [...data[POP_ROW]];
     meta_data.dept_names = [...data[NAME_ROW]];
@@ -238,9 +246,17 @@ function get_place_names(data) {
 
 function select_place(){
     var option_place = document.getElementById("place");
-    var i_col = meta_data.column_names[option_place.value];
+    var i_col = meta_data.column_names[option_place.value][0];
 
     cum_chart.setTitle({ text: option_place.value });
+
+    if (target_to_clean)
+        resetHighlight({ target: target_to_clean});
+
+    if (option_place.value in meta_data.layers)
+        highlightFeature({ target: meta_data.layers[option_place.value]});
+    else
+        info.update({ 'divipola': meta_data.column_names[option_place.value][1]});
 
     update_chart(i_col);
 }
@@ -461,6 +477,8 @@ function prepare_charts() {
 		style: style,
 		onEachFeature: onEachFeature
 	}).addTo(map);
+
+    geojson.eachLayer(function(l){meta_data.layers[meta_data.column_divip[l.feature.properties.divipola][1]] = l});
 
 }
 
