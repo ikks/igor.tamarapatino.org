@@ -2,9 +2,7 @@
 
 #map {
     height: 400px;
-    margin: 0 auto;
-    min-width: 310px;
-    max-width: 200px;
+    width: 100%;
 }
 
 .info {
