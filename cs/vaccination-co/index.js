@@ -38,6 +38,7 @@ const ID_SUMM = 1;
 const PERC_APPLIED = "Eficiencia";
 const ACCUMULATED = "Acumuladas";
 const APPLIED_TODAY = "Aplicadas";
+const TO_APPLY = "Remanente";
 
 // Client ID and API key from the Developer Console
 const CLIENT_ID = '75762908234-5om827gajcr4p5lplfhu3guhs732ob6u';
@@ -229,7 +230,7 @@ function get_place_names(data) {
         meta_data.column_names[option.text] = [i, data[DP_ROW][i]];
         meta_data.column_divip[data[DP_ROW][i]] = [i, data[NAME_ROW][i]];
     }
-    meta_data.population = [...data[POP_ROW]];
+    meta_data.population = data[POP_ROW].map(x => Number(x) ? parseInt(x) : x);
     meta_data.dept_names = [...data[NAME_ROW]];
 
     var i = data.length - 1;
@@ -239,7 +240,7 @@ function get_place_names(data) {
         }
     }
     if (i >= 0) {
-        meta_data.latest_vac = [...data[i]];
+        meta_data.latest_vac = data[i].map(x => Number(x) ? parseInt(x) : x);
     }
 
 }
@@ -346,7 +347,27 @@ function processSheetsData(response) {
         }
     }
     if (i >= 0) {
-        meta_data.accumulated = sheets.valueRanges[ID_SUMM].values[i].map(x => parseInt(x));
+        meta_data.accumulated = sheets.valueRanges[ID_SUMM].values[i].map(x => Number(x) ? parseInt(x): 0);
+    }
+
+    i = sheets.valueRanges[ID_SUMM].values.length - 1;
+    for (; i >= 0; i--){
+        if(sheets.valueRanges[ID_SUMM].values[i][OPERATION] == APPLIED_TODAY){
+            break;
+        }
+    }
+    if (i >= 0) {
+        meta_data.applied_today = sheets.valueRanges[ID_SUMM].values[i].map(x => Number(x) ? parseInt(x): 0);
+    }
+
+    i = sheets.valueRanges[ID_SUMM].values.length - 1;
+    for (; i >= 0; i--){
+        if(sheets.valueRanges[ID_SUMM].values[i][OPERATION] == TO_APPLY){
+            break;
+        }
+    }
+    if (i >= 0) {
+        meta_data.to_apply = sheets.valueRanges[ID_SUMM].values[i].map(x => Number(x) ? parseInt(x): 0);
     }
     prepare_charts();
 }
