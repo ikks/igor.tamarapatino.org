@@ -5,6 +5,7 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 # Para hacer en el futuro
 
 * Hacer mucho más discretos los créditos
+* Aplicar diseño
 * [plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Estimar en cuánto tiempo se puede finalizar la vacunación
 * Visibilizar la información de eficiencia:
@@ -14,12 +15,22 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Día en que más vacunas se aplicaron
     * Los más eficientes
 
-* Comparación de departamentos, los que no han colocado ayer
-    * Los menos eficientes en colocar
+* Proyectar datos de visibilización de distribución de vacunas
+* Hacer una animación para mostrar el cambio en el mapa o que muestre en las gráficas día a día.
+* Colocar mapa de metas
+    * Finalizar fase I
+    * Inmunizar a Colombia
+* Añadir información de inmunizados
 
-* Mapa de Colombia con departamentos
-    * Información más reciente on hover
-    * Seleccionar al hacer click
+* Apuntar a datos de gastos:
+    * Compra de vacunas
+    * Transporte
+    * Aplicación
+    * Costos de mantener información al día
+    * Administrativos
+
+* Vincular con datos de otros países para hacer comparativa
+* Cantidad de vacunas promedio aplicadas
 
 # Cómo contribuir
 
