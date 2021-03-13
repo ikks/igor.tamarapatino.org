@@ -501,7 +501,7 @@ function prepare_charts() {
 	}).addTo(map);
 
     geojson.eachLayer(function(l){meta_data.layers[meta_data.column_divip[l.feature.properties.divipola][1]] = l});
-
+    document.getElementById("loading").style.display = "none";
 }
 
 function funnel_setup(){
