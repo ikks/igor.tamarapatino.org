@@ -12,7 +12,8 @@
 
     <link rel="apple-touch-icon" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png">
     <link rel="icon" type="image/png" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png" sizes="512x512">
-    <link href="main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@next/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
@@ -30,45 +31,100 @@
     
     </script>
   </head>
-  <body>
-    <h1>Información de Vacunación Covid-19</h1>
-    <pre id="content" style="white-space: pre-wrap;"></pre>
-    <p>En Colombia Se ha aplicado <span id="id-doze">0</span> dosis hasta el <span id="id-latest-date">2021-02-18</span>, de un total de las <span id="id-accumulated">0</span> que han sido distribuidas, para una efectividad del <span id="id-effectivity">0</span></p>
-    <div id='map'></div>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav class="bg-gray-800 p-2 mt-0 fixed w-full z-10 top-0" style="z-index: 2000;">
+      <div class="container mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
+      <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+        <span class="text-2xl pl-2">Información de Vacunación Covid-19</span>
+      </a>
+          </div>
+    <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+      <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+        <li class="mr-3">
+          <select id="place" onchange="select_place();" onfocus="this.selectedIndex = -1;"></select>
+        </li>
+        <li class="mr-3">
+        <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">link</a>
+        </li>
+        <li class="mr-3">
+        <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#">link</a>
+        </li>
+        <li class="mr-3">
+          <span class="inline-block text-gray-100 no-underline py-2 px-4" id="id-latest-date">2021-02-18</span>
+        </li>
+      </ul>
+    </div>
+      </div>
+  </nav>
+  <div class="container w-full mx-auto pt-20">
 
-    <select id="place" onchange="select_place();" onfocus="this.selectedIndex = -1;"></select>
-    <div id="accum_chart" class="container-chart"></div>
-    <div id="daily_chart" class="container-chart"></div>
-    <!--
-    <figure class="highcharts-figure">
-      <div id="container-funnel"></div>
-      <p class="highcharts-description">
-          Se requiere inmunizar al 75% de la población, se hizo acuerdos durante el 2020 para comprar 4 millones de dosis,
-          deben llegar al país, deben asignarse por entidades territoriales, enviarse y aplicarse.  De acuerdo a la vacuna
-          puede requerirse 1 o 2 dosis.
-      </p>
-    </figure>
-    -->
-    <h2>Créditos</h2>
-    <dl>
-        <dt>Consolidación de información</dt>
-        <dd><a href="https://twitter.com/mapisaro">María del Pilar Sáenz</a></dd>
-        <dt>Visualización</dt>
-        <dd><a href="https://github.com/ikks">Igor Támara</a></dd>
-    </dl>
-    <h2>¿Cómo contribuir?</h2>
-    <p>Puedes hacerlo de varias formas:</p>
-    <ul>
-      <li>Compartiendo esta información con más personas</li>
-      <li>Si desarrollas software puedes <a href="https://github.com/ikks/ikks.github.io/tree/master/cs/vaccination-co">contribuir en github</a></li>
-      <li>Si escribes, usa la información aquí presente para hacer artículos</li>
-      <li>Si tienes ideas de cosas que se pueden calcular, <a href="https://twitter.com/ikks">Déjanos saber</a></li>
-    </ul>
+    <div class="w-full px-4 md:px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+        <pre id="content" style="white-space: pre-wrap;"></pre>
+        <p>En Colombia Se ha aplicado <span id="id-doze">0</span> dosis hasta el , de un total de las <span id="id-accumulated">0</span> que han sido distribuidas, para una efectividad del <span id="id-effectivity">0</span></p>
+        <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+          <!--Graph Card-->
+          <div class="bg-white border rounded shadow">
+              <div class="p-5">
+                <div id='map'></div>
+              </div>
+          </div>
+          <!--/Template Card-->
+        </div>
+        
+        <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+          <!--Template Card-->
+          <div class="bg-white border rounded shadow">
+              <div class="p-5">
+                <div id="accum_chart" class="container-chart"></div>
+              </div>
+          </div>
+          <!--/Template Card-->
+        </div>
+        
+        <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+          <!--Template Card-->
+          <div class="bg-white border rounded shadow">
+              <div class="p-5">
+                <div id="daily_chart" class="container-chart"></div>
+              </div>
+          </div>
+          <!--/Template Card-->
+        </div>
+        
 
-    <h2>Otros enlaces</h2>
-    <ul>
-      <li>Visualización en <a href="https://observablehq.com/@ikks/vacunacion-en-colombia-via-mapisaro">ObservableHQ</a></li>
-    </ul>
+        <!--
+        <figure class="highcharts-figure">
+          <div id="container-funnel"></div>
+          <p class="highcharts-description">
+              Se requiere inmunizar al 75% de la población, se hizo acuerdos durante el 2020 para comprar 4 millones de dosis,
+              deben llegar al país, deben asignarse por entidades territoriales, enviarse y aplicarse.  De acuerdo a la vacuna
+              puede requerirse 1 o 2 dosis.
+          </p>
+        </figure>
+        -->
+        <h2>Créditos</h2>
+        <dl>
+            <dt>Consolidación de información</dt>
+            <dd><a href="https://twitter.com/mapisaro">María del Pilar Sáenz</a></dd>
+            <dt>Visualización</dt>
+            <dd><a href="https://github.com/ikks">Igor Támara</a></dd>
+        </dl>
+        <h2>¿Cómo contribuir?</h2>
+        <p>Puedes hacerlo de varias formas:</p>
+        <ul>
+          <li>Compartiendo esta información con más personas</li>
+          <li>Si desarrollas software puedes <a href="https://github.com/ikks/ikks.github.io/tree/master/cs/vaccination-co">contribuir en github</a></li>
+          <li>Si escribes, usa la información aquí presente para hacer artículos</li>
+          <li>Si tienes ideas de cosas que se pueden calcular, <a href="https://twitter.com/ikks">Déjanos saber</a></li>
+        </ul>
+
+        <h2>Otros enlaces</h2>
+        <ul>
+          <li>Visualización en <a href="https://observablehq.com/@ikks/vacunacion-en-colombia-via-mapisaro">ObservableHQ</a></li>
+        </ul>
+      </div>
+    </div>
   </body>
   <script src="./index.js"></script>
   <script async defer src="https://apis.google.com/js/api.js"
