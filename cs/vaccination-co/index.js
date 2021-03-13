@@ -185,7 +185,8 @@ function onEachFeature(feature, layer) {
 
 // get color depending on population density value
 function getColor(d) {
-    return GRADIENT_COLORS[parseInt(d*11/100)];
+    console.log(d*11/100);
+    return d*11/100 > GRADIENT_COLORS.length ? '#cc00ff' : GRADIENT_COLORS[parseInt(d*11/100)];
 }
 
 function style(feature) {
