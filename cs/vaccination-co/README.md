@@ -12,10 +12,10 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Recepción: Cada vez que llega un cargamento al país
     * Asignación: Resolución Ministerial para la entrega
     * Distribución: Deben llegar a los sitios donde se aplica
-    * Aplicación: reportado en PAI
+    * Aplicación: Reportado en PAI
     * Inmunización: Dependiendo del tipo de vacuna
 * Añadir información de inmunizados
-* [plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
+* [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Estimar en cuánto tiempo se puede finalizar la vacunación
 * Visibilizar la información de eficiencia:
     * [Porcentaje de dosis administradas](https://twitter.com/rundav5/status/1366560712349351936)
