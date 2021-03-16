@@ -50,7 +50,6 @@ const DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v
 // included, separated by spaces.
 const SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
 
-const spreadsheetid = '1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E';
 /**
  *  On load, called to load the auth2 library and API client library.
  */
@@ -92,6 +91,7 @@ function appendPre(message) {
  * https://docs.google.com/spreadsheets/d/1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms/edit
  */
 function loadsheet() {
+    var spreadsheetid = document.getElementById("loading").dataset.spreadsheetid;
     setup_map();
     gapi.client.sheets.spreadsheets.values.batchGet({
         spreadsheetId: spreadsheetid,
