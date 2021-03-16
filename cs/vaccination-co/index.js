@@ -227,6 +227,8 @@ function get_place_names(data) {
     for (var i=5; i < columns; i++){
         var option = document.createElement("option");
         option.text = data[NAME_ROW][i];
+        if (meta_data.applied_today[i] < 10)
+            option.style = "color:red";
         option_place.add(option);
         meta_data.column_names[option.text] = [i, data[DP_ROW][i]];
         meta_data.column_divip[data[DP_ROW][i]] = [i, data[NAME_ROW][i]];
@@ -304,13 +306,21 @@ function update_chart(i_col) {
     day_chart.series[0].setData(applied);
 }
 
+function clean_data(){
+    // Avoiding to show inconsistent data.  Tries to make sure we have
+    // data for both tiles of the spreadsheet
+    var last_orig = array.length -1;
+    var last_summ = array_2.length - 1;
+
+
+
+}
+
 function processSheetsData(response) {
     var sheets = response.result;
     var rows = sheets.valueRanges[ID_ORIG].values.length;
     var row = []
     var length = 0;
-
-    get_place_names(sheets.valueRanges[ID_ORIG].values);
 
     for (var r = INI_VALUES; r < rows; r++) {
       row = [];
@@ -330,6 +340,8 @@ function processSheetsData(response) {
         }
         array_2.push(row);
     }
+
+    clean_data();
 
     var i = sheets.valueRanges[ID_SUMM].values.length - 1;
     for (; i >= 0; i--){
@@ -369,7 +381,11 @@ function processSheetsData(response) {
     }
     if (i >= 0) {
         meta_data.to_apply = sheets.valueRanges[ID_SUMM].values[i].map(x => Number(x) ? parseInt(x): 0);
+        meta_data.latest_date = sheets.valueRanges[ID_SUMM].values[i][0];
     }
+
+    get_place_names(sheets.valueRanges[ID_ORIG].values);
+
     prepare_charts();
 }
 
@@ -478,12 +494,11 @@ function prepare_charts() {
     var option_place = document.getElementById("place");
     var remaining = array_2[array_2.length - 1];
     var efficiency = array_2[array_2.length - 2];
-    var applied = array_2[array_2.length - 3];
+    var applied = meta_data.applied_today[meta_data.applied_today.length - 1];
     var accumulated = array_2[array_2.length - 4];
-    var latest_date = remaining[0]
     var colombia = remaining.length - 1;
     document.getElementById("id-doze").textContent=(parseInt(accumulated[colombia]) - parseInt(remaining[colombia])).toLocaleString();
-    document.getElementById("id-latest-date").textContent=latest_date;
+    document.getElementById("id-latest-date").textContent=meta_data.latest_date;
     document.getElementById("id-accumulated").textContent=parseInt(accumulated[colombia]).toLocaleString();
     document.getElementById("id-effectivity").textContent=efficiency[colombia];
 
