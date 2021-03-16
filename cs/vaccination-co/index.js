@@ -153,7 +153,7 @@ function setup_map() {
         if (props)
             idx = meta_data.column_divip[props.divipola][0];
 		this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
-			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas'
+			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas <br />Hoy: ' + meta_data.applied_today[idx].toLocaleString() + ' aplicadas'
 			: 'Seleccione departamento');
 	};
 
