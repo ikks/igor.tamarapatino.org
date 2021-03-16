@@ -8,6 +8,9 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Finalizar fase I
     * Inmunizar a Colombia
 * Pasos
+    * Hoy, Fase I, Segundas Dosis
+    * 5 más efectivos y 5 menos efectivos
+    * Mensaje principal con diálogo para cerrar
     * Compra de vacunas
     * Recepción: Cada vez que llega un cargamento al país
     * Asignación: Resolución Ministerial para la entrega
