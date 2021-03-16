@@ -11,12 +11,15 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Hoy, Fase I, Segundas Dosis
     * 5 más efectivos y 5 menos efectivos
     * Mensaje principal con diálogo para cerrar
+    * Que la edición no dañe los datos
     * Compra de vacunas
     * Recepción: Cada vez que llega un cargamento al país
     * Asignación: Resolución Ministerial para la entrega
     * Distribución: Deben llegar a los sitios donde se aplica
     * Aplicación: reportado en PAI
     * Inmunización: Dependiendo del tipo de vacuna
+    * Reinicializar el mapa para ver Colombia
+    * Para Buenaventura, Cartagena, Barranquilla, Santa Marta hacer que el zoom vaya
 * Añadir información de inmunizados
 * [plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Estimar en cuánto tiempo se puede finalizar la vacunación

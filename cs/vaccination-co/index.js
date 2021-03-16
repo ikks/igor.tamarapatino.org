@@ -9,6 +9,7 @@ var meta_data = {
     applied_today: [],
     accumulated: [],
     goal: [],
+    inmunized: [],
     layers: {},
 }
 
@@ -16,6 +17,7 @@ var day_chart;
 var cum_chart;
 var array = [];
 var array_2 = [];
+var array_p = [];
 var map;
 var geojson;
 var info;
@@ -31,14 +33,17 @@ const OPERATION = 2;
 
 const sheet_orig = 'Originales!A1:AQ200';
 const sheet_summ = 'Resumen!A1:AQ200';
+const sheet_plan = 'Plan!A1:AQ200';
 
 const ID_ORIG = 0;
 const ID_SUMM = 1;
+const ID_PLAN = 2;
 
 const PERC_APPLIED = "Eficiencia";
 const ACCUMULATED = "Acumuladas";
 const APPLIED_TODAY = "Aplicadas";
 const TO_APPLY = "Remanente";
+const INMUNIZED = "2";
 const ERROR_COLOR = '#cc00ff';
 
 // Client ID and API key from the Developer Console
@@ -95,7 +100,7 @@ function loadsheet() {
     setup_map();
     gapi.client.sheets.spreadsheets.values.batchGet({
         spreadsheetId: spreadsheetid,
-        ranges: [sheet_orig, sheet_summ],
+        ranges: [sheet_orig, sheet_summ, sheet_plan],
     }).then(processSheetsData, function(response) {
         appendPre('Error: ' + response.result.error.message);
     });
@@ -246,6 +251,16 @@ function get_place_names(data) {
         meta_data.latest_vac = data[i].map(x => Number(x) ? parseInt(x) : x);
     }
 
+    var i = data.length - 1;
+    for (; i >= 0; i--){
+        if(data[i][OPERATION] == 2){
+            break;
+        }
+    }
+    if (i >= 0) {
+        meta_data.inmunized = data[i].map(x => Number(x) ? parseInt(x) : x);
+    }
+
 }
 
 function select_place(){
@@ -339,6 +354,16 @@ function processSheetsData(response) {
           row.push(sheets.valueRanges[ID_SUMM].values[r][c]);
         }
         array_2.push(row);
+    }
+
+    rows = sheets.valueRanges[ID_PLAN].values.length;
+    for (var r = 1; r < rows; r++) {
+        row = [];
+        length = sheets.valueRanges[ID_PLAN].values[r].length;
+        for (var c = 0; c < length; c++) {
+          row.push(sheets.valueRanges[ID_PLAN].values[r][c]);
+        }
+        array_p.push(row);
     }
 
     clean_data();
