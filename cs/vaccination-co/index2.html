@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Covid vaccination info for Colombia</title>
+    <meta name="description" content="Datos abiertos de vacunación covid-19 en Colombia, Bogotá, Antioquia, Barranquilla"/>
+    <meta property="og:title" content="Transparencia con datos" />
+    <meta property="og:description" content="Datos abiertos de vacunación covid-19 en Colombia, Bogotá, Antioquia, Barranquilla" />
+    <meta property="og:image" content="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png" />
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="apple-touch-icon" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png">
+    <link rel="icon" type="image/png" href="https://gitpages.tamarapatino.org/cs/vaccination-co/images/tn-social.png" sizes="512x512">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss@next/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <link href="main.css" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <script src="https://code.highcharts.com/9.0.1/highcharts.js"></script>
+    <script src="https://code.highcharts.com/9.0.1/modules/funnel.js"></script>
+    <script type="text/javascript" src="colombia-geo.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-6764967-1', 'auto');
+      ga('send', 'pageview');
+    
+    </script>
+    <script src="https://use.fontawesome.com/f1e87b04b4.js"></script>
+  </head>
+  <body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <nav class="bg-gray-800 p-2 mt-0 fixed w-full z-10 top-0" style="z-index: 2000;">
+      <div class="container mx-auto flex flex-wrap items-center">
+      <div class="flex w-full md:w-1/2 justify-center md:justify-start text-white font-extrabold">
+      <a class="text-white no-underline hover:text-white hover:no-underline" href="#">
+        <span class="text-2xl pl-2">Vacunación Covid-19</span>
+      </a>
+          </div>
+    <div class="flex w-full pt-2 content-center justify-between md:w-1/2 md:justify-end">
+      <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+        <li class="mr-3">
+          <select id="place" onchange="select_place();"></select>
+        </li>
+        <li class="mr-3">
+          <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4" href="#about">Acerca</a>
+        </li>
+        <li class="mr-3">
+          <span class="inline-block text-gray-100 no-underline py-2 px-4 text-xs" id="id-latest-date">2021-02-18</span>
+        </li>
+      </ul>
+    </div>
+      </div>
+    </nav>
+
+    <!-- Loader Modal -->
+    <div id="loading" data-spreadsheetid="1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E" class="fixed inset-0 overflow-y-auto" style="z-index: 2000;">
+      <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <!--
+          Background overlay, show/hide based on modal state.
+
+          Entering: "ease-out duration-300"
+            From: "opacity-0"
+            To: "opacity-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100"
+            To: "opacity-0"
+        -->
+        <div class="fixed inset-0 transition-opacity" aria-hidden="true">
+          <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+        </div>
+
+        <!-- This element is to trick the browser into centering the modal contents. -->
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <!--
+          Modal panel, show/hide based on modal state.
+
+          Entering: "ease-out duration-300"
+            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+            To: "opacity-100 translate-y-0 sm:scale-100"
+          Leaving: "ease-in duration-200"
+            From: "opacity-100 translate-y-0 sm:scale-100"
+            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+        -->
+        <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+          <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+            <div class="sm:flex sm:items-start">
+              <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-blue-100 sm:mx-0 sm:h-10 sm:w-10">
+                <!-- Heroicon name: outline/exclamation -->
+                <svg class="h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                <h3 id="id-head-maincall" class="text-lg leading-6 font-medium text-gray-900" id="modal-headline">
+                  Cargando datos
+                </h3>
+                <div class="mt-2">
+                  <p id="id-maincall" class="text-sm text-gray-500">
+                    No tardaremos mucho en mostrar la información
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="content-center bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+              <button id="close-dialog" onclick="closedialog()" style="display:none" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" disabled="disabled">
+                Vale
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Container-->
+    <div class="container w-full mx-auto pt-28 md:pt-8">
+      <div class="w-full px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+        <pre id="content" style="white-space: pre-wrap;"></pre>
+        <div class="w-full px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
+
+          <!--Console Content-->
+
+          <div class="flex flex-wrap">
+              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                  <!--Metric Card-->
+                  <div class="bg-white border rounded shadow p-2">
+                      <div class="flex flex-row items-center">
+                          <div class="flex-shrink pr-4">
+                              <div class="rounded p-3 bg-green-600"><i class="fas fa-wallet fa-2x fa-fw fa-inverse"></i></div>
+                          </div>
+                          <div class="flex-1 text-right md:text-center">
+                              <h5 class="font-bold uppercase text-gray-500">Dosis Aplicadas</h5>
+                              <h3 class="font-bold text-3xl"><span id="id-doze">0</span> <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/Metric Card-->
+              </div>
+              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                  <!--Metric Card-->
+                  <div class="bg-white border rounded shadow p-2">
+                      <div class="flex flex-row items-center">
+                          <div class="flex-shrink pr-4">
+                              <div class="rounded p-3 bg-pink-600"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
+                          </div>
+                          <div class="flex-1 text-right md:text-center">
+                              <h5 class="font-bold uppercase text-gray-500">Efectividad</h5>
+                              <h3 class="font-bold text-3xl"><span id="id-effectivity">0</span></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/Metric Card-->
+              </div>
+              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                  <!--Metric Card-->
+                  <div class="bg-white border rounded shadow p-2">
+                      <div class="flex flex-row items-center">
+                          <div class="flex-shrink pr-4">
+                              <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i></div>
+                          </div>
+                          <div class="flex-1 text-right md:text-center">
+                              <h5 class="font-bold uppercase text-gray-500">Asignadas</h5>
+                              <h3 class="font-bold text-3xl"><span id="id-accumulated">0</span> <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                          </div>
+                      </div>
+                  </div>
+                  <!--/Metric Card-->
+              </div>
+              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <!--Metric Card-->
+                <div class="bg-white border rounded shadow p-2">
+                    <div class="flex flex-row items-center">
+                        <div class="flex-shrink pr-4">
+                            <div class="rounded p-3 bg-blue-600"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
+                        </div>
+                        <div class="flex-1 text-right md:text-center">
+                            <h5 class="font-bold uppercase text-gray-500">Dosis más recientes</h5>
+                            <h3 class="font-bold text-3xl"><span id="id-today">0</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <!--/Metric Card-->
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <!--Metric Card-->
+              <div class="bg-white border rounded shadow p-2">
+                  <div class="flex flex-row items-center">
+                      <div class="flex-shrink pr-4">
+                          <div class="rounded p-3 bg-red-600"><i class="fas fa-inbox fa-2x fa-fw fa-inverse"></i></div>
+                      </div>
+                      <div class="flex-1 text-right md:text-center">
+                          <h5 class="font-bold uppercase text-gray-500">Inmunizaciones</h5>
+                          <h3 class="font-bold text-3xl"><span id="id-inmunized">0</span> <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
+                      </div>
+                  </div>
+              </div>
+              <!--/Metric Card-->
+          </div>
+          <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                <!--Metric Card-->
+                <div class="bg-white border rounded shadow p-2">
+                    <div class="flex flex-row items-center">
+                        <div class="flex-shrink pr-4">
+                            <div class="rounded p-3 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-fw fa-inverse"></i></div>
+                        </div>
+                        <div class="flex-1 text-right md:text-center">
+                            <h5 class="font-bold uppercase text-gray-500">Meta Etapa 1</h5>
+                            <h3 style="display: block;" class="font-bold text-3xl"><span id="id-goal">36.000.000</span> (<span id="id-percgoal" class="text-red-500">0</span>%)</h3>
+                        </div>
+                    </div>
+                </div>
+                <!--/Metric Card-->
+            </div>
+          </div>
+
+          <!--Divider-->
+          <hr class="border-b-2 border-gray-400 my-8 mx-4">
+
+        <div class="flex flex-row flex-wrap flex-grow mt-2">
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <div class="bg-white border rounded shadow">
+                  <div class="p-5">
+                    <div id='map'>
+                    </div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <div class="bg-white border rounded shadow">
+                  <div class="p-5">
+                    <div id="accum_chart" class="container-chart"></div>
+                  </div>
+              </div>
+            </div>
+
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <!--Template Card-->
+              <div class="bg-white border rounded shadow">
+                  <div class="p-5">
+                    <div id="daily_chart" class="container-chart"></div>
+                  </div>
+              </div>
+              <!--/Template Card-->
+            </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-white border-t border-gray-400 shadow">
+      <div class="container max-w-md mx-auto flex py-8">
+
+          <div class="w-full mx-auto flex flex-wrap">
+              <div class="flex w-full md:w-1/2 ">
+                  <div class="px-8">
+                      <h3 class="font-bold font-bold text-gray-900">Acerca de</h3>
+                      <p class="py-4 text-gray-600 text-sm">
+                          Los datos aquí presentados son tomados a dario de <a class="underline" href="https://www.minsalud.gov.co/salud/publica/Vacunacion/Paginas/Vacunacion-covid-19.aspx">MinSalud</a>. Si tienes ideas de cómo mejorar este tablero, <a class="text-gray-600 underline hover:text-gray-900 hover:text-underline" href="https://twitter.com/ikks">déjanos saber</a>
+                      </p>
+                  </div>
+              </div>
+
+              <div class="flex w-full md:w-1/2">
+                  <div class="px-8">
+                      <h3 class="font-bold font-bold text-gray-900">Más</h3>
+                      <ul class="list-reset items-center text-sm pt-3">
+                          <li>
+                              <i class="fa fa-twitter-square"></i> <a name="about" class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://twitter.com/mapisaro">Análisis Diario</a>
+                          </li>
+                          <li>
+                            <i class="fa fa-book"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://docs.google.com/spreadsheets/d/1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E/edit#gid=0">Fuente de Datos</a>
+                          </li>
+                          <li>
+                            <i class="fa fa-github-square"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://github.com/ikks/ikks.github.io/tree/master/cs/vaccination-co">Github</a>
+                          </li>
+                          <li>
+                            <i class="fa fa-server"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://datastudio.google.com/u/0/reporting/76870d50-6089-4cfc-9db3-6b1ff3054866/page/BTV4B">Otra herramienta</a>
+                        </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </footer>
+  </body>
+  <script src="./index2.js"></script>
+  <script async defer src="https://apis.google.com/js/api.js"
+      onload="this.onload=function(){};handleClientLoad()"
+      onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+</html>
