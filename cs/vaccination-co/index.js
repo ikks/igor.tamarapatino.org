@@ -549,6 +549,7 @@ function prepare_charts() {
 
     geojson.eachLayer(function(l){meta_data.layers[meta_data.column_divip[l.feature.properties.divipola][1]] = l});
     document.getElementById("loading").style.display = "none";
+    console.log("Glad your here, let's meet at Github");
 }
 
 function funnel_setup(){
