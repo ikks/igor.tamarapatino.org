@@ -17,7 +17,6 @@ var day_chart;
 var cum_chart;
 var array = [];
 var array_2 = [];
-var array_p = [];
 var map;
 var geojson;
 var info;
@@ -158,7 +157,7 @@ function setup_map() {
         if (props)
             idx = meta_data.column_divip[props.divipola][0];
 		this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
-			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas <br />Hoy: ' + meta_data.applied_today[idx].toLocaleString() + ' aplicadas'
+			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas <br />Día reciente: ' + meta_data.applied_today[idx].toLocaleString() + ' aplicadas'
 			: 'Seleccione departamento');
 	};
 
@@ -363,7 +362,7 @@ function processSheetsData(response) {
         for (var c = 0; c < length; c++) {
           row.push(sheets.valueRanges[ID_PLAN].values[r][c]);
         }
-        array_p.push(row);
+        meta_data.goal.push(row);
     }
 
     clean_data();
@@ -522,10 +521,18 @@ function prepare_charts() {
     var applied = meta_data.applied_today[meta_data.applied_today.length - 1];
     var accumulated = array_2[array_2.length - 4];
     var colombia = remaining.length - 1;
+    var goal = meta_data.goal[0];
+    var today = meta_data.applied_today;
+    var inmunized = meta_data.inmunized;
+
     document.getElementById("id-doze").textContent=(parseInt(accumulated[colombia]) - parseInt(remaining[colombia])).toLocaleString();
     document.getElementById("id-latest-date").textContent=meta_data.latest_date;
     document.getElementById("id-accumulated").textContent=parseInt(accumulated[colombia]).toLocaleString();
     document.getElementById("id-effectivity").textContent=efficiency[colombia];
+    document.getElementById("id-today").textContent=parseInt(today[colombia]).toLocaleString();
+    document.getElementById("id-goal").textContent=parseInt(goal[colombia]).toLocaleString();
+    document.getElementById("id-inmunized").textContent=parseInt(inmunized[colombia]).toLocaleString();
+    document.getElementById("id-percgoal").textContent=(parseInt(inmunized[colombia])/parseInt(goal[colombia])).toLocaleString();
 
     if (urlParams.get('place') in meta_data.column_names) {
         option_place.value = urlParams.get('place');
