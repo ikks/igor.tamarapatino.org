@@ -21,6 +21,7 @@ var map;
 var geojson;
 var info;
 var target_to_clean;
+var text_dialog = "";
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
@@ -325,9 +326,10 @@ function clean_data(){
     // data for both tiles of the spreadsheet
     var last_orig = array.length -1;
     var last_summ = array_2.length - 1;
+}
 
-
-
+function closedialog() {
+    document.getElementById("loading").style.display = "none";
 }
 
 function processSheetsData(response) {
@@ -366,7 +368,7 @@ function processSheetsData(response) {
     }
 
     clean_data();
-
+    text_dialog = sheets.valueRanges[ID_ORIG].values[8][2];
     var i = sheets.valueRanges[ID_SUMM].values.length - 1;
     for (; i >= 0; i--){
         if(sheets.valueRanges[ID_SUMM].values[i][OPERATION] == PERC_APPLIED){
@@ -548,7 +550,10 @@ function prepare_charts() {
 	}).addTo(map);
 
     geojson.eachLayer(function(l){meta_data.layers[meta_data.column_divip[l.feature.properties.divipola][1]] = l});
-    document.getElementById("loading").style.display = "none";
+    document.getElementById("close-dialog").disabled = false;
+    document.getElementById("close-dialog").style.display = "block";
+    document.getElementById("id-maincall").innerHTML = text_dialog;
+    document.getElementById("id-head-maincall").innerHTML = "¡Comparte este tablero!";
     console.log("Glad your here, let's meet at Github");
 }
 
