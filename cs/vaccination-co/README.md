@@ -4,9 +4,14 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 # Para hacer en el futuro
 
+
+* Corregir para que se actualice Aplicadas, Efectividad, Asignadas, Recientes
 * Colocar mapa de metas
     * Finalizar fase I
     * Inmunizar a Colombia
+* Cronograma Nacional: https://twitter.com/nineways123/status/1372235900227350528
+* Gasto en Vacunación: https://mobile.twitter.com/ofiscalpuj/status/1372358753534754818
+
 * Pasos
     * 5 más efectivos y 5 menos efectivos
     * Que la edición no dañe los datos
@@ -17,7 +22,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Aplicación: Reportado en PAI
     * Inmunización: Dependiendo del tipo de vacuna
     * Reinicializar el mapa para ver Colombia
-    * Para Buenaventura, Cartagena, Barranquilla, Santa Marta hacer que el zoom vaya
 * [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Estimar en cuánto tiempo se puede finalizar la vacunación
 * Visibilizar la información de eficiencia:
@@ -39,6 +43,15 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 * Vincular con datos de otros países para hacer comparativa
 * Cantidad de vacunas promedio aplicadas
+
+* Alertas
+    * No se colocaron vacunas o fue un porcentaje muy bajo
+    * Se ha excedido el porcentaje de las vacunas que fueron asignadas
+    * Mostrar con colores la meta que estamos mostrando
+
+* Incluir información de la población
+
+
 
 # Cómo contribuir
 
