@@ -13,6 +13,14 @@ var meta_data = {
     layers: {},
 }
 
+var map_views = {
+    'Colombia': [[5.3, -73], 5],
+    'Buenaventura': [[3.8899335, -77.0786047], 10],
+    'Cartagena': [[10.3554, -75.56], 10],
+    'Barranquilla': [[10.9799669, -74.8013085], 10],
+    'Santa Marta': [[11.2422289, -74.2055606], 10],
+};
+
 var day_chart;
 var cum_chart;
 var array = [];
@@ -272,11 +280,16 @@ function select_place(){
     if (target_to_clean)
         resetHighlight({ target: target_to_clean});
 
-    if (option_place.value in meta_data.layers)
+    if (option_place.value in meta_data.layers) {
         highlightFeature({ target: meta_data.layers[option_place.value]});
-    else
+        map.flyToBounds(meta_data.layers[option_place.value].getBounds());
+    }
+    else {
+        console.log(option_place.value)
+        if (option_place.value in map_views)
+            map.flyTo(map_views[option_place.value][0], map_views[option_place.value][1]);
         info.update({ 'divipola': meta_data.column_names[option_place.value][1]});
-
+    }
     update_chart(i_col);
 }
 
