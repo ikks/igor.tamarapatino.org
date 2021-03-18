@@ -418,7 +418,8 @@ function processSheetsData(response) {
 function prepare_charts() {
     cum_chart = Highcharts.chart('accum_chart', {
         chart: {
-            type: 'area'
+            type: 'area',
+            zoomType: 'xy'
         },
         title: {
             text: "Distribución de vacunas para Colombia"
@@ -479,7 +480,8 @@ function prepare_charts() {
     day_chart = Highcharts.chart('daily_chart', {
 
         chart: {
-            type: 'spline'
+            type: 'spline',
+            zoomType: 'xy'
         },
         title: {
             text: 'Aplicación Diaria'

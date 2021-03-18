@@ -9,7 +9,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Inmunizar a Colombia
 * Pasos
     * 5 más efectivos y 5 menos efectivos
-    * Mensaje principal con diálogo para cerrar
     * Que la edición no dañe los datos
     * Compra de vacunas
     * Recepción: Cada vez que llega un cargamento al país
@@ -19,7 +18,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Inmunización: Dependiendo del tipo de vacuna
     * Reinicializar el mapa para ver Colombia
     * Para Buenaventura, Cartagena, Barranquilla, Santa Marta hacer que el zoom vaya
-* Añadir información de inmunizados
 * [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Estimar en cuánto tiempo se puede finalizar la vacunación
 * Visibilizar la información de eficiencia:
