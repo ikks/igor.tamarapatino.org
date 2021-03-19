@@ -4,8 +4,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 # Para hacer en el futuro
 
-
-* Corregir para que se actualice Aplicadas, Efectividad, Asignadas, Recientes
 * Colocar mapa de metas
     * Finalizar fase I
     * Inmunizar a Colombia
