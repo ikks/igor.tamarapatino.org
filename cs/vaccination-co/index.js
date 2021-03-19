@@ -163,11 +163,17 @@ function setup_map() {
 
 	info.update = function (props) {
         var idx;
-        if (props)
+
+        if (props) {
             idx = meta_data.column_divip[props.divipola][0];
-		this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
+		    this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
 			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas <br />Día reciente: ' + meta_data.applied_today[idx].toLocaleString() + ' aplicadas'
 			: 'Seleccione departamento');
+            document.getElementById("id-effectivity").textContent=meta_data.perc_accum[idx];
+            document.getElementById("id-today").textContent=meta_data.applied_today[idx].toLocaleString();
+            document.getElementById("id-accumulated").textContent=meta_data.accumulated[idx].toLocaleString();
+            cum_chart.setTitle({ text: meta_data.column_divip[props.divipola][1] });
+        }
 	};
 
 	map.attributionControl.addAttribution('Population data &copy; <a href="http://minsalud.gov.co/">Vaccination Data</a>');
@@ -285,11 +291,11 @@ function select_place(){
         map.flyToBounds(meta_data.layers[option_place.value].getBounds());
     }
     else {
-        console.log(option_place.value)
         if (option_place.value in map_views)
             map.flyTo(map_views[option_place.value][0], map_views[option_place.value][1]);
         info.update({ 'divipola': meta_data.column_names[option_place.value][1]});
     }
+
     update_chart(i_col);
 }
 
@@ -544,9 +550,6 @@ function prepare_charts() {
 
     document.getElementById("id-doze").textContent=(parseInt(accumulated[colombia]) - parseInt(remaining[colombia])).toLocaleString();
     document.getElementById("id-latest-date").textContent=meta_data.latest_date;
-    document.getElementById("id-accumulated").textContent=parseInt(accumulated[colombia]).toLocaleString();
-    document.getElementById("id-effectivity").textContent=efficiency[colombia];
-    document.getElementById("id-today").textContent=parseInt(today[colombia]).toLocaleString();
     document.getElementById("id-goal").textContent=parseInt(goal[colombia]).toLocaleString();
     document.getElementById("id-inmunized").textContent=parseInt(inmunized[colombia]).toLocaleString();
     document.getElementById("id-percgoal").textContent=(parseInt(inmunized[colombia])/parseInt(goal[colombia])).toLocaleString();
@@ -557,6 +560,12 @@ function prepare_charts() {
     else {
         option_place.value = "Colombia";
     }
+
+    var idx_place = meta_data.column_names[option_place.value][0];
+    document.getElementById("id-effectivity").textContent=meta_data.perc_accum[idx_place];
+    document.getElementById("id-today").textContent=meta_data.applied_today[idx_place].toLocaleString();
+    document.getElementById("id-accumulated").textContent=meta_data.accumulated[idx_place].toLocaleString();
+
     select_place();
 
     geojson = L.geoJson(statesData, {
