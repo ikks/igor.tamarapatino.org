@@ -45,6 +45,8 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 * Alertas
     * No se colocaron vacunas o fue un porcentaje muy bajo
     * Se ha excedido el porcentaje de las vacunas que fueron asignadas
+    * La cantidad de dosis está disminuyendo
+    * Se está llegando al tope de la cantidad de vacunas para un departamento
     * Mostrar con colores la meta que estamos mostrando
 
 * Incluir información de la población
