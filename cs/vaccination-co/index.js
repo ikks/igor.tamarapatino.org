@@ -1,6 +1,7 @@
 var meta_data = {
     column_names: {},
     column_divip: {},
+    max_applied: {},
     population: [],
     dept_names: [],
     latest_vac: [],
@@ -30,6 +31,7 @@ var geojson;
 var info;
 var target_to_clean;
 var text_dialog = "";
+var colombia = 0;
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
@@ -351,6 +353,11 @@ function closedialog() {
     document.getElementById("loading").style.display = "none";
 }
 
+function closeoverlay() {
+    document.getElementById("overlay-thing").style.display = "none";
+}
+
+
 function processSheetsData(response) {
     var sheets = response.result;
     var rows = sheets.valueRanges[ID_ORIG].values.length;
@@ -543,10 +550,11 @@ function prepare_charts() {
     var efficiency = array_2[array_2.length - 2];
     var applied = meta_data.applied_today[meta_data.applied_today.length - 1];
     var accumulated = array_2[array_2.length - 4];
-    var colombia = remaining.length - 1;
     var goal = meta_data.goal[0];
     var today = meta_data.applied_today;
     var inmunized = meta_data.inmunized;
+
+    colombia = remaining.length - 1;
 
     document.getElementById("id-doze").textContent=(parseInt(accumulated[colombia]) - parseInt(remaining[colombia])).toLocaleString();
     document.getElementById("id-latest-date").textContent=meta_data.latest_date;
@@ -578,7 +586,18 @@ function prepare_charts() {
     document.getElementById("close-dialog").style.display = "block";
     document.getElementById("id-maincall").innerHTML = text_dialog;
     document.getElementById("id-head-maincall").innerHTML = "¡Comparte este tablero!";
+    fill_estimated_dates();
     console.log("Glad your here, let's meet at Github");
+}
+
+function fill_estimated_dates() {
+    document.getElementById("id-optimistic-date").innerHTML = "¿?";
+    document.getElementById("id-maximum-applied-projection").innerHTML = "¿?";
+    document.getElementById("id-expectation-date").innerHTML = "¿?";
+    document.getElementById("id-today-applied-projection").innerHTML = "¿?";
+    document.getElementById("id-mean-date").innerHTML = "¿?";
+    document.getElementById("id-today-mean-projection").innerHTML = "¿?";
+    document.getElementById("id-goal-vaccines").innerHTML = "¿?";
 }
 
 function funnel_setup(){

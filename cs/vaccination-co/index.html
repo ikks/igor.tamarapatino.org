@@ -96,13 +96,13 @@
     </div>
 
     <!-- Overlay -->
-<div style="z-index: 2005;display:none" class="absolute inset-0 overflow-hidden">
+<div style="z-index: 2005;display: none;" id="overlay-thing" class="absolute inset-0 overflow-hidden">
   <div class="absolute inset-0 overflow-hidden">
     <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
 
       <div class="relative w-screen max-w-md">
-        <div class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
+        <div onclick="closeoverlay()" class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
           <button class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
             <span class="sr-only">Close panel</span>
             <!-- Heroicon name: outline/x -->
@@ -118,19 +118,19 @@
               <div class="h-full border-2 border-dashed border-gray-200" aria-hidden="true">
                 <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                   <div class="px-4 py-2">
-                      <h5 class="font-bold uppercase text-gray-500">NIKE AIR</h5>
+                      <h5 class="font-bold uppercase text-gray-500"><span id="id-optimistic-date">¿?</span></h5>
                       <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Fecha optimista, corresponde a la fecha en la que finalizaría la vacunación si se aplicara diariamente <span id="id-maximum-applied-projection">tantas</span> vacunas. Es la mayor aplicada hasta ahora.</p>
                   </div>
                 </div>
                 <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                   <div class="px-4 py-2">
-                      <h5 class="font-bold uppercase text-gray-500">NIKE AIR</h5>
+                      <h5 class="font-bold uppercase text-gray-500"><span id="id-expectation-date">¿?</span></h5>
                       <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Fecha con tendencia: corresponde a la fecha en la que se finalizaría la vacunación si se aplicara diariamente <span id="id-today-applied-projection">tantas</span> vacunas. Es la información de la aplicación más reciente.</p>
                   </div>
                 </div>
                 <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                   <div class="px-4 py-2">
-                      <h5 class="font-bold uppercase text-gray-500">NIKE AIR</h5>
+                      <h5 class="font-bold uppercase text-gray-500"><span id="id-mean-date">¿?</span></h5>
                       <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Fecha convergencia: corresponde a la fecha en la que se finalizaría la vacunación si se aplicara diariamente <span id="id-today-mean-projection">tantas</span> vacunas. Es la información del promedio de aplicación.</p>
                   </div>
                 </div>
