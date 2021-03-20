@@ -14,7 +14,7 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * 5 más efectivos y 5 menos efectivos
     * Que la edición no dañe los datos
     * Compra de vacunas
-    * Infografía de etapas para vacunas
+    * Infografía de etapas para vacunas, se puede usar [tailblocks STEP](https://tailblocks.cc/)
     * Infografía de gastos de vacunación
     * Recepción: Cada vez que llega un cargamento al país
     * Asignación: Resolución Ministerial para la entrega
@@ -73,4 +73,5 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 * John Alexis Guerra Gómez por el geojson
 * Leaflet por la librería para proyectar mapas
 * Tailwindcss y tailwindtoolbox por la facilidad para organizar el contenido y los estilos
+* Alasql por la librería para trabajar estilo SQL
 * [https://docs.google.com/spreadsheets/d/1RtLLkqkKDbJFKugmiCOv9uwNbceyTcnfwDhSQZeJKWA/edit?ts=603328dc#gid=2105845351](Datos recopilados) por [María del Pilar Sáenz](https://twitter.com/mapisaro/)
