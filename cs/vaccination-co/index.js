@@ -560,7 +560,7 @@ function prepare_charts() {
     document.getElementById("id-latest-date").textContent=meta_data.latest_date;
     document.getElementById("id-goal").textContent=parseInt(goal[colombia]).toLocaleString();
     document.getElementById("id-inmunized").textContent=parseInt(inmunized[colombia]).toLocaleString();
-    document.getElementById("id-percgoal").textContent=(parseInt(inmunized[colombia])/parseInt(goal[colombia])).toLocaleString();
+    document.getElementById("id-percgoal").textContent=(100 * parseInt(inmunized[colombia])/parseInt(goal[colombia])).toFixed(1).toLocaleString();
 
     if (urlParams.get('place') in meta_data.column_names) {
         option_place.value = urlParams.get('place');
