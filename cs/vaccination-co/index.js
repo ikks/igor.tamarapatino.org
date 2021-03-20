@@ -590,13 +590,47 @@ function prepare_charts() {
     console.log("Glad your here, let's meet at Github");
 }
 
+Date.prototype.addDays = function(days) {
+    var date = new Date(this.valueOf());
+    date.setDate(date.getDate() + days);
+    return date;
+}
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2)
+        month = '0' + month;
+    if (day.length < 2)
+        day = '0' + day;
+
+    return [year, month, day].join('-');
+}
+
 function fill_estimated_dates() {
-    document.getElementById("id-optimistic-date").innerHTML = "¿?";
-    document.getElementById("id-maximum-applied-projection").innerHTML = "¿?";
-    document.getElementById("id-expectation-date").innerHTML = "¿?";
-    document.getElementById("id-today-applied-projection").innerHTML = "¿?";
-    document.getElementById("id-mean-date").innerHTML = "¿?";
-    document.getElementById("id-today-mean-projection").innerHTML = "¿?";
+    var today_raw = alasql(`SELECT [0] AS m FROM ? WHERE [2] = "-1" ORDER BY [0] DESC`, [array] )[0].m;
+    var applied_today = parseInt(alasql(`SELECT [${ colombia }] AS m FROM ? WHERE [2] = "Aplicadas" AND [0] = "${ today_raw }"`, [array_2] )[0].m);
+    var mean_applied = parseInt(alasql(`SELECT avg(cast([${ colombia }] as int)) AS m FROM ? WHERE [2] = "Aplicadas"`, [array_2] )[0].m);
+
+    var today = new Date(today_raw);
+    var accumulated = alasql(`SELECT [${ colombia }] AS m FROM ? WHERE [2] = "-1" AND [0] = "${ today_raw }"`, [array] )[0].m;
+    var max_applied = alasql(`SELECT max(cast([${ colombia }] as int)) AS m FROM ? WHERE [2] = "Aplicadas"`, [array_2] )[0].m;
+    var first_date = alasql('SELECT [0] AS m FROM ? WHERE [2] = "-1" LIMIT 1', [array] )[0].m;
+    var bought_vaccines = 61500000;
+    var remaining = bought_vaccines - accumulated;
+    var optimistic_date = today.addDays(parseInt(remaining/ max_applied));
+    var expectation_date = today.addDays(parseInt(remaining/ applied_today));
+    var mean_date = today.addDays(parseInt(remaining/ mean_applied));
+
+    document.getElementById("id-optimistic-date").innerHTML = formatDate(optimistic_date);
+    document.getElementById("id-maximum-applied-projection").innerHTML = max_applied.toLocaleString();
+    document.getElementById("id-expectation-date").innerHTML = formatDate(expectation_date);
+    document.getElementById("id-today-applied-projection").innerHTML = applied_today.toLocaleString();
+    document.getElementById("id-mean-date").innerHTML = formatDate(mean_date);
+    document.getElementById("id-today-mean-projection").innerHTML = mean_applied.toLocaleString();
     document.getElementById("id-goal-vaccines").innerHTML = "¿?";
 }
 

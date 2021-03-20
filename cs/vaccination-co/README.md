@@ -14,6 +14,8 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * 5 más efectivos y 5 menos efectivos
     * Que la edición no dañe los datos
     * Compra de vacunas
+    * Infografía de etapas para vacunas
+    * Infografía de gastos de vacunación
     * Recepción: Cada vez que llega un cargamento al país
     * Asignación: Resolución Ministerial para la entrega
     * Distribución: Deben llegar a los sitios donde se aplica
@@ -21,7 +23,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Inmunización: Dependiendo del tipo de vacuna
     * Reinicializar el mapa para ver Colombia
 * [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
-* Estimar en cuánto tiempo se puede finalizar la vacunación
 * Visibilizar la información de eficiencia:
     * [Porcentaje de dosis administradas](https://twitter.com/rundav5/status/1366560712349351936)
     * Días en los cuales no ha habido vacunación
@@ -40,7 +41,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Administrativos
 
 * Vincular con datos de otros países para hacer comparativa
-* Cantidad de vacunas promedio aplicadas
 
 * Alertas
     * No se colocaron vacunas o fue un porcentaje muy bajo
