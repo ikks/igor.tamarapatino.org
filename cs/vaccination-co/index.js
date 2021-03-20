@@ -32,6 +32,7 @@ var info;
 var target_to_clean;
 var text_dialog = "";
 var colombia = 0;
+var bought_vaccines = 61500000;
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
@@ -631,8 +632,33 @@ function fill_estimated_dates() {
     document.getElementById("id-today-applied-projection").innerHTML = applied_today.toLocaleString();
     document.getElementById("id-mean-date").innerHTML = formatDate(mean_date);
     document.getElementById("id-today-mean-projection").innerHTML = mean_applied.toLocaleString();
-    document.getElementById("id-goal-vaccines").innerHTML = "¿?";
+    document.getElementById("id-goal-vaccines").innerHTML = bought_vaccines.toLocaleString();
 }
+
+function changeActiveTab(event,tabID){
+    let element = event.target;
+    while(element.nodeName !== "A"){
+      element = element.parentNode;
+    }
+    ulElement = element.parentNode.parentNode;
+    aElements = ulElement.querySelectorAll("li > a");
+    tabContents = document.getElementById("tabs-id").querySelectorAll(".tab-content > div");
+    for(let i = 0 ; i < aElements.length; i++){
+      aElements[i].classList.remove("text-white");
+      aElements[i].classList.remove("bg-blue-600");
+      aElements[i].classList.add("text-blue-600");
+      aElements[i].classList.add("bg-white");
+      tabContents[i].classList.add("hidden");
+      tabContents[i].classList.remove("block");
+    }
+    element.classList.remove("text-blue-600");
+    element.classList.remove("bg-white");
+    element.classList.add("text-white");
+    element.classList.add("bg-blue-600");
+    document.getElementById(tabID).classList.remove("hidden");
+    document.getElementById(tabID).classList.add("block");
+  }
+
 
 function funnel_setup(){
     Highcharts.chart('container-funnel', {

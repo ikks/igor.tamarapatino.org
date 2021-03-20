@@ -22,13 +22,13 @@
     <script src="https://code.highcharts.com/9.0.1/modules/funnel.js"></script>
     <script type="text/javascript" src="colombia-geo.js"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      // })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
     
-      ga('create', 'UA-6764967-1', 'auto');
-      ga('send', 'pageview');
+      // ga('create', 'UA-6764967-1', 'auto');
+      // ga('send', 'pageview');
     
     </script>
     <script src="https://use.fontawesome.com/f1e87b04b4.js"></script>
@@ -97,7 +97,7 @@
     </div>
 
     <!-- Overlay -->
-<div style="z-index: 2005;display: none;" id="overlay-thing" class="absolute inset-0 overflow-hidden">
+<div style="z-index: 2005;" id="overlay-thing" class="absolute inset-0 overflow-hidden">
   <div class="absolute inset-0 overflow-hidden">
     <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
@@ -112,16 +112,34 @@
             </svg>
           </button>
         </div>
-        <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+        <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll" id="tabs-id">
           <div class="mt-2 relative flex-1 px-2 sm:px-6">
             <!-- Replace with your content -->
             <div class="px-4 sm:px-6">
-              <h3 class="font-bold text-3xl">
-                ¿Cuándo inmunidad?
-              </h3>
+              <ul class="flex mb-0 list-none flex-wrap flex-row">
+                <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-white bg-blue-600" onclick="changeActiveTab(event,'tab-goal')">
+                    <i class="fas fa-calendar text-base mr-1"></i>
+                  </a>
+                </li>
+                <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-blue-600 bg-white" onclick="changeActiveTab(event,'tab-costs')">
+                    <i class="fas fa-usd text-base mr-1"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="mt-6 absolute inset-0 px-4 sm:px-6">
               <div class="h-full" aria-hidden="true">
+                <div class="tab-content tab-space">
+                  <div class="block" id="tab-goal">
+                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg dark:bg-gray-800">
+                  <div class="px-4 py-2">
+                    <h3 class="font-bold text-2xl">
+                      ¿Cuándo inmunidad?
+                    </h3>
+                  </div>
+                </div>
                 <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                   <div class="px-4 py-2">
                       <h5 class="font-bold uppercase text-gray-500"><span id="id-optimistic-date">¿?</span> Optimista</h5>
@@ -143,7 +161,7 @@
                 <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                   <div class="px-4 py-2">
                       <h5 class="font-bold uppercase text-gray-500">Simulador</h5>
-                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">¿Cuántas vacunas se requerirían aplicar a diario para llegar a la inmunidad de rebaño este año? Proximamente podrás experimentar con las 61.500.000 dosis que compró el gobierno nacional...</p>
+                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">¿Cuántas vacunas se requerirían aplicar a diario para llegar a la inmunidad de rebaño este año? Proximamente podrás experimentar con las <span id="id-goal-vaccines">61.500.000</span> dosis que compró el gobierno nacional con nuestros impuestos...</p>
                   </div>
                 </div>
 
@@ -153,6 +171,18 @@
                       <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Dada una fecha objetivo podemos calcular la cantidad de vacunas que se requeriría colocar a diario para lograrlo. Si se pretende alcanzar la meta de <span id="id-goal-vaccines">tantas</span></p>
                   </div>
                 </div> -->
+                </div>
+
+                <div class="hidden" id="tab-costs">
+                  <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg dark:bg-gray-800">
+                    <div class="px-4 py-2">
+                      <h3 class="font-bold text-2xl">
+                        Costos Vacunación
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+                </div>
               </div>
             </div>
             <!-- /End replace -->
@@ -162,7 +192,6 @@
     </section>
   </div>
 </div>
-
     <!--Container-->
     <div class="container w-full mx-auto pt-28 md:pt-8">
       <div class="w-full px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
