@@ -75,3 +75,4 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 * Tailwindcss y tailwindtoolbox por la facilidad para organizar el contenido y los estilos
 * Alasql por la librería para trabajar estilo SQL
 * [https://docs.google.com/spreadsheets/d/1RtLLkqkKDbJFKugmiCOv9uwNbceyTcnfwDhSQZeJKWA/edit?ts=603328dc#gid=2105845351](Datos recopilados) por [María del Pilar Sáenz](https://twitter.com/mapisaro/)
+* Dan ShadowFire está actualizando diariamente la información, le encanta leer y escribir. Su libro más actual [El futuro de la magia](https://www.wattpad.com/story/212268083?utm_source=android&utm_medium=org.telegram.messenger&utm_content=story_info&wp_page=story_details_button&wp_uname=Dan_Shadowfire&wp_originator=Ku8DXXA8AvO0%2BrR7S%2BUFOz89LqG3PlgD%2Fd17HQ%2FQe0K8x2i1pEeMqDbByYznSCYOu9iBnElnTek2Xpppbm63cLwXb0mG4p0fsLb8TeCCha689eFR6NkzgRC3vPBRwcpn).
