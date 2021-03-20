@@ -16,6 +16,7 @@
     <link href="https://unpkg.com/tailwindcss@next/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
     <link href="main.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alasql"></script>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
     <script src="https://code.highcharts.com/9.0.1/highcharts.js"></script>
     <script src="https://code.highcharts.com/9.0.1/modules/funnel.js"></script>
@@ -57,34 +58,14 @@
     </nav>
 
     <!-- Loader Modal -->
-    <div id="loading" data-spreadsheetid="1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E" class="fixed inset-0 overflow-y-auto" style="z-index: 2000;">
+    <div id="loading" data-spreadsheetid="1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E" class="fixed inset-0 overflow-y-auto" style="z-index: 2010;">
       <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-        <!--
-          Background overlay, show/hide based on modal state.
-
-          Entering: "ease-out duration-300"
-            From: "opacity-0"
-            To: "opacity-100"
-          Leaving: "ease-in duration-200"
-            From: "opacity-100"
-            To: "opacity-0"
-        -->
         <div class="fixed inset-0 transition-opacity" aria-hidden="true">
           <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
         </div>
 
         <!-- This element is to trick the browser into centering the modal contents. -->
         <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-        <!--
-          Modal panel, show/hide based on modal state.
-
-          Entering: "ease-out duration-300"
-            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            To: "opacity-100 translate-y-0 sm:scale-100"
-          Leaving: "ease-in duration-200"
-            From: "opacity-100 translate-y-0 sm:scale-100"
-            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-        -->
         <div class="inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full" role="dialog" aria-modal="true" aria-labelledby="modal-headline">
           <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div class="sm:flex sm:items-start">
@@ -107,13 +88,80 @@
             </div>
             <div class="content-center bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
               <button id="close-dialog" onclick="closedialog()" style="display:none" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" disabled="disabled">
-                Vale
+                ¡Listo!
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Overlay -->
+<div style="z-index: 2005;" id="overlay-thing" class="absolute inset-0 overflow-hidden">
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+    <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
+
+      <div class="relative w-screen max-w-md">
+        <div onclick="closeoverlay()" class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
+          <button class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+            <span class="sr-only">Close panel</span>
+            <!-- Heroicon name: outline/x -->
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+        <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
+          <div class="mt-2 relative flex-1 px-2 sm:px-6">
+            <!-- Replace with your content -->
+            <div class="px-4 sm:px-6">
+              <h3 class="font-bold text-3xl">
+                ¿Cuándo inmunidad?
+              </h3>
+            </div>
+            <div class="mt-6 absolute inset-0 px-4 sm:px-6">
+              <div class="h-full" aria-hidden="true">
+                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                  <div class="px-4 py-2">
+                      <h5 class="font-bold uppercase text-gray-500"><span id="id-optimistic-date">¿?</span> Optimista</h5>
+                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-maximum-applied-projection">tantas</span> vacunas. Es la máxima cantidad aplicada hasta ahora.</p>
+                  </div>
+                </div>
+                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                  <div class="px-4 py-2">
+                      <h5 class="font-bold uppercase text-gray-500"><span id="id-expectation-date">¿?</span> Tendencia</h5>
+                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-today-applied-projection">tantas</span> vacunas. La cantidad aplicada en el reporte más reciente.</p>
+                  </div>
+                </div>
+                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                  <div class="px-4 py-2">
+                      <h5 class="font-bold uppercase text-gray-500"><span id="id-mean-date">¿?</span> Promedio</h5>
+                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-today-mean-projection">tantas</span> vacunas de acuerdo al promedio actual.</p>
+                  </div>
+                </div>
+                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                  <div class="px-4 py-2">
+                      <h5 class="font-bold uppercase text-gray-500">Simulador</h5>
+                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">¿Cuántas vacunas se requerirían aplicar a diario para llegar a la inmunidad de rebaño este año? Proximamente podrás experimentar con las 61.500.000 dosis que compró el gobierno nacional...</p>
+                  </div>
+                </div>
+
+                <!-- <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                  <div class="px-4 py-2">
+                      <h5 class="font-bold uppercase text-gray-500">SIMULADOR</h5>
+                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Dada una fecha objetivo podemos calcular la cantidad de vacunas que se requeriría colocar a diario para lograrlo. Si se pretende alcanzar la meta de <span id="id-goal-vaccines">tantas</span></p>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+            <!-- /End replace -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
 
     <!--Container-->
     <div class="container w-full mx-auto pt-28 md:pt-8">
@@ -124,61 +172,16 @@
           <!--Console Content-->
 
           <div class="flex flex-wrap">
-              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                  <!--Metric Card-->
-                  <div class="bg-white border rounded shadow p-2">
-                      <div class="flex flex-row items-center">
-                          <div class="flex-shrink pr-4">
-                              <div class="rounded p-3 bg-green-600"><i class="fas fa-wallet fa-2x fa-fw fa-inverse"></i></div>
-                          </div>
-                          <div class="flex-1 text-right md:text-center">
-                              <h5 class="font-bold uppercase text-gray-500">Dosis Aplicadas</h5>
-                              <h3 class="font-bold text-3xl"><span id="id-doze">0</span> <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
-                          </div>
-                      </div>
-                  </div>
-                  <!--/Metric Card-->
-              </div>
-              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                  <!--Metric Card-->
-                  <div class="bg-white border rounded shadow p-2">
-                      <div class="flex flex-row items-center">
-                          <div class="flex-shrink pr-4">
-                              <div class="rounded p-3 bg-pink-600"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
-                          </div>
-                          <div class="flex-1 text-right md:text-center">
-                              <h5 class="font-bold uppercase text-gray-500">Efectividad</h5>
-                              <h3 class="font-bold text-3xl"><span id="id-effectivity">0</span></h3>
-                          </div>
-                      </div>
-                  </div>
-                  <!--/Metric Card-->
-              </div>
-              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                  <!--Metric Card-->
-                  <div class="bg-white border rounded shadow p-2">
-                      <div class="flex flex-row items-center">
-                          <div class="flex-shrink pr-4">
-                              <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i></div>
-                          </div>
-                          <div class="flex-1 text-right md:text-center">
-                              <h5 class="font-bold uppercase text-gray-500">Asignadas</h5>
-                              <h3 class="font-bold text-3xl"><span id="id-accumulated">0</span> <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
-                          </div>
-                      </div>
-                  </div>
-                  <!--/Metric Card-->
-              </div>
-              <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
                 <!--Metric Card-->
                 <div class="bg-white border rounded shadow p-2">
                     <div class="flex flex-row items-center">
                         <div class="flex-shrink pr-4">
-                            <div class="rounded p-3 bg-blue-600"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
+                            <div class="rounded p-3 bg-green-600"><i class="fas fa-wallet fa-2x fa-fw fa-inverse"></i></div>
                         </div>
                         <div class="flex-1 text-right md:text-center">
-                            <h5 class="font-bold uppercase text-gray-500">Dosis más recientes</h5>
-                            <h3 class="font-bold text-3xl"><span id="id-today">0</span></h3>
+                            <h5 class="font-bold uppercase text-gray-500">Dosis Aplicadas</h5>
+                            <h3 class="font-bold text-3xl"><span id="id-doze">0</span> <span class="text-green-500"><i class="fas fa-caret-up"></i></span></h3>
                         </div>
                     </div>
                 </div>
@@ -198,22 +201,67 @@
                   </div>
               </div>
               <!--/Metric Card-->
-          </div>
-          <div class="w-full md:w-1/2 xl:w-1/3 p-3">
-                <!--Metric Card-->
-                <div class="bg-white border rounded shadow p-2">
-                    <div class="flex flex-row items-center">
-                        <div class="flex-shrink pr-4">
-                            <div class="rounded p-3 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-fw fa-inverse"></i></div>
-                        </div>
-                        <div class="flex-1 text-right md:text-center">
-                            <h5 class="font-bold uppercase text-gray-500">Meta Etapa 1</h5>
-                            <h3 style="display: block;" class="font-bold text-3xl"><span id="id-goal">36.000.000</span> (<span id="id-percgoal" class="text-red-500">0</span>%)</h3>
-                        </div>
-                    </div>
-                </div>
-                <!--/Metric Card-->
             </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <!--Metric Card-->
+              <div class="bg-white border rounded shadow p-2">
+                  <div class="flex flex-row items-center">
+                      <div class="flex-shrink pr-4">
+                          <div class="rounded p-3 bg-indigo-600"><i class="fas fa-tasks fa-2x fa-fw fa-inverse"></i></div>
+                      </div>
+                      <div class="flex-1 text-right md:text-center">
+                          <h5 class="font-bold uppercase text-gray-500">Meta Etapa 1</h5>
+                          <h3 style="display: block;" class="font-bold text-3xl"><span id="id-goal">36.000.000</span> (<span id="id-percgoal" class="text-red-500">0</span>%)</h3>
+                      </div>
+                  </div>
+              </div>
+              <!--/Metric Card-->
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <!--Metric Card-->
+              <div class="bg-white border rounded shadow p-2">
+                  <div class="flex flex-row items-center">
+                      <div class="flex-shrink pr-4">
+                          <div class="rounded p-3 bg-yellow-600"><i class="fas fa-user-plus fa-2x fa-fw fa-inverse"></i></div>
+                      </div>
+                      <div class="flex-1 text-right md:text-center">
+                          <h5 class="font-bold uppercase text-gray-500">Asignadas</h5>
+                          <h3 class="font-bold text-3xl"><span id="id-accumulated">0</span> <span class="text-pink-500"><i class="fas fa-exchange-alt"></i></span></h3>
+                      </div>
+                  </div>
+              </div>
+              <!--/Metric Card-->
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <!--Metric Card-->
+              <div class="bg-white border rounded shadow p-2">
+                  <div class="flex flex-row items-center">
+                      <div class="flex-shrink pr-4">
+                          <div class="rounded p-3 bg-blue-600"><i class="fas fa-server fa-2x fa-fw fa-inverse"></i></div>
+                      </div>
+                      <div class="flex-1 text-right md:text-center">
+                          <h5 class="font-bold uppercase text-gray-500">Dosis más recientes</h5>
+                          <h3 class="font-bold text-3xl"><span id="id-today">0</span></h3>
+                      </div>
+                  </div>
+              </div>
+              <!--/Metric Card-->
+            </div>
+            <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+              <!--Metric Card-->
+              <div class="bg-white border rounded shadow p-2">
+                  <div class="flex flex-row items-center">
+                      <div class="flex-shrink pr-4">
+                          <div class="rounded p-3 bg-pink-600"><i class="fas fa-users fa-2x fa-fw fa-inverse"></i></div>
+                      </div>
+                      <div class="flex-1 text-right md:text-center">
+                          <h5 class="font-bold uppercase text-gray-500">Efectividad</h5>
+                          <h3 class="font-bold text-3xl"><span id="id-effectivity">0</span>%</h3>
+                      </div>
+                  </div>
+              </div>
+              <!--/Metric Card-->
+          </div>
           </div>
 
           <!--Divider-->
@@ -257,7 +305,7 @@
                   <div class="px-8">
                       <h3 class="font-bold font-bold text-gray-900">Acerca de</h3>
                       <p class="py-4 text-gray-600 text-sm">
-                          Los datos aquí presentados son tomados a dario de <a class="underline" href="https://www.minsalud.gov.co/salud/publica/Vacunacion/Paginas/Vacunacion-covid-19.aspx">MinSalud</a>. Si tienes ideas de cómo mejorar este tablero, <a class="text-gray-600 underline hover:text-gray-900 hover:text-underline" href="https://twitter.com/ikks">déjanos saber</a>
+                          Los datos aquí presentados son tomados a diario de <a class="underline" href="https://www.minsalud.gov.co/salud/publica/Vacunacion/Paginas/Vacunacion-covid-19.aspx">MinSalud</a>. Si tienes ideas de cómo mejorar este tablero, <a class="text-gray-600 underline hover:text-gray-900 hover:text-underline" href="https://twitter.com/ikks">déjanos saber</a>
                       </p>
                   </div>
               </div>
@@ -277,6 +325,9 @@
                           </li>
                           <li>
                             <i class="fa fa-server"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://datastudio.google.com/u/0/reporting/76870d50-6089-4cfc-9db3-6b1ff3054866/page/BTV4B">Otra herramienta</a>
+                          </li>
+                          <li>
+                            <i class="fa fa-telegram"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://t.me/vac19co">Notificaciones</a>
                         </li>
                       </ul>
                   </div>
@@ -285,7 +336,7 @@
       </div>
   </footer>
   </body>
-  <script src="./index2.js"></script>
+  <script src="./index.js"></script>
   <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
