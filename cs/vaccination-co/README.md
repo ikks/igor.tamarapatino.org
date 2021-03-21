@@ -61,8 +61,20 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 ## Desarrollo local
 
 - Clone el repositorio.
-- Puede [servir localmente los archivos](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server) para evitar problemas de CORS y poder visualizar los datos.
+- Puede servir localmente los archivos localmente ubicándose en el directorio donde está index.html y ejecutando
+```
+python3 -m http.server 8069
+```
+- Puede ver localmente el resultado visitando http://localhost:8069/index2.html (más de index2 en la siguiente sección).
 - Edite los archivos y haga un pull request
+
+### Preproducción
+
+El resultado de lo que hacemos está en index.html y usamos index2.html para trabajar en las nuevas características.
+
+Puede comparar index.html e index2.html.
+
+Siéntase libre de hacer pull request a index2.html o a index.html, de acuerdo a lo que esté trabajando.
 
 # Gracias a
 
