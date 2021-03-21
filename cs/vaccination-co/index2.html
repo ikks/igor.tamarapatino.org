@@ -102,7 +102,9 @@
     <div class="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <section class="absolute inset-y-0 right-0 pl-10 max-w-full flex" aria-labelledby="slide-over-heading">
 
+
       <div class="relative w-screen max-w-md">
+
         <div onclick="closeoverlay()" class="absolute top-0 left-0 -ml-8 pt-4 pr-2 flex sm:-ml-10 sm:pr-4">
           <button class="rounded-md text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
             <span class="sr-only">Close panel</span>
@@ -112,47 +114,157 @@
             </svg>
           </button>
         </div>
-        <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll">
-          <div class="mt-2 relative flex-1 px-2 sm:px-6">
+        <div class="h-full flex flex-col py-6 bg-white shadow-xl overflow-y-scroll" id="tabs-id">
+          <div class="relative flex-1 px-2 sm:px-6">
             <!-- Replace with your content -->
             <div class="px-4 sm:px-6">
-              <h3 class="font-bold text-3xl">
-                ¿Cuándo inmunidad?
-              </h3>
+              <ul class="flex mb-0 list-none flex-wrap flex-row">
+                <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-white bg-blue-600" onclick="changeActiveTab(event,'tab-goal')">
+                    <i class="fas fa-calendar text-base mr-1"></i>
+                  </a>
+                </li>
+                <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
+                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-blue-600 bg-white" onclick="changeActiveTab(event,'tab-costs')">
+                    <i class="fas fa-usd text-base mr-1"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
             <div class="mt-6 absolute inset-0 px-4 sm:px-6">
               <div class="h-full" aria-hidden="true">
-                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                  <div class="px-4 py-2">
-                      <h5 class="font-bold uppercase text-gray-500"><span id="id-optimistic-date">¿?</span> Optimista</h5>
-                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-maximum-applied-projection">tantas</span> vacunas. Es la máxima cantidad aplicada hasta ahora.</p>
-                  </div>
-                </div>
-                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                  <div class="px-4 py-2">
-                      <h5 class="font-bold uppercase text-gray-500"><span id="id-expectation-date">¿?</span> Tendencia</h5>
-                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-today-applied-projection">tantas</span> vacunas. La cantidad aplicada en el reporte más reciente.</p>
-                  </div>
-                </div>
-                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                  <div class="px-4 py-2">
-                      <h5 class="font-bold uppercase text-gray-500"><span id="id-mean-date">¿?</span> Promedio</h5>
-                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-today-mean-projection">tantas</span> vacunas de acuerdo al promedio actual.</p>
-                  </div>
-                </div>
-                <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                  <div class="px-4 py-2">
-                      <h5 class="font-bold uppercase text-gray-500">Simulador</h5>
-                      <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">¿Cuántas vacunas se requerirían aplicar a diario para llegar a la inmunidad de rebaño este año? Proximamente podrás experimentar con las 61.500.000 dosis que compró el gobierno nacional...</p>
-                  </div>
-                </div>
+                <div class="tab-content tab-space">
+                  <div class="block" id="tab-goal">
+                    <div class="max-w-xs mt-8 mx-auto overflow-hidden bg-white rounded-lg dark:bg-gray-800">
+                      <div class="px-4 py-2">
+                        <h3 class="font-bold text-2xl">
+                          ¿Cuándo inmunidad?
+                        </h3>
 
-                <!-- <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                      </div>
+                    </div>
+                    <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                      <div class="px-4 py-2">
+                          <h5 class="font-bold uppercase text-gray-500"><span id="id-optimistic-date">¿?</span> Optimista</h5>
+                          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-maximum-applied-projection">tantas</span> vacunas. Es la máxima cantidad aplicada hasta ahora.</p>
+                      </div>
+
+                    </div>
+                    <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                      <div class="px-4 py-2">
+                          <h5 class="font-bold uppercase text-gray-500"><span id="id-expectation-date">¿?</span> Tendencia</h5>
+                          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-today-applied-projection">tantas</span> vacunas. La cantidad aplicada en el reporte más reciente.</p>
+                      </div>
+                    </div>
+                    <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                      <div class="px-4 py-2">
+                          <h5 class="font-bold uppercase text-gray-500"><span id="id-mean-date">¿?</span> Promedio</h5>
+                          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Si se aplicara diariamente <span id="id-today-mean-projection">tantas</span> vacunas de acuerdo al promedio actual.</p>
+                      </div>
+                    </div>
+                    <div class="max-w-xs my-8 mx-auto overflow-hidden
+                    bg-white rounded-lg shadow-lg dark:bg-gray-800">
+                      <div class="px-4 py-2">
+                          <h5 class="font-bold uppercase text-gray-500">Simulador</h5>
+                          <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">¿Cuántas vacunas se requerirían aplicar a diario para llegar a la inmunidad de rebaño este año? Proximamente podrás experimentar con las <span id="id-goal-vaccines">61.500.000</span> dosis que compró el gobierno nacional con nuestros impuestos...</p>
+                      </div>
+
+                    </div>
+
+                    <!-- <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
                   <div class="px-4 py-2">
                       <h5 class="font-bold uppercase text-gray-500">SIMULADOR</h5>
                       <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">Dada una fecha objetivo podemos calcular la cantidad de vacunas que se requeriría colocar a diario para lograrlo. Si se pretende alcanzar la meta de <span id="id-goal-vaccines">tantas</span></p>
                   </div>
+
                 </div> -->
+                  </div>
+
+                  <div class="hidden" id="tab-costs">
+                    <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg dark:bg-gray-800">
+                      <div class="px-4 py-2">
+                        <h3 class="font-bold text-2xl">
+                          Costos Vacunación
+                        </h3>
+                        <p>Las vacunas no son gratis, los impuestos que pagamos y el trabajo que hace cada habitante del país contribuye al pago de lo que se requiere para salud pública.</p>
+                        <div class="flex flex-wrap w-full">
+                              <div class="md:py-6">
+                                <div class="flex relative pb-12">
+                                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                                  </div>
+                                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg>
+                                  </div>
+                                  <div class="flex-grow pl-4">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">COMPRA DE VACUNAS</h2>
+                                    <p class="leading-relaxed">La decisión de proteger al país incluyó el aporte de todos y cada uno de los colombianos, se hizo <a class="underline" target="blank" href="https://www.ofiscal.org/post/cu%C3%A1nta-plata-hemos-invertido-en-vacunas">pago a farmaceúticas</a> y a través de mecanismo Covax.</p>
+                                  </div>
+                                </div>
+                                <div class="flex relative pb-12">
+                                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                                  </div>
+                                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                                    </svg>
+                                  </div>
+                                  <div class="flex-grow pl-4">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">TRANSPORTE</h2>
+                                    <p class="leading-relaxed">Llevar las vacunas a los sitios de vacunación manteniendo las condiciones para que estas se mantengan de acuerdo a las especificaciones en ciertos casos exige una cadena de frío estricta.</p>
+                                  </div>
+                                </div>
+                                <div class="flex relative pb-12">
+                                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                                  </div>
+                                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <circle cx="12" cy="5" r="3"></circle>
+                                      <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+                                    </svg>
+                                  </div>
+                                  <div class="flex-grow pl-4">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">APLICACIÓN</h2>
+                                    <p class="leading-relaxed">Se eligió a las Empresas Prestadoras de Salud para aplicar las vacunas, la logística para aplicar millones de dosis implica personal capacitado, insumos y administración.</p>
+                                  </div>
+                                </div>
+                                <div class="flex relative pb-12">
+                                  <div class="h-full w-10 absolute inset-0 flex items-center justify-center">
+                                    <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+                                  </div>
+                                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                                      <circle cx="12" cy="7" r="4"></circle>
+                                    </svg>
+                                  </div>
+                                  <div class="flex-grow pl-4">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">SEGUIMIENTO</h2>
+                                    <p class="leading-relaxed">Comunicarse con las personas que recibieron las dosis y hacer seguimiento del estado según estas reportan es un costo que debe asumirse.</p>
+                                  </div>
+                                </div>
+                                <div class="flex relative">
+                                  <div class="flex-shrink-0 w-10 h-10 rounded-full bg-yellow-500 inline-flex items-center justify-center text-white relative z-10">
+                                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                      <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                                      <path d="M22 4L12 14.01l-3-3"></path>
+                                    </svg>
+                                  </div>
+                                  <div class="flex-grow pl-4">
+                                    <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">INFORMACIÓN</h2>
+                                    <p class="leading-relaxed">Sistematizar la información de millones de personas y asegurar que se atienden las alertas tiene costos asociados.</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- /End replace -->
@@ -162,7 +274,6 @@
     </section>
   </div>
 </div>
-
     <!--Container-->
     <div class="container w-full mx-auto pt-28 md:pt-8">
       <div class="w-full px-0 md:mt-8 mb-16 text-gray-800 leading-normal">
@@ -314,20 +425,23 @@
                   <div class="px-8">
                       <h3 class="font-bold font-bold text-gray-900">Más</h3>
                       <ul class="list-reset items-center text-sm pt-3">
-                          <li>
-                              <i class="fa fa-twitter-square"></i> <a name="about" class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://twitter.com/mapisaro">Análisis Diario</a>
-                          </li>
-                          <li>
-                            <i class="fa fa-book"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://docs.google.com/spreadsheets/d/1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E/edit#gid=0">Fuente de Datos</a>
-                          </li>
-                          <li>
-                            <i class="fa fa-github-square"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://github.com/ikks/ikks.github.io/tree/master/cs/vaccination-co">Github</a>
-                          </li>
-                          <li>
-                            <i class="fa fa-server"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://datastudio.google.com/u/0/reporting/76870d50-6089-4cfc-9db3-6b1ff3054866/page/BTV4B">Otra herramienta</a>
-                          </li>
-                          <li>
-                            <i class="fa fa-telegram"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://t.me/vac19co">Notificaciones</a>
+                        <li>
+                            <i class="fa fa-twitter-square"></i> <a name="about" class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://twitter.com/search?q=%22%C2%BFC%C3%B3mo%20vamos%20con%20las%20vacunas%3F%22%20(from%3Amapisaro)&src=typed_query&f=live">Análisis Diario</a>
+                        </li>
+                        <li>
+                          <i class="fa fa-book"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://docs.google.com/spreadsheets/d/1z2KYfMvDMLHb3f1xQMDHM5Q9ll_vIwe764XBBQF7P2E/edit#gid=0">Fuente de Datos</a>
+                        </li>
+                        <li>
+                          <i class="fa fa-github-square"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://github.com/ikks/ikks.github.io/tree/master/cs/vaccination-co">Github</a>
+                        </li>
+                        <li>
+                          <i class="fa fa-server"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://datastudio.google.com/u/0/reporting/76870d50-6089-4cfc-9db3-6b1ff3054866/page/BTV4B">Otra herramienta</a>
+                        </li>
+                        <li>
+                          <i class="fa fa-telegram"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://t.me/vac19co">Notificaciones</a>
+                        </li>
+                        <li>
+                          <i class="fa fa-usd"></i> <a class="inline-block text-gray-600 underline hover:text-gray-900 hover:text-underline py-1" href="https://www.ofiscal.org/post/cu%C3%A1nta-plata-hemos-invertido-en-vacunas">Costos</a>
                         </li>
                       </ul>
                   </div>
