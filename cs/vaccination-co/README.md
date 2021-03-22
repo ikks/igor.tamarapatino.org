@@ -6,22 +6,27 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 * Colocar mapa de metas
     * Finalizar fase I
-    * Inmunizar a Colombia
+    * Meta de 70% en Colombia
+    * Mapa de cantidad de habitantes vacunados por cada 100
+
 * Cronograma Nacional: https://twitter.com/nineways123/status/1372235900227350528
 * Gasto en Vacunación: https://mobile.twitter.com/ofiscalpuj/status/1372358753534754818
 
 * Pasos
-    * 5 más efectivos y 5 menos efectivos
-    * Que la edición no dañe los datos
-    * Compra de vacunas
     * Infografía de etapas para vacunas, se puede usar [tailblocks STEP](https://tailblocks.cc/)
     * Infografía de gastos de vacunación
-    * Recepción: Cada vez que llega un cargamento al país
-    * Asignación: Resolución Ministerial para la entrega
-    * Distribución: Deben llegar a los sitios donde se aplica
-    * Aplicación: Reportado en PAI
-    * Inmunización: Dependiendo del tipo de vacuna
-    * Reinicializar el mapa para ver Colombia
+    * Compra de vacunas
+
+* Añadir inmunizaciones al mapa de área
+
+* Que la edición no dañe los datos
+* 5 más efectivos y 5 menos efectivos
+* Recepción: Cada vez que llega un cargamento al país
+* Asignación: Resolución Ministerial para la entrega
+* Distribución: Deben llegar a los sitios donde se aplica
+* Aplicación: Reportado en PAI
+* Inmunización: Dependiendo del tipo de vacuna
+* Reinicializar el mapa para ver Colombia
 * [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Visibilizar la información de eficiencia:
     * [Porcentaje de dosis administradas](https://twitter.com/rundav5/status/1366560712349351936)
