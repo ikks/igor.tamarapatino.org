@@ -337,7 +337,6 @@ function update_chart(i_col) {
         }
 
     }
-
     cum_chart.series[1].setData(row);
     cum_chart.series[0].setData(remain);
     day_chart.series[0].setData(applied);
@@ -519,9 +518,22 @@ function prepare_charts() {
             }
         },
 
-        xAxis: [{
-            visible: false
-        }],
+        xAxis: {
+            type: 'datetime',
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        plotOptions: {
+            spline: {
+                lineWidth: 3,
+                marker: {
+                    enabled: false
+                },
+                pointInterval: 86400000, // one day
+                pointStart: Date.UTC(2021, 1, 18, 5, 0, 0)
+            }
+        },
 
         series: [{
             name: 'Dosis'
