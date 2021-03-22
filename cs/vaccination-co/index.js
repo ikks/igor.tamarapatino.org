@@ -312,7 +312,7 @@ function update_chart(i_col) {
 
     for (r=0; r < array.length; r++){
         if (array[r][2] == "-1") {
-            var ele = [new Date(array[r][0]), parseInt(array[r][i_col] || 0)];
+            var ele = [array[r][0], parseInt(array[r][i_col] || 0)];
             row.push(ele); 
         }
     }
@@ -323,7 +323,7 @@ function update_chart(i_col) {
             accum.push(ele);
         }
         else if (array_2[r][2] == "Aplicadas") {
-            var ele = [new Date(array_2[r][0]), parseInt(array_2[r][i_col] || 0)];
+            var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
             applied.push(ele);
             accum[accum.length - 1][1] -= ele[1];
         }
@@ -337,7 +337,6 @@ function update_chart(i_col) {
         }
 
     }
-    console.log(applied)
     cum_chart.series[1].setData(row);
     cum_chart.series[0].setData(remain);
     day_chart.series[0].setData(applied);
@@ -532,7 +531,7 @@ function prepare_charts() {
                     enabled: false
                 },
                 pointInterval: 86400000, // one day
-                pointStart: Date.UTC(2021, 1, 17, 5, 0, 0)
+                pointStart: Date.UTC(2021, 1, 18, 5, 0, 0)
             }
         },
 
