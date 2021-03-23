@@ -554,20 +554,20 @@ function prepare_charts() {
                         fontStyle: 'italic'
                     },
                     text: 'Baja vacunación',
-                    x: -10
+                    x: 10
                 },
                 zIndex: 3
             }],
             maxPadding: 0.2,
             accessibility: {
-                rangeDescription: 'Range: 0 to 40000 dosis.'
+                rangeDescription: 'Range: aplicadas reciente por 10.000 habitantes.'
             }
         },
 
         tooltip: {
             useHTML: true,
             headerFormat: '<table>',
-            pointFormat: '<tr><th colspan="2"><h3>{point.full_name}</h3></th></tr>' +
+            pointFormat: '<tr><th colspan="2"><h3 class="text-xl">{point.full_name}</h3></th></tr>' +
                 '<tr><th>Efectividad:</th><td>{point.x}%</td></tr>' +
                 '<tr><th>Dosis día:</th><td>{point.today}</td></tr>' +
                 '<tr><th>Habitantes:</th><td>{point.z}</td></tr>',
