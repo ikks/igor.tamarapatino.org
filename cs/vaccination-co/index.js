@@ -614,12 +614,28 @@ function prepare_charts() {
             gridLineDashStyle: 'Dash'
         },
         xAxis: [{
-            visible: true
-        }, {
-            visible: false
-        }, {
-            visible: false
-        }],
+            visible: false,
+            type: 'datetime',
+            labels: {
+                overflow: 'justify'
+            }
+            },
+            {
+            visible: false,
+            type: 'datetime',
+            labels: {
+                overflow: 'justify'
+            }
+            },
+            {
+            visible: true,
+            type: 'datetime',
+            labels: {
+                overflow: 'justify'
+            }
+            }
+        ],
+        
         plotOptions: {
             area: {
                 stacking: 'normal',
@@ -634,7 +650,9 @@ function prepare_charts() {
                 }
             },
             series: {
-                fillOpacity: 0.1
+                fillOpacity: 0.1,
+                pointInterval: 86400000, // one day
+                pointStart: Date.UTC(2021, 1, 18, 5, 0, 0)
             }
         },
         tooltip: {
@@ -685,7 +703,7 @@ function prepare_charts() {
                 },
                 pointInterval: 86400000, // one day
                 pointStart: Date.UTC(2021, 1, 18, 5, 0, 0)
-            }
+            },
         },
 
         series: [{
