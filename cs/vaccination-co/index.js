@@ -24,6 +24,8 @@ var map_views = {
 
 var day_chart;
 var cum_chart;
+var compare_chart;
+var assign_chart;
 var array = [];
 var array_2 = [];
 var map;
@@ -442,6 +444,157 @@ function processSheetsData(response) {
 }
 
 function prepare_charts() {
+    let data_ok = [];
+    let data_warn = [];
+
+    for (let i=5;i<meta_data.dept_names.length - 1;i++) {
+        if (meta_data.applied_today[i]  > meta_data.population[i] * 0.0005) {
+            data_ok.push({
+                z: meta_data.population[i],
+                y: meta_data.applied_today[i] * 10000 / meta_data.population[i],
+                x: meta_data.perc_accum[i],
+                name: meta_data.dept_names[i],
+                full_name: meta_data.dept_names[i],
+                today: meta_data.applied_today[i]
+            });
+        }
+        else {
+            data_warn.push({
+                z: meta_data.population[i],
+                y: meta_data.applied_today[i] * 10000 / meta_data.population[i],
+                x: meta_data.perc_accum[i],
+                name: meta_data.dept_names[i],
+                full_name: meta_data.dept_names[i],
+                labelText: meta_data.dept_names[i],
+                today: meta_data.applied_today[i]
+            });
+
+        }
+    }
+
+    compare_chart = Highcharts.chart('compare_chart', {
+
+        chart: {
+            type: 'bubble',
+            plotBorderWidth: 1,
+            zoomType: 'xy'
+        },
+
+        title: {
+            text: 'Alerta de baja vacunación'
+        },
+
+        subtitle: {
+            text: 'Puede hacer zoom sobre la gráfica'
+        },
+
+        accessibility: {
+            point: {
+                valueDescriptionFormat: '{index}. {point.name}, Población: {point.x}, Aplicadas hoy: {point.y}, Efectividad: {point.z}%.'
+            }
+        },
+
+        legend: {
+            layout: 'vertical',
+            align: 'left',
+            verticalAlign: 'top',
+            x: 30,
+            y: 30,
+            floating: true,
+            backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
+            borderWidth: 1
+        },
+
+        xAxis: {
+            gridLineWidth: 1,
+            title: {
+                text: 'Efectividad'
+            },
+            labels: {
+                format: '{value}'
+            },
+            accessibility: {
+                rangeDescription: 'Dosis Aplicadas/Disponibles'
+            },
+            plotLines: [{
+                color: 'black',
+                dashStyle: 'dot',
+                width: 2,
+                value: 80,
+                label: {
+                    rotation: 270,
+                    y: 200,
+                    x: 15,
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                    text: 'Gobierno Nacional requiere enviar'
+                },
+                zIndex: 3
+            }],
+        },
+
+        yAxis: {
+            startOnTick: false,
+            endOnTick: false,
+            title: {
+                text: 'Vacunas último día / 10.000 habitantes'
+            },
+            labels: {
+                format: '{value}'
+            },
+            plotLines: [{
+                color: 'black',
+                dashStyle: 'dot',
+                width: 2,
+                value: 5,
+                label: {
+                    align: 'right',
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                    text: 'Baja vacunación',
+                    x: -10
+                },
+                zIndex: 3
+            }],
+            maxPadding: 0.2,
+            accessibility: {
+                rangeDescription: 'Range: 0 to 40000 dosis.'
+            }
+        },
+
+        tooltip: {
+            useHTML: true,
+            headerFormat: '<table>',
+            pointFormat: '<tr><th colspan="2"><h3>{point.full_name}</h3></th></tr>' +
+                '<tr><th>Efectividad:</th><td>{point.x}%</td></tr>' +
+                '<tr><th>Dosis día:</th><td>{point.today}</td></tr>' +
+                '<tr><th>Habitantes:</th><td>{point.z}</td></tr>',
+            footerFormat: '</table>',
+            followPointer: true
+        },
+
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.name}'
+                }
+            }
+        },
+
+        series: [{
+            name: 'Alerta',
+            color: 'rgba(223, 83, 83, .1)',
+            data: data_warn
+        }, {
+            name: 'Normal',
+            color: 'rgba(83, 83, 223, .1)',
+            data: data_ok
+        }]
+    });
+
     cum_chart = Highcharts.chart('accum_chart', {
         chart: {
             type: 'area',
@@ -700,7 +853,7 @@ function funnel_setup(){
             name: 'Dosis',
             data: [
                 ['Requeridas', 1691366 * 2],
-                ['Compradas', 4000000],
+                ['Compradas', 61500000],
                 ['Recibidas', 1500000],
                 ['Asignadas', 400000],
                 ['Aplicadas', 200000],

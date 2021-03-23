@@ -14,10 +14,9 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 * Pasos
     * Infografía de etapas para vacunas, se puede usar [tailblocks STEP](https://tailblocks.cc/)
-    * Infografía de gastos de vacunación
     * Compra de vacunas
 
-* Añadir inmunizaciones al mapa de área
+* Añadir segundas dosis al mapa de área
 
 * Que la edición no dañe los datos
 * 5 más efectivos y 5 menos efectivos
@@ -38,21 +37,13 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 * Proyectar datos de visibilización de distribución de vacunas
 * Hacer una animación para mostrar el cambio en el mapa o que muestre en las gráficas día a día.
 
-* Apuntar a datos de gastos:
-    * Compra de vacunas
-    * Transporte
-    * Aplicación
-    * Costos de mantener información al día
-    * Administrativos
-
-* Vincular con datos de otros países para hacer comparativa
-
 * Alertas
     * No se colocaron vacunas o fue un porcentaje muy bajo
     * Se ha excedido el porcentaje de las vacunas que fueron asignadas
     * La cantidad de dosis está disminuyendo
     * Se está llegando al tope de la cantidad de vacunas para un departamento
     * Mostrar con colores la meta que estamos mostrando
+    * No se ha vacunado más de 100.000 personas el último día
 
 * Incluir información de la población
 
