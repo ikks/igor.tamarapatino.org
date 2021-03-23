@@ -567,7 +567,7 @@ function prepare_charts() {
         tooltip: {
             useHTML: true,
             headerFormat: '<table>',
-            pointFormat: '<tr><th colspan="2"><h3 class="text-xl">{point.full_name}</h3></th></tr>' +
+            pointFormat: '<tr><th colspan="2"><h3 class="text-lg">{point.full_name}</h3></th></tr>' +
                 '<tr><th>Efectividad:</th><td>{point.x}%</td></tr>' +
                 '<tr><th>Dosis día:</th><td>{point.today}</td></tr>' +
                 '<tr><th>Habitantes:</th><td>{point.z}</td></tr>',
