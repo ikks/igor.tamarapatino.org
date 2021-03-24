@@ -11,6 +11,7 @@ var meta_data = {
     accumulated: [],
     goal: [],
     inmunized: [],
+    assignations: [],
     layers: {},
 }
 
@@ -44,13 +45,14 @@ const POP_ROW = 3;
 const INI_VALUES = 10;
 const OPERATION = 2;
 
-const sheet_orig = 'Originales!A1:AQ200';
-const sheet_summ = 'Resumen!A1:AQ200';
+const sheet_orig = 'Originales!A1:AQ1200';
+const sheet_summ = 'Resumen!A1:AQ1200';
 const sheet_plan = 'Plan!A1:AQ200';
-
+const sheet_assi = 'Resoluciones!A1:F200';
 const ID_ORIG = 0;
 const ID_SUMM = 1;
 const ID_PLAN = 2;
+const ID_ASSI = 3;
 
 const PERC_APPLIED = "Eficiencia";
 const ACCUMULATED = "Acumuladas";
@@ -113,7 +115,7 @@ function loadsheet() {
     setup_map();
     gapi.client.sheets.spreadsheets.values.batchGet({
         spreadsheetId: spreadsheetid,
-        ranges: [sheet_orig, sheet_summ, sheet_plan],
+        ranges: [sheet_orig, sheet_summ, sheet_plan, sheet_assi],
     }).then(processSheetsData, function(response) {
         appendPre('Error: ' + response.result.error.message);
     });
@@ -393,6 +395,16 @@ function processSheetsData(response) {
           row.push(sheets.valueRanges[ID_PLAN].values[r][c]);
         }
         meta_data.goal.push(row);
+    }
+
+    rows = sheets.valueRanges[ID_ASSI].values.length;
+    for (var r = 1; r < rows; r++) {
+        row = [];
+        length = sheets.valueRanges[ID_ASSI].values[r].length;
+        for (var c = 0; c < length; c++) {
+          row.push(sheets.valueRanges[ID_ASSI].values[r][c]);
+        }
+        meta_data.assignations.push(row);
     }
 
     clean_data();
@@ -727,6 +739,18 @@ function prepare_charts() {
 
     });
 
+    var resolutions = meta_data.assignations.reduce((accum, x) => accum + `
+    <tr>
+        <td>${ x[0] }</td>
+        <td><a class="underline" target="_blank" href="${ x[5] }">${ x[1] }</a></td>
+        <td>${ parseInt(x[2]).toLocaleString() }</td>
+    </tr>
+    `, '' );
+
+    document.getElementById("id_assignations").innerHTML = resolutions;
+
+    console.log(resolutions)
+
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     var option_place = document.getElementById("place");
@@ -740,11 +764,11 @@ function prepare_charts() {
 
     colombia = remaining.length - 1;
 
-    document.getElementById("id-doze").textContent=(parseInt(accumulated[colombia]) - parseInt(remaining[colombia])).toLocaleString();
-    document.getElementById("id-latest-date").textContent=meta_data.latest_date;
-    document.getElementById("id-goal").textContent=parseInt(goal[colombia]).toLocaleString();
-    document.getElementById("id-inmunized").textContent=parseInt(inmunized[colombia]).toLocaleString();
-    document.getElementById("id-percgoal").textContent=(100 * parseInt(inmunized[colombia])/parseInt(goal[colombia])).toFixed(1).toLocaleString();
+    document.getElementById("id-doze").textContent = (parseInt(accumulated[colombia]) - parseInt(remaining[colombia])).toLocaleString();
+    document.getElementById("id-latest-date").textContent = meta_data.latest_date;
+    document.getElementById("id-goal").textContent = parseInt(goal[colombia]).toLocaleString();
+    document.getElementById("id-inmunized").textContent = parseInt(inmunized[colombia]).toLocaleString();
+    document.getElementById("id-percgoal").textContent = (100 * parseInt(inmunized[colombia])/parseInt(goal[colombia])).toFixed(1).toLocaleString();
 
     if (urlParams.get('place') in meta_data.column_names) {
         option_place.value = urlParams.get('place');
