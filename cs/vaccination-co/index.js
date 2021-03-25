@@ -617,8 +617,7 @@ function prepare_charts() {
         },
         yAxis: {
             title: {
-                text: 'Cantidad de dosis',
-                x: -40
+                text: 'Dosis asignadas'
             },
             labels: {
                 format: '{value:,.0f}'
@@ -750,8 +749,6 @@ function prepare_charts() {
     `, '' );
 
     document.getElementById("id_assignations").innerHTML = resolutions;
-
-    console.log(resolutions)
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
