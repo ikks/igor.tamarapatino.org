@@ -15,16 +15,21 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 * Pasos
     * Infografía de etapas para vacunas, se puede usar [tailblocks STEP](https://tailblocks.cc/)
     * Compra de vacunas
+    * Recepción: Cada vez que llega un cargamento al país
+    * Asignación: Resolución Ministerial para la entrega
+    * Distribución: Deben llegar a los sitios donde se aplica
+    * Aplicación: Reportado en PAI
+    * Inmunización: Dependiendo del tipo de vacuna
 
 * Añadir segundas dosis al mapa de área
 
 * Que la edición no dañe los datos
 * 5 más efectivos y 5 menos efectivos
-* Recepción: Cada vez que llega un cargamento al país
-* Asignación: Resolución Ministerial para la entrega
-* Distribución: Deben llegar a los sitios donde se aplica
-* Aplicación: Reportado en PAI
-* Inmunización: Dependiendo del tipo de vacuna
+
+* Llamar a la acción: Caso Buenaventura
+
+* Visibilizar puntos de atención con buscador
+
 * Reinicializar el mapa para ver Colombia
 * [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Visibilizar la información de eficiencia:
@@ -44,10 +49,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Se está llegando al tope de la cantidad de vacunas para un departamento
     * Mostrar con colores la meta que estamos mostrando
     * No se ha vacunado más de 100.000 personas el último día
-
-* Incluir información de la población
-
-
 
 # Cómo contribuir
 
