@@ -739,8 +739,8 @@ function prepare_charts() {
 
     });
 
-    var resolutions = meta_data.assignations.reduce((accum, x) => accum + `
-    <tr>
+    var resolutions = meta_data.assignations.reduce((accum, x, idx) => accum + `
+    <tr class="${ idx % 2 == 0 ? '' : 'bg-gray-100' }" >
         <td>${ x[0] }</td>
         <td><a class="underline" target="_blank" href="${ x[5] }">${ x[1] }</a></td>
         <td class="hidden sm:table-cell">${ x[3] }</td>
