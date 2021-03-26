@@ -873,6 +873,8 @@ function fill_estimated_dates() {
     var optimistic_date = today.addDays(parseInt(remaining/ max_applied));
     var expectation_date = today.addDays(parseInt(remaining/ applied_today));
     var mean_date = today.addDays(parseInt(remaining/ mean_applied));
+    var endYear = new Date("2021-12-31");
+    var calculated_daily_vaccines = parseInt((remaining/((endYear-today)/(1000 * 3600 * 24))).toFixed(0)) ;
 
     document.getElementById("id-optimistic-date").innerHTML = formatDate(optimistic_date);
     document.getElementById("id-maximum-applied-projection").innerHTML = max_applied.toLocaleString();
@@ -881,6 +883,7 @@ function fill_estimated_dates() {
     document.getElementById("id-mean-date").innerHTML = formatDate(mean_date);
     document.getElementById("id-today-mean-projection").innerHTML = mean_applied.toLocaleString();
     document.getElementById("id-goal-vaccines").innerHTML = BOUGHT_VACCINES.toLocaleString();
+    document.getElementById("id-needed-for-this-year").innerHTML = calculated_daily_vaccines.toLocaleString();
 }
 
 function changeActiveTab(event,tabID){

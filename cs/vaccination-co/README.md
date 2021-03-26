@@ -21,8 +21,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
     * Aplicación: Reportado en PAI
     * Inmunización: Dependiendo del tipo de vacuna
 
-* Añadir segundas dosis al mapa de área
-
 * Que la edición no dañe los datos
 * 5 más efectivos y 5 menos efectivos
 
@@ -33,7 +31,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 * Reinicializar el mapa para ver Colombia
 * [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Visibilizar la información de eficiencia:
-    * [Porcentaje de dosis administradas](https://twitter.com/rundav5/status/1366560712349351936)
     * Días en los cuales no ha habido vacunación
 * Visibilizar información positiva
     * Día en que más vacunas se aplicaron
