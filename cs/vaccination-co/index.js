@@ -35,7 +35,7 @@ var info;
 var target_to_clean;
 var text_dialog = "";
 var colombia = 0;
-var bought_vaccines = 61500000;
+var BOUGHT_VACCINES = 61500000;
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
@@ -44,6 +44,9 @@ const DP_ROW = 2;
 const POP_ROW = 3;
 const INI_VALUES = 10;
 const OPERATION = 2;
+
+const APPLIED = "-1";
+const NEW_DOZE = "1";
 
 const sheet_orig = 'Originales!A1:AQ1200';
 const sheet_summ = 'Resumen!A1:AQ1200';
@@ -264,7 +267,7 @@ function get_place_names(data) {
 
     var i = data.length - 1;
     for (; i >= 0; i--){
-        if(data[i][OPERATION] == -1){
+        if(data[i][OPERATION] == APPLIED){
             break;
         }
     }
@@ -274,7 +277,7 @@ function get_place_names(data) {
 
     var i = data.length - 1;
     for (; i >= 0; i--){
-        if(data[i][OPERATION] == 2){
+        if(data[i][OPERATION] == INMUNIZED){
             break;
         }
     }
@@ -315,27 +318,27 @@ function update_chart(i_col) {
 
 
     for (r=0; r < array.length; r++){
-        if (array[r][2] == "-1") {
+        if (array[r][2] == APPLIED) {
             var ele = [array[r][0], parseInt(array[r][i_col] || 0)];
             row.push(ele); 
         }
     }
     for (r=0; r < array_2.length; r++){
-        if (array_2[r][2] == "Acumuladas") {
+        if (array_2[r][2] == ACCUMULATED) {
 
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
             accum.push(ele);
         }
-        else if (array_2[r][2] == "Aplicadas") {
+        else if (array_2[r][2] == APPLIED_TODAY) {
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
             applied.push(ele);
             accum[accum.length - 1][1] -= ele[1];
         }
-        else if (array_2[r][2] == "Remanente") {
+        else if (array_2[r][2] == TO_APPLY) {
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
             remain.push(ele);
         }
-        else if (array_2[r][2] == "Eficiencia") {
+        else if (array_2[r][2] == PERC_APPLIED) {
             var ele = [array_2[r][0], parseInt(array_2[r][i_col] || 0)];
             effectivity.push(ele);
         }
@@ -818,16 +821,15 @@ function formatDate(date) {
 }
 
 function fill_estimated_dates() {
-    var today_raw = alasql(`SELECT [0] AS m FROM ? WHERE [2] = "-1" ORDER BY [0] DESC`, [array] )[0].m;
-    var applied_today = parseInt(alasql(`SELECT [${ colombia }] AS m FROM ? WHERE [2] = "Aplicadas" AND [0] = "${ today_raw }"`, [array_2] )[0].m);
-    var mean_applied = parseInt(alasql(`SELECT avg(cast([${ colombia }] as int)) AS m FROM ? WHERE [2] = "Aplicadas"`, [array_2] )[0].m);
+    var today_raw = alasql(`SELECT [0] AS m FROM ? WHERE [2] = "${ APPLIED }" ORDER BY [0] DESC`, [array] )[0].m;
+    var applied_today = parseInt(alasql(`SELECT [${ colombia }] AS m FROM ? WHERE [2] = "${ APPLIED_TODAY }" AND [0] = "${ today_raw }"`, [array_2] )[0].m);
+    var mean_applied = parseInt(alasql(`SELECT avg(cast([${ colombia }] as int)) AS m FROM ? WHERE [2] = "${ APPLIED_TODAY }"`, [array_2] )[0].m);
 
     var today = new Date(today_raw);
-    var accumulated = alasql(`SELECT [${ colombia }] AS m FROM ? WHERE [2] = "-1" AND [0] = "${ today_raw }"`, [array] )[0].m;
-    var max_applied = alasql(`SELECT max(cast([${ colombia }] as int)) AS m FROM ? WHERE [2] = "Aplicadas"`, [array_2] )[0].m;
-    var first_date = alasql('SELECT [0] AS m FROM ? WHERE [2] = "-1" LIMIT 1', [array] )[0].m;
-    var bought_vaccines = 61500000;
-    var remaining = bought_vaccines - accumulated;
+    var accumulated = alasql(`SELECT [${ colombia }] AS m FROM ? WHERE [2] = "${ APPLIED }" AND [0] = "${ today_raw }"`, [array] )[0].m;
+    var max_applied = alasql(`SELECT max(cast([${ colombia }] as int)) AS m FROM ? WHERE [2] = "${ APPLIED_TODAY }"`, [array_2] )[0].m;
+    var first_date = alasql(`SELECT [0] AS m FROM ? WHERE [2] = "${ APPLIED }" LIMIT 1`, [array] )[0].m;
+    var remaining = BOUGHT_VACCINES - accumulated;
     var optimistic_date = today.addDays(parseInt(remaining/ max_applied));
     var expectation_date = today.addDays(parseInt(remaining/ applied_today));
     var mean_date = today.addDays(parseInt(remaining/ mean_applied));
@@ -838,7 +840,7 @@ function fill_estimated_dates() {
     document.getElementById("id-today-applied-projection").innerHTML = applied_today.toLocaleString();
     document.getElementById("id-mean-date").innerHTML = formatDate(mean_date);
     document.getElementById("id-today-mean-projection").innerHTML = mean_applied.toLocaleString();
-    document.getElementById("id-goal-vaccines").innerHTML = bought_vaccines.toLocaleString();
+    document.getElementById("id-goal-vaccines").innerHTML = BOUGHT_VACCINES.toLocaleString();
 }
 
 function changeActiveTab(event,tabID){
