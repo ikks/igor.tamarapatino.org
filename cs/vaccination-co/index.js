@@ -702,7 +702,8 @@ function prepare_charts() {
                         return s + '';
                     return s + '<br/>' + point.series.name + ': ' +
                         point.y.toLocaleString();
-                }, '<b>' + formatDate(this.x) + '</b>');
+                }, '<b>' + formatDate(this.x) + '</b>') + '<br/><b>Total</b>: ' +
+                this.points.reduce((accum, ele) => accum + ele.y, 0 ).toLocaleString();
             },
             shared: true
         },
