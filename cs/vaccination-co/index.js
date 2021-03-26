@@ -315,6 +315,7 @@ function update_chart(i_col) {
     var accum = [];
     var remain = [];
     var effectivity = [];
+    var inmunized = [];
 
 
     for (r=0; r < array.length; r++){
@@ -322,7 +323,22 @@ function update_chart(i_col) {
             var ele = [array[r][0], parseInt(array[r][i_col] || 0)];
             row.push(ele); 
         }
+        else if (array[r][2] == INMUNIZED) {
+            var ele = [array[r][0], parseInt(array[r][i_col] || 0)];
+            inmunized.push(ele);
+        }
     }
+    i = 0;
+    first_day = inmunized[0][0];
+    while (row[i][0] < first_day) {
+        i++;
+    }
+    j = 0;
+    while (j < inmunized.length) {
+        row[i+j][1] -= inmunized[j][1];
+        j++;
+    }
+    inmunized = row.slice(0, i).map(x => [x[0], 0]).concat(inmunized);
     for (r=0; r < array_2.length; r++){
         if (array_2[r][2] == ACCUMULATED) {
 
@@ -344,8 +360,10 @@ function update_chart(i_col) {
         }
 
     }
+
     cum_chart.series[1].setData(row);
     cum_chart.series[0].setData(remain);
+    cum_chart.series[2].setData(inmunized);
     day_chart.series[0].setData(applied);
 }
 
@@ -627,26 +645,34 @@ function prepare_charts() {
             },
             gridLineDashStyle: 'Dash'
         },
-        xAxis: [{
-            visible: false,
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
+        xAxis: [
+            {
+                visible: false,
+                type: 'datetime',
+                labels: {
+                    overflow: 'justify'
+                }
             },
             {
-            visible: false,
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
+                visible: false,
+                type: 'datetime',
+                labels: {
+                    overflow: 'justify'
+                }
             },
             {
-            visible: true,
-            type: 'datetime',
-            labels: {
-                overflow: 'justify'
-            }
+                visible: false,
+                type: 'datetime',
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            {
+                visible: true,
+                type: 'datetime',
+                labels: {
+                    overflow: 'justify'
+                }
             }
         ],
         
@@ -670,22 +696,35 @@ function prepare_charts() {
             }
         },
         tooltip: {
-            split:true,
-            valueSuffix: ''
+            formatter: function () {
+                return this.points.reduce(function (s, point) {
+                    if (point.series.name == 'Segunda' && point.y == 0)
+                        return s + '';
+                    return s + '<br/>' + point.series.name + ': ' +
+                        point.y.toLocaleString();
+                }, '<b>' + formatDate(this.x) + '</b>');
+            },
+            shared: true
         },
         series: [{
-            xAxis: 1,
+            xAxis: 2,
             lineColor: 'rgb(200, 190, 140)',
             fillColor: 'rgb(230, 220, 180)',
             color: 'rgb(200, 190, 140)',
             name: "Por aplicar"
-        }, {
-            xAxis: 2,
+        },  {
+            xAxis: 1,
             lineColor: 'rgb(120,160,180)',
             color: 'rgb(140,180,200)',
             fillColor: 'rgb(140,180,200)',
-            name: "Aplicadas"
-        }]
+            name: "Primera"
+        }, {
+            xAxis: 3,
+            lineColor: 'rgb(190, 200, 190)',
+            fillColor: 'rgb(110, 150, 110)',
+            color: 'rgb(110, 150, 110)',
+            name: "Segunda"
+        },]
     });
 
     day_chart = Highcharts.chart('daily_chart', {
