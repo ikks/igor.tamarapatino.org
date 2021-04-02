@@ -45,6 +45,7 @@ const DP_ROW = 2;
 const POP_ROW = 3;
 const INI_VALUES = 10;
 const OPERATION = 2;
+const POPULATION_VACCINATION_GOAL = 5;
 
 const APPLIED = "-1";
 const NEW_DOZE = "1";
@@ -802,7 +803,7 @@ function prepare_charts() {
     var efficiency = array_2[array_2.length - 2];
     var applied = meta_data.applied_today[meta_data.applied_today.length - 1];
     var accumulated = array_2[array_2.length - 4];
-    var goal = meta_data.goal[0];
+    var goal = meta_data.goal[POPULATION_VACCINATION_GOAL];
     var today = meta_data.applied_today;
     var inmunized = meta_data.inmunized;
 
@@ -812,7 +813,7 @@ function prepare_charts() {
     document.getElementById("id-latest-date").textContent = meta_data.latest_date;
     document.getElementById("id-goal").textContent = parseInt(goal[colombia]).toLocaleString();
     document.getElementById("id-inmunized").textContent = parseInt(inmunized[colombia]).toLocaleString();
-    document.getElementById("id-percgoal").textContent = (100 * parseInt(inmunized[colombia])/parseInt(goal[colombia])).toFixed(1).toLocaleString();
+    document.getElementById("id-percgoal").textContent = (100 * parseInt(inmunized[colombia])/parseInt(goal[colombia])).toFixed(2).toLocaleString();
 
     if (urlParams.get('place') in meta_data.column_names) {
         option_place.value = urlParams.get('place');
