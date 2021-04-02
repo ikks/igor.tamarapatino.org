@@ -35,10 +35,11 @@ var info;
 var target_to_clean;
 var text_dialog = "";
 var colombia = 0;
-var BOUGHT_VACCINES = 61500000;
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
+const DAILY_GOAL_PER_10k = 50;
+const BOUGHT_VACCINES = 61500000;
 const NAME_ROW = 0;
 const DP_ROW = 2;
 const POP_ROW = 3;
@@ -479,9 +480,10 @@ function processSheetsData(response) {
 function prepare_charts() {
     let data_ok = [];
     let data_warn = [];
+    let today_goal = DAILY_GOAL_PER_10k / 10000;
 
     for (let i=5;i<meta_data.dept_names.length - 1;i++) {
-        if (meta_data.applied_today[i]  > meta_data.population[i] * 0.0005) {
+        if (meta_data.applied_today[i]  > meta_data.population[i] * today_goal) {
             data_ok.push({
                 z: meta_data.population[i],
                 y: meta_data.applied_today[i] * 10000 / meta_data.population[i],
@@ -580,7 +582,7 @@ function prepare_charts() {
                 color: 'black',
                 dashStyle: 'dot',
                 width: 2,
-                value: 5,
+                value: DAILY_GOAL_PER_10k,
                 label: {
                     align: 'right',
                     style: {
