@@ -789,7 +789,7 @@ function prepare_charts() {
         <td><a class="underline" target="_blank" href="${ x[5] }">${ x[1] }</a></td>
         <td class="hidden sm:table-cell">${ x[3] }</td>
         <td class="hidden sm:table-cell">${ x[4] }</td>
-        <td>${ parseInt(x[2]).toLocaleString() }</td>
+        <td ${ parseInt(x[2]) < 300000 ? 'class="text-red-500"' : ''} >${ parseInt(x[2]).toLocaleString() }</td>
     </tr>
     `, '' );
 
