@@ -38,6 +38,7 @@ var colombia = 0;
 
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
+const BODY = document.body;
 const DAILY_GOAL_PER_10k = 50;
 const BOUGHT_VACCINES = 61500000;
 const NAME_ROW = 0;
@@ -97,6 +98,7 @@ function initClient() {
     }, function(error) {
         appendPre(JSON.stringify(error, null, 2));
     });
+    BODY.classList.toggle('noscroll');
 }
 
 /**
@@ -382,6 +384,7 @@ function closedialog() {
 
 function closeoverlay() {
     document.getElementById("overlay-thing").style.display = "none";
+    BODY.classList.toggle('noscroll');
 }
 
 
