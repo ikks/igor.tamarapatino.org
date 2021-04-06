@@ -39,6 +39,7 @@ var colombia = 0;
 var GRADIENT_COLORS = ["#fb735f", "#ff8d5a", "#ffa65b", "#fcbf62", "#f7d771", "#e9dc6f", "#c9e473", "#acd75f", "#8dca4c", "#6bbd3b", "#42b02b"];
 
 const BODY = document.body;
+const DAILY_ALERT_PER_10K = 5;
 const DAILY_GOAL_PER_10k = 50;
 const BOUGHT_VACCINES = 61500000;
 const NAME_ROW = 0;
@@ -484,7 +485,9 @@ function processSheetsData(response) {
 function prepare_charts() {
     let data_ok = [];
     let data_warn = [];
+    let data_alert = [];
     let today_goal = DAILY_GOAL_PER_10k / 10000;
+    let today_alert = DAILY_ALERT_PER_10K / 10000;
 
     for (let i=5;i<meta_data.dept_names.length - 1;i++) {
         if (meta_data.applied_today[i]  > meta_data.population[i] * today_goal) {
@@ -494,6 +497,17 @@ function prepare_charts() {
                 x: meta_data.perc_accum[i],
                 name: meta_data.dept_names[i],
                 full_name: meta_data.dept_names[i],
+                today: meta_data.applied_today[i]
+            });
+        }
+        else if (meta_data.applied_today[i]  < meta_data.population[i] * today_alert){
+            data_alert.push({
+                z: meta_data.population[i],
+                y: meta_data.applied_today[i] * 10000 / meta_data.population[i],
+                x: meta_data.perc_accum[i],
+                name: meta_data.dept_names[i],
+                full_name: meta_data.dept_names[i],
+                labelText: meta_data.dept_names[i],
                 today: meta_data.applied_today[i]
             });
         }
@@ -520,7 +534,7 @@ function prepare_charts() {
         },
 
         title: {
-            text: 'Alerta de baja vacunación'
+            text: 'Vacunación por lugar'
         },
 
         subtitle: {
@@ -596,6 +610,20 @@ function prepare_charts() {
                     x: 10
                 },
                 zIndex: 3
+            },{
+                color: 'black',
+                dashStyle: 'dot',
+                width: 2,
+                value: DAILY_ALERT_PER_10K,
+                label: {
+                    align: 'right',
+                    style: {
+                        fontStyle: 'italic'
+                    },
+                    text: 'Alerta',
+                    x: 10
+                },
+                zIndex: 3
             }],
             maxPadding: 0.2,
             accessibility: {
@@ -626,6 +654,10 @@ function prepare_charts() {
         series: [{
             name: 'Alerta',
             color: 'rgba(223, 83, 83, .1)',
+            data: data_alert
+        }, {
+            name: 'Baja',
+            color: 'rgba(223, 223, 83, .1)',
             data: data_warn
         }, {
             name: 'Normal',
