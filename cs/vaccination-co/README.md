@@ -4,10 +4,13 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 # Para hacer en el futuro
 
+* Script para volcar datos a diario en Github
+* Consumir datos desde Github y no las hojas de cálculo
+* Establecer enlace con canairio para invitar a las personas a que mantengan
+ambientes ventilados.
+
 * Colocar mapa de metas
-    * Finalizar fase I
-    * Meta de 70% en Colombia
-    * Mapa de cantidad de habitantes vacunados por cada 100
+    * Finalizar fase I.
 
 * Cronograma Nacional: https://twitter.com/nineways123/status/1372235900227350528
 * Gasto en Vacunación: https://mobile.twitter.com/ofiscalpuj/status/1372358753534754818
@@ -28,7 +31,6 @@ Desde la ciudadanía podemos ayudar a que haya un poco más de transparencia a t
 
 * Visibilizar puntos de atención con buscador
 
-* Reinicializar el mapa para ver Colombia
 * [Plan](https://twitter.com/mapisaro/status/1364800305020428292/photo/3) de vacunación y porcentaje alcanzado, colocar las fases.
 * Visibilizar la información de eficiencia:
     * Días en los cuales no ha habido vacunación
