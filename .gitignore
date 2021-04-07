@@ -1,2 +1,5 @@
 .sass-cache
 *.css.map
+vaccination-co-venv
+vaccinationcosecrets.py
+__pycache__
