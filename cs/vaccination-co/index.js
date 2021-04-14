@@ -920,7 +920,6 @@ function fill_estimated_dates() {
     document.getElementById("id-today-applied-projection").innerHTML = applied_today.toLocaleString();
     document.getElementById("id-mean-date").innerHTML = formatDate(mean_date);
     document.getElementById("id-today-mean-projection").innerHTML = mean_applied.toLocaleString();
-    document.getElementById("id-goal-vaccines").innerHTML = BOUGHT_VACCINES.toLocaleString();
     document.getElementById("id-needed-for-this-year").innerHTML = calculated_daily_vaccines.toLocaleString();
 }
 
