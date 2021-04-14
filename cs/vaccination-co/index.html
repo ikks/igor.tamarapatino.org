@@ -121,12 +121,12 @@
             <div class="px-4 sm:px-6">
               <ul class="flex mb-0 list-none flex-wrap flex-row">
                 <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-white bg-blue-600" onclick="changeActiveTab(event,'tab-goal')">
+                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-blue-600 bg-white" onclick="changeActiveTab(event,'tab-goal')">
                     <i class="fas fa-calendar text-base mr-1"></i>
                   </a>
                 </li>
                 <li class="-mb-px mr-2 last:mr-0 flex-auto text-center">
-                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-blue-600 bg-white" onclick="changeActiveTab(event,'tab-costs')">
+                  <a class="text-xs font-bold uppercase px-5 py-2 block leading-normal text-white bg-blue-600" onclick="changeActiveTab(event,'tab-costs')">
                     <i class="fas fa-usd text-base mr-1"></i>
                   </a>
                 </li>
@@ -135,7 +135,7 @@
             <div class="mt-6 absolute inset-0 px-4 sm:px-6">
               <div class="h-full" aria-hidden="true">
                 <div class="tab-content tab-space">
-                  <div class="block" id="tab-goal">
+                  <div class="hidden" id="tab-goal">
                     <div class="max-w-xs mt-8 mx-auto overflow-hidden bg-white rounded-lg dark:bg-gray-800">
                       <div class="px-4 pt-2">
                         <h3 class="font-bold text-2xl">
@@ -172,13 +172,13 @@
                 </div> -->
                   </div>
 
-                  <div class="hidden" id="tab-costs">
+                  <div class="block" id="tab-costs">
                     <div class="max-w-xs my-8 mx-auto overflow-hidden bg-white rounded-lg dark:bg-gray-800">
                       <div class="px-4 py-2">
                         <h3 class="font-bold text-2xl">
-                          Costos Vacunación
+                          10 billones de pesos
                         </h3>
-                        <p>Las vacunas no son gratis, los impuestos que pagamos y el trabajo que hace cada habitante del país contribuye al pago de lo que se requiere para salud pública así como cualquier otro derecho que debe ser universal.</p>
+                        <p>Es el costo de la vacunación asumido en los impuestos que pagamos y el trabajo que hace cada habitante del país. Por lo tanto no te deben cobrar nada por recibir la vacunación contra C19.</p>
                         <div class="flex flex-wrap w-full">
                               <div class="md:py-6">
                                 <div class="flex relative pb-12">
@@ -192,7 +192,7 @@
                                   </div>
                                   <div class="flex-grow pl-4">
                                     <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">COMPRA DE VACUNAS</h2>
-                                    <p class="leading-relaxed">La decisión de proteger al país incluyó el aporte de todos y cada uno de los colombianos, se hizo <a class="underline" target="blank" href="https://www.ofiscal.org/post/cu%C3%A1nta-plata-hemos-invertido-en-vacunas">pago a farmaceúticas</a> y a través de mecanismo Covax.</p>
+                                    <p class="leading-relaxed">El <a href="https://twitter.com/ofiscalpuj" class="underline">ofiscalpuj</a> logró establecer que cada <a class="underline" target="blank" href="https://www.ofiscal.org/post/cu%C3%A1nta-plata-hemos-invertido-en-vacunas">dosis en promedio costó USD12</a>.</p>
                                   </div>
                                 </div>
                                 <div class="flex relative pb-12">
@@ -221,7 +221,7 @@
                                   </div>
                                   <div class="flex-grow pl-4">
                                     <h2 class="font-medium title-font text-sm text-gray-900 mb-1 tracking-wider">APLICACIÓN</h2>
-                                    <p class="leading-relaxed">Se eligió a las Empresas Prestadoras de Salud para aplicar las vacunas, la logística para aplicar millones de dosis implica personal capacitado, insumos y administración.</p>
+                                    <p class="leading-relaxed">Se eligió a las EPS para aplicar las vacunas, el pago por este servicio según la <a href="https://www.minsalud.gov.co/Normatividad_Nuevo/Resolución No. 166 de 2021.pdf" class="underline">resolución 166</a> se estableció $100.000 por dosis en los sitios más alejados, mientras que en las ciudades es un 40% más económico.</p>
                                   </div>
                                 </div>
                                 <div class="flex relative pb-12">
