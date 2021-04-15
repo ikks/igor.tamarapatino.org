@@ -321,6 +321,7 @@ function update_chart(i_col) {
     var remain = [];
     var effectivity = [];
     var inmunized = [];
+    var colombia_col = array_2[0].length - 1;
 
 
     for (r=0; r < array.length; r++){
@@ -370,6 +371,43 @@ function update_chart(i_col) {
     cum_chart.series[0].setData(remain);
     cum_chart.series[2].setData(inmunized);
     day_chart.series[0].setData(applied);
+
+    if (i_col == colombia_col) {
+        cum_chart.yAxis[0].addPlotLine({
+            value: cum_chart.series[0].data[cum_chart.series[0].data.length - 28].options.y,
+            color: 'rgba(213, 103, 103, .2)',
+            width: 2,
+            id: 'sinovac',
+            label: {
+                align: 'right',
+                style: {
+                    color: 'red',
+                },
+                text: 'Sinovac',
+                x: -10
+            },
+            zIndex: 5
+        })
+        cum_chart.yAxis[0].addPlotLine({
+            value: cum_chart.series[0].data[cum_chart.series[0].data.length - 21].options.y,
+            color: 'rgba(100, 20, 20, .2)',
+            width: 2,
+            id: 'pfizer',
+            label: {
+                align: 'right',
+                style: {
+                    color: 'red',
+                },
+                text: 'Pfizer',
+                x: -10
+            },
+            zIndex: 5
+        })
+    }
+    else {
+        cum_chart.yAxis[0].removePlotLine('pfizer')
+        cum_chart.yAxis[0].removePlotLine('sinovac')
+    }
 }
 
 function clean_data(){
