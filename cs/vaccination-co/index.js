@@ -135,65 +135,65 @@ function setup_map() {
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
         maxZoom: 10,
         minZoom: 5,
-		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
-			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-		id: 'mapbox/light-v9',
-		tileSize: 512,
-		zoomOffset: -1
-	}).addTo(map);
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/light-v9',
+        tileSize: 512,
+        zoomOffset: -1
+    }).addTo(map);
 
 
-	// control that shows state info on hover
-	info = L.control();
+    // control that shows state info on hover
+    info = L.control();
 
-	info.onAdd = function (map) {
-		this._div = L.DomUtil.create('div', 'info');
-		this.update();
-		return this._div;
-	};
+    info.onAdd = function (map) {
+        this._div = L.DomUtil.create('div', 'info');
+        this.update();
+        return this._div;
+    };
 
     var legend = L.control({position: 'bottomright'});
 
-	legend.onAdd = function (map) {
+    legend.onAdd = function (map) {
 
-		var div = L.DomUtil.create('div', 'info legend'),
-			grades = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-			labels = [],
-			from, to;
+        var div = L.DomUtil.create('div', 'info legend'),
+            grades = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+            labels = [],
+            from, to;
 
-		for (var i = 0; i < grades.length - 1; i++) {
-			from = grades[i];
-			to = grades[i + 1];
+        for (var i = 0; i < grades.length - 1; i++) {
+            from = grades[i];
+            to = grades[i + 1];
 
-			labels.push(
-				'<i style="background:' + getColor(from) + '"></i> ' +
-				from + (to ? '&ndash;' + to : ''));
-		}
+            labels.push(
+                '<i style="background:' + getColor(from) + '"></i> ' +
+                from + (to ? '&ndash;' + to : ''));
+        }
 
-		div.innerHTML = labels.join('<br>');
-		return div;
-	};
+        div.innerHTML = labels.join('<br>');
+        return div;
+    };
 
-	legend.addTo(map);
+    legend.addTo(map);
 
-	info.update = function (props) {
+    info.update = function (props) {
         var idx;
 
         if (props) {
             idx = meta_data.column_divip[props.divipola][0];
-		    this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
-			'<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas <br />Día reciente: ' + meta_data.applied_today[idx].toLocaleString() + ' aplicadas'
-			: 'Seleccione departamento');
+            this._div.innerHTML = '<h4>Vacunación por departamento</h4>' +  (props ?
+            '<b>' + meta_data.dept_names[idx] + '</b><br />' + '<i class="colored-legend-covid" style="background:' + getColor(meta_data.perc_accum[idx]) + '"></i> ' + meta_data.perc_accum[idx] + '% de ' + meta_data.accumulated[idx].toLocaleString() + ' vacunas <br />Día reciente: ' + meta_data.applied_today[idx].toLocaleString() + ' aplicadas'
+            : 'Seleccione departamento');
             document.getElementById("id-effectivity").textContent=meta_data.perc_accum[idx];
             document.getElementById("id-today").textContent=meta_data.applied_today[idx].toLocaleString();
             document.getElementById("id-accumulated").textContent=meta_data.accumulated[idx].toLocaleString();
             cum_chart.setTitle({ text: meta_data.column_divip[props.divipola][1] });
         }
-	};
+    };
 
-	map.attributionControl.addAttribution('Population data &copy; <a href="http://minsalud.gov.co/">Vaccination Data</a>');
+    map.attributionControl.addAttribution('Population data &copy; <a href="http://minsalud.gov.co/">Vaccination Data</a>');
 
-	info.addTo(map);
+    info.addTo(map);
 
 }
 
@@ -249,7 +249,7 @@ function highlightFeature(e) {
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
     }
-	
+
     info.update(layer.feature.properties);
 }
 
@@ -686,17 +686,17 @@ function prepare_charts() {
                     enabled: true,
                     format: '{point.name}'
                 },
-				point: {
-                events: {
-                    click: function () {
-						option_place.value = this.full_name;
-						select_place();
-						}
-					}
-				}
+                point: {
+                    events: {
+                        click: function () {
+                            option_place.value = this.full_name;
+                            select_place();
+                        }
+                    }
+                }
             }
         },
-		
+
         series: [{
             name: 'Alerta',
             color: 'rgba(223, 83, 83, .1)',
@@ -911,9 +911,9 @@ function prepare_charts() {
     select_place();
 
     geojson = L.geoJson(statesData, {
-		style: style,
-		onEachFeature: onEachFeature
-	}).addTo(map);
+        style: style,
+        onEachFeature: onEachFeature
+    }).addTo(map);
 
     geojson.eachLayer(function(l){meta_data.layers[meta_data.column_divip[l.feature.properties.divipola][1]] = l});
     document.getElementById("close-dialog").disabled = false;
