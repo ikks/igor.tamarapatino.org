@@ -249,7 +249,7 @@ function highlightFeature(e) {
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
         layer.bringToFront();
     }
-
+	
     info.update(layer.feature.properties);
 }
 
@@ -685,10 +685,18 @@ function prepare_charts() {
                 dataLabels: {
                     enabled: true,
                     format: '{point.name}'
-                }
+                },
+				point: {
+                events: {
+                    click: function () {
+						option_place.value = this.full_name;
+						select_place();
+						}
+					}
+				}
             }
         },
-
+		
         series: [{
             name: 'Alerta',
             color: 'rgba(223, 83, 83, .1)',
