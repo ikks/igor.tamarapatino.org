@@ -85,4 +85,5 @@ Siéntase libre de hacer pull request a index2.html o a index.html, de acuerdo a
 * [https://docs.google.com/spreadsheets/d/1RtLLkqkKDbJFKugmiCOv9uwNbceyTcnfwDhSQZeJKWA/edit?ts=603328dc#gid=2105845351](Datos recopilados) por [María del Pilar Sáenz](https://twitter.com/mapisaro/)
 * Dan ShadowFire está actualizando diariamente la información, le encanta leer y escribir. Su libro más actual [El futuro de la magia](https://www.wattpad.com/story/212268083).
 * Diana Patricia Álvarez por mejorar la visualización. Líder de [Frontend Foxes](https://www.vuevixens.org/).
+* Andrés Herrera por el soporte para que al dar click en la gráfica de comparación se hagan visibles los detalles en otras gráficas.
 
