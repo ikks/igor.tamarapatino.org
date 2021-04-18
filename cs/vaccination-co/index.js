@@ -426,6 +426,10 @@ function closeoverlay() {
     BODY.classList.toggle('noscroll');
 }
 
+function openoverlay() {
+    document.getElementById("overlay-thing").style.display = "block";
+    BODY.classList.toggle('noscroll');
+}
 
 function processSheetsData(response) {
     var sheets = response.result;
