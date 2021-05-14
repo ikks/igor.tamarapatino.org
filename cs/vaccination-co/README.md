@@ -86,4 +86,4 @@ Siéntase libre de hacer pull request a index2.html o a index.html, de acuerdo a
 * Dan ShadowFire está actualizando diariamente la información, le encanta leer y escribir. Su libro más actual [El futuro de la magia](https://www.wattpad.com/story/212268083).
 * Diana Patricia Álvarez por mejorar la visualización. Líder de [Frontend Foxes](https://www.vuevixens.org/).
 * Andrés Herrera por el soporte para que al dar click en la gráfica de comparación se hagan visibles los detalles en otras gráficas.
-
+* Daniel Moreno por restaurar versión de Highcharts para continuar visibilización.
