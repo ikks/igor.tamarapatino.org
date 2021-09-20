@@ -1,0 +1,2795 @@
+<HTML
+><HEAD
+><TITLE
+>Scripts básicos para bash</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Linux desde la perspectiva de un usuario con más
+   experiencia"
+HREF="c2347.htm"><LINK
+REL="PREVIOUS"
+TITLE="Procesos y tareas"
+HREF="x3282.htm"><LINK
+REL="NEXT"
+TITLE="Configuración de una sesión"
+HREF="x4476.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x3282.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 3. Linux desde la perspectiva de un usuario con más
+   experiencia</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x4476.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="scripts-basicos-para-bash"
+>Scripts básicos para <SPAN
+CLASS="application"
+>bash</SPAN
+></A
+></H1
+><P
+>Indicadores de Logros</P
+><P
+></P
+><UL
+><LI
+><A
+NAME="script.script1"
+></A
+><P
+>Crea scripts sencillos para
+       <SPAN
+CLASS="application"
+>bash</SPAN
+>.
+      </P
+></LI
+><LI
+><A
+NAME="script.variables"
+></A
+><P
+>Emplea variables de ambiente y reconoce algunas empleadas
+       por <SPAN
+CLASS="application"
+>bash</SPAN
+>.
+      </P
+></LI
+><LI
+><A
+NAME="script.expansiones"
+></A
+><P
+>Aprovecha las expansiones que
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> realiza.  </P
+></LI
+><LI
+><A
+NAME="script.programas"
+></A
+><P
+>Emplea comandos de <SPAN
+CLASS="application"
+>bash</SPAN
+> y
+       programas comúnmente usados al hacer scripts.  </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-scripts-basicos-para-bash"
+>Lectura: Scripts para
+     <SPAN
+CLASS="application"
+>bash</SPAN
+></A
+></H2
+><P
+>Un script para <SPAN
+CLASS="application"
+>bash</SPAN
+> es un archivo
+     tipo texto, cuyas líneas tienen comandos que son ejecutados
+     (interpretados) por <SPAN
+CLASS="application"
+>bash</SPAN
+>.  Para lograr
+     que el intérprete de comandos intérprete las líneas de un archivo
+     puede:
+   </P
+><P
+></P
+><UL
+><LI
+><P
+>Ejecutar <TT
+CLASS="filename"
+>/bin/bash</TT
+> seguido del nombre
+       del archivo (o redireccionar la entrada estándar para que
+       provenga del archivo).  </P
+></LI
+><LI
+><P
+>Emplear el comando <B
+CLASS="command"
+>source</B
+> seguido del
+       nombre del archivo.  </P
+></LI
+><LI
+><P
+>Emplear el caracter '.' seguido de un espacio y el
+      nombre del archivo.  </P
+></LI
+><LI
+><P
+>Agregar en la primera línea del archivo la cadena
+       <TT
+CLASS="literal"
+>#!/bin/bash</TT
+>, dar permiso de ejecución al
+       archivo y teclear el nombre del archivo desde el intérprete de
+       comandos ---como si fuera un nuevo comando.  </P
+></LI
+></UL
+><P
+>En este capítulo presentamos algunas facilidades que
+     <SPAN
+CLASS="application"
+>bash</SPAN
+> brinda y que resultan muy útiles
+     para escribir scripts. Antes se presentará como ejecuta
+     <SPAN
+CLASS="application"
+>bash</SPAN
+> una orden (lo cual en particulars
+     explica porque la primera línea de un script para
+     <SPAN
+CLASS="application"
+>bash</SPAN
+> debería ser
+     <TT
+CLASS="literal"
+>#!/bin/bash</TT
+>).
+    </P
+><P
+>Dado que las facilidades que presentaremos no son exclusivas
+     de scripts sino de <SPAN
+CLASS="application"
+>bash</SPAN
+>, puede hacer
+     experimentos desde el intérprete de comandos mientras lee.
+   </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="ejecucion-de-un-comando-en-bash"
+>Ejecución de un comando en
+      <SPAN
+CLASS="application"
+>bash</SPAN
+></A
+></H3
+><P
+>Para determinar cual es la orden
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> realiza varias acciones: </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Primero realiza ciertas expansiones a la línea de
+	comando, e identifica la orden, los parámetros y eventualmente
+	las variables de ambiente que se den junto con la orden (en
+	esta sección se estudiarán las expansiones y variables de
+	ambiente).
+       </P
+></LI
+><LI
+><P
+>Si la orden va precedida de una ruta ---se trata del
+	nombre completo de un archivo--- y el archivo existe y es
+	ejecutable, <SPAN
+CLASS="application"
+>bash</SPAN
+> lo trata como un
+	programa y lo carga a memoria para ejecutarlo.  Si la ruta no
+	conduce a un archivo ejecutable
+	<SPAN
+CLASS="application"
+>bash</SPAN
+> presenta un mensaje de error.
+	</P
+></LI
+><LI
+><P
+>Si la orden no va precedida de una ruta, busca un alias
+	que pueda corresponder con la orden y si lo encuentra lo
+	remplaza por su valor (más adelante en esta sección
+       explicaremos como manejar alias).  </P
+></LI
+><LI
+><P
+>Si la orden no esta precedida de una ruta y no es un
+	alias, determina si se trata de un comando interno de
+	<SPAN
+CLASS="application"
+>bash</SPAN
+> (como <B
+CLASS="command"
+>fg</B
+> o
+       <TT
+CLASS="literal"
+>bg</TT
+>) y en caso de serlo realiza la acción
+       correspondiente. 
+       </P
+></LI
+><LI
+><P
+>Si la orden no está precedida de una ruta, no es un alias
+	y no es un comando interno busca en varios directorios un
+	archivo ejecutable con el nombre dado y si lo encuentra en
+	alguno lo carga a memoria para ejecutarlo (el orden y los
+	directorios donde busca se especifican en la variable de
+	ambiente <TT
+CLASS="envar"
+>PATH</TT
+> que se explicará en esta
+	sección).
+       </P
+></LI
+><LI
+><P
+>En otro caso <SPAN
+CLASS="application"
+>bash</SPAN
+> presenta un mensaje
+	de error.
+       </P
+></LI
+></OL
+><P
+>En caso de que la orden corresponda a un archivo ejecutable
+      (bien porque se dio la ruta completa o bien porque existe un
+      archivo en un directorio de <TT
+CLASS="envar"
+>PATH</TT
+>),
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> determinará como ejecutarlo:
+     </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Si el archivo es tipo texto y comienza con la cadena
+	"<TT
+CLASS="literal"
+>#!</TT
+>" seguida del nombre de un programa,
+	<SPAN
+CLASS="application"
+>bash</SPAN
+> emplea tal programa como
+	intérprete del archivo.  Como parámetros para el intérprete
+	emplea los que estén en la primera línea del archivo, seguidos
+	del nombre del archivo y a continuación otros parámetros que
+	el usuario hubiera dado desde la línea de comandos.
+       </P
+></LI
+><LI
+><P
+>Si el archivo es tipo texto pero no comienza con
+	<TT
+CLASS="literal"
+>#!</TT
+>, lo interpreta con el programa
+	<SPAN
+CLASS="application"
+>bash</SPAN
+>
+	<A
+NAME="AEN3852"
+HREF="#FTN.AEN3852"
+>[1]</A
+>.  Es decir lo trata como un script para el
+	  intérprete de comandos.
+       </P
+></LI
+><LI
+><P
+>Si el archivo es binario lo envía al kernel para su
+	ejecución.  El kernel podrá ejecutarlo si está en un formato
+	reconocido (e.g el ejecutable producido por un compilador en
+	un formato reconocido por Linux ---ELF, a.out).
+       </P
+></LI
+></OL
+><A
+NAME="AEN3859"
+></A
+><P
+>Con estos caracteres comienza
+      un archivo tipo texto que debe ser interpretado cuando el
+      usuario solicita su ejecución, a continuación de ellos debe
+      estar la ruta del intérprete.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="ambiente-y-variables-de-ambiente"
+>Ambiente y variables de ambiente</A
+></H3
+><P
+>Una variable es un nombre al cual se le puede asociar un
+      valor, tal valor puede cambiar durante la ejecución de un
+      programa ---es 'variable'.  Cada programa (incluyendo al
+      intérprete de comandos) se inicia en un ambiente el cual consta
+      de variables ---variables de ambiente--- que hereda del programa
+      que lo inició y que pueden tener un significado especial para el
+      programa.  Las variables de ambiente que un programa usa se
+      especifican en la página del manual del programa.
+     </P
+><A
+NAME="AEN3865"
+></A
+><P
+>Palabras empleadas por
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> y otros programas, que tienen asociado un
+      valor.  Algunos ejemplos son <TT
+CLASS="literal"
+>PATH</TT
+>,
+      <TT
+CLASS="literal"
+>MAIL</TT
+> y <TT
+CLASS="literal"
+>USER</TT
+> (su respuesta
+      debe estar en minúsculas).</P
+><P
+>Para asignar un valor a una variable de ambiente y crearla
+      si no existe, teclee el nombre de la variable, en seguida el
+      carácter '=' y después el valor. El valor puede constar de
+      letras, símbolos o números, pero tenga en cuenta que hay algunos
+      caracteres con significado especial y que es mejor evitar en sus
+      primeros experimentos: $, {, }, `, ' (podrá escribirlos
+      precedidos de \ o encerrando el valor a asignar entre
+      apostrofes).  Por ejemplo para asignar el valor
+      <TT
+CLASS="filename"
+>/home</TT
+> a la variable <TT
+CLASS="envar"
+>DIR</TT
+>:
+<PRE
+CLASS="screen"
+>&#13;DIR=/home
+</PRE
+>
+    </P
+><P
+>Estando en
+      <SPAN
+CLASS="application"
+>bash</SPAN
+>, cone esta orden puede asignar el valor
+      <TT
+CLASS="literal"
+>1</TT
+> a la variable de ambiente
+      <TT
+CLASS="literal"
+>VAR</TT
+>.</P
+><P
+>Después de asignar una variable, puede emplear el valor
+      asociado a la misma en comandos que de al intérprete de
+      comandos, para hacerlo emplee el nombre de la variable precedido
+      del carácter '$'.  Por ejemplo <B
+CLASS="command"
+>ls -l $DIR</B
+>
+      listará los archivos de la ruta asociada a la variable
+      <TT
+CLASS="literal"
+>DIR</TT
+>.
+    </P
+><A
+NAME="AEN3883"
+></A
+><P
+>Para emplear el valor de una
+      variable de ambiente en sus scripts para el intérprete de
+      comandos, debe anteponer este caracter al nombre de la
+      variable.</P
+><P
+>En <SPAN
+CLASS="application"
+>bash</SPAN
+> puede emplear el comando
+      <B
+CLASS="command"
+>echo</B
+> para enviar a salida estándar una cadena
+      (por ejemplo <B
+CLASS="command"
+>echo tarea &#62; porhacer.txt</B
+>
+      dejar en el archivo <TT
+CLASS="filename"
+>porhacer.txt</TT
+> una línea
+      con la palabra <TT
+CLASS="literal"
+>tarea</TT
+>), esto puede usarse para
+      examinar el valor de una variable de ambiente, e.g.
+      <B
+CLASS="command"
+>echo $DIR</B
+> presentará el valor de la variable
+      <TT
+CLASS="envar"
+>DIR</TT
+>.
+    </P
+><P
+>Orden para el intérprete de
+      comandos que le permitirá examinar el valor de la variable de
+      ambiente <TT
+CLASS="envar"
+>VAR</TT
+>.</P
+><P
+>Puede examinar las variables de ambiente de
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> con el comando
+      <B
+CLASS="command"
+>set</B
+>. Algunas de las variables que verá son:
+      <TT
+CLASS="envar"
+>USER</TT
+> y <TT
+CLASS="envar"
+>USERNAME</TT
+> cuyo valor
+      es el login del usuario; <TT
+CLASS="envar"
+>UID</TT
+> con el número
+      que identifica al usuario; <TT
+CLASS="envar"
+>TERM</TT
+> mantiene el
+      nombre de la terminal que está usando (ver <A
+HREF="x4476.htm#lectura-configuracion-de-una-sesion"
+>Lectura
+      Configuración de una sesión</A
+>); <TT
+CLASS="envar"
+>SHELL</TT
+> la
+      ruta y nombre del intérprete de comandos; <TT
+CLASS="envar"
+>PWD</TT
+>
+      el nombre del directorio de trabajo; <TT
+CLASS="envar"
+>$HOME</TT
+> el
+      nombre del directorio personal del usuario;
+      <TT
+CLASS="envar"
+>PS1</TT
+> y <TT
+CLASS="envar"
+>PS2</TT
+> indican a
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> como presentar prompts (see
+      <A
+HREF="x4476.htm#lectura-configuracion-de-una-sesion"
+>Lectura
+      Configuración de una sesión</A
+>); <TT
+CLASS="envar"
+>PATH</TT
+> es
+      la ruta de directorios donde <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      busca archivos ejecutables, se separan unas rutas de otras con
+      el caracter ':'; <TT
+CLASS="envar"
+>OSTYPE</TT
+> el tipo de sistema
+      operativo; <TT
+CLASS="envar"
+>MAILCHECK</TT
+> la frecuencia en
+      segundos con la que <SPAN
+CLASS="application"
+>bash</SPAN
+> debe revisar
+      si ha llegado un nuevo correo a la cola de correos especificada
+      en la variable <TT
+CLASS="envar"
+>MAIL</TT
+> (por defecto la del
+      usuario); <TT
+CLASS="envar"
+>LS_COLORS</TT
+> colores que emplea el
+      programa <TT
+CLASS="envar"
+>ls</TT
+>; <TT
+CLASS="envar"
+>LINES</TT
+> y
+      <TT
+CLASS="envar"
+>COLUMNS</TT
+> indican la cantidad de filas y
+      columnas de la terminal que está usando;
+      <TT
+CLASS="envar"
+>LANG</TT
+>, <TT
+CLASS="envar"
+>LANGUAGE</TT
+> y otras
+      variables que comienzan con el prefijo <TT
+CLASS="envar"
+>LC_</TT
+>
+      especifican el idioma en el que los programas deben interactuar
+      con el usuario (ver <A
+HREF="x4476.htm#lectura-configuracion-de-una-sesion"
+>Lectura
+      Configuración de una sesión</A
+>); <TT
+CLASS="envar"
+>HOSTNAME</TT
+>
+      es el nombre del sistema; <TT
+CLASS="envar"
+>HISTFILE</TT
+> mantiene
+      el nombre del archivo con la historia de comandos, su tamaño lo
+      limitan <TT
+CLASS="envar"
+>HISTFILESIZE</TT
+> y
+      <TT
+CLASS="envar"
+>HISTSIZE</TT
+>; <TT
+CLASS="envar"
+>DISPLAY</TT
+> mantiene
+      la dirección del servidor X-Window (see <A
+HREF="x1647.htm#lectura-servicios-de-la-intranet"
+>Lectura Servicios de
+      la Intranet</A
+>).
+    </P
+><A
+NAME="AEN3931"
+></A
+><P
+>Nombre de la variable de
+     ambiente que mantiene la dirección del servidor X-Window.</P
+><P
+>&#13;     Cuando se inicia un programa desde <SPAN
+CLASS="application"
+>bash</SPAN
+>, el
+     ambiente que tendrá constará de las variables que estén marcadas
+     como exportables y de otras variables que se especifiquen al
+     comienzo del comando (pueden separarse unas de otras con espacios
+     y si el valor de alguna variable debe tener espacios puede
+     encerrar el valor completo entre comillas), por ejemplo para
+     iniciar el programa <B
+CLASS="command"
+>man</B
+> en un ambiente con las
+     variable <TT
+CLASS="envar"
+>LANGUAGE</TT
+> y <TT
+CLASS="envar"
+>LANG</TT
+> en
+     el valor <TT
+CLASS="envar"
+>DE_de</TT
+>:
+<PRE
+CLASS="screen"
+>&#13;LANG=de_DE LANGUAGE=de_DE man man
+</PRE
+>
+    </P
+><P
+>Orden que debe dar a
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> para iniciar el programa
+      <TT
+CLASS="literal"
+>miprograma</TT
+> con un ambiente en el que la
+      variable de ambiente <TT
+CLASS="envar"
+>VAR</TT
+> tenga el valor
+      1.</P
+><P
+>Para exportar una variable y lograr así que forme parte del
+     ambiente de procesos creados por su sesión, puede emplear bien
+     <B
+CLASS="command"
+>declare -x </B
+><TT
+CLASS="replaceable"
+><I
+>VAR</I
+></TT
+> o
+     <TT
+CLASS="literal"
+>export <TT
+CLASS="replaceable"
+><I
+>VAR</I
+></TT
+></TT
+>, empleando el
+     nombre de la variable que desea exportar en lugar de
+     <SPAN
+><I
+CLASS="emphasis"
+>VAR</I
+></SPAN
+>.  Empleando sólo
+     <B
+CLASS="command"
+>export</B
+> o sólo <B
+CLASS="command"
+>declare -x</B
+>
+     puede ver los nombres y valores de variables exportables.
+     </P
+><A
+NAME="AEN3953"
+></A
+><P
+>Orden que debe dar en
+      un script para el intérprete de comandos, para exportar la
+      variable VAR al ambiente del proceso que inicie el
+     script.</P
+><P
+>En un script puede emplear ciertas variables especiales ($1,
+     $2, ...) para referenciar los parámetros que el usuario empleó al
+     iniciarlo.  $1 tendrá el valor del primer paramétro, $2 del
+     segundo y así sucesivamente.  El siguiente script ejemplifica su
+     uso:</P
+><PRE
+CLASS="programlisting"
+>&#13;#!/bin/bash
+
+echo "Creando $2.tar.gz de $1"
+
+mkdir $2
+cp -rf $1/* $2
+tar cvf $2.tar
+gzip $2.tar
+</PRE
+><P
+>&#13;     Este script recibe dos parámetros, el primero es una ruta y el
+     segundo el nombre de un archivo.  Si el nombre del script es
+     <TT
+CLASS="literal"
+>comp</TT
+> y tiene permiso de ejecución podría
+     usarse para crear un paquete comprimido
+     <TT
+CLASS="filename"
+>d.tar.gz</TT
+> con el contenido del directorio
+     <TT
+CLASS="filename"
+>~/mand</TT
+> con:
+     </P
+><PRE
+CLASS="programlisting"
+>&#13;./comp ~/mand d
+</PRE
+><P
+>&#13;     Note que en el ejemplo indicamos la ruta completa del archivo
+     <TT
+CLASS="filename"
+>comp</TT
+>, suponiendo que es ejecutado desde el
+     mismo directorio donde se encuentra.  Si la ruta donde está el
+     archivo está en la variable <TT
+CLASS="envar"
+>PATH</TT
+>, no es
+     necesario especificar la ruta.
+     </P
+><A
+NAME="AEN3966"
+></A
+><P
+>En un script para el
+      intérprete de comandos se usa para referenciar el primer
+      parámetro que el usuario pase al ejecutarlo.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="expansiones"
+>Expansiones</A
+></H3
+><P
+><SPAN
+CLASS="application"
+>bash</SPAN
+> trata algunos caracteres de
+      forma especial: <TT
+CLASS="literal"
+>' " { } $</TT
+>.  Al asignar una
+      variable o iniciar un comando <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      "expande" estos caracteres y su contexto de varias formas :
+     </P
+><A
+NAME="AEN3975"
+></A
+><P
+>Referencia la cantidad de
+      parámetros que un script para <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      recibe.</P
+><A
+NAME="AEN3979"
+></A
+><P
+>Referencia todos los
+      parámetros que un script para <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      recibe.</P
+><A
+NAME="AEN3983"
+></A
+><P
+>Cuando la ejecución en
+      primer plano de un comando termina, esta "variable" del
+      intérprete de comandos referencia el número retornado, es 0 sólo
+      si la operación fue exitosa.</P
+><A
+NAME="AEN3986"
+></A
+><P
+>Referencia las opciones que
+      un usuario pasa a un script cuando lo ejecuta.</P
+><A
+NAME="AEN3989"
+></A
+><P
+>Referencia la identificación
+      del proceso del intérprete de comandos desde el que se ejecuta un
+      script.</P
+><A
+NAME="AEN3992"
+></A
+><P
+>Referencia la identificación
+      del proceso del último comando ejecutado en segundo plano.</P
+><A
+NAME="AEN3995"
+></A
+><P
+>En un script, referencia el
+      nombre de script o shell que el usuario emplea para
+      ejecutarlo.</P
+><A
+NAME="AEN3998"
+></A
+><P
+>En una orden para
+      <SPAN
+CLASS="application"
+>bash</SPAN
+>, una cadena puede encerrarse entre dos
+      caracteres como este, por ejemplo para incluir espacios.  Al
+     encerrarla entre caracteres como este, se realizan expansiones
+      excepto expansión de corchetes y de nombres de archivos.</P
+><A
+NAME="AEN4002"
+></A
+><P
+>Secuencia que representa el
+      caracter fin de línea en scripts para el intérprete de
+      comandos.</P
+><A
+NAME="AEN4005"
+></A
+><P
+>Secuencia que indica borrar
+      el caracter de la izquierda en scripts para el intérprete de
+      comandos.</P
+><A
+NAME="AEN4008"
+></A
+><P
+>En el intérprete de comandos
+      puede usarse esta secuencia para producir el caracter '$'.</P
+><A
+NAME="AEN4011"
+></A
+><P
+>En el intérprete de comandos
+      puede usarse esta secuencia para producir el caracter
+      tabulador.</P
+><A
+NAME="AEN4014"
+></A
+><P
+>En una orden para
+      <SPAN
+CLASS="application"
+>bash</SPAN
+>, una cadena puede encerrarse entre dos
+      caracteres como este para evitar expansiones, por ejemplo para
+      incluir espacios y símbolos reservados de <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      como el caracter '$'.</P
+><A
+NAME="AEN4019"
+></A
+><P
+>En <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      este caracter expande a todos los archivos de un directorio
+      ---o a * si no hay archivos en el directorio.</P
+><A
+NAME="AEN4023"
+></A
+><P
+>En <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      expande al directorio del usuario.</P
+><P
+>Cadena que bash presenta, si
+     en un directorio hay archivos con nombres: g1,g10,g3,grupo,texto
+      y desde ese directorio se ejecuta la orden <TT
+CLASS="literal"
+>echo
+       g?</TT
+></P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>$<TT
+CLASS="replaceable"
+><I
+>var</I
+></TT
+></TT
+> - <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>Expansión de variables o
+	 parámetros</B
+></SPAN
+></DT
+><DD
+><P
+>El caracter '<TT
+CLASS="literal"
+>$</TT
+>' es empleado para
+	 distinguir variables o bien parámetros de un script.  Las
+	 variables son remplazadas por su valor, por ejemplo
+	 <B
+CLASS="command"
+>echo $PATH</B
+> presentará el contenido de la
+	 variable <TT
+CLASS="envar"
+>PATH</TT
+>.
+	 
+	 En un script los parámetros se referencian con números,
+	 <TT
+CLASS="literal"
+>$1</TT
+> es el primero, <TT
+CLASS="literal"
+>$2</TT
+> el
+	 segundo y así sucesivamente.  Otros nombre especiales en un
+	 script son:
+	</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>$#</TT
+></DT
+><DD
+><P
+>Es remplazado por la cantidad de parámetros que el
+	     script recibe.
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>$*</TT
+></DT
+><DD
+><P
+>Que se expande a todos los parámetros que el script
+	    haya recibido, un parámetro se separa de otro con el valor de la
+	    variable <TT
+CLASS="envar"
+>IFS</TT
+> que normalmente es un espacio.
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>$?</TT
+></DT
+><DD
+><P
+>Todo programa al terminar debe retornar un número al
+	    sistema operativo, por convención 0 significa operacióne
+	    exitosa y números diferente representan errores.
+	    <TT
+CLASS="literal"
+>$?</TT
+> se expande al número retornado por
+	    el último programa ejecutado en primer plano. Un script
+	    puede retornar un 3 en lugar de 0 con <TT
+CLASS="literal"
+>exit
+	     3</TT
+>
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>$-</TT
+></DT
+><DD
+><P
+>Opciones que se pasaron al script durante su ejecución.
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>$$</TT
+></DT
+><DD
+><P
+>Identificación del proceso del intérprete de comandos.
+ 	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>$!</TT
+></DT
+><DD
+><P
+>Identificación del proceso del último comando que se
+	   ejecutó en segundo plano.
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>$0</TT
+></DT
+><DD
+><P
+>Nombre del script o del shell.
+	   </P
+></DD
+></DL
+></DIV
+></DD
+><DT
+><TT
+CLASS="literal"
+>"<TT
+CLASS="replaceable"
+><I
+>texto</I
+></TT
+>"</TT
+> - <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>citas</B
+></SPAN
+></DT
+><DD
+><P
+>Cuando un conjunto de caracteres (incluyendo espacios),
+	 se encierra entre comillas, <SPAN
+CLASS="application"
+>bash</SPAN
+>
+	 los trata como una sola cadena.  Esto es útil por ejemplo
+	 cuando el nombre de un directorio o archivo tiene espacios,
+	 e.g. <B
+CLASS="command"
+>cd "los amigos"</B
+>.  Otra forma de
+	 representar el caracter espacio es con el caracter
+	 '<TT
+CLASS="literal"
+>\</TT
+>' seguido de un espacio, así el efecto
+	 del ejemplo anterior también podría lograrse con <B
+CLASS="command"
+>cd
+	 los\ amigos</B
+>. Hay otros caractéres que pueden
+	 representarse con ayuda de '<TT
+CLASS="literal"
+>\</TT
+>', por
+	 ejemplo:
+	</P
+><P
+>Cadena que
+	 <SPAN
+CLASS="application"
+>bash</SPAN
+> produce al ejecutar: echo
+	 a{a,e}</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>\n</TT
+></DT
+><DD
+><P
+>Representa el caracter fin de línea.  
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>\b</TT
+></DT
+><DD
+><P
+>Caracter para borrar a la izquierda. 
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>\\ \{ \} \$</TT
+></DT
+><DD
+><P
+>Representan los caracteres '\' '{' '}' y '$'
+	    respectivamente. Esto es útil para producir estos
+	    caracteres sin que <SPAN
+CLASS="application"
+>bash</SPAN
+> trate de
+	    interpretarlos --estos son caracteres para hacer
+	    expansiones.
+	   </P
+></DD
+><DT
+><TT
+CLASS="literal"
+>\a</TT
+></DT
+><DD
+><P
+>Caracter para emitir un sonido.</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>\t</TT
+></DT
+><DD
+><P
+>Caracter tabulador (como la tecla <B
+CLASS="keycap"
+>Tab</B
+>).
+	   </P
+></DD
+></DL
+></DIV
+></DD
+><DT
+><TT
+CLASS="literal"
+>{<TT
+CLASS="replaceable"
+><I
+>letras</I
+></TT
+>}</TT
+> - <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>expansión de corchetes</B
+></SPAN
+></DT
+><DD
+><P
+>&#13;	 Una cadena que contenga <TT
+CLASS="literal"
+>{ <TT
+CLASS="replaceable"
+><I
+>letra1,
+	   letra2, ...</I
+></TT
+> }</TT
+> será expandida a
+	   varias cadenas similares a la inicial pero la posición de
+	   <TT
+CLASS="literal"
+>{<TT
+CLASS="replaceable"
+><I
+>letras1, letra2,
+	   ...</I
+></TT
+>}</TT
+> será remplazada por cada una
+	   de las letras.  Por ejemplo <TT
+CLASS="literal"
+>ls
+	   /home/pepe/sal{a,e}n</TT
+> se expandirá a <TT
+CLASS="literal"
+>ls
+	   /home/pepe/salan /home/pepe/salen</TT
+>.  Esta
+	   expansión es la primera que se realiza cuando hay varias en
+	   un mismo comando, y sólo surge efecto si está fuera de
+	   comillas o apóstrofes.
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>`<TT
+CLASS="replaceable"
+><I
+>comando</I
+></TT
+>` o
+	 $(<TT
+CLASS="replaceable"
+><I
+>comando</I
+></TT
+>) - </TT
+>
+	<SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>sustitución de comandos</B
+></SPAN
+></DT
+><DD
+><P
+>Un comando encerrado entre apóstrofes invertidos (i.e
+	 `<SPAN
+><I
+CLASS="emphasis"
+>comando</I
+></SPAN
+>`) o entre las cadenas
+	 "<TT
+CLASS="literal"
+>$(</TT
+>" y "<TT
+CLASS="literal"
+>)</TT
+>", será
+	 expandido al resultado que tal comando envíe a salida
+	 estándar cuando es ejecutado.  Por ejemplo
+	</P
+><PRE
+CLASS="programlisting"
+>&#13;TEXTOS=`ls *.txt`
+</PRE
+><P
+>&#13;	 asignará a la variable <TT
+CLASS="envar"
+>TEXTOS</TT
+> los nombres
+	 de los documentos tipo texto (i.e el resultado de <B
+CLASS="command"
+>ls
+	 *.txt</B
+>).
+	</P
+><PRE
+CLASS="screen"
+>&#13;ls $(cat rutas.txt)
+</PRE
+><P
+>&#13;	 presentará los archivos de los directorios que estén en el archivo 
+	 <TT
+CLASS="filename"
+>rutas.txt</TT
+>. 
+	</P
+><P
+>Que valor queda
+	 almacenado en la variable a tras ejecutar las siguientes
+	 ordenes en <SPAN
+CLASS="application"
+>bash</SPAN
+>: echo "un ejemplo" &#62;
+	 arch.tmp ; a=`cat arch.tmp`</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>'<TT
+CLASS="replaceable"
+><I
+>texto</I
+></TT
+>'</TT
+> - <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>citas</B
+></SPAN
+></DT
+><DD
+><P
+>Un texto que se encierra entre apóstrofes no es expandido.
+	 Esto es útil cuando se requiere una cadena que tiene algunos
+	caracteres reservados para expansiones.  Por ejemplo</P
+><PRE
+CLASS="programlisting"
+>&#13;N=10
+echo '$N' es $N
+</PRE
+><P
+>&#13;	 enviará a salida estándar <TT
+CLASS="computeroutput"
+>$N es 10</TT
+>
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>$((<TT
+CLASS="replaceable"
+><I
+>expresión</I
+></TT
+>))</TT
+> -
+	 <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>expansión aritmética</B
+></SPAN
+></DT
+><DD
+><P
+>Una expresión aritmética
+	<A
+NAME="AEN4173"
+HREF="#FTN.AEN4173"
+>[2]</A
+>
+	será evaluada cuando se encierre entre <TT
+CLASS="literal"
+>$((</TT
+> y
+	 <TT
+CLASS="literal"
+>))</TT
+>, por ejemplo:
+	</P
+><PRE
+CLASS="programlisting"
+>&#13;echo "1+2 es $((1+2))"
+</PRE
+><P
+>Resultado produce la
+	 siguiente orden para <SPAN
+CLASS="application"
+>bash</SPAN
+>: echo
+	"2*2=$((2*2))"</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>*, ?, ~ [<TT
+CLASS="replaceable"
+><I
+>letras</I
+></TT
+>]
+	 [<TT
+CLASS="replaceable"
+><I
+>rango(s)</I
+></TT
+>]</TT
+>- <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>Expansión de rutas</B
+></SPAN
+></DT
+><DD
+><P
+>Algunos caracteres y secuencias son expandidos a nombres
+	de archivos. A continuación se presentan con ejemplos:
+	<P
+></P
+><UL
+><LI
+><P
+>&#13;	    <B
+CLASS="command"
+>echo *</B
+>, presentará todos los nombres de
+	    archivos del directorio de trabajo ---porque * expande a
+	    todos estos y <TT
+CLASS="literal"
+>echo</TT
+> los presenta---. En
+	    caso de que no haya archivos el caracter
+	    <TT
+CLASS="literal"
+>*</TT
+> no será expandido y será mostrado por
+	    <TT
+CLASS="literal"
+>echo</TT
+>.
+	  </P
+></LI
+><LI
+><P
+>&#13;	   <B
+CLASS="command"
+>echo datos?.gnumeric</B
+> se expandirá a todos
+	    los nombres de archivos que comiencen por
+	    <TT
+CLASS="literal"
+>datos</TT
+> seguidos de un caracter arbitrario a
+	    su vez seguido de la cadena <TT
+CLASS="literal"
+>.gnumeric</TT
+>.
+	   </P
+></LI
+><LI
+><P
+><TT
+CLASS="literal"
+>echo ~/.*errors</TT
+> presentará todos los
+	    nombres de archivos de configuración que estén en el directorio
+	   del usuario y que terminen con errors.
+	  </P
+></LI
+><LI
+><P
+><B
+CLASS="command"
+>rm *[cho]</B
+> eliminará todos los
+	   archivos que terminen con una de las letras
+	   <TT
+CLASS="literal"
+>o</TT
+>, <TT
+CLASS="literal"
+>h</TT
+> o
+	   <TT
+CLASS="literal"
+>c</TT
+>.
+	  </P
+></LI
+><LI
+><P
+>&#13;	   <B
+CLASS="command"
+>echo [0-9][a-z]*</B
+> presentará todos los
+	   archivos que comiencen con un dígito seguido de una letra.
+	   </P
+></LI
+></UL
+>
+	</P
+></DD
+></DL
+></DIV
+><P
+>Cadena que
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> presenta, si en un directorio hay
+      archivos con nombres: g1,g10,g3,grupo,texto y desde ese
+      directorio se ejecuta la orden <TT
+CLASS="literal"
+>echo
+       *[o3]</TT
+></P
+><P
+>Cadena que
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> presenta, si en un directorio hay
+      archivos con nombres: g1,g10,g3,grupo,texto y desde ese
+      directorio se ejecuta la orden <TT
+CLASS="literal"
+>echo
+       [a-z][a-z]*</TT
+>
+     </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="comandos-y-programas-utiles-al-hacer-scripts"
+>Comandos y programas útiles al hacer scripts</A
+></H3
+><P
+>En un script puede emplear cualquier programa o comando,
+      junto con redireccionamiento, procesos y control de tareas.
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> ignora comandos que comienzan con el
+      caracter '#'.  Esto es útil para agregar comentarios explicativos
+      a los scripts.
+     </P
+><A
+NAME="AEN4223"
+></A
+><P
+>Caracter empleado al comienzo de
+      líneas en scripts para <SPAN
+CLASS="application"
+>bash</SPAN
+> que indica que la
+      línea entera es un comentario.</P
+><P
+>A continuación introducimos algunos comandos de
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> y programas útiles al hacer scripts.
+     </P
+><A
+NAME="AEN4229"
+></A
+><P
+>Comando internto de
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> que lee una cadena de la entrada estándar
+      y la asigna a una variable de ambiente (o en su defecto a la
+      variable <TT
+CLASS="literal"
+>REPLY</TT
+>).</P
+><A
+NAME="AEN4235"
+></A
+><P
+>Comando interno de
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> que permite crear alias para ciertos
+      comandos.</P
+><A
+NAME="AEN4240"
+></A
+><P
+>Comando interno de
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> que permite eliminar alias creados con el
+      comando <TT
+CLASS="literal"
+>alias</TT
+>.</P
+><A
+NAME="AEN4246"
+></A
+><P
+>Programa que recibe el nombre
+      de un archivo y retorna la parte que corresponde al
+    directorio.</P
+><A
+NAME="AEN4250"
+></A
+><P
+>Programa que recibe el nombre
+      de un archivo y retorna la parte que corresponde al nombre sin
+      directorio.</P
+><A
+NAME="AEN4254"
+></A
+><P
+>Programa que retorna el nombre
+    de la máquina en la que se ejecuta.</P
+><A
+NAME="AEN4258"
+></A
+><P
+>Programa que retorna el nombre
+      del usuario que lo ejecuta.</P
+><A
+NAME="AEN4262"
+></A
+><P
+>Programa que retorna
+      identificación y grupo(s) del usuario que lo ejecuta.</P
+><A
+NAME="AEN4266"
+></A
+><P
+>Comando interno de
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> que permite cambiar atributos en
+      variables de ambiente.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>read</B
+></DT
+><DD
+><P
+>Lee una línea de entrada estándar y asigna las palabras
+	 a las variables que sigan al comando <B
+CLASS="command"
+>read</B
+>.
+	 Puede especificarse un mensaje que se presentará como prompt
+	 antes de empezar a leer con la opción <TT
+CLASS="option"
+>-p
+	 </TT
+> <TT
+CLASS="replaceable"
+><I
+>mensaje</I
+></TT
+>. El siguiente ejemplo
+	 lee dos palabras en las variables <TT
+CLASS="envar"
+>NOMBRE</TT
+> y
+	 <TT
+CLASS="envar"
+>APELLIDO</TT
+>:</P
+><PRE
+CLASS="screen"
+>&#13;read -p "Teclee nombre y apellido: " NOMBRE APELLIDO
+</PRE
+><P
+>&#13;	Si la línea leída tiene más palabras que la cantidad de
+	variables, el resto serán ignoradas. Si tiene menos palabras,
+	las primeras variables (de izquierda a derecha) serán
+	empleadas y el resto quedarán en blanco (i.e con la cadena
+	vacía "").  En caso de que no se den nombres de variables, la
+	línea leída quedará en la variable
+	<TT
+CLASS="envar"
+>REPLY</TT
+>.</P
+></DD
+><DT
+><B
+CLASS="command"
+>alias</B
+></DT
+><DD
+><P
+>Con este comando puede definir alias para comandos,
+	 después de definir un alias <SPAN
+CLASS="application"
+>bash</SPAN
+>
+	 lo remplazará por el comando completo.  Por ejemplo un alias
+	 para abreviar <B
+CLASS="command"
+>ls -l</B
+> puede ser
+	 <B
+CLASS="command"
+>ll</B
+>, que se definiría como:
+<PRE
+CLASS="screen"
+>&#13;alias ll="ls -l" 
+</PRE
+>
+	 Puede listar los alias definidos con la opción
+	 <TT
+CLASS="option"
+>-p</TT
+> del comando <B
+CLASS="command"
+>alias</B
+>.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>unalias</B
+></DT
+><DD
+><P
+>Permite eliminar alias creados con el comando
+	 <B
+CLASS="command"
+>alias</B
+>, por ejemplo para eliminar el alias
+	 <B
+CLASS="command"
+>ll</B
+> se emplea:</P
+><PRE
+CLASS="screen"
+>&#13;unalias ll
+</PRE
+><P
+>&#13;	 Si se emplea la opción <TT
+CLASS="option"
+>-a</TT
+>, el comando
+	 <B
+CLASS="command"
+>unalias</B
+> elimina todos los alias definidos.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>dirname</B
+></DT
+><DD
+><P
+>Recibe como primer parámetro el nombre completo de una
+	 archivo, incluyendo su ruta y envía a salida estándar sólo la
+	 ruta.  Por ejemplo:</P
+><PRE
+CLASS="screen"
+>&#13;dirname /usr/doc/xterm/README.Debian
+</PRE
+><P
+>&#13;	 presenta en salida estándar <TT
+CLASS="filename"
+>/usr/doc/xterm</TT
+>.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>basename</B
+></DT
+><DD
+><P
+>Análogo a <B
+CLASS="command"
+>dirname</B
+>, pero envía a salida
+	 estándar el nombre del archivo.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>hostname</B
+></DT
+><DD
+><P
+>Envía a salida estándar el nombre del computador en la
+	 red, esto también puede verse en la variable de ambiente
+	 <TT
+CLASS="envar"
+>HOSTNAME</TT
+>. Con la opción <TT
+CLASS="option"
+>-f</TT
+>,
+	 el programa <B
+CLASS="command"
+>hostname</B
+> presenta el nombre
+	 completo, con la opción <TT
+CLASS="option"
+>-i</TT
+> la dirección
+	 IP, con la opción <TT
+CLASS="option"
+>-d</TT
+> el dominio DNS, con
+	 la opción <TT
+CLASS="option"
+>-a</TT
+> presenta nombres alternos de
+	 su máquina y con la opción <TT
+CLASS="option"
+>-y</TT
+> el dominio
+	 NIS ---este programa extrae parte de la información del
+	 archivo <TT
+CLASS="filename"
+>/etc/hosts</TT
+> y de 
+	 <TT
+CLASS="filename"
+>/etc/hostname</TT
+>.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>whoami</B
+></DT
+><DD
+><P
+>Retorna el nombre del usuario que lo ejecuta. También
+	 puede verse en la variable de ambiente <TT
+CLASS="envar"
+>USER</TT
+>.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>id</B
+></DT
+><DD
+><P
+>Retorna nombre y número del usuario que lo ejecuta, así
+	 como nombre y número del grupo o grupos a los que
+	 pertenezca. Con la opción -g sólo retorna el número del grupo
+	 principal, con -u retorna sólo el número del grupo principal,
+	 con <TT
+CLASS="option"
+>-G</TT
+> retorna los números de todos los
+	 grupos a los que pertenece.  Estas opciones pueden seguirse
+	 de <TT
+CLASS="literal"
+>n</TT
+> para presentar nombres en lugar de
+	 números.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>declare</B
+></DT
+><DD
+><P
+>Las variables de ambiente tienen atributos que pueden
+	 examinarse o cambiarse con este comando interno de
+	 <SPAN
+CLASS="application"
+>bash</SPAN
+>. Los atributos pueden ser sólo lectura
+	 (opción <TT
+CLASS="option"
+>-r</TT
+>), exportable (opción
+	 <TT
+CLASS="option"
+>-x</TT
+>) y variable entera (opción
+	 <TT
+CLASS="option"
+>-i</TT
+>).  Una variable de sólo lectura no puede
+	 ser modificada, y una variable entera sólo puede asociarse con
+	 números.
+	 <A
+NAME="AEN4357"
+HREF="#FTN.AEN4357"
+>[3]</A
+>.  Para examinar las variables que tengan un
+	 cierto atributo se emplea <B
+CLASS="command"
+>declare</B
+> seguido
+	 del código de la opción, por ejemplo para examinar las
+	 variables con atributo de sólo lectura <B
+CLASS="command"
+>declare
+	 -r</B
+>. Para cambiar un atributo a una variable se
+	 emplea la opción (precedida de <TT
+CLASS="option"
+>-</TT
+> o
+	 <TT
+CLASS="option"
+>+</TT
+> para activar y desactivar) seguida del
+	 nombre de la variable, por ejemplo <B
+CLASS="command"
+>declare -i
+	 N</B
+> pone el atributo de variable entera a
+	 <TT
+CLASS="envar"
+>N</TT
+>.
+	</P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-scripts-basicos-para-bash"
+>Lecturas recomendadas: Scripts básicos para
+     <SPAN
+CLASS="application"
+>bash</SPAN
+></A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Recomendamos de forma especial consultar la página del
+       manual de <SPAN
+CLASS="application"
+>bash</SPAN
+>.  Hay algunas partes
+       que complementan lo que se ha presentado en esta guía:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>&#13;	 <SPAN
+CLASS="application"
+>bash</SPAN
+> puede hacer más expansiones
+	 de parámetros, con la sintaxis <TT
+CLASS="literal"
+>${...}</TT
+>
+	 ---por ejemplo sustituciones en el valor de una variable---.
+	 Puede consultar la información completa sobre este tema en la
+	 sección "expansión de parámetros".  </P
+></LI
+><LI
+><P
+>Pueden hacerse scripts para
+	 <SPAN
+CLASS="application"
+>bash</SPAN
+> con otras características que
+	 no se han presentado en esta guía: <B
+CLASS="command"
+>if</B
+>,
+	 <B
+CLASS="command"
+>case</B
+>, <B
+CLASS="command"
+>while</B
+>,
+	 <B
+CLASS="command"
+>for</B
+>, <B
+CLASS="command"
+>function</B
+>.
+	</P
+></LI
+></UL
+></LI
+><LI
+><P
+>&#13;       El intérprete de comandos es una parte importante de la
+       filosofía Unix, el libro clásico sobre este tema es de
+       Brian. W. Kernighan y Rob Pike "El Entorno de Programación
+       UNIX", Prentice-Hall Hispanoamericana.  Este libro explica y
+       muestra el uso de <SPAN
+CLASS="application"
+>csh</SPAN
+>, un predecesor de
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> ---la mayoría de características de
+       <SPAN
+CLASS="application"
+>csh</SPAN
+> están disponibles en
+       <SPAN
+CLASS="application"
+>bash</SPAN
+>.
+      </P
+></LI
+><LI
+><P
+>&#13;       En Internet puede consultar "<I
+CLASS="citetitle"
+>Advanced Bash-Scripting
+       Guide: A complete guide to shell scripting, using
+       Bash</I
+>" de Mendel Cooper, disponible en: <A
+HREF="http://linuxdoc.org/LDP/abs/html/index.html"
+TARGET="_top"
+>http://linuxdoc.org/LDP/abs/html/index.html</A
+> o
+       Programación en BASH - COMO de introducción <A
+HREF="http://lucas.hispalinux.es/COMO-INSFLUG/COMOs/Bash-Prog-Intro-COMO/Bash-Prog-Intro-COMO.html"
+TARGET="_top"
+>http://lucas.hispalinux.es/COMO-INSFLUG/COMOs/Bash-Prog-Intro-COMO/Bash-Prog-Intro-COMO.html</A
+>
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-scripts-basicos-para-bash"
+>Ejercicios: Scripts básicos para
+     <SPAN
+CLASS="application"
+>bash</SPAN
+></A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x3773.htm#script.script1.1"
+>Cree un script que sea interpretado por
+       <SPAN
+CLASS="application"
+>bash</SPAN
+>, que al ejecutarse busque entre
+       sus directorios, todos los archivos, ordene los nombres
+       alfabéticamente y le envíe un correo con esa información.
+       <SPAN
+><I
+CLASS="emphasis"
+>Ayuda:</I
+></SPAN
+> Puede emplear la opción
+       <TT
+CLASS="option"
+>-R</TT
+> de <B
+CLASS="command"
+>ls</B
+> para listar
+       subdirectorios, y la opción <TT
+CLASS="option"
+>-u</TT
+> de
+       <B
+CLASS="command"
+>sort</B
+>.</A
+></DT
+><DT
+>2. <A
+HREF="x3773.htm#script.variables.1"
+>La variable de ambiente <TT
+CLASS="envar"
+>HOME</TT
+>
+       contiene el nombre de su directorio personal.  Comprúebelo y
+       después empleela para cambiarse a su directorio.  Después cambie
+       esta variable y explique que ocurre con el comodín '~'.</A
+></DT
+><DT
+>3. <A
+HREF="x3773.htm#script.variables.2"
+>El programa <B
+CLASS="command"
+>man</B
+> presenta
+      páginas del manual, empleando el programa especificado en la
+       variable de ambiente <TT
+CLASS="envar"
+>PAGER</TT
+> o en su defecto
+      con el programa <B
+CLASS="command"
+>less</B
+> (ver <A
+HREF="x2787.htm#lectura-bash-y-el-juego-de-herramientas"
+>Lectura bash y
+	el juego de herramientas</A
+>).  Modifique y exporte la
+       variable <TT
+CLASS="envar"
+>PAGER</TT
+> para que
+       <B
+CLASS="command"
+>man</B
+> emplee el programa
+       <B
+CLASS="command"
+>more</B
+> para presentar información y pruebe el
+      cambio.</A
+></DT
+><DT
+>4. <A
+HREF="x3773.htm#script.expansiones.1"
+>&#13;       ¿Qué hace el comando <B
+CLASS="command"
+>echo `ls`</B
+> ? (note que
+      se usan apóstrofes invertidos).</A
+></DT
+><DT
+>5. <A
+HREF="x3773.htm#script.expansiones.2"
+>&#13;       ¿Qué hace el comando <TT
+CLASS="userinput"
+><B
+>N=6 echo "'1+$N' =
+       $((1+$N))"</B
+></TT
+> ?  Después de dar su respuesta,
+       compruébela empleando un intérprete de comandos.
+      </A
+></DT
+><DT
+>6. <A
+HREF="x3773.htm#script.script1.2"
+>&#13;       Haga un script que cada 90 minutos presente
+       el mensaje "Hacer tareas". <SPAN
+><I
+CLASS="emphasis"
+>Ayuda:</I
+></SPAN
+>
+       <B
+CLASS="command"
+>source</B
+>. 
+      </A
+></DT
+><DT
+>7. <A
+HREF="x3773.htm#script.script1.3"
+>Cree un script que al ser ejecutado, cree un
+      archivo <TT
+CLASS="filename"
+>script2</TT
+>.  El archivo
+       <TT
+CLASS="filename"
+>script2</TT
+> creado debe poner la variable
+       <TT
+CLASS="envar"
+>PATH</TT
+> en el valor que tenga cuando el primer
+       script sea ejecutado, añadir a tal variable la ruta
+       <TT
+CLASS="filename"
+>/opt/bin</TT
+> y debe crear un alías que cuando
+       se ejecute muestre el contenido de la variable PATH (no olvide
+       cambiar el modo del archivo <TT
+CLASS="filename"
+>script2</TT
+>
+       generado para que sea ejecutable).</A
+></DT
+><DT
+>8. <A
+HREF="x3773.htm#script.programas.1"
+>Haga un script que después de ejecutarse pida
+       al usuario 2 números y después presente la suma, la resta, el
+       producto y la división.</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.script1.1"
+></A
+><B
+>1. </B
+>Cree un script que sea interpretado por
+       <SPAN
+CLASS="application"
+>bash</SPAN
+>, que al ejecutarse busque entre
+       sus directorios, todos los archivos, ordene los nombres
+       alfabéticamente y le envíe un correo con esa información.
+       <SPAN
+><I
+CLASS="emphasis"
+>Ayuda:</I
+></SPAN
+> Puede emplear la opción
+       <TT
+CLASS="option"
+>-R</TT
+> de <B
+CLASS="command"
+>ls</B
+> para listar
+       subdirectorios, y la opción <TT
+CLASS="option"
+>-u</TT
+> de
+       <B
+CLASS="command"
+>sort</B
+>.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	<PRE
+CLASS="screen"
+> 
+#!/bin/bash 
+cd $HOME 
+ls -R | sort -u | mail $USERNAME@$HOSTNAME </PRE
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.variables.1"
+></A
+><B
+>2. </B
+>La variable de ambiente <TT
+CLASS="envar"
+>HOME</TT
+>
+       contiene el nombre de su directorio personal.  Comprúebelo y
+       después empleela para cambiarse a su directorio.  Después cambie
+       esta variable y explique que ocurre con el comodín '~'.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <B
+CLASS="command"
+>echo $HOME; cd $HOME</B
+> 
+       El comodin ~ es remplazado por el valor de la variable
+       <TT
+CLASS="envar"
+>$HOME</TT
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.variables.2"
+></A
+><B
+>3. </B
+>El programa <B
+CLASS="command"
+>man</B
+> presenta
+      páginas del manual, empleando el programa especificado en la
+       variable de ambiente <TT
+CLASS="envar"
+>PAGER</TT
+> o en su defecto
+      con el programa <B
+CLASS="command"
+>less</B
+> (ver <A
+HREF="x2787.htm#lectura-bash-y-el-juego-de-herramientas"
+>Lectura bash y
+	el juego de herramientas</A
+>).  Modifique y exporte la
+       variable <TT
+CLASS="envar"
+>PAGER</TT
+> para que
+       <B
+CLASS="command"
+>man</B
+> emplee el programa
+       <B
+CLASS="command"
+>more</B
+> para presentar información y pruebe el
+      cambio.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	<PRE
+CLASS="screen"
+> 
+export PAGER=more 
+man man</PRE
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.expansiones.1"
+></A
+><B
+>4. </B
+>
+       ¿Qué hace el comando <B
+CLASS="command"
+>echo `ls`</B
+> ? (note que
+      se usan apóstrofes invertidos).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Ejecuta el comando
+      <B
+CLASS="command"
+>ls</B
+> y el resultado del mismo como cadena lo
+      presenta con el comando <B
+CLASS="command"
+>echo</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.expansiones.2"
+></A
+><B
+>5. </B
+>
+       ¿Qué hace el comando <TT
+CLASS="userinput"
+><B
+>N=6 echo "'1+$N' =
+       $((1+$N))"</B
+></TT
+> ?  Después de dar su respuesta,
+       compruébela empleando un intérprete de comandos.
+      </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Presenta
+       <TT
+CLASS="literal"
+>1+$N = 7</TT
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.script1.2"
+></A
+><B
+>6. </B
+>
+       Haga un script que cada 90 minutos presente
+       el mensaje "Hacer tareas". <SPAN
+><I
+CLASS="emphasis"
+>Ayuda:</I
+></SPAN
+>
+       <B
+CLASS="command"
+>source</B
+>. 
+      </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> El archivo puede ser
+	 <TT
+CLASS="filename"
+>recuerda.sh</TT
+>, su contenido: <PRE
+CLASS="screen"
+>&#13;#!/bin/bash 
+sleep 90m 
+echo "Hacer tareas"
+</PRE
+>
+        después ejecutarlo.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.script1.3"
+></A
+><B
+>7. </B
+>Cree un script que al ser ejecutado, cree un
+      archivo <TT
+CLASS="filename"
+>script2</TT
+>.  El archivo
+       <TT
+CLASS="filename"
+>script2</TT
+> creado debe poner la variable
+       <TT
+CLASS="envar"
+>PATH</TT
+> en el valor que tenga cuando el primer
+       script sea ejecutado, añadir a tal variable la ruta
+       <TT
+CLASS="filename"
+>/opt/bin</TT
+> y debe crear un alías que cuando
+       se ejecute muestre el contenido de la variable PATH (no olvide
+       cambiar el modo del archivo <TT
+CLASS="filename"
+>script2</TT
+>
+       generado para que sea ejecutable).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	<PRE
+CLASS="screen"
+> 
+#!/bin/bash 
+echo 'PATH=$PATH:/opt/bin' &#62; script2 
+echo 'alias sp="echo $PATH"' &#62;&#62; script2 
+chmod +x script2</PRE
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="script.programas.1"
+></A
+><B
+>8. </B
+>Haga un script que después de ejecutarse pida
+       al usuario 2 números y después presente la suma, la resta, el
+       producto y la división.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	<PRE
+CLASS="screen"
+> 
+#!/bin/bash 
+read -p "Numeros: " A B 
+echo $((A+B)) $((A-B)) $((A*B)) $((A/B))</PRE
+></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3852"
+HREF="x3773.htm#AEN3852"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En rigor lo interpreta con <TT
+CLASS="filename"
+>/bin/sh</TT
+>
+	  pero en Debian <TT
+CLASS="filename"
+>/bin/sh</TT
+> es un enlace a
+	  <TT
+CLASS="filename"
+>/bin/bash</TT
+>
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN4173"
+HREF="x3773.htm#AEN4173"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En la expresión pueden emplearse los operadores -
+	   (unario y binario), + (unario y binario), ** para elevar a
+	   una potencia, * para multiplicar, / para divir, % para
+	   obtener residuo de una división.  Hay operadores que operan
+	   a nivel de bits (representación binaria de los números que
+	   operan): ~ para negar bits, &#38; para hacer "Y" entre bits
+	   de operandos y | para efectuar "O".  También pueden
+	   emplearse valores booleanos --- 0 se interpreta como falso
+	   y 1 como verdadero---, pueden compararse números con los
+	   operadores &#62;, &#60;, &#60;= (menor o igual), &#62;= (mayor
+	   o igual), == (igualdad), != (diferentes) y pueden operarse
+	   booleanos con ! para negar, &#38;&#38; como conjunción (Y)
+	   y || como disyunción.  Los números pueden escribirse en
+	   decimal, o en otras bases empleando como prefijo del número
+	   la base seguida del caracter '<TT
+CLASS="literal"
+>#</TT
+>'
+	   (también puede escribirse números en octal iniciándolos con
+	   0 o en hexadecimal iniciándolos con 0x).</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN4357"
+HREF="x3773.htm#AEN4357"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Otros atributos pueden ser "función"
+	   <TT
+CLASS="option"
+>-f</TT
+> y arreglo <TT
+CLASS="option"
+>-a</TT
+>
+	  </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x3282.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x4476.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Procesos y tareas</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c2347.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Configuración de una sesión</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

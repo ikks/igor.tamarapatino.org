@@ -1,0 +1,773 @@
+<HTML
+><HEAD
+><TITLE
+>Linux</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Primera exploración de Linux desde
+   la perspectiva de un usuario"
+HREF="c84.htm"><LINK
+REL="PREVIOUS"
+TITLE="Primera exploración de Linux desde
+   la perspectiva de un usuario"
+HREF="c84.htm"><LINK
+REL="NEXT"
+TITLE="Sistema de usuarios y manejo de clave"
+HREF="x328.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c84.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x328.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="linux"
+>Linux</A
+></H1
+><DIV
+CLASS="highlights"
+><A
+NAME="AEN184"
+></A
+><P
+></P
+><UL
+><LI
+><A
+NAME="filosofia.hist"
+></A
+><P
+>Identifica algunos sucesos en la historia de Linux.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-linux"
+>Lectura: Linux</A
+></H2
+><P
+>Un sistema operativo es un programa que facilita el empleo
+     del hardware de un computador, lo facilita presentando
+     abstracciones de cada dispositivo. Por ejemplo al guardar
+     información en un disquete, el usuario puede pensar en archivos,
+     y el sistema operativo se encarga de los detalles de acomodar y
+     organizar la información en el disquete a nivel físico. Linux es
+     un sistema operativo tipo <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> de libre
+     redistribución.  <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> es el nombre de un
+     sistema operativo concebido en los 70's junto con el lenguaje de
+     programación C por Kenneth Thompson, Dennis Ritchie y sus colegas
+     de laboratorios Bell.
+    </P
+><A
+NAME="AEN193"
+></A
+><P
+>Programa que fácilita la
+     utilización de un computador por parte del usuario abstrayendo
+     dispositivos, para que el usuario no se ocupe de los detalles de
+     cada uno.
+    </P
+><A
+NAME="AEN196"
+></A
+><P
+>Nombre del sistema operativo
+     concebido en laboratorios Bell en los 70's y que Linux
+     implementa.</P
+><P
+><SPAN
+CLASS="acronym"
+>Unix</SPAN
+> se basa en varias ideas muy buenas
+    que aún están en plena vigencia:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>Para los creadores de <SPAN
+CLASS="acronym"
+>Unix</SPAN
+>, un sistema
+       operativo debería ser un conjunto de herramienta y conceptos
+       básicos que le permitan al usuario construir rápida y
+       fácilmente sus propias herramientas para automatizar procesos.
+       <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> es como un juego de herramientas que
+       puede aprovecharse al máximo con algo de estudio.</P
+></LI
+><LI
+><P
+>Otra gran idea que se ha desarrollo junto con
+       <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> ha sido Internet, porque en este
+       sistema se realizaron las primeras implementaciones de los
+       protocolos de comunicación en los que se basa Internet, y aún
+       hoy son sistemas Unix los que mantienen Internet en
+       funcionamiento
+      <A
+NAME="AEN209"
+HREF="#FTN.AEN209"
+>[1]</A
+>.
+      </P
+></LI
+><LI
+><P
+>Otra buena idea ha sido usar y promover estándares
+       abiertos.  Hoy en día existen grupos que mantiene estándares
+       que definen lo que es un sistema tipo <SPAN
+CLASS="acronym"
+>Unix</SPAN
+>:
+       <SPAN
+CLASS="acronym"
+>Posix</SPAN
+> <A
+HREF="http://standards.ieee.org/regauth/posix/index.html"
+TARGET="_top"
+>http://standards.ieee.org/regauth/posix/index.html</A
+>
+       y <I
+CLASS="foreignphrase"
+>The Open Group</I
+> <A
+HREF="http://www.opengroup.org"
+TARGET="_top"
+>http://www.opengroup.org</A
+> ---de hecho la palabra
+       <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> es una marca registrada de X/Open.
+      </P
+></LI
+></UL
+><P
+>Dado que sacar copias de un programa no es costoso ni
+     difícil, y dado el carácter de <SPAN
+CLASS="acronym"
+>Unix</SPAN
+>, desde sus
+     comienzos este sistema ha promovido la colaboración y muchas
+     personas han entregado al público las herramientas que han
+     realizado para permitir su libre redistribución.  En palabras del
+     mismo Dennis Ritchie <SPAN
+CLASS="QUOTE"
+>""Lo que queríamos preservar no era sólo un
+     buen ambiente en el cual programar, sino también un sistema
+      alrededor del cual se formara fraternidad""</SPAN
+>
+     <A
+NAME="AEN225"
+HREF="#FTN.AEN225"
+>[2]</A
+>.
+    </P
+><P
+>Hay incluso varios sistemas operativos tipo
+     <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> cuyas fuentes permiten la libre copia y
+     libre redistribución ---la mayoría se basan en Unix
+     <SPAN
+CLASS="acronym"
+>BSD</SPAN
+>
+     <A
+NAME="AEN231"
+HREF="#FTN.AEN231"
+>[3]</A
+>---, algunos son:
+    </P
+><A
+NAME="AEN233"
+></A
+><P
+>Nombre de una version de Unix
+     desarrollada en la universdiad de Berkeley desde los 70's.</P
+><P
+>&#13;    </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><SPAN
+CLASS="acronym"
+>NetBSD</SPAN
+></DT
+><DD
+><P
+>Es un descendiente de <SPAN
+CLASS="acronym"
+>386BSD</SPAN
+> (que a su
+	vez es un descendiente de <SPAN
+CLASS="acronym"
+>BSD</SPAN
+>).
+	<SPAN
+CLASS="acronym"
+>NetBSD</SPAN
+> se centra en portabilidad, es decir
+	que funciona en diversos tipos de computadores. <A
+HREF="http://www.netbsd.org"
+TARGET="_top"
+>http://www.netbsd.org</A
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="acronym"
+>OpenBSD</SPAN
+></DT
+><DD
+><P
+>Descendiente de <SPAN
+CLASS="acronym"
+>NetBSD</SPAN
+>, centrado en
+	seguridad y criptografía <A
+HREF="http://www.openbsd.org"
+TARGET="_top"
+>http://www.openbsd.org</A
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="acronym"
+>FreeBSD</SPAN
+></DT
+><DD
+><P
+>Descendiente de <SPAN
+CLASS="acronym"
+>386BSD</SPAN
+>, centrado en
+	facilidad para el usuario final <A
+HREF="http://www.freebsd.org"
+TARGET="_top"
+>http://www.freebsd.org</A
+>.</P
+></DD
+><DT
+>Linux</DT
+><DD
+><P
+>El kernel de este sistema ha sido desarrollado de forma
+	independiente de <SPAN
+CLASS="acronym"
+>BSD</SPAN
+> desde 1992 por Linus
+	Torvalds y un gran grupo de voluntarios (<A
+HREF="http://www.kernel.org"
+TARGET="_top"
+>http://www.kernel.org</A
+>).  Otros componentes del
+	sistema fueron tomados de <SPAN
+CLASS="acronym"
+>BSD</SPAN
+> y otros
+	fueron aportados por diversas organizaciones:
+	<I
+CLASS="foreignphrase"
+>Free Software Foundation</I
+>,
+	<I
+CLASS="foreignphrase"
+>XFree86</I
+>, <I
+CLASS="foreignphrase"
+>Apache
+	Foundation</I
+>, etc.</P
+></DD
+></DL
+></DIV
+><P
+>Los sistemas tipo <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> han sido empleados
+     tradicionalmente por programadores, por esto cuenta con
+     compiladores, editores y herramientas para facilitar la
+     programación ---especialmente en lenguaje C.  En el caso de Linux
+     tales herramientas han sido desarrolladas por la
+     <I
+CLASS="foreignphrase"
+>Free Software Foundation</I
+> <A
+HREF="http://www.fsf.org"
+TARGET="_top"
+>http://www.fsf.org</A
+>. Así mismo la
+     <SPAN
+CLASS="acronym"
+>FSF</SPAN
+> aportó la licencia que cubre al kernel
+     (llamada <SPAN
+CLASS="acronym"
+>GPL</SPAN
+>) y muchos componentes de un
+     sistema Linux.
+   </P
+><P
+>Al igual que otros sistemas operativos Unix/Linux cuenta con
+     un sistema de ventanas que, a diferencia de otros sistemas
+     operativos, es independiente de Unix/Linux ---es decir puede
+     ponerse, quitarse o cambiarse---.  Tal sistema de ventanas se
+     llama X-Window y la versión particular que se emplea en Linux se
+     llama <SPAN
+CLASS="application"
+>XFree86</SPAN
+> <A
+HREF="http://www.xfree86.org"
+TARGET="_top"
+>http://www.xfree86.org</A
+>.
+   </P
+><P
+>Para facilitar la adopción de Unix por parte de usuarios sin
+     experiencia con este sistema, hay varios proyectos en marcha, los
+     dos más conocidos son <SPAN
+CLASS="acronym"
+>GNOME</SPAN
+> (<A
+HREF="http://www.gnome.org"
+TARGET="_top"
+>http://www.gnome.org</A
+>) y <SPAN
+CLASS="acronym"
+>KDE</SPAN
+>
+     (<A
+HREF="http://www.kde.org"
+TARGET="_top"
+>http://www.kde.org</A
+>), que
+     funcionan sobre Linux y X-Window.  Cada uno brinda un escritorio
+     gráfico y aplicaciones de oficina como a las que están
+     acostumbrados los usuarios de otros sistemas operativos (e.g.
+     procesador de texto, hoja de cálculo, etc).
+    </P
+><P
+>Hay muchos otros programas que funcionan sobre Linux y que
+     satisfacen diversas necesidades.  Dada tal cantidad y variedad de
+     programas para Linux, hay grupos de personas dedicadas a
+     configurar distribuciones.  Una distribución de Linux es una
+     selección de programas junto con herramientas para administrarlos
+     e instalarlos con facilidad.  Algunos nombres de distribuciones
+     son Redhat, Mandrake, Suse, Debian.  Nuestra plataforma de
+     referencia (ver <A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de
+     referencia</A
+>) se basa en la distribución Debian que es de
+     alta calidad técnica y que es realizada por voluntarios del mundo
+     entero desde 1993.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-linux"
+>Lecturas recomendadas: Linux</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Dennis Ritchie ha escrito una corta autobiografía, que
+       está disponible en: <A
+HREF="http://cm.bell-labs.com/cm/cs/who/dmr/bigbio1st.html"
+TARGET="_top"
+>http://cm.bell-labs.com/cm/cs/who/dmr/bigbio1st.html</A
+>.
+      </P
+></LI
+><LI
+><P
+>La evolución del sistema <SPAN
+CLASS="acronym"
+>Unix</SPAN
+>, como
+       diagrama puede consultarse en <A
+HREF="http://perso.wanadoo.fr/levenez/unix/"
+TARGET="_top"
+>http://perso.wanadoo.fr/levenez/unix/</A
+>,
+       allí mismo se encuentra una buena recopilación de enlaces a
+       diversas versiones de la historia de Unix.</P
+></LI
+><LI
+><P
+>Un muy buen libro en el cual se habla de la historia de
+       <SPAN
+CLASS="acronym"
+>Unix</SPAN
+> es <I
+CLASS="citetitle"
+>A Quarter Century of
+       UNIX</I
+> de Peter H. Salus.</P
+></LI
+><LI
+><P
+>La evolución de <SPAN
+CLASS="acronym"
+>BSD</SPAN
+> puede consultarse
+      en: <A
+HREF="http://www.oreilly.com/catalog/opensources/book/kirkmck.html"
+TARGET="_top"
+>http://www.oreilly.com/catalog/opensources/book/kirkmck.html</A
+>.
+      </P
+></LI
+><LI
+><P
+>Puede consultarse más sobre la forma de desarrollo del
+       kernel de Linux en el <SPAN
+CLASS="acronym"
+>FAQ</SPAN
+> del mismo: <A
+HREF="http://www.tux.org/lkml"
+TARGET="_top"
+>http://www.tux.org/lkml</A
+>.
+      </P
+></LI
+><LI
+><P
+>Hay un breve resumem de la historia de Linux, Unix y los
+       movimientos de fuentes abiertas y software libre en la sección
+       2.1 de "<I
+CLASS="citetitle"
+>Secure Programming for Linux and Unix
+       HOWTO</I
+>", escrito por David A. Wheeler: <A
+HREF="http://www.linuxdoc.org/HOWTO/Secure-Programs-HOWTO/history.html"
+TARGET="_top"
+>http://www.linuxdoc.org/HOWTO/Secure-Programs-HOWTO/history.html</A
+>.
+       </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-linux"
+>Ejercicios: Linux</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x182.htm#filosofia.hist.1"
+>Investigue más sobre las diferencias
+	    entre Linux y otros sistemas de libre redistribución como OpenBSD o 
+	    FreeBSD.</A
+></DT
+><DT
+>2. <A
+HREF="x182.htm#filosofia.hist.2"
+>¿En que consisten los 
+	    movimientos de fuentes abiertas y de software libre, y cual es su 
+	    relación con Linux? </A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="filosofia.hist.1"
+></A
+><B
+>1. </B
+>Investigue más sobre las diferencias
+	    entre Linux y otros sistemas de libre redistribución como OpenBSD o 
+	    FreeBSD.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Los *<SPAN
+CLASS="acronym"
+>BSD</SPAN
+> por
+	    ser menos populares tiene menos aplicaciones y cuentan con una 
+	    capa para emular Linux; los desarrolladores se concentrar en 
+	    portar aplicaciones de Linux y de otras plataformas; el desarrollo 
+	    es dirigido por un equipo empleando <SPAN
+CLASS="acronym"
+>CVS</SPAN
+>. 
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="filosofia.hist.2"
+></A
+><B
+>2. </B
+>¿En que consisten los 
+	    movimientos de fuentes abiertas y de software libre, y cual es su 
+	    relación con Linux? </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Fuentes abiertas busca presentar los méritos técnicos
+	    de usar programas cuyas fuentes puedan ser vistas por el
+	    público. Es impulsado por Open Source Initiative.  Software 
+	    libre se refiere a una ideología y una clasificación de
+	    licencias acorde. Se trata de la ideología de la Free Software 
+	    Foundation.
+	</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN209"
+HREF="x182.htm#AEN209"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Por ejemplo el principal servidor de nombres en Internet
+	 es una máquina
+	 <SPAN
+CLASS="acronym"
+>Unix</SPAN
+>(<SPAN
+CLASS="acronym"
+>BSD</SPAN
+>), puede ver
+	 detalles sobre este servidor en <A
+HREF="http://www.isc.org/services/public/F-root-server.html"
+TARGET="_top"
+>http://www.isc.org/services/public/F-root-server.html</A
+>
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN225"
+HREF="x182.htm#AEN225"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Cita tomada de un artículo escrito por Dennis Ritchie sobre
+       la historia de Unix, disponible en <A
+HREF="http://cm.bell-labs.com/cm/cs/who/dmr/hist.html"
+TARGET="_top"
+>http://cm.bell-labs.com/cm/cs/who/dmr/hist.html</A
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN231"
+HREF="x182.htm#AEN231"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>BSD es el nombre de una versión de Unix desarrollado en la
+       universidad de Berkeley (Estados Unidos) desde los
+       70's
+      </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c84.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x328.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Primera exploración de Linux desde
+   la perspectiva de un usuario</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c84.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Sistema de usuarios y manejo de clave</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

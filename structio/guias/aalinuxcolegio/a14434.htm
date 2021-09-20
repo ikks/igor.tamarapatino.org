@@ -1,0 +1,1627 @@
+<HTML
+><HEAD
+><TITLE
+>Plataforma de referencia S-Helio 1.1</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Protocolos de soporte y de usuario"
+HREF="x12937.htm"><LINK
+REL="NEXT"
+TITLE="Sobre estas guías"
+HREF="a14863.htm"></HEAD
+><BODY
+CLASS="appendix"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x12937.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="a14863.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="appendix"
+><H1
+><A
+NAME="plataforma"
+>Apéndice A. Plataforma de referencia S-Helio 1.1</A
+></H1
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="plataforma-de-referencia"
+>Plataforma de referencia S-Helio 1.1</A
+></H1
+><P
+>&#13;   La plataforma de referencia S-Helio 1.1 es un diseño de una red de
+   área local para un colegio, que se basa en Linux Debian y
+   aplicaciones de libre redistribución.  En esta red hay por lo menos
+   un computador de más capacidad al que llamamos
+   <SPAN
+><I
+CLASS="emphasis"
+>servidor</I
+></SPAN
+> y otros computadores tal vez menos
+   poderosos a los que llamamos <SPAN
+><I
+CLASS="emphasis"
+>clientes</I
+></SPAN
+>.  Al
+   diseñarla hemos considerado: </P
+><P
+></P
+><UL
+><LI
+><P
+>Emplear únicamente software que pueda usarse sin costo
+     alguno y que resulte ser semilla y fruto de colaboración.  Por
+     esto sólo sugerimos software de libre redistribución de muy buena
+     calidad.  Ver <A
+HREF="c84.htm#lectura-software-de-libre-redistribucion"
+>Lectura
+     Software de libre redistribución</A
+>.  </P
+></LI
+><LI
+><P
+>Que la red se constituya en una intranet del colegio para
+     ser usada por usuarios de uno de los siguientes grupos:
+     estudiantes, profesores, personal administrativo y eventualmente
+     padres y exalumnos.  </P
+></LI
+><LI
+><P
+>Que cada usuario cuente con su espacio propio, que disponga
+     de herramientas básicas, que pueda comunicarse con otros usuarios
+     de la red (<TT
+CLASS="literal"
+>finger</TT
+>, <TT
+CLASS="literal"
+>talk</TT
+>,
+     correo electrónico) y que pueda consultar la documentación y los
+     recursos que el colegio brinde en la intranet (NFS,
+     <TT
+CLASS="literal"
+>ftp</TT
+>, <TT
+CLASS="literal"
+>web</TT
+>,
+     <TT
+CLASS="literal"
+>telnet</TT
+>, <TT
+CLASS="literal"
+>ssh</TT
+>).
+     </P
+></LI
+><LI
+><P
+>Que el transito de otro sistema operativo a Linux sea lo
+     menos abrupto posible. Por esto sugerimos un ambiente de
+     escritorio sencillo (GNOME), escribimos documentación inicial de
+     dominio público para usuar y administrar el sistema y ofrecemos
+     soporte gratuito. Como las fuentes de esta documentación son de
+     dominio público, pueden ser completadas, modificadas y usada en su
+     colegio de acuerdo a sus políticas.  Puede recibir soporte de
+     voluntarios en la lista
+     <TT
+CLASS="email"
+>&#60;<A
+HREF="mailto:structio-sopcol@lists.sourceforge.net"
+>structio-sopcol@lists.sourceforge.net</A
+>&#62;</TT
+>, a la que
+     puede suscribirse en 
+     <A
+HREF="http://lists.sourceforge.net/lists/listinfo/structio-sopcol"
+TARGET="_top"
+>&#13;       http://lists.sourceforge.net/lists/listinfo/structio-sopcol</A
+>, 
+     o si desea 
+     colaborar a desarrollar guías puede suscribirse a la lista
+     <TT
+CLASS="email"
+>&#60;<A
+HREF="mailto:structio-guias@lists.sourceforge.net"
+>structio-guias@lists.sourceforge.net</A
+>&#62;</TT
+> desde
+     <A
+HREF="http://lists.sourceforge.net/lists/listinfo/structio-guias"
+TARGET="_top"
+>&#13;       http://lists.sourceforge.net/lists/listinfo/structio-guias</A
+> 
+     </P
+></LI
+><LI
+><P
+>Que el software y la documentación para el usuario final
+     sean vistos en español y que el teclado pueda generar todos los
+     caracteres de nuestro idioma.  </P
+></LI
+><LI
+><P
+>Suponemos que el colegio cuenta con PCs no tan modernos y
+     que no podrá invertir grandes recursos económicos para
+     actualizarlos (aun cuando esta plataforma de referencia
+     S-Helio 1.1 también funciona con computadores nuevos).
+     </P
+></LI
+><LI
+><P
+>Suponemos que cada PC de la red es medianamente autónomo, es
+     decir, que puede funcionar aislado de red con un sistema Linux
+     mínimo<A
+NAME="AEN14467"
+HREF="#FTN.AEN14467"
+>[1]</A
+>.
+     </P
+></LI
+><LI
+><P
+>Buscamos distribuir al máximo el espacio de los discos de
+     cada computador y la carga de los procesadores aprovechando para
+     esto la red.  </P
+></LI
+><LI
+><P
+>Nos hemos basado en la experiencia en un colegio
+     concreto<A
+NAME="AEN14474"
+HREF="#FTN.AEN14474"
+>[2]</A
+>.
+     </P
+></LI
+><LI
+><P
+>Hemos tenido en cuenta otros diseños de red para colegios
+     (RedEscolar<A
+NAME="AEN14479"
+HREF="#FTN.AEN14479"
+>[3]</A
+>. ),
+     software sugerido por organizaciones
+     (OFSET<A
+NAME="AEN14482"
+HREF="#FTN.AEN14482"
+>[4]</A
+>)
+     y distribuciones enfocadas en educación
+     (Debian-Jr<A
+NAME="AEN14485"
+HREF="#FTN.AEN14485"
+>[5]</A
+>).
+     </P
+></LI
+><LI
+><P
+>Que la interconexión de diversas redes que sigan estas
+       recomendaciones sea posible y fácil, así como una eventual conexión
+       a Internet.  Aunque en estas guías no se describe en detalle como
+       lograr una conexión segura a Internet.
+     </P
+></LI
+></UL
+><P
+>A continuación presentamos la plataforma de referencia
+   S-Helio 1.1 en varias etapas: Red, Computadores y Software.  
+   Además al final de esta sección presentamos software de libre
+   redistribución adicional que podría usarse en un colegio y que
+   funciona bien sobre la plataforma de referencia.
+  </P
+><P
+>Note que esta sección es de carácter técnico, precisamente
+   estas guías le permitirán esclarecer los términos que aquí
+   encuentre y pueden guiarlo en la instalación y uso de la plataforma
+   de referencia S-Helio 1.1.
+  </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="plataforma-red"
+>Red</A
+></H2
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Hardware:</DT
+><DD
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Tarjetas</DT
+><DD
+><P
+>Ethernet 10Mb (e.g. Compatibles
+	  NE-2000).</P
+></DD
+><DT
+>Medio físico</DT
+><DD
+><P
+> Cable 10Base-T o de pares trenzados (en inglés
+	  <SPAN
+><I
+CLASS="emphasis"
+>twisted pair</I
+></SPAN
+>).</P
+></DD
+><DT
+>Concentrador</DT
+><DD
+><P
+></P
+></DD
+></DL
+></DIV
+></DD
+><DT
+>Software para distribución de información</DT
+><DD
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>NIS</DT
+><DD
+><P
+>Usado para distribuir claves que residirán en el
+	 servidor.</P
+></DD
+><DT
+>NFS</DT
+><DD
+><P
+>Usado para distribuir los directorios
+	  <TT
+CLASS="filename"
+>/usr</TT
+>, <TT
+CLASS="filename"
+>/home</TT
+>,
+	  <TT
+CLASS="filename"
+>/var/mail</TT
+>
+	  <A
+NAME="AEN14527"
+HREF="#FTN.AEN14527"
+>[6]</A
+> y <TT
+CLASS="filename"
+>/usr/share</TT
+> del servidor
+	  en todos los clientes
+	  <A
+NAME="AEN14532"
+HREF="#FTN.AEN14532"
+>[7]</A
+>
+       </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>/usr</TT
+></DT
+><DD
+><P
+> se monta en los clientes como
+	     <TT
+CLASS="filename"
+>/opt</TT
+>, y por medio de la variables
+	     <TT
+CLASS="literal"
+>PATH</TT
+>, <TT
+CLASS="literal"
+>LD_LIBRARY_PATH</TT
+> (o 
+	     el archivo <TT
+CLASS="filename"
+>/etc/ld.so.conf</TT
+>) y eventualmente
+	     enlaces, los usuarios pueden disponer de todos varios de los
+	     programas que hay en el servidor.
+	    </P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/home</TT
+></DT
+><DD
+><P
+>se monta en todos los clientes como
+	     <TT
+CLASS="filename"
+>/home</TT
+>, para que los directorios de
+	     los usuarios estén disponibles en todas las
+	     estaciones.</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/var/mail</TT
+></DT
+><DD
+><P
+> se monta en todos los clientes como
+	     <TT
+CLASS="filename"
+>/var/mail</TT
+> 
+	     para permitir que desde todos el programa 
+	     <TT
+CLASS="literal"
+>mail</TT
+> funcione,
+	     mientras se centraliza la cola de correo en el
+	     servidor.</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/usr/share</TT
+></DT
+><DD
+><P
+> se monta en todos los clientes como
+	     <TT
+CLASS="filename"
+>/usr/share</TT
+> para dejar una sóla copia
+	     de la documentación, que pueda consultarse desde todos
+	     los computadores.</P
+></DD
+></DL
+></DIV
+><P
+>También se compartirá el directorio
+	  <TT
+CLASS="filename"
+>/aux</TT
+> de cada cliente en el servidor
+	  como
+	  <TT
+CLASS="filename"
+>/mnt/aux-<TT
+CLASS="replaceable"
+><I
+>n</I
+></TT
+></TT
+>,
+	  de forma que en el servidor se pueda contar con todo el
+	  espacio que sobre en la red para redistribuirlo.
+	 </P
+></DD
+></DL
+></DIV
+></DD
+></DL
+></DIV
+><P
+>El servidor estará configurado como
+     compuerta en todos los clientes (para una conexión sencilla a Internet 
+     de ser posible) y actuará como servidor de diversos protocolos (como
+     se presenta a continuación).
+   </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="plataforma-computadores"
+>Computadores</A
+></H2
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Servidor</DT
+><DD
+><P
+></P
+><UL
+><LI
+><P
+>Procesador &#62;= Pentium o AMD
+	 686, Memoria: &#62;=64MB.</P
+></LI
+><LI
+><P
+>Tarjeta de video &#62;=VGA, Monitor capaz de presentar
+	 gráficas 640x480x16.</P
+></LI
+><LI
+><P
+>Disco Duro &#62;=2GB dividido en particiones:</P
+><P
+></P
+><UL
+><LI
+><P
+> Partición para swap con la misma cantidad de memoria
+	   RAM o una cantidad cercana. </P
+></LI
+><LI
+><P
+><TT
+CLASS="filename"
+>/boot</TT
+> con mínimo 10MB y
+	   preferiblemente ubicada entre los primeros 1024 cilindros
+	   del disco (la ubicación en los primeros 1024 cilindros es
+	   indispensable si su BIOS es de antes de 1998 o no soporta
+	   LBA32). </P
+></LI
+><LI
+><P
+><TT
+CLASS="filename"
+>/home</TT
+> para cuentas de usuarios
+	   (se sugiere un espacio mínimo de 2MB por cada usuario del
+	   sistema). </P
+></LI
+><LI
+><P
+><TT
+CLASS="filename"
+>/var</TT
+> por lo menos 100MB más al
+	   menos 500K por cada usuario (en esta partición se mantendrá
+	   la cola de correo electrónico).  </P
+></LI
+><LI
+><P
+><TT
+CLASS="filename"
+>/</TT
+> con el resto del espacio del
+	  disco duro.</P
+></LI
+></UL
+></LI
+></UL
+></DD
+><DT
+>Computadores clientes</DT
+><DD
+><P
+></P
+><UL
+><LI
+><P
+>Procesador &#62;=486, Memoria: &#62;=32MB. </P
+></LI
+><LI
+><P
+>Tarjeta de video &#62;=VGA, Monitor capaz de presentar
+	 gráficas 640x480x16.</P
+></LI
+></UL
+><P
+></P
+><UL
+><LI
+><P
+> Disco Duro
+	 &#62;=300MB por equipo dividido en particiones: @itemize @item
+	 <TT
+CLASS="filename"
+>/boot</TT
+> con mínimo 10MB y ubicado en los
+	 primeros 1024 cilindros del disco (la ubicación en los primeros
+	 1024 cilindros es indispensable si su BIOS es de antes de 1998 o
+	 no soporta LBA32).  el computador tiene una BIOS posterior a
+	 1998 no es indispensable que <TT
+CLASS="filename"
+>/boot</TT
+> esté en
+	 los primeros 1024 cilindros). </P
+><P
+></P
+><UL
+><LI
+><P
+><TT
+CLASS="filename"
+>/</TT
+> con
+	    mínimo 250MB, aun cuando de ser posible se sugiere 1.5GB.</P
+></LI
+><LI
+><P
+> <TT
+CLASS="filename"
+>/swap</TT
+> con la misma cantidad de
+	    memoria RAM o un poco más.</P
+></LI
+><LI
+><P
+><TT
+CLASS="filename"
+>/aux</TT
+> con el espacio restante del
+	    disco duro.</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Teclado, ratón, unidad para disquete 3 1/2 (se sugiere
+	 unidad de CD-ROM al menos durante la instalación).</P
+></LI
+></UL
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="plataforma-software"
+>Software</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>En cada cliente:
+     </P
+><P
+></P
+><UL
+><LI
+><P
+>La distribución Debian 2.2.
+       </P
+></LI
+><LI
+><P
+>GNOME &#62;= 1.2 (si es posible XimianGNOME &#62;= 1.2).
+       </P
+></LI
+><LI
+><P
+>Locales deben estar instalados por lo menos los
+	siguientes programas: servidor de X-Window, cliente y servidor
+	<TT
+CLASS="literal"
+>telnet</TT
+>, cliente y servidor
+	<TT
+CLASS="literal"
+>ssh</TT
+>, cliente y servidor
+	<TT
+CLASS="literal"
+>ftp</TT
+>, cliente y servidor
+	<TT
+CLASS="literal"
+>finger</TT
+>, cliente y servidor
+	<TT
+CLASS="literal"
+>talk</TT
+>, cliente y servidor de
+	<TT
+CLASS="literal"
+>NFS</TT
+>, cliente de <TT
+CLASS="literal"
+>NIS</TT
+>,
+	servidor de correo <TT
+CLASS="literal"
+>exim</TT
+>,
+	<TT
+CLASS="literal"
+>bash</TT
+>.
+      </P
+><P
+>&#13;	Los paquetes son:
+	 adduser, ae, alsa-base, apt, at, base-config, base-files, base-passwd, bash, bc, biff, bin86, binutils, bison, bsdmainutils, bsdutils, bug-buddy, console-data, console-tools, console-tools-libs, cpio, cpp, cron, dc, debconf-tiny, debian-policy, debianutils, dialog, diff, dnsutils, doc-debian, doc-linux-text, dpkg, dpkg-dev, dpkg-ftp, dpkg-perl, e2fsprogs, ed, eject, elvis-tiny, emacs20, emacsen-common, enscript, esound, esound-common, exim, fbset, fdflush, fdutils, file, fileutils, findutils, finger, fingerd, flex, freetype2, ftp, g++, gcc, gcompris-data, gdb, gdk-imlib1, gdm, gettext-base, gmc, gnome-applets, gnome-bin, gnome-control-center, gnome-core, gnome-help, gnome-help-data, gnome-libs-data, gnome-panel, gnome-panel-data, gnome-session, gnome-terminal, gpm, grdb, grep, groff, gs, gsfonts, gzip, helix-sweetpill, hostname, iamerican, ibritish, imlib-base, imlib1, info, isapnptools, ispell, ldso, less, libart2, libasound0.4, libaudiofile0, libc6, libc6-dev, libcapplet0, libdb2, libdb2-util, libesd-alsa0, libgdbmg1, libgdk-pixbuf-gnome2, libgdk-pixbuf2, libghttp1, libglade-gnome0, libglade0, libglib1.2, libgmp2, libgnome32, libgnomesupport0, libgnomeui32, libgnorba27, libgnorbagtk0, libgtk1.2, libgtkxmhtml1, libgtop1, libident, libjpeg62, liblockfile1, libncurses4, libncurses5, libnet-perl, libnet-telnet-perl, libnewt0, libopenldap-runtime, libopenldap1, liborbit0, libpam-modules, libpam-runtime, libpam0g, libpanel-applet0, libpaperg, libpcre2, libpng2, libpopt0, libreadline4, librep9, libssl09, libstdc++2.10, libstdc++2.10-dev, libtiff3g, libungif3g, libwrap0, libxml1, libzvt2, lilo, locales, lockfile-progs, login, logrotate, lpr, lsof-2.2, lynx, m4, magicfilter, mailx, make, makedev, man-db, manpages, manpages-dev, mawk, mbr, mc-common, mime-support, minicom, modconf, modutils, mount, mpack, mtools, mutt, ncurses-base, ncurses-bin, ncurses-term, netbase, nfs-common, nfs-server, nis, nvi, passwd, patch, pciutils, perl-5.005, perl-5.005-base, perl-5.005-doc, perl-5.005-suid, perl-base, perl-tk, pidentd, ppp, pppconfig, procmail, procps, psmisc, pump, rcs, rep, rep-gtk, sawfish, sawfish-gnome, sed, setserial, sharutils, shellutils, slang1, ssh, ssh-askpass, ssh-askpass-gnome, ssh-askpass-ptk, strace, svgalibg1, sysklogd, syslinux, sysvinit, talk, talkd, tar, task-helix-core, tasksel, tcl8.2, tcpd, tcsh, tcsh-i18n, telnet, telnetd, tetex-base, tetex-bin, tetex-lib, texinfo, textutils, time, tk8.2, update, util-linux, vflib2, wenglish, whiptail, whois, xbase-clients, xf86setup, xfonts-100dpi, xfonts-base, xfree86-common, xlib6g, xpm4g, xserver-common, xserver-svga, xserver-vga16, xviddetect, zlib1g 
+    </P
+></LI
+><LI
+><P
+>Bien locales o compartidos de <TT
+CLASS="filename"
+>/usr</TT
+>
+	del servidor, montado como <TT
+CLASS="filename"
+>/opt</TT
+> en los
+	clientes: <TT
+CLASS="literal"
+>gmc</TT
+>,<TT
+CLASS="literal"
+>man</TT
+>,
+	<TT
+CLASS="literal"
+>gcalc</TT
+>, <TT
+CLASS="literal"
+>gnotepad</TT
+>,
+	<TT
+CLASS="literal"
+>gnomecal</TT
+>, <TT
+CLASS="literal"
+>mtools</TT
+>,
+	<TT
+CLASS="literal"
+>info</TT
+>, <TT
+CLASS="literal"
+>chfn</TT
+>,
+	<TT
+CLASS="literal"
+>mesg</TT
+>, <TT
+CLASS="literal"
+>useradd</TT
+>,
+	<TT
+CLASS="literal"
+>userdel</TT
+>, <TT
+CLASS="literal"
+>groupadd</TT
+>,
+	<TT
+CLASS="literal"
+>groupdel</TT
+>, <TT
+CLASS="literal"
+>mail</TT
+>,
+	<TT
+CLASS="literal"
+>ps</TT
+>, <TT
+CLASS="literal"
+>pstree</TT
+>,
+	<TT
+CLASS="literal"
+>top</TT
+>, <TT
+CLASS="literal"
+>dmesg</TT
+>,
+	<TT
+CLASS="literal"
+>last</TT
+>, <TT
+CLASS="literal"
+>w</TT
+>,
+	<TT
+CLASS="literal"
+>who</TT
+>, <TT
+CLASS="literal"
+>grep</TT
+>,
+	<TT
+CLASS="literal"
+>sed</TT
+>, <TT
+CLASS="literal"
+>awk</TT
+>,
+	<TT
+CLASS="literal"
+>sort</TT
+>, <TT
+CLASS="literal"
+>cat</TT
+>,
+	<TT
+CLASS="literal"
+>tac</TT
+>, <TT
+CLASS="literal"
+>head</TT
+>,
+	<TT
+CLASS="literal"
+>tail</TT
+>, <TT
+CLASS="literal"
+>nl</TT
+>,
+	<TT
+CLASS="literal"
+>wc</TT
+>, <TT
+CLASS="literal"
+>split</TT
+>,
+	<TT
+CLASS="literal"
+>csplit</TT
+>, <TT
+CLASS="literal"
+>abiword</TT
+>,
+	<TT
+CLASS="literal"
+>gimp</TT
+>, <TT
+CLASS="literal"
+>dia</TT
+>,
+	<TT
+CLASS="literal"
+>emacs</TT
+>, <TT
+CLASS="literal"
+>gcc</TT
+>,
+	<TT
+CLASS="literal"
+>make</TT
+>, <TT
+CLASS="literal"
+>gdb</TT
+>,
+	<TT
+CLASS="literal"
+>xdvi</TT
+>, <TT
+CLASS="literal"
+>dvi2ps</TT
+>,
+	<TT
+CLASS="literal"
+>gv</TT
+>, <TT
+CLASS="literal"
+>chown</TT
+>,
+	<TT
+CLASS="literal"
+>chgrp</TT
+>, <TT
+CLASS="literal"
+>gnorpm</TT
+>,
+	<TT
+CLASS="literal"
+>lynx</TT
+>, <TT
+CLASS="literal"
+>w3m</TT
+>,
+	<TT
+CLASS="literal"
+>gtop</TT
+> de ser posible un navegador gráfico y
+	un cliente de correo gráfico.  </P
+></LI
+></UL
+></LI
+><LI
+><P
+>En el servidor deben estar los mismos programas de cada
+      cliente y además: </P
+><P
+></P
+><UL
+><LI
+><P
+>El
+      servidor Apache.  </P
+></LI
+><LI
+><P
+>Toda la documentación posible en
+       <TT
+CLASS="filename"
+>/usr/share</TT
+> (estas guías, Documentación de
+       GNOME, HOWTOs, Network Administrator Guide, System
+       Administrator Guide, archivos para <TT
+CLASS="literal"
+>man</TT
+> e
+       <TT
+CLASS="literal"
+>info</TT
+>).  </P
+></LI
+><LI
+><P
+>Servidor de <TT
+CLASS="literal"
+>NIS</TT
+>.  </P
+></LI
+><LI
+><P
+>Herramientas para documentación con Texinfo:
+       <TT
+CLASS="literal"
+>makeinfo</TT
+>, <TT
+CLASS="literal"
+>texi2dvi</TT
+>,
+       <TT
+CLASS="literal"
+>texi2html</TT
+>.  </P
+></LI
+><LI
+><P
+>Extensiones y programas para Emacs:
+	<TT
+CLASS="literal"
+>gnus</TT
+> y opcionalmente <TT
+CLASS="literal"
+>w3</TT
+>
+	que estarían compartidos en <TT
+CLASS="filename"
+>/usr/share</TT
+>.
+    </P
+></LI
+><LI
+><P
+>Los paquetes incluyen:  abiword, adduser, ae, alsa-base, amaya, anacron, apache, apache-common, apache-doc, apt, asigna, at, auctex, autoclass, autoconf, automake, balsa, base-config, base-files, base-passwd, bash, bc, bibindex, bibtool, biff, bin86, bind, bind-doc, binutils, bison, blt, blt-common, blt-dev, blt8.0, bootpc, bsdgames, bsdmainutils, bsdutils, bug-buddy, build-essential, bzip2, ccmalloc, codecommander, console-data, console-tools, console-tools-libs, cpio, cpp, cron, cvs, cvs-buildpackage, cygnus-stylesheets, dc, ddd, debconf, debhelper, debian-policy, debiandoc-sgml, debianutils, debmake, developers-reference, dh-make, dia, diald, dialdcost, dialog, diff, diffstat, diploma, dlint, dnsutils, doc-base, doc-debian, doc-linux-es, doc-linux-text, docbook, docbook-doc, docbook-stylesheets, docbook-stylesheets-doc, docbook-to-man, docbook-xml, docbook2man, docbook2texi, dpkg, dpkg-dev, dpkg-ftp, dpkg-multicd, dpkg-perl, dupload, dvidvi, e2fsprogs, ecpg, ed, eeyes, eject, electric-fence, elvis-tiny, emacs20, emacsen-common, enscript, eog, esound-alsa, esound-common, exim, expect5.31, expectk5.31, f2c, fakeroot, fbset, fdflush, fdutils, fetchmail, fftw-dev, fftw2, file, fileutils, findutils, finger, fingerd, flex, fort77, fping, freetype2, ftnchek, ftp, g++, g77, gaim-gnome, gawk, gcc, gcc-doc, gcd, gdb, gdk-imlib1, gdm, gedit, gettext, gettext-base, gimp1.1, glade-gnome, glibc-doc, gmc, gnapster, gnome-applets, gnome-audio, gnome-bin, gnome-control-center, gnome-core, gnome-faq, gnome-gv, gnome-help, gnome-help-data, gnome-iconedit, gnome-libs-data, gnome-media, gnome-network, gnome-panel, gnome-panel-data, gnome-pim, gnome-pim-conduits, gnome-session, gnome-terminal, gnome-users-guide-en, gnome-utils, gnomeicu, gnosamba, gnotepad+, gnotepad+-help, gnumeric, gnuplot, gob, gobjc, gpm, gqview, grace, grdb, grep, groff, gs, gsfonts, gsfonts-x11, gtop, guile1.3, guitar, gv, gzip, helix-sweetpill, hostname, hyperlatex, iamerican, ibritish, icmpinfo, imlib-base, imlib1, indent, info, inn2, inn2-inews, ircd, ircd-dalnet, ircii, isapnptools, ispanish, ispell, jade, jadetex, junkbuster, kaffe, kernel-package, kernel-source-2.2.18pre21, lacheck, latex2html, ldso, less, lesstif1, lftp, libart2, libasound0.4, libaudiofile0, libbz2, libc6, libc6-dev, libcapplet0, libdb2, libdb2-util, libdigest-md5-perl, libesd0, libgal3, libgc5, libgc5-dev, libgdbmg1, libgdk-pixbuf-gnome2, libghttp1, libgimp1.1, libglade-gnome0, libglade0, libglib1.2, libglib1.2-dev, libgmp2, libgnome-pilot0, libgnome32, libgnomeprint-bin, libgnomeprint-data, libgnomeprint11, libgnomeprint6, libgnomesupport0, libgnomeui32, libgnorba27, libgnorbagtk0, libgpmg1, libgtk1, libgtk1.2, libgtk1.2-dev, libgtkxmhtml1, libgtop1, libguile6, libhtml-parser-perl, libi18n-langtags-perl, libident, libjpeg-progs, libjpeg62, liblockfile1, libltdl0, libltdl0-dev, libmime-base64-perl, libncurses4, libncurses5, libncurses5-dev, libnet-perl, libnet-telnet-perl, libnewt0, libnspr4, libobgnome0, libobgtk1, libogg0, libole2-0, libopenldap-runtime, libopenldap1, liborbit0, libpam-modules, libpam-runtime, libpam0g, libpanel-applet0, libpaperg, libpcap0, libpcre2, libpgsql2, libpgtcl, libpisock3, libpng2, libpopt0, libproplist0, libreadline4, librep9, librpm1, libruby, libsgmls-perl, libsp1, libssl09, libstdc++2.10, libstdc++2.10-dev, libtext-format-perl, libtiff3g, libtimedate-perl, libtool, libungif3g, libunicode0, liburi-perl, libvorbis0, libwrap0, libwraster1, libwww-perl, libxml1, libzvt2, lilo, lintian, locales, lockfile-progs, login, logrotate, lpr, lsof-2.2, lynx, m4, magicfilter, mailtools, mailx, maint-guide, make, makedev, makepasswd, man-db, manpages, manpages-dev, manpages-es, mawk, mbr, mc-common, memprof, menu, metrics, mime-support, minicom, modconf, modutils, mount, mozilla, mpack, mpage, mtools, ncurses-base, ncurses-bin, ncurses-term, netbase, netpbm, netpbm1, nfs-common, nfs-server, nis, nvi, ocaml-doc, octave, octave-ci, octave-doc, octave-htmldoc, packaging-manual, pan, passwd, patch, perl-5.005, perl-5.005-base, perl-5.005-doc, perl-5.005-suid, perl-base, pgaccess, pidentd, plotutils, pnmtopng, postgresql, postgresql-client, postgresql-contrib, postgresql-doc, postgresql-pl, postgresql-slink, ppp, pppconfig, procmail, procps, proftpd, psgml, psmisc, pstoedit, psutils, pump, python-base, python-doc, rcs, rdate, rdist, rep, rep-gtk, rpm, ruby, ruptime, rusers, rwall, rwho, rwhod, sawfish, sawfish-gnome, sed, setserial, sgml-base, sgml-data, sgmlspl, sgmltools-2, sharutils, shellutils, slang1, sp, ssh, stl-manual, strace, svgalibg1, swig, sysklogd, syslinux, sysvinit, t1lib1, talk, talkd, tar, task-c++-dev, task-c-dev, task-database-pg, task-devel-common, task-dns-server, task-fortran, task-gnome-apps, task-gnome-desktop, task-gnome-net, task-helix-core, task-objc-dev, task-python, task-science, task-sgml, task-spanish, task-tcltk, task-tcltk-dev, task-tex, task-x-window-system-core, tasksel, tcl8.0, tcl8.2, tcl8.2-dev, tclreadline, tcpd, tcpdump, telnet, telnetd, tetex-base, tetex-bin, tetex-doc, tetex-extra, tetex-lib, texinfo, textutils, tftp, time, tk8.0, tk8.2, tk8.2-dev, tktable, tktable-dev, traceroute, transfig, typist, ucblogo, untex, update, user-es, util-linux, vflib2, vile, vile-common, vile-filters, w3m, wenglish, wget, whiptail, whois, wmaker, wspanish, wvdial, wwwoffle, wzip, xaw3dg, xbase-clients, xchat-common, xchat-gnome, xcontrib, xf86setup, xfig, xfonts-100dpi, xfonts-75dpi, xfonts-base, xfonts-scalable, xfree86-common, xlib6g, xlib6g-dev, xpdf, xpm4g, xscreensaver, xserver-common, xserver-mono, xserver-svga, xviddetect, zip, zlib1g </P
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="plataforma-software-adicional"
+>Software Adicional</A
+></H2
+><P
+>De acuerdo a las necesidades de su colegio, a los usuarios de
+    la red y eventualmente al currículo, puede instalar software
+    adicional.  A continuación resumimos algunas de nuestras
+    recomendaciones de acuerdo al tipo de usuario.  La información más
+    actualizada podrá consultarla en la versión más reciente de estas
+    guías que está disponible en: <A
+HREF="http://structio.sourceforge.net/guias/AA_Linux_colegio"
+TARGET="_top"
+>http://structio.sourceforge.net/guias/AA_Linux_colegio</A
+>
+   </P
+><P
+></P
+><UL
+><LI
+><P
+>Para Estudiantes: 
+      <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Procesador de texto y hoja de cálculo livianos</DT
+><DD
+><P
+><TT
+CLASS="literal"
+>abiword</TT
+> y
+	  <TT
+CLASS="literal"
+>gnumeric</TT
+> o <TT
+CLASS="literal"
+>pw</TT
+> y
+	  <TT
+CLASS="literal"
+>siag</TT
+>. Los primeros hacen parte de Gnome
+	  Office: <A
+HREF="http://www.gnome.org/gnome-office/"
+TARGET="_top"
+>http://www.gnome.org/gnome-office/</A
+>
+	 (paquetes <TT
+CLASS="literal"
+>gnumeric</TT
+> y <TT
+CLASS="literal"
+>abiword</TT
+>)
+	  mientras los segundos de Siag Office: <A
+HREF="http://www.siag.nu/"
+TARGET="_top"
+>http://www.siag.nu/</A
+> (paquete
+	  <TT
+CLASS="literal"
+>xsiag</TT
+>).
+	  Si los computadores cliente tienen más de 64MB en RAM puede
+	  ser mejor opción OpenOffice que incluye filtros para leer 
+	  y escribir en formatos de Microsoft Office:
+	  <A
+HREF="http://www.openoffice.org"
+TARGET="_top"
+>http://www.openoffice.org</A
+>
+	  (no hay paquete para Debian 2.2, si para versiones posteriores,
+	   los binarios distribuidos por OpenOffice corren bien).
+	</P
+></DD
+><DT
+>Graficadores</DT
+><DD
+><P
+>Además de <TT
+CLASS="literal"
+>gimp</TT
+> (paquete
+	    <TT
+CLASS="literal"
+>gimp</TT
+>) se recomiendan
+	    <TT
+CLASS="literal"
+>xfig</TT
+> (paquete <TT
+CLASS="literal"
+>xfig</TT
+>) y 
+	    <TT
+CLASS="literal"
+>dia</TT
+> (paquete <TT
+CLASS="literal"
+>dia</TT
+>). Tanto
+	  <TT
+CLASS="literal"
+>gimp</TT
+> como <TT
+CLASS="literal"
+>dia</TT
+> hacen
+	  parte de Gnome Office, el sitio de desarrollo de
+	  <TT
+CLASS="literal"
+>xfig</TT
+> es:
+	   <A
+HREF="http://www.xfig.org/"
+TARGET="_top"
+>http://www.xfig.org/</A
+></P
+></DD
+><DT
+>Mecanografía</DT
+><DD
+><P
+>GTypist disponible en: <A
+HREF="http://www.gnu.org/software/gtypist"
+TARGET="_top"
+>http://www.gnu.org/software/gtypist</A
+></P
+></DD
+><DT
+>Lenguajes</DT
+><DD
+><P
+></P
+><UL
+><LI
+><P
+>Logo:  Una implementación es Berkeley Logo disponible
+		en <A
+HREF="http://www.cs.berkeley.edu/~bh/logo.html"
+TARGET="_top"
+>http://www.cs.berkeley.edu/~bh/logo.html</A
+></P
+></LI
+><LI
+><P
+>C: <TT
+CLASS="literal"
+>gcc</TT
+>, <TT
+CLASS="literal"
+>make</TT
+> y
+		<TT
+CLASS="literal"
+>vim</TT
+> o <TT
+CLASS="literal"
+>emacs</TT
+>.
+	      </P
+></LI
+><LI
+><P
+>Java: paquete <TT
+CLASS="literal"
+>jdk1.1</TT
+>, hay
+		versiones más recientes disponibles en el sitio
+		de desarrollo: <A
+HREF="http://www.javasoft.com"
+TARGET="_top"
+>http://www.javasoft.com</A
+>
+	      </P
+></LI
+><LI
+><P
+>Tcl/Tk: paquetes <TT
+CLASS="literal"
+>tcl8.2</TT
+> y
+		<TT
+CLASS="literal"
+>tk8.2</TT
+>. El sitio de desarrollo
+		es <A
+HREF="http://www.scriptics.com"
+TARGET="_top"
+>http://www.scriptics.com</A
+></P
+></LI
+><LI
+><P
+>Ocaml: El sitio de desarrollo es
+		<A
+HREF="http://caml.inria.fr/ocaml"
+TARGET="_top"
+>http://caml.inria.fr/ocaml</A
+></P
+></LI
+></UL
+><P
+>&#13;	 </P
+></DD
+><DT
+>Bases de Datos</DT
+><DD
+><P
+><TT
+CLASS="literal"
+>postgresql</TT
+> (paquete 
+	    <TT
+CLASS="literal"
+>postgresql)</TT
+>.
+	  Si prefiere una base de datos menos poderosa pero más
+	  liviana puede emplear MySQL (paquete <TT
+CLASS="literal"
+>mysql-server</TT
+>)
+	</P
+></DD
+><DT
+>Matemáticas</DT
+><DD
+><P
+>&#13;	  Para estudiantes de Bachillerato
+	  Dr. Genius y Dr Geo. (paquete <TT
+CLASS="literal"
+>drgeo</TT
+>).  Los
+	  sitios de desarrollo son:
+	  <A
+HREF="http://www.ofset.org/drgenius"
+TARGET="_top"
+>&#13;	    http://www.ofset.org/drgenius</A
+> y
+	  <A
+HREF="http://www.ofset.org/drgeo"
+TARGET="_top"
+>&#13;	    http://www.ofset.org/drgeo</A
+>.
+	 </P
+></DD
+><DT
+>Para estudiantes de primaria que se acerquen a un
+	computador</DT
+><DD
+><P
+>GCompris.<A
+HREF="http://gcompris.sourceforge.net"
+TARGET="_top"
+>http://www.ofset.org/gcompris</A
+>
+	 </P
+></DD
+></DL
+></DIV
+>
+     </P
+></LI
+><LI
+><P
+>Para Profesores</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Herramientas de Productividad</DT
+><DD
+><P
+>Si tiene computadores modernos cada uno con más de 64MB
+	  en RAM se recomienda OpenOffice: <A
+HREF="http://www.openoffice.org"
+TARGET="_top"
+>http://www.openoffice.org</A
+>
+	  En otro caso debe emplear herramientas más livianas como
+	  <TT
+CLASS="literal"
+>abiword</TT
+>, <TT
+CLASS="literal"
+>gnumeric</TT
+> o
+	  <TT
+CLASS="literal"
+>pw</TT
+> y <TT
+CLASS="literal"
+>siag</TT
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="application"
+>Gradebook</SPAN
+></DT
+><DD
+><P
+>para mantener planilla personal de calificaciones:
+	  <A
+HREF="http://www.gnu.org/software/ggradebook/"
+TARGET="_top"
+>http://www.gnu.org/software/ggradebook/</A
+></P
+></DD
+></DL
+></DIV
+></LI
+><LI
+><P
+>Para Secretarias y personal administrativo 
+
+      <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Horarios</DT
+><DD
+><P
+> Para ayudar a asignar el horario de un colegio puede
+	 emplear el programa asigna --mantenido y desarrollado por
+	 miembros de Structio--.  <A
+HREF="http://structio.sourceforge.net/asigna"
+TARGET="_top"
+>http://structio.sourceforge.net/asigna</A
+></P
+></DD
+><DT
+>Herramientas de Productividad</DT
+><DD
+><P
+>Vea el comentario sobre herramientas de productividad
+	  para profesores.</P
+></DD
+></DL
+></DIV
+>
+     </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="plataforma-usuarios-y-grupos"
+>Usuarios y Grupos</A
+></H2
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Grupos</DT
+><DD
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>estudiantes</DT
+><DD
+><P
+>Sugerido <SPAN
+CLASS="acronym"
+>GID</SPAN
+> 1101</P
+></DD
+><DT
+>profesores</DT
+><DD
+><P
+>Sugerido <SPAN
+CLASS="acronym"
+>GID</SPAN
+> 1102</P
+></DD
+><DT
+>administración</DT
+><DD
+><P
+>Sugerido <SPAN
+CLASS="acronym"
+>GID</SPAN
+> 1103</P
+></DD
+></DL
+></DIV
+></DD
+><DT
+>Usuarios</DT
+><DD
+><P
+>Usuarios: Identificaciones superiores a 1000 (siguiendo
+       política de Debian).</P
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN14467"
+HREF="a14434.htm#AEN14467"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Otro enfoque que permite usar computadores
+     con aún menor capacidad puede consultarse en <A
+HREF="http://www.ltsp.org/"
+TARGET="_top"
+>http://www.ltsp.org/</A
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN14474"
+HREF="a14434.htm#AEN14474"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El Gimnasio Fidel Cano en Bogotá,
+     Colombia. <A
+HREF="http://www.geocities.com/gimnasio_fidel_cano/proyectos.html"
+TARGET="_top"
+>http://www.geocities.com/gimnasio_fidel_cano/proyectos.html</A
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN14479"
+HREF="a14434.htm#AEN14479"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Distribución mejicana orientada a
+     colegios <A
+HREF="http://redesc.linux.org.mx/es/"
+TARGET="_top"
+>http://redesc.linux.org.mx/es/</A
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN14482"
+HREF="a14434.htm#AEN14482"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Organización francesa que promueve el uso
+     de software libre en la educación <A
+HREF="http://www.ofset.org/"
+TARGET="_top"
+>http://www.ofset.org/</A
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN14485"
+HREF="a14434.htm#AEN14485"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Puede verse el proyecto Debian-Jr en
+     <A
+HREF="http://www.debian.org/devel/debian-jr/index"
+TARGET="_top"
+>http://www.debian.org/devel/debian-jr/index</A
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN14527"
+HREF="a14434.htm#AEN14527"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En Debian 2.2
+	    <TT
+CLASS="filename"
+>/var/spool/mail</TT
+> es un enlace a
+	    <TT
+CLASS="filename"
+>/var/mail</TT
+>.
+	   </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN14532"
+HREF="a14434.htm#AEN14532"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>De acuerdo a
+	    http://www.pathname.com/fhs/2.0/fhs-2.html el estándar
+	    para jerarquías de Linux, esos directorios puede ser
+	    compartidos en red</P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x12937.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="a14863.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Protocolos de soporte y de usuario</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Sobre estas guías</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

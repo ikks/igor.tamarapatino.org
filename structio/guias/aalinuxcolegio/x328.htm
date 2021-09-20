@@ -1,0 +1,750 @@
+<HTML
+><HEAD
+><TITLE
+>Sistema de usuarios y manejo de clave</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Primera exploración de Linux desde
+   la perspectiva de un usuario"
+HREF="c84.htm"><LINK
+REL="PREVIOUS"
+TITLE="Linux"
+HREF="x182.htm"><LINK
+REL="NEXT"
+TITLE="Escritorio y herramientas Gnome"
+HREF="x449.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x182.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x449.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="sistema-de-usuarios-y-manejo-de-clave"
+>Sistema de usuarios y manejo de clave</A
+></H1
+><DIV
+CLASS="highlights"
+><A
+NAME="AEN330"
+></A
+><P
+></P
+><UL
+><LI
+><A
+NAME="espper.esp"
+></A
+><P
+>Entra y sale de su espacio personal.</P
+></LI
+><LI
+><A
+NAME="espper.cons"
+></A
+><P
+>Se desplaza entre consolas virtuales y la sesión
+	   gráfica.</P
+></LI
+><LI
+><A
+NAME="espper.clave"
+></A
+><P
+>Puede cambiar su clave.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-sistema-de-usuarios-y-manejo-de-clave"
+>Lectura: Sistema de usuarios y manejo de clave</A
+></H2
+><P
+>Al igual que Unix, Linux es un sistema operativo
+     multiusuario y multitarea.  Multitarea significa que se puede
+     realizar más de una tarea a la vez.  Multiusuario significa que
+     el sistema puede ser empleado por más de un usuario. Por ser
+     multiusuario, Unix debe diferenciar a los usuarios y su
+     información, para lograrlo a cada usuario se le asigna una
+     identificación única (en inglés
+     <I
+CLASS="foreignphrase"
+>login</I
+>), un grupo, una clave de
+     acceso (en inglés <I
+CLASS="foreignphrase"
+>password</I
+>) y un
+     espacio independiente del espacio de los demás usuarios (ese
+     espacio se llama directorio personal y permite organizar
+     información del usuario en archivos).  Unix brinda también un
+     esquema de permisos, con el que un usuario puede conceder o
+     quitar permisos para ver o modificar sus archivos a otros
+     usuarios o a usuarios de su mismo grupo.  Gracias, al sistema de
+     usuarios y al esquema de permisos no es posible que un usuario
+     normal desconfigure el sistema completo o lo infecte con virus
+     ---la configuración general del sistema sólo puede cambiarla el
+     administrador del sistema, cuyo login es <TT
+CLASS="literal"
+>root</TT
+>.
+    </P
+><A
+NAME="AEN344"
+></A
+><P
+>Tipo de sistema operativo, diseñado
+     para ser usado por diversos usuarios.</P
+><A
+NAME="AEN347"
+></A
+><P
+>Identificación única de un usuario
+     ante un sistema Unix, además de esta identificación el usuario
+     requiere una clave.</P
+><P
+>Como usuario de Linux, usted tendrá un login, un grupo
+     principal, un espacio y una clave. Para evitar mala utilización
+     de los recursos por parte de otra persona a nombre suyo, su clave
+     de acceso debe ser <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>secreta</B
+></SPAN
+>.
+     Además por seguridad, es recomendable que cada usuario cambie su
+     clave de acceso al menos cada dos meses, empleando el comando
+     <B
+CLASS="command"
+>passwd</B
+> desde un intérprete de
+     comandos
+     <A
+NAME="AEN353"
+HREF="#FTN.AEN353"
+>[1]</A
+>.
+    </P
+><A
+NAME="AEN356"
+></A
+><P
+>Comando para cambiar la
+     clave.</P
+><P
+>Puede entrar a una sesión con su login y clave bien desde un
+     entorno gráfico (con un programa llamado
+     <SPAN
+CLASS="application"
+>gdm</SPAN
+>) o bien desde una interfaz tipo
+     texto.  Su sistema Linux puede brindarle simultáneamente varias
+     interfaces tipo texto ---llamadas consolas virtuales--- junto con
+     el entorno gráfico.  Desde el entorno gráfico puede pasar a una
+     consola virtual presionando
+     <B
+CLASS="keycap"
+>Ctrl-Alt-F1</B
+>
+     <A
+NAME="AEN363"
+HREF="#FTN.AEN363"
+>[2]</A
+>, y desde una consola virtual puede retornar a la
+       sesión gráfica con <B
+CLASS="keycap"
+>Ctrl-Alt-F7</B
+>
+    </P
+><DIV
+CLASS="informalfigure"
+><A
+NAME="AEN371"
+></A
+><P
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="gdmlogin.png"
+ALT="gdm esperando ingreso 
+		    de un usuario"
+></IMG
+></P
+></DIV
+><P
+></P
+></DIV
+><A
+NAME="AEN381"
+></A
+><P
+>Secuencia de teclas para pasar a
+     la primera consola virtual.</P
+><P
+>Cuando inicie una sesión desde una consola virtual, entrará
+     a un intérprete de comandos donde podrá dar comandos o ejecutar
+     programas.  En una sesión gráfica podrá emplear el ratón, por
+     ejemplo para elegir opciones de menús, aún cuando en Unix es
+     usual emplear un intérprete de comandos incluso desde sesiones
+     gráficas (porque es más efectivo trabajar con 10 dedos en el
+     teclado que con 2 sobre el ratón).  Los programas iniciados desde
+     una consola virtual, generalmente pueden interrumpirse con la
+     secuencia de teclas <B
+CLASS="keycap"
+>Control-C</B
+>, para reiniciar la
+     sesión gráfica puede emplear la secuencia
+     <B
+CLASS="keycap"
+>Ctrl-Alt-Backspace</B
+>.
+    </P
+><A
+NAME="AEN387"
+></A
+><P
+>Secuencia de teclas para
+     reiniciar una sesión gráfica (en su respuesta use la misma
+     notación de las guías).</P
+><P
+>Tenga en cuenta salir de su sesión cuando termine de
+     trabajar y recuerde no apagar el computador sin antes haber
+     "cerrado" el sistema operativo (si apaga el computador antes de
+     cerrar Linux puede que pierda información).  Para salir de una
+     sesión con un intérprete de comandos se emplea el comando
+     <B
+CLASS="command"
+>exit</B
+>, para salir de una sesión gráfica con
+     Gnome busque entre los menús la opción
+     <SPAN
+CLASS="guimenuitem"
+>Logout</SPAN
+> o
+     <SPAN
+CLASS="guimenuitem"
+>Salir</SPAN
+>.  La labor de "apagar" depende
+     de la política que el administrador haya escogido, eventualmente
+     usted podrá hacerlo desde los menús de
+     <SPAN
+CLASS="application"
+>gdm</SPAN
+> ---el administrador puede apagar
+     el sistema con el comando <B
+CLASS="command"
+>halt</B
+> (ver <A
+HREF="x5075.htm"
+>Apagado y encendido de
+      una red</A
+>).
+    </P
+><A
+NAME="AEN398"
+></A
+><P
+>Comando que puede emplearse desde
+     un shell para salir.</P
+><A
+NAME="AEN402"
+></A
+><P
+>Comando usado por el administrador
+     para apagar el sistema.</P
+><P
+>Con respecto al administrador(es) del sistema (quien maneja
+     la cuenta <I
+CLASS="foreignphrase"
+>root</I
+>), recuerde que el
+     también es una persona, es alguién que está sirviendole y
+     ayudando a mantener la red y los recursos de su institución (que
+     también son suyos).  Seamos amables, respetuosos y humildes con
+     él y con los demás usuarios, ayudemos a cuidar la infraestructura
+     que tenemos (un día podría estar a nuestro cargo y nos gustaría
+     que los usuarios ayudarán a cuidarla).
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-sistema-de-usuarios-y-manejo-de-clave"
+>Lecturas recomendadas: Sistema de usuarios y manejo de
+    clave</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Como complemento a esta lectura puede consultar las
+       secciones 3.2.1 a 3.2.6 del libro "<I
+CLASS="citetitle"
+>Linux
+       Installation and Getting Started</I
+>", escrito por Matt
+       Welsh y otras personas.  Está disponible en Internet en <A
+HREF="http://www.linuxdoc.org/LDP/gs/node5.html#SECTION00500000000000000000"
+TARGET="_top"
+>http://www.linuxdoc.org/LDP/gs/node5.html#SECTION00500000000000000000</A
+>.
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-sistema-de-usuarios-y-manejo-de-clave"
+>Ejercicios: Sistema de usuarios y manejo de clave</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x328.htm#espper.esp.1"
+>Averigüe su login y su clave con el
+	    administrador del sistema, uselos para entrar a una sesión
+	    gráfica con el escritorio <SPAN
+CLASS="acronym"
+>GNOME</SPAN
+> y después
+	    salga.
+	  </A
+></DT
+><DT
+>2. <A
+HREF="x328.htm#espper.cons.1"
+>Pase a consolas virtuales y regrese a
+	      modo gráfico. Practique el uso de la secuencia de teclas
+	      <B
+CLASS="keycap"
+>Ctrl-Alt-Backspace</B
+>.
+	    </A
+></DT
+><DT
+>3. <A
+HREF="x328.htm#espper.clave.1"
+>Empleando una consola virtual abra una
+	      sesión con su login, cambie su clave (con el comando <B
+CLASS="command"
+>passwd</B
+>), 
+	      salga de la cuenta y regrese a su escritorio <SPAN
+CLASS="acronym"
+>GNOME</SPAN
+>.
+	    </A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="espper.esp.1"
+></A
+><B
+>1. </B
+>Averigüe su login y su clave con el
+	    administrador del sistema, uselos para entrar a una sesión
+	    gráfica con el escritorio <SPAN
+CLASS="acronym"
+>GNOME</SPAN
+> y después
+	    salga.
+	  </P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+BORDER="1"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="CENTER"
+><B
+>Aviso</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+><P
+>No olvide salir de su sesión cada vez que deje de
+		usarla.  Si la deja abierta alguien podría actuar a nombre
+		suyo. 
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Una vez sabe login y clave prende un computador, espere hasta que 
+	      se inicie el modo gráfico y un recuadro en el que diga Login y usted 
+	      pueda teclear su login y <B
+CLASS="keycap"
+>ENTER</B
+> después verá otro recuadro 
+	      en el que se le pide la clave --no la verá al teclear cuando termine presione 
+	      <B
+CLASS="keycap"
+>ENTER</B
+>.
+	    </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="espper.cons.1"
+></A
+><B
+>2. </B
+>Pase a consolas virtuales y regrese a
+	      modo gráfico. Practique el uso de la secuencia de teclas
+	      <B
+CLASS="keycap"
+>Ctrl-Alt-Backspace</B
+>.
+	    </P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+BORDER="1"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="CENTER"
+><B
+>Aviso</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+><P
+>Nuevamente le recordamos no apagar el computador con el
+		interruptor o con el botón <SPAN
+><I
+CLASS="emphasis"
+>reset</I
+></SPAN
+> sin
+		antes haber salido de Linux.
+	      </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Ctrl-Alt-F1 ; Ctrl-Alt-F7</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="espper.clave.1"
+></A
+><B
+>3. </B
+>Empleando una consola virtual abra una
+	      sesión con su login, cambie su clave (con el comando <B
+CLASS="command"
+>passwd</B
+>), 
+	      salga de la cuenta y regrese a su escritorio <SPAN
+CLASS="acronym"
+>GNOME</SPAN
+>.
+	    </P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+BORDER="1"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="CENTER"
+><B
+>Aviso</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+><P
+>Después de abrir una consola virtual o de entrar a una
+	      sesión del intérprete de comandos con su login, al terminar
+	      no olvide salir de la sesión con el comando
+	      <B
+CLASS="command"
+>exit</B
+>. Para evitar problemas de seguridad
+	      es recomendable que su clave tenga más de 6 caracteres
+	      (algunos sistemas sólo permiten hasta 8), que no sea una
+	      palabra que aparezca en diccionario alguno (de ningún idioma), 
+	      tampoco debe ser su nombre, ni el nombre de su mascota, ni de un ser querido, 
+	      ni su dirección, ni el nombre de bandas de rock (trate de imaginar que 
+	      clave usaria otra persona y NO use esa). Idee una palabra
+	      fácil de recordar sólo para usted, no la anote en un papel y
+	      emplee preferiblemente signos de puntuación y números (pero no 
+	      <B
+CLASS="keycap"
+>Backspace</B
+>), aún mejor si idea un esquema que le permita 
+	      cambiarla con frecuencia.  Otra importante recomendación con 
+	      respecto a la clave: <SPAN
+><I
+CLASS="emphasis"
+>no la olvide!</I
+></SPAN
+>
+	    </P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Ctrl-Alt-F1 ; login y clave ; passwd
+	      ; clave anterior ; clave nueva dos veces ; exit ;
+	      Ctrl-Alt-F7
+	    </P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN353"
+HREF="x328.htm#AEN353"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Intérprete de comandos: en inglés
+       <I
+CLASS="foreignphrase"
+>shell</I
+>
+      </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN363"
+HREF="x328.htm#AEN363"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En su sistema puede haber varias consolas virtuales, puede
+       pasar de una a otra con <B
+CLASS="keycap"
+>Ctrl-Alt-F1</B
+> o la
+       secuencia análoga con <B
+CLASS="keycap"
+>F2</B
+>, <B
+CLASS="keycap"
+>F3</B
+>,
+       <B
+CLASS="keycap"
+>F4</B
+> o <B
+CLASS="keycap"
+>F5</B
+>.
+      </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x182.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x449.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Linux</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c84.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Escritorio y herramientas Gnome</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,1890 @@
+<HTML
+><HEAD
+><TITLE
+>Dispositivos para interconexión y Linux </TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Administración de una red con Linux"
+HREF="c11890.htm"><LINK
+REL="PREVIOUS"
+TITLE="Administración de una red con Linux"
+HREF="c11890.htm"><LINK
+REL="NEXT"
+TITLE="Direcciones, enrutamiento y transporte"
+HREF="x12689.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c11890.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 6. Administración de una red con Linux</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x12689.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="dispositivos-para-interconexion-y-linux"
+>Dispositivos para interconexión y Linux</A
+></H1
+><P
+>Indicadores de Logro:
+   </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="redbas.compra"
+></A
+><P
+>Puede configurar y comprar dispositivos para instalar una
+      red Ethernet como la de la plataforma de referencia.
+     </P
+></LI
+><LI
+><A
+NAME="redbas.loopback"
+></A
+><P
+>Puede configurar el
+      <I
+CLASS="foreignphrase"
+>loopback</I
+> de un computador.
+      </P
+></LI
+><LI
+><A
+NAME="redbas.tarjeta"
+></A
+><P
+>Puede instalar y configurar una tarjeta de red Ethernet junto con
+      una interfaz de red.</P
+></LI
+><LI
+><A
+NAME="redbas.cablea"
+></A
+><P
+>Puede instalar cableado de una red Ethernet como la
+      especificada en la plataforma de referencia.</P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-dispositivos-para-interconexion-y-linux"
+>Lectura: Dispositivos para interconexión y Linux</A
+></H2
+><P
+>De acuerdo al uso hay diversos dispositivos que permiten
+     conectar computadores. Para el caso de redes pequeñas algunos
+     ejemplos son: </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Modems</DT
+><DD
+><P
+>Permiten conectar dos computadores empleando una línea 
+	     telefónica.
+	   </P
+><A
+NAME="AEN12311"
+></A
+><P
+>Permite interconectar
+      un computador con otro por medio de una línea telefónica.
+    </P
+></DD
+><DT
+>Cable serial</DT
+><DD
+><P
+>Permite conectar dos computadores por sus puertos
+	  seriales.</P
+><A
+NAME="AEN12318"
+></A
+><P
+>Permite conectar dos
+      computadores por sus puertos seriales.
+    </P
+></DD
+><DT
+>Cable Base10T</DT
+><DD
+><P
+>Consta de 8 cables internos trenzados en
+	 parejas (azul con azul/blanco, verde con verde/blanco,
+	 naranja con naranja/blanco, cafe con cafe/blanco), en sus
+	 extremos tiene conectores RJ45
+	 <A
+NAME="AEN12325"
+HREF="#FTN.AEN12325"
+>[1]</A
+>. Permite conectar un computador a un
+	 concentrador o dos computadores directamente haciendo un
+	 cruce de los cables internos (a un cable con tal cruce se le
+	 dice cruzado --<I
+CLASS="foreignphrase"
+>cross-over</I
+>-- o
+	 invertido
+	 --<I
+CLASS="foreignphrase"
+>reverse</I
+>)<A
+NAME="AEN12329"
+HREF="#FTN.AEN12329"
+>[2]</A
+>
+	 .</P
+><A
+NAME="AEN12331"
+></A
+><P
+>Tipo de cable empleado
+      en redes Ethernet de 10Mb.
+    </P
+></DD
+><DT
+>Concentrador <A
+NAME="AEN12336"
+HREF="#FTN.AEN12336"
+>[3]</A
+></DT
+><DD
+><P
+>Por medio de clabes Base10T (no cruzados) permite
+	 conectar varios computadores que tengan tarjetas Ethernet de
+	 10MB, cada uno en un puerto del concentrador. Normalmente los
+	 concentradores son repetidores que retransmiten por todos sus
+	 puertos la señal que llega por uno de ellos y detectan
+	 colisiones.  Hay modelos por ejemplo de 4, 8, 10 y 16
+	 puertos, algunos tienen un puerto más para conectar a otro
+	 concentrador.  </P
+><A
+NAME="AEN12342"
+></A
+><P
+>Permite intercontar
+      diversos computadores con tarjetas Ethernet y cables Base10T.
+      Normalmente son repetidores que retransmitien a todos sus
+      puertos lo que llega a uno.
+    </P
+></DD
+></DL
+></DIV
+><P
+>&#13;     Para operar dispositivos de red conectados a un computador con
+     Linux, es necesario emplear el controlador apropiado y asociar el
+     dispositivo a una interfaz de red, que a su vez tendrá una
+     dirección IP.  Así por ejemplo a un modem se le puede asociar la
+     interfaz <TT
+CLASS="literal"
+>ppp0</TT
+> (o con otro número en lugar de
+     0) y a una tarjeta Ethernet se le puede asociar la interfaz
+     <TT
+CLASS="literal"
+>eth0</TT
+> (o con otro número en lugar de 0). Hay
+     además una interfaz que siempre debe estar presente:
+     <TT
+CLASS="literal"
+>lo</TT
+> (loopback) que representa una conexión con
+     el mismo computador. Los nombres de las interfaces activas en un
+     sistema Linux pueden consultarse con:
+     <B
+CLASS="command"
+>/sbin/ifconfig</B
+> o con <B
+CLASS="command"
+>netstat
+     -i</B
+>.</P
+><A
+NAME="AEN12351"
+></A
+><P
+>Nombre de la interfaz
+      para la primera tarjeta Ethernet.
+    </P
+><A
+NAME="AEN12355"
+></A
+><P
+>Nombre de la interfaz
+      del dispositivo loopback.
+    </P
+><P
+>&#13;     En esta sección se presentan detalles de algunos dispositivos para
+     interconexión y su configuración. Hemos procurado dar especial
+     enfasis a los requeridos en una red local Ethernet.</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="modem"
+>Modem</A
+></H3
+><P
+>Un modem permite modular información digital para
+      transmitirla por una línea telefónica. Infortunadamente la
+      tecnología de modems está en gran parte patentada y muchas
+      especificaciones son secretas, así que hay muchos modems que
+      <SPAN
+><I
+CLASS="emphasis"
+>NO</I
+></SPAN
+> son soportados en Linux.  Por esto, el
+      paso más difícil es lograr que su modem sea reconocido y
+      manejado por Linux.
+      </P
+><P
+>No tendrá problemas con modems que puedan configurarse con
+      jumpers y que no sean especifícos para Windows
+      (<I
+CLASS="foreignphrase"
+>winmodems</I
+>), tal es el caso de
+      modems externos que se conectan a los puertos seriales o modems
+      que se conectan directamente al bus, pero que sean genéricos.
+      Mientras que los primeros emplean la configuración estándar de
+      los puertos seriales, los segundos normalmente pueden
+      configurarse con jumpers o por software, para emplear una
+      dirección base y un puerto libres.
+     </P
+><P
+>Aún si tiene un winmodem es posible que exista un controlador para
+      Linux, puede consultar una base de datos en: <A
+HREF="http://www.idir.net/~gromitkc/winmodem.html#drivers"
+TARGET="_top"
+>http://www.idir.net/~gromitkc/winmodem.html#drivers</A
+>
+      o puede buscar en el sitio web del fabricante.
+
+
+     </P
+><P
+>Para emplear el modem desde Linux, debe haber un archivo
+      para dispositivos en el directorio <TT
+CLASS="filename"
+>dev</TT
+>, que
+      permita usarlo.  Comunmente un modem quedará asociado a uno
+      de los dispositivo seriales: 
+      <TT
+CLASS="filename"
+>/dev/ttyS0</TT
+>,
+      <TT
+CLASS="filename"
+>/dev/ttyS1</TT
+>,
+      <TT
+CLASS="filename"
+>/dev/ttyS2</TT
+> o
+      <TT
+CLASS="filename"
+>/dev/ttyS3</TT
+>.
+      Tal dispositivo serial empleará puertos y direcciones base, 
+      que tienen valores por defecto o que en caso de requerirse
+      pueden modificarse con <B
+CLASS="command"
+>setserial</B
+> (ver
+      <A
+HREF="x8783.htm#puertos-y-dispositivos-seriales"
+>Puertos y
+      dispositivos seriales</A
+>).
+  </P
+><A
+NAME="AEN12376"
+></A
+><P
+>Puede enviar esta
+      cadena a un modem para intentar contestar una llamada y establecer
+      una conexión con otro computador.
+    </P
+><P
+>Una vez haya configurado el hardware de forma que esté
+      asociado a un dispositivo serial, puede probar que este
+      funcionando.  Una forma fácil de hacerlo es enviando la cadena
+      <TT
+CLASS="literal"
+>ATA</TT
+> al dispositivo del modem Por ejemplo si
+      configuró su modem como primer puerto serial, intente:
+<PRE
+CLASS="screen"
+>&#13;echo "ATA" &#62; /dev/ttyS0 </PRE
+>
+     al hacerlo debe escuchar la línea telefónica en el parlante del
+     computador o en el del modem (claro está debe tener conectada la
+     línea telefónica al modem)
+      <A
+NAME="AEN12383"
+HREF="#FTN.AEN12383"
+>[4]</A
+></P
+><A
+NAME="AEN12386"
+></A
+><P
+>Programa que 
+      permite enviar comados a un modem y por ejemplo conectarse a
+      un BBS</P
+><P
+>&#13;      También puede emplear un programa como
+      <SPAN
+CLASS="application"
+>minicom</SPAN
+> para enviar comandos a su
+      modem y ver las respuesta que el mismo genera (por ejemplo al
+      enviar la cadena <TT
+CLASS="literal"
+>ATZ</TT
+> debe responder
+      <TT
+CLASS="literal"
+>OK</TT
+>).
+     </P
+><A
+NAME="AEN12394"
+></A
+><P
+>Puede emplear
+      este programa para configurar posibles proveedores de
+      conexión a Internet via PPP</P
+><A
+NAME="AEN12398"
+></A
+><P
+>Puede emplear
+      este programa para inicar una conexión PPP con alguno de
+      los proveedores que haya configurado.</P
+><P
+>Cuando haya determinado que su modem está operando
+      correctamente en un dispositivo puede emplear
+      <SPAN
+CLASS="application"
+>minicom</SPAN
+> para conectarse a un
+      <SPAN
+CLASS="acronym"
+>BBS</SPAN
+> o al computador de algún amigo.  Para
+      conectarse a Internet debe configurar el protocolo
+      <SPAN
+CLASS="acronym"
+>PPP</SPAN
+> y dar información sobre su provedor de
+      acceso a Internet.  En Debian puede hacer estos pasos con los
+      programas <B
+CLASS="command"
+>pppconfig</B
+> o con
+      <B
+CLASS="command"
+>wvdial</B
+>.  Con
+      <B
+CLASS="command"
+>pppconfig</B
+> podrá configurar más de un
+      provedor y asignarle a cada uno un nombre, tal nombre puede
+      usarlo posteriormente para iniciar una conexión con el programa
+      <B
+CLASS="command"
+>pon</B
+>.
+     </P
+><P
+>Hay también algunos Modems <SPAN
+CLASS="acronym"
+>USB</SPAN
+>
+      soportados (que cumplen <SPAN
+CLASS="acronym"
+>ACM</SPAN
+>
+      --<I
+CLASS="foreignphrase"
+>Abstract Control Model</I
+>): 3Com
+      OfficeConnect 56k, 3Com Voice FaxModem Pro, 3Com Sportster
+      MultiTech MultiModem 56k, Zoom 2986L FaxModem, Compaq 56k
+      FaxModem, ELSA Microlink 56k.  Se maneja con un dispositivo
+      <TT
+CLASS="filename"
+>/dev/usb/acm/0</TT
+> (166,0)
+      que puede emplearse como otros tipos de modems.
+     </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="tarjeta-ethernet"
+>Tarjeta Ethernet</A
+></H3
+><P
+>Los integrados (y eventualmente tarjetas) Ethernet de 10MB
+       o 100MB soportadas por el kernel 2.2.19 son
+      <A
+NAME="AEN12418"
+HREF="#FTN.AEN12418"
+>[5]</A
+>:
+     <P
+></P
+><UL
+><LI
+><P
+>Tarjetas ISA: AMD Lance y PCnet AT1500, NE2100 (lance), SMC Ultra
+	(smc-ultra), 3Com 3c501 (3c501), 3c503 (3c503), 3c505 (3c505),
+	3c507 (3c507), (3c523), 3c527 (3c527), 3c509 3c579 (3c509),
+	3c515 ISA (3c515), AT170/1720 (at1700), Cabletron
+	E21xx(e2100), WD80x3 (wd), DEPCA/DE10x,DE200,DE201,DE202,
+	DE422 (depca),Etherworks DE203,DE204,DE205 (ewrk3),
+	EtherExpress 16 (eexpress), EtherExpressPro/100 (eepro),
+	Fujitsu FMV-181/182/183/184 (fmv18x), HP PCLAN+ 27247B/27252A
+	(hp-plus), HP PCLAN 27245/27xxx) (hp.o), HP 10/100VG PCLAN
+	(hp100), ICL EtherTeam 16i/32 (eth16i), NE2000/NE2100 (ne)
+	SMC9192/9194 (smc9194), NI5010 (ni5010), NI5210 (ni52), NI6510
+	(ni65)</P
+></LI
+><LI
+><P
+>Tarjetas MCA: MCA NE2000 MCA para PS/2 (ne2), SKnet MCA 
+       (sk_mca), 3Com 3c523 (3c523) 3c529 (3c509), SMC Ultra MCA (smc-mca)
+	</P
+></LI
+><LI
+><P
+>Tarjetas EISA: EISA 3Com 3c579 (3c509), 3c592/3c597 (3c59x) 
+	 Generic DECchip/Digital EtherWorks (de4x5), Racal-Interlan EISA
+	 ES3210 (es3210), SMC-Ultra 32 (smc-ultra32),</P
+></LI
+><LI
+><P
+>Tarjetas VLB y PCI: PCI RealTek 8129/8139 (rtl8139
+	 aunque para tarjetas 8139 es mejor rtl8139too) Fast Etherlink
+	 3c590/3c595 o EhtereLink XL 3c900/3c905/3c905B/3c905C (3c59x)
+	 AMD PCnet32 (pcnet32), Adaptec Starfire/DuraLAN (starfire),
+	 Ansel Communications EISA 3200 (ac3200), Apricot Xen-II
+	 (apricot), LP486E (lp486e), CS89x0 (cs89x), DM9102 PCI Fast
+	 (dmfe), DECchip 2104/21041/21140 Tulip (tulip), SMC
+	 EtherPower DECchip 21040/21041/21140 (old_tulip), NetGear
+	 FA310TX (ng_tulip), Digi Intl. RightSwitch SE-X (dgrs), Mylex
+	 EISA LNE390A (lne390), Novell/Eagle/Microdyne NE3210 EISA
+	 (ne3210), PCI NE2000 (ne2k-pci), TI ThunderLAN (tlan), Via
+	 Rhine-1 y Rhine 2 (via-rhine), SiS 900/7016 PCI (sis900), SMC
+	 EtherPower II (epic100), tarjeta del Zenith Z-Note
+	 (znet),</P
+></LI
+><LI
+><P
+>Puerto paralelo: AT-LAN-TEC/RealTek (atp), D-Link DE600
+	(de600), D-Link DE620 (de620)
+	</P
+></LI
+><LI
+><P
+>Tarjetas PCMCIA: Una gran variedad de tarjetas Ethernet
+	 PCMCIA (para portátiles) es soportada.  Los controladores
+	 están incluidos en el paquete <TT
+CLASS="literal"
+>pcmcia-cs</TT
+>,
+	 una vez instalado puede consultarse en:
+	 <TT
+CLASS="filename"
+>/usr/share/doc/pcmcia-cs/SUPPORTED.CARDS.gz</TT
+>
+       </P
+></LI
+><LI
+><P
+>USB. Kawasaki USB-ethenet controller (kaweth), ADMtek
+	 AN986, Accton 10/100, Billingston USB-100, Corega FEter
+	 USB-TX, MELCO/BUFFALO LUA-TX, D-Link
+	 DSB-650TX/DSB-650TX-PN/DSB-650/DU-E10/DU--E100, Linksys
+	 USB100TX, USB10TX, LANEED Ethernet LD-USB/TX, SMC 202,
+	 SOHOware NUB Ethernet (pegasus).
+	</P
+></LI
+><LI
+><P
+>PLUSB Puede consultarse un listado por tarjetas y
+	 fabricantes, así como un descripción detallada del estado de
+	 cada una en <I
+CLASS="citetitle"
+>Ethernet-HOWTO</I
+>.
+       </P
+></LI
+><LI
+><P
+>Otros dispositivos de comunicaciones, Prolific PL-2302
+	conector USB-USB (plusb), red punto a punto con ancho de
+	banda de 5 Mbits/s.
+       </P
+></LI
+></UL
+>
+     </P
+><P
+>En el sitio del principal desarrollador de controladores
+      para tarjetas de red encontrará programas e información útil:
+      <A
+HREF="http://www.scyld.com/network/"
+TARGET="_top"
+>http://www.scyld.com/network/</A
+>
+     </P
+><P
+>Varios controladores compilados junto con el kernel
+      pueden configurarse desde el cargador de arranque con
+      el parámetro <TT
+CLASS="literal"
+>ether=12,0x300,eth0</TT
+> remplazando
+      12 por la IRQ, 0x300 por la dirección base y
+      <TT
+CLASS="literal"
+>eth0</TT
+> por la interfaz.  Entre la dirección
+      base y la interfaz pueden pasarse uno o dos parámetros cuyo
+      significado depende del controlador, el primero es usado por
+      tarjetas WD80x3 para establecer comienzo de memoria compartida,
+      otros lo usan para establecer nível de mensajes de depuración y
+      el controldor <TT
+CLASS="literal"
+>lance</TT
+> lo usa para especificar canal 
+      DMA; el segundo es usado por el controlador 3c503 (0 transreceptor
+      interno, 1 - AUI externo) y por e2100 para escoger medio de
+      sálida.
+     </P
+><P
+>Cómo módulos estos controladores reciben diversos
+      parámetros los más comunes para tarjetas <SPAN
+CLASS="acronym"
+>ISA</SPAN
+>
+      son <TT
+CLASS="option"
+>irq=<TT
+CLASS="replaceable"
+><I
+>número</I
+></TT
+></TT
+> y
+      <TT
+CLASS="option"
+>io=<TT
+CLASS="replaceable"
+><I
+>puerto base</I
+></TT
+></TT
+>. Una
+      lista de parámetros de algunos módulo está en las fuentes del
+      kernel en
+      <TT
+CLASS="filename"
+>Documention/networking/net-modles.txt</TT
+>.
+     </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="tarjeta-ethernet-e-interfaz-de-red"
+>Tarjeta Ethernet e interfaz de red</A
+></H3
+><P
+>&#13;      Para emplear una tarjeta de red Ethernet en Linux para conectarse
+      a una <SPAN
+CLASS="acronym"
+>LAN</SPAN
+> debe:
+     </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Instalarla físicamente en el computador.
+      </P
+></LI
+><LI
+><P
+>Lograr que el kernel pueda comunicarse con la tarjeta,
+	empleando el controlador apropiado
+      </P
+></LI
+><LI
+><P
+>Configurar una interfaz de red que servirá como
+	abstracción de la tarjeta.
+       </P
+></LI
+></OL
+><P
+>El primer paso no tendrá inconvenientes mientras manipule
+      con cuidado el hardware y en el caso de tarjetas
+      <SPAN
+CLASS="acronym"
+>ISA</SPAN
+> si no emplea el mismos recurso para dos
+      dispositivos (ver <A
+HREF="x8783.htm"
+>Hardware básico y
+      Linux</A
+>). Puede serle de útilidad la información
+      sobre configuración con jumpers de tarjetas Ethernet disponible
+      en: <A
+HREF="http://www.slug.org.au/NIC/"
+TARGET="_top"
+>http://www.slug.org.au/NIC/</A
+>
+     </P
+><P
+>El segundo paso requiere cargar el controlador apropiado
+      para su tarjeta, para esto puede consultar la sección anterior
+      (ver <A
+HREF="x12290.htm#tarjeta-ethernet"
+>Tarjeta Ethernet</A
+>) o
+      emplear <B
+CLASS="command"
+>modconf</B
+> o examinar los controladores
+      disponibles para tarjetas de red en
+      <TT
+CLASS="filename"
+>/usr/lib/&#60;version_de_su_kernel&#62;/modules/net</TT
+>.
+      Puede que tenga que probar con varios y con diversos parametros
+      (no necesita reiniciar después de cada intento, sólo descargar
+      el módulo que haya cargado).  Para esto le serán de utilidad los
+      programas para administrar módulos (ver <A
+HREF="x8370.htm#modulos"
+>Módulos</A
+>).  Si no encuentra un
+      controlador apropiado para su tarjeta (o el chip que esta use),
+      puede intentar con los controladores genéricos
+      <TT
+CLASS="literal"
+>ne</TT
+> (si su tarjeta es ISA) o
+      <TT
+CLASS="literal"
+>ne2k-pci</TT
+> (si su tarjeta es PCI).
+     </P
+><A
+NAME="AEN12477"
+></A
+><P
+>Nombre del controlador
+      genérico para tarjetas Ethernet ISA</P
+><A
+NAME="AEN12481"
+></A
+><P
+>Nombre del controlador
+      genérico para tarjetas Ethernet PCI</P
+><P
+>Cuando haya configurado el controlador, podrá activar una
+      interfaz de red.  El kernel puede manejar varias interfaces
+      simultaneamente, para ver la lista emplee el comando
+      <B
+CLASS="command"
+>/sbin/ifconfig</B
+> o <B
+CLASS="command"
+>netstat
+      -i</B
+>.  Al emplearlo, debe ver al menos la interfaz más
+      sencilla: <TT
+CLASS="literal"
+>lo</TT
+> que representa una
+      conexión a su propio computador empleando como dirección
+      <SPAN
+CLASS="acronym"
+>IP</SPAN
+>: 127.0.0.1 y normalmente configurada en
+      <TT
+CLASS="filename"
+>/etc/hosts</TT
+> con el nombre
+      <TT
+CLASS="literal"
+>localhost</TT
+>.
+     </P
+><A
+NAME="AEN12492"
+></A
+><P
+>Este es el nombre
+      que normalmente se asocia a la dirección 127.0.0.1 en 
+      <TT
+CLASS="filename"
+>/etc/hosts</TT
+></P
+><P
+>Los nombres de las interfaces de red dependen del protocolo
+      que soporte el dispositivo que empleará, para el caso de
+      ethernet los nombres son <TT
+CLASS="literal"
+>eth0</TT
+> para la primera
+      tarjeta, <TT
+CLASS="literal"
+>eth1</TT
+> para la segunda y así
+      sucesivamente (un computador puede tener más de una tarjeta de
+      red ethernet, aunque para nuestra plataforma cada computador
+      requiere una sola).
+    </P
+><A
+NAME="AEN12499"
+></A
+><P
+>Este es el archivo
+      de configuración para interfaces de red.</P
+><A
+NAME="AEN12503"
+></A
+><P
+>Con este script puede
+      activar una de las interfaces configuradas en 
+      <TT
+CLASS="filename"
+>/etc/network/interfaces</TT
+>.
+    </P
+><P
+>Para activar o desactivar una interfaz de red en Debian
+      puede emplear <B
+CLASS="command"
+>ifconfig</B
+> con las opciones
+      <B
+CLASS="command"
+>up</B
+> y <B
+CLASS="command"
+>down</B
+> respectivamente
+      junto con parametros del protocolo (dirección IP del computador,
+      mascara de red, compuerta).  Otra forma de hacer esto en Debian
+      (que además mantendrá la configuración después de reiniciar) es
+      editando los parametros de las interfaces en el archivo
+      <TT
+CLASS="filename"
+>/etc/network/interfaces</TT
+> y empleando los
+      programas <B
+CLASS="command"
+>/sbin/ifup</B
+> y
+      <B
+CLASS="command"
+>/sbin/ifdown</B
+> que reciben como parámetro el
+      nombre de la interfaz por activar o desactivar, por ejemplo:
+<PRE
+CLASS="programlisting"
+>&#13;ifup eth0
+</PRE
+>
+     </P
+><P
+>Su archivo <TT
+CLASS="filename"
+>/etc/network/interface</TT
+> debe
+      tener datos como los siguientes (aunque cambiando los valores de
+      <TT
+CLASS="varname"
+>address</TT
+>  y <TT
+CLASS="varname"
+>gateway</TT
+> de 
+      acuerdo al diseño de la red):
+     </P
+><PRE
+CLASS="programlisting"
+>&#13;# Interfaz loopback
+iface lo inet loopback
+
+# Primera tarjeta de red
+iface eth0 inet static
+	address 192.168.1.5
+	netmask 255.255.255.0
+	network 192.168.1.0
+	broadcast 192.168.1.255
+	gateway 192.168.1.1
+</PRE
+><P
+>La línea <TT
+CLASS="literal"
+>iface eth0 inet static</TT
+> indica
+     que la interfaz <TT
+CLASS="literal"
+>eth0</TT
+> empleará el protocolo
+     TCP/IP4 (<TT
+CLASS="literal"
+>inet</TT
+>) con una dirección
+     <SPAN
+CLASS="acronym"
+>IP</SPAN
+> estática
+     <A
+NAME="AEN12526"
+HREF="#FTN.AEN12526"
+>[6]</A
+>.
+     </P
+><P
+>Aunque comúnmente cada tarjeta de red tiene asociado una
+      sóla interfaz de red y una sóla <SPAN
+CLASS="acronym"
+>IP</SPAN
+>, en
+      algunas circunstancias puede requerir más.  Una segunda interfaz
+      para eth0 se puede configurar con el nombre
+      <TT
+CLASS="literal"
+>eth0:0</TT
+> que podrá configurar de forma análoga
+      a la primera en
+      <TT
+CLASS="filename"
+>/etc/network/interface</TT
+>.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="instalacion-de-una-red-local-ethernet"
+>Instalación de una red local Ethernet</A
+></H3
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN12535"
+>Planeación de la red</A
+></H4
+><P
+>&#13;       De acuerdo a la plataforma de referencia S-Helio 1.1
+       necesitará un concentrador con suficientes puertos para todos
+       los computadores que tenga, cable 10BaseT con conectores RJ-45
+       y en cada computador deberá tener una tarjeta Ethernet (de
+       10MB) como NE2000 o compatible con un puerto para un conector
+       RJ-45 (ver <A
+HREF="x12290.htm#tarjeta-ethernet"
+>tarjeta-ethernet</A
+>)
+     .</P
+><A
+NAME="AEN12539"
+></A
+><P
+>Tipo de tarjeta 
+      Ethernet, económica y recomendada en la plataforma de referencia
+      S-Helio 1.1
+    </P
+><P
+>El espacio físico en el que esté la red será la primera
+       restricción que debe tener en cuenta.  Haga un plano de ese
+       espacio con las distancias a escala, ubique los computadores y
+       diseñe el recorrido de los cables al concentrador.  Hay varias
+       recomendaciones que puede tener en cuenta al diseñar el mapa:
+       </P
+><P
+></P
+><UL
+><LI
+><P
+>Es aconsejable por estética y seguridad que los cables vayan
+	 por canaletas (aunque no es indispensable).  
+	</P
+></LI
+><LI
+><P
+>La longitud máxima de cada cable (para unir concentrador y
+	 computador) es de 100 m.
+       </P
+><A
+NAME="AEN12549"
+></A
+><P
+>Longitud máxima de un
+      cable Base10T entre un computador y un concentrador en una
+      red Ethernet.</P
+></LI
+><LI
+><P
+>Busque que los cables/canaletas vayan por las paredes
+	 del recinto y estén resguardadas (para evitar que alguien se
+	 tropiece).
+	</P
+></LI
+></UL
+><P
+>En el mapa que haga también puede consignar las
+       direcciones <SPAN
+CLASS="acronym"
+>IP</SPAN
+> que planee usar en cada
+       computador.  Emplee direcciones asignadas para redes privadas,
+       por ejemplo 192.168.1.1 al servidor y los clientes 192.168.1.2,
+       192.168.1.3 y así sucesivamente. Cómo compuerta emplee en todos
+       los clientes la dirección del servidor y como máscara de red
+       emplee <TT
+CLASS="literal"
+>255.255.255.0</TT
+> (ver <A
+HREF="x12689.htm"
+>Direcciones,
+	enrutamiento y transporte</A
+>).
+    </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="adquisicion-de-hardware"
+>Adquisición de Hardware</A
+></H4
+><P
+>&#13;       En el mercado encontrará diversos precios y sugerencias
+       distintas a las que damos.  Por ejemplo es posible que pueda
+       conformar una red con cable coaxial, sin necesidad de
+       concentrador a menor precio.  Ese esquema está cada vez en más
+       desuso, su instalación es un poco más difícil (debe poner
+       resistencias de 50ohmios a los extremos del cable) y no
+       escalará tan bien como concentradores en cascada.
+      </P
+><P
+>Para hacer la adquisición de Hardware tenga en cuenta:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>Los nombres de los componentes pueden variar de
+	 un almacén a otro, algunos sinónimos son:
+	 <P
+></P
+><UL
+><LI
+><P
+>tarjeta ethernet, tarjeta compatible NE2000 con 
+	       conectores RJ45</P
+></LI
+><LI
+><P
+>concentrador o <I
+CLASS="foreignphrase"
+>hub</I
+> o
+	   <I
+CLASS="foreignphrase"
+>hub</I
+> repetidor</P
+></LI
+><LI
+><P
+>cable de pares trenzados, par trenzado, twisted pair,
+	    cable 10BaseT, <SPAN
+CLASS="acronym"
+>UTP</SPAN
+>
+	    (<I
+CLASS="foreignphrase"
+>Unshielded Twisted
+	    Pair</I
+>).</P
+></LI
+></UL
+>
+	</P
+></LI
+><LI
+><P
+>Use el plano de red para determinar la longitud de cada
+	 cable, recuerde que todo computador debe tener un cable que
+	 lo una con el concentrador (compre un poco más de la longitud
+	 que midió pues al intentar ensamblar los conectores podría
+	 perder algo de cable en cada intento).
+	</P
+></LI
+><LI
+><P
+>El concentrador debe tener suficientes puertos para todos
+	 los computadores (pueden ponerse varios concentradores en cascada).
+	</P
+></LI
+><LI
+><P
+>Cada computador debe tener una tarjeta de red Ethernet
+	 10MB (e.g. <SPAN
+CLASS="acronym"
+>NE2000</SPAN
+>) que pueda usar desde
+	 Linux (ver <A
+HREF="x12290.htm#tarjeta-ethernet"
+>Tarjeta
+	 Ethernet</A
+>).
+       </P
+></LI
+><LI
+><P
+>Cada cable debe tener dos conectores RJ-45.  Uno para
+	 conectarlo al computador y el otro para conectarlo al
+	 concentrador.  (Compre varios conectores RJ-45 adicionales
+	 pues al intentar ensamblar podría perder algunos).
+       </P
+><A
+NAME="AEN12586"
+></A
+><P
+>Este es el tipo de 
+      conectores que debe ir en cada extremo de un cable Base10T en
+      una red Ethernet como la que sugerimos.
+    </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="instalacion-de-cables-y-concentrador"
+>Instalación</A
+></H4
+><P
+>&#13;       Una vez tenga instaladas las tarjetas de red debe conectar los
+       cables a tales tarjetas y al concentrador.  Como eventualmente
+       usted mismo hará los cables, en esta sección damos
+       instrucciones para que le resulte fácil el proceso.  Requerirá
+       unas pinzas especiales
+       <A
+NAME="AEN12592"
+HREF="#FTN.AEN12592"
+>[7]</A
+> para conectores RJ-45 y un probador
+       (<I
+CLASS="foreignphrase"
+>tester</I
+>) para comprobar que
+       fluye corriente en los cables que haga.
+      </P
+><P
+>Ubique en el espacio para la red los computadores y los
+       cables (verifique que las medidas de su plano hayan sido
+       correctas).
+      </P
+><P
+>Ponga en cada extremo de cada uno de los cables un conector
+       RJ-45 empleando unas pinzas especiales.  Como el cable 10BaseT
+       se compone de 8 cablecitos de colores tenga en cuenta:</P
+><DIV
+CLASS="procedure"
+><OL
+TYPE="1"
+><LI
+><P
+>Deje entre 8mm y 12 mm de los 8 cables al descubierto.
+	 <A
+NAME="AEN12600"
+HREF="#FTN.AEN12600"
+>[8]</A
+>
+	</P
+></LI
+><LI
+><P
+>Empareje los 8 cablecitos antes de intentar ponerlos en el
+	  conector RJ-45. Pongalos en este orden: 1 naranja/blanco, 2
+	  naranja, 3 verde/blanco, 4 azul, 5 azul/blanco, 6 verde, 
+	 7 café/blanco, 8 café
+	 <A
+NAME="AEN12604"
+HREF="#FTN.AEN12604"
+>[9]</A
+>.
+	</P
+></LI
+><LI
+><P
+>El conector RJ45 tiene varios canales, por cada uno de
+	 esos canales debe pasar un cablecito de color.  Empuje bien los 
+	 cablecitos hasta el fondo del conector RJ-45 y con las pinzas 
+	 especiales baje los contactos del conector y asegure el cable.  
+	</P
+></LI
+><LI
+><P
+>Después de ensamblar el primer extremo verifique con un
+	 probador que todos los cablecitos hagan contacto.  Después
+	 ensamble el segundo extremo empleando la misma secuencia de
+	 colores y después verifique que estén haciendo buen contacto
+   	 con un probador.</P
+></LI
+></OL
+></DIV
+><P
+>&#13;       Una vez tenga los cables verifique que la tarjeta de red de 
+       cada computador esté bien instalada (algunas tienen luces
+       <A
+NAME="AEN12611"
+HREF="#FTN.AEN12611"
+>[10]</A
+> 
+       que se encienden cuando transmite o recibe información por el cable),
+       y conecte con cables todas las tarjetas al concentrador.
+      </P
+><P
+>Verifique también que cada tarjeta de red sea reconocida
+       por el kernel y asigne la <SPAN
+CLASS="acronym"
+>IP</SPAN
+> que planeó para
+       cada una en <TT
+CLASS="filename"
+>/etc/network/interfaces</TT
+> (ver
+       <A
+HREF="x12290.htm#tarjeta-ethernet-e-interfaz-de-red"
+>Tarjeta
+       Ethernet e interfaz de red</A
+>).</P
+><P
+>Finalmente verifique la instalación trasnmitiendo paquetes
+       de un computador a otro. Por ejemplo desde el servidor (tal vez
+       con <SPAN
+CLASS="acronym"
+>IP</SPAN
+> 192.168.1.1) intente conectarse a un
+       cliente (tal vez <SPAN
+CLASS="acronym"
+>IP</SPAN
+> 192.168.1.2) con 
+       <B
+CLASS="command"
+>ping</B
+> :
+	  <PRE
+CLASS="screen"
+>&#13;ping 192.168.1.2	
+	  </PRE
+>
+	</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-dispositivos-para-interconexion-y-linux"
+>Lecturas recomendadas: Dispositivos para interconexión y Linux</A
+></H2
+><P
+></P
+><P
+></P
+><UL
+><LI
+><P
+>Recomendamos de forma especial las siguientes páginas del
+       manual: <B
+CLASS="command"
+>ifconfig</B
+>, <B
+CLASS="command"
+>ifup</B
+>,
+       <B
+CLASS="command"
+>ifdown</B
+> y <TT
+CLASS="literal"
+>interfaces</TT
+> (que
+       presenta la sintaxis del archivo de configuración
+       <TT
+CLASS="filename"
+>/etc/network/interfaces</TT
+>.
+       </P
+></LI
+><LI
+><P
+>En Internet, puede consultar más sobre controladores para
+       tarjetas Ethernet en: <A
+HREF="http://www.linuxdoc.org/LDP/nag2/x-087-2-hardware.drivers.ethernet.html"
+TARGET="_top"
+>http://www.linuxdoc.org/LDP/nag2/x-087-2-hardware.drivers.ethernet.html</A
+>
+       </P
+></LI
+><LI
+><P
+>Si desea conocer más sobre redes Ethernet
+       puede consultar la siguiente referencia: Charles
+       Spurgeon.<I
+CLASS="citetitle"
+> Quick Reference Guides to 10 Mbps Ethernet</I
+>.  <A
+HREF="http://wwwhost.ots.utexas.edu/ethernet/descript-10quickref.html"
+TARGET="_top"
+>http://wwwhost.ots.utexas.edu/ethernet/descript-10quickref.html</A
+>
+      </P
+></LI
+><LI
+><P
+>Puede consultar más sobre cables <SPAN
+CLASS="acronym"
+>UTP</SPAN
+> en
+	<A
+HREF="http://www.johnscloset.net/wiring/index.html"
+TARGET="_top"
+>Wiring:
+	Color Codes, Terms and Tools</A
+></P
+></LI
+><LI
+><P
+>Otra fuente de información sobre redes Ethernet y Linux: 
+       Guido Socher. Redes Caseras, glosario y resúmen. Linux Focus. 
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-dispositivos-para-interconexion-y-linux"
+>Ejercicios: Dispositivos para interconexión y Linux</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x12290.htm#redbas.loopback.1"
+>Compruebe que el 
+       <I
+CLASS="foreignphrase"
+>loopback</I
+> esté operando bien empleando 
+	 <B
+CLASS="command"
+>ping</B
+> y revisando la configuración que recibe
+	 cada vez que inicia el sistema.</A
+></DT
+><DT
+>2. <A
+HREF="x12290.htm#redbas.loopback.2"
+>Desactive el loopback de su computador,
+       examine el cambio con <B
+CLASS="command"
+>ifconfig</B
+> y después
+       reactivelo.</A
+></DT
+><DT
+>3. <A
+HREF="x12290.htm#redbas.tarjeta.1"
+>El programa <B
+CLASS="command"
+>ifconfig</B
+>
+       presenta información sobre el dispositivo y el protocolo que
+       abstrae.  Por ejemplo dirección en la red, cantidad de paquetes
+       recibidos, máscara de red, <SPAN
+CLASS="acronym"
+>MTU</SPAN
+>, etc.  Que
+       significa el dato <SPAN
+CLASS="acronym"
+>MTU</SPAN
+>?</A
+></DT
+><DT
+>4. <A
+HREF="x12290.htm#redbas.tarjeta.2"
+>Instale una tarjeta de red o configúrela de
+       forma que se cumplan todas las siguientes condiciones: 
+       </A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="redbas.loopback.1"
+></A
+><B
+>1. </B
+>Compruebe que el 
+       <I
+CLASS="foreignphrase"
+>loopback</I
+> esté operando bien empleando 
+	 <B
+CLASS="command"
+>ping</B
+> y revisando la configuración que recibe
+	 cada vez que inicia el sistema.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Comprobar con <B
+CLASS="command"
+>ping 127.0.0.1</B
+> 
+	  Puede verse la configuración en 
+	  <TT
+CLASS="filename"
+>/etc/network/interfaces</TT
+>:
+	  <PRE
+CLASS="screen"
+>&#13;	 iface lo inet loopback</PRE
+>
+       </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="redbas.loopback.2"
+></A
+><B
+>2. </B
+>Desactive el loopback de su computador,
+       examine el cambio con <B
+CLASS="command"
+>ifconfig</B
+> y después
+       reactivelo.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+> ifdown lo; ifconfig; ifup lo</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="redbas.tarjeta.1"
+></A
+><B
+>3. </B
+>El programa <B
+CLASS="command"
+>ifconfig</B
+>
+       presenta información sobre el dispositivo y el protocolo que
+       abstrae.  Por ejemplo dirección en la red, cantidad de paquetes
+       recibidos, máscara de red, <SPAN
+CLASS="acronym"
+>MTU</SPAN
+>, etc.  Que
+       significa el dato <SPAN
+CLASS="acronym"
+>MTU</SPAN
+>?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> MTU Maximum Transfer Unit, es la
+       máxima longitud de un paquete soportada por el protocolo y el
+       dispositivo, en el caso de Ethernet es 1518 en el caso de FDDI
+       es 4905.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="redbas.tarjeta.2"
+></A
+><B
+>4. </B
+>Instale una tarjeta de red o configúrela de
+       forma que se cumplan todas las siguientes condiciones: 
+       </P
+><P
+></P
+><UL
+><LI
+><P
+>Al arranque del sistema la tarjeta de red sea
+	 reconocida.
+	</P
+></LI
+><LI
+><P
+>La interfaz <TT
+CLASS="literal"
+>eth0</TT
+> abstraiga la tarjeta
+	 y tenga asignada la dirección IP apropiada de acuerdo a su
+	 planeación de la red, que la máscara sea 255.255.255.0 y que
+	 el nombre de la máquina sea el que planeó.
+	</P
+></LI
+><LI
+><P
+>Como compuerta debe estar la <SPAN
+CLASS="acronym"
+>IP</SPAN
+> del
+	servidor.
+	</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>modconf hasta que el módulo
+	carge ; configurar eth0 en /etc/networks/interfaces; ifup eth0
+	para iniciar interfaz; route para ver que la compuerta sea el
+       servidor; ping nombre para comprobar que está en /etc/hosts;</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12325"
+HREF="x12290.htm#AEN12325"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Los conectores RJ45 son similares a los conectores de
+	   teléfono (RJ11), sólo que RJ45 tiene 8 pines mientras RJ11
+	   tiene 4 o 6
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12329"
+HREF="x12290.htm#AEN12329"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;	 Para Ethernet sólo se requieren los pines 1,2,3 y 6 del
+	 conector RJ45, en un cable cruzado deben unirse 1 con 3
+	 (preferiblemente con cable verde/blanco), 2 con 6 (cable
+	 verde), 3 con 1 (cable rojo/blanco), 6 con 2 (cable
+	 rojo).</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12336"
+HREF="x12290.htm#AEN12336"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Concentrado del inglés
+	<I
+CLASS="foreignphrase"
+>hub</I
+>.  De acuerdo al
+	<SPAN
+CLASS="acronym"
+>RFC</SPAN
+> 1516 se define en la sección 9
+	"Repeater Unit for 10 Mb/s Baseband Networks" del estándar
+	IEEE 802.3/ISO 8802-3 CSMA/CD</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12383"
+HREF="x12290.htm#AEN12383"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El comando <B
+CLASS="command"
+>ATA</B
+> es entendido por el modem como 
+       "contestar una llamada", por eso cuando lo da sin que haya una llamada
+	entrante escucha la línea.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12418"
+HREF="x12290.htm#AEN12418"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Al lado de cada integrado o tarjeta soportada se presenta
+	entre paréntesis el módulo del kernel que lo puede
+	controlar.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12526"
+HREF="x12290.htm#AEN12526"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Una alternativa difere es configurar direcciones dinámicas
+       don el protoclo DHCP.  Con este protocolo la dirección IP de
+       cada computador es asignada por un servidor, cuando el
+       computador entra a la red.  Esto es útil para redes
+       inalámbricas o cuando debe conectar y desconectar con
+       frecuencia computadores de la red ---supuestos que no forman
+       parte de nuestra (ver <A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de
+       referencia</A
+>)
+      </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12592"
+HREF="x12290.htm#AEN12592"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En Colombia a tal "pinza especial" se le conoce como
+	 "ponchadora".
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12600"
+HREF="x12290.htm#AEN12600"
+>[8]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Pablo Chamorro nos indicó que "algunas pinzas
+	   tienen un tope, entonces al colocar las puntas de los cables
+	   junto al tope, el corte de la envoltura del cable siempre se
+	   realiza en el mismo punto para que ni sobre ni falte y así no
+	   hay que preocuparse por estimar el punto de corte."  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12604"
+HREF="x12290.htm#AEN12604"
+>[9]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Dado que sólo se requieren
+	   los pines 1 (recepción +), 2 (recepción -), 3 (transmisión
+	   +) y 6 (transmisión -), en realidad sólo se
+	   requiere conectar los pines de ambos conectores así:
+	   1 - 1, 2 - 2, 3 - 3 y 6 - 6.  Pero debe hacerse con una
+	   pareja de cables trenzado (para evitar deterioro de la
+	   señal).</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN12611"
+HREF="x12290.htm#AEN12611"
+>[10]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Luces es traducción de <I
+CLASS="foreignphrase"
+>LED 
+	(Light emitting diode)</I
+>.  </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c11890.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x12689.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Administración de una red con Linux</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c11890.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Direcciones, enrutamiento y transporte</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

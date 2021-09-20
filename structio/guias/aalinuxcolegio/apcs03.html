@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>3. Instalación del nuevo kernel</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="actualizacion-del-kernel-de-linux.html" title="Apéndice C. Actualización del kernel de
+   Debian Linux"><link rel="previous" href="apcs02.html" title="2. Compilación del kernel"><link rel="next" href="apcs04.html" title="4. Referencias"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Instalación del nuevo kernel</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apcs02.html">Anterior</a> </td><th width="60%" align="center">Apéndice C. Actualización del kernel de
+   Debian Linux</th><td width="20%" align="right"> <a accesskey="n" href="apcs04.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="id485795"></a>3. Instalación del nuevo <i>kernel</i></h2></div></div><p>Por el contrario, la instalación del nuevo
+    <i>kernel</i> es tarea que sólo el root
+    puede realizar.
+   </p><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="id485812"></a>3.1. Instalación de los archivos del <i>kernel</i></h3></div></div><div class="procedure"><ol type="1"><li><p>Para comenzar de un vistazo al contenido del directorio
+       <tt>/boot</tt> y tome atenta nota
+       de ello. Note que algunos archivos son vínculos
+       simbólicos.</p><pre class="screen">
+<tt>[root]#</tt> <b>ls -l /boot</b>
+</pre><p>Algunos de los archivos allí contenidos son: </p><pre class="screen">
+-rw-r--r--  1 root    root        4540 Feb 2 1999 boot.b
+-rw-r--r--  1 root    root        4540 Feb 2 1999 boot.b.preserved
+-rw-r--r--  1 root    root         612 Feb 2 1999 chain.b
+-rw-r--r--  1 root    root         612 Feb 2 1999 chain.b.preserved
+-rw-------  1 root    root       17408 Apr 9 00:45 map
+-rw-r--r--  1 root    root         444 Dec 12 1997 mbr.b
+-rw-r--r--  1 root    root         620 Feb 2 1999 os2_d.b
+-rw-r--r--  1 root    root         620 Feb 2 1999 os2_d.b.preserved
+-rwxr-xr-x  1 root    root      715259 Apr 8 17:56 vmlinuz-2.0.36
+
+</pre></li><li><p>Mire el contenido del archivo
+       <tt>/etc/lilo.conf</tt>, dando como un hecho que se
+       está utilizando LILO:</p><pre class="screen">
+<tt>[root #]</tt> <b>cat /etc/lilo.conf</b>
+</pre><p>Por ejemplo, ese archivo podría contener:</p><pre class="programlisting">
+boot=/dev/hda1
+root=/dev/hda1
+install=/boot/boot.b
+map=/boot/map
+vga=normal
+delay=20
+image=/vmlinuz
+ label=Linux
+ read-only
+</pre></li><li><p>Desde el directorio linux utilizado, proceda a copiar el
+       archivo <tt>bzImage</tt> generado durante la
+       compilación dentro del directorio <tt>/boot</tt>.  Por ejemplo, de esta
+       forma:</p><pre class="screen">
+<tt>[root]#</tt> <b>cp -i arch/i386/boot/bzImage/boot/vmlinuz-2.2.18</b>
+</pre></li><li><p>Desde el directorio linux utilizado, proceda a hacer lo
+       propio con el archivo <tt>System.map</tt>.  Por ejemplo, de
+       esta forma:</p><pre class="screen">
+<tt>[root]#</tt> <b>cp -i System.map /boot/System.map-2.2.18</b>
+</pre></li><li><b></b><p>Instalación de los módulos del
+       <i>kernel</i></p><p>
+       Ahora proceda a instalar los módulos.  Si está instalando un
+       <i>kernel</i> de la misma versión del
+       que ya tiene en el sistema, ejecute primero, por ejemplo:
+      </p><pre class="screen"><tt>[root]#</tt> <b>mv /lib/modules/2.2.12-20 /lib/modules/2.2.12-20.old</b></pre><p>y luego si:</p><pre class="screen"><tt>[root]#</tt> <b>make modules_install</b>
+</pre></li><li><b></b><p>Edición del archivo <tt>/etc/lilo.conf</tt> e
+	instalación de un nuevo MBR</p><p>
+       Edite el archivo <tt>/etc/lilo.conf</tt> y adicione
+       una nueva sección para el nuevo
+       <i>kernel</i>, para el ejemplo, así:
+      </p><pre class="programlisting">
+boot=/dev/hda1
+root=/dev/hda1
+install=/boot/boot.b
+map=/boot/map
+vga=normal
+default=nuevo
+delay=20
+image=/vmlinuz
+ label=Linux
+ read-only
+image=/boot/vmlinuz-2.2.18
+     label=nuevo
+     read-only
+</pre><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="./important.png"></td><th>Importante</th></tr><tr><td colspan="2" align="left" valign="top"><p>Note el cambio realizado en la línea <tt>default</tt>.</p></td></tr></table></div></li><li><p>Ubíquese dentro del directorio <tt>/boot</tt>:</p><pre class="screen">
+<tt>[root]#</tt> <b>cd /boot</b>
+</pre></li><li><p>Pruebe sin llevar a cabo la instalación del nuevo MBR
+       ejecutando:</p><pre class="screen">
+<tt>[root]#</tt> <b>lilo -t -v</b>
+</pre></li><li><p>Si no observó nada anormal proceda a la instalación del
+       nuevo MBR ejecutando:</p><pre class="screen">
+<tt>[root]#</tt> <b>lilo -v</b>
+debian:/usr/src/linux# lilo -v
+     LILO version 21, Copyright 1992-1998 Werner Almesberger
+Reading boot sector from /dev/hda1
+Merging with /boot/boot.b
+Boot image: /vmlinuz
+Added Linux
+Boot image: /boot/vmlinuz-2.2.18
+Added nuevo *
+/boot/boot.0301 exists - no backup copy made.
+Writing boot sector.
+</pre></li><li><p>Reinicie el sistema</p><p>Si en un dado caso tuviera problemas con el nuevo
+      <i>kernel</i> puede arrancar utilizando
+      el <i>kernel</i> anterior, escribiendo
+      linux frente al indicador de lilo, cuando apenas se inicie el
+      arranque.
+      </p><p>
+       Al reiniciar, el comando <b>uname -a</b> mostrará algo similar a:
+      </p><pre class="screen">Linux debian 2.2.18 #2 Tue Apr 9 00:32:31 COT 2002 i586 unknown
+</pre></li></ol></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apcs02.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="actualizacion-del-kernel-de-linux.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="apcs04.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">2. Compilación del kernel </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 4. Referencias</td></tr></table></div></body></html>

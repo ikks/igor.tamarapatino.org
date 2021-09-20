@@ -1,0 +1,529 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Capítulo 3. Linux desde la perspectiva de un usuario con más
+   experiencia</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="previous" href="edicion-de-texto.html" title="4. Edición de texto"><link rel="next" href="bash-y-el-juego-de-herramientas.html" title="2. bash y el juego de
+    herramientas"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Capítulo 3. Linux desde la perspectiva de un usuario con más
+   experiencia</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="edicion-de-texto.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="bash-y-el-juego-de-herramientas.html">Siguiente</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="exploracion-tres"></a>Capítulo 3. Linux desde la perspectiva de un usuario con más
+   experiencia</h2></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt>1. <a href="exploracion-tres.html#sistemas-para-preparar-documentos">Sistemas para preparar documentos</a></dt><dd><dl><dt>1.1. <a href="exploracion-tres.html#lectura-sistemas-para-preparar-documentos">Lectura: Sistemas para preparar documentos</a></dt><dd><dl><dt>1.1.1. <a href="exploracion-tres.html#impresion-y-formatos-para-impresion">Impresión y formatos para impresión</a></dt><dt>1.1.2. <a href="exploracion-tres.html#latex">LaTeX</a></dt><dt>1.1.3. <a href="exploracion-tres.html#texinfo">Texinfo</a></dt><dt>1.1.4. <a href="exploracion-tres.html#docbook">DocBook</a></dt><dt>1.1.5. <a href="exploracion-tres.html#uso-de-cvs">Uso de CVS</a></dt></dl></dd><dt>1.2. <a href="exploracion-tres.html#lecturas-recomendadas-sistemas-para-preparar-documentos">Lecturas recomendadas: Sistemas para preparar
+     documentos</a></dt><dt>1.3. <a href="exploracion-tres.html#ejercicios-sistemas-para-preparar-documentos">Ejercicios: Sistemas para preparar documentos</a></dt></dl></dd><dt>2. <a href="bash-y-el-juego-de-herramientas.html">bash y el juego de
+    herramientas</a></dt><dd><dl><dt>2.1. <a href="bash-y-el-juego-de-herramientas.html#lectura-bash-y-el-juego-de-herramientas">Lectura:
+   bash y el juego de herramientas</a></dt><dd><dl><dt>2.1.1. <a href="bash-y-el-juego-de-herramientas.html#ayudas-interactivas-de-bash">Ayudas interactivas de bash
+      (readline y
+      history)</a></dt><dt>2.1.2. <a href="bash-y-el-juego-de-herramientas.html#algunas-herramientas">Algunas herramientas</a></dt><dt>2.1.3. <a href="bash-y-el-juego-de-herramientas.html#redireccion-y-tuberias">Redirección y tuberías</a></dt></dl></dd><dt>2.2. <a href="bash-y-el-juego-de-herramientas.html#lecturas-recomendadas-bash-y-el-juego-de-herramientas">Lecturas recomendadas: bash y el
+     juego de herramientas</a></dt><dt>2.3. <a href="bash-y-el-juego-de-herramientas.html#ejercicios-bash-y-el-juego-de-herramientas">Ejercicios: bash y el juego de
+     herramientas</a></dt></dl></dd><dt>3. <a href="procesos-y-tareas.html">Procesos y tareas</a></dt><dd><dl><dt>3.1. <a href="procesos-y-tareas.html#lectura-procesos-y-tareas">Lectura: Procesos y tareas</a></dt><dd><dl><dt>3.1.1. <a href="procesos-y-tareas.html#procesos">Procesos</a></dt><dt>3.1.2. <a href="procesos-y-tareas.html#senales">Señales</a></dt><dt>3.1.3. <a href="procesos-y-tareas.html#control-de-tareas">Control de tareas</a></dt><dt>3.1.4. <a href="procesos-y-tareas.html#tiempo">Tiempo</a></dt></dl></dd><dt>3.2. <a href="procesos-y-tareas.html#lecturas-recomendadas-procesos-y-tareas">Lecturas recomendadas: Procesos y tareas</a></dt><dt>3.3. <a href="procesos-y-tareas.html#ejercicios-procesos-y-tareas">Ejercicios: Procesos y tareas</a></dt></dl></dd><dt>4. <a href="scripts-basicos-para-bash.html">Scripts básicos para bash</a></dt><dd><dl><dt>4.1. <a href="scripts-basicos-para-bash.html#lectura-scripts-basicos-para-bash">Lectura: Scripts para
+     bash</a></dt><dd><dl><dt>4.1.1. <a href="scripts-basicos-para-bash.html#ejecucion-de-un-comando-en-bash">Ejecución de un comando en
+      bash</a></dt><dt>4.1.2. <a href="scripts-basicos-para-bash.html#ambiente-y-variables-de-ambiente">Ambiente y variables de ambiente</a></dt><dt>4.1.3. <a href="scripts-basicos-para-bash.html#expansiones">Expansiones</a></dt><dt>4.1.4. <a href="scripts-basicos-para-bash.html#comandos-y-programas-utiles-al-hacer-scripts">Comandos y programas útiles al hacer scripts</a></dt></dl></dd><dt>4.2. <a href="scripts-basicos-para-bash.html#lecturas-recomendadas-scripts-basicos-para-bash">Lecturas recomendadas: Scripts básicos para
+     bash</a></dt><dt>4.3. <a href="scripts-basicos-para-bash.html#ejercicios-scripts-basicos-para-bash">Ejercicios: Scripts básicos para
+     bash</a></dt></dl></dd><dt>5. <a href="configuracion-de-una-sesion.html">Configuración de una sesión</a></dt><dd><dl><dt>5.1. <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion">Lectura: Configuración de una sesión</a></dt><dd><dl><dt>5.1.1. <a href="configuracion-de-una-sesion.html#una-sesion-con-bash">Una sesión con
+      bash</a></dt><dt>5.1.2. <a href="configuracion-de-una-sesion.html#una-sesion-con-x-dash-window">Una sesión con X-Window</a></dt><dt>5.1.3. <a href="configuracion-de-una-sesion.html#una-sesion-con-gnome">Una sesión con Gnome</a></dt></dl></dd><dt>5.2. <a href="configuracion-de-una-sesion.html#lecturas-recomendadas-configuracion-de-una-sesion">Lecturas recomendadas: Configuración de una sesión</a></dt><dt>5.3. <a href="configuracion-de-una-sesion.html#ejercicios-configuracion-de-una-sesion">Ejercicios: Configuración de una sesión</a></dt></dl></dd></dl></div><h2><a name="id352027"></a>Público y logros</h2><p>
+    Estudiantes, profesores, secretarias de un colegio y personas que
+    tienen experiencia con Linux y desean aprovechar las herramientas
+    de este sistema ---suponemos que la plataforma de referencia ya
+    está instalada y bien configurada (ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
+    referencia</a>).
+  </p><div class="itemizedlist"><ul type="disc"><li><p><a name="documenta"></a>Emplea algunos sistemas para preparar documentación.</p></li><li><p><a name="kit"></a>Conoce algunas herramientas típicas de sistemas Unix y puede
+      componerlas empleando tuberías.</p></li><li><p><a name="proc"></a>Maneja procesos y tareas.</p></li><li><p><a name="script"></a>Emplea las facilidades que <tt>bash</tt> ofrece y
+      crea scripts sencillos.</p></li><li><p><a name="esppert"></a>Personaliza mejor su espacio de trabajo.</p></li></ul></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="sistemas-para-preparar-documentos"></a>1. Sistemas para preparar documentos</h2></div></div><p>Indicadores de Logros</p><div class="itemizedlist"><ul type="disc"><li><p><a name="documenta.lee"></a>Puede examinar e imprimir textos planos y documentos
+      PDF, PostScript y
+      DVI.</p></li><li><p><a name="documenta.genera"></a>Puede crear documentos sencillos en LaTeX, Texinfo y
+       DocBook.</p></li><li><p><a name="documenta.procesa"></a>Genera documentos PDF, PostScript,
+      DVI, info y HTML  a partir
+      de fuentes en DocBook, LaTeX y Texinfo.
+      </p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-sistemas-para-preparar-documentos"></a>1.1. Lectura: Sistemas para preparar documentos</h3></div></div><p>
+     En esta guía se presentarán brevemente tres sistemas para
+     preparar documentos: LaTeX, Texinfo y DocBook así como la forma
+     de imprimir textos y los documentos que prepare.  Estos sistemas
+     se diferencian de procesadores de texto gráfico en varios
+     aspectos:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>En estos sistemas se separa el contenido y la estructura
+       del texto de la presentación final.
+      </p></li><li><p>La estructura y el contenido los prepara el autor con un
+       editor de texto usual (e.g emacs o
+       vi), incluyendo &quot;comandos&quot; como
+       parte del texto.  La presentación final la realiza el sistema
+       para preparar documentos, aunque el autor puede modificar el
+       comportamiento por defecto de tal sistema y ajustar detalles de
+       la presentación ---sin embargo, la presentación generada por
+       estos sistemas es de calidad profesional.  </p></li><li><p>El sistema de documentación emplea la información de la
+       estructura, los textos, los comandos editados por el usuario y
+       algunas reglas sobre tipografía, ortografía y organización del
+       documento para generar un documento apropiado para cierto medio
+       de publicación (e.g. PostScript o PDF para imprimir, o en HTML
+       para consultar en línea). </p></li><li><p>El programa que genera la presentación final, usualmente
+       genera también la tabla de contenido, índices, glosarios y
+       mantiene actualizadas las referencias del documento en sí
+       mismo, así como las citas bibliográficas.  </p></li></ul></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="impresion-y-formatos-para-impresion"></a>1.1.1. Impresión y formatos para impresión</h4></div></div><p>Para imprimir se emplea el sistema de impresión
+      <b>lpd</b> que permite a cada usuario enviar sus
+      impresiones a una cola de impresiones pendientes que es atendida
+      automáticamente y permite usar tanto impresoras locales
+      (físicamente conectadas a su computador) como remotas
+      (conectadas por intermedio de una red).  Para
+      <b>lpd</b> cada impresora tiene un nombre que la
+      identifica, la impresora por defecto comunmente se llama
+      <b>lp</b>
+     <sup>[<a name="id371352" href="#ftn.id371352">24</a>]</sup>, aunque si en su caso no funciona pregunte al
+      administrador del sistema.
+     </p><p>Aun cuando algunos programas ofrecen menús con una opción
+      para imprimir, prácticamente todos usan en últimas el programa
+      <b>lpr</b> que se encarga de poner la información
+      que debe enviarse a la impresora en una cola de trabajos
+      pendientes
+      <sup>[<a name="id371384" href="#ftn.id371384">25</a>]</sup>, que es atendida automáticamente (i.e de ella se
+      envian trabajos pendientes cuando la impresora está disponible)
+      por el programa <b>lpd</b> (ver <a href="dispositivos-y-linux.html#impresora" title="4.1.5. Impresora">Impresora</a>).
+     </p><a class="indexterm" name="id371424"></a><p>Posiblemente su sistema esté configurado para permitir a
+      <b>lpr</b> la impresión de textos planos y
+      documentos PostScript o PDF.  Para programar la impresión de un
+      texto plano con nombre <tt>tarea.txt</tt> en la
+      impresora por defecto, puede emplear:</p><pre class="screen">
+lpr tarea.txt
+</pre><p>o eventualmente para especificar una impresora diferente a
+      <b>lp</b>, digamos <b>imp2</b> use la
+      opción <tt>-P</tt>:</p><pre class="screen">
+lpr -Pimp2 tarea.txt
+</pre><p>
+      Puede examinar la cola de sus impresiones pendientes con
+      <b>lpq</b> que junto con los nombres de las
+      impresiones pendientes presentará un número que la identifica.
+      Tal número le permitirá cancelar una de sus tareas de impresión
+      pendiente, usándolo como parámetro de <b>lprm</b>.
+     </p><a class="indexterm" name="id371517"></a><a class="indexterm" name="id371544"></a><p>Para imprimir gráficas y documentos con diversos tipos de
+      letra o colores, primero debe convertirse la información a
+      secuencias de control particulares de su impresora.  Cómo de una
+      impresora a otra varian los secuencias de control, en Linux se
+      emplea PostScript (que es un lenguaje apropiado para documentos
+      por imprimir) como formato común y se usan los filtros del
+      programa Ghostscript para traducir de PostScript al formato
+      particular de su impresora
+     <sup>[<a name="id371651" href="#ftn.id371651">26</a>]</sup>.
+     Tal conversión en el caso de PostScript y PDF es realizada
+      normalmente por <b>lpr</b>.
+    </p><p>Ghostscript es un programa que puede leer documentos
+      PostScript y PDF
+     <sup>[<a name="id371678" href="#ftn.id371678">27</a>]</sup>
+      y presentarlos en una ventana de X-Window o transformarlos al
+      lenguaje particular de algunas impresoras.  Puede experimentar
+      con este intérprete tecleando <b>gs</b> y por
+      ejemplo ingresando la siguiente secuencia de instrucciones en
+      lenguaje PostScript:
+</p><pre class="programlisting">
+100 100
+moveto
+200 200
+lineto
+stroke
+</pre><p>
+     </p><a class="indexterm" name="id371708"></a><p>Para visualizar un documento PostScript o PDF puede emplear
+      el programa <b>gv</b> ---el cual se apoya en
+      Ghostscript--- por ejemplo:</p><pre class="screen">
+gv micarta.ps
+</pre><p>
+      mostrará el documento PostScript <tt>micarta.ps</tt>
+      en una ventana de X-Window y con menús le permitirá consultarlo
+      e imprimirlo.
+     </p><a class="indexterm" name="id371995"></a><p>Para imprimir y hacer transformaciones a un PostScript (por
+      ejemplo 2 páginas en una sola), o para convertir de otros
+      formatos a PostScript puede emplear el programa
+      <b>a2ps</b>:</p><pre class="screen">
+a2ps --columns=2 micarta.ps
+</pre><a class="indexterm" name="id372038"></a><p>Tanto PostScript como PDF requieren bastante espacio para
+      describir un documento, usualmente los documentos PDF requieren
+      menos porque mantienen la información comprimida.  Para
+      convertir entre PostScript y PDF se emplean
+      <b>ps2pdf</b> y <b>pdf2ps</b>
+     <sup>[<a name="id372078" href="#ftn.id372078">28</a>]</sup>.  Para visualizar e imprimir un PDF, además de
+       <b>gv</b>, puede emplear <b>xpdf</b> o
+       el programa Acrobat Reader (<b>acroread</b>).
+    </p><a class="indexterm" name="id372115"></a><p> 
+     </p><a class="indexterm" name="id372147"></a><a class="indexterm" name="id372176"></a></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="latex"></a>1.1.2. LaTeX</h4></div></div><p>Tanto LaTeX como Texinfo son extensiones a un sistema
+      llamado TeX, desarrollado para escribir documentos de
+      matemáticas.  A continuación se presenta un ejemplo de un
+      documento LaTeX y el resultado que se obtiene tras procesarlo.
+</p><pre class="programlisting">
+\documentclass{article}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\begin{document}
+\author{Rupertino Gonzales}
+\title{Algunas posibilidades de LaTeX}
+\maketitle
+
+\section{Elementos}
+Puede estructurar el documento en capítulos, secciones, etc.
+Este texto es el contenido de la primera sección de este ejemplo, 
+puede escribir cada párrafo en líneas consecutivas.
+
+\subsection{Ayudas}
+Puede lograr efectos como \emph{Itálicas}, \textbf{negrillas} o 
+cambios en el \textsf{tipo o {\small tamaño} de letra} (note 
+como se anidaron ambientes en este ejemplo).
+
+Puede crear listas:
+\begin{itemize}
+\item Primer elemento de lista.
+\item Segundo elemento de lista.
+\end{itemize}
+o tablas
+\\
+\begin{tabular}{|l|r|} \hline
+Título 1 &amp; Título 2 \\\hline
+elemento 1 &amp; elemento 2 \\\hline
+\end{tabular}
+\subsection{Ecuaciones}
+LaTeX es un experto en esta materia:
+\[ \int_{x=-\inf}^{\inf}e^{-|x|} \]
+\end{document}
+</pre><p>
+     </p><a class="indexterm" name="id372224"></a><a class="indexterm" name="id372247"></a><a class="indexterm" name="id372349"></a><p>LaTeX ofrece plantillas para varios tipos de documentos:
+      artículo, reporte, libro y ofrece el concepto de ambiente para
+      indicar como presentar cierta información de acuerdo a la
+      plantilla.  En el ejemplo presentado, el tipo de documento es
+      artículo (lo indica la línea
+      <tt>documentclass{article}</tt>), y uno de los
+      ambientes empleados es <tt>tabular</tt>, que genera
+      una tabla.
+    </p><p>Una vez edite un documento puede procesarlo con LaTeX para
+      obtener un archivo DVI, por ejemplo para generar el archivo
+      <tt>documento.dvi</tt> a partir de
+      <tt>documento.tex</tt>:</p><pre class="screen">
+latex documento.tex
+</pre><a class="indexterm" name="id372414"></a><a class="indexterm" name="id372443"></a><p>El archivo DVI es apropiado para imprimir, puede imprimirlo
+      con un comando como <b>dvilj</b>,
+      <b>dvidj</b> o un nombre análogo que corresponda a
+      su impresora
+      <sup>[<a name="id372484" href="#ftn.id372484">29</a>]</sup>.  Para visualizar un archivo DVI
+	puede emplear el comando xdvi:
+	</p><pre class="screen">
+xdvi documento.dvi
+</pre><a class="indexterm" name="id372532"></a><p>
+      y para convertirlo a PostScript puede emplear
+      <b>dvi2ps</b>:
+     </p><pre class="screen">
+dvi2ps -c documento.ps documento.dvi
+</pre><p>
+      A continuación se presenta como se ve el ejemplo de esta sección
+      con el programa <b>xdvi</b>.</p><div class="informalfigure"><div class="screenshot"><div class="mediaobject"><img src="ejlatex.png" align="center" alt="Visualización de DVI generado de 
+		  fuente en LaTeX"></div></div></div><p>Existen además otros programas para convertir de LaTeX a
+      HTML como latex2html y HeVeA.  Puede encontrar más información
+      de latex2html en <a href="http://ctan.tug.org/ctan/tex-archive/support/latex2html/" target="_top">http://ctan.tug.org/ctan/tex-archive/support/latex2html/</a>
+      y de HeVeA en <a href="http://pauillac.inria.fr/hevea/" target="_top">http://pauillac.inria.fr/hevea/</a>.  
+    </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="texinfo"></a>1.1.3. Texinfo</h4></div></div><p>Texinfo es otra extensión a TeX, orientada a documentos
+      técnicos.  Además de poder generar un DVI para imprimir, puede
+      generar documentación en formato <b>info</b> (ver
+      <a href="busqueda-y-consulta-de-documentacion.html" title="7. Búsqueda y consulta de documentación">Búsqueda y
+       consulta de documentación</a>) y HTML para consultar en su
+      computador o en Internet.  A continuación se presenta un
+      documento en Texinfo y el resultado que se ve desde un navegador,
+      desde los programas <b>info</b> y
+      xdvi.
+     </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject"><img src="texiih.png" align="center" alt="HTML generado de fuente Texinfo"></div></div></div><pre class="programlisting">
+@settitle Dos frases
+@titlepage
+@title Dos frases
+@author De Henry David Thoreau
+@end titlepage
+@setchapternewpage off
+
+@ifnottex
+@node Top, La primera frase, (dir), (dir)
+@top Dos frases
+De Henry David Thoreau
+@menu
+* La primera frase::
+* La segunda frase::
+@end menu
+@end ifnottex
+
+@node La primera frase, La segunda frase, Top, Top
+@chapter La primera frase
+
+@quotation
+Bajo un gobierno que encarcela  injustamente, el verdadero lugar para un
+hombre justo es también una cárcel.
+  @flushright
+  Henry David Thoreau en &quot;On the Duty of Civil Disobedience&quot;.
+  @end flushright
+@end quotation
+
+@node La segunda frase,  , La primera frase, Top
+@chapter La segunda frase
+
+@quotation
+Aquellos quienes, mientras desaprueban el  carácter de las medidas de un
+gobierno,  le entregan  su  fidelidad y  soporte  son sin  duda sus  más
+conscientes apoyos,  y así frecuentemente  los más serios  obstáculos 
+para reformar.
+  @flushright
+  Henry David Thoreau en &quot;On the Duty of Civil Disobedience&quot;.
+  @end flushright
+@end quotation
+
+@bye
+</pre><p>Para generar el archivo <b>info</b> a partir de
+      un archivo Texinfo con nombre <tt>doc.texi</tt>:</p><pre class="screen">
+makeinfo doc.texi
+</pre><p>para generar el HTML:</p><pre class="screen">
+      makeinfo -html doc.texi
+     </pre><p>
+     y para generar el archivo DVI a partir de
+     <tt>doc.texi</tt>:
+     </p><pre class="screen">
+texi2dvi doc.texi
+</pre><p>
+     A continuación se presenta el mismo documento de ejemplo de esta
+     sección visto desde xdvi.
+     </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject"><img src="texidvi.png" align="center" alt="DVI generado de fuentes 
+		      Texinfo visto con xdvi
+		    "></div></div></div><a class="indexterm" name="id372930"></a><a class="indexterm" name="id372957"></a><p>La versión de Texinfo disponible en Debian 2.2 no maneja
+      del todo bien caracteres del español (vocales tildadas, eñe y
+      diéresis), en particular <b>texi2dvi</b>. Puede
+      sobrellevar el problema cambiando caracteres de español antes de
+      usar <b>texi2dvi</b> por: @'a, @'e, @'{i}, @'o, @'u,
+      @\&quot;u, @~n (y sus versiones en mayúsculas).  Esto puede hacerse
+      automáticamente con un script y generar nuevos archivos (digamos
+      con extensión .texes) que pueden ser pasados a texi2dvi (si una
+      de las fuentes usa @include debe también renombrarse la
+      extensión del archivo incluido a .texes).
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="docbook"></a>1.1.4. DocBook</h4></div></div><p>DocBook es un formato que tiene algún parecido con HTML
+      pues ambos provienen de un ancestro común (el estándar para
+      documentos SGML). A continuación se presenta un ejemplo:
+     </p><pre class="programlisting">
+&lt;!DOCTYPE article PUBLIC &quot;-//OASIS//DTD DocBook V3.1//EN&quot;&gt;
+&lt;article lang=&quot;es&quot; id=&quot;ejemplo&quot;&gt;
+ &lt;artheader&gt;
+  &lt;title&gt;Un ejemplo de DocBook&lt;/title&gt;
+  &lt;abstract&gt;
+   &lt;para&gt;Nociones básicas de DocBook.&lt;/para&gt;
+  &lt;/abstract&gt;
+  &lt;author&gt;
+   &lt;firstname&gt;Tomás&lt;/firstname&gt;&lt;surname&gt;Ramírez&lt;/surname&gt;
+  &lt;/author&gt;
+  &lt;date&gt;2 de Septiembre de 2001&lt;/date&gt;
+  &lt;address&gt;tomas.ramirez@dominio.org&lt;/address&gt;
+ &lt;/artheader&gt;
+ 
+ &lt;sect1 id=&quot;idsec1&quot;&gt;
+  &lt;title&gt;Título de la sección&lt;/title&gt;
+  &lt;sect2 id=&quot;idsec1.1&quot;&gt;
+   &lt;title&gt;Título de subsección&lt;/title&gt;
+   &lt;para&gt;Los textos se encierran entre marquillas que indican como
+    debe presentarse el texto, las marquillas se abren con &amp;lt;nombre_marq&gt;;
+    y se cierran con &amp;lt;/nombre_marq&gt;, por ejemplo la marquilla &amp;lt;para&gt; 
+    se emplea antes de iniciar un párrafo, y el párrafo debe cerrarse con
+    &amp;lt/para&gt;. Otro ejemplo de tag es &amp;lt;programlisting&gt;, cuyo efecto
+    se presenta a continuación:&lt;/para&gt;
+&lt;programlisting&gt;
+int main() 
+{
+	  int n,k;
+}
+&lt;/programlisting&gt;
+  &lt;/sect2&gt;
+  &lt;sect2 id=&quot;idsec1.2&quot;&gt;
+   &lt;title&gt;Título de la segunda subsección&lt;/title&gt;
+   &lt;para&gt;Pueden emplearse  varios tipos de documentos, este es
+    un ejemplo de un artículo. Cada documento puede estructurarse
+    en capítulos, secciones, subsecciones.&lt;/para&gt;
+  &lt;/sect2&gt;
+ &lt;/sect1&gt;
+&lt;/article&gt;
+</pre><a class="indexterm" name="id373100"></a><p> Los textos se encierran entre marquillas que indican como
+    debe presentarse el texto, las marquillas se abren con 
+    <tt>&lt;<i><tt>nombre_marq</tt></i>&gt;</tt>
+    y se cierran con <tt>&lt;/<i><tt>nombre_marq</tt></i>&gt;</tt>, 
+    por ejemplo la marquilla <tt>&lt;para&gt;</tt> 
+    se emplea antes de iniciar un párrafo, y el párrafo debe cerrarse con
+    <tt>&lt;/para&gt;</tt>. Otro ejemplo de tag es 
+    <tt>&lt;programlisting&gt;</tt>, que permite mostrar
+    una porción de texto en un tipo de letra diferente (apropiada para 
+    preentar programas).</p><pre class="programlisting">
+int 
+main() {                                    
+	int n,k;
+}                                                                     
+</pre><p>Pueden emplearse  varios tipos de documentos, este es
+     un ejemplo de un artículo. Cada documento puede estructurarse         
+     en capítulos, secciones, subsecciones.</p><p>Suponiendo que edita el ejemplo en un archivo
+      <tt>ejdb.sgml</tt>, y que en su sistema ya está
+     instalado el paquete sgmltools-2, podrá 
+     generar un PostScript con:</p><pre class="screen">
+sgmltools -b ps ejdb.sgml
+</pre><a class="indexterm" name="id373357"></a><div class="informalfigure"><div class="screenshot"><div class="mediaobject"><img src="ejdb.png" align="center" alt="DVI generado de fuentes DocBook"></div></div></div><p>Otra posibilidad para generar HTML y PostScript a partir de 
+	documentos en DocBook (SGML o XML) se presentan brevemente
+ 	en otra sección (ver <a href="localizacion-y-configuracion-de-algunos-programas.html" title="6. Localización y configuración de algunos programas">Localización
+	  y configuración de algunos programas</a>). Para aprender
+	DocBook recomendamos de forma especial el
+	<a href="http://structio.sourceforge.net/guias/dbktut" target="_top">Tutorial de 
+	  DocBook:Un enfoque integrado y a través de ejemplos</a></p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="uso-de-cvs"></a>1.1.5. Uso de CVS</h4></div></div><p>Eventualmente deseará crear documentos de forma colaborativa 
+    	con otras personas que tengan acceso a la red de su colegio.
+	Precisamente para esa labor, existe CVS que controla las versiones de
+        los archivos tipo texto de un directorio (que en terminología de 
+	CVS es un módulo), ofrece un mecanismo para que varias personas 
+	trabajen simultaneamente sobre la misma información y para detectar 
+	conflictos y permitir al usuario que lo genera, resolverlo (conflicto 
+	se refiere a dos ediciones diferentes de una  misma porción de texto).
+ 	</p><p>Para desarrollar en grupo con CVS basta tener en cuenta:</p><div class="orderedlist"><ol type="1"><li><p>Hay un repositorio central donde está la copia &quot;oficial&quot; más 
+actualizada.
+     (puede ver como crear el repositorio e importar un módulo en la sección
+     sobre 
+     <a href="protocolos-de-soporte-y-de-usuario.html#servicio-cvs" title="4.1.6. Servicio
+    CVS">Servicio CVS</a>).  Usted ha configurado
+	las variables de ambiente (ver 
+	<a href="scripts-basicos-para-bash.html#ambiente-y-variables-de-ambiente" title="4.1.2. Ambiente y variables de ambiente">Ambiente y variables
+	de ambiente</a>) <b>CVSROOT</b> y <b>CVS_RSH</b> 
+	con la localización del repositorio y el programa para ingresar a la 
+	máquina donde está.
+	Las posibilidades son:
+</p><div class="itemizedlist"><ul type="disc"><li><p>Si el repositorio está en la misma máquina en la que usted está 
+trabajando en, digamos en el directorio <tt>/var/cvs</tt>:
+</p><pre class="screen">
+export CVS_RSH=&quot;&quot;
+export CVSROOT=/var/cvs
+</pre><p>
+</p></li><li><p>Si el repositorio está en un directorio 
+en otra máquina, y la otra máquina tiene un servidor ssh o rsh (ver
+<a href="servicios-de-la-intranet.html#telnet-y-ssh" title="3.1.1. 
+      telnet y ssh
+     ">telnet y ssh</a>) y usted tiene cuenta
+en esa máquina (o su clave pública ssh está autorizada en alguna cuenta
+de esa máquina, ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-ssh" title="4.1.5. Servicio ssh">Servicio ssh</a>).
+Suponiendo que la otra máquina es 
+<i><tt>purpura.micolegio.edu.co</tt></i>, que cuenta con ssh
+, que el repositorio está en el directorio <tt>/home/pepe/cvs</tt>,
+y que en esa máquina usted puede usar con ssh la cuenta 
+<i><tt>pepe</tt></i>:
+</p><pre class="screen">
+export CVS_RSH=ssh
+export CVSROOT=pepe@purpura.micolegio.edu.co:/home/pepe/cvs
+</pre><p>
+</p></li><li><p>Si el repositorio está en un directorio de otra máquina,  el
+protocolo pserver de CVS funciona en esa máquina y usted tiene una
+cuenta en esa máquina o está autorizado para usar pserver en el 
+repositorio:
+</p><pre class="screen">
+export CVS_RSH=&quot;&quot;
+export CVSROOT=:pserver:pepe@purpura.micolegio.edu.co:/home/pepe/cvs
+cvs login
+</pre><p>
+</p></li></ul></div><p>
+</p></li><li><p>Cada desarrollador debe obtener una copia de ese repositorio y
+     dejarla en su cuenta para trabajarla. Esto es hacer un 
+	<i>checkout</i>, por
+     ejemplo para obtener una copia local del módulo 
+    <tt>quimica</tt>:</p><pre class="screen">
+       cvs checkout quimica
+</pre><p>En lugar de <tt>checkout</tt> puede emplear 
+	<tt>co</tt>. Si lo requiere puede pasar  opciones generales
+	a CVS antes de <tt>checkout</tt> (como <tt>-z3</tt>
+	que indica transmitir información comprimida):</p><pre class="screen">
+	cvs -z3 co quimica
+</pre></li><li><p>Cada desarrollador con alguna frecuencia debe actualizar su copia 
+    local con respecto a la del repositorio central, para mantener al dia su 
+    copia con los cambios más recientes introducidos por otras personas. 
+    Esto es hacer un <i>update</i> (es importante que 
+    lo haga antes de comenzar a hacer cambios a su copia local). Por ejemplo 
+    puede usar:</p><pre class="screen">
+       cvs -z3 update -Pd
+</pre><p>Note que en este comando la opción <tt>-z3</tt> es una opción
+    general de CVS, mientras que <tt>-Pd</tt> es particular a
+    <tt>update</tt> (indica que no deben agregarse a la copia local
+    directorios que estén vacios en el repositorio).</p></li><li><p>Cada desarrollador trabaja en su copia personal, y cuando completa una
+    parte del trabajo (mejor asegurandose de no introducir errores), publica la
+    actualización junto con un comentario (en el siguiente ejemplo es
+    &quot;Ortografía corregida&quot;):</p><pre class="screen">
+       cvs commit -m &quot;Ortografía corregida&quot;
+</pre><p>Eventualmente al intentar esta operación, si otro usuario realizó una
+    actualización primero que tiene alguna diferencia con respecto a los
+    cambios que se quieren agregar, CVS detecta el conflicto, modifica el
+    archivo para resaltar los conflictos y permite solucionar el conflicto
+    antes de repetir esta operación. Por ejemplo un conflicto puede verse como:
+    </p><pre class="screen">
+&lt;&lt;&lt;&lt;&lt;&lt;1.3                                                                  
+la presion interna de un gas es directamente proporcional a su temperatura.
+ -------                                                                   
+La presión interna de un gas es inversamente proporcional a la temperatura
+&gt;&gt;&gt;&gt;&gt;&gt;
+</pre><p>Para solucionar el conflicto elimine las líneas que CVS agregó y 
+   deje la versión más precisa (o mezclelas), para este caso sólo quedaría:
+   </p><pre class="screen">
+La presión interna de un gas es directamente proporcional a la temperatura.
+</pre></li></ol></div></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-sistemas-para-preparar-documentos"></a>1.2. Lecturas recomendadas: Sistemas para preparar
+     documentos</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Si está interesado en PostScript puede consultar en
+       Internet esta guía de libre redistribución: <a href="http://www.cs.indiana.edu/docproject/programming/postscript/postscript.html" target="_top">A
+      first guide to PostScript</a>.</p></li><li><p>LaTeX
+      </p><div class="itemizedlist"><ul type="circle"><li><p>En su sistema Debian puede consultar un índice de
+	 documentación relacionada con LaTeX en el directorio
+	 <tt>/usr/doc/texmf</tt> en
+	 particular puede consultar el archivo
+	 <tt>index.html</tt>.  De los documentos
+	 disponibles sugerimos de forma especial &quot;<i>Essential
+	 LaTeX</i>&quot; e &quot;<i>Introduction to
+	 LaTeX2e</i>&quot;.  </p></li><li><p>En Internet puede consultar más sobre LaTeX y TeX en el
+	 completo FAQ del grupo de usuarios del
+	 Reino Unido: <a href="http://www.tex.ac.uk/cgi-bin/texfaq2html" target="_top">http://www.tex.ac.uk/cgi-bin/texfaq2html</a>
+	 y en español en el sitio del proyecto CervanTeX: <a href="http://lucas.hispalinux.es/CervanTeX/CervanTeX.html" target="_top">http://lucas.hispalinux.es/CervanTeX/CervanTeX.html</a>.
+	 De igual forma en sus sistema puede consultar la ayuda de
+	 LaTeX (Ver <b>info latex</b>))
+	</p></li><li><p>El libro clásico sobre LaTeX es de Leslie Lamport (autor
+	 de LaTeX): &quot;<i>LaTeX - A document preparation System
+	 - User's guide and reference manual</i>&quot;,
+	 Addison-Wesley, 1985.  El libro clásico sobre TeX es de
+	 Donald Knuth (autor de TeX): &quot;<i>The TeX
+	 Book</i>&quot;, Addison-Wesley, 1986.  </p></li></ul></div></li><li><p>Texinfo</p><div class="itemizedlist"><ul type="circle"><li><p>En su computador puede consultar el manual info de
+	 Texinfo (Ver (<b>info
+	 texinfo</b>)).</p></li><li><p>En Internet puede consultar un resumen de Texinfo en:
+	 <a href="http://www2.linuxjournal.com/lj-issues/issue6/2840.html" target="_top">http://www2.linuxjournal.com/lj-issues/issue6/2840.html</a>
+	 y el manual junto con más información en: <a href="http://www.texinfo.org" target="_top">http://www.texinfo.org</a>
+	</p></li></ul></div></li><li><p>DocBook</p><div class="itemizedlist"><ul type="circle"><li><p>Recomendamos de forma especial el tutorial escrito
+	 por Jaime Irving Dávila y liberado al dominio
+	 público: &quot;<i>Tutorial de DocBook: Un enfoque
+	 integrado y a través de ejemplos</i>&quot;. Está
+	 disponible en Internet en: <a href="http://lucas.hispalinux.es/Tutoriales/DOCBOOK/doctut/multiple-html/" target="_top">http://lucas.hispalinux.es/Tutoriales/DOCBOOK/doctut/multiple-html/</a>
+	y el proyecto Structio mantiene una copia en
+	<a href="http://structio.sourceforge.net/guias/dbktut" target="_top">http://structio.sourceforge.net/guias/dbktut</a>
+	</p></li><li><p>La referencia por excelencia es el libro
+	 &quot;<i>DocBook: The Definitive Guide</i>&quot;
+	 escrito por Norman Walsh y Leonard Muellnery, y editado por
+	 O'Reilly &amp; Associates.  Este libro está disponible en
+	 Internet en: <a href="http://docbook.org/tdg/en/html/docbook.html" target="_top">http://docbook.org/tdg/en/html/docbook.html</a>
+	</p></li></ul></div></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-sistemas-para-preparar-documentos"></a>1.3. Ejercicios: Sistemas para preparar documentos</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id374635"></a><a name="documenta.lee.1"></a><b>1.3.1. </b></td><td align="left" valign="top"><p>En el directorio <tt>/usr/local/share/doc/AA_Linux_colegio</tt> de su sistema encontrará
+	una versión en PostScript de estas guías. Copiela a su
+	directorio, examínela con el programa apropiado y después
+	conviértala a PDF.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id374675"></a><a name="documenta.genera.1"></a><b>1.3.2. </b></td><td align="left" valign="top"><p>Transcriba uno o varios de los ejemplos presentados en
+       este capítulo y genere a partir del mismo un documento para
+       imprimir y/o consultar en Internet.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id374699"></a><a name="documenta.genera.2"></a><b>1.3.3. </b></td><td align="left" valign="top"><p>Opcional: El editor <tt>emacs</tt>
+       cuenta con modos especiales para editar LaTeX (Ver
+       (<b>info emacs</b>)), Texinfo (Ver (<b>info
+       texinfo</b>)) y DocBook (ver &quot;<i>Tutorial de
+       DocBook: Un enfoque integrado y a través de
+       ejemplos</i>&quot;). Experimente con alguno de estos modos
+       para escribir un documento.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id374823"></a><a name="documenta.genera.3"></a><b>1.3.4. </b></td><td align="left" valign="top"><p>Opcional: estas guías están escritas en DocBook, puede
+	usar las fuentes tanto para aprender DocBook
+	como para mejorar este documento.  Encuentra las fuentes en el
+	sitio de distribución: <a href="http://structio.sourceforge.net/guias/AA_Linux_colegio/" target="_top">http://structio.sourceforge.net/guias/AA_Linux_colegio/</a>.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id374868"></a><a name="documenta.genera.4"></a><b>1.3.5. </b></td><td align="left" valign="top"><p>Opcional: el tutorial de DocBook citado en las lecturas
+       recomendadas está escrito en DocBook, puede emplear las fuentes
+       para aprender más sobre DocBook.  Las encuentra en el sitio de
+       distribución: <a href="http://lucas.hispalinux.es/Tutoriales/DOCBOOK/" target="_top">http://lucas.hispalinux.es/Tutoriales/DOCBOOK/</a></p></td></tr></tbody></table></div></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id371352" href="#id371352">24</a>] </sup>Puede configurar otro nombre para la impresora por defecto
+       en la variable de ambiente <tt>PRINTER</tt> (ver
+       <a href="scripts-basicos-para-bash.html#ambiente-y-variables-de-ambiente" title="4.1.2. Ambiente y variables de ambiente">Ambiente y
+       variables de ambiente</a>).
+      </p></div><div class="footnote"><p><sup>[<a name="ftn.id371384" href="#id371384">25</a>] </sup>La cola de sus trabajos de la impresora
+	<b>lp</b> está en el directorio <tt>/var/spool/lpd/lp</tt>.
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id371651" href="#id371651">26</a>] </sup>Hay algunas impresoras que pueden imprimir PostScript
+       directamente, pero en general para hacer la traducción de
+       PostScript al lenguaje de una impresora se requiere un filtro
+       que el administrador del sistema debe configurar (see <a href="dispositivos-y-linux.html#impresora" title="4.1.5. Impresora">Impresora</a>).</p></div><div class="footnote"><p><sup>[<a name="ftn.id371678" href="#id371678">27</a>] </sup>PDF (<i>Portable Document
+       Format</i> es otro lenguaje para impresión, de
+       documentos con gráficas y diversos tipos de letras, basado en
+       PostScript (de la misma compañía ---Adobe).
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id372078" href="#id372078">28</a>] </sup>De acuerdo a <i>Printig-HOWTO</i> estas
+       herramientas ofrecen la funcionalidad de las herramientas
+       &quot;<i>distiller</i>&quot; de Adobe.
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id372484" href="#id372484">29</a>] </sup>Puede ver una lista de posibles programas que le permitan
+	imprimir, tecleando <tt>dvi</tt> desde un intérprete
+	de comandos y presionando <b>Tab</b> dos veces (ver
+	<a href="scripts-basicos-para-bash.html#lectura-scripts-basicos-para-bash" title="4.1. Lectura: Scripts para
+     bash">Lectura
+	 Scripts básicos para bash</a>)
+       </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="edicion-de-texto.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="AA_Linux_colegio.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="bash-y-el-juego-de-herramientas.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. Edición de texto </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 2. bash y el juego de
+    herramientas</td></tr></table></div></body></html>

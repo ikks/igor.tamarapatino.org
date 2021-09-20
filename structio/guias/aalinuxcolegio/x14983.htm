@@ -1,0 +1,1566 @@
+<HTML
+><HEAD
+><TITLE
+>Compilación del kernel</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Actualización del kernel de
+   Debian Linux"
+HREF="a14885.htm"><LINK
+REL="PREVIOUS"
+TITLE="Actualización del kernel de
+   Debian Linux"
+HREF="a14885.htm"><LINK
+REL="NEXT"
+TITLE="Instalación del nuevo kernel"
+HREF="x15453.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="a14885.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Apéndice C. Actualización del <I
+CLASS="foreignphrase"
+>kernel</I
+> de
+   Debian Linux</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x15453.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN14983"
+>Compilación del <I
+CLASS="foreignphrase"
+>kernel</I
+></A
+></H1
+><P
+>Estrictamente hablando, para compilar el
+    <I
+CLASS="foreignphrase"
+>kernel</I
+> no se necesita ser root ya
+    que se puede realizar desde el directorio de un usuario, siempre y
+    cuando se disponga de suficiente espacio en disco y de las
+    herramientas de compilación instaladas. En este instructivo se
+    utiliza la cuenta del root para efectos prácticos.
+   </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14988"
+>Obtención y descompresión de los fuentes</A
+></H2
+><P
+>Obtenga una copia del código fuentes del
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> de <A
+HREF="http://www.kernel.org"
+TARGET="_top"
+>http://www.kernel.org</A
+> o de alguno de los
+     servidores alternos listados en <A
+HREF="http://www.kernel.org/pub/mirrors/"
+TARGET="_top"
+>http://www.kernel.org/pub/mirrors/</A
+> .  Para el
+     ejemplo, para el <I
+CLASS="foreignphrase"
+>kernel</I
+> versión
+     2.2.18 el archivo a obtener es ya sea
+     <TT
+CLASS="filename"
+>linux-2.2.18.tar.bz2</TT
+> (empaquetado con tar y
+     comprimido con bzip2) o <TT
+CLASS="filename"
+>linux-2.2.18.tgz</TT
+>
+     (empaquetado con tar y comprimido con gzip). Los archivos
+     comprimidos con bzip2 normalmente son de menor tamaño.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14997"
+>Descompresión de los fuentes</A
+></H2
+><P
+>Antes de proceder a su descompresión, verifique que disponga
+     de 70 o más MBytes libres en el disco duro, por ejemplo con el
+     comando df:
+    </P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root@linux]#</TT
+> <B
+CLASS="command"
+>df</B
+>
+</PRE
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>Normalmente el directorio donde se descomprimen los fuentes
+     del <I
+CLASS="foreignphrase"
+>kernel</I
+> es <TT
+CLASS="filename"
+>/usr/src</TT
+>.  Los archivos fuentes del
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> crean una estructura de
+     directorios a partir de <TT
+CLASS="filename"
+>/usr/src/linux</TT
+>, lo que puede
+     resultar inconveniente si
+      <P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>ya existe un vínculo o un directorio con ese
+	 nombre</P
+></LI
+><LI
+><P
+>al desempaquetar se sobreescriben archivos.</P
+></LI
+></OL
+>
+     </P
+></BLOCKQUOTE
+></DIV
+><P
+>Luego de seleccionar el directorio de trabajo proceda a
+     descomprimir de la siguiente forma:
+     </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Si decidió trabajar con el archivo
+	<TT
+CLASS="filename"
+>linux-2.2.18.tar.bz2</TT
+>, desempaquete y
+	descomprima utilizando mediante:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root@linux]#</TT
+> <B
+CLASS="command"
+>bzcat linux-2.2.18.tar.bz2| tar -xvf -</B
+>
+</PRE
+><P
+>Alternativamente puede ejecutar:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>tar ­­use-compress-program bunzip2 -xvf linux-2.2.18.tar.bz2</B
+>
+</PRE
+></LI
+><LI
+><P
+>Si optó por usar el archivo <TT
+CLASS="filename"
+>linux-2.2.18.tgz</TT
+>, el comando a
+       utilizar es:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>tar -zxvf linux-2.2.18.tgz</B
+>
+</PRE
+></LI
+></OL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN15032"
+>Creación de un archivo de configuración</A
+></H2
+><P
+>La definición de la configuración del nuevo
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> es el punto crucial de la
+     compilación. Una buena configuración se alcanza sólamente:
+     </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Si tiene a la mano todos los datos del hardware que el
+       <I
+CLASS="foreignphrase"
+>kernel</I
+> va a soportar: puertos, discos duros, tarjetas,
+       etc.</P
+></LI
+><LI
+><P
+>Si define qué características ofrecidas van a ser
+       soportadas por el nuevo <I
+CLASS="foreignphrase"
+>kernel</I
+>,
+       ya sea directamente dentro del núcleo o como módulos.</P
+></LI
+></OL
+><P
+>Las alternativas para configurar el nuevo <I
+CLASS="foreignphrase"
+>kernel</I
+>
+     corresponden a los comandos:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+><B
+CLASS="command"
+>make config</B
+>,
+      </P
+></LI
+><LI
+><P
+><B
+CLASS="command"
+>make menuconfig</B
+>, o
+      </P
+></LI
+><LI
+><P
+><B
+CLASS="command"
+>make xconfig</B
+>
+      </P
+></LI
+></UL
+><P
+>El comando <B
+CLASS="command"
+>make config</B
+> ofrece un interfaz
+     primitivo basado en modo texto, sin ayuda ni menús. Los comandos
+     <B
+CLASS="command"
+>make menuconfig</B
+> y <B
+CLASS="command"
+>make
+     xconfig</B
+> conducen a mejores interfaces de usuario, con
+     menús y quizá lo más importante, con una ayuda contextual que
+     facilita en gran medida la configuración.
+    </P
+><P
+>Para el ejemplo se utiliza <B
+CLASS="command"
+>make
+      menuconfig</B
+>, porque ofrece un interfaz amigable al
+      usuario al igual que <B
+CLASS="command"
+>make xconfig</B
+>, pero
+      resulta más práctica si no se dispone o no se quiere utilizar
+      <SPAN
+CLASS="application"
+>X Windows</SPAN
+>. Antes de proceder a
+      ejecutar este comando, cámbiese al directorio apropiado:
+    </P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>cd linux</B
+>
+</PRE
+><P
+>Ahora si ejecute:
+    </P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make menuconfig</B
+>
+</PRE
+><P
+>Las diferentes opciones disponibles a partir
+     del menú inicial se presentan en forma ampliada en la siguiente
+     figura:
+     </P
+><DIV
+CLASS="informalfigure"
+><A
+NAME="AEN15071"
+></A
+><P
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="ck2218.png"
+ALT="Opciones de configuración del kernel 2.2.18"
+></IMG
+></P
+></DIV
+><P
+></P
+></DIV
+><P
+>Un ejemplo de uno de los submenús expandido
+     (<SPAN
+CLASS="guisubmenu"
+>Processor type and features</SPAN
+>) se aprecia
+     enseguida:
+    </P
+><DIV
+CLASS="informalfigure"
+><A
+NAME="AEN15082"
+></A
+><P
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="ckpr2218.png"
+ALT="Submenu expandido en la configuración del kernel 2.2.18"
+></IMG
+></P
+></DIV
+><P
+></P
+></DIV
+><P
+>En esta pantalla se puede apreciar por ejemplo que en forma
+     predeterminada se ha desactivado la emulación matemática (<SPAN
+CLASS="guilabel"
+>Math
+     emulation</SPAN
+>) y que si se desea habilitar ésta quedaría incluida
+     necesariamente dentro del <I
+CLASS="foreignphrase"
+>kernel</I
+> y no como un módulo (como lo
+     indican los parentesis rectangulares de esa opción), contrario a
+     las opciones que están acompañadas por paréntesis
+     angulares (&#38;lt;&#62;), que pueden compilarse o no como módulos
+     si se desea.
+    </P
+><P
+>Continuando con el ejemplo, si se ingresa al sub-menú
+     <SPAN
+CLASS="guisubmenu"
+>Processor Family</SPAN
+>, se aprecian las siguientes opciones:
+<PRE
+CLASS="screen"
+>&#13;+------------------------- Processor family -------------------------+
+|  Use the arrow keys to navigate this window or press the hotkey of |
+|  the item you wish to select followed by the &#60;SPACE BAR&#62;. Press    |
+|  &#60;?&#62; for additional information about this option.                 |
++--------------------------------------------------------------------+
+| |                      ( ) 386                                   | |
+| |                      ( ) 486/Cx486                             | |
+| |                      ( ) 586/K5/5x86/6x86                      | |
+| |                      ( ) Pentium/K6/TSC                        | |
+| |                      (X) PPro/6x86MX                           | |
++--------------------------------------------------------------------+
+|                       &#60;Select&#62;      &#60; Help &#62;                       |
++--------------------------------------------------------------------+ </PRE
+>
+</P
+><P
+>En definitiva el procedimiento a seguir es entonces:
+    </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+> Con la ayuda de las teclas de movimiento del cursor y la
+       tecla [<B
+CLASS="keycap"
+>Enter</B
+>] recorra todas y cada una de las opciones de los
+       submenús disponibles a partir del menú principal,</P
+></LI
+><LI
+><P
+> Con la ayuda de la barra espaciadora defina si habilita o
+       no el soporte para una u otra característica, y si lo hace en
+       forma integrada al <I
+CLASS="foreignphrase"
+>kernel</I
+> o en forma modular si desea y es
+       posible.</P
+><P
+>Al oprimir la barra espaciadora una o varias
+       veces según se necesite, es posible que visualice:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>Un nuevo sub-menú.</P
+></LI
+><LI
+><P
+>Un asterisco (en ocasiones acompañado de sub-opciones),
+	 indicando que se va a compilar integrado al <I
+CLASS="foreignphrase"
+>kernel</I
+>.
+	</P
+></LI
+><LI
+><P
+>La letra <B
+CLASS="keycap"
+>M</B
+> (en ocasiones acompañada de
+	 sub-opciones), indicando que se va a compilar en forma
+	 modular.
+	</P
+></LI
+><LI
+><P
+>La letra <B
+CLASS="keycap"
+>X</B
+>, similar al asterisco, pero
+	 sólo para opciones de selección múltiple con única
+	 alternativa.
+	</P
+></LI
+><LI
+><P
+>Un espacio en blanco, indicando que no se va a incluir
+	 dentro del <I
+CLASS="foreignphrase"
+>kernel</I
+> el soporte para un determinado item.
+	</P
+></LI
+></UL
+></LI
+><LI
+><P
+>Cuando haya llevado a cabo por completo los puntos 1 y 2,
+       desde el menú principal seleccione la opción exit y responda
+       con <B
+CLASS="keycap"
+>Y</B
+> (de <I
+CLASS="foreignphrase"
+>Yes</I
+>)
+       para grabar la configuración resultante en el archivo
+       <TT
+CLASS="filename"
+>.config</TT
+>, de lo contrario tendrá que
+       volver a realizar todo el proceso otra vez.</P
+></LI
+></OL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN15126"
+>Una guía de apoyo para definir un archivo de
+     configuración</A
+></H2
+><P
+>La ayuda contextual de disponible con <B
+CLASS="command"
+>make
+      menuconfig</B
+> o con <B
+CLASS="command"
+>make xconfig</B
+> es
+      quizás lo suficientemente apropiada para facilitar el proceso de
+      definición del archivo de configuración, no obstante aquí se
+      presenta alguna ilustración adicional. </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Code Maturity Level Options</SPAN
+></DT
+><DD
+><P
+>Esta opción viene desactivada en forma predeterminada,
+       deshabilitando el uso de código experimental en el
+       <I
+CLASS="foreignphrase"
+>kernel</I
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Processor Type and Features</SPAN
+></DT
+><DD
+><P
+>Bajo esta sección es posible definir entre otros:</P
+><P
+></P
+><UL
+><LI
+><P
+>Tipo de procesador de su computador. Para optimizar el
+	  <I
+CLASS="foreignphrase"
+>kernel</I
+> para su procesador
+	  utilice la ayuda contextual para mayor ilustración.
+	 </P
+></LI
+><LI
+><P
+>Emulación del procesador matemático (útil con equipos
+	  386 y similares que vienen sin él). Deshabilitada en forma
+	  predeterminada.</P
+></LI
+><LI
+><P
+>Soporte para sistemas con más de 1 procesador
+	  (<SPAN
+CLASS="acronym"
+>SMP</SPAN
+>). Deshabilite este soporte si va a trabajar en un
+	  computador que solamente dispone de 1 procesador.
+	</P
+></LI
+></UL
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>Es posible que el <I
+CLASS="foreignphrase"
+>kernel</I
+>
+	 no arranque si usted selecciona un procesador incorrecto, por
+	 ejemplo si optimiza el <I
+CLASS="foreignphrase"
+>kernel</I
+>
+	 para un procesador Pentium y usted tiene un procesador
+	 486.</P
+></BLOCKQUOTE
+></DIV
+><P
+>Para el ejemplo, el cambio principal realizado fue
+	deshabilitar el soporte para <SPAN
+CLASS="acronym"
+>SMP</SPAN
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Loadable Module Support</SPAN
+></DT
+><DD
+><P
+>Si por alguna razón desea generar un
+       <I
+CLASS="foreignphrase"
+>kernel</I
+> monolítico, sin módulos,
+       desactive esta opción.  Lo normal es por el contrario, no
+       realizar ningún cambio, aceptando la opción
+       predeterminada.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>General Setup</SPAN
+></DT
+><DD
+><P
+>Esta sección incluye entre otros, soporte para:</P
+><P
+></P
+><UL
+><LI
+><P
+>Redes.</P
+></LI
+><LI
+><P
+>Bus <SPAN
+CLASS="acronym"
+>PCI</SPAN
+>.</P
+></LI
+><LI
+><P
+>Puerto paralelo</P
+></LI
+><LI
+><P
+>Administración Avanzada de Energía (<SPAN
+CLASS="acronym"
+>APM</SPAN
+>).</P
+></LI
+></UL
+><P
+>Para el ejemplo, el cambio principal realizado fue
+	habilitar el soporte para el puerto paralelo y para
+	<SPAN
+CLASS="acronym"
+>APM</SPAN
+>, deshabilitados en forma
+	predeterminada.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Plug and Play</SPAN
+></DT
+><DD
+><P
+>Habilite esta opción si desea que el
+	<I
+CLASS="foreignphrase"
+>kernel</I
+> automáticamente
+	configure algunos dispositivos periféricos.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Block Devices</SPAN
+></DT
+><DD
+><P
+>Bajo esta sección se presenta soporte para:</P
+><P
+></P
+><UL
+><LI
+><P
+>Unidades de discos flexibles.</P
+></LI
+><LI
+><P
+>Soporte mejorado para dispositivos de
+	  almacenamiento estándar <SPAN
+CLASS="acronym"
+>IDE</SPAN
+> y </P
+></LI
+><LI
+><P
+>Otros dispositivos de datos en modo bloques.</P
+></LI
+></UL
+><P
+>Si se dispone de un disco duro <SPAN
+CLASS="acronym"
+>IDE</SPAN
+>,
+	será necesario habilitar el soporte para el disco
+	<SPAN
+CLASS="acronym"
+>IDE</SPAN
+> apropiado.
+      </P
+><P
+>Para el ejemplo, se aceptaron los valores predeterminados
+	propuestos sin realizar ningún cambio.
+       </P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Networking Options</SPAN
+></DT
+><DD
+><P
+>Esta sección es de vital importancia para equipos que van
+	a operar en red. Las opciones que en forma predeterminada
+	vienen habilitadas son:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>Packet socket</SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>Unix domain socket</SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>TCP/IP networking</SPAN
+>, e</P
+></LI
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>IP: Allow large windows</SPAN
+></P
+></LI
+></UL
+><P
+>Para el ejemplo, se habilitaron adicionalmente
+       las opciones:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>Network firewalls</SPAN
+>, para
+	  permitir que Linux actúe como un equipo "corta fuegos" con
+	  posibilidad de filtrar paquetes y protegerse de accesos no
+	  autorizados de Internet, e </P
+></LI
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>IP firewalling</SPAN
+>, para poder
+	 acceder a equipos remotos (por ejemplo de Internet)
+	 utilizando enmascaramiento a través de un equipo "corta
+	 fuegos", de tal forma que los equipos de la red local no son
+	 visibles al mundo exterior, evitando la necesidad de
+	 direcciones IP válidas. </P
+></LI
+></UL
+><P
+>En la práctica, estas dos opciones permiten por ejemplo,
+	poder utilizar en forma compartida para una red local una
+	conexión a Internet a través de una sola línea telefónica,
+	disponiendo de una seguridad básica.
+      </P
+><P
+>Adicionalmente, entre otras están las opciones que
+	permiten a Linux actuar como un enrutador o dar soporte a
+	protocolos tales como <SPAN
+CLASS="acronym"
+>IPX</SPAN
+> o
+	<I
+CLASS="foreignphrase"
+>Reverse</I
+>
+	<SPAN
+CLASS="acronym"
+>ARP</SPAN
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Telephony Support</SPAN
+></DT
+><DD
+><P
+>Esta opción, que permite dar soporte a correo de voz, fax
+	y otros dispositivos multimedia que inteoperan con modems,
+	viene deshabilitada en forma predeterminada.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>SCSI Support</SPAN
+></DT
+><DD
+><P
+>En forma predeterminada esta opción viene habilitada,
+	pero si usted no tiene o no desea usar un disco, unidad de
+	cinta, unidad de CD-ROM o cualquier otra unidad tipo SCSI,
+	desactívela.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>I2O Device Support</SPAN
+></DT
+><DD
+><P
+>Esta opción que hace referencia a la<I
+CLASS="foreignphrase"
+>&#13;	  Intelligent Input/Output (I20) architecture</I
+>,
+	  viene deshabilitada en forma predeterminada.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Network Device Support</SPAN
+></DT
+><DD
+><P
+> Entre las diferentes alternativas disponibles en esta
+	sección se destacan:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>Ethernet 10/100</SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>PPP (point-to-point) support</SPAN
+></P
+></LI
+></UL
+><P
+>Respecto a la primera opción, al seleccionarla aparece un
+	listado de tarjetas de red disponibles, incluyendo entre
+	otros, tarjetas <SPAN
+CLASS="acronym"
+>3COM</SPAN
+>, tarjetas
+	<SPAN
+CLASS="acronym"
+>EISA</SPAN
+>, <SPAN
+CLASS="acronym"
+>VESA</SPAN
+>,
+	<SPAN
+CLASS="acronym"
+>PCI</SPAN
+> y controladores integrados en las
+	tarjetas principales, y otras tarjetas
+	<SPAN
+CLASS="acronym"
+>ISA</SPAN
+>. Por otro lado, el soporte para
+	protocolo <SPAN
+CLASS="acronym"
+>PPP</SPAN
+> es necesario para permitir
+	conexión a Internet por vía telefónica.</P
+><P
+>Para el ejemplo, se habilitó soporte integrado al
+	<I
+CLASS="foreignphrase"
+>kernel</I
+> para la tarjeta de red
+	disponible y también pero en forma modular para otras tarjetas
+	de red de las cuales eventualmente se pueda disponer. En
+	complemento, se habilitó el soporte para protocolo
+	<SPAN
+CLASS="acronym"
+>PPP</SPAN
+>, desactivado en forma
+	predeterminada.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Amateur Radio Support</SPAN
+></DT
+><DD
+><P
+>Esta sección permite soporte para transmisión de datos
+	para radio aficionados. En forma predeterminada esta opción
+	está deshabilitada.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>IrDA Support</SPAN
+></DT
+><DD
+><P
+>Esta sección permite soporte para trabajar con protocolos
+	<SPAN
+CLASS="trademark"
+>IrDA</SPAN
+>&#8482;, relacionados con comunicaciones
+	inalámbricas infrarojas, soportadas por la mayoría de
+	computadores portátiles
+	(<I
+CLASS="foreignphrase"
+>laptops</I
+>) y
+	<SPAN
+CLASS="acronym"
+>PDA</SPAN
+>'s.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>ISDN Subsystem</SPAN
+></DT
+><DD
+><P
+><SPAN
+CLASS="acronym"
+>ISDN</SPAN
+> o <SPAN
+CLASS="acronym"
+>RDSI</SPAN
+> como se
+	conoce en Colombia, es un tipo especial de servicio telefónico
+	completamente digital, disponible únicamente en las
+	principales ciudades. Una línea <SPAN
+CLASS="acronym"
+>RDSI</SPAN
+>
+	permite una mejor conexión a Internet que a través de una
+	línea telefónica convencional. Habilite esta opción si tiene
+	interés y en su ciudad cuenta con proveedores de enlaces
+	<SPAN
+CLASS="acronym"
+>RDSI</SPAN
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Old CD-ROM Drivers (not SCSI, not
+      IDE)</SPAN
+></DT
+><DD
+><P
+>Habilite esta opción si usted tiene una unidad de
+	<SPAN
+CLASS="acronym"
+>CD-ROM</SPAN
+> que no sea ni
+	<SPAN
+CLASS="acronym"
+>IDE/ATAPI</SPAN
+> ni <SPAN
+CLASS="acronym"
+>SCSI</SPAN
+>, es
+	decir, si tiene una unidad de <SPAN
+CLASS="acronym"
+>CD-ROM</SPAN
+>
+	antigua que se conecta a la tarjeta de sonido.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Character Devices</SPAN
+></DT
+><DD
+><P
+>Bajo esta sección se define el soporte para dispositivos
+	  de caracteres, entre otros:</P
+><P
+></P
+><UL
+><LI
+><P
+>Terminales
+	 </P
+></LI
+><LI
+><P
+>Puertos seriales
+	 </P
+></LI
+><LI
+><P
+>Ratones </P
+></LI
+><LI
+><P
+>Palancas de juegos (soporte deshabilitado por
+	  omisión) </P
+></LI
+></UL
+><P
+>Para el ejemplo, se aceptaron los valores
+	predeterminados.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>USB Support</SPAN
+></DT
+><DD
+><P
+>Habilite esta opción si su computador tiene puerto
+	<SPAN
+CLASS="acronym"
+>USB</SPAN
+>.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>File Systems</SPAN
+></DT
+><DD
+><P
+>Esta sección determina el tipo de sistemas de archivos a
+	utilizar. Entre las opciones habilitadas en forma
+	predeterminada se destacan entre otros:</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><SPAN
+CLASS="guimenuitem"
+>ISO 9960 CDROM filesystem support</SPAN
+></DT
+><DD
+><P
+>Para poder acceder a <SPAN
+CLASS="acronym"
+>CDROM</SPAN
+> estándares.</P
+></DD
+><DT
+><SPAN
+CLASS="guimenuitem"
+>/proc filesystem</SPAN
+></DT
+><DD
+><P
+>Sistema de archivos virtual que proporciona
+	  información sobre el sistema operativo.</P
+></DD
+><DT
+><SPAN
+CLASS="guimenuitem"
+>Second extended fs support</SPAN
+></DT
+><DD
+><P
+>El sistema de archivos estándar de Linux</P
+></DD
+><DT
+>NFS filesystem support</DT
+><DD
+><P
+>Para interactuar con otros equipos <SPAN
+CLASS="acronym"
+>UNIX</SPAN
+>
+	   utilizando el protocolo <SPAN
+CLASS="acronym"
+>NFS</SPAN
+>.</P
+></DD
+></DL
+></DIV
+><P
+>Adicionalmente a estos sistemas de archivos podría
+       resultar interesante habilitar el soporte para:</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><SPAN
+CLASS="guimenuitem"
+>Quota support</SPAN
+></DT
+><DD
+><P
+>Para poder colocar límites al uso del disco.</P
+></DD
+><DT
+><SPAN
+CLASS="guimenuitem"
+>DOS FAT fs support</SPAN
+></DT
+><DD
+><P
+>Para poder trabajar con sistemas de archivos de MS-DOS
+	   (<I
+CLASS="foreignphrase"
+>MSDOS fs support</I
+>) y de
+	   Windows 95 (<I
+CLASS="foreignphrase"
+>VFAT fs
+	   support</I
+>)</P
+></DD
+><DT
+><SPAN
+CLASS="guimenuitem"
+>Microsoft Joliet CDROM extensions</SPAN
+></DT
+><DD
+><P
+>Para poder leer <SPAN
+CLASS="acronym"
+>CDROM</SPAN
+> en ese formato</P
+></DD
+><DT
+><SPAN
+CLASS="guimenuitem"
+>SMB filesystem support</SPAN
+></DT
+><DD
+><P
+>para poder montar sistemas de archivos de Windows for
+	   Workgroups (WfW), Windows 95/98, Windows NT y OS/2 Lan
+	   Manager. Si lo que se necesita es solamente acceder a un
+	   servidor Linux utilizando Samba no se necesita habilitar
+	   esta opción. </P
+></DD
+></DL
+></DIV
+><P
+>Finalmente, parece interesante también habilitar soporte
+	para el Español como idioma nativo preferido al momento de
+	montar sistemas de archivos, definiendo como predeterminado a
+	<SPAN
+CLASS="acronym"
+>NSL ISO 8859-1</SPAN
+> (Latin 1).
+       </P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Console Drivers</SPAN
+></DT
+><DD
+><P
+>Bajo esta sección se presentan dos opciones:</P
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>VGA text mode</SPAN
+></P
+></LI
+><LI
+><P
+><SPAN
+CLASS="guimenuitem"
+>Video mode seleccion support</SPAN
+></P
+></LI
+></UL
+><P
+>La primera de ellas, habilitada en forma predeterminada,
+       permite utilizar Linux en modo texto en una pantalla que cumpla
+       con el estándar <SPAN
+CLASS="acronym"
+>VGA</SPAN
+> genérico. La segunda
+       opción, deshabilitada en forma predeterminada, permite
+       aprovechar algunas altas resoluciones en modo texto que podría
+       ofrecer el <SPAN
+CLASS="acronym"
+>BIOS</SPAN
+>.
+       </P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Sound</SPAN
+></DT
+><DD
+><P
+>Habilite esta opción si su computador tiene una tarjeta
+       de sonido. Consulte la ayuda disponible.</P
+></DD
+><DT
+><SPAN
+CLASS="guisubmenu"
+>Kernel Hacking</SPAN
+></DT
+><DD
+><P
+>Esta opción, principalmente útil para
+	<I
+CLASS="foreignphrase"
+>hackers</I
+>, permite tener cierto
+	control sobre el sistema aún si el sistema se cae haciendo uso
+	de la tecla de Peticiones del Sistema (<SPAN
+CLASS="acronym"
+>SysRQ</SPAN
+>).</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN15408"
+>Compilación</A
+></H2
+><P
+>Como se mencionó, no se necesita ser
+     <I
+CLASS="foreignphrase"
+>root</I
+> para compilar el
+     <I
+CLASS="foreignphrase"
+>kernel</I
+>. En este ejemplo se
+     muestran los comandos a nombre del
+     <I
+CLASS="foreignphrase"
+>root</I
+>.
+    </P
+><DIV
+CLASS="procedure"
+><OL
+TYPE="1"
+><LI
+><P
+>Para compilar el <I
+CLASS="foreignphrase"
+>kernel</I
+> ejecute primero:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make dep</B
+>
+</PRE
+><P
+>O mejor, para poder observar de mejor forma la salida y
+     eventuales errores, ejecute:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make dep 1&#62; dep-salida.txt 2&#62;dep-errores.txt</B
+>
+</PRE
+></LI
+><LI
+><P
+>Ahora compile el <I
+CLASS="foreignphrase"
+>kernel</I
+>
+      mediante:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make bzImage</B
+>
+</PRE
+><P
+>o mejor, por ejemplo mediante:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make bzImage 1&#62; bzImage-salida.txt 2&#62;bzImage-errores.txt</B
+>
+</PRE
+><P
+>Es necesario mencionar que <B
+CLASS="command"
+>make bzImage</B
+>
+     no es la única opción. Consulte la documentación disponible bajo
+     el directorio <TT
+CLASS="filename"
+>linux/Documentation</TT
+> para obtener
+     alguna información al respecto.
+    </P
+><P
+>Al ejecutar <TT
+CLASS="option"
+>bzImage</TT
+> se generan entre otros,
+     el <I
+CLASS="foreignphrase"
+>kernel</I
+>
+     <TT
+CLASS="filename"
+>linux/arch/i386/boot/bzImage</TT
+> y el archivo
+     <TT
+CLASS="filename"
+>linux/System.map</TT
+>, para instalar
+     posteriormente bajo el directorio <TT
+CLASS="filename"
+>/boot</TT
+>. </P
+></LI
+><LI
+><P
+>Si se habilitaron los módulos, ejecute:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make modules</B
+>
+</PRE
+><P
+>o si prefiere:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make modules 1&#62; modules-salida.txt 2&#62;modules-errores.txt</B
+>
+</PRE
+></LI
+></OL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="a14885.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x15453.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Actualización del <I
+CLASS="foreignphrase"
+>kernel</I
+> de
+   Debian Linux</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="a14885.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Instalación del nuevo <I
+CLASS="foreignphrase"
+>kernel</I
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

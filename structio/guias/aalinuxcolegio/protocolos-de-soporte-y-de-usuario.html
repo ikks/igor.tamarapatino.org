@@ -1,0 +1,1715 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>4. Protocolos de soporte y de usuario</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-tres.html" title="Capítulo 6. Administración de una red con Linux"><link rel="previous" href="direcciones-enrutamiento-y-transporte.html" title="3. Direcciones, enrutamiento y transporte"><link rel="next" href="plataforma.html" title="Apéndice A. Plataforma de referencia S-Helio 1.1"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Protocolos de soporte y de usuario</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="direcciones-enrutamiento-y-transporte.html">Anterior</a> </td><th width="60%" align="center">Capítulo 6. Administración de una red con Linux</th><td width="20%" align="right"> <a accesskey="n" href="plataforma.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="protocolos-de-soporte-y-de-usuario"></a>4. Protocolos de soporte y de usuario</h2></div></div><p>Indicadores de Logros </p><div class="itemizedlist"><ul type="disc"><li><p><a name="servred.bas"></a>Puede configurar <b>talk</b>,
+      <b>finger</b>, <b>ftp</b> y
+      <b>telnet</b> en cada computador de la red.
+     </p></li><li><p><a name="servred.servdns"></a>Puede configurar un servidor DNS y
+     usarlo en los clientes.</p></li><li><p><a name="servred.clinfs"></a>Puede distribuir utilización de discos duros usando
+      NFS, de acuerdo a las sugerencias de la
+      plataforma de referencia.
+     </p></li><li><p><a name="servred.nis"></a>Puede instalar y configurar el servicios
+      NIS en la plataforma de referencia
+      S-Helio 1.1.
+     </p></li><li><p><a name="servred.mail"></a>Configura el servicio de correo de acuerdo a la plataforma
+      de referencia. 
+     </p></li><li><p><a name="servred.ssh"></a>Configura el servicio de ssh de acuerdo a la plataforma
+      de referencia. 
+     </p></li><li><p><a name="servred.cvs"></a>Configura el servicio de CVS de acuerdo a la plataforma
+      de referencia. 
+     </p></li><li><p><a name="servred.ftp"></a>Configura el servicio de ftp de acuerdo a la plataforma
+      de referencia. 
+     </p></li><li><p><a name="servred.web"></a>Configura el servicio de web de acuerdo a la plataforma
+      de referencia. 
+     </p></li><li><p><a name="servred.impresora"></a>Configura una impresora en red. </p></li><li><p><a name="servred.apache"></a>Puede instalar y configurar el servidor Apache en la
+      plataforma de referencia.
+     </p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-protocolos-de-soporte-y-de-usuario"></a>4.1. Lectura: Protocolos de soporte y de usuario</h3></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="configuracion-de-servicios-basicos"></a>4.1.1. Configuración de servicios básicos</h4></div></div><p>Cómo se presentó en la lectura de la sección
+       <a href="administracion-tres.html#lectura-redes-protocolos-e-internet" title="1.1. Lectura: Redes, protocolos e Internet">Redes,
+	 protocolos e Internet</a> cada servicio que su sistema 
+       ofrezca requiere un proceso <i>daemon</i>
+       que esté pendiente de atender conexiones.  Para disminuir el
+       número de procesos que deberían estar activos esperando conexiones
+       por cada servicio, el programa inetd
+       que se inicia durante el arranque de su sistema (con
+       <tt>/etc/init.d/inetd</tt>, ver 
+       <a href="administracion-dos.html#inicializacion-del-sistema" title="1. Inicialización del sistema">Inicialización del
+	 sistema</a>) espera conexiones en diversos puertos y 
+       cuando recibe una inicia el <i>daemon</i> 
+       apropiado.</p><a class="indexterm" name="id466072"></a><a class="indexterm" name="id466096"></a><p>inetd se configura en el archivo
+       <tt>/etc/inetd.conf</tt> que puede referenciar 
+       servicios por nombres si estos están listados en
+       <tt>/etc/services</tt> o en
+       <tt>/etc/rpc</tt> y protocolos listados en
+       <tt>/etc/protocols</tt>.
+       Debian inlcuye versiones de estos archivos listas para servir
+       <tt>telnet</tt>, <tt>talk</tt>, 
+       <tt>finger</tt>, hora local y correo (<tt>smtp</tt>).     </p><a class="indexterm" name="id466183"></a><p>Cada línea del archivo <tt>/etc/inetd.conf</tt>
+      puede ser un comentario (si comienza con el caracter &quot;#&quot;) o puede
+      ser análoga a:
+       </p><pre class="screen">
+smtp            stream  tcp     nowait  mail    /usr/sbin/exim exim -bs </pre><p>
+      que indica que el servicio <tt>smtp</tt>, se
+      maneja con conexiones<sup>[<a name="id466238" href="#ftn.id466238">210</a>]</sup> tipo
+       <tt>stream</tt> del protocolo <tt>tcp</tt>,
+      sin espera.  Cada vez que haya una conexión para este servicio
+      se iniciará el programa <tt>/usr/sbin/exim</tt> con
+       argumentos<sup>[<a name="id466265" href="#ftn.id466265">211</a>]</sup> <tt>exim -bs</tt>
+      desde la cuenta <tt>mail</tt>. Otras posibilidades para
+       cada parte son:</p><div class="variablelist"><dl><dt><span class="term">servicio</span></dt><dd><p>El servicio es uno de los especificados en
+	 <tt>/etc/services</tt> o puede ser una dirección
+	 precedida por un puerto, o uno de los servicios
+	 RPC especificados en
+	 <tt>/etc/rpc</tt>.
+	</p></dd><dt><span class="term">Tipo de conexión</span></dt><dd><p><tt>stream</tt>,
+	 <tt>dgram</tt> para datagramas,
+	 <tt>raw</tt> para conexiones puras,
+	 <tt>rdm</tt> para <i>reliable delivered 
+	  messages</i> o
+	 <tt>seqpacket</tt> para paquetes secuenciados.
+	</p></dd><dt><span class="term">Protocolo</span></dt><dd><p>Debe ser uno de los disponibles en el archivo
+	 <tt>/etc/protocols</tt>, por ejemplo
+	 <tt>tcp</tt> o <tt>udp</tt>.</p></dd><dt><span class="term">Espera</span></dt><dd><p>Puede ser <tt>wait</tt> o
+	 <tt>nowait</tt>, indica si 
+	 <b>inetd</b> debe
+	 esperar a que el proceso termine para recibir nuevas conexiones
+	 en el mismo puerto o no. Esto depende del tipo de servicio, la
+	 mayoría no requiere espera (porque emplean varios
+	 hilos
+	 <sup>[<a name="id466585" href="#ftn.id466585">212</a>]</sup>
+	 que emplean otro puerto por cada conexión), aunque son
+	 excepciones <b>talkd</b>, <b>biff</b>
+	 y <b>tftp</b>. Después de <tt>wait</tt>
+	 o <tt>nowait</tt> puede venir separado por un punto
+	 el máximo número de conexiones que inetd debe aceptar para el
+	 servicio en 1 minuto (por defecto 256).  </p></dd><dt><span class="term">Usuario</span></dt><dd><p>Usuario a nombre del cual se iniciará el proceso.
+	 </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="./warning.png"></td><th>Aviso</th></tr><tr><td colspan="2" align="left" valign="top"><p>Por seguridad, es recomendable ejecutar
+	 <i>daemons</i> desde cuentas
+	 diferentes a root</p></td></tr></table></div><p> Puede especificarse un
+	 grupo primario poniendolo a continuación del nombre separado
+	 por el caracter &quot;.&quot;
+	</p></dd><dt><span class="term">Programa</span></dt><dd><p>Ruta del programa que atenderá la conexión.  Si se trata
+	 de un servicio interno se usa
+	 <tt>internal</tt>. Los servicios internos son
+	 <tt>echo</tt> que responde con los mensajes que
+	 recibe (útil para medir y probar como se especifica en el
+	 RFC 862); <tt>discard</tt> que
+	 descarta todo dato que recibe (también útil para probar y
+	 medir como se describe en el RFC 863);
+	 <tt>chargen</tt> definido en el
+	 RFC 864 responde generando caracteres
+	 hasta que la conexión sea cerrada; <tt>daytime</tt>
+	 que de acuerdo al RFC 867 informa fecha y
+	 hora en formato entendible para humanos
+	 <tt>time</tt> hora actual en formato para máquinas
+	 de acuerdo al RFC 868.</p></dd></dl></div><p>El archivo <tt>/etc/inetd.conf</tt>, en una
+      LAN como la especificada en nuestra
+      plataforma de referencia (sin conexión a Internet)
+      incluye:</p><pre class="screen">
+telnet          stream  tcp     nowait  telnetd.telnetd /usr/sbin/tcpd  /usr/sbin/in.telnetd
+talk            dgram   udp     wait    nobody.tty /usr/sbin/tcpd  /usr/sbin/in.talkd
+finger          stream  tcp     nowait  nobody  /usr/sbin/tcpd /usr/sbin/in.fingerd
+smtp            stream  tcp     nowait  mail    /usr/sbin/exim exim -bs
+	 </pre><p>Después de modificar este archivo puede reiniciar
+	   <b>inetd</b>, tal 
+	   como haría con otros servicios que se inician al arranque del 
+	   sistema (ver
+      <a href="administracion-dos.html#inicializacion-del-sistema" title="1. Inicialización del sistema">Inicialización del
+      sistema</a>):</p><pre class="screen">
+/etc/init.d/inetd restart	  </pre><p>o envíando la señal SIGHUP al proceso.
+      (ver <a href="procesos-y-tareas.html#senales" title="3.1.2. Señales">Señales</a>).</p><a class="indexterm" name="id466777"></a><p>Note que la ejecución de <b>telnet</b>,
+      <b>finger</b> y <b>talk</b> se hace con
+      el programa <b>tcpd</b>.  Este programa puede
+      manejar conexiones de diversos servicios, registrar las
+      conexiones en la bitácora y agregar un mínimo de seguridad
+      incluyendo listas de control configurables en los archivos
+      <tt>hosts.allow</tt> y
+      <tt>hosts.deny</tt>.  En estos archivos se
+      configuran con patrones los servicios, computadores y/o usuarios
+      pueden iniciar conexiones, y los que no. Cuando recibe una
+      solicitud de conexión <tt>tcpd</tt> primero lee los
+      patrones de <tt>/etc/hosts.allow</tt> si ninguno
+      concuerda con la conexión intenta con los de
+      <tt>/etc/hosts.deny</tt> y si ninguno concuerda
+      permite la conexión.  Para permitir acceso a estos servicios
+      sólo a computadores en la red privada
+      <tt>/etc/hosts.deny</tt> podría ser:</p><pre class="screen">
+ALL: ALL
+     </pre><p>y <tt>/etc/hosts.allow</tt>:</p><pre class="screen">
+ALL: 192.168.0.0/255.255.0.0
+     </pre></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-dns"></a>4.1.2. Servicio DNS</h4></div></div><a class="indexterm" name="id467147"></a><p>
+      DNS permite asociar nombres a direcciones IP,
+     esto es importante para facilitarnos la identificación de
+     computadores en una red.
+     </p><p>
+      Como se describe en el RFC 1034,
+      DNS puede verse desde 3 puntos de vista:
+     </p><div class="variablelist"><dl><dt><span class="term">Usuario</span></dt><dd><p>Un usuario emplea nombres de dominios DNS al solicitar
+	  conexiones con máquinas cuyos nombres describen posiciones
+	  en un árbol de nombres. Por ejemplo
+	  <tt>structio.sourceforge.net</tt>.
+	   </p></dd><dt><span class="term">Resolvedor de nombres</span></dt><dd><p>Los programas emplean un resolvedor de nombres.  Este
+	  resolvedor recibe nombres con la estructura antes descrita,
+	  busca en un depósito
+	  <sup>[<a name="id467219" href="#ftn.id467219">213</a>]</sup> de nombres, de requerirlo trata de conectarse
+	  con uno o más servidores de nombres que puedan responder la
+	  consulta, envia la consulta y analiza la respuesta.
+	</p><a class="indexterm" name="id467233"></a></dd><dt><span class="term">Servidor de nombres</span></dt><dd><p>Un servidor de nombres, es un programa que
+	 además de atender solicitudes de resolvedores, mantiene
+	 tablas donde asocia nombres con direcciones
+	 IP de algunas zonas del árbol de
+	 nombres. También mantiene direcciones de otros servidores de
+	 nombres que puede emplear para actualizar las tablas de las
+	 zonas que mantiene y para obtener información de otras zonas.
+	 </p></dd></dl></div><p>
+   </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="dns-a-nivel-de-usuario"></a>4.1.2.1. DNS a nivel de usuario</h5></div></div><p>Los nombres son independientes de las
+       IPs, estos conforman un árbol dividido en
+       zonas manejadas por diversos servidores de nombres distribuidos
+       en todo el mundo y conectados a Internet
+       <sup>[<a name="id467297" href="#ftn.id467297">214</a>]</sup>, la raíz de este árbol se denota con el carácter
+       '.'.  Un nombre se compone de partes separadas por el caracter
+       '.', cada parte se compone de letras mayúsculas o minúsculas
+       sin distinción (preferiblemente menos de 12), eventualmente
+       números y eventualmente guiones.  Las partes del nombre indican
+       la ruta entre el nodo y la raíz, de forma análoga a la ruta de
+       un archivo del sistema de archivos, sólo que un nombre
+       DNS completo comienza por la parte que
+       corresponde a la hoja y termina en la parte que corresponde a
+       un hijo de la raíz.  Por ejemplo en la dirección
+       <tt>structio.sourceforge.net</tt> la parte
+       <tt>net</tt> es un nodo descendiente de la raíz del
+       árbol de nombres.  A la parte descendiente de la raiz se le
+       llama dominio de nivel superior (TLD -
+       <i>Top Level Domain</i>) y puede ser
+       dos letras que identifiquen uno de los 244 paises registrados
+       de acuerdo a ISO 3166 (por ejemplo .co en el
+       caso de Colombia) o por ejemplo una de las siguientes:
+
+       </p><div class="variablelist"><dl><dt><span class="term">.aero</span></dt><dd><p>Industria de transporte aéreo</p></dd><dt><span class="term">.biz</span></dt><dd><p>Miscelánea</p></dd><dt><span class="term">.com</span></dt><dd><p>Comercial</p></dd><dt><span class="term">.coop</span></dt><dd><p>Cooperativas</p></dd><dt><span class="term">.edu</span></dt><dd><p>Educativo</p></dd><dt><span class="term">.gov</span></dt><dd><p>Gubernamental de EUA</p></dd><dt><span class="term">.info</span></dt><dd><p>Información</p></dd><dt><span class="term">.int</span></dt><dd><p>Organizaciones internacionales</p></dd><dt><span class="term">.mil</span></dt><dd><p>Militar de EUA</p></dd><dt><span class="term">.museum</span></dt><dd><p>Museos</p></dd><dt><span class="term">.name</span></dt><dd><p>Individuos</p></dd><dt><span class="term">.net</span></dt><dd><p>Redes</p></dd><dt><span class="term">.org</span></dt><dd><p>Organizaciones</p></dd></dl></div><p>
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="dns-a-nivel-de-resolvedor"></a>4.1.2.2. DNS a nivel de resolvedor</h5></div></div><p>El resolvedor de nombre es un conjunto de funciones, que
+       los diferentes programas emplean cuando requieren determinar la
+       IP asociado con un nombre (resolución de
+       nombres) o el nombre asociado con una IP
+       (resolución inversa).
+       </p><p>Puede emplear el resolvedor de nombres desde la línea de
+       comandos, por ejemplo con el programa <b>dig</b>
+       (incluido en el paquete <tt>dnsutils</tt>).
+       Algunos de sus usos se ejemplifican a continuación:</p><div class="variablelist"><dl><dt><span class="term">dig structio.sourceforge.net</span></dt><dd><p>Consulta todos los registros disponibles para el
+	   nombre structio.sourceforge.net usando el servidor
+	   configurado en <tt>/etc/resolv.conf</tt></p></dd><dt><span class="term">dig @ns1.valinux.com structio.sourceforge.net</span></dt><dd><p>La misma consulta anterior pero en el
+	   servidor de nombres <tt>ns1.valinux.com</tt> (usa
+	   el resolvedor local para determinar la IP de ese
+	   servidor)</p></dd><dt><span class="term">dig structio.sourceforge.net txt</span></dt><dd><p>Busca sólo registros tipo T_TXT, es decir con
+	   texto arbitrario. Otras posibilidades son a (T_A)
+	   dirección; any (T_ANY) todo tipo de información; mx (T_MX)
+	   intercambiadores de correo; ns (T_NS) servidores de
+	   nombres; soa (T_SOA) zona de autoridad; hinfo (T_HINFO)
+	   información de la máquina; axfr (T_AXFR) zona de
+	   transferencia.  </p></dd><dt><span class="term">dig -x 192.25.206.10</span></dt><dd><p>Para especificar resolución inversa.  También
+	   podría emplearse <b>dig
+	    10.206.25.192.in-addr.arpa</b> </p></dd></dl></div><p>
+       En Internet puede consultarse información sobre el registro de
+       un dominio (incluyendo datos de quien lo registro) empleando
+       <b>whois</b>, o información sobre el nombre de
+       máquina y dominio del computador que usa con
+       <b>hostname</b> (ver <a href="scripts-basicos-para-bash.html#comandos-y-programas-utiles-al-hacer-scripts" title="4.1.4. Comandos y programas útiles al hacer scripts">Comandos
+       y programas útiles al hacer scripts</a>).
+       </p><a class="indexterm" name="id467851"></a><p>El resolvedor de nombres incluido en Debian puede resolver
+       nombres empleando el archivo <tt>/etc/hosts</tt>,
+       servidores de nombres o NIS.  Se configura
+       en los archivos <tt>/etc/resolv.conf</tt>,
+       <tt>/etc/host.conf</tt> y si se usa
+       NIS también en
+       <tt>/etc/nsswitch.conf</tt>.  El primero (
+       <tt>/etc/resolv.conf</tt>) contiene direcciones de
+       servidores de nombres y configuración para buscar en ellos.
+       Por ejemplo en nuestra plataforma de referencia si el servidor
+       tiene IP 192.168.1.1 y en este se configura
+       un servidor de nombres, en todos los computadores de la red el
+       archivo <tt>/etc/resolv.conf</tt> debe incluir:</p><pre class="screen">
+search micolegio.edu.co
+nameserver 192.168.1.1 </pre><p>
+       Si conectará su sistema a Internet podría incluir más
+       servidores de nombres especificando cada uno con líneas
+       iniciadas con la palabra <tt>nameserver</tt> (podría
+       especificarlos a continuación de su propio servidor para que la
+       información de su servidor tenga prelación dentro de la
+       LAN).  La línea <tt>search</tt>
+       indica dominios con los cuales completar direcciones (por
+       ejemplo <tt>purpura</tt> será completado como
+       <tt>purpura.micolegio.edu.co</tt>).  El archivo
+       <tt>/etc/host.conf</tt> de todos los computadores
+       puede ser:
+	</p><pre class="screen">
+order hosts,bind
+multi on
+	</pre><p>
+       que indica en la primera línea el orden para resolver nombres,
+       en este caso como <tt>hosts</tt> está primero,
+       resolverá nombres primero revisando el archivo
+       <tt>/etc/hosts</tt> y en segundo lugar empleará los
+       servidores de nombres configurados en
+       <tt>/etc/resolv.conf</tt> (también podría
+       especificarse <tt>nis</tt> en caso de que se
+       resolvieran dominios usando NIS).  La línea
+       <b>multi on</b> indica que el resolvedor debe
+       retornar todas las direcciones IP que pueda
+       encontrar para un nombre en el archivo
+       <tt>/etc/hosts</tt> y no sólo la primera (útil en
+       una red <i>multihomed</i> con varios
+       IPs para una misma máquina).  Cómo en
+       nuestra plataforma de referencia empleamos
+       DNS para resolver nombres de dominios, el
+       archivo de configuración de NIS
+       (<tt>/etc/nsswitch.conf</tt>) debe incluir la línea
+       (ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-nis" title="4.1.4. Servicio NIS">Servicio NIS</a>):</p><pre class="screen">
+hosts: files dns </pre><p>
+	que de forma análoga a las líneas en
+       <tt>/etc/hosts.conf</tt> indica buscar primero en
+       <tt>/etc/hosts</tt> y después usar los servidores
+       de nombres DNS.
+      </p><p>Los resultados de las consultas que un resolvedor de
+       nombres hace a un servidor de nombres, son registros de
+       recursos (RR del inglés
+       <i>Resource Records</i>).  Este mismo
+       tipo de registros se usa para configurar un servidor de
+       nombres.  Un ejemplo es:
+	 </p><pre class="screen">
+servidor.micolegio.edu.co.   IN  A  192.168.1.1
+                            A  128.9.0.32
+micolegio.edu.co.	            MX  10 servidor.micolegio.edu.co
+	 </pre><p>
+       que describe información de nombres Internet (indicado por la
+       sigla <tt>IN</tt> de la primera línea y asumida por
+       defecto en las demas).  Las dos primeras líneas son tipo
+       dirección (el tipo <tt>A</tt> --de
+       <i>Address</i>-- lo indica), mientras
+       que la tercera identifica un intercambiador de correo para el
+       dominio <tt>micolegio.edu.co</tt> (tipo
+       <tt>MX</tt> --de <i>Mail
+       Exchange</i>).  Los dos primeros registros
+       presentan información sobre servidor.micolegio.edu.co, la ausencia de otro nombre
+       al comienzo de la segunda línea indica que es una segunda
+       dirección para servidor.micolegio.edu.co.  Los registros tipo dirección permiten
+       asociar una IP con un nombre, así en el
+       ejemplo anterior el nombre servidor.micolegio.edu.co se referirá a dos
+       direcciones IP.  Los registros tipo
+       <tt>MX</tt> identifican computadores que pueden
+       resolver direcciones de correo para un dominio, cada uno con un
+       valor de preferencia (empleando para determinar que servidor se
+       emplea primero si hay varios intercambiadores de correo para un
+       mismo dominio).  Note que los nombres de dominios completos
+       terminan con un punto, esto es un requerimiento propio de la
+       configuración como se explica más adelante.
+       </p><a class="indexterm" name="id468388"></a><p> Otros tipos pueden ser: <tt>CNAME</tt> que
+       identifica el nombre principal de un alias,
+       <tt>HINFO</tt> que identifica CPU y sistema operativo
+       de un computador, <tt>NS</tt> que marca un servidor
+       de nombres autoritario para un dominio (autoritario quiere
+       decir que su respuesta es la que se considera más acertada en
+       caso de que otros servidores den otras respuestas);
+       <tt>PTR</tt> para referenciar otra parte del espacio
+       de nombres de dominio; <tt>SOA</tt>
+       (<i>start of authority</i>) para marcar
+       el comienzo de una zona de autoridad.</p><a class="indexterm" name="id468535"></a><p>Además de asociar nombres a IPs, pueden
+       asociarse IPs a nombres para permitir hacer
+       resolución inversa (dada la IP encontrar el
+       nombre). Para lograrlo se emplean registrros
+       PTR, usando como nombre de máquina la
+       IP tras invertir el orden de los 4 bytes que
+       la conforman y seguida de IN-ADDR.ARPA.  Por
+       ejemplo:</p><pre class="screen">
+	1.2.168.192.IN-ADDR.ARPA.       IN      PTR     servidor.micolegio.edu.co
+      </pre></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="dns-a-nivel-de-servidor-de-nombres"></a>4.1.2.3. DNS a nivel de servidor de
+      nombres</h5></div></div><p>Las consultas formuladas por los resolvedores de nombres
+       que no pueden ser resueltas por el depósito local del
+       resolvedor ni con otros mecanismos
+       (e.g. <tt>/etc/hosts</tt>), pueden ser
+       contestadas por uno de los servidores siguiendo el algoritmo
+       descrito en el RFC 1034:
+       </p><div class="orderedlist"><ol type="1"><li><p>El resolvedor contacta a uno de los servidores
+	  configurados.</p></li><li><p>El servidor busca la zona que sea ancestro más cercano
+	  de la información buscada.</p></li><li><p>Si la información buscada está entre las zonas
+	  manejadas o referenciadas por el servidor, busca entre ellas
+	  hasta encontrar la información o hasta encontrar un registro
+	  que referencie otro servidor de nombres autoritario o en
+	  último caso reporta que el dominio no fue encontrado.</p></li><li><p>Si la información no está en las zonas manejadas por
+	  el servidor (o está en una subzona), busca en un deposito local.
+	 </p></li><li><p>Si no hay información en el deposito local y está en
+	  modo recursivo, empleando su resolvedor de nombres consulta
+	  al servidor encontrado en el paso 3 y retorna la respuesta
+	  además de almacenarla en el deposito.  En modo iterativo
+	  sólo responde el nombre del servidor encontrado en el paso
+	  3.</p></li><li><p>Una vez el resolvedor consigue la información, la
+	  almacena temporalmente en un depósito local.</p></li></ol></div><p>
+	</p><p>Para distribuir la información en los servidores de
+       nombres, el árbol de nombres se divide en zonas, cada una de
+       las cuales puede ser atendida con registros autoritarios por un
+       servidor primario.  Para respaldar la información de servidores
+       primarios, hay servidores secundarios que copian periódicamente
+       la información y también proveen información autoritaria de la
+       zona.
+      </p><p>Para hacer consultas a servidores de nombres o para
+       recibir respuestas, se emplean los puertos
+       UDP 53 y TCP 53 (como
+       puertos de entrada y de salida, aunque para la comunicación con
+       algunos programas cliente pueden requerirse puertos no
+       privilegiados (TCP 1024 y
+       UDP 1024).</p><a class="indexterm" name="id468781"></a><p>Entre los servidores DNS disponibles en
+       Internet están djbdns y
+       bind.  Aunque
+       djbdns es más seguro,
+       bind (paquete
+       <tt>bind</tt>, documentación en paquete
+       <tt>bind-doc</tt>) es más popular y será el servidor
+       que describimos en esta sección.  La instalación por defecto de
+       este paquete dejará una configuración sencilla que consta de:
+  
+
+       </p><div class="variablelist"><dl><dt><span class="term">/etc/bind/named.conf</span></dt><dd><p>Archivo de configuración principal que
+	   define zonas y opciones del servidor.</p></dd><dt><span class="term"><tt>/etc/bind/db.local</tt> y
+	  <tt>/etc/bind/db.127</tt></span></dt><dd><p>Que definen la zona localhost (interfaz loopback) y su
+	   zona inversa (i.e direcciones 127.*.*.*)</p></dd><dt><span class="term"><tt>/etc/bind/db.root</tt></span></dt><dd><p>Que referencia los servidores de la raíz del
+	   árbol de nombres.</p></dd><dt><span class="term"><tt>/etc/bind/db.0</tt> y
+	  <tt>/etc/bind/db.255</tt></span></dt><dd><p>Que incluyen registros para hacer resolución inversa
+	   de direcciones de la forma 0.*.*.* (también localhost) y
+	   255.*.*.* (broadcast).</p></dd></dl></div><p>
+       
+       Las zonas instaladas por defecto son recomendadas en el
+       RFC 1912, y deben estar configuradas en todo
+       servidor de nombres.</p><p>Para configurar una zona para su red local, es preferible
+       que emplee un nombre de dominio que no esté registrado en
+       Internet (aún si no planea conectarse a Internet a corto
+       plazo).  Cree un archivo para su zona, digamos
+       <tt>/etc/bind/db.micolegio.edu.co</tt> y otro para
+       resolución inversa en su red, digamos
+       <tt>/etc/bind/db.192.168.1</tt> (que resolverá
+       direcciones de la forma 192.168.1.*).</p><p>En el archivo de configuración principal
+       (<tt>/etc/bind/named.conf</tt>), debe agregar
+       entradas para la zona. Debe tener líneas como las siguientes,
+       aunque quitando o agregando comentarios de ser necesario (son
+       comentarios los textos iniciadas con // hasta final de línea o
+       porciones encerradas entre /* y */ o líneas iniciadas con el
+       caracter #).</p><pre class="screen">
+options {
+  directory &quot;/var/cache/bind&quot;;
+  forwarders {
+	//Remplazar por dirección del servidor DNS del proveedor si lo hay
+	// o comentar esta sección.  Esta dirección será usada en caso
+	// de que este servidor no tenga un registro en una zona manejada
+	// por él o en el deposito.
+    1.2.3.4;
+    };
+    // Quitar comentarios si se hacen conexiones esporadicas a Internet
+    // con un modem para actualizar zonas
+    // dialup yes
+}
+logging {
+  category lame-servers { null; };
+  category cname { null; };
+  };
+  // Las siguientes líneas se comentan si la red no se conecta a
+  // Internet
+zone &quot;.&quot; {
+  type hint;
+  file &quot;/etc/bind/db.root&quot;;
+};
+zone &quot;localhost&quot; {
+  type master;
+  file &quot;/etc/bind/db.local&quot;;
+};
+zone &quot;127.in-addr.arpa&quot; {
+  type master;
+  file &quot;/etc/bind/db.127&quot;;
+};
+zone &quot;0.in-addr.arpa&quot; {
+  type master;
+  file &quot;/etc/bind/db.127&quot;;
+};
+zone &quot;255.in-addr.arpa&quot; {
+  type master;
+  file &quot;/etc/bind/db.255&quot;;
+};
+zone &quot;micolegio.edu.co&quot; {
+  type master;
+  file &quot;/etc/bind/db.micolegio.edu.co&quot;;
+};
+zone &quot;1.168.192.in-addr.arpa&quot; {
+  type master;
+  file &quot;/etc/bind/db.1.168.192&quot;;
+}; 
+	</pre><p>
+       Note que se configuran las nuevas zonas como tipo
+       <tt>master</tt> porque el servidor podrá dar
+       respuestas autoritarias sobre estas.
+      </p><p>Los archivos con registros de recursos de cada zona, pueden
+       tener comentarios en líneas que comienzan con ';'.  El archivo 
+       <tt>/etc/bind/db.local</tt> que define una zona para la 
+       interfaz loopback ---que siempre tiene dirección 127.0.0.1 y nombre 
+       <tt>localhost</tt>--- sería:</p><pre class="screen">
+@	IN	SOA	localhost. root.localhost. (
+			      1		; Serial
+			 604800		; Refresco
+			  86400		; Reintento
+			2419200		; Expiración
+			 604800 )	; TTL Mínimo
+
+@	IN	NS	localhost.
+@	IN	A	127.0.0.1
+</pre><p>
+       Note que se define una zona sobre la que este servidor tiene
+       autoridad usando un registro SOA; cómo el
+       registro ocupa más de una línea se emplean paréntesis para
+       delimitarlo.  El signo '@' es una abreviación del nombre de
+       dominio base, es decir el que proviene del archivo
+       <tt>/etc/bind/named.conf</tt> (en este caso
+       <tt>localhost</tt>).
+      </p><p>El registro SOA tienen el nombre
+	completo de la máquina que mantiene la información (terminada
+	en punto), seguida de la dirección electrónica del
+	administrador del servicio, pero remplazando el caracter '@'
+	por '.' y terminando con '.'  
+       <sup>[<a name="id469346" href="#ftn.id469346">215</a>]</sup> Los registros tipo
+	SOA incluyen: un número serial que los
+	servidores secundarios usan para determinar cuando la
+	información de la zona del primario a cambiado, el número de
+	refresco indica cada cuantos segundos un servidor secundario
+	revisará el primario para determinar si el número serial ha
+	aumentado, un número de reintentos que un servidor secundario
+	debería efectuar en caso de ausencia de respuesta.  Expiración
+	es el tiempo máximo en segundos que un servidor secundario
+	debe esperar antes de declarar la información que tenga de una
+	zona como válida en ausencia de respuesta del servidor
+	primario.  Mínimo TTL indica el tiempo
+	mínimo que los registros pueden estar en el deposito de otros
+	servidores de nombres.  Es el dato más importante.  Si no se
+	planean hacer cambios puede dejarse en un valor grande (3
+	días), si se planea un cambio es mejor disminuir este valor
+	con suficiente anticipación y volverlo a un valor grande
+	después del cambio.  Note que para este ejemplo como se trata
+	de <tt>localhost</tt>, estos valores pueden ser
+	arbitrarios (en este caso muy grandes).
+      </p><p>La información de la zona raíz corresponde a las
+	direcciones de los 13 servidores de la raíz, puede obtenerse
+	con:</p><pre class="screen">
+dig @a.root-servers.net. . ns</pre><p>
+        En el momento de este escrito es:</p><pre class="screen">
+.			518400	IN	NS	K.ROOT-SERVERS.NET.
+.			518400	IN	NS	L.ROOT-SERVERS.NET.
+.			518400	IN	NS	M.ROOT-SERVERS.NET.
+.			518400	IN	NS	I.ROOT-SERVERS.NET.
+.			518400	IN	NS	E.ROOT-SERVERS.NET.
+.			518400	IN	NS	D.ROOT-SERVERS.NET.
+.			518400	IN	NS	A.ROOT-SERVERS.NET.
+.			518400	IN	NS	H.ROOT-SERVERS.NET.
+.			518400	IN	NS	C.ROOT-SERVERS.NET.
+.			518400	IN	NS	G.ROOT-SERVERS.NET.
+.			518400	IN	NS	F.ROOT-SERVERS.NET.
+.			518400	IN	NS	B.ROOT-SERVERS.NET.
+K.ROOT-SERVERS.NET.	3600000	IN	A	193.0.14.129
+L.ROOT-SERVERS.NET.	3600000	IN	A	198.32.64.12
+M.ROOT-SERVERS.NET.	3600000	IN	A	202.12.27.33
+I.ROOT-SERVERS.NET.	3600000	IN	A	192.36.148.17
+E.ROOT-SERVERS.NET.	3600000	IN	A	192.203.230.10
+D.ROOT-SERVERS.NET.	3600000	IN	A	128.8.10.90
+A.ROOT-SERVERS.NET.	3600000	IN	A	198.41.0.4
+H.ROOT-SERVERS.NET.	3600000	IN	A	128.63.2.53
+C.ROOT-SERVERS.NET.	3600000	IN	A	192.33.4.12
+G.ROOT-SERVERS.NET.	3600000	IN	A	192.112.36.4
+F.ROOT-SERVERS.NET.	3600000	IN	A	192.5.5.241
+B.ROOT-SERVERS.NET.	3600000	IN	A	128.9.0.107
+J.ROOT-SERVERS.NET.	3600000	IN	A	192.58.128.30
+	</pre><p>
+       Si en la zona micolegio.edu.co el servidor de nombres tiene
+       IP 192.168.1.1 con nombre
+       <tt>servidor</tt> y algunos clientes con otras
+       direcciones de la forma 192.168.1.*, el archivo
+       <tt>/etc/bind/db.micolegio.edu.co</tt> sería:</p><pre class="screen">
+@       IN      SOA     servidor.micolegio.edu.co. root.localhost. (
+                            1		; Serial
+                          10800		; Refresco cada 3 horas
+                           3600		; Reintento cada hora
+                        2419200		; Expiracion después de un mes
+                         259200 )	; TTL 3 dias
+
+@             NS        servidor
+servidor.micolegio.edu.co         	A	192.168.1.1
+www                     A	192.168.1.1
+mail                    A	192.168.1.1
+bachillerato1           A	192.168.1.2
+bachillerato2           A	192.168.1.3
+bachillerato3           A	192.168.1.4
+bachillerato4           A	192.168.1.5
+secretaria              A	192.168.1.100
+profesores              A	192.168.1.200
+      </pre><p>
+       Note que además de indicar que el archivo tiene información
+       autoritaria sobre la zona con un registro
+       SOA (que tiene parámetros más apropiados
+       para un servidor de nombres primario); este ejemplo tiene: un
+       registro tipo NS que presenta a
+       <tt>servidor</tt> como servidor de nombres.  Los
+       demás registros tipo A asocian nombres a direcciones en la red.
+       Note que todos los nombres de máquinas excepto el del registro
+       SOA como no terminan en punto serán
+       completados con el nombre de la zona (micolegio.edu.co declarada en
+       <tt>/etc/bind/named.conf</tt> y referenciable como
+       la variable <tt>$ORIGIN</tt>).
+      </p><p>En cuanto a las zonas inversas, 
+	<tt>/etc/bind/db.0</tt> es
+
+       	</p><pre class="screen">
+@	IN	SOA	localhost. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+@	IN	NS	localhost.
+	</pre><p>
+	La zona inversa para localhost (<tt>/etc/bind/db.127</tt>):
+	</p><pre class="screen">
+@	IN	SOA	localhost. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+@	IN	NS	localhost.
+1.0.0	IN	PTR	localhost.
+	</pre><p>
+	para la zona de broadcast <tt>/etc/bind/db.255</tt>:
+	</p><pre class="screen">
+@	IN	SOA	localhost. root.localhost. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Negative Cache TTL
+@	IN	NS	localhost.
+	</pre><p>
+	y para la zona de su red
+	(<tt>/etc/bind/db.1.168.192</tt>):
+	</p><pre class="screen">
+@	IN	SOA	servidor.micolegio.edu.co. root.localhost. (
+			      1		; Serial
+			  10800		; Refresco cada 3 horas
+			   3600		; Reintento cada hora
+			2419200		; Expiracion después de un mes
+			 259200 )	; TTL 3 dias
+@	IN	NS	servidor.micolegio.edu.co.
+1	IN	PTR	servidor.micolegio.edu.co
+1	IN	PTR	www.micolegio.edu.co.
+1	IN	PTR	mail.micolegio.edu.co.
+2	IN	PTR	bachillerato1.micolegio.edu.co.
+3	IN	PTR	bachillerato2.micolegio.edu.co.
+4	IN	PTR	bachillerato3.micolegio.edu.co.
+5	IN	PTR	bachillerato4.micolegio.edu.co.
+100	IN	PTR	secretaria.micolegio.edu.co.
+200	IN	PTR	profesores.micolegio.edu.co.
+	</pre><p>
+
+       Después de hacer sus cambios puede reiniciar
+	bind (lo cual limpiará el depósito
+	y leerá de nuevo los archivos de configuración) con:
+	<b>/etc/init.d/bind restart</b> (ver <a href="administracion-dos.html#inicializacion-del-sistema" title="1. Inicialización del sistema">Inicialización del
+	sistema</a>).
+      </p><p>
+       Al editar zonas tenga en cuenta estas recomendaciones (de los
+       RFC 1912 y 1034):
+	</p><div class="itemizedlist"><ul type="disc"><li><p> Todo registro de recursos tipo <tt>A</tt>, 
+	  debería tener el correspondiente registro tipo 
+	  <tt>PTR</tt> para resolución inversa.
+	 </p></li><li><p>No emplee en registros <tt>CNAME</tt> el mismo 
+	  nombre con otros propósitos, ni emplee nombres de registros 
+	  <tt>MX</tt>.
+	 </p></li><li><p>No referencie alias definidos con
+	  <tt>CNAME</tt> en registros tipo
+	  <tt>SOA</tt>, <tt>MX</tt> ni
+	  <tt>CNAME</tt>.</p></li><li><p>Si mantiene un servidor primario, cada vez que haga
+	  modificaciones a información de la zona que maneja, recuerde
+	  aumentar el número serial del registro
+	  SOA para que el o los servidores
+	  secundarios realicen la actualización.
+	 </p></li></ul></div><p>
+       
+      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-nfs"></a>4.1.3. Servicio NFS</h4></div></div><a class="indexterm" name="id469890"></a><p>Como se describe en el RFC 1813, el
+      protocolo NFS <sup>[<a name="id469922" href="#ftn.id469922">216</a>]</sup> permite acceder de forma transparente sistemas de
+      archivos compartidos que están en máquinas remotas.  Hay muchas
+      posibilidades para usar este servicio, nuestra plataforma de
+      referencia lo aprovecha para distribuir información de usuarios
+      (directorio <tt>/home</tt> del
+      servidor), las colas de correo (<tt>/var/mail</tt>) y los programas y
+      documentos disponibles en el servidor (directorio <tt>/usr</tt>).  Así mismo permite
+      aprovechar el espacio de sobra de cada cliente (directorio
+      <tt>/aux</tt>).
+      </p><a class="indexterm" name="id470050"></a><p>Al igual que otros servicios, NFS cuenta
+      con un cliente y un servidor.  El servidor
+      NFS permite exportar directorios del
+      computador en el que corre a computadores donde se ejecute el
+      cliente, mientras estos últimos tengan permiso para importar
+      tales directorios. Los directorios que se exportan, así como las
+      restricciones sobre los clientes que pueden importarlos se
+      especifican en el archivo <tt>/etc/exports</tt>.
+      Por ejemplo el siguiente es el archivo
+      <tt>/etc/exports</tt> del servidor de nuestra
+      plataforma de referencia:</p><pre class="programlisting">
+/usr  *.micolegio.edu.co(ro,no_root_squash)
+/home  *.micolegio.edu.co(rw,no_root_squash)
+/var/mail  *.micolegio.edu.co(rw,no_root_squash)
+</pre><p>Este archivo especifica que pueden exportarse con permiso de
+     lectura y escritura los directorios <tt>/home</tt>, <tt>/var/mail</tt>.  Puede exportar con
+     permiso de sólo lectura (<tt>ro</tt>) el directorio
+     <tt>/usr</tt>.  Todos estos
+     directorios pueden ser importados por máquinas con nombres de la
+     forma <tt><i><tt>x</tt></i>.micolegio.edu.co</tt>.
+     La opción <tt>no_root_squash</tt> indica que los
+     archivos de usuario y grupo <tt>root</tt> exportados
+     del servidor sean tratados como si fueran del usuario y grupo
+     <tt>root</tt> en los clientes.
+     </p><p>En nuestra plataforma de referencia tanto cliente
+      NFS como servidor NFS
+      deben instalarse en todos los computadores (porque los
+      computadores clientes exportarán el espacio que resta de su
+      partición <tt>aux</tt> al
+      servidor).  El archivo <tt>/etc/exports</tt> de cada
+      cliente debe ser algo como:
+   </p><pre class="programlisting">
+/aux *.micolegio.edu.co(rw,no_root_squash)
+</pre><p>Para instalar el servidor y el cliente
+      NFS en Debian 2.2 basta que instale los
+      paquetes <tt>nfs-common</tt> y
+      <tt>nfs-server</tt>, siguiendo el procedimiento usual
+      (ver <a href="administracion-de-programas.html" title="5. Administración de programas">Administración
+      de programas</a>).  Como NFS depende de
+      RPC, asegúrese también de dar acceso a las
+      máquinas de su dominio con <tt>portmap</tt> y que esté
+      operando. Dado que <tt>portmap</tt> es manejado con
+      <b>tcpd</b> (ver <a href="protocolos-de-soporte-y-de-usuario.html#configuracion-de-servicios-basicos" title="4.1.1. Configuración de servicios básicos">Configuración de
+      servicios básicos</a>) este acceso se da o restringe
+      modificando los archivos <tt>/etc/hosts.allow</tt> y
+      <tt>/etc/hosts.deny</tt>.  Por ejemplo el archivo
+      <tt>/etc/hosts.allow</tt> debe tener una línea como:
+   </p><pre class="programlisting">
+portmap: .micolegio.edu.co
+</pre><p>Puede comprobar que portmap está
+      corriendo buscándolo entre los procesos (i.e <b>ps ax |
+       grep &quot;[p]ortmap&quot;</b>) o revisando los programas que están
+      registrados para usar RPC con <tt>pmap_dump</tt>.
+     </p><p>Una vez esté corriendo el servidor y el cliente NFS en
+      todas las máquinas, puede montar (ver <a href="administracion-de-archivos.html#montaje-y-desmontaje-de-sistemas-de-archivos" title="4.1.2. Montaje y desmontaje de sistemas de archivos">Montaje y
+      desmontaje de sistemas de archivos</a>) los directorios
+      exportados por el servidor en cada cliente, por ejemplo con algo
+      como:
+     </p><pre class="programlisting">
+mount -t nfs servidor.micolegio.edu.co:/usr /opt
+</pre><p>para montar el directorio <tt>/usr</tt> del servidor como el
+       directorio <tt>/opt</tt> de cada cliente.  Mejor
+      aún, puede editar el archivo <tt>/etc/fstab</tt> para que cada vez que
+      cada máquina inicie monte automáticamente ese directorio.  Por
+      ejemplo podría agregar la siguiente línea al archivo
+      <tt>/etc/fstab</tt> de un cliente
+     <sup>[<a name="id470536" href="#ftn.id470536">217</a>]</sup>:
+     </p><pre class="programlisting">
+servidor.micolegio.edu.co:/usr /opt nfs ro 0 0
+</pre><p>En el servidor puede agregar al archivo
+      <tt>/etc/fstab</tt>, líneas de la forma
+      &quot;<tt>cliente<i><tt>n</tt></i>:/aux
+      /mnt/aux<i><tt>n</tt></i> nfs rw 0 0</tt>&quot; para
+      montar en
+      <tt>/mnt/aux<i><tt>n</tt></i></tt> el
+      directorio <tt>/aux</tt> de cada cada cliente.  Para
+      comprobar los directorios que ha montado con
+      NIS puede emplear <b>mount</b>.
+     </p><p>Mientras no configure el servicio NIS
+      (ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-nis" title="4.1.4. Servicio NIS">Servicio NIS</a>),
+      recomendamos no montar <tt>/home</tt> ni <tt>/var/mail</tt> del servidor en los
+      clientes.
+    </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-nis"></a>4.1.4. Servicio NIS</h4></div></div><p>
+      NIS
+      <sup>[<a name="id470695" href="#ftn.id470695">218</a>]</sup> es un servicio para centralizar nombres de usuarios,
+      claves, e información de grupos en el servidor facilitando la
+      administración de usuarios.  Si además de NIS
+      se usa NFS para montar el directorio
+      <tt>/home</tt> del servidor en
+      cada cliente, puede centralizarse también la información de
+      todos los usuarios en el servidor.
+    </p><a class="indexterm" name="id470804"></a><p>NIS de forma análoga a
+      DNS opera sobre un grupo de computadores
+      (dominio) y mantiene bases de datos (mapas) centralizadas en un
+      servidor maestro, que pueden ser consultadas por los clientes.
+      Para disminuir carga podrían ponerse servidores esclavos que
+      repliquen la información del servidor maestro.</p><p>Para usar NIS debe escoger un nombre de
+      dominio NIS (puede ser diferente al dominio
+      DNS) y usarlo en los computadores clientes y
+      en el servidor.
+     </p><p>Puede comenzar instalando el paquete <tt>nis</tt>
+      tanto en clientes como servidor, al instalarlo podrá dar el
+      dominio NIS (o puede editarlo en
+      <tt>/etc/defaultdomain</tt>).  En todos los
+      computadores debe modificar el archivo
+      <tt>/etc/nsswitch</tt> para cambiar el orden de
+      búsqueda de usuarios, grupos y
+      <i>shadow</i>.  También debe agregar
+      algunas líneas al final de los archivos
+      <tt>/etc/passwd</tt>,
+      <tt>/etc/group</tt> y
+      <tt>/etc/shadow</tt>, tarea que puede hacer con los
+      siguientes comandos:
+     </p><pre class="programlisting">
+echo &quot;+::::::&quot; &gt;&gt; /etc/passwd
+echo &quot;+:::&quot; &gt;&gt; /etc/group
+echo &quot;+::::::::&quot; &gt;&gt; /etc/shadow
+</pre><p>Que agregan líneas con un &quot;+&quot; y tantos &quot;:&quot; como separadores
+      hay en los respectivos archivos.  En el servidor los usuarios y
+      grupos que estén después de estas marcas no serán compartidos
+      por NIS.
+    </p><p>En el servidor debe configurar NIS de la
+     siguiente forma:
+    </p><div class="procedure"><ol type="1"><li><p>Edite <tt>/etc/init.d/nis</tt>, asegurándose
+	de dejar <tt>NISSERVER=master</tt>.  </p></li><li><p>Reinicie el servicio NIS con
+	<b>/etc/init.d/nis restart</b>
+      </p></li><li><p>Edite el archivo <tt>/var/yp/Makefile</tt> y
+	cambie la regla <tt>all:</tt> para que incluya también
+	<tt>shadow</tt>.
+       </p></li><li><p>Ejecute <b>/usr/lib/yp/ypinit -m</b>.
+       </p></li></ol></div><p>Una vez NIS esté funcionando en clientes
+      y servidor, puede agregar, eliminar o modificar usuarios y
+      grupos con los comandos usuales (ver <a href="administracion-de-usuarios.html" title="3. Administración de usuarios">Administración de
+      usuarios</a>) y después de cada modificación, para que el
+      cambio sea notado por NIS, debe pasar al directorio
+      <tt>/var/yp/</tt> y ejecutar
+      <b>make</b>.
+     </p><p>Para centralizar la información de todos los usuarios en el
+      servidor puede usar NFS una vez
+      NIS funcione bien.  Para lograrlo se debe
+      hacer la administración de usuario siempre en el servidor (por
+      ejemplo agregar nuevos usuarios sólo desde el servidor) para que
+      los directorios queden allí; por otra parte debe montar el
+      directorio <tt>/home</tt> del
+      servidor en todos los clientes.  Para centralizar la cola de
+      correo en el servidor debe montar el directorio <tt>/var/mail</tt> del servidor en los
+      clientes. De esta forma el archivo
+      <tt>/etc/fstab</tt> de cada cliente debe incluir:
+     </p><pre class="programlisting">
+servidor.micolegio.edu.co:/home /home nfs rw 0 0
+servidor.micolegio.edu.co:/var/mail /var/mail nfs rw 0 0
+</pre><p>y el archivo <tt>/etc/exports</tt> del servidor
+      debe tener las líneas apropiadas para exportar <tt>/home</tt> y <tt>/var/mail</tt>.  Ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-nfs" title="4.1.3. Servicio NFS">Servicio NFS</a>.
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-ssh"></a>4.1.5. Servicio <tt>ssh</tt></h4></div></div><p>El protocolo ssh cuenta con dos versiones, un borrador de
+     la segunda de estas está en proceso de desarrollo.  OpenSSH es la
+     implementación de cliente y servidor para estos protocolos, la
+     versión disponible para Debian permite usar tanto ssh 1 como ssh
+     2.</p><p>
+     Tal como se describe en uno de los borradores de la
+      especificación temporal &quot;<i>SSH Protocol
+      Architecture</i>&quot;
+      (http://www.ietf.org/internet-drafts/draft-ietf-secsh-architecture-13.txt)      <tt>ssh</tt> es un protocolo para iniciar sesiones en
+      máquinas remotas que ofrece autenticación, confidencialidad e
+      integridad.  Consta de tres componentes:
+
+      </p><div class="orderedlist"><ol type="1"><li><p>Protocolo de transporte. Que normalmente opera sobre TCP/IP
+	 dando autenticidad, confidencialidad e integridad.</p></li><li><p>Protocolo de autenticación de usuario. Que autentica al
+	   usuario ante el servidor. </p></li><li><p>Protocolo de conexión. Que multiplexa un canal encriptado
+	 en diversos canales lógicos.</p></li></ol></div><p>
+     </p><p>
+      Este protocolo requiere que los servidores tengan &quot;llaves&quot;, las
+      cuales son usadas por los clientes cada vez que se conectan a un
+      servidor para verificar que no fue suplantado. Una llave es un
+      número codificado y encriptado en un archivo. Para la encripción
+      de llaves, OpenSSH ofrece los algoritmos RSA y
+      DSA (de los cuales para la versión 2
+      recomendamos DSA).</p><p>Para instalar un servidor <b>OpenSSH</b>, que
+      le permita conectarse a su sistema de forma segura, instale el
+      paquete ssh preferiblemente tomando
+      la versión más reciente del sitio de seguridad de Debian: <a href="http://security.debian.org" target="_top">http://security.debian.org</a>
+      o compile las fuentes más recientes que puede obtener en <a href="http://www.openssh.org" target="_top">http://www.openssh.org</a>.
+      Cuando instale se generaran un par de &quot;llaves&quot; para su
+      computador, una pública y una privada.  Una vez instalado podrá
+      afinar la configuración del servidor en el archivo
+      <tt>/etc/ssh/sshd.conf</tt> que puede incluir líneas
+      como las siguientes:</p><pre class="screen">
+PermitRootLogin no
+RSAAuthentication yes
+PubkeyAuthentication yes
+RhostsAuthentication no
+hostsRSAAuthentication no
+HostbasedAuthentication no
+X11Forwarding yes </pre><a class="indexterm" name="id471641"></a><p>
+      La última línea permitirá a los clientes que se conecten
+      ejecutar aplicaciones de <i>X-Window</i>
+      y transmitir la información gráfica sobre la conexión segura
+      (ver <a href="servicios-de-la-intranet.html#telnet-y-ssh" title="3.1.1. 
+      telnet y ssh
+     ">Sección 3.1.1</a>).
+   </p><p>Un usuario también puede crear un par de llaves que le
+      faciliten su autenticación al emplear <b>ssh</b> o
+      <b>scp</b>.  Estos programas por defecto piden clave
+      al usuario que se conecte a un servidor ssh.  Si un usuario genera
+      sus llaves pública y privada, puede saltarse esta autenticación pues se 
+      hará de forma automática con las llaves.  Para lograrlo su llave 
+      pública debe estar en el computador al cual se conecta (en
+      <tt>~/.ssh/authorized_keys</tt>) y su llave privada
+      en el computador desde el cual se conecta (normalmente en
+      <tt>~/.ssh/id_dsa</tt>).</p><a class="indexterm" name="id471788"></a><p>La generación de llaves puede hacerse con:</p><pre class="screen">
+ssh-keygen -t dsa
+</pre><p>
+      que por defecto dejará su llave pública en
+      <tt>~/.ssh/id_dsa.pub</tt> y su llave privada en
+      <tt>~/.ssh/id_dsa</tt> (que además quedará protegida
+      por una palabra clave que usted especifica).  Como el nombre lo 
+      índica la llave privada no debe compartirla, por el contrario la 
+      llave pública puede transmitirla y puede ser vista por cualquiera.</p><p>En el computador en el que desee conectarse, agregue en el
+      archivo <tt>~/.ssh/authorized_keys</tt> (o
+      <tt>~/.ssh/authorized_keys2</tt> si usa
+      DSA y una versión de OpenSSH anterior a la
+      3.1), su llave pública.  Por ejemplo el usuario <tt>mario</tt> desde <tt>purpura.micolegio.edu.co</tt> puede configurar la
+      entrada con autenticación automática a la cuenta
+      <tt>pepe</tt> en <tt>amarillo.micolegio.edu.co</tt>
+      con:</p><pre class="screen">
+purpura&gt; scp ~/.ssh/id_dsa.pub amarillo.micolegio.edu.co:/home/pepe/id_dsa_mario.pub
+purpura&gt; ssh -l pepe amarillo.micolegio.edu.co
+...
+amarillo&gt; cat id_dsa_mario.pub &gt;&gt; ~/.ssh/authorized_keys
+   </pre><a class="indexterm" name="id471982"></a><p>Cuando mario se intente conectar desde purpura, a la
+     cuenta <tt>pepe</tt> en
+     amarillo ya no tendrá que dar la clave de pepe en ese
+     computador sino la palabra clave con la que protegio su llave
+     privada.  Incluso esta palabra clave puede darse una sóla
+     vez, aún cuando se realicen diversas conexiones con:</p><pre class="screen">
+purpura&gt; ssh-agent bash
+purpura&gt; ssh-add mario
+</pre><p>
+      Tras lo cual mario tecleará una vez la palabra clave de su llave
+      privada, y después en esa sesión de <b>bash</b> todo 
+      ingreso que haga a la cuenta pepe en amarillo, no solicitará 
+      clave alguna.</p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-cvs"></a>4.1.6. Servicio
+    CVS</h4></div></div><p>En esta sección se presenta configuración de un servidor
+    CVS y creación de repositorios (el uso de un repositorio y un 
+    servidor ya configurado puede verse en <a href="exploracion-tres.html#uso-de-cvs" title="1.1.5. Uso de CVS">Sección 1.1.5</a>).</p><p>
+    Un servidor CVS puede emplearse sin conexión a una
+      red, o bien en red con alguno de los protocolos rsh, ssh (ver
+      <a href="protocolos-de-soporte-y-de-usuario.html#servicio-ssh" title="4.1.5. Servicio ssh">Servicio ssh</a>) o pserver. Los
+      dos primeros requieren que el usuario que se conecta tenga
+      cuenta (o una llave pública ssh entre las llaves autorizadas de
+      una cuenta), mientras que pserver puede manejar su propio
+      archivo de usuarios y claves.  En todos los casos requiere
+      instalar CVS y configurar un depósito. Si
+      usa ssh debe instalar también el servidor
+      <b>sshd</b> (ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-ssh" title="4.1.5. Servicio ssh">Servicio ssh</a>), si usa pserver debe
+      agregar a su archivo <tt>/etc/inetd.conf</tt> (ver
+      <a href="protocolos-de-soporte-y-de-usuario.html#configuracion-de-servicios-basicos" title="4.1.1. Configuración de servicios básicos">Configuración
+      de servicios básicos</a>) la línea:
+</p><pre class="screen">
+cvspserver      stream  tcp     nowait.400      root    /usr/sbin/tcpd
+/usr/bin/cvs -b /usr/bin --allow-root=/var/cvs pserver
+</pre><p>
+	(cambiando <tt>/var/cvs</tt> por el directorio donde
+	está el depósito) y debe configurar los repositorios que
+	desee poder acceder con pserver en 
+      <tt>/etc/cvs-pserver.conf</tt>.
+     </p><p>Para instalar CVS instale el paquete
+      cvs (ver <a href="administracion-de-programas.html#paquetes-en-debian" title="5.1.3. Paquetes en Debian">Paquetes en Debian</a>), que le
+      permitirá activar o no el protocolo pserver y de requerirse hará
+      los cambios apropiados en <tt>/etc/inetd.conf</tt>.
+      El programa de instalación también podrá inicializar un
+      repositorio por usted (puede ser <tt>/var/cvs</tt>,
+      directorio que usted debe crear antes o durante la instalación
+      de cvs).</p><a class="indexterm" name="id472240"></a><a class="indexterm" name="id472263"></a><p>Una vez CVS (y eventualmente
+      ssh) esté instalado, todo
+      usuario de la misma máquina puede crear uno o más depósitos.
+      Tales depósitos podrán ser accedidos por otros usuarios del
+      mismo sistema o de otro con ssh o con
+      rsh o con el protocolo pserver (ver
+      <a href="exploracion-tres.html#uso-de-cvs" title="1.1.5. Uso de CVS">Uso de CVS</a>)</p><p>Un usuario <tt>pepe</tt>
+      emplearía una secuencia de comandos como la siguiente para crear
+      un repositorio en <tt>/home/pepe/cvs</tt>:
+     </p><pre class="screen">
+cd ~
+mkdir cvs
+cd cvs
+export CVS_RSH=&quot;&quot;
+export CVSROOT=/home/pepe/cvs
+cvs init
+</pre><p>Pepe mismo o algún otro usuario del sistema que tenga
+      permiso de escritura en ese directorio podrá leer
+      (<i>update</i>) y escribir
+      (<i>commit</i>) en el nuevo repositorio.
+      Para eso basta que emplee:</p><pre class="screen">
+export CVS_RSH=&quot;&quot;
+export CVSROOT=/home/pepe/cvs
+</pre><p>También puede usarlo vía ssh (por ejemplo desde otro
+      computador de la misma red) con
+      <tt>CVS_RSH=&quot;ssh&quot;</tt>. O si durante la instalación o
+      reconfiguración de cvs el administrador activa el protocolo
+      pserver puede emplearse
+      <tt>CVSROOT=:pserver:pepe@purpura.micolegio.edu.co:/home/pepe/cvs</tt>,
+      siendo <tt>pepe</tt> un usuario
+      de la máquina donde está el repositorio con permisos para leer
+      (o escribir) o un usuario para ese repositorio agregado en el
+      archivo
+      <tt>/home/pepe/cvs/CVSROOT/passwd</tt><sup>[<a name="id472553" href="#ftn.id472553">219</a>]</sup>
+     </p><p>Todo usuario con permiso de escritura en ese depósito podrá
+      ingresar un módulo nuevo. Por ejemplo un usuario con permiso de
+      escritura y las variables <tt>CVS_RSH</tt> y
+      <tt>CVSROOT</tt> con los valores recién presentados, puede
+      ingresar todo el contenido del directorio <tt>~/quimica</tt>` como módulo
+      <tt>laquimica</tt>:</p><pre class="screen">
+cd ~/quimica
+cvs import laquimica start vendor
+</pre><p>Tras lo cual el mismo usuario que importó el módulo, o
+      cualquier otro con permiso de lectura, puede sacar una copia
+      local con:</p><pre class="screen">
+cvs co laquimica
+</pre><p>y hacer otras operaciones usuales de CVS
+       (ver <a href="exploracion-tres.html#uso-de-cvs" title="1.1.5. Uso de CVS">Uso de CVS</a>).</p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="caso-correo-por-cada-actualizacion"></a>4.1.6.1. Caso: Correo por cada actualización</h5></div></div><p>Aprovechando la capacidad de CVS de
+      ejecutar un script cuando actualiza la bitácora y el script
+      <tt>syncmail</tt>, es posible configurar
+      CVS para que por cada actualización
+      (<i>commit</i>) envíe un correo a una
+      dirección electrónica.  Para esto haga
+      <i>checkout</i> del directorio
+       <tt>CVSROOT</tt> de su repositorio :</p><pre class="screen">
+cvs co CVSROOT
+      </pre><p>
+       En ese directorio copie el archivo syncmail que podrá descargar de:
+       <a href="http://cvs-syncmail.sourceforge.net" target="_top">
+	http://cvs-syncmail.sourceforge.net</a> y después ejecute:</p><pre class="screen">
+chmod +x syncmail
+cvs add syncmail </pre><p>
+       Después agregue al archivo <tt>checkoutlist</tt> la
+       línea:</p><pre class="screen">
+syncmail	</pre><p>
+      actualice:</p><pre class="screen">
+cvs commit -m &quot;Ahora usa syncmail&quot; </pre><p>
+       y finalmente edite y actualice el archivo
+       <tt>loginfo</tt>, agregando líneas como la siguiente:
+      </p><pre class="screen">
+^mimodulo $CVSROOT/CVSROOT/syncmail %{sVv} paz@micolegio.edu.co </pre><p>
+      que indican que toda actualización al módulo
+      <tt>mimodulo</tt>, debe generar un correo indicando el
+      cambio a <tt>paz@micolegio.edu.co</tt>.  La primera
+      parte de la línea (<tt>^mimodulo</tt>) es una
+      expresión regular que se aplicará al módulo o puede ser
+      <tt>DEFAULT</tt> para indicar cualquier módulo.
+      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-de-correo"></a>4.1.7. Servicio de correo</h4></div></div><a class="indexterm" name="id472811"></a><a class="indexterm" name="id472838"></a><a class="indexterm" name="id473035"></a><p>
+       El servicio de correo empleado en Internet y en una red
+      TCP/IP se basa en el protocolo
+      SMTP (<i>Simple Mail Transfer
+      Protocol</i>) descrito especialmente en los
+      RFCs <a href="ftp://ftp.rfc-editor.org/in-notes/rfc821.txt" target="_top">821</a> y
+      <a href="ftp://ftp.rfc-editor.org/in-notes/rfc1123.txt" target="_top">1123</a>,
+      funcionando sobre TCP/IP.
+      En una situación típica en la que un usuario <tt>pepe@primaria2.micolegio.edu.co</tt> envía un
+      mensaje al usuario <tt>paz@bachillerato3.micolegio.edu.co</tt> sin
+      computadores intermediarios, se requiere:
+
+      </p><div class="itemizedlist"><ul type="disc"><li><p>Que haya conexión física y a nivel de
+	  TCP/IP entre ambos
+	  computadores.</p></li><li><p>Que ambos computadores tengan un programa que permita
+	 enviar y recibir correo usando el protocolo
+	 SMTP, como por ejemplo
+	 exim,
+	 sendmail o
+	 postfix (a tal programa se le
+	 llama MTA - <i>Mail Transport
+	 Agent</i>).
+	</p></li><li><p>Que ambos usuarios tengan un programa con el que puedan
+	 leer y redactar correos, como por ejemplo
+	 mail,
+	 mutt,
+	 elm,
+	 balsa,
+	 pine,
+	 evolution (a ese programa se le
+	 llamará MUA - <i>Mail User
+	 Agent</i><sup>[<a name="id473394" href="#ftn.id473394">220</a>]</sup>).
+	</p></li></ul></div><p>
+    </p><p>
+      Si tanto Pepe como Paz emplean como MUA
+      <b>mail</b>, y ambos computadores tiene como
+      MTA exim, el
+      proceso sería:
+     </p><div class="procedure"><ol type="1"><li><p>Pepe emplea <b>mail</b> en su computador
+	 <tt>primaria2</tt> para
+	 redactar el mensaje cuyo destinatario es <tt>paz</tt>.</p></li><li><p>En <tt>primaria2</tt>,
+	el programa mail ejecuta
+	exim para enviar el
+	mensaje. exim deja el mensaje en
+	una cola de mensajes por enviar. Esa cola de mensajes es
+	actualizada por exim a medida que
+	envía o intenta enviar mensajes (si un mensaje no puede ser
+	enviado exim puede reintentar el
+	envio cierto número de veces, haciendo pausas entre un intento
+	y otro).  </p><p> Enviar un mensaje significa crear una conexión
+	TCP con el MTA destino o
+	con otro MTA que actúe de intermediario,
+	típicamente en el puerto TCP 25, y
+	transmitir el mensaje siguiendo las reglas del protocolo
+	SMTP
+	<sup>[<a name="id473548" href="#ftn.id473548">221</a>]</sup>.
+	Para establecer el computador con el cual conectarse
+	 exim revisa con el resolvedor
+	 DNS, registros MX asociados con el dominio 
+	 de la dirección, si los hay intenta enviar a cada uno en orden de 
+	 prioridad
+	--los registros MX con menor número tienen mayor prioridad
+	(ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-dns" title="4.1.2. Servicio DNS">Servicio
+	 DNS</a>). </p></li><li><p> En <tt>bachillerato3</tt> debe estar
+	  corriendo un proceso que acepte la conexión en el puerto 25.
+	  Puede ser exim mismo o puede ser
+	  inetd que una vez realizada la
+	  conexión ejecuta a exim (ver
+	  <a href="protocolos-de-soporte-y-de-usuario.html#configuracion-de-servicios-basicos" title="4.1.1. Configuración de servicios básicos">
+	  Configuración de servicios básicos</a>).  Después
+	  exim recibirá el mensaje
+	  siguiendo el protocolo SMTP.
+	</p></li><li><p>exim agrega el mensaje que
+	recibe en el archivo tipo texto
+	<tt>/var/mail/paz</tt>.
+      </p></li><li><p>Cuando Paz lo desee, podrá emplear <b>mail</b>
+	para leer los correos que se hayan acumulado en
+	<tt>/var/mail/paz</tt> ---a medida que los lea
+	 saldrán de ese archivo para quedar en
+	<tt>~/mbox</tt>.
+	</p></li></ol></div><p>
+      Este es el esquema básico, aunque hay muchas otras situaciones
+      en las que se emplean otras posibilidades de
+      SMTP, protocolos auxiliares y
+      programas<sup>[<a name="id473906" href="#ftn.id473906">222</a>]</sup>.  Como parte de nuestra plataforma de
+      referencia, sugerimos este esquema:
+     </p><div class="itemizedlist"><ul type="disc"><li><p>Emplear un MUA que pueda leer
+	  directamente los correos que están en
+	  <tt>/var/mail</tt> o
+	  <tt>/var/spool/mail</tt> y configurarlo para
+	  esto, (en Debian el primero es el preferido, y
+	  <tt>/var/spool/mail</tt> es un enlace a
+	  <tt>/var/mail</tt>) y que emplee un
+	  MTA para enviar correos (ejemplos de
+	  MUAs con estás características son:
+	  mail,
+	  mutt,
+	  elm,
+	  balsa,
+	  evolution).
+	</p></li><li><a class="indexterm" name="id474162"></a><p>Emplear exim como
+	  MTA en todos los clientes.  Una ventaja
+	  de exim sobre otros
+	  MTA (como
+	  sendmail) es la facilidad
+	  con la que se configura en el archivo
+	  <tt>/etc/exim/exim.conf</tt> o aún más sencillo
+	  en Debian para muchas situaciones con el script
+	  <tt>eximconfig</tt>.  Los computadores clientes
+	  se configuran como MTA satélites con el
+	  servidor como compuerta de correo (o <i>smart
+	  host</i>) ---es decir se configura en los
+	  clientes sin capacidad de recibir correos sino sólo de
+	  enviar todo correo a un computador (al servidor).  El
+	  MTA del servidor funciona como un
+	  MTA completo que pueda recibir y enviar
+	  correo usando SMTP.
+	</p></li><li><p>Emplear NFS para compartir el
+	  directorio <tt>/var/mail</tt> del servidor en
+	  todos los clientes.  De forma que exista un único sitio
+	  físico donde estén todos los correos, pero que desde todos
+	  los computadores cada usuario pueda acceder a su archivo de
+	  correos.
+	</p></li></ul></div><p>
+      Para configurar este esquema se requiere:
+     </p><div class="orderedlist"><ol type="1"><li><p>Instalar en todos los computadores los
+	MUAs que habrá disponibles (mínimo
+	mail disponible en el paquete
+	<tt>mailx</tt>).
+	</p></li><li><p>
+	Instalar en todos los computadores el MTA
+	exim (paquete
+	<tt>exim</tt>).  En los clientes configurarlo como
+	sistema satélite. Como nombre de sistema emplee el dominio de
+	su institución, como computador del cual leerán los correos y
+	como <i>smart host</i> use el
+	servidor.  Para hacer un cambio en la configuración después de
+	instalar puede emplear eximconfig,
+	o con más práctica <tt>/etc/exim.conf</tt>.
+	Algunas líneas que ese archivo debe tener en el caso de
+	clientes, para enviar siempre por el servidor son:</p><pre class="screen">
+qualify_domain = micolegio.edu.co
+local_domains = micolegio.edu.co:localhost
+
+smart:
+  driver = smartuser
+  new_address = ${local_part}@servidor.micolegio.edu.co
+end
+
+smarthost:
+  driver = domainlist
+  transport = remote_smtp
+  route_list = &quot;* servidor.micolegio.edu.co bydns_a&quot;   
+end
+	  </pre><p>
+	También puede incluir reglas para reescribir direcciones de
+	forma que parezcan provenir de servidor.micolegio.edu.co:
+       </p><pre class="screen">
+^(?i)(root|postmaster|mailer-daemon)@micolegio.edu.co ${1}@in.limbo Ffr
+*@micolegio.edu.co ${1}@servidor.micolegio.edu.co Ffr
+^(?i)(root|postmaster|mailer-daemon)@localhost ${1}@in.limbo Ffr
+*@localhost ${1}@servidor.micolegio.edu.co Ffr
+*@in.limbo root@servidor.micolegio.edu.co Ffr
+
+	  </pre><p>
+	  y esta para agregar direcciones que deben cambiarse para
+	  ciertos usuarios en el archivo
+	  <tt>/etc/email-adresses</tt>
+	<sup>[<a name="id474385" href="#ftn.id474385">223</a>]</sup>:
+	  </p><pre class="screen">
+*@micolegio.edu.co    ${lookup{$1}lsearch{/etc/email-addresses}\
+                                                {$value}fail} bcfrF
+	  </pre><p>
+	</p></li><li><p>El servidor puede configurarlo como si fuera sitio de
+	Internet usando <b>eximconfig</b> y agregando
+	registros MX al servidor DNS.  Configure
+	como nombre del sistema el dominio de su institución, excluya
+	de los controles de <i>relaying</i> su
+	red interna (e.g <tt>192.168.1.0/24</tt>).  De
+	editar manualmente <tt>/etc/exim/exim.conf</tt>,
+	entre las líneas que eximconfig
+	incluye están las siguientes que configuran
+	procmail (ver <a href="informacion-personal-y-comunicacion-con-otros-usuarios.html#mutt-y-procmail" title="2.1.4. mutt y procmail">mutt y procmail</a>):</p><pre class="screen">
+procmail:
+   driver = localuser
+   transport = procmail_pipe
+   require_files =
+   ${local_part}:+${home}:+${home}/.procmailrc:+/usr/bin/procmail
+   no_verify
+	  </pre><p>
+	Con las siguientes permite redireccionamiento con el archivo
+	<tt>.forward</tt>. Tenga en cuenta cambiar la
+	configuración por defecto que deja
+	eximconfig para esto (porque
+	permite que <tt>.forward</tt> pueda ser escrito
+	por el grupo):</p><pre class="screen">
+userforward:
+   driver = forwardfile
+   file_transport = address_file
+   pipe_transport = address_pipe
+   reply_transport = address_reply
+   no_verify
+   check_ancestor
+   file = .forward
+   filter
+	  </pre><p>
+	Las siguientes indican emplear el sistema de correo local para
+	usuarios locales, hacer consultas DNS antes
+	de iniciar conexiones SMTP y emplear
+	direcciones IP explícitas.
+       </p><pre class="screen">
+ localuser:
+   driver = localuser
+   transport = local_delivery
+
+ lookuphost:
+   driver = lookuphost
+   transport = remote_smtp
+
+ literal:
+    driver = ipliteral
+          </pre><p>
+	La configuración de DNS debería tener en
+	cuenta emplear <tt>servidor.micolegio.edu.co</tt> como intercambiador de
+	correo para el dominio <tt>micolegio.edu.co</tt> y también como
+	intercambiador de correo para cada cliente (es decir que todo
+	correo que vaya a uno de los clientes se redirija al
+	servidor).  Retomando el ejemplo de la zona de
+	DNS (ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-dns" title="4.1.2. Servicio DNS">Servicio DNS</a>), el archivo
+	<tt>/etc/bind/db.micolegio.edu.co</tt> tendría dos
+	nuevas líneas (con registros tipo MX):
+	</p><pre class="screen">
+@	IN	SOA	servidor.micolegio.edu.co. root.localhost. (
+			      1		; Serial
+			  10800		; Refresco cada 3 horas
+			   3600		; Reintento cada hora
+			2419200		; Expiracion después de un mes
+			 259200 )	; TTL 3 dias
+
+@		NS	servidor
+servidor.micolegio.edu.co			A	192.168.1.1
+www			A	192.168.1.1
+mail			A	192.168.1.1
+micolegio.edu.co.		MX	5 mail
+*.micolegio.edu.co.		MX	5 mail
+bachillerato1		A	192.168.1.2
+bachillerato2		A	192.168.1.3
+bachillerato3		A	192.168.1.4
+bachillerato4		A	192.168.1.5
+secretaria		A	192.168.1.100
+profesores		A	192.168.1.200
+	</pre><p>
+       </p></li></ol></div><p>Una vez haga cambios a la configuración de 
+      exim podrá realizar algunas pruebas 
+      para verificar la forma de enrutamiento:</p><pre class="screen">
+exim -bV
+exim -v -bt root@localhost
+exim -v -bt root@servidor.micolegio.edu.co
+exim -v -bt root@purpura.micolegio.edu.co
+      </pre></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-ftp"></a>4.1.8. Servicio FTP</h4></div></div><a class="indexterm" name="id474860"></a><p>El protocolo FTP (que se describe en los
+      RFC 1123 y en el RFC 959)
+      permite transmitir archivos de un computador a otro de forma
+      robusta y eficiente.  Este protocolo requiere una conexión por
+      la que se transmiten comandos y respuestas a comandos
+      (normalmente por el puerto 21) y otra por la que se transmiten
+      datos (el puerto es escogido por el cliente o el servidor).
+      Pueden realizarse conexiones en modo activo o pasivo, en el
+      primero el cliente establece la dirección y el puerto para el
+      canal de datos, en el segundo es el servidor el que los
+      establece.  Al conectarse desde una red con direcciones privadas
+      a un servidor FTP fuera de la red privada es
+      necesario usar modo pasivo.<sup>[<a name="id474900" href="#ftn.id474900">224</a>]</sup>
+     </p><p>Sugerimos emplear FTP para establecer un
+      servidor FTP anónimo, pero no para brindar
+      transmisión de archivos a usuarios del sistema (que pueden
+      hacerlo con <b>scp</b> de
+      ssh). </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="./warning.png"></td><th>Aviso</th></tr><tr><td colspan="2" align="left" valign="top"><p>Las claves transmitidas en sesiones de FTP viajan
+	por la red sin encripción alguna.</p></td></tr></table></div><a class="indexterm" name="id475049"></a><p>
+      Como servidor FTP sugerimos
+      proftp (paquete
+      <tt>proftpd</tt>).  La configuración por defecto queda
+      en <tt>/etc/proftpd.conf</tt> que permite a todos
+      los usuarios emplear ftp, permite ftp anónimo empleando los
+      archivos del directorio <tt>/var/ftp</tt>.  El
+      directorio empleado puede tener una estructura arbitraria.
+      proftpd deja errores y mensajes de
+      error en <tt>/var/log/syslog</tt>.
+     </p><p>Para limitar el servicio a ftp anónimo
+       (los usuarios pueden emplear scp para realizar copias), puede
+       agregar en la sección general del archivo de configuración
+       limitación de acceso para todos los usuarios (con
+       <tt>LimitLOGIN</tt>) y en la sección
+       de ftp anónimo permitir acceso para todos los usuarios.  
+       El archivo <tt>/etc/proftpd.conf</tt> sería algo 
+       como:
+       </p><pre class="programlisting">
+
+ServerName			&quot;servidor&quot;
+ServerType			standalone
+DeferWelcome			off
+
+ShowSymlinks			on
+MultilineRFC2228		on
+DefaultServer			on
+ShowSymlinks			on
+AllowOverwrite			on
+
+TimeoutNoTransfer		600
+TimeoutStalled			600
+TimeoutIdle			1200
+
+DisplayLogin                    welcome.msg
+DisplayFirstChdir               .message
+LsDefaultOptions                &quot;-l&quot;
+
+Port				21
+
+Umask				022  022
+
+MaxInstances			30
+
+User				nobody
+Group				nogroup
+
+&lt;Limit LOGIN&gt;
+    DenyAll
+&lt;/Limit&gt;
+
+&lt;Directory /*&gt;
+  AllowOverwrite		on
+&lt;/Directory&gt;
+
+&lt;Anonymous ~ftp&gt;
+  User				ftp
+  Group				nogroup
+  UserAlias			anonymous ftp
+
+  RequireValidShell		off
+
+  MaxClients			10
+
+  DisplayLogin			welcome.msg
+  DisplayFirstChdir		.message
+  
+  &lt;Limit LOGIN&gt;
+    AllowAll
+  &lt;/Limit&gt;
+
+  &lt;Directory *&gt;
+    &lt;Limit WRITE&gt;
+      DenyAll
+    &lt;/Limit&gt;
+  &lt;/Directory&gt;
+
+&lt;/Anonymous&gt;
+
+       </pre><p>
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="servicio-web"></a>4.1.9. Servicio Web</h4></div></div><a class="indexterm" name="id475320"></a><p>
+      El servicio web se basa en el protocolo HTTP
+      (<i>Hypertext Transfer Protocol</i>),
+      cuya versión 1.1 está definida en el RFC
+      2616.  Este protocolo permite:
+      </p><div class="itemizedlist"><ul type="disc"><li><p>Transmitir hipertextos escritos en
+	 HTML con diversas codificaciones e
+	 idiomas, gráficas y otros tipos de información a partir de
+	 URLs solicitados por el navegador.  Cada
+	 tipo de información solicitada por un cliente es transmitida
+	 por el servidor con una identificación
+	 MIME (<i>Multipurpose Internet
+	 Mail Extensions</i>) que permite al navegador
+	 desplegarlo apropiadamente (por ejemplo cargando otro
+	 programa o un plugin de ser necesario)<sup>[<a name="id475467" href="#ftn.id475467">225</a>]</sup>.  La identificación MIME es de la 
+      forma tipo/subtipo, las identificaciones registradas pueden
+	 consultarse en:
+	 <a href="http://www.iana.org/assignments/media-types/index.html" target="_top">
+	  http://www.iana.org/assignments/media-types/index.html</a>
+	</p></li><li><p>Sirve como protocolo genérico para transmisión de otros
+	 tipos de protocolos (e.g FTP,
+	 SMTP, Gopher,
+	 NNTP).</p></li><li><p>Permite emplear intermediarios (proxys, compuertas y
+	    túneles), cada uno de los cuales puede tener un deposito.
+	    Normalmente HTTP emplea por defecto el
+	    puerto TCP 80 (si el servidor/proxy
+	    está en otro puerto, puede especificarse en un
+	    URL como
+	    <tt>http://servidor.micolegio.edu.co:8080/index.html</tt>).
+	  </p></li><li><p>Ejecutar CGIs (<i>Common
+	  Gateway Interface</i>) que respondan
+	  dinámicamente a información transmitida desde el
+	  cliente. Por ejemplo el siguiente URL
+	  incluye las variables <tt>nombre</tt> y
+	  <tt>apellido</tt> que son pasadas al
+	  CGI <tt>param.cgi</tt> con
+	  valores <tt>Pepe</tt> y <tt>Rojimes</tt>:
+	  <a href="http://structio.sourceforge.net/cgi-bin/param.cgi?nombre=Pepe&amp;apellido=Rojimes" target="_top">http://structio.sourceforge.net/cgi-bin/param.cgi?nombre=Pepe&amp;apellido=Rojimes</a>
+	  Los CGIs son programas o scripts que
+	  reciben por entrada estándar y/o variables de ambiente,
+	  consultas hechas por un cliente y responden escribiendo en
+	  sálida estándar la respuesta que dará el servidor.</p></li></ul></div><p>	
+
+    </p><p>
+      Como servidor web sugerimos 
+      Apache (paquete <tt>apache</tt>), 
+      que es el servidor más popular en Internet (puede consultar 
+      estadísticas en <a href="http://www.netcraft.com" target="_top">Netcraft</a>)
+      y para hacer más eficiente la conexión sugerimos emplear 
+      squid como proxy con depósito.</p><a class="indexterm" name="id475710"></a><p>
+      Apache se configura en el archivo
+      <tt>/etc/apache/httpd.conf</tt>. La configuración
+      por defecto supone que las páginas por servir están en <tt>/var/www</tt> y en los directorios
+      <tt>public_html</tt> de cada
+      usuario.  Los errores y mensajes quedan en
+      <tt>/var/log/apache/error.log</tt> y pueden dejarse
+      CGIs en el directorio
+      <tt>/usr/lib/cgi-bin</tt> (que es alias de
+      <tt>/cgi-bin</tt>).  Entre sus características están:
+      </p><a class="indexterm" name="id475790"></a><div class="itemizedlist"><ul type="disc"><li><p>Excelente implementación de HTTP 1.1 y
+	CGI 1.1.</p></li><li><p>Configuración sencilla (en 
+	<tt>/etc/apache/httpd.conf</tt>) y posibilidad de
+	emplear archivos de confioguración por cada usuario
+	<tt>~/public_html/.htaccess</tt>.
+       </p></li><li><p>Cuenta con módulos para soportar SSI
+	(<i>Server Side Includes</i>) y
+	PHP.</p></li><li><p>Soporta SSL (<i>Secure
+	 Socket Layer</i>) para trasmisión encriptada y
+	autenticación básica para tener zonas restringidas con
+	claves.</p></li><li><p>Soporta dominios virtuales (<i>Virtual
+	Host</i>), para atender con un sólo servidor
+	diversos dominios.  Además de la configuración
+	DNS que esto requiere (puede ser con
+	registros CNAME), basta agregar una sección
+	por cada dominio virtual, por ejemplo:</p><pre class="programlisting">
+	      &lt;VirtualHost *&gt;
+		ServerName estudiantes.micolegio.edu.co
+		DocumentRoot /var/www/estudiantes
+	&lt;/VirtualHost&gt;
+	</pre></li></ul></div><a class="indexterm" name="id476000"></a><p>
+       En cuanto a proxy, puede instalar squid 
+       (paquete <tt>squid</tt>).  Este programa permite definir 
+       listas de acceso y emplearlas para dar servicio sólo a las direcciones
+      con permiso.  La configuración por defecto del paquete deja
+      listo squid para servir sólo al
+      computador donde se instala, para servir otros computadores de
+      su red debe (1) agregar un ACL que
+      especifique todos los computadores de su red y (2) indicar que
+      el ACL definido puede emplear el proxy de
+      HTTP, se hace con líneas como éstas en las
+      secciones apropiadas del archivo de configuración
+      <tt>/etc/squid.conf</tt>:
+      </p><pre class="screen">
+	acl red src 192.168.0.0/255.255.0.0</pre><p> y
+      </p><pre class="screen">
+	http_access allow red</pre><p> 
+      Tras hacer cambios en la configuración puede reiniciarlo con
+      </p><pre class="screen">
+/etc/init.d/squid restart
+      </pre><p>
+     </p><p>
+      Puede comprobar que funciona o diagnosticar errores revisando
+      las bitácoras del directorio
+      <tt>/var/log/squid</tt>.  Desde los clientes podrá
+      configurar el navegador para que emplee este proxy que por
+      defecto atiende el puerto 3128.  Por ejemplo con
+      <b>w3m</b> y <b>lynx</b> basta
+      establecer el URL del proxy en la variable de
+      ambiente <tt>http_proxy</tt>:
+      </p><pre class="screen">
+	export http_proxy=http://servidor.micolegio.edu.co:3128
+      </pre><p>
+      En el caso de mozilla, se configura
+      en Advanced/Proxies después de elegir
+      Edit/Preferences en el menú principal.
+    </p><a class="indexterm" name="id476226"></a></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="impresora-en-red"></a>4.1.10. Impresora en red</h4></div></div><p>El programa <b>lpd</b> es un servidor del
+      protocolo LPD, mientras que
+      <b>lpr</b> es un cliente.  En esta sección se
+      dan detalles mínimos para configurar una impresora en red, la 
+      configuración de una impresora local a un computador y la 
+      configuración básica de <tt>/etc/printcap</tt> puede
+      consultarse en la sección <a href="dispositivos-y-linux.html#impresora" title="4.1.5. Impresora">Sección 4.1.5</a> y
+      el uso de la impresora una vez configurada en
+      <a href="exploracion-tres.html#impresion-y-formatos-para-impresion" title="1.1.1. Impresión y formatos para impresión">Sección 1.1.1</a>.
+    </p><p>La impresora de la red debe conectarse a un computador y
+      configurarse como local en ese computador.  En el resto de
+      computadores debe configurarse como impresora remota. Por ejemplo
+      si el comptuador al que está conectado la impresora es
+      <tt>rojo.micolegio.edu.co</tt> y allí se configura una impresora
+      con nombre <tt>psprn</tt>, en los demás computadores
+      en el archivo <tt>/etc/printcap</tt> debe haber líneas 
+      como:
+      </p><pre class="screen">
+psprn|rp|remote line printer:\
+  :lp=:rm=rojo.micolegio.edu.co:rp=psprn:sd=/var/spool/lpd/psprn: \
+  :lf=/var/log/lp-errs: </pre><p>
+     </p><a class="indexterm" name="id476343"></a><p>
+       El servidor <b>lpd</b> que debe ser iniciado durante el 
+       arranque de <tt>rojo</tt>, recibe conexiones sólo de las 
+       máquinas especificadas en <tt>/etc/hosts.equiv</tt> o
+       <tt>/etc/hosts.lpd</tt> y podrá entonces imprimir
+       trabajos iniciados  por usuarios en tales máquinas (agregue a uno
+       de esos archivos los computadores clientes que podrán imprimir).  
+       Para restringir acceso a una impresora de otra forma,  en 
+       <tt>/etc/printcap</tt> 
+       puede emplearse <tt>rs</tt> en lugar de
+       <tt>rm</tt> para indicar que tal impreso sólo imprimirá
+       trabajos de usuarios que tengan una cuenta en el mismo computador.
+     </p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-protocolo-de-soporte-y-de-usuario"></a>4.2. Lecturas recomendadas: Protocolos de soporte y de usuario</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p><i>Net-HOWTO. 5.8</i>. Configuring your
+      network servers and services.  <a href="http://linuxdoc.org/HOWTO/Net-HOWTO/x619.html" target="_top">http://linuxdoc.org/HOWTO/Net-HOWTO/x619.html</a>
+      </p></li><li><p>El tema seguridad no es tratado en profundidad
+       (es indispensable estudiarlo si se planea conectar a Internet).
+       <i>NET-3-HOWTO</i> Sección 5.10.  Network
+       Security and access control.
+       </p></li></ul></div><h4><a name="id476622"></a>Configuración de servicios básicos</h4><div class="itemizedlist"><ul type="disc"><li><p>Para conocer más sobre la configuración de 
+	<tt>inetd</tt> y <tt>tcpd</tt>,
+	puede consultar las páginas man de inetd, tcpd y hosts_access.</p></li><li><p>
+       Puede consultar sobre el protocolo Telnet en los RFC
+	<a href="ftp://ftp.rfc-editor.org/in-notes/rfc854.txt" target="_top">854</a>, 
+       <a href="ftp://ftp.rfc-editor.org/in-notes/rfc855.txt" target="_top">855</a> y
+       <a href="ftp://ftp.rfc-editor.org/in-notes/rfc1123.txt" target="_top">1123</a>.
+      </p></li><li><p>Sobre el protocolo de finger en el
+	RFC <a href="ftp://ftp.rfc-editor.org/in-notes/rfc1288.txt" target="_top">1288</a>.
+       </p></li></ul></div><h4><a name="id476781"></a>NFS</h4><div class="itemizedlist"><ul type="disc"><li><p>La versión 3 de este protocolo está descrita en el
+	RFC <a href="ftp://ftp.rfc-editor.org/in-notes/rfc1813.txt" target="_top">1813</a>.
+       </p></li><li><p>Páginas del manual de <tt>exports</tt>
+	(<b>man exports</b>), de NFS y de portmap.
+      </p></li><li><p>De Olaf Kirch y Terry Dawson: <i>Linux Network
+       Administrators Guide</i>.  The Network File System.
+	<a href="http://www.linuxdoc.org/LDP/nag2/x-087-2-nfs.html" target="_top">http://www.linuxdoc.org/LDP/nag2/x-087-2-nfs.html</a>
+       </p></li></ul></div><h4><a name="id476846"></a>DNS</h4><div class="itemizedlist"><ul type="disc"><li><p>Puede consultar una exposición no técnica sobre
+	DNS en <a href="http://www.internic.net/faqs/authoritative-dns.html" target="_top">http://www.internic.net/faqs/authoritative-dns.html</a>
+       </p></li><li><p>Puede consultar sobre DNS en el
+       RFC <a href="ftp://ftp.rfc-editor.org/in-notes/rfc1034.txt" target="_top">1034</a>
+	y recomendaciones en el RFC <a href="ftp://ftp.rfc-editor.org/in-notes/rfc1912.txt" target="_top">1912</a>.
+       </p></li><li><p>djbdns es otro servidor de nombre (no 
+	tan popular), en su página web puede consultarse información 
+	concisa sobre DNS 
+	<a href="http://cr.yp.to/djbdns.html" target="_top">http://cr.yp.to/djbdns.html</a> </p></li><li><p>Una explicación corta para la configuración de
+	DNS en una red LAN en
+	este artículo de Linux Gazette: <a href="http://www.linuxgazette.com/issue44/pollman/dns.html" target="_top">http://www.linuxgazette.com/issue44/pollman/dns.html</a>
+
+       </p></li></ul></div><h4><a name="id477028"></a>NIS</h4><div class="itemizedlist"><ul type="disc"><li><p>Una vez instale <tt>nis</tt> en
+	Debian, en el directorio <tt>/usr/doc/nis</tt> encontrará un
+       documento muy práctico y corto:
+       <tt>nis.debian.howto</tt>. En Internet lo encuentra
+	en: <a href="http://www.linux-nis.org/doc/nis.debian.howto" target="_top">http://www.linux-nis.org/doc/nis.debian.howto</a>
+      </p><p>NIS puede configurarse de forma más
+       segura de la presentada en esta guía, puede manejar sus propios
+	archivos de claves y grupos, permite tener servidores maestros
+       y esclavos y muchas otras posibilidades que se describen
+       brevemente en ese archivo.
+      </p></li><li><p>Una explicación sobre generalidades de NIS en:
+	<a href="http://publib16.boulder.ibm.com/pseries/en_US/aixbman/nisplus/nis_intro.htm#a2b6a622144endr" target="_top">http://publib16.boulder.ibm.com/pseries/en_US/aixbman/nisplus/nis_intro.htm#a2b6a622144endr</a></p></li><li><p>Puede averiguar más sobre NIS y sus
+	variantes en el <i>NIS-HOWTO</i> <a href="http://www.linuxdoc.org/HOWTO/NIS-HOWTO/index.html" target="_top">http://www.linuxdoc.org/HOWTO/NIS-HOWTO/index.html</a>
+	o en el capítulo &quot;The Network Information System&quot; de
+       &quot;<i>Linux Network Administrators Guide</i>&quot;
+	<a href="http://www.linuxdoc.org/LDP/nag2/x-087-2-nis.html" target="_top">http://www.linuxdoc.org/LDP/nag2/x-087-2-nis.html</a>.
+       </p></li></ul></div><h4><a name="id477207"></a>CVS</h4><div class="itemizedlist"><ul type="disc"><li><p>Puede consultarse la arquitectura general de
+	SSH 2 en <a href="http://www.ietf.org/internet-drafts/draft-ietf-secsh-architecture-13.txt" target="_top">http://www.ietf.org/internet-drafts/draft-ietf-secsh-architecture-13.txt</a></p></li></ul></div><p>CVS</p><div class="itemizedlist"><ul type="disc"><li><p>Para saber más sobre CVS puede
+       consultar la página man. En Internet puede consultar
+	&quot;<i>CVS--Concurrent Versions System</i>&quot;
+	<a href="http://www.cvshome.org/docs/manual/cvs.html" target="_top">
+	 http://www.cvshome.org/docs/manual/cvs.html</a> o <a href="http://cvsbook.red-bean.com/cvsbook.html" target="_top">Open Source
+	 Development With CVS</a>. En particular sobre la
+       configuración de syncmail y CVS: <a href="http://sourceforge.net/docman/display_doc.php?docid=772&amp;group_id=1" target="_top">http://sourceforge.net/docman/display_doc.php?docid=772&amp;group_id=1</a>
+       </p></li></ul></div><h4><a name="id477289"></a>Correo</h4><div class="itemizedlist"><ul type="disc"><li><p>Especificación de exim 3.3:
+       <a href="http://www.exim.org/exim-html-3.30/doc/html/spec.html" target="_top">http://www.exim.org/exim-html-3.30/doc/html/spec.html</a>
+      </p></li></ul></div><p>Web</p><div class="itemizedlist"><ul type="disc"><li><p>Puede consultar más sobre CGIs en la
+	especificación: <a href="http://cgi-spec.golux.com/" target="_top">http://cgi-spec.golux.com/</a>
+	y más sobre la configuración de Apache para usar CGIs en este
+	tutorial:
+	<a href="http://httpd.apache.org/docs/howto/cgi.html.html" target="_top">
+	  Dynamic Content with CGI</a> y en la especificación propu.
+       </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-protocolos-de-soporte-y-de-usuario"></a>4.3. Ejercicios: Protocolos de soporte y de usuario</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="id477363"></a><h5 class="title"><a name="id477363"></a>4.3.1.  Servicios</h5></td></tr><tr class="question"><td align="left" valign="top"><a name="id477369"></a><a name="servred.bas.1"></a><b>4.3.4.3.1.1. </b></td><td align="left" valign="top"><p>Active el servicio interno <tt>daytime</tt> de 
+	   inetd, después
+	 revise la respuesta que este da a una conexión empleando
+	 <b>telnet</b>. Describa los pasos que siguió.</p></td></tr><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="id477438"></a><h5 class="title"><a name="id477438"></a>4.3.2.  DNS</h5></td></tr><tr class="question"><td align="left" valign="top"><a name="id477446"></a><a name="servred.servdns.1"></a><b>4.3.4.3.2.1. </b></td><td align="left" valign="top"><p>Desde el intérprete de comandos ¿Cómo puede determinar
+	 la IP de <tt>structio.sourceforge.net</tt>, los
+	 nombres DNS asociados a la
+	 IP 204.152.184.85 y la dirección de correo
+	 del contacto técnico de <tt>sourceforge.net</tt>?  ¿Cuáles son
+	 esos datos?</p></td></tr><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="id477502"></a><h5 class="title"><a name="id477502"></a>4.3.3.  NFS</h5></td></tr><tr class="question"><td align="left" valign="top"><a name="id477510"></a><a name="servred.clinfs.1"></a><b>4.3.4.3.3.1. </b></td><td align="left" valign="top"><p>En su máquina cree los directorios <tt>/aux</tt> y <tt>/mnt/tmp</tt>, ponga en el primero
+	 algún archivo.  Después monte vía NFS el
+	 directorio <tt>/aux</tt> y
+	 móntelo en el directorio <tt>/mnt/tmp</tt>. Después de que
+	 funcione, desmóntelo.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id477678"></a><a name="servred.clinfs.2"></a><b>4.3.4.3.3.2. </b></td><td align="left" valign="top"><p>Monte el directorio <tt>/usr</tt> del servidor principal como
+	 <tt>/opt</tt> en otro
+	 computador de la red.  ¿Qué debe hacer para que en ese
+	 computador se emplee la ruta <tt>/opt/bin</tt> para buscar archivos y
+	 <tt>/opt/lib</tt> para buscar
+	 bibliotecas compartidas?</p></td></tr><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="id477751"></a><h5 class="title"><a name="id477751"></a>4.3.4.  Correo</h5></td></tr><tr class="question"><td align="left" valign="top"><a name="servred.mail.1"></a><a name="id477764"></a><b>4.3.4.3.4.1. </b></td><td align="left" valign="top"><p>Configure exim en un
+	 computador cliente para no recibir correos y enviar empleando el 
+	 MTA del servidor.  Compruebe que funciona enviando desde
+         el cliente un correo a una cuenta en el servidor.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id477798"></a><a name="servred.mail.2"></a><b>4.3.4.3.4.2. </b></td><td align="left" valign="top"><p>Después de configurar NIS,
+	 empleando NFS comparta el directorio
+	 <tt>/var/mail</tt> del servidor
+	 en un cliente con la configuración del ejercicio anterior.
+	 Tras esto compruebe que cada usuario puede revisar su correo
+	 con el programa <b>mail</b> desde cualquier
+	 computador.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id477880"></a><a name="servred.mail.3"></a><b>4.3.4.3.4.3. </b></td><td align="left" valign="top"><p>En caso de emplear un cliente de correo diferente a
+	 <b>mail</b> configúrelo de forma que lea correo
+	 de la cola <tt>/var/mail</tt>
+	 (o <tt>/var/spool/mail</tt>) y que transmita
+	 usando <b>exim</b>.</p></td></tr><tr class="qandadiv"><td align="left" valign="top" colspan="2"><a name="id477939"></a><h5 class="title"><a name="id477939"></a>4.3.5.  Web</h5></td></tr><tr class="question"><td align="left" valign="top"><a name="id477945"></a><a name="servred.apache.1"></a><b>4.3.4.3.5.1. </b></td><td align="left" valign="top"><p>Instale el servidor Apache en el servidor, compruebe que
+	funciona desde un <i>browser</i> en
+	otro computador.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id477976"></a><a name="servred.apache.2"></a><b>4.3.4.3.5.2. </b></td><td align="left" valign="top"><p>Configure Apache para que puedan accederse los
+	 directorios de los usuarios con el URL
+	 <tt>http://servidor/~login</tt>.</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id466238" href="#id466238">210</a>] </sup>conexión del inglés 
+	<i>sockets</i></p></div><div class="footnote"><p><sup>[<a name="ftn.id466265" href="#id466265">211</a>] </sup>El primer argumento corresponde al 
+	nombre del comando, es útil al emplear <b>tcpd</b>
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id466585" href="#id466585">212</a>] </sup>Hilos del inglés
+	   <i>threads</i>.</p></div><div class="footnote"><p><sup>[<a name="ftn.id467219" href="#id467219">213</a>] </sup>Depósito es la traducción que empleamos para
+	    <i>cache</i>
+	   </p></div><div class="footnote"><p><sup>[<a name="ftn.id467297" href="#id467297">214</a>] </sup>Hay 13 servidores principales que manejan la raíz de
+	 este árbol.
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id469346" href="#id469346">215</a>] </sup>Estos archivos de registros son preprocesados, y a todo
+	nombre que no termine con el caracter '.' se le agrega la zona
+	(definida en <tt>/etc/bind/named.conf</tt>) para
+	convertirlo en un nombre completo (FQDN -
+	<i>Fully qualified domain
+	name</i>).</p></div><div class="footnote"><p><sup>[<a name="ftn.id469922" href="#id469922">216</a>] </sup>NFS es sigla
+	de <i>Network File System</i> que en
+	castellano es sistema de archivos en red. Anque en el momento de
+	este escrito hay versión 4, en Debian está implementada la 3.
+      </p></div><div class="footnote"><p><sup>[<a name="ftn.id470536" href="#id470536">217</a>] </sup>Después de montar <tt>/usr</tt> del servidor como <tt>/opt</tt> de cada cliente, podrá
+       ejecutar algunos programas que están en el servidor, desde el
+       directorio <tt>/opt</tt> (aún
+       para más comodidad puede agregar las rutas <tt>/opt/bin</tt> a la variable de entorno
+       <tt>PATH</tt>). </p></div><div class="footnote"><p><sup>[<a name="ftn.id470695" href="#id470695">218</a>] </sup>NIS es sigla de <i>Network Information
+	 System</i> que en castellano es sistema de
+	información de la red
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id472553" href="#id472553">219</a>] </sup>El archivo de claves para CVS tiene 2 o
+      3 campos, el primero es el nombre con el que se conectará el
+      usuario, el segundo la clave encriptada con
+      DES (ver <a href="administracion-de-usuarios.html" title="3. Administración de usuarios">Administración de
+      usuarios</a>) y el tercer opcional es el nombre del usuario
+      local a nombre del cual modificará el repositorio.  Este archivo
+      puede administrarse con htpasswd,
+      para crear el archivo con un primer usuario: <b>htpasswd
+      -c pepe</b> y posteriormente para agregar otros usuarios
+      <b>htpasswd agustin</b> </p></div><div class="footnote"><p><sup>[<a name="ftn.id473394" href="#id473394">220</a>] </sup>De acuerdo al
+	 RFC 1123 los nombre MUA
+	 y MTA son propios del protocolo
+	 X.400.</p></div><div class="footnote"><p><sup>[<a name="ftn.id473548" href="#id473548">221</a>] </sup>De acuerdo al protocolo SMTP,
+	  exim de <tt>primaria2</tt> se conectaría por
+	  el puerto 25 a exim en
+	  <tt>bachillerato3</tt> y
+	  enviaría el mensaje <tt>MAIL FROM:
+	   pepe@primaria2.micolegio.edu.co</tt>, después enviaría
+	  <tt>RCPT TO: paz@bachillerato3.micolegio.edu.co</tt>,
+	  después <tt>DATA</tt> y a continuación el cuerpo
+	  del correo comenzando con el encabezado de acuerdo al
+	  RFC 822, con un cuerpo de mensaje que
+	  emplee 7 bits y terminando con una línea que sólo tenga un
+	   punto. Por ejemplo</p><pre class="screen">
+From: pepe@primaria2.micolegio.edu.co
+To: paz@bachillerato3.micolegio.edu.co
+Subject: Saludo
+
+Un cortisimo saludo.
+.  </pre><p>
+	  Si lo desea puede experimentar con este protocolo,
+	  empleando telnet y el MTA de su
+	  computador: <b>telnet localhost 25</b>.  Claro
+	  resulta más transparente empleando directamente
+	  exim (que tiene como alias el
+	  script <tt>sendmail</tt>): 
+
+	  </p><pre class="screen"> sendmail -bm
+paz@bachillerato3.micolegio.edu.co -f
+pepe@primaria2.micolegio.edu.co </pre><p>
+	   (para emplear <tt>-f</tt> con
+	   exim debe ser usuario
+	   autorizado).
+	 </p></div><div class="footnote"><p><sup>[<a name="ftn.id473906" href="#id473906">222</a>] </sup>Otro caso típico que evita tener
+      MTA en el computador del usuario, requiere
+      otro computador que almacene los correos y el protocolo
+      POP3 (RFC
+      1939).</p></div><div class="footnote"><p><sup>[<a name="ftn.id474385" href="#id474385">223</a>] </sup>
+	  Cada línea de <tt>/etc/email-adresses</tt> será
+	  análoga a la siguiente, que indica reescribir la dirección
+	  del usuario <tt>pepe</tt>
+	  como <tt>pepe2@micolegio.edu.co</tt>:
+<pre class="screen">
+pepe:        pepe2@micolegio.edu.co
+	    </pre></p></div><div class="footnote"><p><sup>[<a name="ftn.id474900" href="#id474900">224</a>] </sup>Puede observarse con
+	<b>telnet</b> el comportamiento de este protocolo
+	por ejemplo:</p><pre class="screen">
+telnet ftp.ibiblio.org 21
+user anonymous
+pass email@
+pwd
+pasv
+retr index.html
+	 </pre><p>
+	Como resultado del comando <b>pasv</b> el servidor
+	FTP envía dirección y puerto al que debe
+	conectarse el cliente para recibir la información.  Si la
+	respuesta es por ejemplo:</p><pre class="screen">
+227 Entering Passive Mode (152,2,210,81,230,214)
+	 </pre><p>
+	el cliente debe abrir otra conexión para recibir los datos con
+	la máquina con IP <tt>152.2.210.81</tt> (<tt>ftp.ibiblio.org</tt>) puerto
+	230*256+214 (59094). Al hacer:
+       </p><pre class="screen">
+telnet 152.2.210.81 59094
+	 </pre><p>
+	la conexión abierta recibirá el contenido del archivo
+	<tt>README</tt>.  Este ejemplo emplea
+	FTP en modo pasivo, podría también
+	indicarse modo activo empleando port en lugar de
+	<b>pasv</b>.  El comando <b>port</b>
+	indica al servidor que inice una conexión con cierta dirección
+	y puerto para realizar la transmisión, por ejemplo si en el
+	cliente con dirección <tt>1.2.3.4</tt> se espera una conexión
+	en el puerto 8000:
+       </p><pre class="screen">
+port 1,2,3,4,31,64
+       </pre><p>
+	(note que 31*256+64 es 8000).</p></div><div class="footnote"><p><sup>[<a name="ftn.id475467" href="#id475467">225</a>] </sup>Puede
+	     verse en funcionamiento este protocolo empleando 
+	     <b>telnet</b>, por ejemplo:
+	   <pre class="screen">
+	    telnet structio.sourceforge.net 80
+	    GET http://structio.sourceforge.net/index.html
+      </pre></p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="direcciones-enrutamiento-y-transporte.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="administracion-tres.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="plataforma.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">3. Direcciones, enrutamiento y transporte </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> Apéndice A. Plataforma de referencia S-Helio 1.1</td></tr></table></div></body></html>

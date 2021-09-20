@@ -1,0 +1,1431 @@
+<HTML
+><HEAD
+><TITLE
+>Información personal y comunicación con otros
+    usuarios</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Linux desde la perspectiva de un usuario con experiencia"
+HREF="c1054.htm"><LINK
+REL="PREVIOUS"
+TITLE="Linux desde la perspectiva de un usuario con experiencia"
+HREF="c1054.htm"><LINK
+REL="NEXT"
+TITLE="Servicios de la Intranet"
+HREF="x1647.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c1054.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 2. Linux desde la perspectiva de un usuario con experiencia</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x1647.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="informacion-personal-y-comunicacion-con-otros-usuarios"
+>Información personal y comunicación con otros
+    usuarios</A
+></H1
+><P
+>Indicadores de Logros: </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="infopub.mant"
+></A
+><P
+>Mantiene su información pública y puede consultar la de
+    otros usuarios.</P
+></LI
+><LI
+><A
+NAME="comred.talk"
+></A
+><P
+>Puede comunicarse con otros usuarios empleando
+    <B
+CLASS="command"
+>talk</B
+>.
+     </P
+></LI
+><LI
+><A
+NAME="comred.mail"
+></A
+><P
+>Puede enviar y recibir correos con
+      <B
+CLASS="command"
+>mail</B
+>.
+     </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-informacion-personal-y-comunicacion-con-otros-usuarios"
+>Lectura: Información personal y comunicación con otros
+     usuarios</A
+></H2
+><P
+>&#13;     Uno de los propósitos de una red de computadores es facilitar la
+     comunicación entre usuarios.  En la red de su colegio usted podrá
+     comunicarse con otros usuarios, ver información de ellos y
+     publicar información sobre usted.  Aún si emplea un computador con
+     Linux que no esté conectado a una red, podrá experimentar empleando
+     como nombre de máquina <SPAN
+CLASS="systemitem"
+>localhost</SPAN
+><A
+NAME="AEN1393"
+HREF="#FTN.AEN1393"
+>[1]</A
+>
+   </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="finger"
+>Información pública y usuarios</A
+></H3
+><P
+>Cada usuario de una red Linux puede publicar cierta
+      información personal con el programa <B
+CLASS="command"
+>chfn</B
+>,
+      puede poner su plan de actividades en el archivo
+      <TT
+CLASS="filename"
+>~/.plan</TT
+> y los proyectos que esté realizando
+      en el archivo <TT
+CLASS="filename"
+>~/.project</TT
+>.  Es importante
+      que mantenga actualizada su información para que sea de utilidad
+      para el colegio y otros usuarios de la red.
+    </P
+><A
+NAME="AEN1402"
+></A
+><P
+>Programa para cambiar la
+      información pública de un usuario, otros usuarios puede
+      examinarla con el comando <TT
+CLASS="literal"
+>finger</TT
+></P
+><A
+NAME="AEN1407"
+></A
+><P
+>Nombre del archivo donde se
+      almacenan los planes de actividades de un usuario.  Debe
+      ubicarse en el directorio principal del usuario.</P
+><A
+NAME="AEN1411"
+></A
+><P
+>Nombre del archivo donde se
+      describen los proyectos que se están realizando para que puedan
+      ser consultados por otros usuarios con el comando
+      <TT
+CLASS="literal"
+>finger</TT
+> Debe ubicarse en el directorio
+      principal del usuario.</P
+><P
+>El programa <B
+CLASS="command"
+>finger</B
+> permite ver la
+     información que los usuarios han publicado y también permite ver
+     qué usuarios están usando un sistema
+      <A
+NAME="AEN1418"
+HREF="#FTN.AEN1418"
+>[2]</A
+>. Los siguientes ejemplos, muestran como puede
+	usarse <B
+CLASS="command"
+>finger</B
+> para examinar:
+      <P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>La información de un usuario conectado a la misma
+	 máquina que usted</P
+></LI
+><LI
+><P
+>Los usuarios conectados a otra máquina</P
+></LI
+><LI
+><P
+>La información de un usuario de otra máquina</P
+></LI
+></OL
+>
+</P
+><PRE
+CLASS="screen"
+>&#13;finger pepe
+finger @servidor.colegio.edu.co
+finger pepe@servidor.colegio.edu.co
+</PRE
+><P
+>El tercer ejemplo muestra la <SPAN
+><I
+CLASS="emphasis"
+>dirección
+       electrónica</I
+></SPAN
+> de un usuario en una red, usted como
+       usuario tendrá una dirección como esa que podrá ser usada por
+       otros usuarios para comunicarse con usted con
+       <B
+CLASS="command"
+>talk</B
+> o con <B
+CLASS="command"
+>mail</B
+>.  Para
+       formar su dirección electrónica añada a su login el símbolo @ y
+       el nombre del dominio de su red (e.g
+       <TT
+CLASS="literal"
+>agarcia@click.micolegio.edu.co</TT
+>). El nombre del
+      dominio debe preguntarlo al administrador de red.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="talk"
+>Comunicación con usuarios que están conectados
+     simultáneamente.</A
+></H3
+><P
+>El programa <B
+CLASS="command"
+>talk</B
+> permite comunicarse con
+      un usuario que esté conectado al mismo computador que usted o en
+      otro (mientras estén conectados por red). El programa
+      <B
+CLASS="command"
+>mesg</B
+> permite a un usuario activar o
+      desactivar peticiones de <B
+CLASS="command"
+>talk</B
+> (<B
+CLASS="command"
+>mesg
+      y</B
+> las activa y <B
+CLASS="command"
+>mesg n</B
+> las
+      desactiva). A continuación se presentan ejemplos, de como
+      solicitar una conexión del <B
+CLASS="command"
+>talk</B
+> a un usuario
+      en el mismo computador o en otro:
+<PRE
+CLASS="screen"
+>&#13;talk pepe
+talk pepe@purpura.micolegio.edu.co
+</PRE
+>
+</P
+><P
+>Cuando haga la solicitud de conexión, si el otro usuario
+      está aceptando mensajes será informado de su solicitud junto con
+      instrucciones para establecer la comunicación (tendrá que
+      responder con <B
+CLASS="command"
+>talk</B
+> seguido de la dirección de
+      quien hizo la solicitud)
+      <A
+NAME="AEN1449"
+HREF="#FTN.AEN1449"
+>[3]</A
+>. Para terminar una conexión de
+      <B
+CLASS="command"
+>talk</B
+> puede emplear la secuencia de teclas
+      <B
+CLASS="keycap"
+>Ctrl-D</B
+> ---secuencia que significa fin de
+      archivo---, o bien interrumpir el programa con
+      <B
+CLASS="keycap"
+>Ctrl-C</B
+>.
+     </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="correo-electronico"
+>Correo electrónico</A
+></H3
+><P
+>El programa <B
+CLASS="command"
+>mail</B
+> permite enviar y
+      recibir correos a otros usuarios. A diferencia de
+      <B
+CLASS="command"
+>talk</B
+>, el receptor del mensaje no necesita
+      estar conectado mientras se envia el correo, pues este será
+      almacenado en una casilla postal que el receptor podrá revisar
+      cuando lo desee.
+    </P
+><P
+>Para enviar correo a un usuario de su red puede usar:
+     </P
+><P
+>&#13;<PRE
+CLASS="screen"
+>&#13;<B
+CLASS="command"
+>mail</B
+> <TT
+CLASS="replaceable"
+><I
+>login</I
+></TT
+>@<TT
+CLASS="replaceable"
+><I
+>dominio</I
+></TT
+>
+</PRE
+>
+     </P
+><P
+>Remplazando <TT
+CLASS="replaceable"
+><I
+>login</I
+></TT
+> con el login del
+      destinatario y <TT
+CLASS="replaceable"
+><I
+>dominio</I
+></TT
+> por el dominio de su
+      red (sin hay varios destinatarios puede separarlos con
+      espacios).  Tras esto el programa <B
+CLASS="command"
+>mail</B
+> le
+      pedirá el título
+      <A
+NAME="AEN1472"
+HREF="#FTN.AEN1472"
+>[4]</A
+> de su correo y le permitira escribir el mensaje.
+      Teclee el texto y cuando termine escriba una línea con el
+      caracter punto '.', o bien presione <B
+CLASS="keycap"
+>Control-D</B
+>.
+    </P
+><P
+>Para leer los correos que han llegado a su casilla postal,
+      use: </P
+><PRE
+CLASS="screen"
+>&#13;<B
+CLASS="command"
+>mail</B
+>
+</PRE
+><P
+>Al hacerlo el programa <SPAN
+CLASS="application"
+>mail</SPAN
+>
+      buscará correos en su casilla y en caso de haber le permitirá
+      leerlos.  Para ver los encabezados de los correos que haya
+      pendientes teclee <B
+CLASS="keycap"
+>h</B
+>, para leer el siguiente
+      correo presione <B
+CLASS="keycap"
+>Return</B
+>, para borrar un mensaje
+      que ya leyó presione <B
+CLASS="keycap"
+>d</B
+>.  Puede consultar otros
+      comandos del programa mail tecleando <B
+CLASS="keycap"
+>?</B
+>.
+     </P
+><P
+>Si desea redirigir los correos que llegan a la casilla de
+      una cuenta a otra puede establecer la dirección a la cual reenviar
+    en el archivo <TT
+CLASS="filename"
+>~/.forward</TT
+>.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="mutt-y-procmail"
+><TT
+CLASS="literal"
+>mutt</TT
+> y <TT
+CLASS="literal"
+>procmail</TT
+></A
+></H3
+><P
+>Dada la popularidad del correo electrónico hay varios programas 
+	en modo texto y  gráficos que le permiten leer y escribir 
+	correo electrónico además de <B
+CLASS="command"
+>mail</B
+>.  Eventualmente 
+	en su computador contará con el cliente de correo 
+	<SPAN
+CLASS="application"
+>mutt</SPAN
+>, que es altamente configurable y
+	que junto con <SPAN
+CLASS="application"
+>procmail</SPAN
+> y algo de 
+	paciencia para configurarlos pueden ayudarle bastante a organizar
+	su correo electrónico.</P
+><P
+>Al iniciar <B
+CLASS="command"
+>mutt</B
+> presenta los correos que 
+	estén en su casilla, le permite desplazarse de uno a otro con 
+	flechas o con las letras <B
+CLASS="keycap"
+>j</B
+> y <B
+CLASS="keycap"
+>k</B
+>
+	(cómo en <SPAN
+CLASS="application"
+>vi</SPAN
+>), podrá consultar uno con 
+	<B
+CLASS="keycap"
+>Enter</B
+>, salir con <B
+CLASS="keycap"
+>q</B
+>, ver ayuda sobre
+	comandos con <B
+CLASS="keycap"
+>?</B
+>, eliminar uno con <B
+CLASS="keycap"
+>d</B
+>, 
+	iniciar un correo (o continuar editando algún correo pospuesto) con 
+	<B
+CLASS="keycap"
+>m</B
+>. Una vez este viendo un correo puede responder con 
+	<B
+CLASS="keycap"
+>r</B
+>, reenviarlo con <B
+CLASS="keycap"
+>f</B
+> o pasarlo como 
+	entrada a un comando con <B
+CLASS="keycap"
+>|</B
+>. Cuando componga un 
+	mensaje puede posponer, puede poner adjuntos (con <B
+CLASS="keycap"
+>a</B
+>) 
+	o emplear programas como PGP o GPG para firmar o encriptar sus 
+	mensajes (con <B
+CLASS="keycap"
+>p</B
+>).  Para organizar los correos que 
+	reciba, puede emplear carpetas, para pasar de uno a otro emplee 
+	<B
+CLASS="keycap"
+>c</B
+>, para organizar una carpeta (por fecha, emisor, 
+	destinatario, tamaño, tema o hilos) emplee <B
+CLASS="keycap"
+>o</B
+>. Si 
+	ordena una  carpeta por hilos podrá emplear otros comandos como 
+	<B
+CLASS="keycap"
+>Ctrl-D</B
+> para borrar un hilo completo, 
+	<B
+CLASS="keycap"
+>Ctrl-P</B
+> para pasar al anterior, 
+	<B
+CLASS="keycap"
+>Ctrl-N</B
+> para pasar al siguiente.</P
+><P
+><SPAN
+CLASS="application"
+>mutt</SPAN
+> puede configurarse en el 
+	archivo <TT
+CLASS="filename"
+>~/.muttrc</TT
+>, un ejemplo se presenta a 
+	continuación (las líneas iniciadas con # son comentarios):
+<PRE
+CLASS="screen"
+>&#13;# Para establecer una dirección en la que se prefieren respuestas
+my_hdr Reply-To: Gabriel Torres
+set reply_to=yes
+unset reply_self
+
+# Para emplear vim como editor de mensajes y editar el encabezado también
+set edit_headers=yes
+set editor=vim
+
+# Para establecer algunas carpetas
+mailboxes =/var/mail/grator
+mailboxes =/home/grator/Mail/tareas
+mailboxes =/home/grator/Mail/familia
+mailboxes =/home/grator/Mail/paz
+</PRE
+>
+    </P
+><P
+>Si desea que su correo sea automáticamente organizado en 
+    carpetas cuando llegue puede emplear <SPAN
+CLASS="application"
+>procmail</SPAN
+>
+    y sincronizarlo con su configuración de <SPAN
+CLASS="application"
+>mutt</SPAN
+>.
+    <SPAN
+CLASS="application"
+>procmail</SPAN
+> puede manejar automáticamente todo 
+    correo que reciba en una cuenta y realizar con este las acciones que 
+    usted describa. Para que separe automáticamente los correos en las
+    carpetas del ejemplo anterior debe configurar y crear varios archivos. 
+    Cree la carpeta <TT
+CLASS="filename"
+>~/.procmail</TT
+> en ella el archivo 
+    <TT
+CLASS="filename"
+>rc.maillists</TT
+> con la configuración de
+    los patrones por buscar en los correos y la carpeta en la que deben 
+    quedar:</P
+><PRE
+CLASS="screen"
+>&#13;:0:
+* ^FROM.*fip@ideaspaz.org.*
+paz
+
+:0:
+* ^TO.*colombia-paz@colnodo.apc.org.*
+paz
+
+:0:
+* ^TO.*colombia@derechos.net.*
+paz
+
+:0:
+* ^TOstructio.*
+tareas
+</PRE
+><P
+>La última línea indica que deben dejarse correos enviados a 
+      direcciones que incluyan la palabra <TT
+CLASS="literal"
+>structio</TT
+> en 
+      la carpeta <TT
+CLASS="literal"
+>tareas</TT
+>.</P
+><P
+>El archivo <TT
+CLASS="filename"
+>~/.procmailrc</TT
+> debe contener algo 
+    como:</P
+><PRE
+CLASS="screen"
+>&#13;LINEBUF=4096
+VERBOSE=off
+MAILDIR=$HOME/Mail/
+FORMAIL=/usr/local/bin/formail
+SENDMAIL=/usr/sbin/sendmail
+PMDIR=$HOME/.procmail
+LOGFILE=$PMDIR/log
+INCLUDERC=$PMDIR/rc.maillists
+</PRE
+><P
+>La línea <B
+CLASS="command"
+>LOGFILE=$PMDIR/log</B
+> indica que debe 
+    registrarse toda acción de <SPAN
+CLASS="application"
+>procmail</SPAN
+> en 
+    <TT
+CLASS="filename"
+>~/.procmail/log</TT
+>, después de configurar este 
+    servicio puede ser mejor quitarla.
+    Si en su sistema <SPAN
+CLASS="application"
+>procmail</SPAN
+> fue configurado 
+    para ser llamado por el MTA no tendrá que hacer más (e.g en la 
+    configuración por defecto de exim así ocurre). Si su MTA no fue
+    configurado para ejecutar <SPAN
+CLASS="application"
+>procmail</SPAN
+> puede 
+    crear el archivo <TT
+CLASS="filename"
+>~/.forward</TT
+> con:</P
+><PRE
+CLASS="screen"
+>&#13;"|IFS=' ' &#38;&#38; exec /usr/bin/procmail -f- || exit 75 "
+</PRE
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-informacion-personal-y-comunicacion-con-otros-usuarios"
+>Lecturas recomendadas: Información personal y comunicación
+   con otros usuarios</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Páginas del manual de los programas
+       <B
+CLASS="command"
+>chfn</B
+>, <B
+CLASS="command"
+>finger</B
+>,
+       <B
+CLASS="command"
+>mail</B
+>, <B
+CLASS="command"
+>talk</B
+>,
+       <B
+CLASS="command"
+>write</B
+> y <B
+CLASS="command"
+>mesg</B
+>.  Puede
+       consultar la página <B
+CLASS="command"
+>man</B
+> de cada uno o en
+       Internet buscar, por ejemplo en: <A
+HREF="http://www.openbsd.org/cgi-bin/man.cgi"
+TARGET="_top"
+>http://www.openbsd.org/cgi-bin/man.cgi</A
+>
+      </P
+></LI
+><LI
+><P
+>Para conocer más sbre <SPAN
+CLASS="application"
+>mutt</SPAN
+> puede
+      consultar la página del manual o la documentación disponible en
+      Internet: <A
+HREF="http://www.mutt.org/doc/manual/"
+TARGET="_top"
+>http://www.mutt.org/doc/manual/</A
+></P
+></LI
+><LI
+><P
+>Para concer más sobre procmail puede consultar la página del 
+    manual o la documentación disponible en Internet:
+    <A
+HREF="http://www.procmail.org/"
+TARGET="_top"
+>http://www.procmail.org/</A
+>
+    </P
+></LI
+><LI
+><P
+>Puede ver ejemplos de configuración de 
+	<SPAN
+CLASS="application"
+>mutt</SPAN
+> y 
+	<SPAN
+CLASS="application"
+>procmail</SPAN
+> en:
+       	<A
+HREF="http://linux.ucla.edu/guides/mailguide.php3"
+TARGET="_top"
+>http://linux.ucla.edu/guides/mailguide.php3</A
+>. 
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-informacion-personal-y-comunicacion-con-otros-usuarios"
+>Ejercicios Información personal y comunicación con otros
+   usuarios</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x1377.htm#infopub.mant.1"
+>Modifique su información personal con el programa
+	<B
+CLASS="command"
+>chfn</B
+>. En vez de "<I
+CLASS="foreignphrase"
+>Room
+	Number</I
+>" ponga el grado en el que está, en vez
+	de "<I
+CLASS="foreignphrase"
+>Work Phone</I
+>" ponga la
+	dirección de su casa y en "<I
+CLASS="foreignphrase"
+>Home
+	Phone</I
+>" el teléfono de su casa.</A
+></DT
+><DT
+>2. <A
+HREF="x1377.htm#infopub.mant.2"
+>Escriba sus archivos <TT
+CLASS="filename"
+>~/.plan</TT
+> y
+       <TT
+CLASS="filename"
+>~/.project</TT
+>.</A
+></DT
+><DT
+>3. <A
+HREF="x1377.htm#infopub.mant.3"
+>Con el comando <B
+CLASS="command"
+>finger</B
+>, revise
+       información sobre usted mismo.</A
+></DT
+><DT
+>4. <A
+HREF="x1377.htm#infopub.mant.4"
+>Revise la información del usuario <SPAN
+CLASS="systemitem"
+>root</SPAN
+> y
+       de otros usuarios que empleen su misma máquina.</A
+></DT
+><DT
+>5. <A
+HREF="x1377.htm#infopub.mant.5"
+>Busque otros usuarios conectados a su máquina.</A
+></DT
+><DT
+>6. <A
+HREF="x1377.htm#infopub.mant.6"
+><SPAN
+><I
+CLASS="emphasis"
+>Opcional</I
+></SPAN
+>: si tiene la oportunidad de
+       conectarse a Internet revise la información accequible con
+       finger en 
+       <SPAN
+CLASS="systemitem"
+>quake@geophys.washington.edu</SPAN
+>.</A
+></DT
+><DT
+>7. <A
+HREF="x1377.htm#comred.talk.1"
+>Abra dos terminales, en una de ellas comuníquese por
+      <B
+CLASS="command"
+>talk</B
+> con usted mismo y responda en la otra
+      terminal.</A
+></DT
+><DT
+>8. <A
+HREF="x1377.htm#comred.talk.2"
+>Compruebe que el comando <B
+CLASS="command"
+>mesg</B
+>
+       funciona. (Ayuda: <B
+CLASS="command"
+>mesg n</B
+> e intente el
+       ejercicio anterior, recuerde volver a habilitar mensajes con
+       <B
+CLASS="command"
+>mesg y</B
+>).</A
+></DT
+><DT
+>9. <A
+HREF="x1377.htm#comred.talk.3"
+>Busque otros usuarios en su sistema o en otra máquina
+	conectada por red y comuníquese con ellos.  </A
+></DT
+><DT
+>10. <A
+HREF="x1377.htm#comred.mail.1"
+>Envíese un correo a usted mismo y después lealo.</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="infopub.mant.1"
+></A
+><B
+>1. </B
+>Modifique su información personal con el programa
+	<B
+CLASS="command"
+>chfn</B
+>. En vez de "<I
+CLASS="foreignphrase"
+>Room
+	Number</I
+>" ponga el grado en el que está, en vez
+	de "<I
+CLASS="foreignphrase"
+>Work Phone</I
+>" ponga la
+	dirección de su casa y en "<I
+CLASS="foreignphrase"
+>Home
+	Phone</I
+>" el teléfono de su casa.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Basta teclear <B
+CLASS="command"
+>chfn</B
+> y cambiar los datos.
+  </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="infopub.mant.2"
+></A
+><B
+>2. </B
+>Escriba sus archivos <TT
+CLASS="filename"
+>~/.plan</TT
+> y
+       <TT
+CLASS="filename"
+>~/.project</TT
+>.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Editarlos con algún editor, e.g <B
+CLASS="command"
+>vi ~/.plan</B
+>
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="infopub.mant.3"
+></A
+><B
+>3. </B
+>Con el comando <B
+CLASS="command"
+>finger</B
+>, revise
+       información sobre usted mismo.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>finger
+	    <TT
+CLASS="replaceable"
+><I
+>usuario</I
+></TT
+>@localhost</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="infopub.mant.4"
+></A
+><B
+>4. </B
+>Revise la información del usuario <SPAN
+CLASS="systemitem"
+>root</SPAN
+> y
+       de otros usuarios que empleen su misma máquina.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>finger root@localhost</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="infopub.mant.5"
+></A
+><B
+>5. </B
+>Busque otros usuarios conectados a su máquina.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>finger @localhost</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="infopub.mant.6"
+></A
+><B
+>6. </B
+><SPAN
+><I
+CLASS="emphasis"
+>Opcional</I
+></SPAN
+>: si tiene la oportunidad de
+       conectarse a Internet revise la información accequible con
+       finger en 
+       <SPAN
+CLASS="systemitem"
+>quake@geophys.washington.edu</SPAN
+>.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>finger quake@geophys.washington.edu</B
+>
+	  produce información sobre terremotos en Washington y Oregon.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="comred.talk.1"
+></A
+><B
+>7. </B
+>Abra dos terminales, en una de ellas comuníquese por
+      <B
+CLASS="command"
+>talk</B
+> con usted mismo y responda en la otra
+      terminal.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Abrir las dos terminales, revisar TTY empleada por cada
+	  una, después desde la termina 1 usar
+	  <B
+CLASS="command"
+>talk
+	    <TT
+CLASS="replaceable"
+><I
+>usuario</I
+></TT
+>@localhost 
+	    <TT
+CLASS="replaceable"
+><I
+>tty-terminal-2</I
+></TT
+></B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="comred.talk.2"
+></A
+><B
+>8. </B
+>Compruebe que el comando <B
+CLASS="command"
+>mesg</B
+>
+       funciona. (Ayuda: <B
+CLASS="command"
+>mesg n</B
+> e intente el
+       ejercicio anterior, recuerde volver a habilitar mensajes con
+       <B
+CLASS="command"
+>mesg y</B
+>).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>mesg n</B
+> después repetir ejercicio
+	  anterior y después <B
+CLASS="command"
+>mesg y</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="comred.talk.3"
+></A
+><B
+>9. </B
+>Busque otros usuarios en su sistema o en otra máquina
+	conectada por red y comuníquese con ellos.  </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>finger purpura.micolegio.edu.co talk davpin@purpura.micolegio.edu.co</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="comred.mail.1"
+></A
+><B
+>10. </B
+>Envíese un correo a usted mismo y después lealo.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>mail
+	    <TT
+CLASS="replaceable"
+><I
+>usuario</I
+></TT
+>@localhost</B
+></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1393"
+HREF="x1377.htm#AEN1393"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El nombre localhost es normalmente asociado con la dirección
+	 IP 127.0.0.1 que corresponde a su propio
+	 computador (ver 
+	 <A
+HREF="x12290.htm#tarjeta-ethernet-e-interfaz-de-red"
+>la sección de nombre <I
+>Tarjeta Ethernet e interfaz de red</I
+> en Capítulo 6</A
+>).
+     </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1418"
+HREF="x1377.htm#AEN1418"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Además de <B
+CLASS="command"
+>finger</B
+> para examinar usuarios
+	conectados a la misma máquina que usted puede emplear los
+	comandos <B
+CLASS="command"
+>who</B
+> y
+	<TT
+CLASS="literal"
+>w</TT
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1449"
+HREF="x1377.htm#AEN1449"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Para enviar mensajes a usuarios conectados
+	simultaneamente con usted en su mismo computador puede usar
+	los comandos <B
+CLASS="command"
+>write</B
+> y
+	<B
+CLASS="command"
+>wall</B
+>, con los cuales puede enviar un
+	mensaje a uno o todos los usuarios --debe terminar el mensaje
+	presionando <B
+CLASS="keycap"
+>Ctrl-D</B
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN1472"
+HREF="x1377.htm#AEN1472"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Título: en inglés
+	<I
+CLASS="foreignphrase"
+>Subject</I
+>
+       </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c1054.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x1647.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Linux desde la perspectiva de un usuario con experiencia</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c1054.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Servicios de la Intranet</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

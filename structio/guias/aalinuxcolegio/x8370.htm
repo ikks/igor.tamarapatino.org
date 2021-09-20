@@ -1,0 +1,1950 @@
+<HTML
+><HEAD
+><TITLE
+>Kernel y módulos</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Administración de Linux en computadores aislados"
+HREF="c8032.htm"><LINK
+REL="PREVIOUS"
+TITLE="Administración de Linux en computadores aislados"
+HREF="c8032.htm"><LINK
+REL="NEXT"
+TITLE="Hardware básico y Linux"
+HREF="x8783.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c8032.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 5. Administración de Linux en computadores aislados</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x8783.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="kernel-y-modulos"
+>Kernel y módulos</A
+></H1
+><P
+>Indicadores de Logros:  </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="init.modulos"
+></A
+><P
+>Maneja sistema de módulos.</P
+></LI
+><LI
+><A
+NAME="init.kernel"
+></A
+><P
+>Puede configurar, cambiar o recompilar el kernel.</P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-kernel-y-modulos"
+>Lectura: Kernel y módulos</A
+></H2
+><P
+>&#13;     En un sistema Linux la interacción final con dispositivos la
+     realizan los controladores o el kernel.  Dicho de otra forma, un
+     dispositivo sólo podrá ser usado si el kernel lo soporta o si
+     existe un controlador capaz de controlarlo y si se configura
+     apropiadamente para hacerlo.  Por esto, los dispositivos que se
+     produzcan hoy, no pueden ser operados con controladores ya
+     existentes (a menos que los dispositivos hayan sido diseñados
+     para ser operados con estos ---caso que para algunos dispositivos
+     como tarjetas de sonido, tarjetas de video o modems es poco
+     común), por esto mismo, eventualmente, si actualiza el hardware
+     de su computador o si desea usar un cierto servicio del kernel,
+     también deberá actualizar algún módulo o eventualmente el kernel
+     completo.  Aunque algunos controladores autodetectan la
+     configuración del dispositivo, esto no siempre ocurre y en
+     algunos casos tendrá que probar (cacharrear), hasta hacer
+     funcionar el módulo que maneja el dispositivo (en estas pruebas
+     la documentación del dispositivo, la del módulo y estas guías,
+     esperamos le sean de utilidad ---si desea experimentar
+     rapidamente emplee <B
+CLASS="command"
+>modconf</B
+>).
+    </P
+><P
+>Las fuentes en C de cada versión del kernel cuentan con
+     controladores para diversos dispositivos.  Cuando se compila una
+     versión, algunos de esos controladores pueden unirse con el
+     kernel mismo (estáticamente), otros pueden dejarse como módulos para
+     cargarse/descargarse cuando la parte estática del kernel este
+     operando,
+     otros pueden ser excluidos del proceso de compilación (y por lo
+     tanto no podrán ser usados ni cuando el kernel esté operando).
+   </P
+><A
+NAME="AEN8383"
+></A
+><P
+>Durante la operación,
+       el kernel de Linux puede verse dividido en dos partes, una 
+       dinámica compuesta por controladores que el usuario o programas
+       pueden cargar y descargar y la otra ... que es iniciada con todo
+       el kernel y sirve de soporte para el resto.
+     </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="modulos"
+>Módulos</A
+></H3
+><A
+NAME="AEN8388"
+></A
+><P
+>En este directorio
+       están los módulos de las diversas versiones de kernels que tenga
+       disponibles.
+     </P
+><P
+>En este contexto, módulo se refiere a un controlador de
+      un dispositivos o servicio que puede cargarse o descargarse
+      cuando el usuario o algún dispositivo lo solicita (i.e
+      dinámicamente).  Los módulos que se distribuyen con en el kernel
+      están ubicados en el directorio <TT
+CLASS="filename"
+>/lib/modules/<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+></TT
+>,
+      donde <TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+> es la versión de su
+      kernel
+      <A
+NAME="AEN8396"
+HREF="#FTN.AEN8396"
+>[1]</A
+>, con la extensión
+      <TT
+CLASS="literal"
+>.o</TT
+>
+      <A
+NAME="AEN8400"
+HREF="#FTN.AEN8400"
+>[2]</A
+> organizados en directorios que indican el tipo de
+      dispositivo o el propósito, por ejemplo <TT
+CLASS="filename"
+>fs</TT
+>
+      - sistema de archivos, <TT
+CLASS="filename"
+>net</TT
+> - protocolos y
+      hardware para redes.
+     </P
+><P
+>Para lograr configurar un dispositivo controlado por un
+      módulo, puede emplear las herramientas del paquete
+      <TT
+CLASS="literal"
+>modutils</TT
+> o <B
+CLASS="command"
+>modconf</B
+> para:
+      </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Asegurar que no haya conflictos entre el dispositivo con
+	otros y eventualmente conocer la configuración que usa
+	(algunos controladores autodetectan la configuración del
+	dispositivo, pero no todos).
+       </P
+></LI
+><LI
+><P
+>Encontrar un módulo que pueda manejar el dispositivo.
+       </P
+></LI
+><LI
+><P
+>Eventualmente pasar opciones al módulo de acuerdo a la
+	configuración del dispositivo (e.g <SPAN
+CLASS="acronym"
+>IRQ</SPAN
+> o
+	dirección base).
+       </P
+></LI
+></OL
+><A
+NAME="AEN8421"
+></A
+><P
+>Este directorio
+       contiene la configuración de diversos módulos que pueden cargarse.  
+       Con base en la información de <TT
+CLASS="filename"
+>/etc/modules</TT
+> y de
+       los archivos de este directorio se genera 
+       <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>.
+     </P
+><P
+>En Debian las herraminetas del paquete
+      <TT
+CLASS="literal"
+>modutils</TT
+> se configuran en los achivos del
+      directorio <TT
+CLASS="filename"
+>/etc/modutils</TT
+>
+      (con la información de esos archivos y de <TT
+CLASS="filename"
+>/etc/modules</TT
+>
+      se genera el archivo de configuración de módulos 
+      <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>
+      <A
+NAME="AEN8432"
+HREF="#FTN.AEN8432"
+>[3]</A
+>).  Los programas que ese paquete incluye son:
+     </P
+><A
+NAME="AEN8436"
+></A
+><P
+>Nombre del programa que permite
+      listar los módulos que haya cargados y el estado de cada
+      uno.</P
+><A
+NAME="AEN8440"
+></A
+><P
+>Nombre del programa que permite
+      descargar los módulos que haya cargados.</P
+><A
+NAME="AEN8444"
+></A
+><P
+>Nombre del programa que permite
+      cargar un módulo específico.</P
+><A
+NAME="AEN8448"
+></A
+><P
+>Nombre del programa que permite
+      mostrar las dependencias entre diversos módulos.</P
+><A
+NAME="AEN8452"
+></A
+><P
+>Nombre del programa que permite
+      cargar un módulo, cargando antes los módulos de los cuales
+      dependa.</P
+><A
+NAME="AEN8456"
+></A
+><P
+>Nombre del programa que permite
+      listar, cargar, descargar módulo a través de menús.</P
+><A
+NAME="AEN8460"
+></A
+><P
+>Nombre del programa que permite
+       actualizar el archivo <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+> a
+       partir de <TT
+CLASS="filename"
+>/etc/modules</TT
+> y los archivos del
+       directorio <TT
+CLASS="filename"
+>/etc/modutils</TT
+>.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>lsmod</B
+></DT
+><DD
+><P
+>Lista los módulos cargados, de cada uno presenta nombre,
+	 tamaño, cuenta de usos y lista de módulos que lo usan (es
+	 equivalente a <B
+CLASS="command"
+>cat /proc/modules</B
+>).
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>rmmod <TT
+CLASS="replaceable"
+><I
+>módulos</I
+></TT
+></B
+></DT
+><DD
+><P
+>Descarga uno o más módulos cargados, mientras estos no
+	 estén siendo usados.  Con la opción <TT
+CLASS="option"
+>-r</TT
+>
+	 intenta descargar recursivamente módulos de los cuales el
+	 módulo especificado dependa.  El comando <B
+CLASS="command"
+>rmmod
+	 -a</B
+> descarga todos los módulos que no estén siendo
+	 usados.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>insmod <TT
+CLASS="replaceable"
+><I
+>módulo</I
+></TT
+>
+	 <TT
+CLASS="option"
+>[<TT
+CLASS="replaceable"
+><I
+>opciones</I
+></TT
+>]</TT
+></B
+></DT
+><DD
+><P
+>Trata de cargar el módulo especificado.  Pueden pasarse
+	 opciones específicas para el módulo, a continuación del
+	 nombre con la sintaxis
+	 <TT
+CLASS="varname"
+>símbolo</TT
+>=<TT
+CLASS="replaceable"
+><I
+>valor</I
+></TT
+>
+	 (los símbolos posibles dependen del módulo, pueden verse
+	 algunos en estas guías o en
+	 <TT
+CLASS="filename"
+>/usr/share/modconf/descr.gz</TT
+> --- que es
+	 la ayuda presentada por <B
+CLASS="command"
+>modconf</B
+> --- o en
+	 último caso en las fuentes del módulo en los macros
+	 <TT
+CLASS="function"
+>MODULE_PARAM</TT
+> y
+	 <TT
+CLASS="function"
+>MODULE_PARAM_DESCR</TT
+>). Puede indicarse una
+	 ruta no estándar para buscar módulos estableciéndola en la
+	 variable <TT
+CLASS="envar"
+>MODPATH</TT
+> o en
+	 <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>.  Dado que los módulos
+	 se enlazan directamente con el kernel, deben ser compilados
+	 para una versión precisa, con la opción <TT
+CLASS="option"
+>-f</TT
+>
+	 puede evitarse el chequeo de versiones.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>depmod</B
+></DT
+><DD
+><P
+>Como un módulo puede requerir otros, hay dependencias
+	 que deben respetarse al cargar y descargar módulos.
+	 <B
+CLASS="command"
+>depmod</B
+> permite calcular tales dependencias
+	 entre varios módulos o entre todos los disponibles con la
+	 opción <TT
+CLASS="option"
+>-a</TT
+>
+	 <A
+NAME="AEN8506"
+HREF="#FTN.AEN8506"
+>[4]</A
+>.  Por defecto <B
+CLASS="command"
+>depmod -a</B
+>
+	 escribe las dependencias en el archivo
+	 <TT
+CLASS="filename"
+>/lib/modules/<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+>/modules.emp</TT
+>
+	 Cada línea de ese archivo tiene el nombre de un módulo
+	 seguido del caracter ':' y los módulos de los cuales depende,
+	 separados por espacios.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>modprobe <TT
+CLASS="replaceable"
+><I
+>módulo</I
+></TT
+>
+	 <TT
+CLASS="replaceable"
+><I
+>opciones</I
+></TT
+></B
+></DT
+><DD
+><P
+>Emplea la información de dependencias generada por
+	 <B
+CLASS="command"
+>depmod</B
+> e información de
+	 <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+> para cargar el módulo
+	 especificado, cargando antes todos los módulos de los cuales
+	 dependa.  Para especificar el módulo basta escribir el nombre
+	 (sin la ruta, ni la extensión <TT
+CLASS="literal"
+>.o</TT
+>) o uno de
+	 los alias definidos en
+	 <TT
+CLASS="filename"
+>/etc/modutils/alias</TT
+> (o en otro archivo
+	 del directorio <TT
+CLASS="filename"
+>/etc/modutils</TT
+>).  Si hay
+	 líneas <TT
+CLASS="literal"
+>pre-install</TT
+> o
+	 <TT
+CLASS="literal"
+>post-install</TT
+> en
+	 <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>,
+	 <B
+CLASS="command"
+>modprobe</B
+> puede ejecutar un comando antes
+	 y/o después de cargar el módulo.  Como opciones para cargar
+	 el módulo usa prioritariamente las dadas en la línea de
+	 comandos y después las especificadas en líneas de la forma
+	 <TT
+CLASS="literal"
+>options <TT
+CLASS="replaceable"
+><I
+>módulo</I
+></TT
+>
+	 <TT
+CLASS="replaceable"
+><I
+>opciones</I
+></TT
+></TT
+> en el archivo
+	 <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>
+	 <A
+NAME="AEN8535"
+HREF="#FTN.AEN8535"
+>[5]</A
+>
+	</P
+></DD
+></DL
+></DIV
+><P
+>Puede emplear estos programas para configurar sus módulos y
+      puede hacer permanentes los cambios, agregando el módulo y las
+      opciones en el archivo
+      <TT
+CLASS="filename"
+>/etc/modules</TT
+>
+      <A
+NAME="AEN8541"
+HREF="#FTN.AEN8541"
+>[6]</A
+>.
+    </P
+><P
+>Para hacer más fácil la configuración de módulos, Debian
+      ofrece las siguientes herramientas: </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>modconf</B
+></DT
+><DD
+><P
+>Para listar, cargar y descargar módulos con menús. Este
+	 programa muestra los módulos disponbiles en categorías y con
+	 ayudas sobre su uso y permite cargarlos o descargarlos del
+	 kernel, actualizando automáticamente los archivos
+	 <TT
+CLASS="filename"
+>/etc/modules</TT
+> y
+	 <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+> (cambiando los
+	 archivos apropiados de <TT
+CLASS="filename"
+>/etc/modutils</TT
+>)
+	 para que los módulos configurados sean cargados
+	 automáticamente en el siguiente arranque.  La información
+	 sobre los módulos disponibles la obtiene del directorio
+	 <TT
+CLASS="filename"
+>/lib/modules</TT
+>, los módulos cargados y sus
+	 parámetros los lee de <TT
+CLASS="filename"
+>/etc/modutils</TT
+> y
+	 <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+> y la ayuda y la
+	 información interna de los archivos en
+	 <TT
+CLASS="filename"
+>/usr/share/modules.conf</TT
+>
+	 ---<B
+CLASS="command"
+>modconf</B
+> es un script para el intérprete
+	 de comandos.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>update-modules</B
+></DT
+><DD
+><P
+>Actualiza el archivo
+	 <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+> a partir de la
+	 información de los archivos del directorio
+	 <TT
+CLASS="filename"
+>/etc/modutils</TT
+> --- en Debian no se edita
+	 directamente <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>.
+	</P
+></DD
+></DL
+></DIV
+><P
+>Es posible que el kernel del que disponga no cuente con
+      módulos que soporten ciertos dispositivos, en tal caso se puede:
+      </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>buscar en Internet un módulo precompilado para la versión
+	del kernel que tiene,
+       </P
+></LI
+><LI
+><P
+>buscar fuentes de un módulo o
+       </P
+></LI
+><LI
+><P
+>buscar una versión del kernel que incluya soporte para el
+       dispositivo. 
+       </P
+></LI
+></OL
+><P
+>En el último caso las instrucciones de la siguiente sección
+      le serán de utilidad. </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="configuracion-del-kernel"
+>Configuración del kernel</A
+></H3
+><P
+>Además de cargar y descargar módulos, algunas
+      características del kernel pueden ser modificadas mientras está
+      en funcionamiento el sistema, bien escribiendo en algunos
+      archivos del directorio <TT
+CLASS="filename"
+>/proc</TT
+>, o con el programa
+      <B
+CLASS="command"
+>sysctl</B
+>.  Este programa con la opción
+      <TT
+CLASS="option"
+>-a</TT
+> presenta todas las variables modificables
+      y su valor, entre otras encuentra variables que mantienen datos
+      autodetectados en dispositivos (en particular del CDROM), datos
+      de la interacción entre el kernel y el sistema de archivos (ver
+      <A
+HREF="x6433.htm#sistema-de-archivos-ext-two"
+>Sistema de archivos
+      ext2</A
+>), datos sobre los protocolos y dispositivos de
+      redes, y detalles del kernel.
+    </P
+><A
+NAME="AEN8583"
+></A
+><P
+>Nombre del programa que permite
+      configurar algunas variables del kernel.</P
+><P
+>Para cambiar un valor se emplea:
+      <PRE
+CLASS="screen"
+>&#13;/sbin/sysctl -w kernel.hostname=comp
+      </PRE
+>
+      con un nombre de variable en lugar de 
+      <TT
+CLASS="replaceable"
+><I
+>kernel.hostname</I
+></TT
+> y un valor adecuado 
+      en lugar de <TT
+CLASS="replaceable"
+><I
+>comp</I
+></TT
+>.
+      Pueden hacerse cambios que se vuelven a tomar cada vez que el
+      sistema inicia en el archivo <TT
+CLASS="filename"
+>/etc/sysctl.conf</TT
+>.
+    </P
+><P
+>En cuanto a los módulos, las imagenes precompiladas del
+      kernel producidas por Debian incluyen estáticamente varios
+      controladores comunes y prácticamente los demás controladores
+      los incluye como módulos.  Por esto, si la versión del kernel
+      que tiene soporta sus dispositivos y los servicios que desea,
+      casi con seguridad usted NO necesita recompilar el kernel (puede
+      confirmar si la imagen que tiene, soporta el controlador como
+      módulo revisando en el directorio de módulos, o puede comprobar
+      si éste se incluye estáticamente, efectuando el segundo paso
+      para una instalación que se explica más adelante, usando como
+      archivo de configuración el de la imagen de su kernel).
+    </P
+><P
+>Eventualmente, si su dispositivo no es detectado
+     automáticamente o el módulo apropiado no es cargado
+     automáticamente
+      <A
+NAME="AEN8594"
+HREF="#FTN.AEN8594"
+>[7]</A
+>, tendrá que pasar los paramétros apropiados de una
+      de las dos siguientes formas:
+    </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>Controlado estático</B
+></SPAN
+></DT
+><DD
+><A
+NAME="AEN8602"
+></A
+><P
+>Para configurar
+	controladores incluidos estáticamente debe emplear el ...</P
+><P
+>Pase los parámetros apropiados desde el cargador de
+	arranque o configurelos de forma permanente con su cargardor
+	de arranque (ver <A
+HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
+>Parámetros
+	 desde el cargador de arranque</A
+>).
+       </P
+></DD
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>Módulo (dinámico)</B
+></SPAN
+></DT
+><DD
+><P
+>Pase los paramétros de configuración a
+	<B
+CLASS="command"
+>insmod</B
+>/<B
+CLASS="command"
+>modprobe</B
+> o 
+	configurelos de forma permanente en
+	<TT
+CLASS="filename"
+>/etc/modules</TT
+>, o en un archivo de
+	<TT
+CLASS="filename"
+>/etc/modutils</TT
+> (vea la sección anterior
+	sobre módulos).
+       </P
+></DD
+></DL
+></DIV
+><A
+NAME="AEN8616"
+></A
+><P
+>Nombre del programa que detecta
+      automáticamente que módulos cargar.</P
+><P
+>Eventualmente puede encontrar y usar algún programa que le
+      ayude a determinar los parámetros apropiados y/o a realizar las
+      configuraciones (algunos se mencionan en las secciones de este
+      capítulo), o tendrá que consultar los manuales del dispositivo o
+      incluso probar varias opciones hasta determinarlos.
+     </P
+><P
+>Si tras consultar esta documentación o la del kernel o
+      cualquier otra más actualizada, determina que una versión del
+      kernel diferente a la que tiene, soporta cierto dispositivo o
+      servicio que requiere, el método más sencillo que puede intentar
+      es instalar una imagén precompilada disponible en algún depósito
+      de paquetes de Debian (el nombre es de la forma
+      <TT
+CLASS="literal"
+>kernel-image-<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+></TT
+>).
+      Como parte del archivo oficial de Debian encontrará imagenes
+      recientes de las series 2.2.x y 2.0.x (por defecto Debian 2.2r5
+      emplea el kernel 2.2.19).
+    </P
+><A
+NAME="AEN8624"
+></A
+><P
+>Si requiere una versión
+      del kernel diferente a la que tiene instalada, primero puede buscar
+      un paquete cuyo nombre comience con ...</P
+><P
+>Fuera del depósito oficial encontrará paquetes para Debian
+     2.2 de imágenes de la versión 2.4.18 para diversos procesadores e
+     instrucciones en: <A
+HREF="http://www.fs.tum.de/~bunk/kernel-24.html"
+TARGET="_top"
+>http://www.fs.tum.de/~bunk/kernel-24.html</A
+>
+     La instalación es bastante directa y automática (sólo debe tener
+     en cuenta agregar una línea a <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+>
+     para usar <B
+CLASS="command"
+>initrd</B
+>).
+     </P
+><P
+>En caso de requerir un kernel con una configuración muy
+      especial (por ejemplo, que incluya estáticamente ciertos módulos
+      o que excluya de la compilación módulos para hacer un kernel
+      pequeño) o si requiere una versión para la que que no haya
+      imagenes precompiladas de Debian, recomendamos instalar primero
+      una versión precompilada con una versión cercana a la que desea
+      instalar, para tomar la configuración de esta y modificarla
+      antes de compilar la nueva versión. Además recomendamos esto
+      porque las imagenes precompiladas actualizan otros programas
+      indispensables para las nuevas versiones del kernel ---en
+      especial si cambia de la serie 2.2 a la serie 2.4 se deben
+      actualizar : <TT
+CLASS="literal"
+>gcc 2.91.66</TT
+>, <TT
+CLASS="literal"
+>make
+      3.77</TT
+>, <TT
+CLASS="literal"
+>binutils 2.9.1.0.25</TT
+>,
+      <TT
+CLASS="literal"
+>util-linux 2.10o</TT
+>, <TT
+CLASS="literal"
+>modutils
+      2.4.0</TT
+>, <TT
+CLASS="literal"
+>e2fsprogs 1.19</TT
+>,
+      <TT
+CLASS="literal"
+>pcmcia-cs 3.1.21</TT
+>, <TT
+CLASS="literal"
+>PPP
+      2.4.0</TT
+>.
+     </P
+><P
+>Para obtener las fuentes, puede recurrir a paquetes Debian
+     para algunas versiones de las fuentes en depósitos oficiales
+     (paquetes con nombres de la forma
+     <TT
+CLASS="literal"
+>kernel-sources-<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+></TT
+>)
+     y las fuentes de cualquier versión en el sitio de desarrollo del
+     kernel (<A
+HREF="http://www.kernel.org"
+TARGET="_top"
+>http://www.kernel.org</A
+>). Cuando
+     obtenga fuentes del kernel de Linux, tenga en cuenta que el
+     segundo número de la versión sea par ---si es impar se trata de
+     una versión para desarrolladores pero NO para usuarios finales.
+   </P
+><A
+NAME="AEN8645"
+></A
+><P
+>Si requiere compilar
+      un kernel, puede primero buscar paquetes cuyo nombre comienza
+      con ...</P
+><P
+>En esta sección presentamos un breve resumen de los pasos
+      requeridos en una compilación de kernels versiones 2.2.x y
+      2.4.x, suponiendo que ya ha actualizado todas los programas que
+      estas versiones requieren.
+    </P
+><A
+NAME="AEN8650"
+></A
+><P
+>Nombre del programa que permite
+    detectar la versión disponible del kernel.</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Limpieza Para limpiar posibles compilaciones anteriores
+       emplee:
+<PRE
+CLASS="screen"
+>&#13;make mrproper
+make clean
+</PRE
+>
+</P
+></LI
+><LI
+><P
+>Preparación de la versión extra La versión de un kernel
+	(que puede examinar con <B
+CLASS="command"
+>uname -r</B
+>) se
+	compone de 3 números separados por el caracter '.'
+	eventualmente seguidos de una cadena (versión extra).  Usted
+	puede establecer esta cadena arbitrariamente y especificarla
+	en el archivo <TT
+CLASS="filename"
+>Makefile</TT
+> de las fuentes (variable
+	<TT
+CLASS="varname"
+>EXTRAVERSION</TT
+>), por ejemplo:
+<PRE
+CLASS="programlisting"
+>&#13;EXTRAVERSION= -tobias
+</PRE
+>
+      </P
+><P
+>Cuando compile, instale y le funcione un nuevo kernel,
+	esa versión será la reportada por <B
+CLASS="command"
+>uname -r</B
+>,
+	los módulos que instale por defecto quedarán en <TT
+CLASS="filename"
+>/lib/modules/<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+></TT
+>
+	y serán usados por <TT
+CLASS="filename"
+>modutils</TT
+> (ver <A
+HREF="x8370.htm"
+>Kernel y módulos</A
+>).
+       </P
+><P
+>Si escoge una versión extra que coincida con una ya
+	existente, los módulos anteriores serán remplazados durante la
+	instalación.  Recomendamos emplear una versión extra diferente
+	a las que pueda haber, mantener el kernel original junto con
+	sus módulos en disco y agregar una etiqueta y los datos
+	requeridos por el cargador de arranque) ---mientras se
+	aprende, es muy normal producir kernels con configuraciones
+	erradas que no podrán arrancar.
+       </P
+></LI
+><LI
+><P
+>Configuración En general el paso más difícil es la
+	configuración de las características que desea del kernel
+	(dada la gran cantidad de preguntas y de términos técnicos,
+	que esperamos estén explicados a lo largo de este capítulo).
+	Para iniciar una configuración completa puede emplear
+	<B
+CLASS="command"
+>make menuconfig</B
+> que presentará menús y
+	ayuda, tenga en cuenta que algunas características puede
+	incluirlas estáticamente en el kernel y otras como módulos
+	(las características estáticas aumentan el tamaño).
+	Alternativamente puede emplear <B
+CLASS="command"
+>make xconfig</B
+>
+	que presenta una interfaz gráfica o <B
+CLASS="command"
+>make
+	config</B
+> que presenta una serie de preguntas.  El
+	resultado de cualquier de estos métodos es un archivo
+	<TT
+CLASS="filename"
+>.config</TT
+> con las variables de
+	configuración y sus valores.
+       </P
+><A
+NAME="AEN8677"
+></A
+><P
+>Al configurar un kernel
+      antes de compilarlo, la información de configuración queda en este
+      archivo.</P
+><P
+>Otra posibilidad es que emplee la configuración de un
+	kernel ya instalado y la modifique para acomodarla a sus
+	necesidades.  En Debian los archivos de configuración del
+	kernel
+	<A
+NAME="AEN8682"
+HREF="#FTN.AEN8682"
+>[8]</A
+>
+	están en el directorio <TT
+CLASS="filename"
+>/boot</TT
+> con nombres
+	de la forma
+	<TT
+CLASS="filename"
+>config-<TT
+CLASS="replaceable"
+><I
+>version_kernel</I
+></TT
+></TT
+>.
+	Copie uno de estos que corresponda a una versión cercana al
+	que desea compilar, al directorio con las fuentes con el
+	nombre <TT
+CLASS="filename"
+>.config</TT
+> después puede modificar la
+	configuración de cualquiera de las siguientes formas: (1)
+	ejecutando <B
+CLASS="command"
+>make menuconfig</B
+> que leerá el
+	archivo <TT
+CLASS="filename"
+>.config</TT
+> por defecto, (2)
+	ejecutando <B
+CLASS="command"
+>make xconfig</B
+> y eligiendo cargar
+	ese archivo o (3) editando <TT
+CLASS="filename"
+>.config</TT
+> con un
+	editor de texto y ejecutando después <B
+CLASS="command"
+>make
+	oldconfig</B
+>.
+       </P
+></LI
+><LI
+><P
+>Compilación Primero se calculan interdepencias entre
+	archivos fuente de acuerdo a la configuación con <B
+CLASS="command"
+>make
+	dep</B
+>, después se compila una imagen del kernel con
+	<B
+CLASS="command"
+>make bzImage</B
+> y finalmente se compilan
+	módulos con <B
+CLASS="command"
+>make modules</B
+>.
+       </P
+></LI
+><LI
+><P
+>Instalación Es necesario instalar la imagen del kernel,
+	los archivos auxiliares y módulos, configurar el cargador de
+	arranque y eventualmente si está compilando un kernel con
+	<B
+CLASS="command"
+>initrd</B
+> (los kernels 2.4 precompildos de
+	Debian por defecto lo usan) debe crear la imagen apropiada.
+	Antes de instalar módulos.  En este punto es recomendable que saque 
+	una copia
+	de respaldo del directorio de módulos (en caso de que este
+	remplazandolos por la versión extra que escogió). Para
+	instalar emplee <B
+CLASS="command"
+>make modules_install</B
+> que
+	copiará todos los módulos y las dependencias entre ellos al
+	directorio
+	<TT
+CLASS="filename"
+>/lib/modules/<TT
+CLASS="replaceable"
+><I
+>version_kernel</I
+></TT
+></TT
+>.
+	A continuación se presenta un ejemplo que debe adaptar a la
+	versión de su kernel:
+<PRE
+CLASS="programlisting"
+>&#13;cd /usr/src/kernel-source-2.2.21
+make modules_install
+cp arch/i386/boot/bzImage /boot/vmlinuz-2.2.21-tobias
+ln -s /boot/vmlinuz-2.2.21-tobias /vmlinuz-2.2.21-tobias
+cp System.map /boot/System.map-2.2.21-tobias
+cp .config /boot/config-2.2.21-tobias
+</PRE
+>
+       </P
+><P
+>Después deberá editar la configuración de su cargador de
+	arranque para que emplee la nueva imagen del kernel, por
+	ejemplo puede agregarse una sección como:
+<PRE
+CLASS="programlisting"
+>&#13;image=/vmlinuz-2.2.21-tobias
+	root=/dev/hda2
+	label=Potato-tobias
+	read-only
+	append="apm=on"
+</PRE
+>
+	Cambiando el dispositivo <TT
+CLASS="literal"
+>root</TT
+> por el apropiado, 
+	la etiqueta y de no requerirse soporte para <SPAN
+CLASS="acronym"
+>APM</SPAN
+>
+	quitando la última línea (ver 
+	<A
+HREF="x8783.htm#bios-y-otras-caracteristicas"
+>BIOS y otras
+	características</A
+>) 
+       </P
+><P
+>Si está compilando un kernel con
+	<B
+CLASS="command"
+>initrd</B
+>
+	<A
+NAME="AEN8715"
+HREF="#FTN.AEN8715"
+>[9]</A
+>
+	(por ejemplo los kernel 2.4 para Debian lo emplean por
+	defecto), debe agregar a la misma sección en
+	  <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+>:
+<PRE
+CLASS="programlisting"
+>&#13;initrd=/initrd.img
+</PRE
+>
+       </P
+><P
+>Después debe ejecutar <B
+CLASS="command"
+>/sbin/lilo</B
+>
+	para poner un nuevo cargador de arranque en el MBR o en el
+	sector de arranque donde esté configurado.</P
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>Después de compilar un kernel, ejecute 
+	   <B
+CLASS="command"
+>/sbin/lilo</B
+> aún si no modifica
+	 <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+></P
+></BLOCKQUOTE
+></DIV
+></LI
+></OL
+><A
+NAME="AEN8725"
+></A
+><P
+>Se trata de una imagen
+      de un sistema de archivos para memoria RAM, que contiene algunos
+      módulos y configuración de un sistema Linux mínimo.  Es cargado
+      antes del dispositivo raiz real en algunos sistemas donde está
+      configurado.</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadadas-kernel-y-modulos"
+>Lecturas recomendadas: Kernel y módulos</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Para manejar mejor las herramientas de
+	módulos, puede consultar las páginas <B
+CLASS="command"
+>man</B
+> de
+	<TT
+CLASS="literal"
+>modules.conf</TT
+>,
+       <B
+CLASS="command"
+>insmod</B
+>, <B
+CLASS="command"
+>modprobe</B
+>
+      </P
+></LI
+><LI
+><P
+>En caso de que esté interesado o que necesite más
+       información sobre módulos puede consultar "<I
+CLASS="citetitle"
+>Introduction to
+       Linux Kernel Modules</I
+>" en <A
+HREF="http://www.luv.asn.au/overheads/kernelmodules/"
+TARGET="_top"
+>http://www.luv.asn.au/overheads/kernelmodules/</A
+>
+      </P
+></LI
+><LI
+><P
+>Algunos módulos que se distribuyen separados del kernel
+       requieren ser compilados.  Puede encontrar ayuda de como
+       hacerlo en: <A
+HREF="http://www.scyld.com/expert/modules.html"
+TARGET="_top"
+>http://www.scyld.com/expert/modules.html</A
+>
+      </P
+></LI
+><LI
+><P
+>Otro documento donde puede consultar el proceso de
+       compilación está disponible en Internet en: <A
+HREF="http://structio.sourceforge.net/paz/actualiz-kernel.html"
+TARGET="_top"
+>http://structio.sourceforge.net/paz/actualiz-kernel.html</A
+>
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-kernel-y-modulos"
+>Ejercicios: Kernel y módulos</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x8370.htm#init.kernel.1"
+>¿Qué versión del kernel Linux tiene
+       instalado su sistema? Ayuda: emplee el programa
+       <TT
+CLASS="literal"
+>kernelversion</TT
+></A
+></DT
+><DT
+>2. <A
+HREF="x8370.htm#init.modulos.1"
+>Revise los módulos que están cargados en su sistema, y
+       trate de determinar que dispositivo controla o qué servicio
+       presta cada uno. </A
+></DT
+><DT
+>3. <A
+HREF="x8370.htm#init.modulos.2"
+>Examine el archivo de configuración de X-Window, si desea
+       experimentar con este, saque una copia y modifíquelo
+       directamente o por medio del programa
+       <TT
+CLASS="literal"
+>XF86Setup</TT
+> (si no tiene disponible
+       <TT
+CLASS="literal"
+>XF86Setup</TT
+> puede intentar con
+       <TT
+CLASS="literal"
+>xf86config</TT
+>).</A
+></DT
+><DT
+>4. <A
+HREF="x8370.htm#init.modulos.3"
+>Al cargar un módulo, <B
+CLASS="command"
+>insmod</B
+> revisa que
+       los símbolos del kernel que el módulo espera puedan ser
+       resueltos.  ¿Qué son estos símbolos?  Describa también como
+       buscó su respuesta.</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.kernel.1"
+></A
+><B
+>1. </B
+>¿Qué versión del kernel Linux tiene
+       instalado su sistema? Ayuda: emplee el programa
+       <TT
+CLASS="literal"
+>kernelversion</TT
+></P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+       Ejecutar <B
+CLASS="command"
+>kernelversion</B
+> o <B
+CLASS="command"
+>uname</B
+>
+   </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.modulos.1"
+></A
+><B
+>2. </B
+>Revise los módulos que están cargados en su sistema, y
+       trate de determinar que dispositivo controla o qué servicio
+       presta cada uno. </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+       Ejecutar <B
+CLASS="command"
+>lsmod</B
+>, consultar información de cada
+       uno por ejemplo con <B
+CLASS="command"
+>modconf</B
+>.
+   </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.modulos.2"
+></A
+><B
+>3. </B
+>Examine el archivo de configuración de X-Window, si desea
+       experimentar con este, saque una copia y modifíquelo
+       directamente o por medio del programa
+       <TT
+CLASS="literal"
+>XF86Setup</TT
+> (si no tiene disponible
+       <TT
+CLASS="literal"
+>XF86Setup</TT
+> puede intentar con
+       <TT
+CLASS="literal"
+>xf86config</TT
+>).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+       Para examinarlo: <B
+CLASS="command"
+>less /etc/X11/XF86Config</B
+>.
+   </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.modulos.3"
+></A
+><B
+>4. </B
+>Al cargar un módulo, <B
+CLASS="command"
+>insmod</B
+> revisa que
+       los símbolos del kernel que el módulo espera puedan ser
+       resueltos.  ¿Qué son estos símbolos?  Describa también como
+       buscó su respuesta.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Son nombres de funciones o variables de las fuentes en C
+       del módulo y del kernel, para que los módulos puedan usar las
+       funciones y viceversa la ubicación en memoria de estos símbolos
+       debe resolverse dinámicamente.  Los símbolos del kernel puede
+       examinarse en
+       <TT
+CLASS="filename"
+>/boot/System.map-<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+></TT
+>
+       o en <TT
+CLASS="literal"
+>/proc/ksyms</TT
+>.</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8396"
+HREF="x8370.htm#AEN8396"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Versión tal como la reporta <B
+CLASS="command"
+>uname
+	 -r</B
+>
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8400"
+HREF="x8370.htm#AEN8400"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Esta extensión es típica de <SPAN
+><I
+CLASS="emphasis"
+>código
+	objeto</I
+></SPAN
+> que es código generado por un compilador a
+	partir de un archivo fuente (en el caso de Linux el compilador
+	es <TT
+CLASS="literal"
+>gcc</TT
+>).  Puede "unirse" estáticamente con
+	más código objeto empleando un encadenador (en el caso de
+	Linux el encadenador es <TT
+CLASS="literal"
+>ld</TT
+>) o dinámicamente
+	usando <TT
+CLASS="literal"
+>/lib/ld.so</TT
+> (ver <A
+HREF="x7217.htm"
+>Administración de
+	programas</A
+>) o en el caso de módulos con
+	<TT
+CLASS="literal"
+>insmod</TT
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8432"
+HREF="x8370.htm#AEN8432"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El archivo de configuración de
+	<TT
+CLASS="literal"
+>modutils</TT
+> puede variarse especificando uno
+	diferente en la variable <TT
+CLASS="envar"
+>MODULECONF</TT
+>
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8506"
+HREF="x8370.htm#AEN8506"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>La especificación de las rutas para buscar módulos
+	   puede hacerse con <TT
+CLASS="envar"
+>MODPATH</TT
+> o en
+	   <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+> en las líneas de la
+	   forma
+	   <B
+CLASS="command"
+>path[<TT
+CLASS="replaceable"
+><I
+>tipo</I
+></TT
+>]</B
+>
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8535"
+HREF="x8370.htm#AEN8535"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El archivo <TT
+CLASS="filename"
+>/etc/modules.conf</TT
+>
+	   puede tener comentarios en líneas iniciadas con el caracter
+	   '#', puede tener líneas para: modificar las dependencias
+	   entre módulos (below, above, probe, probeall, depfile);
+	   para manejar las rutas donde buscar módulos (path, keep);
+	   para ejecutar comandos antes, en vez o después de instalar
+	   o descargar los módulos (pre-install, install,
+	   post-install, pre-remove, remove, post-remove); para
+	   especificar opciones por defecto para algunos módulos o
+	   <B
+CLASS="command"
+>insmod</B
+> (options, insmod_opt); para crear
+	   alias o para definir variables o tener en cuenta sólo
+	   ciertas partes del archivo (alias, define, if, else,
+	   elseif, endif).
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8541"
+HREF="x8370.htm#AEN8541"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Durante el arranque las dependencias entre módulos son
+	generadas automáticamente y los módulos especificados (junto
+	con sus opciones) en el archivo
+	<TT
+CLASS="filename"
+>/etc/modules</TT
+> son cargados.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8594"
+HREF="x8370.htm#AEN8594"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><B
+CLASS="command"
+>kmod</B
+> es el
+	programa que se encarga de cargar módulos automáticamente por
+	demanda i.e. sin intervención del usuario
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8682"
+HREF="x8370.htm#AEN8682"
+>[8]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Los archivos de configuración del kernel
+	son dejados en <TT
+CLASS="filename"
+>/boot</TT
+> por los paquetes
+	<TT
+CLASS="literal"
+>kernel-image-<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+></TT
+>.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8715"
+HREF="x8370.htm#AEN8715"
+>[9]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Es una imagen de una partición raíz mínima que reside
+	  en memoria RAM, una imagen initrd suele tener controladores
+	  y configuraciones que el kernel debe configurar/realizar
+	  antes de emplear el dispositivo raiz real.
+	 </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c8032.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x8783.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Administración de Linux en computadores aislados</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c8032.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Hardware básico y Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

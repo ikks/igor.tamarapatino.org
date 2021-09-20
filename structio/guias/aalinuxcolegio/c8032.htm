@@ -1,0 +1,1828 @@
+<HTML
+><HEAD
+><TITLE
+>Administración de Linux en computadores aislados</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Colaboración y soporte"
+HREF="x7966.htm"><LINK
+REL="NEXT"
+TITLE="Kernel y módulos"
+HREF="x8370.htm"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x7966.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x8370.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="administracion-dos"
+>Capítulo 5. Administración de Linux en computadores aislados</A
+></H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Tabla de contenidos</B
+></DT
+><DT
+><A
+HREF="c8032.htm#inicializacion-del-sistema"
+>Inicialización del sistema</A
+></DT
+><DT
+><A
+HREF="x8370.htm"
+>Kernel y módulos</A
+></DT
+><DT
+><A
+HREF="x8783.htm"
+>Hardware básico y Linux</A
+></DT
+><DT
+><A
+HREF="x9697.htm"
+>Dispositivos y Linux</A
+></DT
+><DT
+><A
+HREF="x11422.htm"
+>Instalación de Debian</A
+></DT
+><DT
+><A
+HREF="x11660.htm"
+>Localización y configuración de algunos programas</A
+></DT
+></DL
+></DIV
+><H2
+CLASS="BRIDGEHEAD"
+>Público y logros</H2
+><P
+>Administrador de Red del colegio quién solucionará problemas
+    cuando se presenten o instalará la plataforma de referencia en
+    computadores fuera de red.
+   </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="init"
+></A
+><P
+>Conoce la secuencia de inicialización y puede configurar
+      algunos detalles.  </P
+></LI
+><LI
+><A
+NAME="conf"
+></A
+><P
+>Emplea módulos, el kernel y otros programas para configurar
+     un sistema.</P
+></LI
+><LI
+><A
+NAME="hardware"
+></A
+><P
+>Reconoce los componentes físicos de un
+      computador, puede manipularlos y configurar algunos con Linux.
+     </P
+></LI
+><LI
+><A
+NAME="instala"
+></A
+><P
+>Puede instalar la distribución Debian en un computador y
+      configurarla de acuerdo a los lineamientos de la plataforma de
+      referencia S-Helio 1.1.
+     </P
+></LI
+></UL
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="inicializacion-del-sistema"
+>Inicialización del sistema</A
+></H1
+><P
+>Indicadores de Logros:
+   </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="init.seq"
+></A
+><P
+>Conoce la secuencia de inicialización.</P
+></LI
+><LI
+><A
+NAME="init.conf"
+></A
+><P
+>Configura algunos detalles de la inicialización del sistema.
+     </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-inicializacion-del-sistema"
+>Lectura: Inicialización del sistema</A
+></H2
+><P
+>Un aspecto que un administrador de un sistema Linux debe
+    considerar en ocasiones, es la secuencia de inicialización del
+    sistema.  Esto puede servir para iniciar junto con el sistema
+    servicios importantes (especialmente si el computador se emplea
+    como servidor), para eliminar servicios que no se usen y así
+    aprovechar mejor los recursos o para afinar algunos detalles que
+    afectarán a todos los usuarios del sistema.  Por otra parte
+    algunas fallas que pueden ocurrir en un sistema Linux pueden
+    deberse a una secuencia de inicialización errada y para
+    solucionarlas puede ser necesario seguirla de cerca.
+   </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="secuencia-de-inicio"
+>Secuencia de inicio</A
+></H3
+><P
+>&#13;     Al iniciar un computador con Linux ocurren gran cantidad de
+     procesos, deben ocurrir en un orden preciso porque unos dependen
+     de otros (e.g. el cargador de arranque requiere la BIOS, el
+     kernel requiere la inicialización que hace el cargador de
+     arranque, los módulos requieren el kernel operando, las librerías
+     y programas requieren el kernel y los módulos para interactuar
+     con el usuario).
+    </P
+><P
+>A grandes rasgos la secuencia de inicialización es:</P
+><A
+NAME="AEN8060"
+></A
+><P
+>Programa que está en memoria ROM que
+       inicializa y maneja a bajo nivel el hardware y que inicia un
+       cargador de arranque.</P
+><A
+NAME="AEN8063"
+></A
+><P
+>Programa que permite al usuario
+       escoger el sistema operativo al cual entrar y carga el kernel
+       del mismo.</P
+><A
+NAME="AEN8066"
+></A
+><P
+>Nombre en español de un programa
+       que controla un tipo específico de hardware o un servicio. En
+       inglés sería <SPAN
+><I
+CLASS="emphasis"
+>driver</I
+></SPAN
+>.</P
+><A
+NAME="AEN8070"
+></A
+><P
+>Nombre en español de un controlador
+       que puede cargarse dinámicamente (i.e. cuando el kernel ya está
+       en operación) y que permite así optimizar el uso de la
+       memoria.</P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Un programa mantenido de forma permanente en memoria del
+	computador (<SPAN
+CLASS="acronym"
+>BIOS</SPAN
+>
+	<A
+NAME="AEN8077"
+HREF="#FTN.AEN8077"
+>[1]</A
+>) inicializa varios aspectos del hardware, después
+	de acuerdo a su configuración carga el primer sector de un
+	disquete o de un disco duro
+	<A
+NAME="AEN8081"
+HREF="#FTN.AEN8081"
+>[2]</A
+> o de un CD-ROM y ejecuta el programa que allí se
+	encuentra.  Si el disquete/ disco/CD-ROM permite arrancar un
+	sistema operativo tal programa se llama un <SPAN
+><I
+CLASS="emphasis"
+>cargador
+	de arranque</I
+></SPAN
+>
+	<A
+NAME="AEN8084"
+HREF="#FTN.AEN8084"
+>[3]</A
+>.
+      </P
+><P
+>Algunos aspectos configurables de la BIOS se mantienen en
+	un tipo de memoria especial (e.g. EPROM que, usando una pila,
+	puede mantener datos cuando el computador está desconectado),
+	pueden configurarse empleando un programa<A
+NAME="AEN8088"
+HREF="#FTN.AEN8088"
+>[4]</A
+>.
+      </P
+></LI
+><LI
+><P
+>Algunos cargadores de arranque (como
+	<SPAN
+CLASS="acronym"
+>LILO</SPAN
+> o <SPAN
+CLASS="acronym"
+>GRUB</SPAN
+>) pueden
+	permitir al usuario escoger el sistema operativo al cual desea
+	entrar (cuando en el mismo computador haya varios), y carga el
+	kernel del sistema escogido, eventualmente pasando parametros
+	dados por el usuario (ver <A
+HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
+>Parámetros
+	 desde el cargador de arranque</A
+>)
+	<A
+NAME="AEN8097"
+HREF="#FTN.AEN8097"
+>[5]</A
+>.  Para sistemas Linux hay varios cargadores de
+	arranque, los más conocidos son
+	<SPAN
+CLASS="application"
+>LILO</SPAN
+> y
+	<SPAN
+CLASS="application"
+>GRUB</SPAN
+>. También es posible arrancar
+	un sistema Linux desde DOS con el cargador
+	<TT
+CLASS="literal"
+>loadlin</TT
+>.
+       </P
+></LI
+><LI
+><P
+>Si el sistema escogido es Linux, el cargador de arranque,
+	carga el kernel de este sistema.  El kernel detecta algunos
+	detalles del hardware (como el procesador, cantidad de memoria
+	y algunos dispositivos), procesa parametros recibidos del
+	cargador de arranque, inicializa algunos aspectos del
+	hardware, prepara áreas de memoria, prepara el sistema de
+	archivos virtual (ver <A
+HREF="x6433.htm#sistemas-de-archivos-en-linux"
+>Sistemas de archivos
+	 en Linux</A
+>), prepara el sistema de módulos y lanza como
+	primer proceso <B
+CLASS="command"
+>/sbin/init</B
+> (a menos que se
+	haya especificado otro programa como parámetro ver <A
+HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
+>Parámetros
+	desde el cargador de arranque</A
+>).  Varios de los mensajes
+	que el kernel produce durante esta etapa pueden ser revisados
+	en el archivo <TT
+CLASS="filename"
+>/var/log/dmesg</TT
+> y con el
+	programa <B
+CLASS="command"
+>dmesg</B
+>.
+      </P
+><P
+>Como los dispositivos de cada computador son diferentes,
+	el kernel cuenta con controladores
+	<A
+NAME="AEN8120"
+HREF="#FTN.AEN8120"
+>[6]</A
+> para muchos tipos de hardware diferente (tanto
+	para hardware muy antiguo, como para hardware muy nuevo) y
+	para no ocupar tanto espacio en memoria el kernel emplea un
+	sistema de módulos. Si todos los controladores para todos los
+	tipos de hardware que el kernel soporta, se incluyeran
+	directamente en el kernel (i.e estaticamente) desde el
+	arranque, el kernel requeriría bastante memoria RAM (un kernel
+	2.2.18 con módulos requiere más de 13MB) y la gran mayoría de
+	ese espacio no sería usado, sólo serían usadas las partes que
+	controlan los dispositivos particulares de su computador.
+      </P
+><P
+>Un módulo es una parte del kernel que puede cargarse,
+       usarse o quitarse después de que el kernel está funcionando.
+       Algunos módulos ofrecen servicios (e.g soporte para cierto
+       sistemas de archivos) y otros son controladores para hardware
+       específico (por ejemplo hay módulos para tarjetas de sonido,
+       para tarjetas de red, etc.).  Durante el proceso de
+       inicialización del sistema, algunos dispositivos son detectados
+       y los módulos apropiados son cargados, sin embargo como se
+       explica en este capítulo algunos dispositivos no pueden ser
+       detectados o configurados automáticamente e incluso algunos no
+       son soportados.
+      </P
+></LI
+><LI
+><A
+NAME="AEN8125"
+></A
+><P
+>Los scripts de este 
+	  directorio son ejecutados por /sbin/init durante el arranque
+	  antes de ejecutar los del nivel configurado</P
+><P
+>El programa <B
+CLASS="command"
+>/sbin/init</B
+>, que
+	normalmente es el primer proceso ejecutado por el kernel
+	completa la secuencia de inicialización ejecutando los
+	procesos de un nivel de ejecución.  El nivel de ejecución se
+	asocia con un número entre 0 y 6, o bien con 'S' de forma que
+	el administrador puede configurar cada nivel de ejecución para
+	que inicie procesos diferentes.  Durante un arranque normal
+	<SPAN
+CLASS="application"
+>init</SPAN
+> ejecutará primero los procesos
+	del nivel S (scripts del directorio
+	<TT
+CLASS="filename"
+>/etc/rcS.d</TT
+> en orden). 
+	Estos scripts
+	emplean algunas variables definidas en
+	<TT
+CLASS="filename"
+>/etc/default/rcS</TT
+> para inicializar
+	dispositivos y programas.  A continuación presentamos la
+	secuencia configurada en un sistema Debian recién instalado,
+	posiblemente no entenderá todos los términos que serán
+	introducidos en este y el próximo capítulo: instala el mapa de
+	teclado (por defecto
+	<TT
+CLASS="filename"
+>/etc/console-tools/default.kmap.gz</TT
+> que
+	usted puede modificar de ser necesario), activa swap, revisa y
+	de ser necesario monta la partición raíz y monta el directorio
+	virtual <TT
+CLASS="filename"
+>/proc</TT
+>,
+	configura dispositivos ISA Plug and Play de acuerdo a al
+	archivo <TT
+CLASS="filename"
+>/etc/isapnp.conf</TT
+>, calcula
+	dependencias entre módulos y carga los módulos y argumentos
+	especificados en <TT
+CLASS="filename"
+>/etc/modules</TT
+>, chequea
+	los demás sistemas de archivos que tengan inconsistencias o
+	que hayan alcanzado la cuenta de montajes antes del
+	chequeo
+	<A
+NAME="AEN8137"
+HREF="#FTN.AEN8137"
+>[7]</A
+>, configura variables del kernel especificadas en
+	<TT
+CLASS="filename"
+>/etc/sysctl.conf</TT
+>, configura puertos
+	seriales con la última configuración usada, prepara
+	dispositivos dinámicos
+	<TT
+CLASS="filename"
+>/dev/pts</TT
+>
+	<A
+NAME="AEN8146"
+HREF="#FTN.AEN8146"
+>[8]</A
+>, monta particiones locales y prepara zonas de
+	intercambio, en sistemas que usan PPP limpiar cache de DNS,
+	establece el nombre de la máquina tomandolo de
+	<TT
+CLASS="filename"
+>/etc/hostname</TT
+>, activa interfaces de red
+	empleando la configuración de
+	<TT
+CLASS="filename"
+>/etc/network/interfaces</TT
+> y
+	<TT
+CLASS="filename"
+>/etc/network/options</TT
+>, inicia interfaces
+	que requieran BOOTP o DHCP, activa portmap, monta directorios
+	remotos (con nfs, smb, o ncp), configura fuentes por usar en
+	consolas virtuales
+	<A
+NAME="AEN8151"
+HREF="#FTN.AEN8151"
+>[9]</A
+>, ajusta la hora del sistema y realiza otras
+	labores de limpieza y mantenimiento rutinarias.
+      </P
+></LI
+><LI
+><A
+NAME="AEN8155"
+></A
+><P
+>En este archivo se
+	  configura el nivel de ejecución</P
+><P
+>Después de ejecutar scripts del nivel S,
+	<B
+CLASS="command"
+>init</B
+> ejecuta los del nivel de ejecución
+	configurado (el nivel se configura en el archivo
+	<TT
+CLASS="filename"
+>/etc/inittab</TT
+> en una línea que dice
+	<TT
+CLASS="literal"
+>initdefault</TT
+>).  Por defecto es el nível 2
+	cuyos scripts están en el directorio
+	<TT
+CLASS="filename"
+>/etc/init.d/rc2.d</TT
+>.
+      </P
+></LI
+><LI
+><A
+NAME="AEN8164"
+></A
+><P
+>Programa empleado para
+	  esperar llegada de nuevos usuarios e iniciar sesiones tipo
+	  texto, por ejemplo en consolas virtuales.</P
+><P
+>A menos que se haya cambiado la configuración de
+	<B
+CLASS="command"
+>/sbin/init</B
+>, a continuación se ejecutan los
+	scripts del nivel configurado, se inician terminales
+	tty
+	<A
+NAME="AEN8169"
+HREF="#FTN.AEN8169"
+>[10]</A
+> en diversas consolas virtuales (por defecto en
+	Debian de la 1 a la 6) que permiten a los usuarios iniciar
+	sesiones tipo texto con el intérprete de comandos (ver <A
+HREF="x328.htm#lectura-sistema-de-usuarios-y-manejo-de-clave"
+>Lectura
+	 Sistema de usuarios y manejo de clave</A
+>).  Para iniciar
+	esas terminales usa el programa <TT
+CLASS="literal"
+>getty</TT
+> (ver
+	<A
+HREF="x5590.htm#inicio-de-sesiones-en-consolas-virtuales"
+>Inicio de
+	 sesiones en consolas virtuales</A
+>).
+      </P
+></LI
+><LI
+><A
+NAME="AEN8175"
+></A
+><P
+>Administrador de 
+	  vistas de X-Window.  Espera nuevos usuarios y les permite
+	  iniciar sesiones gráficas</P
+><P
+>Si X-Window está configurado y si hay instalado un
+	administrador de vistas
+	<A
+NAME="AEN8179"
+HREF="#FTN.AEN8179"
+>[11]</A
+> ---como <SPAN
+CLASS="application"
+>xdm</SPAN
+>,
+	<SPAN
+CLASS="application"
+>kdm</SPAN
+> o
+	<SPAN
+CLASS="application"
+>gdm</SPAN
+>--- el último script del nivel 2
+	iniciará X-Window en la consola virtual 7 y permitirá a los
+	usuarios iniciar sesiones gráficas con su login y clave (ver
+	<A
+HREF="x5590.htm#inicio-de-sesiones-x-dash-window"
+>Inicio de
+	sesiones X-Window</A
+>).
+      </P
+></LI
+></OL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="configuracion-de-los-niveles-de-ejecucion"
+>Configuración de los niveles de ejecución</A
+></H3
+><P
+>A menos que se especifique un proceso inicial diferente
+      desde el cargador de arranque (con el parámetro
+      <B
+CLASS="command"
+>init</B
+> ver <A
+HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
+>Parámetros
+      desde el cargador de arranque</A
+> por defecto el primer
+      proceso es <TT
+CLASS="filename"
+>/sbin/init</TT
+>.  Este programa lee
+      el archivo de configuración <TT
+CLASS="filename"
+>/etc/inittab</TT
+>
+      para iniciar otros procesos organizados en niveles de ejecución
+      y con ellos el resto del sistema operativo.
+     </P
+><A
+NAME="AEN8193"
+></A
+><P
+>Primer programa cargado por el
+      kernel Linux, encargado de continuar el proceso de inicialización
+      o de cambiar el nivel de ejecución.</P
+><P
+>Cada línea del archivo <TT
+CLASS="filename"
+>/etc/inittab</TT
+>
+      puede ser un comentario (si comienza con el caracter '#') o de la
+      forma:
+<PRE
+CLASS="programlisting"
+>&#13;id:niveles:método:comando
+</PRE
+>
+      Donde id es una identificación arbitraria de hasta de 4 letras,
+      niveles indica el nivel o los niveles en los cuales se aplica,
+      comando es el comando por ejecutar y método permite especificar
+      la forma de iniciarlo o circunstancias bajo las cuales
+      iniciarlo
+      <A
+NAME="AEN8200"
+HREF="#FTN.AEN8200"
+>[12]</A
+>
+    </P
+><P
+>En un sistema que ya esta inicializado se puede emplear el
+      programa <B
+CLASS="command"
+>/sbin/init</B
+> (o
+      <B
+CLASS="command"
+>/sbin/telinit</B
+>) para cambiar el nivel de
+      ejecución, especificando el nuevo nível como parámetro (e.g
+      <B
+CLASS="command"
+>/sbin/init 1</B
+> ver <A
+HREF="x5075.htm#encendido"
+>Encendido</A
+>).
+    </P
+><P
+>Con esta letra
+      comienzan scripts de un directorio para un nivel de ejecución
+      (por ejemplo <TT
+CLASS="filename"
+>/etc/rc2.d</TT
+>) que 
+      <B
+CLASS="command"
+>/sbin/init</B
+> debe ejecutar al entrar a ese 
+      nivel.</P
+><P
+>En Debian un nivel de ejecución es una configuración del
+      sistema en la que sólo están presentes ciertos procesos, tales
+      procesos son iniciados por scripts en un directorio particular
+      (e.g <TT
+CLASS="filename"
+>/etc/rc2.d</TT
+> para el nivel 2).  Los
+      nombres de algunos de esos scripts comienzan con la letra 'S',
+      esos son ejecutados cuando el sistema entra al nivel, los que
+      comienzan con la letra 'K' son ejecutados cuando se sale del
+      nivel (después de la letra 'S' o 'K' sigue un número de dos
+      digitos que especifica el orden en el cual se ejecutan
+      ---primero los de menor número---).  Al entrar a un nivel los
+      scripts 'S' son ejecutados con el parámetro "start", mientras
+      que al salir los scripts 'K' se ejecutan con el parámetro
+      "stop".  Los niveles normales son: </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>0</DT
+><DD
+><P
+>Este nivel
+	   de ejecución es empleado para detener el sistema</P
+><P
+>Nivel para detener el sistema, es el nivel al que entra
+	 con los comandos <B
+CLASS="command"
+>halt</B
+> o <B
+CLASS="command"
+>shutdown
+	 -r</B
+> (ver <A
+HREF="x5075.htm"
+>Apagado y encendido
+	  de una red</A
+>).  Sus scripts están en el directorio:
+	 <TT
+CLASS="filename"
+>/etc/rc0.d</TT
+>.
+	</P
+></DD
+><DT
+>1</DT
+><DD
+><P
+>Este nivel
+	   de ejecución es apropiado para un sólo usuario, sin conexión a
+	   red (modo mono-usuario).</P
+><P
+>Modo mono usuario
+	 <A
+NAME="AEN8252"
+HREF="#FTN.AEN8252"
+>[13]</A
+>, apropiado para ciertas
+	   tareas administrativas.  Entrará a este nivel con el
+	   comando <B
+CLASS="command"
+>shutdown</B
+>).  Sus scripts están en
+	   <TT
+CLASS="filename"
+>/etc/rc1.d</TT
+>.
+	</P
+></DD
+><DT
+>2-5</DT
+><DD
+><P
+>Operación normal multi usuario. Scripts en
+	 <TT
+CLASS="filename"
+>/etc/rc<TT
+CLASS="replaceable"
+><I
+>x</I
+></TT
+>.d</TT
+>
+	 (con un digito de 2 a 5 en lugar de <TT
+CLASS="replaceable"
+><I
+>x</I
+></TT
+>).
+	</P
+></DD
+><DT
+>6</DT
+><DD
+><P
+>Este nivel
+	   de ejecución es empleado para reiniciar el sistema por
+	   <B
+CLASS="command"
+>reboot</B
+> y <B
+CLASS="command"
+>shutdown</B
+>.</P
+><P
+>Reinicio
+	 <A
+NAME="AEN8271"
+HREF="#FTN.AEN8271"
+>[14]</A
+>.  Entrará a este nivel con los comandos
+	 <B
+CLASS="command"
+>reboot</B
+> o <B
+CLASS="command"
+>shutdown -r</B
+>.
+	 Scripts en <TT
+CLASS="filename"
+>/etc/rc6.d</TT
+>.
+	</P
+></DD
+></DL
+></DIV
+><A
+NAME="AEN8277"
+></A
+><P
+>Número que representa un conjunto
+      de procesos que deben correr en una configuración del sistema,
+      procesos iniciados por scripts de directorios de la forma
+      <TT
+CLASS="filename"
+>/etc/rc<TT
+CLASS="replaceable"
+><I
+>x</I
+></TT
+>.d</TT
+>.</P
+><A
+NAME="AEN8282"
+></A
+><P
+>En este directorio están
+       los scripts que pueden usarse para iniciar o terminar procesos o
+       realizar tareas al arranque o cierre del sistema.  En los
+       directorios de los diversos niveles de ejecución hay enlaces a
+       los scripts de este directio.</P
+><A
+NAME="AEN8285"
+></A
+><P
+>Los scripts de
+       <TT
+CLASS="filename"
+>/etc/init.d</TT
+> normalmente reciben esta
+       opción cuando son ejecutados al iniciar el nivel de ejecución.
+     </P
+><P
+>&#13;      Los archivos de los directorios
+      <TT
+CLASS="filename"
+>/etc/rc<TT
+CLASS="replaceable"
+><I
+>x</I
+></TT
+>.d</TT
+> son
+      enlaces a scripts del directorio
+      <TT
+CLASS="filename"
+>/etc/init.d</TT
+>, esos scripts tiene el nombre
+      del paquete (ver <A
+HREF="x7217.htm#paquetes-en-debian"
+>Paquetes en
+       Debian</A
+>) al que pertenecen y pueden recibir como
+      parámetro: <TT
+CLASS="parameter"
+><I
+>start</I
+></TT
+>,
+      <TT
+CLASS="parameter"
+><I
+>stop</I
+></TT
+>, <TT
+CLASS="parameter"
+><I
+>restart</I
+></TT
+>
+      (detener y reiniciar), <TT
+CLASS="parameter"
+><I
+>force-reload</I
+></TT
+>
+      (volver a leer archivos de configuración sin detener o de no ser
+      posibile detener y reiniciar).  Pueden crearse directamente con
+      <B
+CLASS="command"
+>ln</B
+> o en Debian con el programa
+      <TT
+CLASS="filename"
+>update-rc.d</TT
+>, por ejemplo:
+     </P
+><PRE
+CLASS="programlisting"
+>&#13;update-rc.d xdm start 99 2 3 4 5 . stop 20 0 1 6
+</PRE
+><P
+>&#13;      que indica que el script <SPAN
+CLASS="application"
+>xdm</SPAN
+> (el cual debe
+      estar en <TT
+CLASS="filename"
+>/etc/init.d</TT
+>) debe ser ejecutado al
+      entrar a los niveles 2, 3, 4 y 5 con prioridad 99 ( última).
+      Así como cuando el sistema termina normalmente (con
+      <SPAN
+CLASS="application"
+>halt</SPAN
+> o <TT
+CLASS="literal"
+>reboot</TT
+>) o cuando
+      sale de modo monousuario. </P
+><A
+NAME="AEN8306"
+></A
+><P
+>Script de Debian para
+       agregar enlaces en los niveles de ejecución a archivos del
+       directorio <TT
+CLASS="filename"
+>/etc/init.d</TT
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-inicializacion-del-sistema"
+>Lecturas recomendadas: Inicialización del sistema</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;       Páginas man de <SPAN
+CLASS="application"
+>init</SPAN
+>,
+       <SPAN
+CLASS="application"
+>inittab</SPAN
+>,
+       <SPAN
+CLASS="application"
+>update-rc.d</SPAN
+>.
+      </P
+></LI
+><LI
+><P
+>&#13;      Puede consultarse otra explicación del proceso de inicialización
+       en el Capítulo 7 de "<I
+CLASS="citetitle"
+>The Linux System
+       Administrators' Guide</I
+> (Version 0.6.2)" disponible
+       en <A
+HREF="http://www.tldp.org/LDP/sag/x1901.html"
+TARGET="_top"
+>http://www.tldp.org/LDP/sag/x1901.html</A
+>.
+       
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-inicializacion-del-sistema"
+>Ejercicios: Inicialización del sistema</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="c8032.htm#init.seq.1"
+>¿Qué proceso tiene el
+       identificador 1 en un arranque normal? (puede usar
+       <B
+CLASS="command"
+>ps ax</B
+> si requiere ayuda).</A
+></DT
+><DT
+>2. <A
+HREF="c8032.htm#init.seq.2"
+>Identifique el script en el que se monta el
+      directorio virtual <TT
+CLASS="filename"
+>/proc</TT
+>
+      durante el arranque.</A
+></DT
+><DT
+>3. <A
+HREF="c8032.htm#init.seq.3"
+>De forma análoga a la descripción de los
+      scripts del nivel S presentado en esta sección, describa lo que
+      hacen los scripts del nível de ejecución 2.</A
+></DT
+><DT
+>4. <A
+HREF="c8032.htm#init.conf.1"
+>Agregue en el nivel de
+       ejecución 3 un script que le envie un correo a su cuenta de
+       usuario con la fecha y hora.</A
+></DT
+><DT
+>5. <A
+HREF="c8032.htm#init.conf.2"
+>Cambie al nivel de
+       ejecución 3 y compruebe que el script que creo en el punto
+       anterior funciona.</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.seq.1"
+></A
+><B
+>1. </B
+>¿Qué proceso tiene el
+       identificador 1 en un arranque normal? (puede usar
+       <B
+CLASS="command"
+>ps ax</B
+> si requiere ayuda).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><TT
+CLASS="literal"
+>/sbin/init</TT
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.seq.2"
+></A
+><B
+>2. </B
+>Identifique el script en el que se monta el
+      directorio virtual <TT
+CLASS="filename"
+>/proc</TT
+>
+      durante el arranque.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><TT
+CLASS="filename"
+> /etc/rcS.d/S10checkroot.sh</TT
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.seq.3"
+></A
+><B
+>3. </B
+>De forma análoga a la descripción de los
+      scripts del nivel S presentado en esta sección, describa lo que
+      hacen los scripts del nível de ejecución 2.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Se inicia <B
+CLASS="command"
+>syslogd</B
+> que maneja bitácoras, se
+	  inicia <B
+CLASS="command"
+>kerneld</B
+> que puede cargar módulos por 
+	  demanda, si el sistema usa PPP y existe el archivo
+      <TT
+CLASS="filename"
+>/etc/ppp/ppp_on_boot</TT
+> con información
+      apropiada se conecta a un ISP, inicia servidor de nombres,
+      inicia programas usados por NFS, inicia servidor de correo,
+      ratón y servicios en red configurados en
+      <TT
+CLASS="filename"
+>/etc/inetd</TT
+>, se inicia
+      <B
+CLASS="command"
+>logoutd</B
+> para evitar ingreso a ciertos
+      usuarios a ciertas horas, se inicia cola de impresión, se crea
+      el enlace <TT
+CLASS="filename"
+>/dev/MAKEDEV</TT
+> de 
+      <TT
+CLASS="filename"
+>/sbin/MAKEDEV</TT
+>, se inicia el servidor
+      de SSH, inicia servidor de fuentes para X11, inicia el servidor
+      de NFS, inicia <B
+CLASS="command"
+>atd</B
+> que maneja tareas
+      iniciadas con <B
+CLASS="command"
+>at</B
+>, inicia
+      <B
+CLASS="command"
+>cron</B
+>, elimina
+      <TT
+CLASS="filename"
+>/etc/nologin</TT
+> --que había sido creado en el
+      nivel S para no permitir accesos durante el arranque, inicia el
+       administrador de vistas.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.conf.1"
+></A
+><B
+>4. </B
+>Agregue en el nivel de
+       ejecución 3 un script que le envie un correo a su cuenta de
+       usuario con la fecha y hora.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Crear un script (digamos
+       <TT
+CLASS="filename"
+>mailboot</TT
+>) en <TT
+CLASS="filename"
+>/etc/init.d</TT
+> con:<PRE
+CLASS="screen"
+>&#13;	 date | mail usuario@localhost</PRE
+>
+       Después ejecutar <B
+CLASS="command"
+>update-rc.d mailboot start 99 3 </B
+>
+       </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="init.conf.2"
+></A
+><B
+>5. </B
+>Cambie al nivel de
+       ejecución 3 y compruebe que el script que creo en el punto
+       anterior funciona.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Dos posibilidades: init 3 o cambiar en
+       <TT
+CLASS="filename"
+>/etc/inittab</TT
+> el nivel por defecto a 3
+       ---después restablecer el 2.</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8077"
+HREF="c8032.htm#AEN8077"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><SPAN
+CLASS="acronym"
+>BIOS</SPAN
+> es sigla de
+	  <I
+CLASS="foreignphrase"
+>Basic Input Output
+	  System</I
+>.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8081"
+HREF="c8032.htm#AEN8081"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El primer sector de un disco duro tiene la tabla de
+	  particiones.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8084"
+HREF="c8032.htm#AEN8084"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Cargador de arranque: del inglés <I
+CLASS="foreignphrase"
+>boot
+	  loader</I
+>.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8088"
+HREF="c8032.htm#AEN8088"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En PCs
+	  el programa para configurar la BIOS normalmente está incluido
+	  en la BIOS misma y puede ejecutarse tras encender el computador
+	  presionando alguna tecla (e.g.  <B
+CLASS="keycap"
+>Del</B
+> o
+	  <B
+CLASS="keycap"
+>F1</B
+>).</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8097"
+HREF="c8032.htm#AEN8097"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Además de los parámetros <TT
+CLASS="literal"
+>single</TT
+> y
+	  <TT
+CLASS="literal"
+>init=<TT
+CLASS="replaceable"
+><I
+>programa</I
+></TT
+></TT
+>
+	  pueden emplearse parámetros específicos para módulos
+	  compilados estáticamente en el kernel y otros generales como
+	  <TT
+CLASS="literal"
+>ro</TT
+> o <TT
+CLASS="literal"
+>rw</TT
+> para montar la
+	  raíz en modo de sólo lectura o de escritura y lectura
+	  respectivamente,
+	  <TT
+CLASS="literal"
+>root=<TT
+CLASS="replaceable"
+><I
+>dispositivo</I
+></TT
+></TT
+>
+	  para especificar el dispositivo para montar como raíz,
+	  <TT
+CLASS="literal"
+>debug</TT
+> o <TT
+CLASS="literal"
+>quiet</TT
+> para que
+	  el kernel muestre el máximo o el mínimo de mensajes
+	  informativos. Otros pueden verse con <TT
+CLASS="literal"
+>man
+	  bootparam</TT
+>.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8120"
+HREF="c8032.htm#AEN8120"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Controlador: del inglés
+	  <I
+CLASS="foreignphrase"
+>driver</I
+>.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8137"
+HREF="c8032.htm#AEN8137"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Si existe <TT
+CLASS="filename"
+>/fastboot</TT
+> no hace el
+	  chequeo, si existe <TT
+CLASS="filename"
+>/forcefsck</TT
+> chequea
+	  independiente de la cuenta de montajes. Este chequeo arregla
+	  errores sólo si <TT
+CLASS="literal"
+>FSCKFIX</TT
+> es
+	  <TT
+CLASS="literal"
+>yes</TT
+> en
+	  <TT
+CLASS="filename"
+>/etc/defaults</TT
+>.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8146"
+HREF="c8032.htm#AEN8146"
+>[8]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Se trata de pseudoterminales, por ejemplo usadas por
+	  terminales X-Window.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8151"
+HREF="c8032.htm#AEN8151"
+>[9]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Las fuentes por usar en
+	  consolas virtuales se configuran en
+	  <TT
+CLASS="filename"
+>/etc/console-tools/config</TT
+>
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8169"
+HREF="c8032.htm#AEN8169"
+>[10]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Una terminal tty permite hacer login en un sistema
+	  Linux, puede ser una consola virtual, un puerto serial (o
+	  modem) o una seudoterminal pty --como las terminales
+	  iniciadas en X-Window.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8179"
+HREF="c8032.htm#AEN8179"
+>[11]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Administrador de vistas: del inglés <I
+CLASS="foreignphrase"
+>display
+	  manager</I
+>.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8200"
+HREF="c8032.htm#AEN8200"
+>[12]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Los posibles métodos para iniciar un comando son:
+	<TT
+CLASS="literal"
+>respawn</TT
+> que indica que se reiniciará el
+	proceso cuando termine, <TT
+CLASS="literal"
+>wait</TT
+> que indica que
+	se ejecutará una vez el proceso cuando se ingrese al nivel de
+	ejecución y se esperará que complete antes de continuar,
+	<TT
+CLASS="literal"
+>once</TT
+> similar a <TT
+CLASS="literal"
+>wait</TT
+> pero
+	continua ejecutando otros proceso sin esperar a que termine,
+	<TT
+CLASS="literal"
+>boot</TT
+> ejecutará el proceso durante el
+	arranque (ignorando el nivel de ejecución) y continuará con
+	otros sin esperar a que termine, <TT
+CLASS="literal"
+>bootwait</TT
+>
+	análogo a <TT
+CLASS="literal"
+>boot</TT
+> pero espera a que termine
+	antes de ejecutar otro proceso, <TT
+CLASS="literal"
+>off</TT
+> no hace
+	nada, <TT
+CLASS="literal"
+>ondemand</TT
+> permite especificar tres
+	niveles de ejecución especiales a, b y c,
+	<TT
+CLASS="literal"
+>initdefault</TT
+> especifica el nivel de
+	ejecución por defecto (el comando es ignorado),
+	<TT
+CLASS="literal"
+>sysinit</TT
+> ejecuta durante el arranque antes
+	de otros marcados con <TT
+CLASS="literal"
+>boot</TT
+> o
+	<TT
+CLASS="literal"
+>bootwait</TT
+> (ignora nivel de ejecución),
+	<TT
+CLASS="literal"
+>powerwait</TT
+> ejecuta el comando cuando una UPS
+	indique que se acabó el suministro de energía
+	(<TT
+CLASS="literal"
+>init</TT
+> espera a que el comando termine)
+	--una UPS es un dispositivo con una batería que puede mantener
+	encendido un computador por un tiempo después de un corte de
+	energía eléctrica---, <TT
+CLASS="literal"
+>powerfail</TT
+> análogo a
+	<TT
+CLASS="literal"
+>powerwait</TT
+> pero <TT
+CLASS="literal"
+>init</TT
+> no
+	espera a que concluya, <TT
+CLASS="literal"
+>powerokwait</TT
+> se
+	ejecutará el comando cuando el suministro de energía es
+	restablecido, <TT
+CLASS="literal"
+>powerfailnow</TT
+> ejecuta el
+	comando cuando la UPS indica que su batería está próxima a
+	acabarse, <TT
+CLASS="literal"
+>ctraltdel</TT
+> proceso ejecutado
+	cuando <TT
+CLASS="literal"
+>init</TT
+> recibe la señal
+	<TT
+CLASS="literal"
+>SIGINT</TT
+> --que normalmente ocurre cuando el
+	usuario presiona Ctrl-Alt-Del---, <TT
+CLASS="literal"
+>kbrequest</TT
+>
+	ejecuta el comando cuando recibe la señal
+	<TT
+CLASS="literal"
+>SIGWINCH</TT
+> ---que puede ser generada por una
+	secuencia de teclas especiales.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8252"
+HREF="c8032.htm#AEN8252"
+>[13]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Mono usuario: del inglés <I
+CLASS="foreignphrase"
+>single
+	   user</I
+>
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8271"
+HREF="c8032.htm#AEN8271"
+>[14]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Reinicio: del inglés
+	   <I
+CLASS="foreignphrase"
+>reboot</I
+>
+	  </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x7966.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x8370.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Colaboración y soporte</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Kernel y módulos</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

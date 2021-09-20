@@ -1,0 +1,427 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>Capítulo 6. Administración de una red con Linux</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="previous" href="localizacion-y-configuracion-de-algunos-programas.html" title="6. Localización y configuración de algunos programas"><link rel="next" href="dispositivos-para-interconexion-y-linux.html" title="2. Dispositivos para interconexión y Linux "></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">Capítulo 6. Administración de una red con Linux</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="localizacion-y-configuracion-de-algunos-programas.html">Anterior</a> </td><th width="60%" align="center"> </th><td width="20%" align="right"> <a accesskey="n" href="dispositivos-para-interconexion-y-linux.html">Siguiente</a></td></tr></table><hr></div><div class="chapter"><div class="titlepage"><div><h2 class="title"><a name="administracion-tres"></a>Capítulo 6. Administración de una red con Linux</h2></div></div><div class="toc"><p><b>Tabla de contenidos</b></p><dl><dt>1. <a href="administracion-tres.html#redes-protocolos-e-internet">Redes, protocolos e Internet</a></dt><dd><dl><dt>1.1. <a href="administracion-tres.html#lectura-redes-protocolos-e-internet">Lectura: Redes, protocolos e Internet</a></dt><dd><dl><dt>1.1.1. <a href="administracion-tres.html#Internet">Internet</a></dt><dt>1.1.2. <a href="administracion-tres.html#id457597">Capas de una red TCP/IP sobre
+    algunos medios físicos</a></dt></dl></dd><dt>1.2. <a href="administracion-tres.html#lecturas-redes-protocolos-e-internet">Lecturas recomendadas: Redes, protocolos e Internet</a></dt><dt>1.3. <a href="administracion-tres.html#ejercicios-redes-protocolos-e-internet">Ejercicios: Redes, protocolos e Internet</a></dt></dl></dd><dt>2. <a href="dispositivos-para-interconexion-y-linux.html">Dispositivos para interconexión y Linux </a></dt><dd><dl><dt>2.1. <a href="dispositivos-para-interconexion-y-linux.html#lectura-dispositivos-para-interconexion-y-linux">Lectura: Dispositivos para interconexión y Linux</a></dt><dd><dl><dt>2.1.1. <a href="dispositivos-para-interconexion-y-linux.html#modem">Modem</a></dt><dt>2.1.2. <a href="dispositivos-para-interconexion-y-linux.html#tarjeta-ethernet">Tarjeta Ethernet</a></dt><dt>2.1.3. <a href="dispositivos-para-interconexion-y-linux.html#tarjeta-ethernet-e-interfaz-de-red">Tarjeta Ethernet e interfaz de red</a></dt><dt>2.1.4. <a href="dispositivos-para-interconexion-y-linux.html#instalacion-de-una-red-local-ethernet">Instalación de una red local Ethernet</a></dt></dl></dd><dt>2.2. <a href="dispositivos-para-interconexion-y-linux.html#lecturas-recomendadas-dispositivos-para-interconexion-y-linux">Lecturas recomendadas: Dispositivos para interconexión y Linux</a></dt><dt>2.3. <a href="dispositivos-para-interconexion-y-linux.html#ejercicios-dispositivos-para-interconexion-y-linux">Ejercicios: Dispositivos para interconexión y Linux</a></dt></dl></dd><dt>3. <a href="direcciones-enrutamiento-y-transporte.html">Direcciones, enrutamiento y transporte</a></dt><dd><dl><dt>3.1. <a href="direcciones-enrutamiento-y-transporte.html#lectura-direcciones-y-enrutamiento">Lectura: Direcciones, enrutamiento y transporte</a></dt><dd><dl><dt>3.1.1. <a href="direcciones-enrutamiento-y-transporte.html#caso-conexion-de-dos-redes-de-area-local">Caso: Conexión de dos redes de área local</a></dt><dt>3.1.2. <a href="direcciones-enrutamiento-y-transporte.html#caso-enmascaramiento">Caso: Enmascaramienton</a></dt></dl></dd><dt>3.2. <a href="direcciones-enrutamiento-y-transporte.html#lecturas-direcciones-y-enrutamiento">Lecturas recomendadas: Direcciones, enrutamiento y transporte</a></dt><dt>3.3. <a href="direcciones-enrutamiento-y-transporte.html#ejercicios-direcciones-y-enrutamiento">Ejercicios: Direcciones, enrutamiento y transporte</a></dt></dl></dd><dt>4. <a href="protocolos-de-soporte-y-de-usuario.html">Protocolos de soporte y de usuario</a></dt><dd><dl><dt>4.1. <a href="protocolos-de-soporte-y-de-usuario.html#lectura-protocolos-de-soporte-y-de-usuario">Lectura: Protocolos de soporte y de usuario</a></dt><dd><dl><dt>4.1.1. <a href="protocolos-de-soporte-y-de-usuario.html#configuracion-de-servicios-basicos">Configuración de servicios básicos</a></dt><dt>4.1.2. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-dns">Servicio DNS</a></dt><dt>4.1.3. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-nfs">Servicio NFS</a></dt><dt>4.1.4. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-nis">Servicio NIS</a></dt><dt>4.1.5. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-ssh">Servicio ssh</a></dt><dt>4.1.6. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-cvs">Servicio
+    CVS</a></dt><dt>4.1.7. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-de-correo">Servicio de correo</a></dt><dt>4.1.8. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-ftp">Servicio FTP</a></dt><dt>4.1.9. <a href="protocolos-de-soporte-y-de-usuario.html#servicio-web">Servicio Web</a></dt><dt>4.1.10. <a href="protocolos-de-soporte-y-de-usuario.html#impresora-en-red">Impresora en red</a></dt></dl></dd><dt>4.2. <a href="protocolos-de-soporte-y-de-usuario.html#lecturas-protocolo-de-soporte-y-de-usuario">Lecturas recomendadas: Protocolos de soporte y de usuario</a></dt><dt>4.3. <a href="protocolos-de-soporte-y-de-usuario.html#ejercicios-protocolos-de-soporte-y-de-usuario">Ejercicios: Protocolos de soporte y de usuario</a></dt></dl></dd></dl></div><h2><a name="id456353"></a>Público y logros</h2><p>Administrador de Red del colegio, quien solucionará problemas
+    con una red LAN de la institución o la
+    instalará de acuerdo a la plataforma de referencia.</p><div class="itemizedlist"><ul type="disc"><li><p><a name="linred"></a>Conoce algunas de las posibilidades que puede aprovechar al
+      tener Linux en una red LAN.
+     </p></li><li><p><a name="redbas"></a>Entiende conceptos básicos de redes
+      TCP/IP así como del esquema cliente-servidor.
+     </p></li><li><p><a name="insred"></a>Puede planear, instalar el hardware y configurar una red
+       Ethernet de PCs con Linux, de acuerdo a la plataforma de 
+       referencia S-Helio 1.1
+      (ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
+       referencia</a>).  
+     </p></li><li><p><a name="servred"></a>Conoce y puede instalar y configurar clientes y servidores
+      para: ftp,
+      telnet,
+      ssh,
+      finger,
+      talk,
+      smtp,
+      http, NIS
+      y NFS de acuerdo a la plataforma de
+      referencia.
+     </p></li></ul></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="redes-protocolos-e-internet"></a>1. Redes, protocolos e Internet</h2></div></div><p>Indicadores de Logros
+      </p><div class="itemizedlist"><ul type="disc"><li><p><a name="linred.capas"></a>Distingue las capas de protocolos de Internet (físico, enlace, internet, transporte, aplicación) y sus generalidades.</p></li></ul></div><p>
+   </p><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-redes-protocolos-e-internet"></a>1.1. Lectura: Redes, protocolos e Internet</h3></div></div><p>
+     Las redes de computadores constan de medios de transmisión (e.g
+     cables), dispositivos (e.g tarjetas de red) y programas (e.g
+     módulos para TCP/IP del kernel) que permiten
+     transmitir información entre computadores. Pueden clasificarse de
+     acuerdo al tamaño (WAN de cobertura amplia
+     como un país, MAN de cobertura metropolitana o
+     LAN para edificios o salones) o de acuerdo a
+     la estructura de sus protocolos (e.g el módelo
+     OSI que consta de 7 capas de
+     protocolos: física, enlace, red, transporte, sesión, presentación
+     y aplicación), o de acuerdo a la distribución física de los
+     medios de transmisión y dispositivos (e.g estrella, bus).</p><p>LAN es acrónimo de <i>Local Area
+      Network</i>, con este término se hace referencia a
+     redes pequeñas (comúnmente menos de 100 computadores) cuyos
+     computadores están generalmente en un mismo espacio físico. Los
+     principales usos de una red LAN son:
+     </p><div class="itemizedlist"><ul type="disc"><li><p>
+	Compartir información distribuida en los discos duros o medios de
+	almacenamiento de cada computador.
+       </p></li><li><p>
+	Emplear recursos de un computador desde otro, o recursos 
+	conectados en red (por ejemplo una impresora).
+       </p></li><li><p> Compartir una conexión a Internet.  
+       </p></li><li><p>
+	Conformar una Intranet con servicios como correo,
+	<i>web</i>, ftp,
+	<i>news</i>.
+       </p></li></ul></div><p> 
+   </p><a class="indexterm" name="id420691"></a><p>
+	Un protocolo <sup>[<a name="id420716" href="#ftn.id420716">183</a>]</sup>
+        es una serie de reglas que indican como debe ocurrir una
+	comunicación entre dos computadores de una red; las reglas de un
+	protocolo son seguidas por programas que se ejecutan en los
+	computadores interconectados. Su computador puede tener procesos
+	activos que esperan conexiones de otros computadores o procesos 
+	para iniciar protocolos (por ejemplo con <b>ps -ax</b> 
+	es posible que vea: <tt>portmap</tt>, 
+	<tt>inetd</tt>, <tt>lpd</tt>, 
+	<tt>xfs</tt>, <tt>postgres</tt>).
+	A estos programas, que esperan conexiónes, se les llama 
+	<i>daemons</i> o servidores.  Usted 
+	puede iniciar un protocolo con otro computador empleando el 
+	programa cliente adecuado, por ejemplo el cliente 
+	<b>ping</b> con:
+	</p><pre class="screen">
+ping 127.0.0.1
+	</pre><p>
+	iniciará el porotocolo de ping (<tt>ICMP</tt>, 
+	<tt>ECHO_REQUEST</tt>) con el computador con dirección 
+	IP 127.0.0.1 (su propio computador),  un programa de su computador
+	estará pendiente de conexiones de este tipo y seguira el
+	protocolo<sup>[<a name="id456966" href="#ftn.id456966">184</a>]</sup>.
+    </p><a class="indexterm" name="id456979"></a><p>Internet es una red mundial de redes que están
+     interconectadas vía satelite, por cables submarinos, fibra óptica
+     y muchos otros medios de transmisión financiados por estados y
+     organizaciones.  Las heterogeneidad de las redes que interconecta
+     (e.g una LAN de un colegio con Linux, una
+     LAN de una empresa con Windows, una
+     WAN de un banco con X.25) es superada con los
+     protocolos TCP/IP.  Linux soporta bien estos
+     protocolos y la red que sugerimos se basa en este protocolo. Por
+     esto y para facilitar la conexión de una LAN a
+     Internet, en esta sección se presenta una introducción a los
+     aspectos de redes de Internet; los temas introducidos serán
+     tratados en detalle en otras secciones aplicandolos especialmente
+     al caso de redes Ethernet (ver <a href="dispositivos-para-interconexion-y-linux.html" title="2. Dispositivos para interconexión y Linux "> Dispositivos
+     para interconexión y Linux</a>, <a href="direcciones-enrutamiento-y-transporte.html" title="3. Direcciones, enrutamiento y transporte">Direcciones,
+     enrutamiento y transporte</a> y <a href="protocolos-de-soporte-y-de-usuario.html" title="4. Protocolos de soporte y de usuario">Protocolos de
+     soporte y de usuario</a>).
+    </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="Internet"></a>1.1.1. Internet</h4></div></div><p>Hay muchas personas que aportan su trabajo (muchos de forma
+      voluntaria) para mantener Internet en funcionamiento, para
+      solucionar problemas que ocurren y para planear su futuro.
+      Quienes dirigen el rumbo de Internet están organizados en
+      comités encargados de diversas actividades:
+      </p><div class="variablelist"><dl><dt><span class="term">IETF Internet Engineering Task Force</span></dt><dd><p>
+	  Compuesta enteramente de voluntarios autoorganizados que
+	  colaboran en la ingeniería requerida para la evolución de
+	  Internet, es decir identifican problemas y proponen
+	  soluciones.  Quien lo desee puede participar, asisitir a las
+	  reuniones, ayudar a dar forma o proponer estándares.  La
+	  IETF recibe borradores
+	  (<i>Internet Draft</i>) de autores
+	  que renuncian al control del protocolo que proponen. Tras
+	  refinamiento estos borradores pueden llegar a ser 
+	  RFC
+	  (<i>Request for Comment</i>) de uno
+	  de estos tipos: estándar propuesto, protocolo
+	  experimental, documento informativo o estándar
+	  histórico.  Un estándar propuesto puede después
+	  convertirse en borrador de estándar y en casos muy
+	  contados en estándar de Internet. 
+	 </p></dd><dt><span class="term">ISOC Internet Society</span></dt><dd><p>Organización sin ánimo de lucro, da soporte legal y
+	  financiero a otros grupos.
+	 </p></dd><dt><span class="term">IESG Internet Engineering Steering Group</span></dt><dd><p>Ratifica o corrige estándares propuestos por la
+	 IETF.
+	 </p></dd><dt><span class="term">IAB Internet Architecture Board</span></dt><dd><p>Planeación a largo plazo y coordinación entre las
+	  diversas áreas.
+	 </p></dd><dt><span class="term">IANA Internet Assigned Numbers Authority</span></dt><dd><p>Mantienen registros de diversos nombres y números
+	  asignados a organizaciones. Es financiado por
+	  ICANN (<i>Internet
+	  Corporation for Assigned Names and Numbers</i>).
+	 </p></dd></dl></div><p>
+     </p><p>La interconexión de las redes conectadas a Internet y su
+      mantenimiento se basa en el protocolo IP, que asigna a cada red y a cada
+      computador un número único (dirección IP) que permite identificarlo y
+      enviarle información.
+    </p><a class="indexterm" name="id457430"></a><p>La asignación de direcciones IP<sup>[<a name="id457454" href="#ftn.id457454">185</a>]</sup>
+      es manejada por IANA, que a su vez la ha
+      delegado a registros en diversas regiones.  Las regiones de
+      América y Africa debajo del Sahara son manejadas por el registro
+      ARIN (<i>American Registry for
+      Internet Numbers</i>), que recibe solicitudes para
+      asignar bloques a provedores de servicio a Internet
+      (ISP), estos proveedores deben contar con la
+      infraestructura para conectar sus computadores a Internet (e.g
+      con cables submarinos, vía satélite) y a su vez ofrecen bloques
+      de direcciones y conexión a otros proveedores o a
+      usuarios.</p><p>Dada que la comunicación de dos computadores es un proceso
+      complejo (aún más dada la variedad de redes conectadas a
+      Internet), además de una basta infraestructura física, Internet
+      se basa en varios protocolos que siguen todos los computadores y
+      enrutadores conectados.  Algunos de estos protocolos dependen de
+      otros, dando lugar a varias capas de protocolos: aplicación,
+      transporte, internet, enlace<sup>[<a name="id457572" href="#ftn.id457572">186</a>]</sup>.  El siguiente
+      diagrama presenta algunos protocolos en las diversas capas de
+      una red TCP/IP sobre una red física Ethernet
+      o sobre una conexión con modem:</p><pre class="screen">
+Capa de aplicación:
+     Protocolos de usuario             FTP Telnet ssh   http   SMTP ...
+                                        |     |     |      |    | 
+     Protocolos de soporte    DNS       |     |     |      |    | 
+                             |   \      |     |     |      |    |
+Capa de transporte           UDP   TCP --------------------------
+                              \  /
+Capa de internet (red):      IP -  ICMP                  
+                             ___|___
+                            /       \
+Capa de enlace:	          ARP        PPP
+                           |          |
+Capa física:	       Ethernet     Modem
+                        |              | 
+                     Par trenzado    Línea telef.
+</pre></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="id457597"></a>1.1.2. Capas de una red TCP/IP sobre
+    algunos medios físicos</h4></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id457606"></a>1.1.2.1. Capa física</h5></div></div><a class="indexterm" name="id457613"></a><p>Se refiere a las conexiones eléctricas y mecánicas de la
+       red.  Ejemplos de protocolos a este nivel son: Ethernet,
+       Inalámbrico IEEE 802.11, Modem y fibra
+       óptica.  La información por transmitir se codifica en últimas
+       como una señal electríca que debe transmitirse por cables o
+       como una señal electromagnética (luz, ondas).  En medios de
+       transmisión compartidos por más computadores (Ethernet, fibra
+       óptica, aire), el protocolo de este nivel debe tener en cuenta:
+       codificación/decodificación de información del bus al medio de
+       transmisión y arbitrar en caso de colisión de datos.  Este tipo
+       de protocolos es implementado por hardware, comúnmente por una
+       tarjeta o dispositivo dedicado que se debe conectar al bus de
+       cada computador. Las tarjetas de los computadores que se
+       comunican se conectan empleando el medio de transmisión. Linux,
+       a nivel físico soporta dispositivos ethernet, fddi, token ring,
+       ax25 y cuenta con controladores para diversos modems.  En el
+       caso particular de Ethernet, existen en el momento de este
+       escrito estándares para 10Mbps, 100Mbps, 1Gbps y 10Gbps, la
+       versión de 10Mbps puede emplearse en estrella (i.e. todos los
+       computadores conectados por cables de pares trenzados a un
+       concentrador) o en bus (i.e. un sólo cable coaxial al que se
+       conectan las tarjetas de todos los computadores), puede
+       configurarse como <i>Half-duplex</i> o
+       como <i>Full-Duplex</i>. Describiremos
+       el uso del esquema más popular y económico en este momento:
+       10Mbps, Half-duplex con cable de pares trenzados
+       <sup>[<a name="id457885" href="#ftn.id457885">187</a>]</sup>.  Cada tarjeta Ethernet tiene una dirección única
+	 (llamada dirección MAC), que en una
+	 transmisión permite indicar tarjeta fuente y tarjeta destino
+	 (la dirección MAC de ambos es transmitida
+	 también).
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id457910"></a>1.1.2.2. Capa de enlace</h5></div></div><a class="indexterm" name="id457917"></a><p>Los protocolos de esta capa permiten interconectar la capa
+       de internet (IP) con la red
+       que se use.  En el caso de una red Ethernet se trata del
+       protocolo ARP<sup>[<a name="id457948" href="#ftn.id457948">188</a>]</sup> que en Linux
+       está implementado como parte de IP, y que se encarga de traducir
+       direcciones IP a direcciones
+       MAC
+       <sup>[<a name="id458055" href="#ftn.id458055">189</a>]</sup>.
+      </p><p>Cada vez que un computador de una LAN
+       identifica una dirección IP
+       de otro computador conectado a la LAN y su
+       correspondiente dirección ARP, almacena la
+       información en una tabla (se borra automáticamente después de
+       15 minutos o manualmente si se instala el paquete
+       <tt>iproute</tt>con algo como <b>ip neigh
+       delete 192.168.1.32 dev eth0</b>).  Esta tabla puede
+       consultarse en <tt>/proc/net/arp</tt> o con
+       <b>ip neigh show</b>.</p><p>Para monitorear una red Ethernet y detectar nuevos
+       computadores que se conecten, puede emplearse el programa
+       arpwatch (paquete
+       <tt>arpwatch</tt>) que cada vez que detecta cambios
+       envía un correo a la cuenta root.</p><p>En el caso de una conexión por modem el protocolo es
+       PPP<sup>[<a name="id458152" href="#ftn.id458152">190</a>]</sup>, que se encarga
+       de establecer, terminar y verificar la conexión.  Durante la
+	 conexión autentica el computador que se conecta ante el
+       servidor (bien con el protocolo PAP o con
+	 CHAP) y durante la operación preparar los
+       paquetes enviados por otros protocolos (como
+       IP) para transmitirlos por modem.
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id458178"></a>1.1.2.3. Capa de internet</h5></div></div><a class="indexterm" name="id458185"></a><p>En esta capa la información es fragmentada y envíada
+       empleando el protocolo de la capa física. Los protocolos de
+       esta capa deben tener en cuenta la retransmisión de la
+       información en caso de error al enviar y el verificar
+       información recibida. En esta capa está el
+       <i>Internet Protocol</i> (IP) que es un protocolo diseñado para
+       Internet y del cual hay dos versiones: IPv4
+       e IPv6.
+       Describiremos la versión 4
+
+       <sup>[<a name="id458227" href="#ftn.id458227">191</a>]</sup>
+       (la versión 6 fue diseñada para soportar más computadores
+       conectados a Internet aunque en el momento de este escrito no
+       es ampliamente usada 
+       <sup>[<a name="id458247" href="#ftn.id458247">192</a>]</sup>).
+      </p><p>Este protocolo permite la transmisión de paquetes
+       (llamados datagramas) en redes donde cada computador
+       interconectado se identifica con una dirección única. Tales
+       direcciones están diseñadas para interconectar varias redes,
+       identificar los computadores que pertenecen a una red
+       (empleando una máscara de red que indica que parte de la
+       dirección del computador corresponde a la dirección de la red)
+       y facilitar el enrutamiento.  Si el medio de transmisión lo
+       requiere el protocolo IP se
+       encarga de la división de los datagramas en paquetes más
+       pequeños para su tranmisión y de la posterior reagrupación
+       (fragmentación), el tamaño máximo que un paquete puede tener
+       para un protocolo de nivel físico se llama
+       MTU (<i>Maximal Transfer
+       Unit</i>), en el caso de Ethernet es 1500
+       bytes.</p><p>Cada datagrama por transmitir es pasado a la capa de
+       IP por otro protocolo de una
+       capa superior (e.g TCP) junto con dirección
+       destino, IP mantiene una
+       tabla de enrutamiento que asocia direcciones destino con
+       compuertas (computadores intermediarios en inglés
+       <i>gateways</i>). Así que envía el
+       datagrama empleando el nível físico a la dirección de la
+       compuerta que mantenga en su tabla de enrutamiento.  La tabla
+       de enrutamiento puede ser modificada manualmente (con el
+       programa <b>route</b>) o puede ser modificada
+       automáticamente cuando una compuerta envía un mensaje indicando
+       la dirección de otra compuerta más apropiada para llegar a un
+       dirección.  Hay siempre una compuerta por defecto a la que se
+       envían paquetes que IP no
+       sepa como enrutar. </p><a class="indexterm" name="id458402"></a><p>Este protocolo no es fiable, no asegura que un paquete
+       llegue a su destino y no realiza retransmisiones. Para informar
+       algunas situaciones anomalas emplea el protocolo
+       ICMP
+       <sup>[<a name="id458430" href="#ftn.id458430">193</a>]</sup>.</p><a class="indexterm" name="id458519"></a><p>Los kernels 2.2 y 2.4 cuentan con buenas implementaciones
+       de IPv4 con multicasting nivel 2
+       (RFC 1112), enmascaramiento
+       <sup>[<a name="id458552" href="#ftn.id458552">194</a>]</sup>, con posibilidad de enrutar paquetes y de filtrar
+       paquetes.  Entre las posibilidades no estándar que ofrece
+       están: balanceo de carga si hay múltiples provedores de acceso
+       a Internet, políticas avanzadas de enrutamiento (por ejemplo
+       con base en usuarios), túneles que permiten interconectar dos
+       redes con la misma dirección de red pero con una red entre
+       ellas, IPv6, y otras que se describen en:
+       <a href="http://www.tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.iproute2.explore.html" target="_top">http://www.tldp.org/HOWTO/Adv-Routing-HOWTO/lartc.iproute2.explore.html</a>
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id458577"></a>1.1.2.4. Capa de enlace</h5></div></div><a class="indexterm" name="id458584"></a><p>Los protocolos de esta capa asegura una conexión continua
+       y posiblemente libre de errores entre emisor y receptor.  Un
+       protocolo de esta capa debe tener en cuenta mantener los
+       paquetes en orden y asegurar que están completos.  Esto se
+       requiere porque el nivel de red puede enrutar diversos paquetes
+       de forma diferente.  En esta capa hay dos 
+       protocolos: TCP<sup>[<a name="id458692" href="#ftn.id458692">195</a>]</sup> y
+   UDP<sup>[<a name="id458713" href="#ftn.id458713">196</a>]</sup>.  El primero es
+       fiable, asegura que la transmisión enviada sea recibida,
+       UDP por su parte no busca
+       confirmar que la información llegue a su destino (aunque
+       permite hacer broadcast y multicast mientras TCP no).  Ambos protocolos emplean
+       puertos para permitir más de una conexión con uno o más
+       computadores, un puerto se identifica con un número entre 0 y
+       65536, los primeros 1024 números sólo pueden ser usados por
+       servidores iniciados desde la cuenta root, los demás pueden ser
+       usados por todos los usuarios.
+       </p><a class="indexterm" name="id458744"></a><a class="indexterm" name="id458929"></a><p>Puede examinar información sobre conexiones a puertos
+       TCP en
+	 <tt>/proc/net/tcp</tt> y a puertos UDP en
+       <tt>/proc/net/udp</tt>.
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id458984"></a>1.1.2.5. Capa de aplicación</h5></div></div><p>Consta de protocolos empleados por aplicaciones con
+       propósitos específicos.  Emplean los protocolos de la capa de
+       transporte para establecer comunicación.  Los protocolos de
+       esta capa pueden dividirse a su vez en protocolos de usuario y
+       protocolos de soporte.  Los primeros son para programas
+       empleados directamente por usuarios y los segundos son
+       empleados por el sistema operativo o por otros
+       protocolos.</p><div class="sect5"><div class="titlepage"><div><h6 class="title"><a name="id458995"></a>1.1.2.5.1. Protocolos de usuario</h6></div></div><div class="variablelist"><dl><dt><span class="term">Telnet</span></dt><dd><p>
+	   Telnet está definido en el RFC 854 y
+	   complementado en el RFC 1123 Permite la
+	   operación remota de otro computador (ver <a href="servicios-de-la-intranet.html#telnet-y-ssh" title="3.1.1. 
+      telnet y ssh
+     ">telnet y ssh</a> y
+	   <a href="protocolos-de-soporte-y-de-usuario.html#configuracion-de-servicios-basicos" title="4.1.1. Configuración de servicios básicos">
+	    Configuración de servicios básicos</a>), además
+	   puede usarse para interactuar con otros protocolos
+	   (por ejemplo puede interactuar con el protocolo de
+	   correo SMTP de su propio computador ---puerto 25---
+	   con <b>telnet localhost 25</b>)</p></dd><dt><span class="term">(<i>File Transfer Protocol</i>)
+	   FTP
+	 </span></dt><dd><p>FTP está definido
+	   en el RFC 959 y complementado en el
+	   RFC 1123, permite transmisión de
+	   archivos (ver <a href="servicios-de-la-intranet.html#ftp" title="3.1.2. Ftp">FTP</a> y <a href="protocolos-de-soporte-y-de-usuario.html#servicio-ftp" title="4.1.8. Servicio FTP">Servicio FTP</a>)
+	  </p></dd><dt><span class="term">TFPT</span></dt><dd><p> Está definido en el RFC 1350
+	   (<i>Trivial File Transfer
+	   Protocol</i>), es análogo a FTP pues permite transmitir
+	   archivos, aunque es mucho más simple, es apropiado para
+	   transmitir el sistema operativo a computadores sin disco
+	   duro que arrancan por red</p></dd><dt><span class="term">SMTP</span></dt><dd><p>SMTP se definió en
+	   el RFC 822 y se complementó en el RFC
+	   1123 (<i>Simple Mail Transfer
+	   Protocol</i>) que especifica como se realiza la
+	   transmisión de correo electrónico (ver <a href="informacion-personal-y-comunicacion-con-otros-usuarios.html#correo-electronico" title="2.1.3. Correo electrónico">Correo electrónico</a> y
+	   <a href="protocolos-de-soporte-y-de-usuario.html#servicio-de-correo" title="4.1.7. Servicio de correo"> Servicio de
+	   correo</a>).</p></dd></dl></div></div><div class="sect5"><div class="titlepage"><div><h6 class="title"><a name="id459340"></a>1.1.2.5.2. Protocolos de soporte</h6></div></div><div class="variablelist"><dl><dt><span class="term">DNS</span></dt><dd><p>Definido en los RFC 1034 y 1035 y
+	   complementado en el RFC 1123.  Es empleado
+	   para dar nombres descriptivos a direcciones IP (e.g structio.sourceforge.net
+	   es el nombre DNS de la dirección
+	   66.35.250.209)</p></dd><dt><span class="term">BOOTP</span></dt><dd><p>Empleado por algunas estaciones sin disco para
+	    solicitar su dirección IP</p></dd><dt><span class="term">SMMP</span></dt><dd><p>Empleado para monitorear uso de una red.</p></dd></dl></div></div></div></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-redes-protocolos-e-internet"></a>1.2. Lecturas recomendadas: Redes, protocolos e Internet</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Puede consultarse más sobre el IETF y
+       otras organizaciones que mantienen Internet en &quot;<i>The
+       Tao of IETF: A Novice&quot;s Guide to the Internet Engineering Task
+       Force</i>&quot;
+       <a href="http://www.ietf.org/tao.html" target="_top">
+	http://www.ietf.org/tao.html</a>. También puede
+       consultar un escrito muy interesante sobre dicha
+       organización en <a href="http://www.oreilly.com/catalog/opensources/book/ietf.html" target="_top">http://www.oreilly.com/catalog/opensources/book/ietf.html</a>
+      </p></li><li><p>Puede consultar los RFC en
+       <a href="http://www.rfc-editor.org" target="_top">
+	http://www.rfc-editor.org</a>. También puede consultar
+       versiones en castellano en <a href="http://lucas.hispalinux.es/htmls/estandares.html" target="_top">http://lucas.hispalinux.es/htmls/estandares.html</a>
+      </p></li><li><p><i>Networking-Overview-HOWTO</i>. 
+       Networking Protocols.  <a href="http://www.linuxdoc.org/HOWTO/Networking-Overview-HOWTO-3.html" target="_top">http://www.linuxdoc.org/HOWTO/Networking-Overview-HOWTO-3.html</a>
+      </p></li><li><p><i>Networking-Overview-HOWTO</i>. File
+       Sharing and Printing.  <a href="http://www.linuxdoc.org/HOWTO/Networking-Overview-HOWTO-5.html" target="_top">http://www.linuxdoc.org/HOWTO/Networking-Overview-HOWTO-5.html</a>
+      </p></li><li><p><i>Networking-Overview-HOWTO</i>. 
+       Internet/Intranet.  <a href="http://www.linuxdoc.org/HOWTO/Networking-Overview-HOWTO-6.html" target="_top">http://www.linuxdoc.org/HOWTO/Networking-Overview-HOWTO-6.html</a>
+      </p></li><li><p>Chris Campbell, <i>Introduction to Networking,
+	Part 1: Physical Media</i> <a href="http://linux.com/sysadmin/newsitem.phtml?sid=1&amp;aid=11135" target="_top">http://linux.com/sysadmin/newsitem.phtml?sid=1&amp;aid=11135</a>
+      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-redes-protocolos-e-internet"></a>1.3. Ejercicios: Redes, protocolos e Internet</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id459659"></a><a name="linred.capas.1"></a><b>1.3.1. </b></td><td align="left" valign="top"><p>Discuta en clase las posibilidades que ofrece
+       Linux en una red LAN y estrategias para
+       aprovecharlas en su institución.
+       </p></td></tr><tr class="question"><td align="left" valign="top"><a name="id459686"></a><a name="linred.capas.2"></a><b>1.3.2. </b></td><td align="left" valign="top"><p>Cotice con uno o más proveedores de acceso a
+	   Internet posibilidades y costos para dar conexión a Internet
+	   esporádica o permanente a su colegio.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id459793"></a><a name="linred.capas.3"></a><b>1.3.3. </b></td><td align="left" valign="top"><p>Consulte la posibilidad de emplear fibra
+       óptica como medio de transmisión con Linux.</p></td></tr></tbody></table></div></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id420716" href="#id420716">183</a>] </sup>Para ampliar el significado de los 
+       términos técnicos introducidos en estas guías (como
+      <i>protocol</i> o
+      <i>daemon</i>), se sugiere consultar el
+      diccionario FOLDOC en su sistema (ver <a href="edicion-de-texto.html" title="4. Edición de texto">
+	Edición de texto</a>) o en Internet 
+      <a href="http://foldoc.doc.ic.ac.uk/foldoc" target="_top">http://foldoc.doc.ic.ac.uk/foldoc</a> </p></div><div class="footnote"><p><sup>[<a name="ftn.id456966" href="#id456966">184</a>] </sup>El programa que sigue este protocolo hace 
+	    parte de la implementación de IPv4 en el kernel (archivo 
+	    <tt>net/ipv4/icmp.c</tt>).</p></div><div class="footnote"><p><sup>[<a name="ftn.id457454" href="#id457454">185</a>] </sup> Puede verse
+	más sobre asignación de IPs en el RFC 2050
+	y sobre asignación de direcciones in redes
+	IP privadas en 
+	RFC 1918.
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id457572" href="#id457572">186</a>] </sup>El
+      RFC 1122 presenta las capas de una red
+      TCP/IP</p></div><div class="footnote"><p><sup>[<a name="ftn.id457885" href="#id457885">187</a>] </sup>El estándar que define este esquema es
+	 IEEE 802.3, que se basa en el uso de un
+	 sólo medio de transmisión compartido por todos los
+	 dispositivos en el que sólo trasmite un sólo dispositivo
+	 durante un tiempo para evitar colisiones, se elige el
+	 siguiente dispositivo por transmitir con el algoritmo
+	 CSMA/CD --cuando un dispositivo detecta
+	 que la línea está libre transmite parte de la información si
+	 detecta colisión da oportunidad de transmisión a otros un
+	 intervalo aleatorio de tiempo.</p></div><div class="footnote"><p><sup>[<a name="ftn.id457948" href="#id457948">188</a>] </sup>ARP se define
+       en el RFC 826</p></div><div class="footnote"><p><sup>[<a name="ftn.id458055" href="#id458055">189</a>] </sup> Un computador envía un
+	 mensaje a todos los demás de la red
+	 (<i>broadcast</i> que es posible en
+	 Ethernet), solicitando la dirección MAC de
+       una dirección IP, el
+	 dispositivo con esa MAC responde enviando su dirección
+       MAC al dispositivo que hizo la solicitud.
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id458152" href="#id458152">190</a>] </sup>PPP se describe en el
+	 RFC 1661.</p></div><div class="footnote"><p><sup>[<a name="ftn.id458227" href="#id458227">191</a>] </sup>El protocolo IPv4 está
+	 descrito en el RFC 791, aunque puede verse
+	 una descripción en conjunto con otros protocolos en el
+	 RFC 1122</p></div><div class="footnote"><p><sup>[<a name="ftn.id458247" href="#id458247">192</a>] </sup>El sitio de desarrollo de
+	 IPv6 para Linux es <a href="http://www.linux-ipv6.org" target="_top">http://www.linux-ipv6.org</a>
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id458430" href="#id458430">193</a>] </sup>ICMP Internet Control Message Protocol, se describe en
+	 el RFC792, permite enviar mensajes de error (e.g dirección
+	 inalcanzable, tiempo excedido) y algunos mensajes para hacer
+	 consultas (e.g eco, estampilla de
+	 tiempo).</p></div><div class="footnote"><p><sup>[<a name="ftn.id458552" href="#id458552">194</a>] </sup>
+	 Enmascaramiento del inglés
+	 <i>masquerading</i>
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id458692" href="#id458692">195</a>] </sup>TCP se describe en el
+       RFC 793 y se complementa y corrige en el
+       RFC 1122</p></div><div class="footnote"><p><sup>[<a name="ftn.id458713" href="#id458713">196</a>] </sup>UDP está descrito 
+       en el RFC 768 y corregido en el
+       RFC 1122</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="localizacion-y-configuracion-de-algunos-programas.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="AA_Linux_colegio.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="dispositivos-para-interconexion-y-linux.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">6. Localización y configuración de algunos programas </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 2. Dispositivos para interconexión y Linux </td></tr></table></div></body></html>

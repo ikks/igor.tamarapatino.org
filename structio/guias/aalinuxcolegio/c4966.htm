@@ -1,0 +1,667 @@
+<HTML
+><HEAD
+><TITLE
+>Desarrollo de habilidades para administrar computadores con
+   Linux</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Configuración de una sesión"
+HREF="x4476.htm"><LINK
+REL="NEXT"
+TITLE="Apagado y encendido de una red"
+HREF="x5075.htm"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x4476.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x5075.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="administracion-uno"
+>Capítulo 4. Desarrollo de habilidades para administrar computadores con
+   Linux</A
+></H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Tabla de contenidos</B
+></DT
+><DT
+><A
+HREF="c4966.htm#el-rol-de-administrador"
+>El rol del administrador de red</A
+></DT
+><DT
+><A
+HREF="x5075.htm"
+>Apagado y encendido de una red</A
+></DT
+><DT
+><A
+HREF="x5590.htm"
+>Administración de usuarios</A
+></DT
+><DT
+><A
+HREF="x6433.htm"
+>Administración de archivos</A
+></DT
+><DT
+><A
+HREF="x7217.htm"
+>Administración de programas</A
+></DT
+><DT
+><A
+HREF="x7966.htm"
+>Colaboración y soporte</A
+></DT
+></DL
+></DIV
+><H2
+CLASS="BRIDGEHEAD"
+>Público y logros</H2
+><P
+>Personas que administren un computador con Linux Debian no
+  necesariamente conectado en red (ver <A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de referencia</A
+>)
+  <A
+NAME="AEN4971"
+HREF="#FTN.AEN4971"
+>[1]</A
+>
+  </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="superusuario"
+></A
+><P
+>Entiende la responsabilidad como superusuario de una
+      máquina y tiene una conducta ética para llevar a cabo su papel.
+     </P
+></LI
+><LI
+><A
+NAME="encap"
+></A
+><P
+>Implementa una política para encendido y apagado de la red.
+     </P
+></LI
+><LI
+><A
+NAME="admus"
+></A
+><P
+>Administra los usuarios del sistema.</P
+></LI
+><LI
+><A
+NAME="admarc"
+></A
+><P
+>Administra los archivos y sistemas de archivos.</P
+></LI
+><LI
+><A
+NAME="admprog"
+></A
+><P
+>Administra los programas instalados. </P
+></LI
+></UL
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="el-rol-de-administrador"
+>El rol del administrador de red</A
+></H1
+><P
+>Indicadores de Logros:</P
+><P
+></P
+><UL
+><LI
+><A
+NAME="superusuario.rol"
+></A
+><P
+>&#13;       Conoce el rol de administrador de red.
+      </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-el-rol-de-administrador"
+>Lectura: El rol de administrador</A
+></H2
+><P
+>&#13;     Un administrador de red sirve a los usuarios: crea espacios de
+     comunicación, atiende sugerencias; mantiene las herramientas y el
+     espacio requerido por cada usuario, a tiempo y de buena forma
+     (piense si usted fuera usuario como le gustaría que fuera el
+     administrador); mantiene en buen estado el hardware y el software
+     de los computadores y la(s) red(es) a su cargo; mantiene
+     documentación que describe la red, el hardware y el software que
+     administra; respeta la privacidad de los usuarios y promueve el
+     buen uso de los recursos.  A cambio de tantas responsabilidades
+     la recompensa es el buen funcionamiento de la red como un medio
+     que vincula personas y de los computadores y programas como
+     herramientas para agilizar algunas labores que dan tiempo y dar
+     tiempo para realizar otras.
+   </P
+><A
+NAME="AEN4994"
+></A
+><P
+>Encargado del buen
+   funcionamiento de un sistema Linux.</P
+><P
+>&#13;     El administrador de red debe conocer las claves de la cuenta
+     <TT
+CLASS="literal"
+>root</TT
+> de las máquinas que administra.  Desde
+     esa cuenta puede configurar servicios y establecer políticas que
+     afectarán a todos los usuarios. Algunas de las labores que sólo
+     pueden hacerse desde esta cuenta son:
+   </P
+><A
+NAME="AEN4999"
+></A
+><P
+>Nombre de la cuenta que permite
+    administrar un sistema Linux.</P
+><P
+></P
+><UL
+><LI
+><P
+>Apagar el equipo (aunque por defecto en Debian esta
+       operación la puede realizar cualquier usuario).
+     </P
+></LI
+><LI
+><P
+>Configurar los programas que se inician junto con el
+       sistema.</P
+></LI
+><LI
+><P
+>Administrar cuentas de usuarios. </P
+></LI
+><LI
+><P
+>Administrar los programas y la documentación
+       instalada.</P
+></LI
+><LI
+><P
+>Configurar los programas y los dispositivos.</P
+></LI
+><LI
+><P
+>Configurar la zona geográfica, fecha y hora.
+      </P
+></LI
+><LI
+><P
+>Administrar espacio en discos y mantener copias de respaldo.
+      </P
+></LI
+><LI
+><P
+>Configurar servicios que funcionarán en red.
+      </P
+></LI
+><LI
+><P
+>Solucionar problemas con dispositivos o programas.  Labor
+       que resultaq en ocasiones la más dispendiosa, pero que se
+       facilitará entre más aprenda del sistema y la red a su cargo.
+      </P
+></LI
+><LI
+><P
+>Revisar bitácoras
+       <A
+NAME="AEN5023"
+HREF="#FTN.AEN5023"
+>[2]</A
+>, solucionar y prevenir inconvenientes de seguridad.
+     </P
+></LI
+></UL
+><A
+NAME="AEN5026"
+></A
+><P
+>Archivo donde se registran
+     eventos importantes del sistema</P
+><P
+>Por las posibilidades que se tienen desde esta cuenta, no
+     debe emplearla para realizar operaciones como usuario (cree más
+     bien una cuenta de usuario) y debe evitar que otras personas
+     tengan la clave de esta cuenta (comience por emplear una clave
+     segura ver <A
+HREF="x328.htm"
+>Sistema de
+     usuarios y manejo de clave</A
+>).
+   </P
+><P
+>Al igual que los demás usuarios, la cuenta
+     <TT
+CLASS="literal"
+>root</TT
+> tiene un espacio independiente
+     (<TT
+CLASS="filename"
+>/root</TT
+>), sin embargo la mayoría de
+     configuraciones se hacen editando archivos del directorio
+     <TT
+CLASS="filename"
+>/etc</TT
+>, otras se hacen
+     ejecutando programas disponibles en los directorios <TT
+CLASS="filename"
+>/usr/sbin</TT
+> y <TT
+CLASS="filename"
+>/sbin</TT
+> y las bitácoras se examina con
+     programas (e.g <B
+CLASS="command"
+>last</B
+>), o en archivos del
+     directorio <TT
+CLASS="filename"
+>/var/log</TT
+>.
+   </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomandadas-el-rol-de-administrador"
+>Lectura recomendadas: El rol de administrador</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Secciones 4.6.6, 4.6.7, 4.6.8 y 4.6.9 de "<I
+CLASS="citetitle"
+>Linux
+      Installation and Getting Started</I
+>" <A
+HREF="http://www.linuxdoc.org/LDP/gs/node6.html"
+TARGET="_top"
+>http://www.linuxdoc.org/LDP/gs/node6.html</A
+>
+     </P
+></LI
+><LI
+><P
+>Revise los tres primeros grupos de guías. Usted como
+       administrador podría ayudar a los usuarios a responder preguntas que
+       los usuarios hagan sobre estas guías (o las que use para guiar a los
+       usuarios en su institución).  
+      </P
+></LI
+><LI
+><P
+>Opcional: Sección "Acerca de Raíces, Sombreros y la
+       Sensación de Poder" de "<I
+CLASS="citetitle"
+>Linux Instalación y Primeros
+       Pasos (LIPP)</I
+>" disponible en <A
+HREF="http://lucas.hispalinux.es/Manuales-LuCAS/LIPP/lipp-1.1-html-2/lipp4.htm"
+TARGET="_top"
+>http://lucas.hispalinux.es/Manuales-LuCAS/LIPP/lipp-1.1-html-2/lipp4.htm</A
+>.
+     </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-el-rol-de-administrador"
+>Ejercicios: El rol de administrador</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="c4966.htm#superusuario.rol.1"
+>Piense y discuta en clase mecanismos para:
+       <P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Crear espacios de comunicación con usuarios
+	  en un colegio</P
+></LI
+><LI
+><P
+>Mantener documentación útil para el administrador y
+	  para los usuarios.</P
+></LI
+></OL
+>
+      </A
+></DT
+><DT
+>2. <A
+HREF="c4966.htm#superusuario.rol.2"
+>Una de las mayores dificultades tras
+       instalar Linux es la aceptación por parte de los usuarios
+       (quienes generalmente están acostumbrados a otro sistema
+       operativo).  ¿Cómo puede medirse la aceptación y qué
+       puede hacerse para mejorarla?</A
+></DT
+><DT
+>3. <A
+HREF="c4966.htm#superusuario.rol.3"
+>¿Cómo puede facilitar a los usuarios la
+       utilización del sistema?</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="superusuario.rol.1"
+></A
+><B
+>1. </B
+>Piense y discuta en clase mecanismos para:
+       <P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Crear espacios de comunicación con usuarios
+	  en un colegio</P
+></LI
+><LI
+><P
+>Mantener documentación útil para el administrador y
+	  para los usuarios.</P
+></LI
+></OL
+>
+      </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Algunas ídeas son: (1) un horario en el que
+       puedan acudir los usuarios y disposición para atenderlos,
+       correo electrónico, buzón de sugerencias (2) inventarios,
+       mantenimiento preventivo, actualización continua de software y
+       buena educación a los usuarios para que se conviertan en
+       amigos y no enemigos (3) buscar por ejemplo en Internet y
+       publicar en la Intranet los documentos que se consideren
+       apropiados así como guías de uso ---pueden ser estas o
+       extensiones a estas.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="superusuario.rol.2"
+></A
+><B
+>2. </B
+>Una de las mayores dificultades tras
+       instalar Linux es la aceptación por parte de los usuarios
+       (quienes generalmente están acostumbrados a otro sistema
+       operativo).  ¿Cómo puede medirse la aceptación y qué
+       puede hacerse para mejorarla?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Para medir aceptación pueden
+       realizarse encuestas, tener un buzón de sugerencias,
+       entrevistar usuarios.  Para mejorar la aceptación puede hacerse
+       publicidad (presentaciones en las que se destaquen las ventajas
+       sobre otros sistemas a estudiantes, profesores y padres). Nos
+       parece muy importante estar dispuesto a escuchar críticas y
+       responder con argumentos o aceptar errores.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="superusuario.rol.3"
+></A
+><B
+>3. </B
+>¿Cómo puede facilitar a los usuarios la
+       utilización del sistema?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Creemos que la mejor
+       estrategía es promover el autoaprendizaje, aunque en ocasiones
+       es bueno no presentar los detalles del sistema, es importante
+       poder tener acceso a los mismos para poder resolver problemas y
+       aprovecharlo al máximo.  Esto es posible con Linux y puede
+       aprovecharse sólo aprendiendo (leyendo y practicando).</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN4971"
+HREF="c4966.htm#AEN4971"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Para realizar la mayoría de ejercicios de estas guías
+      necesita acceso a la cuenta
+      <TT
+CLASS="literal"
+>root</TT
+>.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN5023"
+HREF="c4966.htm#AEN5023"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Bitácora: del inglés <I
+CLASS="foreignphrase"
+>log
+	 file</I
+> archivo donde se registran eventos
+	 importantes del sistema.
+	</P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x4476.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x5075.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Configuración de una sesión</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Apagado y encendido de una red</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

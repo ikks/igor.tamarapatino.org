@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2. Linux</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="exploracion-uno.html" title="Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario"><link rel="previous" href="exploracion-uno.html" title="Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario"><link rel="next" href="sistema-de-usuarios-y-manejo-de-clave.html" title="3. Sistema de usuarios y manejo de clave"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Linux</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="exploracion-uno.html">Anterior</a> </td><th width="60%" align="center">Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario</th><td width="20%" align="right"> <a accesskey="n" href="sistema-de-usuarios-y-manejo-de-clave.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="linux"></a>2. Linux</h2></div></div><b>Indicadores de logros</b><div class="itemizedlist"><ul type="disc"><li><p><a name="filosofia.hist"></a>Identifica algunos sucesos en la historia de Linux.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-linux"></a>2.1. Lectura: Linux</h3></div></div><p>Un sistema operativo es un programa que facilita el empleo
+     del hardware de un computador, lo facilita presentando
+     abstracciones de cada dispositivo. Por ejemplo al guardar
+     información en un disquete, el usuario puede pensar en archivos,
+     y el sistema operativo se encarga de los detalles de acomodar y
+     organizar la información en el disquete a nivel físico. Linux es
+     un sistema operativo tipo Unix de libre
+     redistribución.  Unix es el nombre de un
+     sistema operativo concebido en los 70's junto con el lenguaje de
+     programación C por Kenneth Thompson, Dennis Ritchie y sus colegas
+     de laboratorios Bell.
+    </p><a class="indexterm" name="id352700"></a><a class="indexterm" name="id352727"></a><p>Unix se basa en varias ideas muy buenas
+    que aún están en plena vigencia:
+    </p><div class="itemizedlist"><ul type="disc"><li><p>Para los creadores de Unix, un sistema
+       operativo debería ser un conjunto de herramienta y conceptos
+       básicos que le permitan al usuario construir rápida y
+       fácilmente sus propias herramientas para automatizar procesos.
+       Unix es como un juego de herramientas que
+       puede aprovecharse al máximo con algo de estudio.</p></li><li><p>Otra gran idea que se ha desarrollo junto con
+       Unix ha sido Internet, porque en este
+       sistema se realizaron las primeras implementaciones de los
+       protocolos de comunicación en los que se basa Internet, y aún
+       hoy son sistemas Unix los que mantienen Internet en
+       funcionamiento
+      <sup>[<a name="id352861" href="#ftn.id352861">3</a>]</sup>.
+      </p></li><li><p>Otra buena idea ha sido usar y promover estándares
+       abiertos.  Hoy en día existen grupos que mantiene estándares
+       que definen lo que es un sistema tipo Unix:
+       Posix <a href="http://standards.ieee.org/regauth/posix/index.html" target="_top">http://standards.ieee.org/regauth/posix/index.html</a>
+       y <i>The Open Group</i> <a href="http://www.opengroup.org" target="_top">http://www.opengroup.org</a> ---de hecho la palabra
+       Unix es una marca registrada de X/Open.
+      </p></li></ul></div><p>Dado que sacar copias de un programa no es costoso ni
+     difícil, y dado el carácter de Unix, desde sus
+     comienzos este sistema ha promovido la colaboración y muchas
+     personas han entregado al público las herramientas que han
+     realizado para permitir su libre redistribución.  En palabras del
+     mismo Dennis Ritchie &#8220;&quot;Lo que queríamos preservar no era sólo un
+     buen ambiente en el cual programar, sino también un sistema
+      alrededor del cual se formara fraternidad&quot;&#8221;
+     <sup>[<a name="id352931" href="#ftn.id352931">4</a>]</sup>.
+    </p><p>Hay incluso varios sistemas operativos tipo
+     Unix cuyas fuentes permiten la libre copia y
+     libre redistribución ---la mayoría se basan en Unix
+     BSD
+     <sup>[<a name="id352956" href="#ftn.id352956">5</a>]</sup>---, algunos son:
+    </p><a class="indexterm" name="id352966"></a><p>
+    </p><div class="variablelist"><dl><dt><span class="term">NetBSD</span></dt><dd><p>Es un descendiente de 386BSD (que a su
+	vez es un descendiente de BSD).
+	NetBSD se centra en portabilidad, es decir
+	que funciona en diversos tipos de computadores. <a href="http://www.netbsd.org" target="_top">http://www.netbsd.org</a>.</p></dd><dt><span class="term">OpenBSD</span></dt><dd><p>Descendiente de NetBSD, centrado en
+	seguridad y criptografía <a href="http://www.openbsd.org" target="_top">http://www.openbsd.org</a>.</p></dd><dt><span class="term">FreeBSD</span></dt><dd><p>Descendiente de 386BSD, centrado en
+	facilidad para el usuario final <a href="http://www.freebsd.org" target="_top">http://www.freebsd.org</a>.</p></dd><dt><span class="term">Linux</span></dt><dd><p>El kernel de este sistema ha sido desarrollado de forma
+	independiente de BSD desde 1992 por Linus
+	Torvalds y un gran grupo de voluntarios (<a href="http://www.kernel.org" target="_top">http://www.kernel.org</a>).  Otros componentes del
+	sistema fueron tomados de BSD y otros
+	fueron aportados por diversas organizaciones:
+	<i>Free Software Foundation</i>,
+	<i>XFree86</i>, <i>Apache
+	Foundation</i>, etc.</p></dd></dl></div><p>Los sistemas tipo Unix han sido empleados
+     tradicionalmente por programadores, por esto cuenta con
+     compiladores, editores y herramientas para facilitar la
+     programación ---especialmente en lenguaje C.  En el caso de Linux
+     tales herramientas han sido desarrolladas por la
+     <i>Free Software Foundation</i> <a href="http://www.fsf.org" target="_top">http://www.fsf.org</a>. Así mismo la
+     FSF aportó la licencia que cubre al kernel
+     (llamada GPL) y muchos componentes de un
+     sistema Linux.
+   </p><p>Al igual que otros sistemas operativos Unix/Linux cuenta con
+     un sistema de ventanas que, a diferencia de otros sistemas
+     operativos, es independiente de Unix/Linux ---es decir puede
+     ponerse, quitarse o cambiarse---.  Tal sistema de ventanas se
+     llama X-Window y la versión particular que se emplea en Linux se
+     llama XFree86 <a href="http://www.xfree86.org" target="_top">http://www.xfree86.org</a>.
+   </p><p>Para facilitar la adopción de Unix por parte de usuarios sin
+     experiencia con este sistema, hay varios proyectos en marcha, los
+     dos más conocidos son GNOME (<a href="http://www.gnome.org" target="_top">http://www.gnome.org</a>) y KDE
+     (<a href="http://www.kde.org" target="_top">http://www.kde.org</a>), que
+     funcionan sobre Linux y X-Window.  Cada uno brinda un escritorio
+     gráfico y aplicaciones de oficina como a las que están
+     acostumbrados los usuarios de otros sistemas operativos (e.g.
+     procesador de texto, hoja de cálculo, etc).
+    </p><p>Hay muchos otros programas que funcionan sobre Linux y que
+     satisfacen diversas necesidades.  Dada tal cantidad y variedad de
+     programas para Linux, hay grupos de personas dedicadas a
+     configurar distribuciones.  Una distribución de Linux es una
+     selección de programas junto con herramientas para administrarlos
+     e instalarlos con facilidad.  Algunos nombres de distribuciones
+     son Redhat, Mandrake, Suse, Debian.  Nuestra plataforma de
+     referencia (ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
+     referencia</a>) se basa en la distribución Debian que es de
+     alta calidad técnica y que es realizada por voluntarios del mundo
+     entero desde 1993.
+    </p></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-linux"></a>2.2. Lecturas recomendadas: Linux</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Dennis Ritchie ha escrito una corta autobiografía, que
+       está disponible en: <a href="http://cm.bell-labs.com/cm/cs/who/dmr/bigbio1st.html" target="_top">http://cm.bell-labs.com/cm/cs/who/dmr/bigbio1st.html</a>.
+      </p></li><li><p>La evolución del sistema Unix, como
+       diagrama puede consultarse en <a href="http://perso.wanadoo.fr/levenez/unix/" target="_top">http://perso.wanadoo.fr/levenez/unix/</a>,
+       allí mismo se encuentra una buena recopilación de enlaces a
+       diversas versiones de la historia de Unix.</p></li><li><p>Un muy buen libro en el cual se habla de la historia de
+       Unix es <i>A Quarter Century of
+       UNIX</i> de Peter H. Salus.</p></li><li><p>La evolución de BSD puede consultarse
+      en: <a href="http://www.oreilly.com/catalog/opensources/book/kirkmck.html" target="_top">http://www.oreilly.com/catalog/opensources/book/kirkmck.html</a>.
+      </p></li><li><p>Puede consultarse más sobre la forma de desarrollo del
+       kernel de Linux en el FAQ del mismo: <a href="http://www.tux.org/lkml" target="_top">http://www.tux.org/lkml</a>.
+      </p></li><li><p>Hay un breve resumem de la historia de Linux, Unix y los
+       movimientos de fuentes abiertas y software libre en la sección
+       2.1 de &quot;<i>Secure Programming for Linux and Unix
+       HOWTO</i>&quot;, escrito por David A. Wheeler: <a href="http://www.linuxdoc.org/HOWTO/Secure-Programs-HOWTO/history.html" target="_top">http://www.linuxdoc.org/HOWTO/Secure-Programs-HOWTO/history.html</a>.
+       </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-linux"></a>2.3. Ejercicios: Linux</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id353560"></a><a name="filosofia.hist.1"></a><b>2.3.1. </b></td><td align="left" valign="top"><p>Investigue más sobre las diferencias
+	    entre Linux y otros sistemas de libre redistribución como OpenBSD o 
+	    FreeBSD.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id353586"></a><a name="filosofia.hist.2"></a><b>2.3.2. </b></td><td align="left" valign="top"><p>¿En que consisten los 
+	    movimientos de fuentes abiertas y de software libre, y cual es su 
+	    relación con Linux? </p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id352861" href="#id352861">3</a>] </sup>Por ejemplo el principal servidor de nombres en Internet
+	 es una máquina
+	 Unix(BSD), puede ver
+	 detalles sobre este servidor en <a href="http://www.isc.org/services/public/F-root-server.html" target="_top">http://www.isc.org/services/public/F-root-server.html</a>
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id352931" href="#id352931">4</a>] </sup>Cita tomada de un artículo escrito por Dennis Ritchie sobre
+       la historia de Unix, disponible en <a href="http://cm.bell-labs.com/cm/cs/who/dmr/hist.html" target="_top">http://cm.bell-labs.com/cm/cs/who/dmr/hist.html</a></p></div><div class="footnote"><p><sup>[<a name="ftn.id352956" href="#id352956">5</a>] </sup>BSD es el nombre de una versión de Unix desarrollado en la
+       universidad de Berkeley (Estados Unidos) desde los
+       70's
+      </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="exploracion-uno.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="exploracion-uno.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="sistema-de-usuarios-y-manejo-de-clave.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 3. Sistema de usuarios y manejo de clave</td></tr></table></div></body></html>

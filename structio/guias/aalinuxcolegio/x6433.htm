@@ -1,0 +1,3091 @@
+<HTML
+><HEAD
+><TITLE
+>Administración de archivos</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Desarrollo de habilidades para administrar computadores con
+   Linux"
+HREF="c4966.htm"><LINK
+REL="PREVIOUS"
+TITLE="Administración de usuarios"
+HREF="x5590.htm"><LINK
+REL="NEXT"
+TITLE="Administración de programas"
+HREF="x7217.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x5590.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 4. Desarrollo de habilidades para administrar computadores con
+   Linux</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x7217.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="administracion-de-archivos"
+>Administración de archivos</A
+></H1
+><P
+>Indicadores de Logros</P
+><P
+></P
+><UL
+><LI
+><A
+NAME="admarc.org"
+></A
+><P
+>Conoce la organización de la jerarquía de directorios de Linux.
+      </P
+></LI
+><LI
+><A
+NAME="admarc.sist"
+></A
+><P
+>Administra sistemas de archivos. </P
+></LI
+><LI
+><A
+NAME="admarc.ext2"
+></A
+><P
+>Administra el sistema de archivos Ext2.</P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-administracion-de-archivos"
+>Lectura: Administración de archivos</A
+></H2
+><P
+>&#13;    En Unix se emplean archivos o directorios para mantener
+    información en medios de almacenamiento (e.g discos duros,
+    disquettes, <SPAN
+CLASS="acronym"
+>CD-ROM</SPAN
+>) pero también para abstraer
+    dispositivos de hardware y mantener canales de comunicación con
+    programas.  En una red pueden emplearse directorios o archivos que
+    estén en otro computador (ver <A
+HREF="x12937.htm#servicio-nfs"
+>Servicio NFS</A
+>).
+   </P
+><P
+>Para leer o escribir en un medio de almacenamiento es
+    necesario montarlo antes en la jerarquía de directorios (see <A
+HREF="x749.htm"
+>Disquetes y CDROM</A
+>).  Aunque
+    antes de poderlo montar ya debe estar formateado a bajo nivel y
+    debe contar con un sistema de archivos.  Formatear un medio de
+    almacenamiento significa prepararlo para que el hardware pueda
+    leerlo y escribirlo, al dotarlo de un sistema de archivos se
+    prepara para que el sistema operativo pueda organizar, leer y
+    escribir datos.
+   </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="ubicacion-de-archivos-y-directorios"
+>Ubicación de archivos y directorios</A
+></H3
+><P
+>Los directorios y archivos de un sistema Debian tiene una
+     estructura estándar
+      <A
+NAME="AEN6453"
+HREF="#FTN.AEN6453"
+>[1]</A
+>,
+       algunos de los directorios son: </P
+><A
+NAME="AEN6457"
+></A
+><P
+>Directorio que contiene el kernel e
+      información del arranque del sistema</P
+><A
+NAME="AEN6461"
+></A
+><P
+>Directorio que contiene programas
+      disponibles incluso en los modos de ejecución más
+      restringidos.</P
+><A
+NAME="AEN6465"
+></A
+><P
+>Directorio que contiene programas
+      disponibles para usuarios finales y datos de dichos programas
+	 que no requiren modificación. </P
+><A
+NAME="AEN6469"
+></A
+><P
+>Directorio que contiene programas
+       disponibles para todos los usuarios.</P
+><A
+NAME="AEN6473"
+></A
+><P
+>Directorio que contiene programas
+       disponibles para el administrador.</P
+><A
+NAME="AEN6477"
+></A
+><P
+>Directorio que contiene los
+       diccionarios.</P
+><A
+NAME="AEN6481"
+></A
+><P
+>Directorio que contiene
+       documentación.</P
+><A
+NAME="AEN6485"
+></A
+><P
+>Directorio que contiene páginas
+       info.</P
+><A
+NAME="AEN6489"
+></A
+><P
+>Directorio que contiene páginas
+       man.</P
+><A
+NAME="AEN6493"
+></A
+><P
+>Directorio que contiene enlaces o
+       complementos a la documentación disponible en
+       /usr/share/doc.</P
+><A
+NAME="AEN6497"
+></A
+><P
+>Directorio que contiene enlaces o
+       complementos a la documentación disponible en
+       /usr/share/info.</P
+><A
+NAME="AEN6501"
+></A
+><P
+>Directorio que contiene enlaces o
+       complementos a la documentación disponible en
+       /usr/share/man.</P
+><A
+NAME="AEN6505"
+></A
+><P
+>Directorio que contiene librerías de
+       funciones comunes a varios programas.</P
+><A
+NAME="AEN6509"
+></A
+><P
+>Directorio que contiene encabezados
+	de algunos componentes del sistema.</P
+><A
+NAME="AEN6513"
+></A
+><P
+>Directorio que contiene fuentes de
+	algunos programas.</P
+><A
+NAME="AEN6517"
+></A
+><P
+>Directorio que contiene datos y
+       programas de X-Window.</P
+><A
+NAME="AEN6521"
+></A
+><P
+>Directorio que contiene datos y
+       programas compilados por el administrador.</P
+><A
+NAME="AEN6525"
+></A
+><P
+>Directorio para montar
+      disquettes.</P
+><A
+NAME="AEN6529"
+></A
+><P
+>Directorio para montar
+      CD-ROM.</P
+><A
+NAME="AEN6533"
+></A
+><P
+>Directorio para montar archivos o
+      dispositivos.</P
+><A
+NAME="AEN6537"
+></A
+><P
+>Directorio que contiene canales de
+      comunicación con algunos programas.</P
+><A
+NAME="AEN6541"
+></A
+><P
+>Directorio que contiene librerías
+      indispensables y módulos.</P
+><A
+NAME="AEN6545"
+></A
+><P
+>Directorio que contiene archivos de
+      configuración.</P
+><A
+NAME="AEN6549"
+></A
+><P
+>Directorio que contiene
+      abstracciones a los dispositivos conectados.</P
+><A
+NAME="AEN6553"
+></A
+><P
+>Directorio que mantiene información
+      de los usuarios del sistema.</P
+><A
+NAME="AEN6557"
+></A
+><P
+>Directorio que mantiene información
+      del administrador del sistema.</P
+><A
+NAME="AEN6561"
+></A
+><P
+>Directorio que mantiene archivos
+      temporales, que serán borrados por el sistema operativo durante el
+      arranque.</P
+><A
+NAME="AEN6565"
+></A
+><P
+>Directorio que mantiene archivos que
+      deban modificarse frecuentemente.</P
+><A
+NAME="AEN6569"
+></A
+><P
+>Directorio virtual creado para
+      intercambiar información con facilidad.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>/boot</TT
+></DT
+><DD
+><P
+>Mantiene el
+	kernel e información indispensable para el arranque del
+	sistema.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/bin</TT
+></DT
+><DD
+><P
+>Mantiene unos pocos programas que estarán disponibles
+	 incluso en los modos de ejecución más restringidos (e.g.
+	 <B
+CLASS="command"
+>bash</B
+>, <B
+CLASS="command"
+>cat</B
+>,
+	 <B
+CLASS="command"
+>ls</B
+>, <B
+CLASS="command"
+>login</B
+>,
+	 <B
+CLASS="command"
+>ps</B
+>).
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/sbin</TT
+></DT
+><DD
+><P
+>Mantiene programas disponibles sólo para el
+	 administrador incluso en los modos de ejecución más
+	 restringidos (e.g <B
+CLASS="command"
+>fsck</B
+>,
+	 <B
+CLASS="command"
+>getty</B
+>, <B
+CLASS="command"
+>halt</B
+>).
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/usr</TT
+></DT
+><DD
+><P
+>Programas accequibles a usuarios finales y datos de
+	 estos programas que no requieren ser modificados (datos de
+	 sólo lectura). Algunos de sus subdirectorios son:
+
+	 <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>bin</TT
+>, <TT
+CLASS="filename"
+>games</TT
+></DT
+><DD
+><P
+>Programas disponibles para todos los usuarios.</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>sbin</TT
+></DT
+><DD
+><P
+>Herramientas para el administrador.</P
+></DD
+></DL
+></DIV
+>
+
+	 <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>dict</TT
+></DT
+><DD
+><P
+>Diccionarios --usados por ejemplo por
+	     <SPAN
+CLASS="application"
+>ispell</SPAN
+> y
+	     <SPAN
+CLASS="application"
+>look</SPAN
+>.</P
+></DD
+></DL
+></DIV
+>
+
+	 <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>share</TT
+></DT
+><DD
+><P
+> Datos de diversos programas, entre sus
+	     subdirectorios están: <TT
+CLASS="filename"
+>doc</TT
+>, <TT
+CLASS="filename"
+>man</TT
+> y <TT
+CLASS="filename"
+>info</TT
+> que contienen
+	     documentación; <TT
+CLASS="filename"
+>locale</TT
+>, <TT
+CLASS="filename"
+>i18n</TT
+> que mantiene
+	     información sobre internacionalización (locale);
+	     <TT
+CLASS="filename"
+>zoneinfo</TT
+> que
+	     mantiene información sobre zonas horarias.</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>doc</TT
+>, <TT
+CLASS="filename"
+>info</TT
+>, <TT
+CLASS="filename"
+>man</TT
+></DT
+><DD
+><P
+>Enlaces o complementos a la documentación disponible
+	     en <TT
+CLASS="filename"
+>/usr/share/doc</TT
+>,
+	     <TT
+CLASS="filename"
+>/usr/share/info</TT
+> y
+	     <TT
+CLASS="filename"
+>/usr/share/man</TT
+>.</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>lib</TT
+></DT
+><DD
+><P
+>Librerías de funciones comunes a varios programas
+	    (algunas como libc indispensables para todos).</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>include</TT
+>,
+	   <TT
+CLASS="filename"
+>src</TT
+></DT
+><DD
+><P
+>&#13;	     Encabezados de algunos componentes del sistema y fuentes de
+	     algunos programas.
+	    </P
+></DD
+><DT
+><TT
+CLASS="filename"
+>X11R6</TT
+></DT
+><DD
+><P
+>Programas y datos de X-Window.</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>local</TT
+></DT
+><DD
+><P
+>Otros programas y datos compilados por el
+	     administrador i.e no provienen de paquetes Debian. En
+	     algunos sistemas otros programas se ubican en
+	     <TT
+CLASS="filename"
+>/opt</TT
+>.</P
+></DD
+></DL
+></DIV
+>
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/floppy,  /cdrom,  /mnt</TT
+></DT
+><DD
+><P
+>Directorios para montar disquettes, CD-ROMs y otros sistemas de
+	 archivos o dispositivos.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/proc</TT
+></DT
+><DD
+><P
+>Diversos canales de comunicación con algunos programas
+	 (por ejemplo con el kernel).
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/lib</TT
+></DT
+><DD
+><P
+>Librerías indispensables y módulos (especialmente
+	 requeridas durante el arranque del sistema).
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/etc</TT
+></DT
+><DD
+><P
+>Archivos de configuración de diversos programas. 
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/dev</TT
+></DT
+><DD
+><P
+>Abstracciones a los dispositivos conectados (o que podrían
+	 conectarse) al computador.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/home</TT
+></DT
+><DD
+><P
+>Mantiene información de los usuarios del sistema.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/root</TT
+></DT
+><DD
+><P
+>Mantiene información del administrador del sistema.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/tmp</TT
+></DT
+><DD
+><P
+>Archivos temporales creados por algunos programas, que
+	 serán borrados por el sistema operativo durante el arranque.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/var</TT
+></DT
+><DD
+><P
+>En este directorio los programas que lo requieran pueden
+	 mantener archivos que deban modificarse
+	 frecuentemente. Algunos de sus subdirectorios son: <TT
+CLASS="filename"
+>mail</TT
+> donde se mantienen colas de
+	 correo de cada usuario, <TT
+CLASS="filename"
+>log</TT
+> que mantiene bitácoras,
+	 <TT
+CLASS="filename"
+>run</TT
+> con archivos que
+	 mantienen los números de los procesos iniciados al arrancar
+	 el sistema, <TT
+CLASS="filename"
+>spool</TT
+>
+	 colas de impresión y de otros programas, <TT
+CLASS="filename"
+>tmp</TT
+> archivos temporales (más
+	 persistente que <TT
+CLASS="filename"
+>/tmp</TT
+>).
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/proc</TT
+></DT
+><DD
+><P
+>Este directorio es "virtual", no está presente en el
+	 disco, es creado por el sistema para intercambiar información
+	 con más facilidad.
+	</P
+></DD
+></DL
+></DIV
+><P
+>El rigor de esta jerarquía hace que memorizandola sea fácil
+      emplear diversos sistemas Unix, aunque puede no ser la más
+      apropiada en algunas circunstancias.  Para simular jerarquías
+      diferentes cada proceso iniciado por el usuario root puede tener
+      un directorio raíz diferente al directorio raíz real del
+      sistema.  Para establecerlo se emplea el programa
+      <B
+CLASS="command"
+>chroot</B
+>, que recibe como primer parámetro el
+      nuevo directorio raíz y como segundo parámetro el programa por
+      ejecutar.  La ruta del programa se especifica con respecto al
+      nuevo directorio raíz y para que el programa pueda ejecutarse,
+      deben ubicarse las ibrerías que este requiera en la "nueva"
+      jerarquía (por ejemplo en el nuevo directorio
+      <TT
+CLASS="filename"
+>/lib</TT
+>).
+    </P
+><P
+>Esta jerarquía de directorios en Linux no necesariamente
+      está en un disco, sino sólo en memoria RAM, por eso pueden
+      tenerse directorios como <TT
+CLASS="filename"
+>/proc</TT
+> y pueden montarse diversos
+      sistemas de archivos sobre la misma jerarquía como se presenta
+      en la siguiente sección.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="montaje-y-desmontaje-de-sistemas-de-archivos"
+>Montaje y desmontaje de sistemas de archivos</A
+></H3
+><P
+>Un sistema de archivos es información almacenada en un
+      dispositivo de almacenamiento organizada siguiendo una
+      convención, la cual permite al sistema operativo manejar la
+     información cuando el usuario lo requiere, es decir, leer,
+     escribir, consultar directorios, etc.  Hay diversos tipos (o
+     convenciones) de sistemas de archivos, Linux cuenta con
+     controladores para varios tipos creados específicamente para
+     Linux (e.g ext2, ReiserFS) así como controladores para tipos de
+     sistemas de archivos creados para otros sistemas operativos (e.g
+     affs, hpfs, ntfs, msdos).  Los tipos que pueden emplearse con
+     Linux
+      <A
+NAME="AEN6730"
+HREF="#FTN.AEN6730"
+>[2]</A
+> están incluidos en el kernel o son módulos en el
+      subdirectorio <TT
+CLASS="filename"
+>fs</TT
+> del
+      directorio con módulos de su sistema (es decir, el directorio de
+      módulos es de la forma <TT
+CLASS="filename"
+>/lib/modules/2.2.x/fs/</TT
+> remplazando
+      x por la versión de su kernel).
+    </P
+><P
+>Los que puede usar dependen de la forma como se haya
+      compilado el kernel y de los módulos que estén cargados.  Puede
+      examinar los tipos que soporta su sistema viendo el contenido de
+      <TT
+CLASS="filename"
+>/proc/filesystems</TT
+> y puede
+      emplear otros tipos de sistemas de archivos cargando los módulos
+      apropiados ---mientras sean soportados (ver <A
+HREF="c8032.htm#lectura-inicializacion-del-sistema"
+>Lectura
+      Inicialización del sistema</A
+>).
+    </P
+><P
+>Aunque toda la estructura de directorios presentada en la
+      sección anterior podría estar en un sólo sistema de archivos, es
+      posible distribuirla en varios.  Para poder emplear un sistema
+      de archivos primero debe montarse en algún directorio con el
+      comando <B
+CLASS="command"
+>mount</B
+> o debe configurarse el sistema
+      para que lo monte automáticamente durante el arranque (el primer
+      directorio que debe montarse es la raíz <TT
+CLASS="filename"
+>/</TT
+> ).  Para desmontar un sistema de
+      archivos de un directorio se emplea el comando
+      <B
+CLASS="command"
+>umount</B
+>.
+     </P
+><A
+NAME="AEN6741"
+></A
+><P
+>Comando utilizado para montar un
+      dispositivo del sistema.</P
+><A
+NAME="AEN6745"
+></A
+><P
+>Comando utilizado para desmontar un
+      dispositivo del sistema.</P
+><P
+>&#13;      El programa <B
+CLASS="command"
+>mount</B
+> sin argumentos presenta los
+      sistemas de archivos que están montados
+      <A
+NAME="AEN6751"
+HREF="#FTN.AEN6751"
+>[3]</A
+>, de cada uno presenta el dispositivo en el que
+      reside, el directorio en el que está montado, el tipo de sistema
+      de archivos y algunos parámetros del montaje, por ejemplo:
+<PRE
+CLASS="programlisting"
+>&#13;/dev/hda1 on / type ext2 (rw,errors=remount-ro,errors=remount-ro)
+proc on /proc type proc (rw)
+devpts on /dev/pts type devpts (rw,gid=5,mode=620)
+/dev/hda2 on /var type ext2 (rw)
+/dev/hda3 on /home type ext2 (rw)
+</PRE
+>
+     En el ejemplo se muestran 5 sistemas de archivos montados en los
+     directorios <TT
+CLASS="filename"
+>/</TT
+>, <TT
+CLASS="filename"
+>/proc</TT
+>, <TT
+CLASS="filename"
+>/dev/pts</TT
+>, <TT
+CLASS="filename"
+>/var</TT
+> y <TT
+CLASS="filename"
+>/home</TT
+>.  3 de ellos son de tipo ext2
+     y residen en tres particiones de un disco duro (<TT
+CLASS="filename"
+>/dev/hda1</TT
+>, <TT
+CLASS="filename"
+>/dev/hda2</TT
+> y <TT
+CLASS="filename"
+>/dev/hda3</TT
+> ver <A
+HREF="x9697.htm"
+>Dispositivos y Linux</A
+>), los
+     otros dos son virtuales, es decir, no residen en dispositivo de
+     almacenamiento alguno (son creados por el kernel).  Las opciones
+     de montaje de todos indican que pueden leerse y escribirse
+     <TT
+CLASS="literal"
+>rw</TT
+>, el sistema montado en la raíz en caso de
+     fallas será montado con permiso de sólo lectura
+     (<TT
+CLASS="literal"
+>errors=remount-ro</TT
+>) y el sistema montado en
+     <TT
+CLASS="filename"
+>/dev/pts</TT
+> tendrá todos sus
+     archivos como pertenencientes al grupo 5 (tty) y permisos de
+     escritura y lectura para el usuario y sólo de escritura para el
+     grupo (modo 620).
+    </P
+><P
+>Para montar un sistema de archivos se emplea:
+<PRE
+CLASS="screen"
+>&#13;mount -t <TT
+CLASS="replaceable"
+><I
+>tipo</I
+></TT
+> -o <TT
+CLASS="replaceable"
+><I
+>opciones</I
+></TT
+>  <TT
+CLASS="replaceable"
+><I
+>dispositivo</I
+></TT
+> <TT
+CLASS="replaceable"
+><I
+>directorio</I
+></TT
+>
+</PRE
+>
+    </P
+><P
+>Donde <TT
+CLASS="replaceable"
+><I
+>dispositivo</I
+></TT
+> es el nombre
+      del dispositivo que contiene el sistema de archivos (e.g
+      <TT
+CLASS="filename"
+>/dev/hda1</TT
+> o <TT
+CLASS="filename"
+>/dev/fl0</TT
+>),
+      <TT
+CLASS="replaceable"
+><I
+>tipo</I
+></TT
+> es el tipo del sistema de
+      archivos
+      <A
+NAME="AEN6779"
+HREF="#FTN.AEN6779"
+>[4]</A
+> y <TT
+CLASS="replaceable"
+><I
+>directorio</I
+></TT
+> es la ruta
+      donde se quiere acceder la raíz del sistema montado (si el
+      directorio donde se monta contiene datos, estos serán escondidos
+      mientras el nuevo sistema de archivos permanezca montado).
+    </P
+><P
+>La información sobre un sistema de archivos, su directorio
+      de montaje y opciones pueden especificarse en el archivo
+      <TT
+CLASS="filename"
+>/etc/fstab</TT
+>.  De hacerlo puede emplear
+    </P
+><A
+NAME="AEN6787"
+></A
+><P
+>Archivo que contiene información
+      sobre los sistemas de archivos y su directorio de montaje.</P
+><PRE
+CLASS="screen"
+>&#13;mount <TT
+CLASS="replaceable"
+><I
+>directorio</I
+></TT
+>
+</PRE
+><P
+>para montar el sistema de archivos en el directorio
+      especificado (el resto de información debe estar en
+     <TT
+CLASS="filename"
+>/etc/fstab</TT
+>).  Además, por defecto, los
+     sistemas de archivos especificados en ese archivo serán montados
+     automáticamente durante el arranque del sistema.  Un ejemplo
+     complementario al ejemplo anterior es:
+<PRE
+CLASS="screen"
+>&#13;/dev/hda1   /        ext2    defaults,errors=remount-ro   0  1
+/dev/hda4   none     swap    sw                           0  0
+proc        /proc    proc    defaults                     0  0
+/dev/fd0    /floppy  auto    defaults,user,noauto         0  0
+/dev/cdrom  /cdrom   iso9660 defaults,ro,user,noauto      0  0
+/dev/hda2   /var     ext2    rw                           0  2
+/dev/hda3   /home    ext2    rw                           0  2
+</PRE
+>
+     Cada línea especifica un sistema de archivos con: dispositivo,
+     directorio donde se debe montar, tipo del sistema de archivos,
+     opciones de montaje separadas por comas, la frecuencia de volcado
+     (típicamente 0) y un númeo para controlar el chequeo durante el
+     arranque con <B
+CLASS="command"
+>fsck</B
+>.  Además de los tipos
+     soportados por su sistema puede emplear <B
+CLASS="command"
+>swap</B
+>
+     para especificar particiones que servirán como zona de
+     intercambio
+      <A
+NAME="AEN6797"
+HREF="#FTN.AEN6797"
+>[5]</A
+>.  Algunas opciones (comunes a todo sistema de
+      archivos) son: <TT
+CLASS="literal"
+>ro</TT
+> para montar en modo de sólo
+      lectura, <TT
+CLASS="literal"
+>user</TT
+> que indica que un usuario puede
+      montar el sistema de archivos (por defecto sólo el administrador
+      puede hacerlo), <TT
+CLASS="literal"
+>rw</TT
+> para montar en modo
+      lectura y escritura, <TT
+CLASS="literal"
+>ro</TT
+> modo de sólo lectura,
+      <TT
+CLASS="literal"
+>noauto</TT
+> para indicar que el sistema no debe
+      montarse durante el arranque ---note que los directorios
+      <TT
+CLASS="filename"
+>/floppy</TT
+> y <TT
+CLASS="filename"
+>cdrom</TT
+> no son
+      montados automáticamente durante el arranque (ver <A
+HREF="x749.htm"
+>Disquetes y CDROM</A
+>).  El
+      número que controla el chequeo con <TT
+CLASS="literal"
+>fsck</TT
+>
+      indica el orden en el cual hacer chequeos, 0 indica que no se
+      debe chequear el sistema, otros números positivos especifian una
+      prioridad (los menores son más prioritarios y los números con el
+      mismo número de ser posible son chequeados en paralelo).  Es
+      conveniente emplear 1 con el sistema de archivos montado en la
+      raíz y 2 para los demás que requieran chequeo.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="sistemas-de-archivos-en-linux"
+>Sistemas de archivos en Linux</A
+></H3
+><P
+>Aunque cada tipo de sistema de archivos tiene
+     características propias, Linux puede manejar varios
+     representándolos en un módelo de sistema de archivos propio del
+     kernel (virtual file system).  Por ejemplo los tipos
+     <TT
+CLASS="literal"
+>vfat</TT
+> y <TT
+CLASS="literal"
+>msdos</TT
+> no permiten
+     manejar permisos ni propietarios, pero al montarlos el kernel
+     suple la carencia con valores por defecto
+     <A
+NAME="AEN6819"
+HREF="#FTN.AEN6819"
+>[6]</A
+>.
+    </P
+><P
+>El sistema de archivos del kernel se organiza a partir del
+     árbol de directorios, en este árbol se encuentran nombres de
+     archivos y directorios.  Junto con cada nombre hay un número que
+     identifica de forma única la información y que permite ubicarla
+     en algún dispositivo de almacenamiento ---estos números pueden
+     examinarse con <B
+CLASS="command"
+>ls -i</B
+>.  Por este diseño pueden
+     montarse y desmontarse diversos sistemas de archivos sobre el
+     mismo arbol de directorios, cada proceso puede tener su propio
+     directorio raíz (<B
+CLASS="command"
+>chroot</B
+>) y puede haber
+     directorios y archivos que no corresponden a información
+     almacenada en dispositivo alguno e.g el directorio <TT
+CLASS="filename"
+>/proc</TT
+>.
+    </P
+><P
+>Cada entrada del árbol de directorios es de uno de los
+      siguientes tipos: </P
+><A
+NAME="AEN6831"
+></A
+><P
+>Comando que permite crear enlaces
+	 simbólicos.</P
+><A
+NAME="AEN6835"
+></A
+><P
+>Comando que permite crear
+      dispositivos de comunicación entre programas.</P
+><A
+NAME="AEN6839"
+></A
+><P
+>Bit que permite que un programa se
+	 ejecute con los permisos del dueño del archivo.</P
+><A
+NAME="AEN6842"
+></A
+><P
+> Comando que permite cambiar el
+      grupo de un conjunto de archivos.</P
+><A
+NAME="AEN6846"
+></A
+><P
+> Comando que permite cambiar el
+      usuario y el grupo de un conjunto de archivos.</P
+><A
+NAME="AEN6850"
+></A
+><P
+> Comando que permite establecer los
+      permisos por defecto en archivos nuevos.</P
+><A
+NAME="AEN6854"
+></A
+><P
+> Comando que permite listar los
+      atributos especiales de los archivos especificados.</P
+><A
+NAME="AEN6858"
+></A
+><P
+> Comando que permite crear un
+	 sistema ext2 en un sistema de almacenamiento.</P
+><A
+NAME="AEN6862"
+></A
+><P
+> Comando que permite examinar y
+	 modificar a bajo nivel un sistema de archivos ext2.</P
+><A
+NAME="AEN6866"
+></A
+><P
+> Comando que permite localizar
+	 bloques con errores en un dispositivo.</P
+><A
+NAME="AEN6870"
+></A
+><P
+> Comando que verifica un sistema de
+	 archivos ext2.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>regular</B
+></SPAN
+></DT
+><DD
+><P
+>Se trata de infomación que está almacenada fisicamente
+	 en algún dipositivo montado, es decir programas o datos.
+	</P
+></DD
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>enlace simbólico</B
+></SPAN
+></DT
+><DD
+><P
+>Vinculo al nombre de otro archivo en el arbol de
+	 directorios (este es un enlace suave, a diferencia de un
+	 enlace duro que referencia el nodo-i).  Se crean con el
+	 programa <B
+CLASS="command"
+>ln</B
+> y la opción
+	 <TT
+CLASS="option"
+>-s</TT
+>.  La desventaja de los enlaces suaves
+	 es que hacen el acceso a la información un poco más
+	 ineficiente que los enlaces duros, entre sus ventajas están:
+	 si se borra el archivo enlazado el enlace simbólico ya no
+	 funciona, pueden hacerse enlaces simbólicos a directorios (no
+	 pueden hacerse enlaces duros a directorios).  
+	 </P
+></DD
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>directorio</B
+></SPAN
+></DT
+><DD
+><P
+>Subdirectorio. Se manejan con <B
+CLASS="command"
+>mkdir</B
+>,
+	 <B
+CLASS="command"
+>rm -f</B
+>.  Cada proceso tiene un directorio
+	 de trabajo que puede administrarse con <B
+CLASS="command"
+>pwd</B
+>
+	 y <B
+CLASS="command"
+>cd</B
+>.
+	</P
+></DD
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>Dispositivo por caracteres</B
+></SPAN
+></DT
+><DD
+><P
+>&#13;	 No es información almacenada en dispositivo alguno,
+	 representa un dispositivo físico que se controla enviando de
+	 a un caracter (e.g una línea serial, un modem, una terminal).
+	 Se crean con</P
+><PRE
+CLASS="screen"
+>&#13;mknod [-m <TT
+CLASS="replaceable"
+><I
+>modo</I
+></TT
+>] <TT
+CLASS="replaceable"
+><I
+>nombre</I
+></TT
+> 
+ <TT
+CLASS="replaceable"
+><I
+>num_mayor</I
+></TT
+> <TT
+CLASS="replaceable"
+><I
+>num_menor</I
+></TT
+> 
+</PRE
+><P
+>&#13;	 Donde el modo puede especificarse con números o letras al
+	  igual que con <B
+CLASS="command"
+>chmod</B
+> (ver <A
+HREF="c1054.htm#lectura-archivos-y-permisos"
+>Lectura Archivos y
+	  permisos</A
+>), <TT
+CLASS="replaceable"
+><I
+>num_mayor</I
+></TT
+> y
+	  <TT
+CLASS="replaceable"
+><I
+>num_menor</I
+></TT
+> son números que en Linux
+	  identifican de forma única el dispositivo
+	 <A
+NAME="AEN6911"
+HREF="#FTN.AEN6911"
+>[7]</A
+>. Algunos números de dispositivos se presenta en
+	 el siguiente capítulo, la lista completa está en las fuentes
+	 del kernel en <TT
+CLASS="filename"
+>include/linux/major.h</TT
+> y
+	 están documentados en
+	 <TT
+CLASS="filename"
+>Documentation/devices.txt</TT
+> o en Internet
+	 la documentación más reciente (que corresponde al kernel más
+	 nuevo) en: <A
+HREF="http://www.kernel.org/pub/linux/docs/device-list/devices.txt"
+TARGET="_top"
+>http://www.kernel.org/pub/linux/docs/device-list/devices.txt</A
+>.
+	 Por ejemplo allí se documenta que el dispositivo de
+	 caracteres con número mayor 4 es un dispositivo <TT
+CLASS="literal"
+>tty</TT
+> (por
+	 ejemplo una de las consolas virtuales), el número menor
+	 indica de que consola virtual se trata (si es un entero entre
+	 1 y 63), para crear una entrada en el directorio de trabajo
+	 que se refiera a la primera consola virtual con el nombre
+	 cons1:
+	 </P
+><PRE
+CLASS="screen"
+>&#13;mknod cons1 c 4 1
+</PRE
+></DD
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>Dispositivo por bloques</B
+></SPAN
+></DT
+><DD
+><P
+>Representa un dispositivo al que se le pueden enviar
+	 bloques de información (e.g tarjeta de video, disco duro).
+	 Para crearlo se usa <B
+CLASS="command"
+>mknod</B
+> de la forma como
+	 se presentó para dispositivos de caracteres pero con
+	 <TT
+CLASS="option"
+>b</TT
+> después del nombre en lugar de
+	 <TT
+CLASS="option"
+>c</TT
+>.
+	</P
+></DD
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>Pipes y sockets</B
+></SPAN
+></DT
+><DD
+><P
+>No es información almacenada en dispositivo alguno, son
+	 canales de comunicación entre programas.  Desde el intérprete
+	 de comandos pueden crearse pipes con
+	 <B
+CLASS="command"
+>mkfifo</B
+> o con <B
+CLASS="command"
+>mknod</B
+>
+	 seguido del nombre del pipe y la letra 'p'.
+	</P
+></DD
+></DL
+></DIV
+><P
+>Además de los permisos presentados en la sección para
+      usuarios (ver <A
+HREF="c1054.htm#archivos-y-permisos"
+>Archivos y
+       permisos</A
+>) en Linux pueden especificarse los siguientes:
+     </P
+><P
+></P
+><UL
+><LI
+><P
+><I
+CLASS="foreignphrase"
+>setuid bit</I
+>: empleado con
+       archivos ejecutables cambia la identificación del usuario por
+       la del dueño del archivo.  Con <B
+CLASS="command"
+>chmod</B
+> se
+       modifica empleando <TT
+CLASS="option"
+>u</TT
+> y <TT
+CLASS="option"
+>s</TT
+>.
+       por ejemplo:
+<PRE
+CLASS="screen"
+>&#13;chmod u+s cvs
+</PRE
+>
+       indica que cuando el programa <B
+CLASS="command"
+>cvs</B
+> se
+       ejecute, debe cambiarse la identificación por la del dueño de
+       ese programa.
+      </P
+><P
+>Este permiso puede ser útil para que usuarios normales
+       ejecuten programas que requieren ser ejecutados por
+       <TT
+CLASS="literal"
+>root</TT
+> y por lo mismo debe usarse con
+       precaución.  </P
+></LI
+><LI
+><P
+><I
+CLASS="foreignphrase"
+>setgid bit</I
+>: tambíen
+       empleado con archivos ejecutables, indica que cuando se ejecute
+       el programa debe cambiarse al grupo del archivo.  Se establece
+       con <TT
+CLASS="option"
+>g</TT
+> y <TT
+CLASS="literal"
+>s</TT
+>.
+      </P
+></LI
+><LI
+><P
+><I
+CLASS="foreignphrase"
+>sticky bit</I
+>: se establece
+	con <TT
+CLASS="literal"
+>t</TT
+>, no tiene efecto sobre archivos
+       <A
+NAME="AEN6958"
+HREF="#FTN.AEN6958"
+>[8]</A
+>, con un directorio evita que un usuario que no sea
+	el dueño del directorio pero que tenga permiso de escritura,
+	pueda borrar o renombrar archivos que no le pertenecen.
+      </P
+></LI
+><LI
+><P
+>Ejecución condicionada: se establece con
+       <TT
+CLASS="literal"
+>X</TT
+> en el caso de directorios es equivalente a
+	<TT
+CLASS="literal"
+>x</TT
+>, en el caso de archivos también es
+	equivalente a <TT
+CLASS="literal"
+>x</TT
+> sólo si el archivo al que se
+	modifica el permiso ya tenía permiso de ejecución para algún
+	usuario.  Es útil por ejemplo:
+<PRE
+CLASS="screen"
+>&#13;chmod a+X *
+</PRE
+>
+	que da permiso de ejecución a todos los usuarios a los archivos
+	ejecutables y a los directorios.  </P
+></LI
+></UL
+><P
+>El administrador puede cambiar los permisos de todos los
+      archivos del sistema y puede fijar una política inicial para la
+      mascara de permisos que todos los usuarios tendrán.  Además de
+      <B
+CLASS="command"
+>chmod</B
+>
+      <A
+NAME="AEN6968"
+HREF="#FTN.AEN6968"
+>[9]</A
+> se emplean los siguientes programas para realizar
+      estas labores:
+    </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>chgrp <TT
+CLASS="replaceable"
+><I
+>grupo</I
+></TT
+>
+	<TT
+CLASS="replaceable"
+><I
+>archivos</I
+></TT
+></B
+></DT
+><DD
+><P
+>Cambia el grupo de el o los archivos especificados.  Por
+	 ejemplo
+         </P
+><PRE
+CLASS="screen"
+>&#13;chgrp profesores notas* quiz*
+</PRE
+><P
+>&#13;	 cambiará todos los archivos con prefijos "notas" y "quiz" al
+	 grupo profesores.  Cómo opción puede recibir
+	 <TT
+CLASS="option"
+>-R</TT
+> para aplicar el cambio recursivamente
+	 en un directorio (es decir a subdirectorios también).  Este
+	 programa puede ser usado por cualquier usuario para cambiar
+	 el grupo de sus archivos a otro grupo al que el mismo usuario
+	 pertenezca.</P
+></DD
+><DT
+><B
+CLASS="command"
+>chown
+	 <TT
+CLASS="replaceable"
+><I
+>usuario</I
+></TT
+>[:<TT
+CLASS="replaceable"
+><I
+>grupo</I
+></TT
+>]
+	 <TT
+CLASS="replaceable"
+><I
+>archivos</I
+></TT
+></B
+></DT
+><DD
+><P
+>Cambia el usuario (y opcionalmente el grupo) de
+	 los archivos especificados.  Al igual que chgrp con la opción
+	 <TT
+CLASS="literal"
+>-R</TT
+> efectua el cambio recursivamente en
+	 subdirectorios. Por ejemplo
+	</P
+><PRE
+CLASS="screen"
+>&#13;chown -R paz:administra nomina/
+</PRE
+><P
+>&#13;	 Pondrá al usuario paz como dueño de todos los archivos y
+	 subdirectorios del directorio <TT
+CLASS="filename"
+>nomina</TT
+>, todos quedarán con el
+	 grupo administra.  También puede usarse para cambiar el grupo
+	 de un archivo (si no se especifica el nombre del
+	 usuario).</P
+></DD
+><DT
+><B
+CLASS="command"
+>umask</B
+></DT
+><DD
+><P
+>Este es un comando del intérprete de comandos
+	 <A
+NAME="AEN7001"
+HREF="#FTN.AEN7001"
+>[10]</A
+>
+	 , para establecer permisos por defecto en archivos nuevos.
+	 En <SPAN
+CLASS="application"
+>bash</SPAN
+> pueden especificarse los
+	 permisos como con <SPAN
+CLASS="application"
+>chmod</SPAN
+> por
+	 ejemplo:</P
+><PRE
+CLASS="screen"
+>&#13;umask u=rw,g=,o=
+</PRE
+><P
+>&#13;       hará que por defecto grupo y otros usuarios no tengan permiso
+       de lectura ni escritura, sólo el propietario del archivo los
+       tiene
+       <A
+NAME="AEN7011"
+HREF="#FTN.AEN7011"
+>[11]</A
+>
+       .  Los permisos de un archivo recién creado se establecen de
+       acuerdo al programa que lo crea y a la máscara.  Puede esperar
+       que los programas no restrinjan seguridad y creen nuevos
+       archivos y directorios con permisos de lectura y escritura para
+       propietario, grupo y usuarios; este comportamiento hace que
+       <B
+CLASS="command"
+>umask</B
+> sea una buena alternativa.</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="sistema-de-archivos-ext-two"
+>Sistema de archivos ext2</A
+></H3
+><P
+>ext2 es un sistema de archivos desarrollado para y junto con
+     Linux.  Permite todas las características que el sistema de
+     archivos virtual de Linux soporta: directorios y archivos como
+     inodos (con permisos, dueños y tipos especiales e.g
+     dispositivos), enlaces duros y suaves.  Entre sus limites se
+     cuentan: nombres de archivos de máximo 255 caracteres, archivos
+     de máximo 2GB, sistema de archivos de máximo 4TB. Aunque ext2
+     procura evitar fragmentación, en el momento de este escrito no
+     hay una herramienta para defragmentar
+      <A
+NAME="AEN7019"
+HREF="#FTN.AEN7019"
+>[12]</A
+>.
+     </P
+><P
+>Además de los atributos de archivo presentados en la sección
+      anterior, un sistema ext2 tiene otros que pueden administrarse
+     con los siguientes programas: </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>lsattr
+	 <TT
+CLASS="replaceable"
+><I
+>archivos</I
+></TT
+></B
+></DT
+><DD
+><P
+>Lista los atributos especiales de los archivos
+	 especificados.  Entre sus opciones <TT
+CLASS="literal"
+>-R</TT
+>
+	 lista recursivamente atributos de subdirectorios y su
+	 contenido, <TT
+CLASS="option"
+>-a</TT
+> lista también archivos de
+	 configuración.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>chattr <TT
+CLASS="replaceable"
+><I
+>modo</I
+></TT
+>
+	 <TT
+CLASS="replaceable"
+><I
+>archivos</I
+></TT
+></B
+></DT
+><DD
+><P
+>Permite modificar los atributos especiales de un sistema
+	 de archivos ext2.  Como <TT
+CLASS="replaceable"
+><I
+>modo</I
+></TT
+> se
+	 especifican los cambios a los permisos, cada permiso se
+	 especifica con un caracter: <TT
+CLASS="literal"
+>A</TT
+> - no
+	 actualizar tiempos de acceso, <TT
+CLASS="literal"
+>S</TT
+> -
+	 actualización sincrona (es decir escribe directamente sin
+	 emplear caches), <TT
+CLASS="literal"
+>a</TT
+> - permite abrir el
+	 archivo sólo para agregar datos, <TT
+CLASS="literal"
+>c</TT
+> - el
+	 archivo es mantenido comprimido en disco (sus datos son
+	 descomprimidos automáticamente por el kernel),
+	 <TT
+CLASS="literal"
+>d</TT
+> - al emplear el program
+	 <TT
+CLASS="literal"
+>dump</TT
+> el archivo es copiado,
+	 <TT
+CLASS="literal"
+>i</TT
+> - el archivo no puede ser modificado o
+	 renombrado, <TT
+CLASS="literal"
+>j</TT
+> - llevar bitácora de datos,
+	 <TT
+CLASS="literal"
+>s</TT
+> - el archivo debe sobreescribirse con
+	 ceros si es eliminado, <TT
+CLASS="literal"
+>u</TT
+> - en caso de ser
+	 borrado por el usuario una copia es salvada para su posible
+	 recuperación.  Los permisos se especifican como primer
+	 parámetro de <B
+CLASS="command"
+>chattr</B
+>, precediendo uno o más
+	 atributos con '+' para activar, '-' para desactivar o '='
+	 para dejar igual.
+	</P
+></DD
+></DL
+></DIV
+><P
+>En el disco la información se organiza en bloques (de 1024,
+      2048 o 4096 bytes), estos bloques se juntan en grupos (cada uno
+      de máximo 32768 bloques), algunos de los bloques se reservan
+      para el administrador (para que pueda operar si los usuarios
+      llegan a llenar el sistema de archivos).  Cada grupo tiene
+      algunos bloques de control y otros de datos, entre los bloques
+      de control está una copia del superbloque (bloque que describe
+      el sistema de archivos completo) y una tabla de los nodos-i
+      cuyos datos están en el bloque.  Un nodo-i mantiene información
+      sobre un archivo es decir: atributos (modo, uid, gid, fecha de
+      acceso, fecha de creación, fecha de modificación, fecha de
+      eliminación), cantidad de enlaces y lista de los bloques del
+      grupo en donde se encuentra la información del archivo.
+    </P
+><P
+>Algunas herramientas para emplear sistemas de archivos ext2 son:
+     </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>mke2fs <TT
+CLASS="replaceable"
+><I
+>dispositivo</I
+></TT
+></B
+></DT
+><DD
+><P
+>&#13;	 También llamado <TT
+CLASS="literal"
+>mkfs.ext2</TT
+>, permite crear
+	 un sistema ext2 en un dispositivo de almacenamiento.  Recibe
+	 el nombre del dispositivo, y de no recibir opciones prepara
+	 el sistema de archivos calculando los parámetros a partir del
+	 tamaño disponible.
+	 
+	 Como opciones pueden especificarse: <TT
+CLASS="option"
+>-c</TT
+>
+	 para chequear bloques con errores antes de crear sistema de
+	 archivos, opcionalmente pueden pasarse los bloques erróneos
+	 ---reportados por el programa <TT
+CLASS="literal"
+>badblocks</TT
+>---
+	 en un archivo con <TT
+CLASS="option"
+>-l
+	 <TT
+CLASS="replaceable"
+><I
+>arc_blerr</I
+></TT
+></TT
+>); <TT
+CLASS="literal"
+>-L
+	 <TT
+CLASS="replaceable"
+><I
+>etiqueta</I
+></TT
+></TT
+> para poner una
+	 etiqueta; puede especificar el número de nodos-i bien con
+	 <TT
+CLASS="literal"
+>-N <TT
+CLASS="replaceable"
+><I
+>num_nodos</I
+></TT
+></TT
+> o con
+	 <TT
+CLASS="literal"
+>-i <TT
+CLASS="replaceable"
+><I
+>bytes_por_inodo</I
+></TT
+></TT
+>
+	 ---tenga en cuenta que no puede cambiarse la cantidad
+	 especificada después de que el sistema de archivos ha sido
+	 creado; el tamaño en bytes de cada bloque puede ser 1024,
+	 2048 o 4096 y se especifica con la opción <TT
+CLASS="literal"
+>-b
+	 <TT
+CLASS="replaceable"
+><I
+>tamaño</I
+></TT
+></TT
+>; el porcentaje de
+	 bloques para el administrador puede especificarse con
+	 <TT
+CLASS="literal"
+>-m porcentaje</TT
+> ---por defecto 5%.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>debugfs <TT
+CLASS="replaceable"
+><I
+>dispositivo</I
+></TT
+></B
+></DT
+><DD
+><P
+>Permite examinar y modificar a bajo nivel un sistema de
+	 archivos ext2.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>badblocks <TT
+CLASS="replaceable"
+><I
+>dispositivo</I
+></TT
+></B
+></DT
+><DD
+><P
+>Localiza bloques con errores en un dispositivo y genera
+	 un reporte en un archivo.  
+	 
+
+
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>e2fsck <TT
+CLASS="replaceable"
+><I
+>dispositivo</I
+></TT
+></B
+></DT
+><DD
+><P
+>&#13;	 Verifica un sistema de archivos ext2.  Este programa es
+	 llamado por <B
+CLASS="command"
+>fsck</B
+> cuando se chequea un
+	 sistema con ext2.
+	</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="otros-sistemas-de-archivos"
+>Otros sistemas de archivos</A
+></H3
+><P
+>Además de poder montar diversos tipos de sistemas de
+      archivos hay paquetes que permiten formatear, revisar o hacer
+      otras operaciones con algunos.  </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+><TT
+CLASS="literal"
+>dosfstools</TT
+></B
+></SPAN
+></DT
+><DD
+><P
+>&#13;	 Este paquete incluye herramientas para sistemas de archivos
+	 FAT12, FAT16 y FAT32, i.e los programas
+	 <TT
+CLASS="literal"
+>mkfs.msdos</TT
+> (también llamado
+	 <TT
+CLASS="literal"
+>mkfs.vfat</TT
+>) y <TT
+CLASS="literal"
+>fsck.vfat</TT
+>
+	 (también llamado <TT
+CLASS="literal"
+>fsck.msdos</TT
+> o
+	 <TT
+CLASS="literal"
+>dosfsck</TT
+>). El primero permite crear
+	 sistemas de archivos para MS-DOS y Windows, por ejemplo para
+	 formatear la partición <TT
+CLASS="literal"
+>/dev/hdb1</TT
+> con
+	 sistema FAT32:</P
+><PRE
+CLASS="screen"
+>&#13;mkfs.vfat -F 32 /dev/hdb1
+</PRE
+><P
+>&#13;	 <TT
+CLASS="literal"
+>fsck.msdos</TT
+> permite verificar una partición
+	 con sistema de archivos para MS-DOS o Windows, por ejemplo
+	 para verificar <TT
+CLASS="filename"
+>/dev/hdb1</TT
+> y reparar errores
+	 automáticamente:
+    </P
+><PRE
+CLASS="screen"
+>&#13;fsck.vfat -a /dev/hdb1
+</PRE
+></DD
+></DL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-administracion-de-archivos"
+>Lecturas recomendadas: Administración de archivos</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+><SPAN
+CLASS="acronym"
+>FHS</SPAN
+>.  En Debian disponible en el
+       paquete debian-policy.  Cuando se instala queda en
+       <TT
+CLASS="filename"
+>/usr/doc/debian-policy/fhs</TT
+>.
+      </P
+></LI
+><LI
+><P
+>The Linux System Administrators' Guide: Version
+     0.6.2. Chapter 4. Overview of the Directory Tree.  <A
+HREF="http://www.linuxdoc.org/LDP/sag/x264.html"
+TARGET="_top"
+>http://www.linuxdoc.org/LDP/sag/x264.html</A
+>
+     </P
+></LI
+><LI
+><P
+>&#13;      Documentación de los comandos <B
+CLASS="command"
+>mount</B
+> y
+      <B
+CLASS="command"
+>umount</B
+>.
+     </P
+></LI
+><LI
+><P
+>&#13;       De <B
+CLASS="command"
+>info file</B
+> la sección <SPAN
+><I
+CLASS="emphasis"
+>File
+      Permissions</I
+></SPAN
+>.  En Internet esta documentación se
+      encuentra en: <A
+HREF="http://www.gnu.org/manual/fileutils-3.16/html_mono/fileutils"
+TARGET="_top"
+>http://www.gnu.org/manual/fileutils-3.16/html_mono/fileutils</A
+>
+      </P
+></LI
+><LI
+><P
+>Consulte la documentación de <B
+CLASS="command"
+>ln</B
+>.
+     </P
+></LI
+><LI
+><P
+>Opcional: documentación de los comandos
+       <TT
+CLASS="literal"
+>chgrp</TT
+>, <TT
+CLASS="literal"
+>chmod</TT
+>,
+       <TT
+CLASS="literal"
+>chown</TT
+> y <TT
+CLASS="literal"
+>umask</TT
+>.
+      </P
+></LI
+><LI
+><P
+>Puede resultar interesante para algunos lectores, un
+       artículo escrito por los principales creadores de Unix (Keneth
+       Thompson y Dennis Ritchie) sobre el sistema general y con una
+       porción especial dedicada al sistema de archivos <A
+HREF="http://cm.bell-labs.com/cm/cs/who/dmr/cacm.html"
+TARGET="_top"
+>http://cm.bell-labs.com/cm/cs/who/dmr/cacm.html</A
+>.
+     </P
+></LI
+><LI
+><P
+>El sistema ext2 está descrito en Design and Implementation
+       of the Second Extended Filesystem Rémy Card, Theodore Ts'o,
+       Stephen Tweedie.  <A
+HREF="http://web.mit.edu/tytso/www/linux/ext2intro.html"
+TARGET="_top"
+>http://web.mit.edu/tytso/www/linux/ext2intro.html</A
+>
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-administracion-de-archivos"
+>Ejercicios: Administración de archivos</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x6433.htm#admarc.org.1"
+>Entre los progamas del directorio
+       <TT
+CLASS="filename"
+>/bin</TT
+> hay varios editores de
+       texto. ¿Cuáles son y como opera cada uno?</A
+></DT
+><DT
+>2. <A
+HREF="x6433.htm#admarc.org.2"
+>Con el comando <B
+CLASS="command"
+>chroot</B
+>
+       ejecute el programa <B
+CLASS="command"
+>cat</B
+> en un directorio
+       diferente.  Ayuda: Puede revisar las librerías que
+       <B
+CLASS="command"
+>cat</B
+> emplea con <B
+CLASS="command"
+>ldd
+       /bin/cat</B
+>  (ver <A
+HREF="x7217.htm"
+>Administración de
+       programas</A
+>).</A
+></DT
+><DT
+>3. <A
+HREF="x6433.htm#admarc.sist.1"
+>El ejemplo de <B
+CLASS="command"
+>mknod</B
+> que
+       referencia la primera consola virtual, en realidad referencia
+       la entrada de teclado de la primera consola virtual.  La
+       información desplegada en la primera consola virtual puede
+       verse en el dispositivo con número mayor 7 y número menor 1.
+       En el directorio <TT
+CLASS="filename"
+>/dev</TT
+>
+       debe existir un archivo que referencie ese dispositivo,
+       identifiquelo y revise su contenido por ejemplo con
+       <TT
+CLASS="literal"
+>cat</TT
+> o con <TT
+CLASS="literal"
+>less</TT
+> y la
+       opción <TT
+CLASS="literal"
+>-f</TT
+>.</A
+></DT
+><DT
+>4. <A
+HREF="x6433.htm#admarc.org.3"
+>Hay un archivo en el que se almacena el
+       mensaje de bienvenida que ven los usuarios que entran al
+       sistema (por ejemplo al entrar desde una consola virtual o al
+       hacer <B
+CLASS="command"
+>telnet</B
+>), cambie el mensaje (Ayuda: el
+       directorio <TT
+CLASS="filename"
+>/etc</TT
+> contiene
+       la mayoría de archivos de configuración del sistema
+       completo).</A
+></DT
+><DT
+>5. <A
+HREF="x6433.htm#admarc.org.4"
+>Examine las especificaciones de la CPU que
+       tiene su sistema (Ayuda: comando <B
+CLASS="command"
+>more</B
+> y un
+       archivo del directorio <TT
+CLASS="filename"
+>/proc</TT
+>).
+     </A
+></DT
+><DT
+>6. <A
+HREF="x6433.htm#admarc.org.5"
+>En el directorio <TT
+CLASS="filename"
+>/dev</TT
+> hay varios enlaces
+	 simbólicos para dispositivos, por ejemplo <TT
+CLASS="filename"
+>/dev/modem</TT
+> debe ser un enlace al
+	 puerto en el cual está el modem (e.g <TT
+CLASS="filename"
+>ttyS1</TT
+>), <TT
+CLASS="filename"
+>/dev/cdrom</TT
+> debe ser un enlace al
+	 dispositivo del <SPAN
+CLASS="acronym"
+>CDROM</SPAN
+> (e.g <TT
+CLASS="filename"
+>hdc</TT
+>), <TT
+CLASS="filename"
+>/dev/mouse</TT
+> debe ser un enlace al
+	 puerto del ratón (e.g <TT
+CLASS="filename"
+>psaux</TT
+> o <TT
+CLASS="filename"
+>ttyS0</TT
+>).  Revise los enlaces en
+	 su computador (si falta alguno agréguelo). </A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="admarc.org.1"
+></A
+><B
+>1. </B
+>Entre los progamas del directorio
+       <TT
+CLASS="filename"
+>/bin</TT
+> hay varios editores de
+       texto. ¿Cuáles son y como opera cada uno?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <B
+CLASS="command"
+>ae</B
+>, <B
+CLASS="command"
+>ed</B
+>,
+	  <B
+CLASS="command"
+>vi</B
+>, <B
+CLASS="command"
+>echo</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="admarc.org.2"
+></A
+><B
+>2. </B
+>Con el comando <B
+CLASS="command"
+>chroot</B
+>
+       ejecute el programa <B
+CLASS="command"
+>cat</B
+> en un directorio
+       diferente.  Ayuda: Puede revisar las librerías que
+       <B
+CLASS="command"
+>cat</B
+> emplea con <B
+CLASS="command"
+>ldd
+       /bin/cat</B
+>  (ver <A
+HREF="x7217.htm"
+>Administración de
+       programas</A
+>).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	<PRE
+CLASS="screen"
+> 
+mkdir /root/nj; 
+mkdir /root/nj/lib; 
+cp /bin/cat /root/nj; 
+cp /lib/libc.so.6 /root/nj/lib; 
+cp /lib/ld-linux.so.2 /root/nj/lib</PRE
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="admarc.sist.1"
+></A
+><B
+>3. </B
+>El ejemplo de <B
+CLASS="command"
+>mknod</B
+> que
+       referencia la primera consola virtual, en realidad referencia
+       la entrada de teclado de la primera consola virtual.  La
+       información desplegada en la primera consola virtual puede
+       verse en el dispositivo con número mayor 7 y número menor 1.
+       En el directorio <TT
+CLASS="filename"
+>/dev</TT
+>
+       debe existir un archivo que referencie ese dispositivo,
+       identifiquelo y revise su contenido por ejemplo con
+       <TT
+CLASS="literal"
+>cat</TT
+> o con <TT
+CLASS="literal"
+>less</TT
+> y la
+       opción <TT
+CLASS="literal"
+>-f</TT
+>.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <B
+CLASS="command"
+>cat /dev/vcs1</B
+> </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="admarc.org.3"
+></A
+><B
+>4. </B
+>Hay un archivo en el que se almacena el
+       mensaje de bienvenida que ven los usuarios que entran al
+       sistema (por ejemplo al entrar desde una consola virtual o al
+       hacer <B
+CLASS="command"
+>telnet</B
+>), cambie el mensaje (Ayuda: el
+       directorio <TT
+CLASS="filename"
+>/etc</TT
+> contiene
+       la mayoría de archivos de configuración del sistema
+       completo).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> El archivo es <TT
+CLASS="filename"
+>/etc/motd</TT
+>, su primera
+       línea que contiene el nombre de la máquina y la versión del
+       sistema es generada en cada arranque por el script
+       <TT
+CLASS="filename"
+>/etc/init.d/bootmisc</TT
+> ---que es arrancado 
+       desde el nivel S---, puede evitarse la modificación poniendo en 
+       "no" la variable <TT
+CLASS="envar"
+>EDITMOD</TT
+> en
+       <TT
+CLASS="filename"
+>/etc/default/rcS</TT
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="admarc.org.4"
+></A
+><B
+>5. </B
+>Examine las especificaciones de la CPU que
+       tiene su sistema (Ayuda: comando <B
+CLASS="command"
+>more</B
+> y un
+       archivo del directorio <TT
+CLASS="filename"
+>/proc</TT
+>).
+     </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+> cat /proc/cpu/info</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="admarc.org.5"
+></A
+><B
+>6. </B
+>En el directorio <TT
+CLASS="filename"
+>/dev</TT
+> hay varios enlaces
+	 simbólicos para dispositivos, por ejemplo <TT
+CLASS="filename"
+>/dev/modem</TT
+> debe ser un enlace al
+	 puerto en el cual está el modem (e.g <TT
+CLASS="filename"
+>ttyS1</TT
+>), <TT
+CLASS="filename"
+>/dev/cdrom</TT
+> debe ser un enlace al
+	 dispositivo del <SPAN
+CLASS="acronym"
+>CDROM</SPAN
+> (e.g <TT
+CLASS="filename"
+>hdc</TT
+>), <TT
+CLASS="filename"
+>/dev/mouse</TT
+> debe ser un enlace al
+	 puerto del ratón (e.g <TT
+CLASS="filename"
+>psaux</TT
+> o <TT
+CLASS="filename"
+>ttyS0</TT
+>).  Revise los enlaces en
+	 su computador (si falta alguno agréguelo). </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><PRE
+CLASS="screen"
+> 
+ln -s /dev/ttyS1 /dev/mouse
+ln -s /dev/hdc /dev/cdrom</PRE
+></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6453"
+HREF="x6433.htm#AEN6453"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><SPAN
+CLASS="acronym"
+>FHS</SPAN
+> (<I
+CLASS="foreignphrase"
+>Filesystem
+       Hierarchy Standard</I
+>) es un estándar que
+       establece "requerimientos y guías para ubicar archivos y
+       directorios en sistemas estilo UNIX".</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6730"
+HREF="x6433.htm#AEN6730"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Los tipos soportados por el kernel 2.2.18, propios de
+	otros sistemas operativos son: minix - Minix, affs Amiga Fast
+	File System, hpfs - OS/2, ntfs - Windows NT/2000, msdos - Dos
+	y Windows 3.1, vfat - Windows 95/98/ME algunas versiones de
+	NT, fat_cvf - volumenes FAT comprimidos (Stacker, DoublSpace),
+	adfs - Acorn Advanced, qnx4 - QNX, sysv -
+	SystemV/Xenix/Coherent, ufs -
+	BSD4.2/FreeBSD/NetBSD/OpenBSD/Solaris/NextStep, efs - Irix de
+	Silicon Graphics, hfs - Apple. Los tipos creados con o para
+	Linux son: ext2; umsdos - extensión a msdos para soportar
+	nombres largos, permisos y propietarios, enlaces y archivos
+	especiales; reiserfs, ext3, proc, usbdev. Los tipos de
+	sistemas de archivos distribuidos son: nfs, coda, smb -
+	protocolo SMB de Windows FWG/95/NT, shmem, ncp - Novell
+	NetWare filesystem. Para ciertos dispositivos hay tipos
+	especiales: iso9660 para leer CD-ROMs, romfs sistema de
+	archivos de sólo lectura para ROM o RAM para mantener el
+	kernel y módulos.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6751"
+HREF="x6433.htm#AEN6751"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>También puede examinar los sistemas de archivos montados
+	en <TT
+CLASS="filename"
+>/etc/mtab</TT
+> o en
+	<TT
+CLASS="filename"
+>/proc/mounts</TT
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6779"
+HREF="x6433.htm#AEN6779"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El tipo especial <TT
+CLASS="literal"
+>auto</TT
+> indica al kernel
+	que intente determinar el sistema de archivos
+	automáticamente. Intentará en el ordén especificado en el
+	archivo <TT
+CLASS="filename"
+>/etc/filesystems</TT
+> o en su defecto
+	<TT
+CLASS="filename"
+>/proc/filesystems</TT
+>.  Esta opción es muy
+	útil por ejemplo para disquettes.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6797"
+HREF="x6433.htm#AEN6797"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Zona de intercambio o memoria swap es espacio en disco
+	que puede emplearse como si fuera memoria RAM en caso de que
+	esta última no sea suficiente (aunque es mucho más lento el
+	acceso a un disco que a RAM).  Las zonas de intercambio no se
+	montan en el sistema de archivos, se especifican en
+	<TT
+CLASS="filename"
+>/etc/fstab</TT
+> con tipo
+	<B
+CLASS="command"
+>swap</B
+>. La opción <TT
+CLASS="literal"
+>sw</TT
+>
+	indica al kernel que debe emplear esa zona desde el arranque
+	(posteriormente puede desmontarse o volverse a montar con los
+	programas <B
+CLASS="command"
+>swapon</B
+> y
+	<B
+CLASS="command"
+>swapoff</B
+>).  Las zonas de intercambio no
+	requieren ser volcadas o chequeadas con
+	<B
+CLASS="command"
+>fsck</B
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6819"
+HREF="x6433.htm#AEN6819"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El propietario por defecto en sistemas msdos o vfat puede
+       establecerse con la opción
+       <TT
+CLASS="literal"
+>uid=<TT
+CLASS="replaceable"
+><I
+>UID</I
+></TT
+></TT
+> de
+       <TT
+CLASS="literal"
+>mount</TT
+>, el grupo por defecto con la opción
+       <TT
+CLASS="literal"
+>gui=<TT
+CLASS="replaceable"
+><I
+>GID</I
+></TT
+></TT
+>.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6911"
+HREF="x6433.htm#AEN6911"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En lugar de <B
+CLASS="command"
+>mknod</B
+> también puede
+	   emplearse <TT
+CLASS="envar"
+>MAKEDEV</TT
+> que recibe nombres de
+	   dispositivos conocidos por Linux y crea los archivos
+	   apropiados en <TT
+CLASS="filename"
+>/dev</TT
+>.
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6958"
+HREF="x6433.htm#AEN6958"
+>[8]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En otras versiones de Unix con un programa hace que sea
+	 mantenido en memoria swap para que pueda cargarse más
+	  rápido.
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN6968"
+HREF="x6433.htm#AEN6968"
+>[9]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>El programa <B
+CLASS="command"
+>chmod</B
+> también puede
+	recibir la especificación de los permisos como un número octal
+	(de 1 a 4 digitos): el primer dígito de izquierda a derecha
+	indica permisos de otros; el segundo, en caso de haberlo,
+	permisos del grupo; el tercero, si lo hay, permisos del
+	usuario y el cuarto permisos de los programas.  Para los
+	digitos de usuario, grupo y otros un 0 indica ningún permiso,
+	un 1 indica permiso de ejecución, 2 permiso de escritura y 4
+	permiso de lecturar; las posibles combinaciones se obtienen
+	sumando estos valores (por ejemplo la máxima suma es 7 que
+	concede los tres permisos).  En el caso del digito de permisos
+	especiales 1 es el bit sticky, 2 setgid y 4 setuid. Por
+	ejemplo <B
+CLASS="command"
+>chmod 62</B
+> da permiso de lectura y
+	escritura al grupo y sólo de lectura a otros.  <B
+CLASS="command"
+>chmod
+	4110 prog</B
+> marca como ejecutable el archivo prog para
+	usuario y grupo y pone el bit setuid.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN7001"
+HREF="x6433.htm#AEN7001"
+>[10]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><B
+CLASS="command"
+>umask</B
+> es un comando al menos de
+	   <SPAN
+CLASS="application"
+>bash</SPAN
+>,
+	   <SPAN
+CLASS="application"
+>csh</SPAN
+> y
+	   <SPAN
+CLASS="application"
+>tcsh</SPAN
+>.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN7011"
+HREF="x6433.htm#AEN7011"
+>[11]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Para especificar la mascara de
+	 <B
+CLASS="command"
+>umask</B
+> también puede emplearse un número en
+	 octal.  El número indica los permisos que por defecto NO deben
+	 concederse. El ejemplo análogo al presentado en esta sección es
+	 <B
+CLASS="command"
+>umask 0177</B
+>.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN7019"
+HREF="x6433.htm#AEN7019"
+>[12]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Aún cuando en el sitio de desarrollo hay planes para
+	desarrollar una <A
+HREF="http://e2fsprogs.sourceforge.net/ext2.html"
+TARGET="_top"
+>http://e2fsprogs.sourceforge.net/ext2.html</A
+>.</P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x5590.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x7217.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Administración de usuarios</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c4966.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Administración de programas</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

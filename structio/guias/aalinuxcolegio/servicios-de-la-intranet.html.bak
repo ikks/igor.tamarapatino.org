@@ -1,0 +1,314 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>3. Servicios de la Intranet</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="exploracion-dos.html" title="Capítulo 2. Linux desde la perspectiva de un usuario con experiencia"><link rel="previous" href="informacion-personal-y-comunicacion-con-otros-usuarios.html" title="2. Información personal y comunicación con otros
+    usuarios"><link rel="next" href="edicion-de-texto.html" title="4. Edición de texto"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Servicios de la Intranet</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="informacion-personal-y-comunicacion-con-otros-usuarios.html">Anterior</a> </td><th width="60%" align="center">Capítulo 2. Linux desde la perspectiva de un usuario con experiencia</th><td width="20%" align="right"> <a accesskey="n" href="edicion-de-texto.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="servicios-de-la-intranet"></a>3. Servicios de la Intranet</h2></div></div><p>Indicadores de Logros:</p><div class="itemizedlist"><ul type="disc"><li><p><a name="servbas.bas"></a>Emplea programas en otros computadores con
+      telnet,
+      ssh y
+      X-Window.
+     </p></li><li><p><a name="servbas.ftp"></a>Transmite archivos de un computador a otro empleando
+     <b>ftp</b>.
+      </p></li><li><p><a name="servbas.web"></a>Consulta el web de su institución y publica su página
+      personal.
+     </p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-servicios-de-la-intranet"></a>3.1. Lectura: Servicios de la Intranet</h3></div></div><p>Además de permitirle comunicarse con otros usuarios, puede
+     emplear la red de su colegio (i.e la intranet) para conectarse a
+     otros computadores y emplear servicios que ofrecen.  En esta
+     sección se presentan brevemente 4 de tales servicios:
+     <b>telnet</b> y <b>ssh</b> para emplear
+     un interprete de comandos de otro computador,
+     <b>ftp</b> para transmitir archivos y el web que
+     permite publicar y consultar información.
+   </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="telnet-y-ssh"></a>3.1.1. 
+      <b>telnet</b> y <b>ssh</b>
+     </h4></div></div><p>Para iniciar una sesión con un interprete de comandos de
+      otro computador, puede emplear el comando
+      <b>telnet</b> seguido del nombre de la máquina en la
+     que desea trabajar, por ejemplo si desea conectarse a la máquina
+     <i><tt>purpura.micolegio.edu.co</tt></i>:
+</p><pre class="screen">
+telnet purpura.micolegio.edu.co
+</pre><p>
+
+      Una vez conectado podrá ingresar su login y clave en esa
+      máquina, y entonces se iniciará una sesión en modo texto como
+      las que ve en las consolas virtuales (ver <a href="sistema-de-usuarios-y-manejo-de-clave.html#lectura-sistema-de-usuarios-y-manejo-de-clave" title="3.1. Lectura: Sistema de usuarios y manejo de clave">Lectura
+      Sistema de usuarios y manejo de clave</a>).  La información
+      que transmita (incluyendo su clave) no será protegida o
+      encriptada y podría ser vista en otros computadores por los que
+      transite la información (esto sólo puede hacerse con
+      herramientas apropiadas
+      i.e. <i>sniffers</i>, y desde la cuenta
+      del administrador del sistema).
+    </p><a class="indexterm" name="id365483"></a><p>Una alternativa más segura para <b>telnet</b>,
+      pero que requiere más recursos del computador es
+      <b>ssh</b> que encripta la información antes de
+      transmitirla, que autentica la máquina a la cual se conecta y
+      que puede emplear mecanismos de autenticación de usuarios más
+      seguros.  Para conectarse como usuario
+      <i><tt>paz</tt></i> a la máquina
+      <i><tt>purpura.micolegio.edu.co</tt></i>:
+</p><pre class="screen">
+ssh -l paz  purpura.micolegio.edu.co
+</pre><p>
+
+     <b>ssh</b> autenticará la máquina a la cual se está
+      conectado, comparando la llave pública de esa máquina con alguna
+      de las que conozca, si la llave pública de la máquina a cambiado
+      o si es la primera vez que se conecta a ese sitio,
+      <b>ssh</b> le pedirá confirmar la nueva llave
+      pública.  Después le pedirá su clave en ese servidor (o si ha
+      configurado autenticación con llaves simétricas pedirá su clave
+      RSA) para finalmente dejarlo en una sesión en modo texto, tal
+      como <b>telnet</b>, pero que encripta toda la
+      información que transmita.
+    </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject"><img src="ssh.png" align="center" alt="Iniciando una sesión remota con
+	  ssh por primera
+	  vez"></div></div></div><p>Si en el computador al que se conecta hay programas para
+      X-Window (con interfaces gráficas) puede iniciarlos y verlos en
+      su computador ---esto incluso puede hacerse con otros sistemas
+      operativos si configura un servidor de X-Window.  Para lograrlo
+      se deben seguir cierto pasos que se ejemplifican a continuación,
+      suponiendo que usted está conectado al computador
+      <i><tt>rojo.micolegio.edu.co</tt></i> y abrió una sesión con
+      <b>telnet</b> en el computador
+      <i><tt>purpura.micolegio.edu.co</tt></i>:
+     </p><a class="indexterm" name="id365780"></a><a class="indexterm" name="id365899"></a><div class="orderedlist"><ol type="1"><li><p>En el computador
+	<i><tt>rojo.micolegio.edu.co</tt></i> debe estar
+	corriendo un servidor de X-Window (si usted está trabajando en
+	el escritorio Gnome ya está funcionando su servidor X-Window).
+	El computador <i><tt>purpura.micolegio.edu.co</tt></i>
+	actuará como cliente de X-Window.
+       </p></li><li><p>En <i><tt>rojo.micolegio.edu.co</tt></i> debe
+	habilitar conexiones de X-Window desde la máquina en la cual
+	ejecutará la aplicación. Si usa <b>telnet</b> o si
+	<b>ssh</b> no se configuró para retransmitir
+	información de X-Window, esto lo puede hacer con el comando
+	<b>xhost</b>:
+</p><pre class="screen">
+xhost +purpura.micolegio.edu.co
+</pre><p>
+      </p></li><li><p>En el computador en el cual ejecutará el programa (el
+	cliente) debe indicar en la variable de ambiente
+	<tt>DISPLAY</tt>
+	<sup>[<a name="id365990" href="#ftn.id365990">20</a>]</sup>, el nombre del servidor de X-Window:
+</p><pre class="screen">
+export DISPLAY=rojo.micolegio.edu.co:0
+</pre><p>
+
+	Si emplea <b>ssh</b> normalmente no requerirá este
+	paso.
+       </p></li><li><p>Finalmente puede iniciar la aplicación gráfica en
+	<i><tt>purpura.micolegio.edu.co</tt></i> por ejemplo:
+</p><pre class="screen">
+xeyes
+</pre><p>
+       </p></li></ol></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="ftp"></a>3.1.2. Ftp</h4></div></div><p>Puede emplear el programa <b>ftp</b> para
+      enviar archivos de un computador a otro en una conexión no
+      encriptada. Para iniciar una conexión, desde un interprete de
+      comandos teclee <b>ftp</b> seguido del nombre del
+      computador al cual se desea conectar:
+     </p><a class="indexterm" name="id366146"></a><pre class="screen">
+ftp purpura.micolegio.edu.co
+</pre><p>
+      A continuación <b>ftp</b> pedirá nombre de usuario y
+      clave de un usuario en el computador al cual se está conectado.
+      Cuando las de quedará e un interprete de comandos especializado.
+      Entre los comandos que puede emplear están:
+     </p><a class="indexterm" name="id366190"></a><a class="indexterm" name="id366217"></a><div class="variablelist"><dl><dt><span class="term"><b>quit</b></span></dt><dd><p>Que permite terminar la sesión ftp.</p></dd><dt><span class="term"><b>?</b></span></dt><dd><p>Para ver una lista de ordenes para ftp. Si a continuación
+       se da el nombre de un comando se obtendrá ayuda especifica para
+       ese comando.</p></dd><dt><span class="term"><b>ls</b></span></dt><dd><p>Para ver el listado de archivos disponibles en el
+	computador remoto.</p></dd><dt><span class="term"><b>cd</b>
+       </span></dt><dd><p>Para cambiarse de directorio en el computador remoto.
+	</p></dd><dt><span class="term"><b>cdup</b>
+        </span></dt><dd><p>Permite pasar al directorio padre, por ejemplo si en el
+       computador al cual se conectó está en
+       <tt>/home/pepe</tt> el comando <b>cdup</b>
+       lo dejará en <tt>/home</tt>.
+       Es análogo a la orden <b>cd ..</b> en un interprete
+       de comandos.
+       </p></dd><dt><span class="term"><b>mkdir</b>
+       </span></dt><dd><p>Para crear directorios en el computador remoto (si
+	 tiene permiso de escritura).
+	</p></dd><dt><span class="term">
+	<b>pwd</b>
+       </span></dt><dd><p>Para examinar el directorio en el que está en el
+	computador remoto.
+	</p></dd><dt><span class="term">
+	<b>delete</b>
+       </span></dt><dd><p>Para borrar un archivo del computador remoto.</p></dd><dt><span class="term">
+	<b>lcd</b>
+       </span></dt><dd><p>Para cambiar el directorio de trabajo en el computador
+	 local.
+	</p></dd><dt><span class="term"><b>!</b><i><tt>comando</tt></i>
+       </span></dt><dd><p>Ejecuta el comando especificado en el computador local,
+	 por ejemplo para examinar los archivos del computador local
+	 <b>!ls</b> para examinar el directorio de trabajo
+	 <b>!pwd</b>.
+	</p></dd><dt><span class="term"><b>get</b></span></dt><dd><p>Para transmitir un archivo del computador remoto al
+	 local. Por ejemplo <b>get j.txt</b>.
+	</p></dd><dt><span class="term"><b>put</b></span></dt><dd><p>Para transmitir un archivo del computador local al
+	 computador remoto.
+	</p></dd><dt><span class="term">
+	<b>mget</b>
+       </span></dt><dd><p>Para trasnmitir varios archivos del comptuador remoto al
+	 local. Por ejemplo <tt>mget *.jpg</tt>.
+	</p></dd><dt><span class="term">reget</span></dt><dd><p>Permite continuar la transmisión de un archivo,
+	   después de una interrupción. Por ejemplo <tt>reget
+	     inmenso.gz</tt>.</p></dd></dl></div><a class="indexterm" name="id366657"></a><p>
+      Algunos computadores (por ejemplo en el servidor o en 
+      Internet en <i><tt>rtfm.mit.edu</tt></i>) pueden
+      haber repositorios de archivos accequibles por ftp anónimo.
+      Esto significa que puede conectarse cualquier usuario empleando
+      como login <tt>anonymous</tt> (o <tt>ftp</tt>)
+      y como clave su dirección de correo (normalmente cualquier 
+      secuencia de caracteres que incluya '@' servirá).
+      Es posible que por seguridad la red de su colegio esté configurada 
+      para recibir sólo conexiones ftp anónimas. En tal caso puede emplear
+      <b>scp</b> como se explica más adelante en esta sección.
+    </p><p>Como alternativa a ftp para descargar un sitio web entero,
+	puede emplearse wget.  Este programa
+	recibe un URL y puede descargarlo así como todos los documentos
+	que este enlace (y los que los documentos enlazados enlacen de 
+	forma recursiva).
+	Por ejemplo para descargar recursivamente hasta 5 niveles de 
+	profundidad del sitio 
+	<tt>structio.sourceforge.net</tt>:
+	</p><pre class="screen">
+wget -r -l 5 http://structio.sourceforge.net
+	</pre><p>
+	</p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="./warning.png"></td><th>Aviso</th></tr><tr><td colspan="2" align="left" valign="top"><p>Si el sitio que está descargando cuenta con mucha
+	  información, o si especifica un nivel de recursión muy alto, con
+	  wget consumirá bastante ancho de banda y llenará rapidamente el
+	  espacio disponible.</p></td></tr></table></div><p>
+	Si la transmisión se interrumpe y el servidor con el que se conecta
+	lo soporta, podrá continuar después con la opción
+	<tt>-c</tt> (análogo a <tt>reget</tt> en ftp).
+      </p><p>Una alternativa segura a <b>ftp</b>, para
+      transmitir archivos de su cuenta en un máquina a otra cuenta en
+      otra máquina es <b>scp</b> (herramienta disponible
+      sólo junto con <b>ssh</b>).  Se usa de forma análoga
+      a <b>cp</b> (ver <a href="exploracion-dos.html#archivos-y-permisos" title="1. Archivos y permisos">Archivos y permisos</a>), sólo
+      que el archivo fuente (o los archivos fuente) y la vía destino
+      pueden incluir el nombre del usuario y la máquina.  Por ejemplo
+      para copiar de la máquina desde la cual da el comando un archivo
+      <tt>carta.txt</tt> a la cuenta del usuario
+      <i><tt>paz</tt></i> en la máquina
+      <i><tt>purpura.micolegio.edu.co</tt></i>:
+     </p><pre class="screen">
+scp carta.txt  paz@purpura.micolegio.edu.co:/home/paz
+</pre><p>De forma análoga a <b>ssh</b>, este comando
+      autenticará la máquina a la que se conecté, le permitirá
+      autenticarse como usuario con su clave (que transmitirá encriptada 
+      a diferencia de ftp) y encriptará la información que se transmita.
+    </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="web"></a>3.1.3. Web</h4></div></div><p>Un hipertexto es un documento con enlaces a secciones de
+      otros documentos o del mismo. El nombre
+      <i>web</i> se da a un conjunto de
+      hipertextos disponibles en uno o más servidores interconectados.
+      Cada hipertexto puede localizarse con un URL
+      <sup>[<a name="id367067" href="#ftn.id367067">21</a>]</sup> único en la red que lo identifica y que un usuario
+      puede emplear para consultarlo con un cliente web (también
+      llamado <span class="emphasis"><em>navegador</em></span>
+      <sup>[<a name="id367234" href="#ftn.id367234">22</a>]</sup>).  
+     </p><a class="indexterm" name="id367149"></a><a class="indexterm" name="id367172"></a><p>El URL de los hipertextos comienza con
+     <tt>http://</tt> a continuación el nombre de la máquina
+     y a la ruta del hipertexto
+     (e.g. <tt>http://servidor.micolegio.edu.co/</tt> o <a href="http://structio.sourceforge.net/guias/index.html" target="_top">
+       http://structio.sourceforge.net/guias/index.html</a>).
+      Los hipertextos de usuarios pueden localizarse con una virgulilla
+      y el login del usuario después del nombre de la máquina
+      (e.g. <tt>http://click.micolegio.edu.co/~agarcia</tt>).
+    </p><p>Como usuario usted puede publicar su página personal y
+      otros archivos HTML para que sus compañeros
+      la vean, creando en su directorio personal un subdirectorio
+      <tt>public_html</tt> y ubicando
+      allí sus hipertextos.  Ese directorio debe tener permisos de
+      lectura y ejecución para todos los usuarios, su directorio
+      personal debe otorgar permiso de ejecución para todos los
+      usuarios.  En ese directorio (i.e <tt>public_html</tt>) puede tener varios
+      hipertextos interconectados, el principal debe llamarse
+      <tt>index.html</tt> y será el presentado cuando se
+      use desde un navegador el URL:
+      <tt>http://servidor.micolegio.edu.co/~agarcia</tt>
+      (remplazando <i><tt>agarcia</tt></i> por su login).
+      Los demás hipertextos HTML (extensión .html), podrán consultarse
+      con URLs como
+      <tt>http://servidor.micolegio.edu.co/~agarcia/dibujos.html</tt>.
+    </p><a class="indexterm" name="id367521"></a><a class="indexterm" name="id367550"></a><p>Sus hipertextos deben estar escritos en un lenguaje de
+      hipertextos llamado HTML, que no se explicará
+      en detalle en estas guías, aunque el ejercicio 2 presenta
+      algunas nociones (la extensión de los archivos escritos en tal
+      lenguaje es <tt>.html</tt>).
+     </p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-servicios-de-la-intranet"></a>3.2. Lecturas recomendadas: Servicios de la Intranet</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Las páginas del manual de <b>telnet</b> y
+      <b>ftp</b>.  Alternativamente a
+      <b>telnet</b> podría usar <b>rsh</b>.
+      </p></li><li><p>Si tiene acceso a Internet puede aprender sobre
+       HTML en <a href="http://www.w3.org/MarkUp/Guide/" target="_top">http://www.w3.org/MarkUp/Guide/</a>.
+      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-servicios-de-la-intranet"></a>3.3. Ejercicios: Servicios de la Intranet</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id367683"></a><a name="servbas.bas.1"></a><b>3.3.1. </b></td><td align="left" valign="top"><p>Conéctese a su propia cuenta en otro computador de la
+       intranet de su colegio empleando tanto
+       <b>telnet</b> como <b>ssh</b> ---si en
+       la red ya está configurado NFS y
+       NIS como se describe en estas guías, no
+       notará diferencia en su directorio personal al conectarse a
+       otro computador de la intranet, emplee el comando
+       <b>hostname</b> o examine por ejemplo archivos del
+       directorio <tt>/etc</tt> (como
+       <tt>/etc/hostname</tt>) para determinar en que
+       computador está.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id367752"></a><a name="servbas.ftp.1"></a><b>3.3.2. </b></td><td align="left" valign="top"><p>Inicie una sesión de ftp anónimo con el servidor de su
+	colegio.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id368023"></a><a name="servbas.ftp.2"></a><b>3.3.3. </b></td><td align="left" valign="top"><p>Opcional: Si tiene la oportunidad de conectarse a
+	Internet puede emplear muchos repositorios de ftp
+	anónimos. Recomiende algunos a sus compañeros.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id368050"></a><a name="servbas.web.1"></a><b>3.3.4. </b></td><td align="left" valign="top"><p>Consulte el web de su colegio (pregunte
+       el nombre de la máquina a su administrador)</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id368078"></a><a name="servbas.web.2"></a><b>3.3.5. </b></td><td align="left" valign="top"><p>Si tiene acceso a Internet hay muchos sitios web que puede
+       consultar. Recomiende algunos a sus compañeros.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id368105"></a><a name="servbas.web.3"></a><b>3.3.6. </b></td><td align="left" valign="top"><p>Cree su página personal para que pueda ser visitada por
+	sus compañeros. Para comenzar puede partir de la siguiente
+	porción de código HTML como archivo
+	<tt>~/public_html/index.html</tt> --recuerde
+	ajustar los permisos de su directorio y del directorio
+	<tt>public_html</tt>:
+</p><pre class="programlisting">
+&lt;html&gt;
+&lt;head&gt;&lt;title&gt;
+Página personal de prueba
+&lt;/title&gt;&lt;/head&gt;
+
+&lt;body&gt;
+&lt;h1&gt;Software de libre redistribución&lt;/h1&gt;
+Viva la colaboración!
+&lt;i&gt;Italicas&lt;/i&gt; &lt;b&gt;Negrilla&lt;/b&gt; &lt;font color=&quot;red&quot;&gt;Otro color&lt;/font&gt;
+&lt;font size=&quot;+4&quot;&gt;Otro tamaño&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre><p>
+       </p></td></tr><tr class="question"><td align="left" valign="top"><a name="id368167"></a><a name="servbas.web.4"></a><b>3.3.7. </b></td><td align="left" valign="top"><p>Visite la página personal de otro miembro de su
+       comunidad educativa.</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id365990" href="#id365990">20</a>] </sup>Una variable de ambiente es información mantenida por
+	  el interprete de comandos y asociada con un nombre (ver
+	  <a href="scripts-basicos-para-bash.html" title="4. Scripts básicos para bash">Scripts básicos
+	   para bash</a>).
+	 </p></div><div class="footnote"><p><sup>[<a name="ftn.id367067" href="#id367067">21</a>] </sup>URL es sigla de
+	<i>Universal Resource Locator</i>, que
+	puede traducirse como Localizador universal de recursos.  Como
+	el nombre lo índica un URL identifica de
+	forma única un recurso en una red; por ejemplo los hipertextos
+	HTML comienzan con URLs de la forma
+	<tt>http://</tt>, los archivos disponibles por ftp
+	con <tt>ftp://</tt>.  Por ejemplo el URL del archivo
+	<tt>index.html</tt> disponible en la raíz del
+	repositorio de ftp anónimo de rtfm.mit.edu es: 
+	<tt>ftp://rtfm.mit.edu/index.html</tt>, mientras que
+	el archivo <tt>doc.txt</tt> disponible en el directorio 
+	<tt>escritos</tt> de la cuenta del usuario 
+	<tt>paz</tt>  con clave <tt>miclave</tt> en
+	el computador servidor.micolegio.edu.co es:
+	<tt>ftp://paz:miclave@servidor.micolegio.edu.co/escritos/doc.txt</tt>
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id367234" href="#id367234">22</a>] </sup>Navegador: del inglés
+	 <i>browser</i>, hay varios que funcionan
+	 en modo texto:
+	links, lynx 
+	y w3m que funcionan en modo texto.
+	Hay también navegadores gráficos que requieren más o menos recursos
+	(memoria y procesador), entre los que más requieren por
+	ofrecer más caraterísticas:
+	mozilla,
+	galeon, netscape
+	6, konqueror; entre
+	los que menos requieren: amaya,
+	netscape 4 o versiones
+	previas.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="informacion-personal-y-comunicacion-con-otros-usuarios.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="exploracion-dos.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="edicion-de-texto.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">2. Información personal y comunicación con otros
+    usuarios </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 4. Edición de texto</td></tr></table></div></body></html>

@@ -1,0 +1,2235 @@
+<HTML
+><HEAD
+><TITLE
+>bash y el juego de
+    herramientas</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Linux desde la perspectiva de un usuario con más
+   experiencia"
+HREF="c2347.htm"><LINK
+REL="PREVIOUS"
+TITLE="Linux desde la perspectiva de un usuario con más
+   experiencia"
+HREF="c2347.htm"><LINK
+REL="NEXT"
+TITLE="Procesos y tareas"
+HREF="x3282.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c2347.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 3. Linux desde la perspectiva de un usuario con más
+   experiencia</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x3282.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="bash-y-el-juego-de-herramientas"
+><SPAN
+CLASS="application"
+>bash</SPAN
+> y el juego de
+    herramientas</A
+></H1
+><P
+>Indicadores de Logros</P
+><P
+></P
+><UL
+><LI
+><A
+NAME="kit.inter"
+></A
+><P
+>Emplea facilidades que <TT
+CLASS="literal"
+>bash</TT
+> ofrece para
+       operación interactiva.</P
+></LI
+><LI
+><A
+NAME="kit.herramientas"
+></A
+><P
+>Emplea algunas herramientas para manipular textos
+       (<B
+CLASS="command"
+>cat</B
+>, <B
+CLASS="command"
+>tac</B
+>,
+       <B
+CLASS="command"
+>nl</B
+>, <B
+CLASS="command"
+>tail</B
+>,
+       <B
+CLASS="command"
+>head</B
+>, <B
+CLASS="command"
+>sort</B
+>,
+       <B
+CLASS="command"
+>split</B
+>, <B
+CLASS="command"
+>csplit</B
+> y
+       <B
+CLASS="command"
+>wc</B
+>).  </P
+></LI
+><LI
+><A
+NAME="kit.tuberias"
+></A
+><P
+>Emplea redireccionamiento y compone herramientas empleando
+       tuberías
+       <A
+NAME="AEN2808"
+HREF="#FTN.AEN2808"
+>[1]</A
+>.
+      </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-bash-y-el-juego-de-herramientas"
+>Lectura:
+   <SPAN
+CLASS="application"
+>bash</SPAN
+> y el juego de herramientas</A
+></H2
+><P
+>El intérprete de comandos puede ser un gran aliado de
+     usuarios, administradores y programadores, porque permite
+     automatizar labores rutinarias y componer diversos programas para
+     que interactúen y realicen labores complejas.
+   </P
+><P
+>La idea para componer diversos programas es formar
+     "tuberías" en las que cada tubo es un programa cuya salida se
+     conecta como entrada a otro. Esta idea se comenzará a desarrollar
+     en esta guía, introduciendo primero algunas facilidades del
+     intérprete de comandos <SPAN
+CLASS="application"
+>bash</SPAN
+>
+
+    <A
+NAME="AEN2817"
+HREF="#FTN.AEN2817"
+>[2]</A
+>
+     para editar comandos, después se presentarán algunos programas y
+     comandos de <SPAN
+CLASS="application"
+>bash</SPAN
+> y finalmente se
+     presentará como se compone y se controla el flujo de datos.
+   </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="ayudas-interactivas-de-bash"
+>Ayudas interactivas de <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      (<I
+CLASS="foreignphrase"
+>readline</I
+> y
+      <I
+CLASS="foreignphrase"
+>history</I
+>)</A
+></H3
+><P
+>Para recibir información del usuario
+     <SPAN
+CLASS="application"
+>bash</SPAN
+> y otros programas emplean las
+     librerías <I
+CLASS="foreignphrase"
+>readline</I
+> y
+     <I
+CLASS="foreignphrase"
+>history</I
+>.
+     <I
+CLASS="foreignphrase"
+>readline</I
+> brinda facilidades para
+     escribir comandos con un teclado y
+     <I
+CLASS="foreignphrase"
+>history</I
+> almacena los últimos
+     comandos que el usuario haya dado para facilitar su
+     reutilización.  Algunas de las posibilidades que estas librerías
+     ofrecen son:
+     </P
+><A
+NAME="AEN2839"
+></A
+><P
+>Nombre de la librería que
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> y algunos programas emplean para
+      dar facilidades al usuario para escribir comandos, por ejemplo
+      para completar con la tecla <B
+CLASS="keycap"
+>Tab</B
+>.</P
+><A
+NAME="AEN2844"
+></A
+><P
+>ombre de la tecla para completar
+      nombres de programas, máquinas o usuarios (sólo la primera letra
+      en mayúscula).</P
+><A
+NAME="AEN2848"
+></A
+><P
+>Programa que envía uno o más
+      archivos a salida estándar.</P
+><A
+NAME="AEN2852"
+></A
+><P
+>Programa que envía uno o más
+      archivos invertido a salida estándar.</P
+><A
+NAME="AEN2856"
+></A
+><P
+>Programa que presenta un
+      archivo con las líneas numeradas.</P
+><A
+NAME="AEN2860"
+></A
+><P
+>Programa que permite leer un
+      archivo y desplazarse sobre el mismo (no es
+      <B
+CLASS="command"
+>less</B
+>).</P
+><A
+NAME="AEN2865"
+></A
+><P
+>Programa que permite leer un
+      archivo y desplazarse sobre el mismo (no es
+      <TT
+CLASS="literal"
+>more</TT
+>).</P
+><A
+NAME="AEN2870"
+></A
+><P
+>Programa que permite ver el
+      comienzo de un archivo (por defecto primeras 10 líneas).</P
+><A
+NAME="AEN2874"
+></A
+><P
+>Programa que permite ver el
+      final de un archivo (por defecto primeras 10 líneas).</P
+><A
+NAME="AEN2878"
+></A
+><P
+>Divide un archivo en partes de
+      un tamaño máximo especificado.</P
+><A
+NAME="AEN2882"
+></A
+><P
+>Divide un archivo en sitios
+      donde se encuentre cierto contexto.</P
+><A
+NAME="AEN2886"
+></A
+><P
+>Permite ordenar un archivo,
+       mezclar archivos ordenados o verificar el orden de un archivo,
+       con posibilidades para ordenar lexicográficamente o con
+       números, meses y para manejar campos.</P
+><A
+NAME="AEN2890"
+></A
+><P
+>Programa que por defecto
+      presenta la cantidad de palabras, líneas y caracteres de un
+      archivo.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Flechas o <B
+CLASS="keycap"
+>Control-p</B
+>,
+	 <B
+CLASS="keycap"
+>Control-n</B
+></DT
+><DD
+><P
+>Para "navegar"sobre la historia de comandos 
+	</P
+></DD
+><DT
+>Completación con <B
+CLASS="keycap"
+>Tab</B
+></DT
+><DD
+><P
+>&#13;	 Puede emplear la tecla <B
+CLASS="keycap"
+>Tab</B
+> para completar
+	 nombres de programas, de máquinas (mencionadas en el archivo
+	 <TT
+CLASS="filename"
+>/etc/hosts</TT
+>) o de usuarios, si hay varias
+	 posibles completaciones un segundo <B
+CLASS="keycap"
+>Tab</B
+>
+	 presentará la lista de posibilidades.  Por ejemplo: si
+	 estando en <SPAN
+CLASS="application"
+>bash</SPAN
+> teclea
+	 <B
+CLASS="command"
+>chm</B
+> y después presiona
+	 <B
+CLASS="keycap"
+>Tab</B
+>, se completará el nombre del comando a
+	 <B
+CLASS="command"
+>chmod</B
+>; si teclea <B
+CLASS="command"
+>ls
+	 /usr/inc</B
+> y presiona <B
+CLASS="keycap"
+>Tab</B
+> se
+	 completará la vía <TT
+CLASS="filename"
+>/usr/include</TT
+>; si teclea
+	 <B
+CLASS="command"
+>finger @</B
+> y después <B
+CLASS="keycap"
+>Tab</B
+>
+	 dos veces verá los nombres de algunas máquinas conocidas por
+	 su sistema; si teclea <B
+CLASS="command"
+>ls ~</B
+> y presiona
+	 <B
+CLASS="keycap"
+>Tab</B
+> dos veces verá los nombres de usuarios
+	 (<B
+CLASS="command"
+>ls ~carlos</B
+> mostrará el contenido del
+	 directorio personal del usuario con login
+	 <TT
+CLASS="literal"
+>carlos</TT
+>).
+	</P
+></DD
+><DT
+>Edición con teclas de <SPAN
+CLASS="application"
+>emacs</SPAN
+> o
+	 <SPAN
+CLASS="application"
+>vi</SPAN
+></DT
+><DD
+><P
+>&#13;	 <TT
+CLASS="literal"
+>readline</TT
+> puede configurarse para efectuar
+	 algunas operaciones de edición bien con las teclas de
+	 <SPAN
+CLASS="application"
+>emacs</SPAN
+> o bien con las de
+	 <SPAN
+CLASS="application"
+>vi</SPAN
+>.  Por ejemplo cuando las teclas de
+	 <SPAN
+CLASS="application"
+>emacs</SPAN
+> están configuradas (que es la opción
+	 por defecto) puede emplear las flechas hacía atrás y adelante
+	 (o <B
+CLASS="keycap"
+>Control-f</B
+> y <B
+CLASS="keycap"
+>Control-b</B
+>)
+	 para devolverse o avanzar sobre el comando;
+	 <B
+CLASS="keycap"
+>Control-a</B
+> para ir al comienzo;
+	 <B
+CLASS="keycap"
+>Control-e</B
+> para ir al final;
+	 <B
+CLASS="keycap"
+>Control-k</B
+> para cortar el resto del comando;
+	 <B
+CLASS="keycap"
+>Control-y</B
+> para insertar el texto antes
+	 cortado.  Cuando las teclas de <B
+CLASS="command"
+>vi</B
+> están
+	 configuradas puede presionar <B
+CLASS="keycap"
+>ESC</B
+> para pasar
+	 a modo comando y usar las teclas <B
+CLASS="keycap"
+>h</B
+>,
+	 <B
+CLASS="keycap"
+>j</B
+>, <B
+CLASS="keycap"
+>k</B
+> y <B
+CLASS="keycap"
+>l</B
+>
+	 (o las flechas) para moverse o <B
+CLASS="keycap"
+>f</B
+> para buscar
+	 una letra en la línea que está editando.
+	</P
+></DD
+><DT
+>Buscar comandos en la historia de comandos</DT
+><DD
+><P
+>Puede buscar un comando entre los que ya ha tecleado
+	 para reutilizarlo.  Con el modo
+	 <SPAN
+CLASS="application"
+>emacs</SPAN
+> emplee
+	 <B
+CLASS="keycap"
+>Control-r</B
+> y comience a teclear el comando
+	 que busca --es una búsqueda incremental, en el modo
+	 <SPAN
+CLASS="application"
+>vi</SPAN
+> emplee <B
+CLASS="keycap"
+>/</B
+> y
+	 después teclee parte del comando que busca.
+	</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="algunas-herramientas"
+>Algunas herramientas</A
+></H3
+><P
+>Un sistema Linux cuenta con gran cantidad de herramientas,
+      cada una de las cuales realiza una labor muy específica pero
+      rápidamente y bien; en esta sección presentamos unas cuantas
+      típicamente usadas para procesar textos planos. Junto con cada
+      herramienta presentamos algunas de sus opciones y ejemplos de su
+      uso (la documentación completa de cada herramienta puede
+      consultarse en la página del manual o en la documentación
+      <B
+CLASS="command"
+>info</B
+>).
+    </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>cat</B
+>, <B
+CLASS="command"
+>tac</B
+>,
+	<B
+CLASS="command"
+>nl</B
+>, <B
+CLASS="command"
+>more</B
+>,
+	<B
+CLASS="command"
+>less</B
+>, <B
+CLASS="command"
+>head</B
+>,
+	<B
+CLASS="command"
+>tail</B
+></DT
+><DD
+><P
+>Permiten ver uno o más archivo o parte de un archivo.
+         <B
+CLASS="command"
+>cat</B
+> y <B
+CLASS="command"
+>tac</B
+> presentan los
+         archivos que reciben uno a continuación de otro, aunque
+         <B
+CLASS="command"
+>tac</B
+> los presenta invertidos. La
+         orden:</P
+><PRE
+CLASS="screen"
+>&#13;cat /etc/profile /etc/hostname
+</PRE
+><P
+>&#13;	 presenta el archivo <TT
+CLASS="filename"
+>/etc/profile</TT
+> y a
+	 continuación
+	 <TT
+CLASS="filename"
+>/etc/bashrc</TT
+>. <B
+CLASS="command"
+>cat</B
+>
+	 entre sus opciones acepta <TT
+CLASS="option"
+>-n</TT
+> con la cual
+	 numera las líneas, aunque esa labor puede hacerse mejor con
+	 <B
+CLASS="command"
+>nl</B
+>.  <B
+CLASS="command"
+>more</B
+> y
+	 <B
+CLASS="command"
+>less</B
+> permiten al usuario "desplazarse"
+	 sobre uno o más archivos empleando teclas (e.g barra
+	 espaciadora para avanzar una página), <B
+CLASS="command"
+>less</B
+>
+	 permite también buscar y acepta algunos comandos como los de
+	 <SPAN
+CLASS="application"
+>vi</SPAN
+>. <B
+CLASS="command"
+>head</B
+> y
+	 <B
+CLASS="command"
+>tail</B
+> muestran parte del comienzo o del
+	 final de un archivo, por defecto 10 líneas aunque puede
+	 especificarse la cantidad de líneas con la opción
+	 <TT
+CLASS="option"
+>-n</TT
+> o puede especificarse la cantidad de
+	 bytes con la opción <TT
+CLASS="option"
+>-c</TT
+>. </P
+></DD
+><DT
+><B
+CLASS="command"
+>split</B
+>,
+	 <B
+CLASS="command"
+>csplit</B
+></DT
+><DD
+><P
+>Dividen un archivo en varias partes.
+	 <B
+CLASS="command"
+>split</B
+> divide empleando como criterio un
+	 tamaño, mientras que <B
+CLASS="command"
+>csplit</B
+> divide de
+	 acuerdo al contexto ---divide cada vez que en el texto
+	 aparezca una cadena
+	 <A
+NAME="AEN2995"
+HREF="#FTN.AEN2995"
+>[3]</A
+>
+	 o patrón.  <B
+CLASS="command"
+>split</B
+> acepta como opciones para
+	 especificar el tamaño <TT
+CLASS="option"
+>-b</TT
+> y
+	 <TT
+CLASS="option"
+>-l</TT
+>, el primero seguido del tamaño en bytes
+	 y el segundo seguido del tamaño en líneas.  Por ejemplo, para
+	 dividir un archivo <TT
+CLASS="filename"
+>grande</TT
+> en partes de
+	 100000 bytes:</P
+><PRE
+CLASS="screen"
+>&#13;split -b 100000 grande
+</PRE
+><P
+>&#13;	 las partes quedarán en archivos con nombres como
+	 <TT
+CLASS="filename"
+>xaa</TT
+>, <TT
+CLASS="filename"
+>xab</TT
+>, etc.
+	 Para dividir un archivo <TT
+CLASS="filename"
+>dir.txt</TT
+> siempre
+	 que la palabra <TT
+CLASS="literal"
+>nombre</TT
+> aparezca: </P
+><PRE
+CLASS="screen"
+>&#13;csplit dir.txt /nombre/ {*}
+</PRE
+><P
+>&#13;	 En el ejemplo anterior la cadena por buscar
+	 <A
+NAME="AEN3009"
+HREF="#FTN.AEN3009"
+>[4]</A
+>
+	 
+	 se especificó a continuación del nombre del archivo entre los
+	 caracteres '/', la cadena final "<TT
+CLASS="literal"
+>{*}</TT
+>"
+	 indica que debe dividirse cada vez que se encuentre una nueva
+	 ocurrencia de <TT
+CLASS="literal"
+>nombre</TT
+>, si no se usa
+	 <B
+CLASS="command"
+>csplit</B
+> sólo buscará la primera ocurrencia
+	 y dividirá el archivo en dos partes, si en vez de
+	 <TT
+CLASS="literal"
+>*</TT
+> se emplea un número
+	 <B
+CLASS="command"
+>csplit</B
+> buscará a lo sumo esa cantidad de
+	 veces la palabra y dividirá el archivo por cada ocurrencia
+	 que encuentre. </P
+></DD
+><DT
+><B
+CLASS="command"
+>sort</B
+></DT
+><DD
+><P
+>Por defecto ordena las líneas de un archivo, con la
+	 opción <TT
+CLASS="option"
+>-m</TT
+> mezcla dos archivos ordenados y
+	 con la opción <TT
+CLASS="option"
+>-c</TT
+> verifica que un archivo
+	 esté ordenado.  Al ordenar puede considerar las líneas
+	 completas, considerarlas números enteros (opción
+	 <TT
+CLASS="option"
+>-n</TT
+>) o flotantes (opción
+	 <TT
+CLASS="option"
+>-g</TT
+>), considerarlas meses (opción
+	 <TT
+CLASS="option"
+>-M</TT
+>) o dividirlas en campos y emplear algunos
+	 campos como llaves de ordenamiento (opción
+	 <TT
+CLASS="option"
+>-k</TT
+> para especificar llaves y
+	 <TT
+CLASS="option"
+>-t</TT
+> para cambiar separador de campos).  En
+	 las comparaciones puede ignorar diferencias entre mayúsculas
+	 y minúsculas con la opción <TT
+CLASS="option"
+>-f</TT
+>, puede ordenar
+	 de mayor a menor con la opción <TT
+CLASS="option"
+>-r</TT
+> ---por
+	 defecto ordena de menor a mayor--- y puede eliminar líneas
+	 repetidas con la opción
+	 <TT
+CLASS="option"
+>-u</TT
+>
+
+	 <A
+NAME="AEN3031"
+HREF="#FTN.AEN3031"
+>[5]</A
+>.Por ejemplo para ordenar por líneas el archivo
+	 <TT
+CLASS="literal"
+>nombres.txt</TT
+>:</P
+><PRE
+CLASS="screen"
+>&#13;sort nombres.txt
+</PRE
+><P
+> si cada línea del archivo
+	 <TT
+CLASS="filename"
+>nombres.txt</TT
+> tiene el apellido y después
+	 el nombre de una persona separados por espacios, puede
+	 ordenarse por nombre con:</P
+><PRE
+CLASS="screen"
+>&#13;sort -k 2 nombres.txt
+</PRE
+></DD
+><DT
+><B
+CLASS="command"
+>wc</B
+></DT
+><DD
+><P
+>&#13;	 Cuenta cantidad de palabras, líneas y caracteres en uno o más
+	 archivos.  Por defecto presenta los tres datos por cada
+	 archivo que reciba y después presenta las sumas.  Con la
+	 opción <TT
+CLASS="option"
+>-c</TT
+> presenta la cuenta de palabras,
+	 con <TT
+CLASS="option"
+>-l</TT
+> la cuenta de líneas, con
+	 <TT
+CLASS="option"
+>-w</TT
+> la cuenta de palabras y con
+	 <TT
+CLASS="option"
+>-L</TT
+> la longitud de la línea más larga.
+	</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="redireccion-y-tuberias"
+>Redirección y tuberías</A
+></H3
+><P
+>En Unix, todo programa tiene 3 canales estándar para
+      intercambiar información con el usuario, con el hardware o con
+      otros programas: salida estándar, entrada estándar y error
+      estándar, que verá abreviados como <TT
+CLASS="literal"
+>stdout</TT
+>,
+      <TT
+CLASS="literal"
+>stdin</TT
+> y <TT
+CLASS="literal"
+>stderr</TT
+>
+      respectivamente.  Estos canales pueden conectarse a archivos, a
+      dispositivos o a canales de otros programas (tuberías).  Por
+      defecto la entrada estándar es el teclado, mientras que la
+      salida y el error estándar son la pantalla.
+     </P
+><A
+NAME="AEN3054"
+></A
+><P
+>Canal disponible en cada programa
+      para enviar la información que produce.  Cuando se inicia un
+      programa desde la línea de comandos sin redireccionamiento se
+      trata de la pantalla.</P
+><A
+NAME="AEN3057"
+></A
+><P
+>Canal disponible en cada programa
+      para recibir información que produce.  Cuando se inicia un
+      programa desde la línea de comandos sin redireccionamiento se
+      trata del teclado.</P
+><A
+NAME="AEN3060"
+></A
+><P
+>Canal disponible en cada programa
+      para enviar información sobre errores que ocurran.  Cuando se
+      inicia un programa desde la línea de comandos sin
+      redireccionamiento se trata de la pantalla.</P
+><P
+>Por ejemplo los programas <B
+CLASS="command"
+>cat</B
+> y
+      <B
+CLASS="command"
+>sort</B
+> si no reciben un archivo como parámetro
+      esperan información de la entrada estándar y envián el resultado
+      de su operación a la salida estándar; para comprobarlo ejecute el
+      programa <B
+CLASS="command"
+>cat</B
+> o el programa
+     <B
+CLASS="command"
+>sort</B
+> sin argumentos.
+    </P
+><P
+>Para redireccionar la salida estándar a un archivo se agrega
+      al final del comando una cadena de la forma "<TT
+CLASS="literal"
+>&#62;
+       <TT
+CLASS="replaceable"
+><I
+>nombre_archivo</I
+></TT
+></TT
+>".  Por ejemplo para
+      ordenar un archivo <TT
+CLASS="filename"
+>palabras.txt</TT
+> y dejar el
+      resultado en <TT
+CLASS="filename"
+>ord.txt</TT
+>:</P
+><PRE
+CLASS="screen"
+>&#13;sort palabras.txt &#62; ord.txt
+</PRE
+><A
+NAME="AEN3074"
+></A
+><P
+>Caracter empleado para
+      redireccionar la salida estándar a un archivo o dispositivo (se
+      pone entre el nombre del comando y el nombre del archivo o
+     dispositivo).</P
+><P
+>Para redireccionar el error estándar a un archivo se agrega
+     tras el nombre del comando <TT
+CLASS="literal"
+>2&#62;
+       <TT
+CLASS="replaceable"
+><I
+>nombre_archivo</I
+></TT
+></TT
+>
+      <A
+NAME="AEN3080"
+HREF="#FTN.AEN3080"
+>[6]</A
+>.  Por ejemplo:
+<PRE
+CLASS="screen"
+>&#13;cat /ceq11 2&#62; err.txt
+</PRE
+>
+     escribirá en el archivo <TT
+CLASS="filename"
+>err.txt</TT
+> un mensaje
+      como "<TT
+CLASS="computeroutput"
+>cat: /ceq11: No existe el fichero o el
+      directorio</TT
+>" ---claro está mientras
+      efectivamente no exista el archivo <TT
+CLASS="filename"
+>/ceq11</TT
+>.
+      Pueden redireccionarse tanto salida estándar como error estándar
+      simultáneamente, por ejemplo:</P
+><PRE
+CLASS="screen"
+>&#13;cat /etc/fstab &#62; /dev/null 2&#62; /dev/null
+</PRE
+><P
+>&#13;      redireccionará tanto salida como error estándar al dispositivo
+      <TT
+CLASS="filename"
+>/dev/null</TT
+> ---El dispositivo
+      <TT
+CLASS="filename"
+>/dev/null</TT
+> es como un agujero negro, todo lo
+      que envié ahí desaparece (ver <A
+HREF="x6433.htm#ubicacion-de-archivos-y-directorios"
+>Ubicación de
+      archivos y directorios</A
+>).
+    </P
+><A
+NAME="AEN3097"
+></A
+><P
+>Caracteres empleados para
+      redireccionar el error estándar, se ponen entre el nombre del
+      comando y el nombre archivo o dispositivo al que se
+      redirecciona.</P
+><P
+>&#13;      Por defecto al redireccionar con <TT
+CLASS="literal"
+>&#62;</TT
+> a un
+      archivo, se crea un nuevo archivo, en caso de que ya existiera
+      su contenido previo se pierde y es remplazado por la información
+      redireccionada.  Por ejemplo después de ejecutar la secuencia:
+     </P
+><PRE
+CLASS="screen"
+>&#13;sort 1.txt &#62; ord.txt
+sort 2.txt &#62; ord.txt
+</PRE
+><P
+>&#13;      quedará en <TT
+CLASS="filename"
+>ord.txt</TT
+> únicamente el contenido
+      de <TT
+CLASS="filename"
+>2.txt</TT
+> ordenado.  Para agregar la
+      información redireccionada al final de un archivo ya existente
+      puede emplear <TT
+CLASS="literal"
+>&#62;&#62;</TT
+> en lugar de
+      <TT
+CLASS="literal"
+>&#62;</TT
+>, retomando el ejemplo anterior:</P
+><PRE
+CLASS="screen"
+>&#13;sort 1.txt &#62; ord.txt
+sort 2.txt &#62;&#62; ord.txt
+</PRE
+><P
+>&#13;      dejará en <TT
+CLASS="filename"
+>ord.txt</TT
+> el contenido de
+      <TT
+CLASS="filename"
+>1.txt</TT
+> ordenado y a continuación el de
+      <TT
+CLASS="filename"
+>2.txt</TT
+> ordenado.
+     </P
+><A
+NAME="AEN3113"
+></A
+><P
+>Caracteres empleados para
+      redireccionar la salida estándar y agregarla al final de un
+      archivo.</P
+><P
+>Para lograr que la entrada estándar sea leída de un
+      archivo, se agrega al final del comando <TT
+CLASS="literal"
+>&#60;
+      <TT
+CLASS="replaceable"
+><I
+>nombre_archivo</I
+></TT
+></TT
+>.  Por
+      ejemplo
+     </P
+><PRE
+CLASS="screen"
+>&#13;head  &#60; arc.txt
+</PRE
+><P
+>&#13;      presentará las 10 primeras líneas del archivo
+      <TT
+CLASS="filename"
+>arc.txt</TT
+> (es equivalente a <B
+CLASS="command"
+>head
+      arc.txt</B
+> o a <B
+CLASS="command"
+>head - &#60;
+      arc.txt</B
+>
+      <A
+NAME="AEN3124"
+HREF="#FTN.AEN3124"
+>[7]</A
+>).  Poder redireccionar la entrada estándar de un
+      programa puede ahorrarle tiempo, porque puede escribir la
+      secuencia de líneas que desea enviar al programa en un archivo y
+      después repetirla tantas veces como desee.  Por ejemplo para
+      enviar el mismo correo electrónico a varias personas puede
+      escribirlo en un archivo <TT
+CLASS="filename"
+>correo.txt</TT
+> y
+      después ejecutar algo como:
+     </P
+><PRE
+CLASS="screen"
+>&#13;mail usuario1@micolegio.edu.co usuario2@micolegio.edu.co &#60; correo.txt.
+</PRE
+><A
+NAME="AEN3129"
+></A
+><P
+>Caracter empleados para
+      redireccionar la entrada estándar para que provenga de un archivo
+      o dispositivo.</P
+><P
+>Empleando redireccionamiento y los comandos y programas que
+      ya se han presentado se pueden hacer rápidamente muchas labores.
+      Un ejemplo es dividir un archivo grande para transportarlo en
+      varios disquetes: con <TT
+CLASS="literal"
+>split -b 1000000
+      grande.gz</TT
+> divide el archivo
+      <TT
+CLASS="filename"
+>grande.gz</TT
+> en varias partes, cada una de las
+      cuales cabe en un disquete (digamos que queda dividido en tres
+      partes <TT
+CLASS="filename"
+>xaa</TT
+>, <TT
+CLASS="filename"
+>xab</TT
+> y
+      <TT
+CLASS="filename"
+>xac</TT
+>).  Puede copiar cada una de las partes
+      en un disquete, llevar los disquetes a otro computador y emplear
+      <B
+CLASS="command"
+>cat</B
+> y redireccionamiento para unirlos:</P
+><PRE
+CLASS="screen"
+>&#13;cat xaa xab xac &#62; grande.gz
+</PRE
+><P
+>Otra facilidad para redireccionar entrada estándar es
+      <TT
+CLASS="literal"
+>&#60;&#60;</TT
+>, que después de un comando permite
+      escribir un texto que se constituirá en la entrada estándar.  A
+      continuación de <TT
+CLASS="literal"
+>&#60;&#60;</TT
+> debe ponerse una
+      palabra, escogida por usted, que indicará fin de entrada.  La
+      entrada estándar constará de las líneas que se digiten a
+      continuación hasta la primera que contenga sólo la palabra que
+      indicaba fin de entrada.  Por ejemplo:</P
+><PRE
+CLASS="programlisting"
+>&#13;sort &#60;&#60;FIN
+pábulo
+opíparo
+FIN
+</PRE
+><P
+>&#13;      ordenará las palabras dadas (excepto <TT
+CLASS="literal"
+>FIN</TT
+> que
+     indica el fin de la entrada). Así, <TT
+CLASS="literal"
+>&#60;&#60;</TT
+> es
+      equivalente a editar un archivo y después redireccionarlo a la
+      entrada estándar de un programa.
+     </P
+><A
+NAME="AEN3147"
+></A
+><P
+>Caracteres empleados para indicar
+      que la entrada estándar a un comando se digitara a continuación,
+      terminando con una cadena.  Se pone entre el comando y la
+      palabra que indica fin de entrada.</P
+><P
+>El operador de composición '|' permite redireccionar la
+      salida de un comando en la entrada estándar de otro (es como
+      pegar dos tubos).  Por ejemplo:</P
+><PRE
+CLASS="screen"
+>&#13;ls -l / | wc -l
+</PRE
+><P
+>&#13;      mostrará la cantidad de archivos y directorios en el directorio
+     <TT
+CLASS="filename"
+>/</TT
+>. Al ejecutar <B
+CLASS="command"
+>ls
+     -l /</B
+> se envía a salida estándar la lista de archivos
+     del directorio raíz, cada uno en una línea, con
+     '<TT
+CLASS="literal"
+>|</TT
+>' esta salida se convierte en entrada de
+     <B
+CLASS="command"
+>wc -l</B
+>; el programa <B
+CLASS="command"
+>wc</B
+> con
+     la opción <TT
+CLASS="option"
+>-l</TT
+> presenta sólo la cantidad de
+      líneas de la entrada estándar.
+     </P
+><P
+>El ejemplo anterior pudo haberse realizado en dos pasos
+     empleando un archivo temporal, digamos
+     <TT
+CLASS="filename"
+>temp.txt</TT
+>:</P
+><PRE
+CLASS="screen"
+>&#13;ls -l / &#62; temp.txt
+wc -l &#60; temp.txt
+</PRE
+><P
+>&#13;      pero claro está, <TT
+CLASS="literal"
+>|</TT
+> es más práctico y aún más
+     cuando deben componerse más de dos programas.
+    </P
+><A
+NAME="AEN3164"
+></A
+><P
+>Caracter empleado para conectar
+      salida estándar de un comando con entrad estándar de otro, se
+     pone entre los dos comandos.</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-bash-y-el-juego-de-herramientas"
+>Lecturas recomendadas: <SPAN
+CLASS="application"
+>bash</SPAN
+> y el
+     juego de herramientas</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>&#13;       En esta sección se han presentado unas cuantas de las
+       facilidades de <TT
+CLASS="literal"
+>readline</TT
+> y
+       <TT
+CLASS="literal"
+>history</TT
+>.  Puede consultar más sobre el uso
+       de estas librerías en la página del manual de
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> en la sección "READLINE y
+       HISTORY".  Hay más información de <TT
+CLASS="literal"
+>readline</TT
+>
+       (por ejemplo sobre la configuración) en el manual info de
+       <TT
+CLASS="literal"
+>rluserman</TT
+> (Ver (<B
+CLASS="command"
+>info
+       rluserman</B
+>)q ).
+      </P
+></LI
+><LI
+><P
+>&#13;       Puede consultar más información sobre las herramientas para
+       procesar textos introducidas en esta sección y sobre otras que
+       no se mencionaron en la documentación info de textutils (Ver
+       (<B
+CLASS="command"
+>info textutils</B
+>)).
+      </P
+></LI
+><LI
+><P
+>&#13;       Puede consultar otras explicaciones sobre tuberías y el uso del
+       kit de herramientas Unix en "Linux: Instalación y Primeros
+       Pasos. Sección 3.8 Fontanería UNIX".  <A
+HREF="http://lucas.hispalinux.es/Manuales-LuCAS/LIPP/lipp-1.1-html-1.2/lipp3.htm#3.8"
+TARGET="_top"
+>http://lucas.hispalinux.es/Manuales-LuCAS/LIPP/lipp-1.1-html-1.2/lipp3.htm#3.8</A
+>
+       y en la sección "<I
+CLASS="citetitle"
+>Opening the software
+       toolbox</I
+>" de la documentación info de textutils (Ver
+       (<B
+CLASS="command"
+>info textutils </B
+>)).
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-bash-y-el-juego-de-herramientas"
+>Ejercicios: <SPAN
+CLASS="application"
+>bash</SPAN
+> y el juego de
+     herramientas</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x2787.htm#kit.inter.1"
+>Ingrese a una sesión con
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> y practique las facilidades
+       interactivas presentadas en esta guía. En particular practique
+       <B
+CLASS="keycap"
+>Control-k</B
+> y <B
+CLASS="keycap"
+>Control-y</B
+> para
+       cortar y pegar líneas, después de usar
+       <B
+CLASS="keycap"
+>Control-y</B
+> emplee <B
+CLASS="keycap"
+>Alt-y</B
+> varias
+       veces (si tiene inconvenientes con <B
+CLASS="keycap"
+>Alt-y</B
+>
+       intentente <B
+CLASS="keycap"
+>ESC-y</B
+>).  ¿Para qué se usa
+       <B
+CLASS="keycap"
+>Alt-y</B
+> ? </A
+></DT
+><DT
+>2. <A
+HREF="x2787.htm#kit.herramientas.1"
+>¿Qué hace el comando <B
+CLASS="command"
+>cat datos2.txt
+       &#62; datos3.txt</B
+> ?</A
+></DT
+><DT
+>3. <A
+HREF="x2787.htm#kit.tuberias.1"
+>¿Qué hace el comando <B
+CLASS="command"
+>ls -Rl ~ |
+	wc -l</B
+> ?</A
+></DT
+><DT
+>4. <A
+HREF="x2787.htm#kit.tuberias.2"
+>¿Qué hace el comando <B
+CLASS="command"
+>nl
+      /usr/doc/debian/debian-manifesto | less</B
+> ?</A
+></DT
+><DT
+>5. <A
+HREF="x2787.htm#kit.herramientas.2"
+>Dado un archivo
+       <TT
+CLASS="filename"
+>resumen.txt</TT
+>, ¿cómo puede determinar
+       si el texto tiene menos de 5000 palabras?</A
+></DT
+><DT
+>6. <A
+HREF="x2787.htm#kit.herramientas.3"
+>Dado un archivo 
+	  <TT
+CLASS="filename"
+>correo.txt</TT
+>, ¿cómo puede verificar
+       que todas las líneas tengan menos de 75 caracteres?</A
+></DT
+><DT
+>7. <A
+HREF="x2787.htm#kit.herramientas.4"
+>Sin emplear <B
+CLASS="command"
+>split</B
+> ni editores de
+       texto, ¿cómo puede dividir un texto
+       <TT
+CLASS="filename"
+>pord.txt</TT
+> de 100 líneas, en dos archivos
+       <TT
+CLASS="filename"
+>uno.txt</TT
+> y <TT
+CLASS="filename"
+>dos.txt</TT
+> el
+       primero con las primeras 40 líneas y el segundo con las últimas
+       60?</A
+></DT
+><DT
+>8. <A
+HREF="x2787.htm#kit.tuberias.3"
+>Dado un archivo con nombres
+	 de personas <TT
+CLASS="filename"
+>pers.txt</TT
+> ---un nombre en cada
+       línea---, escriba un comando para <TT
+CLASS="literal"
+>bash</TT
+> que
+       ordene los nombres y presente sólo los 10 primeros.</A
+></DT
+><DT
+>9. <A
+HREF="x2787.htm#kit.tuberias.4"
+>Dada una lista de palabras en un
+       archivo <TT
+CLASS="filename"
+>palabras.txt</TT
+> ---una en cada
+       línea---, escriba un comando para <SPAN
+CLASS="application"
+>bash</SPAN
+> que
+       presente la cantidad de palabras no repetidas.</A
+></DT
+><DT
+>10. <A
+HREF="x2787.htm#kit.tuberias.5"
+>Escriba un comando para
+       <B
+CLASS="command"
+>bash</B
+> que muestre la cantidad de archivos de
+       configuración en su directorio personal (ver <A
+HREF="c1054.htm#lectura-archivos-y-permisos"
+>Lectura Archivos y
+	permisos</A
+> para repasar que son archivos de
+       configuración).</A
+></DT
+><DT
+>11. <A
+HREF="x2787.htm#kit.tuberias.6"
+>Escriba un comando para <SPAN
+CLASS="application"
+>bash</SPAN
+>
+       que le envíe a usted un correo electrónico con el listado de
+       los archivos de su directorio personal ordenado
+       alfabéticamente.
+      </A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.inter.1"
+></A
+><B
+>1. </B
+>Ingrese a una sesión con
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> y practique las facilidades
+       interactivas presentadas en esta guía. En particular practique
+       <B
+CLASS="keycap"
+>Control-k</B
+> y <B
+CLASS="keycap"
+>Control-y</B
+> para
+       cortar y pegar líneas, después de usar
+       <B
+CLASS="keycap"
+>Control-y</B
+> emplee <B
+CLASS="keycap"
+>Alt-y</B
+> varias
+       veces (si tiene inconvenientes con <B
+CLASS="keycap"
+>Alt-y</B
+>
+       intentente <B
+CLASS="keycap"
+>ESC-y</B
+>).  ¿Para qué se usa
+       <B
+CLASS="keycap"
+>Alt-y</B
+> ? </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Pega textos previamente cortados y almacenados en el
+       anillo de textos cortados</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.herramientas.1"
+></A
+><B
+>2. </B
+>¿Qué hace el comando <B
+CLASS="command"
+>cat datos2.txt
+       &#62; datos3.txt</B
+> ?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Copia <TT
+CLASS="filename"
+>datos2.txt</TT
+> en
+	  <TT
+CLASS="filename"
+>datos3.txt</TT
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.tuberias.1"
+></A
+><B
+>3. </B
+>¿Qué hace el comando <B
+CLASS="command"
+>ls -Rl ~ |
+	wc -l</B
+> ?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Muestra la cantidad total de
+       archivos en todos los subdirectorios del usuario.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.tuberias.2"
+></A
+><B
+>4. </B
+>¿Qué hace el comando <B
+CLASS="command"
+>nl
+      /usr/doc/debian/debian-manifesto | less</B
+> ?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> Presenta el manifesto de Debian
+       con las líneas numeradas por intermedio del programa
+       <B
+CLASS="command"
+>less</B
+>.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.herramientas.2"
+></A
+><B
+>5. </B
+>Dado un archivo
+       <TT
+CLASS="filename"
+>resumen.txt</TT
+>, ¿cómo puede determinar
+       si el texto tiene menos de 5000 palabras?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> El resultado de <B
+CLASS="command"
+>wc -w resumen.txt</B
+> 
+	  debería ser menor que 5000.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.herramientas.3"
+></A
+><B
+>6. </B
+>Dado un archivo 
+	  <TT
+CLASS="filename"
+>correo.txt</TT
+>, ¿cómo puede verificar
+       que todas las líneas tengan menos de 75 caracteres?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> El resultado de <B
+CLASS="command"
+>wc -L correo.txt</B
+> 
+	  debería ser menor que 75.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.herramientas.4"
+></A
+><B
+>7. </B
+>Sin emplear <B
+CLASS="command"
+>split</B
+> ni editores de
+       texto, ¿cómo puede dividir un texto
+       <TT
+CLASS="filename"
+>pord.txt</TT
+> de 100 líneas, en dos archivos
+       <TT
+CLASS="filename"
+>uno.txt</TT
+> y <TT
+CLASS="filename"
+>dos.txt</TT
+> el
+       primero con las primeras 40 líneas y el segundo con las últimas
+       60?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <B
+CLASS="command"
+>head -n 40 pord.txt &#62; uno.txt</B
+> y
+	 después <B
+CLASS="command"
+>tail -n 60 pord.txt &#62; dos.txt</B
+>
+	 (hay más formas).</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.tuberias.3"
+></A
+><B
+>8. </B
+>Dado un archivo con nombres
+	 de personas <TT
+CLASS="filename"
+>pers.txt</TT
+> ---un nombre en cada
+       línea---, escriba un comando para <TT
+CLASS="literal"
+>bash</TT
+> que
+       ordene los nombres y presente sólo los 10 primeros.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <TT
+CLASS="literal"
+>sort pers.txt | head -n
+       10</TT
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.tuberias.4"
+></A
+><B
+>9. </B
+>Dada una lista de palabras en un
+       archivo <TT
+CLASS="filename"
+>palabras.txt</TT
+> ---una en cada
+       línea---, escriba un comando para <SPAN
+CLASS="application"
+>bash</SPAN
+> que
+       presente la cantidad de palabras no repetidas.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <TT
+CLASS="literal"
+>sort -u palabras.txt | wc -l</TT
+>
+       (también podría usarse <TT
+CLASS="literal"
+>uniq</TT
+>)
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.tuberias.5"
+></A
+><B
+>10. </B
+>Escriba un comando para
+       <B
+CLASS="command"
+>bash</B
+> que muestre la cantidad de archivos de
+       configuración en su directorio personal (ver <A
+HREF="c1054.htm#lectura-archivos-y-permisos"
+>Lectura Archivos y
+	permisos</A
+> para repasar que son archivos de
+       configuración).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <TT
+CLASS="literal"
+>ls
+	-la ~/.* | wc -l</TT
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="kit.tuberias.6"
+></A
+><B
+>11. </B
+>Escriba un comando para <SPAN
+CLASS="application"
+>bash</SPAN
+>
+       que le envíe a usted un correo electrónico con el listado de
+       los archivos de su directorio personal ordenado
+       alfabéticamente.
+      </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+> <B
+CLASS="command"
+>ls -l | mail
+	usuario@micolegio.edu.co</B
+></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN2808"
+HREF="x2787.htm#AEN2808"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>tubería: del inglés
+	 <I
+CLASS="foreignphrase"
+>pipe</I
+>.
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN2817"
+HREF="x2787.htm#AEN2817"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Aunque hay varios intérpretes de comandos para Unix y Linux
+      (<SPAN
+CLASS="application"
+>ksh</SPAN
+>, <SPAN
+CLASS="application"
+>ash</SPAN
+>,
+      <SPAN
+CLASS="application"
+>zsh</SPAN
+>, <SPAN
+CLASS="application"
+>tcsh</SPAN
+>
+      y <SPAN
+CLASS="application"
+>csh</SPAN
+>), algunos muy buenos,
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> es el intérprete de comandos
+      escogido por el proyecto de estandarización de Linux:
+      <I
+CLASS="foreignphrase"
+>LSB - Linux Standard Base</I
+>.
+      <A
+HREF="http://www.lsb.org"
+TARGET="_top"
+>http://www.lsb.org</A
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN2995"
+HREF="x2787.htm#AEN2995"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En estas guías y otros documentos relacionados con
+	   informática (búsquedas, procesamiento de texto,
+	   programación) una cadena es una secuencia de caracteres
+	   ---un texto.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3009"
+HREF="x2787.htm#AEN3009"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Más que una cadena se trata de una expresión regular.
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3031"
+HREF="x2787.htm#AEN3031"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>También puede emplear el programa
+	   <TT
+CLASS="literal"
+>uniq</TT
+> para eliminar líneas repetidas en
+	   un archivo ordenado.
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3080"
+HREF="x2787.htm#AEN3080"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Otra forma de redireccionar salida estándar es agregando
+	<TT
+CLASS="literal"
+>1&#62;
+	<TT
+CLASS="replaceable"
+><I
+>nombre_archivo</I
+></TT
+></TT
+>. En
+	general <TT
+CLASS="literal"
+><B
+CLASS="command"
+>n</B
+>&#62;
+	<TT
+CLASS="replaceable"
+><I
+>nombre_archivo</I
+></TT
+></TT
+> permite
+	redireccionar el descriptor de archivo
+	<B
+CLASS="command"
+>n</B
+>. Por convención 1 es el descriptor de
+	archivo de salida estándar, 2 el de error estándar y 0 el de
+	entrada estándar. Puede emplear otros números para referenciar
+	nuevos descriptores de archivos.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3124"
+HREF="x2787.htm#AEN3124"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Varios programas emplean como convención tratar al nombre
+	de archivo <TT
+CLASS="literal"
+>-</TT
+> como entrada
+	estándar
+       </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c2347.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x3282.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Linux desde la perspectiva de un usuario con más
+   experiencia</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c2347.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Procesos y tareas</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

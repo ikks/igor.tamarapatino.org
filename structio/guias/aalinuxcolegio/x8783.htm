@@ -1,0 +1,4381 @@
+<HTML
+><HEAD
+><TITLE
+>Hardware básico y Linux</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Administración de Linux en computadores aislados"
+HREF="c8032.htm"><LINK
+REL="PREVIOUS"
+TITLE="Kernel y módulos"
+HREF="x8370.htm"><LINK
+REL="NEXT"
+TITLE="Dispositivos y Linux"
+HREF="x9697.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x8370.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 5. Administración de Linux en computadores aislados</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x9697.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="hardware-basico-y-linux"
+>Hardware básico y Linux</A
+></H1
+><P
+>Indicadores de Logros:
+   </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="hardware.comp"
+></A
+><P
+>Puede abrir la torre de un PC, identificar sus componentes
+      y manipularlos.
+     </P
+></LI
+><LI
+><A
+NAME="hardware.basico"
+></A
+><P
+>Identifica y configura el hardware básico que soportan los
+      kernels 2.2 y 2.4 en PCs típicos (cercanos a las suposiciones de
+      la plataforma de referencia ver <A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de
+      referencia</A
+>).
+     </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-hardware-basico-y-linux"
+>Lectura: Hardware básico y Linux</A
+></H2
+><P
+> En ocasiones cuando un componente de un computador falla o
+     cuando se requiere instalar uno nuevo, un administrador puede
+     requerir comprar uno compatible con Linux, instalarlo y
+     configurarlo.  Estas actividad en general no presentará
+     problemas, mientras se informe bien.
+   </P
+><P
+>En esta sección presentamos nociones básicas sobre el
+     hardware que típicamente se encuentra en la placa base de un PC,
+     así como su configuración en Linux.  Varios dispositivos que no
+     se presentan en esta sección se presentan en la siguiente (ver
+     <A
+HREF="x9697.htm"
+>Dispositivos y Linux</A
+>)
+     o en el siguiente capítulo (ver <A
+HREF="x12290.htm"
+>Dispositivos
+      para interconexión y Linux</A
+>).  Tenga en cuenta al leer esta
+     sección que nos hemos concentrado en hardware cercano a la
+     recomendación de la plataforma de referencia ver <A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de
+      referencia</A
+>.
+    </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="precauciones-para-manipular-hardware"
+>Precauciones para manipular hardware</A
+></H3
+><P
+>Para instalar una tarjeta adaptadora, memoria o diversos
+     dispositivos, tendrá que destapar su computador.  A continuación
+     damos algunas recomendaciones:
+    </P
+><P
+></P
+><UL
+><LI
+><P
+>Consulte la documentación particular de
+	su computador y guardela para referencia futura.
+       </P
+></LI
+><LI
+><P
+>Normalmente NO tendrá que abrir el monitor de su
+	computador.  Le recomendamos no hacerlo porque los niveles de
+	voltaje de un monitor o un televisor (i.e.  de un tubo de
+	rayos catódicos CRT) son bastante elevados (&#62;10000V),
+	permanencen así durante un tiempo después de desconectado y si
+	no toma las precauciones debidas puede sufrir una descarga
+	eléctrica mortal.
+      </P
+><A
+NAME="AEN8807"
+></A
+><P
+>Este dispositivo puede
+      mantener niveles de voltaje muy altos tiempo después de ser apagado y
+      desconectado.  No debe abrirse.
+    </P
+></LI
+><LI
+><P
+>Antes de abrir el computador apague el equipo, así
+	evitará dañar componentes, haciendo cortos accidentales y evitará
+	recibir descargar eléctricas.  </P
+><A
+NAME="AEN8812"
+></A
+><P
+>En general, antes de abrir 
+      un componente eléctrico es recomendable ...
+    </P
+></LI
+><LI
+><P
+>Antes de  abrirlo toque un elemento  "tierra"
+	<A
+NAME="AEN8817"
+HREF="#FTN.AEN8817"
+>[1]</A
+>, normalmente la carcaza de su computador si este
+	tiene un polo a tierra.  De esta forma puede sacar la carga
+	eléctrica estática que pueda quedar en su cuerpo.  Esto es
+	importante, porque las cargas estáticas puede dañar ciertos
+	dispositivos.  Mantenga también los dispositivos en su
+	envoltura antiestática mientras no los use y trate de
+	manipularlos por sus esquinas sin tocar sus circuitos
+	integrados.  </P
+></LI
+><LI
+><P
+>Si por algún motivo ve que el componente no está en
+	óptimas condiciones, no le suministre energía ni lo instale en
+	su computador. 
+       </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="generalidades-sobre-la-placa-base"
+>Generalidades sobre la placa base</A
+></H3
+><A
+NAME="AEN8823"
+></A
+><P
+>TAmbién llamada tarjeta
+      madre, es una lámina sobre la que hay circuitos, componentes
+      electrónicos, el procesador y conexiones entre ellos.
+    </P
+><P
+>Cuando destape un computador personal verá una lámina sobre
+      la que encontrará entre otros: circuitos integrados (entre ellos
+      el procesador y el BIOS), espacios para la memoria, puertos para
+      discos, ranuras para otras tarjetas, jumpers para configurarla.
+      Esa lámina se llama placa base o tarjeta
+      madre
+      <A
+NAME="AEN8827"
+HREF="#FTN.AEN8827"
+>[2]</A
+>.  Separados de la placa, aunque conectados por medio
+      de cables, eventualmente podrá ver unidades de disquete, de
+      CD-ROM, discos duros, una fuente de potencia (por la que se
+      suministra corriente electríca alterna ---en Colombia 110V
+      60Hz--- y que convierte para uso del computador a corriente
+      directa).
+    </P
+><P
+>Esta es la
+      frecuencia de la energía eléctrica en Colombia. 
+    </P
+><P
+>Con el fin de facilitar el cambio y actualización de los
+      dispositivos, una placa base tiene ranuras de uno o más tipos de
+      buses (e.g ISA, PCI, AGP) para conectar en ellos tarjetas que
+      sean o que controlen dispositivos (e.g.  tarjeta de sonido,
+      tarjeta de video) o que sirvan como adaptadores para cierto tipo
+      de puertos (e.g adaptadores para dispositivos SCSI), puede
+      también tener integrados controladores y puertos para cierto
+      tipo de dispositivos (e.g IDE, teclado, ratón, puerto paralelo,
+      puerto serial), y eventualmente puede tener integrados
+      dispositivos (e.g. tarjeta de sonido).
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="generalidades-sobre-dispositivos"
+>Generalidades sobre dispositivos</A
+></H3
+><P
+>Los dispositivos que pueden conectarse a la placa base por
+      puertos, ranuras o por intermedio de tarjetas adaptadoras tienen
+      direcciones de entrada salida (también llamadas puertos E/S
+      <A
+NAME="AEN8835"
+HREF="#FTN.AEN8835"
+>[3]</A
+>) que les permiten intercambiar datos con el
+	procesador, pueden emplear además unos cables especiales del
+	procesador llamados líneas IRQ (<I
+CLASS="foreignphrase"
+>Interruption
+	Request</I
+>) para solicitar atención especial (por
+	ejemplo cuando un dato llega a un modem, este puede activar la
+	línea IRQ que tenga asignada para solicitar procesamiento del
+	dato), eventualmente pueden emplear canales DMA
+	(<I
+CLASS="foreignphrase"
+>Direct Memory Access</I
+>) para
+	transmitir información directamente a la memoria sin
+	intervención del procesador y eventualmente si el dispositivo
+	emplea directamente la memoria puede requerir además una
+	dirección base en memoria compartida
+      <A
+NAME="AEN8841"
+HREF="#FTN.AEN8841"
+>[4]</A
+> para comunicarse con los programas.
+    </P
+><A
+NAME="AEN8844"
+></A
+><P
+>Es un número con el
+      que se asocia un dispositivo, para permitir su identificación y
+      comunicación con el procesador.  Un mismo dispositivo puede emplear
+      diversos de estos números.
+    </P
+><A
+NAME="AEN8847"
+></A
+><P
+>Una línea ... puede
+      ser empleada por un dispositivo para solicitar atención al
+      procesador.  
+    </P
+><A
+NAME="AEN8850"
+></A
+><P
+>Algunos dispositivos
+      pueden emplear un canal ... para acceder directamente a la memoria,
+      sin intervención del procesador.
+    </P
+><P
+>Número de líneas
+      IRQ en la arquitectura i386.</P
+><P
+>Número de 
+      direcciones E/S
+      en la arquitectura i386.</P
+><P
+>Número de 
+      canales DMA en la arquitectura i386.</P
+><A
+NAME="AEN8856"
+></A
+><P
+>Archivo que puede
+      examinarse para determinar las líneas IRQ en uso.
+    </P
+><A
+NAME="AEN8860"
+></A
+><P
+>Archivo que puede
+      examinarse para determinar los canales DMA en uso.
+    </P
+><A
+NAME="AEN8864"
+></A
+><P
+>Archivo que puede
+      examinarse para determinar los puertos de E/S  en uso.
+    </P
+><A
+NAME="AEN8868"
+></A
+><P
+>Archivo que puede
+      examinarse para determinar los rangos de memoria compartida usados
+      por dispositivos.
+    </P
+><P
+>Normalmente los recursos citados sólo pueden ser empleados
+      por un dispositivo a la vez, si dos emplean el mismo recurso
+      pueden entrar en conflicto y no funcionar.  Dado que sólo hay 16
+      líneas IRQ, 65535 direcciones de E/S, 8 canales de DMA (los
+      primeros 4 de 8 bits y los otros 4 de 16 bits) y la memoria
+      compartida es memoria RAM de su computador (límitada por la
+      cantidad que tenga) debe configurar nuevos dispositivos teniendo
+      en cuenta los que ya hay (algunos dispositivos y controladores
+      permiten compartir IRQ con otros).  Para conocer la asignación
+      de recursos puede examinar:
+      <TT
+CLASS="filename"
+>/proc/interrupts</TT
+> que lista las
+      interrupciones en uso, <TT
+CLASS="filename"
+>/proc/dma</TT
+> que lista
+      DMAs en uso, <TT
+CLASS="filename"
+>/proc/ioports</TT
+> que presenta los
+      puertos E/S asignados (tenga en cuenta que normalmente un
+      dispositivo requiere un rango de puertos consecutivos, ningún
+      puerto en ese rango debe estar ocupado ---por ejemplo una
+      tarjeta de red Ethernet requiere un puerto base y los 31 puertos
+      siguientes), <TT
+CLASS="filename"
+>/proc/iomem</TT
+> presenta los
+      rangos de memoria compartida con dispositivos.
+     </P
+><P
+>El estado de los puertos puede verse o modificarse por
+      intermedio del archivo <TT
+CLASS="filename"
+>/dev/port</TT
+>.
+     </P
+><P
+>A nivel de sistema operativo, Linux presenta los
+      dispositivos que puede manejar como "archivos" del directorio
+      <TT
+CLASS="filename"
+>/dev</TT
+> (ver <A
+HREF="x6433.htm#ubicacion-de-archivos-y-directorios"
+>Ubicación de
+      archivos y directorios</A
+>), puede consultar la lista de los
+      dispositivos reconocidos con:
+<PRE
+CLASS="screen"
+>&#13;cat /proc/devices
+</PRE
+>
+    </P
+><A
+NAME="AEN8883"
+></A
+><P
+>Este archivo
+      lista los dispositivos reconocidos.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="procesador"
+>Procesador</A
+></H3
+><A
+NAME="AEN8889"
+></A
+><P
+>Este dispositivo
+      puede realizar cálculos y administrar memoria y dispositivos,
+      en un orden dictado por un reloj.
+    </P
+><A
+NAME="AEN8892"
+></A
+><P
+>Unidad de frecuencia,
+      empleada para indicar velocidad del reloj de un computador.
+    </P
+><P
+>Es un circuito integrado que realiza algunos cálculos y
+       que controla memoria y dispositivos.  Para dar orden a su operación
+      emplea un reloj para ejecutar una instrucción por cada
+      pulsación.  Recibe toda la información por diversos cables (por
+      ejemplo el bus de datos de la arquitectura
+      i386
+      <A
+NAME="AEN8896"
+HREF="#FTN.AEN8896"
+>[5]</A
+> tiene 32 cables) codificada en cada cable con dos
+      níveles de voltaje: alto y bajo
+      <A
+NAME="AEN8898"
+HREF="#FTN.AEN8898"
+>[6]</A
+>.  La
+      velocidad del reloj ---que determina la velocidad del
+      procesador--- se mide en Hertz
+      <A
+NAME="AEN8900"
+HREF="#FTN.AEN8900"
+>[7]</A
+>.
+     </P
+><A
+NAME="AEN8902"
+></A
+><P
+>Es un nivel de 
+      voltaje alto o bajo, se representa con un 1 o un 0.
+    </P
+><P
+>Un kernel compilado para un Intel 386 podría usarse en sus
+      procesadores descendientes, clones o compatibles, aunque el
+      kernel soporta de manera particular algunos de tales
+      procesadores.  La serie 2.2 del kernel soporta
+      80386DX/DXL/SL/SLC/SX
+      <A
+NAME="AEN8906"
+HREF="#FTN.AEN8906"
+>[8]</A
+> de Intel o Cyrix, 80486DX/DX2/DX4 de AMD o Cyrix o
+      IBM o Intel, AMD K5, Intel 5x86/6x86/6x86MX, Intel Pentium
+      Classic, Intel Pentium MMX, AMD K6-3D, Cyrix/VIA, CyrixIII,
+      Intel Pentium Pro, Intel Pentium II, 6x86MX/MII de
+      Cyrix/IBM/National Semiconductor.  La serie 2.4 tiene soporte
+      especial además para: Intel Pentium III, Intel Pentium 4, AMD K7
+      (Athlon/Duron/Thunderbird), Crusoe de Tansmeta, Winchip C6/2/2A
+      y soporta varios procesadores en una misma placa base (SMP -
+      Symmetric Multi Processing).  No soporta 80286 o procesadores
+      previos a ese.
+    </P
+><P
+>En los depósito de Debian hay kernels ya compilados con
+     soporte especial para algunos de estos procesadores.  Sus nombres
+     son de la forma
+     <TT
+CLASS="literal"
+>kernel-image-<TT
+CLASS="replaceable"
+><I
+>version</I
+></TT
+>-<TT
+CLASS="replaceable"
+><I
+>procesador</I
+></TT
+></TT
+>
+     (ver <A
+HREF="x8370.htm#configuracion-del-kernel"
+>Configuración del
+     kernel</A
+>).
+    </P
+><P
+>Puede examinar información sobre el procesador que tiene con:
+<PRE
+CLASS="screen"
+>&#13;cat /proc/cpuinfo
+</PRE
+>
+    </P
+><A
+NAME="AEN8915"
+></A
+><P
+>En este archivo
+      puede examinar información sobre el procesador que tiene.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="memoria-ram"
+>Memoria <SPAN
+CLASS="acronym"
+>RAM</SPAN
+></A
+></H3
+><A
+NAME="AEN8922"
+></A
+><P
+>Unidad con la que
+      se mide capacidad de almacenamiento en memoria RAM.
+    </P
+><P
+>La memoria <SPAN
+CLASS="acronym"
+>RAM</SPAN
+> (<I
+CLASS="foreignphrase"
+>Random
+       Access Memory</I
+>) permite almacenar información
+      mientras el computador está encendido.  La cantidad de
+      información que puede almacenar se mide en bytes
+      <A
+NAME="AEN8928"
+HREF="#FTN.AEN8928"
+>[9]</A
+>.
+    </P
+><P
+>La memoria tiene una velocidad de acceso, menor a la
+      velocidad del procesador, que está limitada por el tipo de
+      memoria, el procesador y el chipset
+      <A
+NAME="AEN8931"
+HREF="#FTN.AEN8931"
+>[10]</A
+> de la placa base.
+    </P
+><P
+>Una placa base normalmente tendrá módulos de
+      memoria
+      <A
+NAME="AEN8935"
+HREF="#FTN.AEN8935"
+>[11]</A
+>.  que pueden cambiarse.  Los tipos de conectores
+	---que dependen del procesador y de la placa base--- pueden
+	ser SIMM (Single in-line memory module) de 32 bits y 72 pines
+	o DIMM (Double in-line memory module) de 64 bits y 168 pines.
+    </P
+><A
+NAME="AEN8937"
+></A
+><P
+>Puede examinar
+      la memoria disponible en su sistema en este archivo.
+    </P
+><P
+>Puede examinar la cantidad de memoria de su computador con
+     el programa <TT
+CLASS="literal"
+>free</TT
+> o con:
+<PRE
+CLASS="screen"
+>&#13;cat /proc/meminfo
+</PRE
+>
+      que también presentará información sobre memoria virtual, es
+      decir espacios del disco duro usados para hacer las veces de
+      memoria RAM (estos espacios del disco son particiones especiales
+      ver <A
+HREF="x9697.htm#discos-duros"
+>Discos duros</A
+>).  Si nota
+      que Linux no llega a reconocer automáticamente toda la memoria
+      que tiene instalada puede especificarla manualmente pasando un
+      parámetro como <TT
+CLASS="literal"
+>mem=128M</TT
+> desde el cargador de
+      arranque (ver <A
+HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
+>Parámetros
+      desde el cargador de arranque</A
+>).
+     </P
+><P
+>El contenido de la memoria física puede verse o modificarse
+       con el archivo <TT
+CLASS="filename"
+>/dev/mem</TT
+>
+       (c,1,1)<A
+NAME="AEN8949"
+HREF="#FTN.AEN8949"
+>[12]</A
+> y la memoria
+     virtual con <TT
+CLASS="filename"
+>/dev/kmem</TT
+> (c,1,2).
+    </P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+BORDER="1"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="CENTER"
+><B
+>Aviso</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+><P
+>No modificar directamente <TT
+CLASS="filename"
+>/dev/mem</TT
+>
+	ni <TT
+CLASS="filename"
+>/dev/kmem</TT
+>.
+    </P
+></TD
+></TR
+></TABLE
+></DIV
+><P
+>Aunque hay distribuciones más livianas que las sugeridas en
+      estas guías que podrían instalarse con 4MB (e.g Tiny <A
+HREF="http://tiny.seul.org/"
+TARGET="_top"
+>/</A
+>,
+      SmallLinux <A
+HREF="http://www.superant.com/smalllinux/"
+TARGET="_top"
+>http://www.superant.com/smalllinux/</A
+>),
+      nuestras recomendaciones de software requieren mínimo 32MB en
+      RAM. La serie 2.2 del kernel soporta máximo 2GB, la serie 2.4
+     soporta máximo 64GB --Debian Potato por defecto soporta máximo
+      1GB y mínimo 12MB.
+    </P
+><P
+>Número máximo
+      de GigaBytes en RAM soportados por la serie 2.2 del kernel.
+    </P
+><P
+>Número máximo
+      de GigaBytes en RAM soportados por la serie 2.4 del kernel.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="buses"
+>Buses</A
+></H3
+><P
+>Para que un dispositivo pueda ser usado por el procesador es
+     necesario que ambos estén eléctricamente conectados y que se
+     comuniquen empleando un "lenguaje" (protocolo) común. A un tipo
+     de conexión junto con un protocolo para realizar esta
+     comunicación se le llama bus.
+    </P
+><A
+NAME="AEN8970"
+></A
+><P
+>Especificación de las
+     características que debe cumplir un dispositivos para comunicarse
+     con un procesador.  Hay diversos estándares como ISA, EISA, PCI,
+     AGP.</P
+><P
+> 
+    </P
+><P
+>Hay diversos tipos de buses, cada uno tiene un tamaño
+     (medido en bits) que índica cuanta información puede transmitirse
+     simultáneamente (8, 16, 32 o 64 bits) y una velocidad de reloj
+     diferente a la velocidad del procesador (e.g 60Mhz, 100Mhz).  A
+     continuación presentamos información sobre los tipos de buses más
+     comunes en computadores de escritorio, todos los cuales son
+     soportados por Linux:
+    </P
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN8975"
+><SPAN
+CLASS="acronym"
+>ISA</SPAN
+> (<I
+CLASS="foreignphrase"
+>International
+      Standard Architecture</I
+>)</A
+></H4
+><A
+NAME="AEN8979"
+></A
+><P
+>Tipo de bus bastante
+      popular, que data de 1980 y es de 8Mhz.</P
+><P
+>Aunque este tipo de bus de 8Mhz es de 1980, hay placas
+       base recientes con ranuras que lo soportan y hay una amplia
+       gama de dispositivos tanto de 8 como de 16 bits (tarjetas de
+       red, tarjetas SCSI, controladoras IDE, tarjetas de video,
+       etc).  Todas las versiones del kernel soportan este bus y
+       gran cantidad de dispositivos ISA (algunos se presentan en
+       otras secciones).</P
+><DIV
+CLASS="sect5"
+><H5
+CLASS="sect5"
+><A
+NAME="AEN8983"
+>Configuración de hardware</A
+></H5
+><P
+>Algunos de estos dispositivos emplean recursos (puertos
+       E/S, IRQ, DMA) con valores prefijados por quien lo instala
+       antes de que el computador sea encendido.  Normalmente cada
+       dispositivo podrá ser configurado para emplear diversos
+       recursos (por ejemplo diversas líneas IRQ) y así evitar
+       conflictos en el uso de estos recursos con otros dispositivos.
+       Algunos dispositivos se pueden configurar con jumpers en el
+       hardware (de acuerdo a las instrucciones que acompañan al
+       dispositivo y mientras el computador está apagado) o bien por
+       software ---normalmente con un programa para DOS que guarda la
+       configuración que usted elija en una memoria EPROM del
+       dispositivo. Hay algunos programas para Linux que permiten
+       hacer estas configuraciones para ciertos dispositivos, puede
+       también emplearse software para DOS con una versión de libre
+       redistribución de ese sistema como FreeDOS <A
+HREF="http://www.freedos.org"
+TARGET="_top"
+>http://www.freedos.org</A
+>).</P
+><P
+>Si el dispositivo usa una IRQ y su BIOS soporta Plug and
+       Play, debe también entrar a la configuración del BIOS y marcar
+       ese IRQ como "Legacy-ISA" en lugar de "PnP".</P
+></DIV
+><DIV
+CLASS="sect5"
+><H5
+CLASS="sect5"
+><A
+NAME="AEN8988"
+>Configuración del sistema operativo</A
+></H5
+><P
+>&#13;	Después de configurar el dispositivo y tras iniciar el sistema
+	operativo debe emplear el controlador apropiado para manejarlo
+	y pasar parámetros acordes con la configuración que hizo, por
+	ejemplo si configura una tarjeta de red ISA compatible NE2000
+	para usar la IRQ 12 y la dirección base 0x200 y tiene el
+	módulo <B
+CLASS="command"
+>ne</B
+>, debe configurarlo por ejemplo
+	con <B
+CLASS="command"
+>modconf</B
+> (ver<A
+HREF="x8370.htm"
+>Kernel y módulos</A
+>) o
+	con:</P
+><PRE
+CLASS="programlisting"
+>&#13;modprobe ne irq=12,io=0x200
+</PRE
+></DIV
+><DIV
+CLASS="sect5"
+><H5
+CLASS="sect5"
+><A
+NAME="AEN8995"
+>Dispositivos <I
+CLASS="foreignphrase"
+>ISA</I
+>
+       <I
+CLASS="foreignphrase"
+>Plug and Play</I
+> (PnP)</A
+></H5
+><P
+>&#13;	Algunos dispositivos para puertos ISA denominados
+	<I
+CLASS="foreignphrase"
+>Plug and Play</I
+> pueden ser
+	configurados después de que el computador ha iniciado, bien
+	por la BIOS o bien por el sistema operativo.  Estos
+	dispositivos son manejados automáticamente por el kernel 2.4 y
+	pueden configurarse manualmente con las herramientas
+	<B
+CLASS="command"
+>isapnp</B
+> tanto en el kernel 2.2 como en el
+	2.4.  Si usted lo prefiere o el kernel no logra configurar
+	alguno de estos dispositivos tiene estas alternativas:
+       </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Algunos de estos dispositivos permiten
+	  activar/desactivar el funcionamiento como Plug and Play.  Si
+	  ese es el caso desactívelo y configure el dispositivo como
+	  se explicó para dispositivos ISA.  Eventualmente también
+	  tendrá que desactivar la posible opción de su BIOS: PnP OS.
+	 </P
+></LI
+><LI
+><A
+NAME="AEN9006"
+></A
+><P
+>Programa que detecta
+      posibles configuraciones para dispositivos ISA Plug and Play.
+      </P
+><P
+>Emplee las utilidades <B
+CLASS="command"
+>isapnptools</B
+>
+	  (paquete con el mismo nombre) para asignar una configuración
+	  que no entre en conflicto con la de otros dispositivos y que
+	  en caso de tener otro sistema operativo en el mismo disco
+	  debe coincidir con esa (en tal caso revise primero la
+	  configuración que el dispositivo tiene en el otro sistema
+	  operativo).  Para generar un archivo con las posibles
+	  configuraciones de los dispositivos ISA PnP, ejecute el
+	  programa <B
+CLASS="command"
+>pnpdump</B
+> redireccionando la
+	  sálida e.g
+<PRE
+CLASS="programlisting"
+>&#13;pnpdump &#62; ~/pnp.txt
+</PRE
+>
+	  después edite el archivo <TT
+CLASS="filename"
+>~/pnp.txt</TT
+>
+	  para escoger una configuración adecuada que no entre en
+	  conflicto y pruebela ejecutando:
+<PRE
+CLASS="programlisting"
+>&#13;isapnp ~/pnp.txt
+</PRE
+>
+	 </P
+><A
+NAME="AEN9016"
+></A
+><P
+>Programa que intenta
+      configurar dispositivos ISA Plug and Play con un archivo de 
+      configuración como los producidos por <B
+CLASS="command"
+>pnpdump</B
+>.
+      </P
+><P
+>El archivo generado consta de líneas con comentarios
+	  (iniciadas con el caracter '#') e instrucciones que indican
+	  como debe realizarse la configuración general y la
+	  configuración particular de cada dispositivo.  Cada
+	  instrucción debe estar entre paréntesis con sus posibles
+	  parámetros. Las primeras instrucciones (configuación
+	  general) indican como se realiza el asilamiento de
+	  dispositivos ISA PnP, si debe ser realizado por
+	  <B
+CLASS="command"
+>isapnp</B
+> con la instrucción
+	  <TT
+CLASS="literal"
+>(ISOLATE)</TT
+> (esto es necesario con algunas
+	  BIOS que no soportan ISA PnP), por el contrario si el
+	  aislamiento lo hace el BIOS el archivo debe comenzar con
+	  algo como:
+<PRE
+CLASS="programlisting"
+>&#13;(READPORT 0x3bb)
+(CSN 2)
+(IDENTIFY *)
+</PRE
+>
+	    A continuación debe haber una sección para cada
+	    dispositivo ISA PnP, que indica como se configura, por
+	    ejemplo una sección típica (tras quitar comentarios) para
+	    configurar una tarjeta de sonido Sound Blaster es:
+<PRE
+CLASS="programlisting"
+>&#13;(CONFIGURE CTL0044/1132685 (LD 0 
+(INT 0 (IRQ 5 (MODE +E))) 
+(DMA 0 (CHANNEL 1))
+(DMA 1 (CHANNEL 5)) 
+(IO 0 (BASE 0x220)) 
+(IO 1 (BASE 0x330)) 
+(IO 2 (BASE 0x388)) 
+(ACT Y)))"
+</PRE
+>
+	   </P
+><P
+>donde CTL0044/1132685 es la identificación del
+	    dispositivo, LD 0 es un número asignado al dispositivo por
+	    Linux (logical device) y las siguientes líneas especifican
+	    que el usuario eligió para el dispositivo: 1 línea IRQ
+	    (5), 2 canales DMA (1 y 5) y 3 direcciones E/S base
+	    (0x220
+	  <A
+NAME="AEN9027"
+HREF="#FTN.AEN9027"
+>[13]</A
+>, 0x330 y 0x388). </P
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>La línea con <TT
+CLASS="literal"
+>(ACT Y)</TT
+> es
+	    indispensable para que la configuración sea tenida en
+	    cuenta.  Después de todas las secciones de
+	    dispositivos el archivo debe terminar con la instrucción
+	   <TT
+CLASS="literal"
+>(WAITFORKEY)</TT
+>.</P
+></BLOCKQUOTE
+></DIV
+><A
+NAME="AEN9034"
+></A
+><P
+>Archivo leido 
+	   durante el arranque para configurar dispositivos ISA Plug and
+	   Play.
+       	 </P
+><P
+>Una vez logre configurar el dispositivo ---lo habrá
+	  logrado si al ejecutar <B
+CLASS="command"
+>isapnp</B
+> y al cargar
+	  el módulo no se presentan errores--- puede hacer el cambio
+	  permanente guardando la configuración en el archivo
+	  <TT
+CLASS="filename"
+>/etc/isapnp.conf</TT
+> que tiene la sintaxis
+	  de los archivos generados por <TT
+CLASS="literal"
+>pnpdump</TT
+> y
+	  que es cargado automáticamente durante la inicialización del
+	  sistema (puede ver el script
+	  <TT
+CLASS="filename"
+>/etc/init.d/isapnp</TT
+> que es usado en
+	  <TT
+CLASS="filename"
+>/etc/rcS.d</TT
+> ver <A
+HREF="c8032.htm#inicializacion-del-sistema"
+>Inicialización del
+	  sistema</A
+>).  Además de
+	  <TT
+CLASS="filename"
+>/etc/isapnp.conf</TT
+>, el programa
+	  <B
+CLASS="command"
+>isapnp</B
+> emplea el archivo
+	  <TT
+CLASS="filename"
+>/etc/isapnp.gone</TT
+> en el que se pueden
+	  especificar recursos que NO están disponibles para
+	  dispositivos Plug and Play.
+	 </P
+></LI
+></OL
+></DIV
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9048"
+>MCA o Microcanal</A
+></H4
+><A
+NAME="AEN9050"
+></A
+><P
+>Tipo de bus de
+	   32 bits, 12Mhz usado en computadore IBM PS/2.
+       	 </P
+><P
+>Este bus de 32 bits que opera a 12Mhz fue introducido por
+	 IBM en 1987 para su línea de computadores PS/2, es usado por
+	 estos y por algunos computadores portátiles.  El kernel lo
+	 soporta con la variable de configuración CONFIG_MCA (vr
+	 <A
+HREF="x8370.htm"
+>Kernel y módulos</A
+>). De
+	 acuerdo a la documentación del kernel (Documentation/mca)
+	 cuando se usa puede examinarse en
+	 <TT
+CLASS="filename"
+>/proc/mca</TT
+>: <TT
+CLASS="filename"
+>pos</TT
+>
+	 lista de registros POS, <TT
+CLASS="filename"
+>slot[1-8]</TT
+>
+	 información sobre el adaptador de una ranura,
+	 <TT
+CLASS="filename"
+>video</TT
+> información sobre video integrado,
+	 <TT
+CLASS="filename"
+>scsi</TT
+> información sobre SCSI integrado,
+	 <TT
+CLASS="filename"
+>machine</TT
+> información sobre la máquina.
+	 Hay más bien pocos controladores Linux para este tipo de bus,
+	 así como también hay relativamente pocos dispositivos que lo
+	 soporten.  Los dispositivos se configuran por software (ver
+	 sección ISA) y los controladores recibien como parámetros los
+	 recursos usados.</P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9061"
+><I
+CLASS="foreignphrase"
+>EISA (Enhanced Industry Standard
+	  Architecture</I
+>)</A
+></H4
+><A
+NAME="AEN9064"
+></A
+><P
+>Extensión de 32
+	   bits al bus ISA, puede operar a 20Mhz.
+       	 </P
+><P
+>Esta es una extensión de 32 bits al sistema
+       ISA
+       <A
+NAME="AEN9068"
+HREF="#FTN.AEN9068"
+>[14]</A
+> introducida en 1988, que puede funcionar a 20Mhz.
+       Este bus y muchos dispositivos EISA son soportados por Linux
+       (ver sección sobre el tipo de dispositivo particular).
+     </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9070"
+>VESA o VL-Bus o VLB (<I
+CLASS="foreignphrase"
+>Video Electronic
+      Standard</I
+>)</A
+></H4
+><A
+NAME="AEN9073"
+></A
+><P
+>Tipo de bus de
+	   32 bits, específico para el procesador i486 y usado 
+	   por algunas tarjetas graficadoras.
+       	 </P
+><P
+>En su versión 1.2, se trata de un bus de 32bits, 33Mhz
+       atado al procesador 486, usado por algunas tarjetas
+       graficadoras producidas especialmente entre 1992 y 1994.  La
+       versión 2.0 de VESA es empleada por algunas tarjetas
+       graficadoras (como ATI Video Expression, Matrox Millennium
+       G200, Riva 128 y otras listadas en Framebuffer-HOWTO), en
+       particular permite el uso de framebuffer desde Linux con el
+       controlador <TT
+CLASS="literal"
+>vesafb</TT
+> (en particular si se activa
+       soporte para dispositivos framebuffer VESA en el kernel y si se
+       cuenta con una tarjeta VESA 2.0, durante el arranque aparecerá
+       el logo de Linux).
+      </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9078"
+>PCI (<I
+CLASS="foreignphrase"
+>Peripheral Component
+      Interconnect</I
+>) o <I
+CLASS="foreignphrase"
+>Local
+      Bus</I
+></A
+></H4
+><A
+NAME="AEN9082"
+></A
+><P
+>Tipo de bus de
+	   32 bits, que puede extenderse con otros buses. Opera a 66Mhz,
+	   soporta ISA y asigna automáticamente líneas IRQ.
+       	 </P
+><P
+>Este es un diseño de bus de 1993
+       extensible
+       <A
+NAME="AEN9086"
+HREF="#FTN.AEN9086"
+>[15]</A
+> de 32bits que opera a 66Mhz y que soporta ISA, las
+       líneas IRQ de estos dispositivos son asignadas automáticamente
+       durante el arranque por la BIOS (no hay forma de asignar
+       manualmente una IRQ a un dispositivo PCI).  El programa de
+       configuración de algunas BIOS permite evitar que ciertas IRQs
+       sean usadas en la asignación automática (eventualmente en una
+       menú Plug and Play), de forma que esas pueden reservarse para
+       otros dispositivos ISA/EISA.
+      </P
+><P
+>&#13;       Los dispositivos PCI tienen una identificación única que
+       permite clasificar el tipo de dispositivo y el
+       fabricante
+       <A
+NAME="AEN9089"
+HREF="#FTN.AEN9089"
+>[16]</A
+>.
+       Estas identificaciones suelen ser presentadas por algunas
+       BIOS durante el arranque del sistema, en Linux puede
+       examinarse junto con los recursos que emplean con:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;cat /proc/pci
+</PRE
+><A
+NAME="AEN9093"
+></A
+><P
+>Archivo que 
+	   lista dispositivos PCI y los recursos que emplean.
+       	 </P
+><P
+>&#13;       o con <B
+CLASS="command"
+>lspci</B
+>.  En Internet puede
+       consultarse la lista de vendedores y dispositivos en: <A
+HREF="http://www.yourvote.com/pci/"
+TARGET="_top"
+>http://www.yourvote.com/pci/</A
+>
+       o en caso de sólo conocer el número FCC
+       <A
+NAME="AEN9100"
+HREF="#FTN.AEN9100"
+>[17]</A
+> de un dispositivo puede consultar el vendedor en:
+      <A
+HREF="http://www.fcc.gov/oet/fccid/"
+TARGET="_top"
+>http://www.fcc.gov/oet/fccid/</A
+>
+      </P
+><P
+>&#13;       El kernel 2.2.19 y la serie 2.4, durante el arranque
+       identifican también los dispositivos PCI conectados y tratan de
+       cargar los controladores apropiados, normalmente sin
+       intervención del usuario.  Si el módulo apropiado para un
+       dispositivo PCI no logra ser cargado automáticamente durante el
+       arranque, puede cargarlo después por ejemplo con
+       <B
+CLASS="command"
+>modconf</B
+> (normalmente no requerirá parámetros
+       para dispositivos PCI ver <A
+HREF="x8370.htm#modulos"
+>Módulos</A
+>).</P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9108"
+>USB (<I
+CLASS="foreignphrase"
+>Universal Serial
+	  Bus</I
+>)</A
+></H4
+><A
+NAME="AEN9111"
+></A
+><P
+>Es un tipo de
+	   bus extensible por medio de hubs.  Funciona a 12Mbtis y
+	   soporta hasta 127 dispositivos.
+       	 </P
+><P
+>Este tipo de bus que permite tasas de transmisión de 12
+       Mbits y hasta 127 dispositivos, no requiere la instalación de
+       tarjetas, los dispositivos pueden conectarse y desconectarse
+       mientras el computador está encendido, se conectan a puertos
+	 de la placa base o tarjetas adaptadoras o a otros
+       dispositivos USB que actuan como
+       concentradores
+       <A
+NAME="AEN9115"
+HREF="#FTN.AEN9115"
+>[18]</A
+>.  Los conectores se distinguen por ser
+       rectangulares, cada dispositivo puede separarse de un
+       concentrador/puerto USB hasta 5 metros.</P
+><P
+>&#13;       Las versiones del kernel posteriores a la 2.2.18 soportan
+       dispositivos USB (<TT
+CLASS="literal"
+>CONFIG_USB</TT
+>,
+       <TT
+CLASS="literal"
+>usbcore</TT
+>), y dos posibles protocolos
+       empleados por el chipset de la placa base: </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>UHCI (<I
+CLASS="foreignphrase"
+>Universal Host Controller Interface</I
+>)</DT
+><DD
+><A
+NAME="AEN9126"
+></A
+><P
+>Protocolo para
+	   buses USB desarrollado por Intel.
+       	 </P
+><P
+>Desarrollada por Intel y presente en placas base con
+	 chipsets PCI de Intel como 430TX/44FX/440LX/440BX/i810/i820 o
+	 en chipsets PCI de VIA como VIA VP2, VP3, MVP3, Apollo Pro
+	 /II/133). En el kernel se configura con
+	 <TT
+CLASS="varname"
+>CONFIG_USB_UHCI</TT
+>, módulo
+	 <TT
+CLASS="literal"
+>usb-uhci</TT
+> o bien con el controlador alterno
+	 <TT
+CLASS="literal"
+>CONFIG_USB_UHCI_ALT</TT
+>,
+	 <TT
+CLASS="literal"
+>uhci</TT
+>.
+	</P
+></DD
+><DT
+>OHCI (<I
+CLASS="foreignphrase"
+>Open Host Controller
+       Inteface</I
+>)</DT
+><DD
+><A
+NAME="AEN9138"
+></A
+><P
+>Protocolo para
+	   buses USB desarrollado por Compaq/Microsoft/National.
+       	 </P
+><P
+>Desarrollado por Compaq/Microsoft/National los
+	 controladores USB en la mayoría de arquitecturas con chipsets
+	 no Intel (como SIS o ALI) cumplen este estándar.
+	 <TT
+CLASS="varname"
+>CONFIG_USB_OHCI</TT
+>,
+	 <TT
+CLASS="literal"
+>usb-ohci</TT
+>.
+	</P
+></DD
+></DL
+></DIV
+><P
+>De acuerdo a documentación del kernel
+       (Documentation/usb/scanner.txt), los chipsets que soportan
+       UHCI al ejecutar <B
+CLASS="command"
+>lspci -V</B
+> presentan
+       información de la forma:</P
+><PRE
+CLASS="programlisting"
+>&#13; USB Controller: ......
+ Flags: .....
+ I/O ports at ....
+</PRE
+><P
+>mientras que los que soporta OHCI dicen:</P
+><PRE
+CLASS="programlisting"
+>&#13; USB Controller: ......
+ Flags: .....
+ Memory at ...
+</PRE
+><P
+>El controlador básico presenta
+       <A
+NAME="AEN9150"
+HREF="#FTN.AEN9150"
+>[19]</A
+> los dispositivos detectados en
+       <TT
+CLASS="filename"
+>/proc/bus/usb/devices</TT
+>, los controladores
+       usados en <TT
+CLASS="filename"
+>/proc/bus/usb/001/002</TT
+> (cambiando
+       001 por el número de bus y 002 por el número de
+       dispositivo). Para verlos debe montarse antes el directorio con
+       <B
+CLASS="command"
+>mount -t usbdevfs none /proc/bus/usb</B
+> (ver
+       <A
+HREF="x6433.htm#montaje-y-desmontaje-de-sistemas-de-archivos"
+>Montaje
+       y desmontaje de sistemas de archivos</A
+>).
+      </P
+><A
+NAME="AEN9158"
+></A
+><P
+>Directorio
+	   que debe montarse para poder ver información de
+	   dispositivos USB.
+       	 </P
+><P
+>Los dispositivos USB para interacción con humanos (e.g
+       ratón, teclado, joystick, tarjeta digitalizadora), son
+       manejados con el controlador HID - Human Interface Device
+       (<TT
+CLASS="literal"
+>CONFIG_USB_HID</TT
+>, <TT
+CLASS="literal"
+>hid</TT
+>)
+       ---si su computador tiene estos dispositivos puede requerir
+       incluir estáticamente este controlador en el kernel, para eso
+       debe escoger también durante la configuración soporte básico de
+       entrada (Input core support,
+       <TT
+CLASS="literal"
+>CONFIG_INPUT</TT
+>).</P
+><P
+>Hay controladores genéricos para audio
+	(<TT
+CLASS="literal"
+>CONFIG_USB_AUDIO</TT
+>,
+	<TT
+CLASS="literal"
+>audio</TT
+>), scanner
+	(<TT
+CLASS="literal"
+>CONFIG_USB_SCANNER</TT
+>,
+	<TT
+CLASS="literal"
+>scanner</TT
+>), impresora
+	(<TT
+CLASS="literal"
+>CONFIG_USB_PRINET</TT
+>,
+	<TT
+CLASS="literal"
+>printer</TT
+>), modems y dispositivos ISDN
+	(<TT
+CLASS="literal"
+>CONFIG_USB_ACM</TT
+>, <TT
+CLASS="literal"
+>acm</TT
+>),
+	dispositivos de almacenamiento
+	(<TT
+CLASS="literal"
+>CONFIG_USB_STORAGE</TT
+>,
+	<TT
+CLASS="literal"
+>usb-storage</TT
+>), dispositivos Bluetooth
+	---comunicaciones inalámbricas---
+	(<TT
+CLASS="literal"
+>CONFIG_USB_BLUETOOTH</TT
+>,
+	<TT
+CLASS="literal"
+>bluetooth</TT
+>).</P
+><P
+>&#13;	 Hay soporte para varios adaptadores de USB a puerto serial
+	(<TT
+CLASS="literal"
+>CONFIG_USB_SERIAL</TT
+>,
+	<TT
+CLASS="literal"
+>usbserial</TT
+>), y el kernel 2.4 soporta un
+       adaptador de puerto paralelo a USB. </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9182"
+>AGP (<I
+CLASS="foreignphrase"
+>Accelerated Graphics
+	  Port</I
+>)</A
+></H4
+><A
+NAME="AEN9185"
+></A
+><P
+>Tipo de bus
+	   introducido en 1997, especial para tarjetas graficadoras
+	   3-D.</P
+><P
+>Fue introducido en 1997, es un bus especial para tarjetas
+       graficadoras 3-D, que ofrece mayor velocidad que los puertos
+       PCI.  Es soportado por versiones recientes del kernel 2.2 (está
+       en el 2.2.19) y por la serie
+       2.4. <TT
+CLASS="literal"
+>CONFIG_AGP</TT
+>, módulo
+       <TT
+CLASS="literal"
+>agpgart</TT
+>.  Es útil con algunas tarjetas de
+       vídeo que emplean DRI o GLX de X-Window.  Soporta los chipsets:
+       Intel 440LX/BX/GX Intel 815/830M/840/850
+       (<TT
+CLASS="literal"
+>CONFIG_AGP_INTEL</TT
+>), Intel 810/815/830M
+       (<TT
+CLASS="literal"
+>CONFIG_AGP_i810</TT
+>), VIA MPV3/Apollo
+       (<TT
+CLASS="literal"
+>CONFIG_AGP_VIA</TT
+>), AMD Irongate 761/762
+       (<TT
+CLASS="literal"
+>CONFIG_AGP_AMD</TT
+>), SIS
+       (<TT
+CLASS="literal"
+>CONFIG_AGP_SIS</TT
+>), ALI
+       M1541/M1621/M1631/M1641/M1647/M1651
+       (<TT
+CLASS="literal"
+>CONFIG_AGP_ALI</TT
+>), Serverwork
+       (<TT
+CLASS="literal"
+>CONFIG_AGP_SWORKS</TT
+>).
+      </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9198"
+>PCMCIA (<I
+CLASS="foreignphrase"
+>Personal Computer Memory Card
+      International Association</I
+>)</A
+></H4
+><A
+NAME="AEN9201"
+></A
+><P
+>Tipo de bus
+	   empleado en portátiles desde 1990. </P
+><P
+>Son puertos disponibles en portátiles desde 1990, para
+       conectar tarjetas PCMCIA como Modems y tarjeta de red, los hay
+       de 16 bits y de 32 bits (Cardbus).  Los dispositivos PCMCIA
+       pueden conectarse y descontarse mientras el computador está
+	encendido y son reconfigurados automáticamente por las
+       herramientas PCMCIA complementarias al kernel, paquete
+       <TT
+CLASS="literal"
+>pcmcia-cs</TT
+>.
+      </P
+></DIV
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9206"
+>Otros tipos de buses</A
+></H4
+><P
+>Linux también soporta otros tipos de buses no tan comunes
+      como: I2O (<A
+HREF="http://www.i2osig.org"
+TARGET="_top"
+>http://www.i2osig.org</A
+>), IrDA
+      (Infrarojos), I2C.</P
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="interfaz-y-dispositivos-ide"
+>Interfaz y dispositivos IDE</A
+></H3
+><P
+>La placa basa puede tener tener varias interfaces
+     IDE
+      <A
+NAME="AEN9213"
+HREF="#FTN.AEN9213"
+>[20]</A
+> (usualmente 2: <TT
+CLASS="literal"
+>ide0</TT
+> e
+      <TT
+CLASS="literal"
+>ide1</TT
+>), cada una de las cuales puede soportar
+      hasta dos dispositivos con una misma correa (uno de los dos
+      dispositivos es llamado maestro y el otro esclavo
+      <A
+NAME="AEN9218"
+HREF="#FTN.AEN9218"
+>[21]</A
+>).  Las interfaces <SPAN
+CLASS="acronym"
+>IDE</SPAN
+> usan 7
+      puertos <SPAN
+CLASS="acronym"
+>E/S</SPAN
+> y una línea
+      <SPAN
+CLASS="acronym"
+>IRQ</SPAN
+> (e.g para ide0 el puerto E/S base por
+      defecto es 0x1f0 y la línea IRQ es la 14, para ide1 0x170 y 15),
+      que de no ser estándar deben especificarse como opciones para el
+      kernel pasándolas desde el cargador de arranque e.g
+      <TT
+CLASS="literal"
+>ide1=0x1f0,0x3f6,10</TT
+> (Parametros cargador de
+      arranque en ver <A
+HREF="x5075.htm"
+>Apagado y encendido de
+      una red</A
+>).
+     </P
+><A
+NAME="AEN9227"
+></A
+><P
+>Este tipo de
+	   interfaces normalmente se emplea para conectar discos
+	   duros y CD-ROMs, suele haber dos ranuras en la placa base,
+	   cada una puede tener una correa que soporta dos dispositivos.
+	 </P
+><P
+>La versión 2.2 del kernel soporta hasta 6 interfaces IDE,
+      cada una con dos discos y cada disco máximo con 63 particiones,
+      la versión 2.4 soporta hasta 10 interfaces IDE.
+     </P
+><P
+>Cantidad máxima de discos duros IDE
+      soportados por el kernel 2.2</P
+><P
+>Cantidad máxima de 
+      discos duros IDE soportados por el kernel 2.4</P
+><P
+>Cantidad máxima de particiones de un
+      disco IDE (tanto en 2.2 como 2.4)</P
+><P
+>El controlador de Linux para interfaces IDE las reconoce
+      automáticamente y las maneja directamente (sin intermediación de
+      la BIOS)
+      <A
+NAME="AEN9235"
+HREF="#FTN.AEN9235"
+>[22]</A
+>, pero durante el arranque LILO se apoya en la BIOS
+      para usarlas y en particular para usar los discos duros ---por
+      eso al menos con BIOS no tan recientes, es indispensable que la
+      partición <TT
+CLASS="filename"
+>/boot</TT
+> (o
+      <TT
+CLASS="filename"
+>/</TT
+> si no se cuenta con una partición propia
+      apara /boot) esté en los primeros 1024 cilindros, que es el
+      límite soportado por diversas BIOS
+      <A
+NAME="AEN9239"
+HREF="#FTN.AEN9239"
+>[23]</A
+>.
+     </P
+><P
+>Los dispositivos asociados con los discos de las dos
+      primeras interfaces IDE son: </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>/dev/hda</TT
+></DT
+><DD
+><A
+NAME="AEN9248"
+></A
+><P
+>Archivo que se
+	   asocia al primer dispositivo IDE maestro.
+	 </P
+><P
+>Primario maestro (b, mayor 3, menor 0)
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/dev/hdb</TT
+></DT
+><DD
+><P
+>Primario esclavo  (mayor 3, menor 64)
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/dev/hdc</TT
+></DT
+><DD
+><P
+>Secundario maestro (mayor 3, menor 0)
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/dev/hdd</TT
+></DT
+><DD
+><P
+>Secundario esclavo  (mayor 3, menor 64)
+	</P
+></DD
+></DL
+></DIV
+><P
+>Podrá emplearlos para referenciar discos duros, CDROMs o los
+      dispositivos que conecte a cada interfaz.
+     </P
+><P
+>De acuerdo al <I
+CLASS="citetitle"
+>Hardware-HOWTO</I
+> las
+     siguientes interfaces IDE son soportadas: CMD-640 (soporta
+     interfaces defectuosas), RZ1000 (soporta esta interfaz
+     defectuosa), AEC62XX, ALI M15x3, AMD Viper, CY82C693, Cyrix
+     CS5530 MediaGX, HPT34X, HPT366, Intel PIIXn, NS87415, OPTi
+     82C621, Promise PDC20246/PDC20262/PDC20267, ServerWorks OSB4,
+     SiS5513, SLC90E66, Tekram TRM290, VIA82CXXX, DTC 2278D,
+     FGI/Holtek HT-6560B VLB, Triton I, Triton II, ALI M14xx, Promise
+     DC4030, QDI QD6580, UMC 8672.
+     </P
+><P
+>Cuando se compila el kernel las variables de configuración
+      relacionadas con interfaces IDE son:
+      <TT
+CLASS="literal"
+>CONFIG_BLK_DEV_IDE</TT
+> soporte para interfaz IDE,
+      <TT
+CLASS="literal"
+>CONFIG_BLK_DEV_IDEDISK</TT
+> soporte para discos IDE
+      ATA-2 (módulo <TT
+CLASS="literal"
+>ide-disk</TT
+>),
+      <TT
+CLASS="literal"
+>CONFIG_BLK_DEV_IDECD</TT
+> soporte para CDROM IDE
+      ATAPI (módulo <TT
+CLASS="literal"
+>ide-cd</TT
+>),
+     <TT
+CLASS="literal"
+>CONFIG_BLK_DEV_IDETAPE</TT
+> soporte para unidades
+      de cinta ATAPI (módulo <TT
+CLASS="literal"
+>ide-tape</TT
+>),
+      <TT
+CLASS="literal"
+>CONFIG_BLK_DEV_IDEFLOPPY</TT
+> floppy IDE con
+      protocolo ATAPI (módulo <TT
+CLASS="literal"
+>ide-floppy</TT
+>).
+     <TT
+CLASS="literal"
+>CONFIG_BLK_DEV_IDESCSI</TT
+> permite emular con un
+      dispositivo IDE uno SCSI, esto por ejemplo es útil con quemadoras
+      de CD-ROM IDE (módulo <TT
+CLASS="literal"
+>ide-scsi</TT
+>, ver <A
+HREF="x9697.htm#quemadora-de-cd"
+>Quemadora de CD</A
+>).
+    </P
+><P
+>Puede examinar el estado de las interfaces IDE en el
+      directorio <TT
+CLASS="filename"
+>/proc/ide</TT
+>. Durante el arranque,
+      aunque las interfaces son detectadas automáticamente puede
+      especificar algunos recursos manualmente pasandolos desde el
+      cargador de arranque, por ejemplo:
+      <TT
+CLASS="literal"
+>ide0=0x1f0,0x3f6,14</TT
+>
+      <A
+NAME="AEN9287"
+HREF="#FTN.AEN9287"
+>[24]</A
+>.
+     </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="adaptadores-y-dispositivos-scsi"
+>Adaptadores y dispositivos <SPAN
+CLASS="acronym"
+>SCSI</SPAN
+></A
+></H3
+><A
+NAME="AEN9296"
+></A
+><P
+>Protocolo 
+	   empleado por diversos tipos de dispositivos (incluyendo
+	   discos duros, CD-ROMs, scanners), que normalmente requiere
+	   una tarjeta adicional para conectarlos a la
+	   placa base.
+	 </P
+><P
+>Cantidad máxima de
+      particiones de un discos duros SCSI (tanto kernel 2.2 como
+      2.4)</P
+><P
+>Cantidad de discos duros SCSI
+      soportados por Linux (tanto kernel 2.2 como 2.4)</P
+><P
+>Cantidad máxima de unidades
+      de cinta SCSI soportados por Linux (tanto kernel 2.2 como
+      kernel 2.4)</P
+><P
+>Cantidad máxima de CD-ROMs
+      SCSI soportados por Linux (tanto kernel 2.2 como kernel
+      2.4)</P
+><P
+>SCSI es un protocolo empleado por algunos discos duros,
+      unidades de cinta, unidades de CDROMs, scanners, quemadoras de
+      CD y otros dispositivos.  Para convertir ese protocolo al de un
+      bus de una placa base se requiere una tarjeta adaptadora (las
+      hay para los diversos tipos de buses).  </P
+><P
+>De acuerdo al <I
+CLASS="citetitle"
+>SCSI-2.4-HOWTO</I
+>, para
+      emplear dispositivos SCSI en Linux deben usarse 3 tipos de
+      módulos:
+     </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Controlador general <SPAN
+CLASS="acronym"
+>SCSI</SPAN
+></DT
+><DD
+><P
+>&#13;	 Variable <TT
+CLASS="varname"
+>CONFIG_SCSI</TT
+> en kernel; módulo
+	<TT
+CLASS="literal"
+>scsi_mod</TT
+>.  </P
+></DD
+><DT
+>Controlador de alto nivel de acuerdo al tipo de
+       dispositivo</DT
+><DD
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Disco duro</DT
+><DD
+><P
+>Variable <TT
+CLASS="envar"
+>CONFIG_BLK_DEV_SD</TT
+>; módulo
+	    <TT
+CLASS="literal"
+>sd_mod</TT
+>; dispositivos: primer disco
+	    <TT
+CLASS="filename"
+>/dev/sda</TT
+> (mayor 8
+	    por bloques, menor 0, la primera partición tiene menor 1
+	    <TT
+CLASS="filename"
+>/dev/sda1</TT
+>, la
+	    segunda 2 <TT
+CLASS="filename"
+>/deb/sda2</TT
+> y así
+	    sucesivamente máximo hasta 15), segundo disco <TT
+CLASS="filename"
+>/dev/sdb</TT
+> (menor 16), tercero
+	    <TT
+CLASS="filename"
+>/dev/sdc</TT
+> y así
+	    sucesivamente máximo hasta 16 discos (empleando los
+	    mayores 65 - 71 y un esquema análogo pueden instalarse
+	    hasta 128 discos SCSI).</P
+></DD
+><DT
+>Unidad de cinta</DT
+><DD
+><P
+>Variable <TT
+CLASS="envar"
+>CONFIG_CHR_DEV_ST</TT
+>; módulo
+	   <TT
+CLASS="literal"
+>st</TT
+>; parámetros:
+	   <TT
+CLASS="literal"
+>buffer_kbs=32</TT
+> tamaño en KB del buffer
+	   
+
+	    por defecto , <TT
+CLASS="literal"
+>write_threshold_kbs=30</TT
+>
+	    umbral para escritura asincrona,
+	    <TT
+CLASS="literal"
+>max_buffers=4</TT
+> máximo de buffers
+	    localizados durante inicialización,
+	   <TT
+CLASS="literal"
+>max_sg_segs=4</TT
+> máximo número de segmentos
+	    de dispersión/agrupación; una vez configurado pueden
+	    emplearse los dispositivos (con mayor 9):
+	    <TT
+CLASS="literal"
+>/dev/st0</TT
+> (menor 0) modo 0,
+	    <TT
+CLASS="literal"
+>/dev/st0l</TT
+> (menor 32) modo 1,
+	    <TT
+CLASS="literal"
+>/dev/st0m</TT
+> (menor 64) modo 2,
+	    <TT
+CLASS="literal"
+>/dev/st0a</TT
+> (menor 96) modo 3,
+	    <TT
+CLASS="literal"
+>/dev/nst0</TT
+> (menor 128) modo 0 sin
+	   retroceso, <TT
+CLASS="literal"
+>/dev/nst0l</TT
+> (menor 160) modo 1
+	    sin retroceso, <TT
+CLASS="literal"
+>/dev/nst0a</TT
+> (menor 224)
+	    modo 3 sin retroceso (Una segunda unidad de cinta tiene
+	    nombres análgos con 1 en lugar de 0, los números menores
+	    son los mismos más 1, una tercera tendría nombres con 2 y
+	    se sumaría 2 a cada menor, así sucesivamente hasta 32).
+	    Las unidades OnStream SC-x0 SCSI en vez de
+	   <TT
+CLASS="literal"
+>st</TT
+> requieren el módulo
+	    <TT
+CLASS="literal"
+>osst</TT
+>; variable de configuración
+	    <TT
+CLASS="literal"
+>CONFIG_CHR_DEV_OSST</TT
+>; recibe los mismos
+	    parámetros de <TT
+CLASS="literal"
+>st</TT
+> excepto
+	    <TT
+CLASS="literal"
+>xa_test</TT
+>; usa el dispositivo
+	   <TT
+CLASS="filename"
+>/dev/osst0</TT
+> (mayor 206) de forma
+	    análoga y con los mísmos números menores de
+	    <TT
+CLASS="filename"
+>/dev/st0</TT
+>.</P
+></DD
+><DT
+>CD-ROM</DT
+><DD
+><P
+>Variable <TT
+CLASS="varname"
+>CONFIG_BLK_DEV_SR</TT
+>; módulo
+	    <TT
+CLASS="literal"
+>sr</TT
+>; como parámetro puede recibir
+	    <TT
+CLASS="literal"
+>xa_test=1</TT
+> para activar chequeo del
+	    formato de los sectores (produce fallas en algunos
+	    sistemas); dispositivos con mayor 11 <TT
+CLASS="filename"
+>/dev/scd0</TT
+> (menor 0) para la
+	    primera unidad, <TT
+CLASS="filename"
+>/dev/scd1</TT
+> (menor 1) para la
+	    segunda y así sucesivamente hasta 255.</P
+></DD
+><DT
+><SPAN
+><I
+CLASS="emphasis"
+>Controladores genéricos SCSI</I
+></SPAN
+></DT
+><DD
+><P
+>Por cada unidad de CDROM, unidad de cinta o disco SCSI
+	  se crea un dispositivo genérico <TT
+CLASS="literal"
+>sg</TT
+>, así
+	  como para los demás dispositivos SCSI (e.g quemadoras de CD,
+	  Scanners) y pseudo-dispositivos (como el producido por
+	  <TT
+CLASS="literal"
+>ide-scsi</TT
+>.  En el caso de otros
+	  dispositivos debe emplear algún programa auxiliar para
+	  manejarlo (como <TT
+CLASS="literal"
+>cdrecord</TT
+>,
+	  <TT
+CLASS="literal"
+>cdrao</TT
+> en el caso de quemadoras de CD
+	  ---ver <A
+HREF="x9697.htm#quemadora-de-cd"
+>Quemadora de
+	  CD</A
+>--- o Sane para Scanners).  Variable
+	  <TT
+CLASS="literal"
+>CONFIG_CHR_DEV_SG</TT
+>; módulo
+	  <TT
+CLASS="literal"
+>sg</TT
+>; los dispositivos tienen número mayor
+	  21 son: <TT
+CLASS="filename"
+>/dev/sg0</TT
+> para el primer
+	  dispositivo genérico (menor 0),
+	  <TT
+CLASS="filename"
+>/dev/sg1</TT
+> para el segundo (menor 1) y
+	  así sucesivamente hasta 255.
+	    
+	   </P
+></DD
+></DL
+></DIV
+></DD
+><DT
+>Controlador de bajo nivel para la tarjeta SCSI</DT
+><DD
+><P
+>El kernel 2.2.19 soporta las siguientes tarjetas
+	(<TT
+CLASS="literal"
+>entre paréntesis se indica el nombre del
+	módulo</TT
+>): 3ware Hardware ATA-RAID, 7000FASST
+	(<TT
+CLASS="literal"
+>wd700</TT
+>), ACARD 870U/W
+	(<TT
+CLASS="literal"
+>atp870u</TT
+>), AHA-1510/1520/1522/2825 AVA-1505
+	(<TT
+CLASS="literal"
+>aha152x</TT
+>), AHA-1542
+	(<TT
+CLASS="literal"
+>aha1542</TT
+>), AHA-1740
+	(<TT
+CLASS="literal"
+>aha1740</TT
+>), tarjetas basadas en el
+	controlador aic777x y aic78xx de Adptec (<TT
+CLASS="literal"
+>excepto
+	7810</TT
+>) como 2902, 2910, 293x, 294x, 394x, 3985, 274x,
+	284x (<TT
+CLASS="literal"
+>aic7xxx</TT
+>), todos los controladores de
+	AdvanSys (<TT
+CLASS="literal"
+>advansys</TT
+>), controlador ISA Always
+	IN2000 (<TT
+CLASS="literal"
+>in2000</TT
+>), adaptadores AM53/79C974
+	(<TT
+CLASS="literal"
+>am53c974</TT
+>), adaptador BusLogic
+	(<TT
+CLASS="literal"
+>buslogic</TT
+>), canal de fibra óptica Compaq
+	(<TT
+CLASS="literal"
+>cqpfcts</TT
+>), adaptador DTC 3180/3280
+	(<TT
+CLASS="literal"
+>dtc</TT
+>), adaptadores que soporten EATA-DMA
+	como DPT PM2011B, PM2021A, PM2012A, PM2021B, PM2022A/9X,
+	PM2122A/9X, PM2322A/PX, PM3021, PM3222, PM3224,PM3334
+	(<TT
+CLASS="literal"
+>eata</TT
+>), adaptadores que soporten EATA-PIO
+	como DPT PM2001 y PM2012A (<TT
+CLASS="literal"
+>eata_pio</TT
+>),
+	adaptores Future Domain de 16 bits como TMC-1660/1680,
+	TMC-1650/1670, TMC-3260, TMC-1610M/MER/MEX
+	(<TT
+CLASS="literal"
+>fdomain</TT
+>), adaptadores Future Domain MCS
+	600/700 (<TT
+CLASS="literal"
+>fd_mcs</TT
+>), controlador genérico para
+	adaptadores NCR (<TT
+CLASS="literal"
+>g_ncr5380</TT
+>), NEC 53c406
+	(<TT
+CLASS="literal"
+>ncr53c406</TT
+>), NEC 53C710
+	(<TT
+CLASS="literal"
+>ncr53c710</TT
+>),NEC 53c8xx, 53c9x, Initio 91xx
+	(<TT
+CLASS="literal"
+>initio.o</TT
+>), Initio A100U2W
+	(<TT
+CLASS="literal"
+>a100u2w</TT
+>), adaptador NEC 53C406
+	(<TT
+CLASS="literal"
+>ncr53c406</TT
+>), adaptador Plug and Play
+	symbios 53c416 (que va con algunos scanners HP, módulo
+	sym53c416, antes debe configurarse con isapnp), adaptador de
+	IBM PS/2 (<TT
+CLASS="literal"
+>ibmmca</TT
+>), PAS16
+	(<TT
+CLASS="literal"
+>pas16</TT
+>), PCI2000I EIDE
+	(<TT
+CLASS="literal"
+>pci2000</TT
+>), PCI2220i
+	(<TT
+CLASS="literal"
+>pci2220i</TT
+>), PSI240i
+	(<TT
+CLASS="literal"
+>psi240i</TT
+>), Qlogic FAS
+	(<TT
+CLASS="literal"
+>qlogicfas</TT
+>), QLogic ISP
+	(<TT
+CLASS="literal"
+>qlogicisp</TT
+>), Qlogic isp2100
+	(<TT
+CLASS="literal"
+>qlogicfc</TT
+>), controladores SCSI de 8 bits de
+	Seagate ST-02, Future Domain TMC-8xx
+	(<TT
+CLASS="literal"
+>seagate</TT
+>), adaptadores Tecram DC390,
+	DawiControl 2974 (<TT
+CLASS="literal"
+>tmscsim</TT
+>), adaptadores
+	Trantor T128/T128F/T228 (<TT
+CLASS="literal"
+>t128</TT
+>), Ultrastor
+	14F, 24F y 34F (<TT
+CLASS="literal"
+>u14-34f, ultrastor</TT
+>).  El
+	kernel 2.4.16 soporta además los adaptadores DMX3191D
+	(<TT
+CLASS="literal"
+>dmx3191d</TT
+>), DTC 3180/3280
+	(<TT
+CLASS="literal"
+>dtc3x80</TT
+>), Qlogic QLA 1280
+	(<TT
+CLASS="literal"
+>qla1280</TT
+>), adaptadores basados en NCR53c7,
+	8xx (<TT
+CLASS="literal"
+>sim710</TT
+>), y soporta las siguientes
+	interfaces PCMCIA (para portatiles): Adaptec AHA152X
+	(<TT
+CLASS="literal"
+>aha152x_cs</TT
+>), Future Domain PCMCIA
+	(<TT
+CLASS="literal"
+>fdomain_cs</TT
+>), NinjaSCSI-3/NinjaSCSI-32Bi
+	(<TT
+CLASS="literal"
+>nsp_cs</TT
+>), Qlogic PCMCIA
+	(<TT
+CLASS="literal"
+>qlogic_cs</TT
+>).
+	</P
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="puertos-y-dispositivos-seriales"
+>Puertos y dispositivos seriales</A
+></H3
+><P
+>Prácticamente todos los computadores con arquitectura i386
+      tienen 2 puertos seriales en la carcaza a los que se pueden
+      conectar dispositivos seriales externos, estos puertos tienen 9
+      o 25 pines y en la carcaza son macho
+      <A
+NAME="AEN9427"
+HREF="#FTN.AEN9427"
+>[25]</A
+>.  Entre los dispositivos seriales
+      que pueden conectarse se cuentan modems, ratones seriales e
+      impresoras seriales.  Estos 2 puertos están conectados a
+      circuitos integrados UART que están en la placa base, tales
+      circuitos convierten la información
+      digital
+      <A
+NAME="AEN9429"
+HREF="#FTN.AEN9429"
+>[26]</A
+> de serial
+      a paralelo (este puerto se comunica con el procesador usando
+      todas las líneas del bus de datos ---32 o 64--- i.e en paralelo
+      mientras que recibe y envia de a un bit al dispositivo que se
+      conecte).
+     </P
+><P
+>Algunos dispositivos que pueden conectarse por otros medios
+      (por ejemplo modems internos conectados a algún bus en las
+      ranuras de la placa base), pueden tener sus propios circuitos
+      UART y seguir el mismo estándar de los puertos de la carcaza
+      (RS-232 de 1969 y sus sucesores e.g EIA-232).
+    </P
+><A
+NAME="AEN9432"
+></A
+><P
+>A este tipo
+	   de puertos pueden conectarse dispositivos que sigan el
+	   protocolo RS-232.  La información se transmite como un
+	   flujo de datos, un dato después de otro.</P
+><P
+>Los puertos y dispositivos seriales, tienen varias
+      caracteristicas que deben configurarse de la misma forma tanto
+      en el dispositivo (o puerto) como en el sistema operativo: IRQ,
+      dirección base, velocidad (máximo 115200
+      baudios<A
+NAME="AEN9436"
+HREF="#FTN.AEN9436"
+>[27]</A
+>).  
+     </P
+><P
+>Los puertos de la carcaza normalmente pueden configurarse
+      desde la BIOS, los dispositivos seriales pueden tener jumpers o
+      pueden configurarse con algún programa especial.
+    </P
+><P
+>En Linux el controlador del puerto serial
+      (<TT
+CLASS="literal"
+>CONFIG_SERIAL</TT
+>, <TT
+CLASS="literal"
+>serial</TT
+>)
+      crea y maneja "archivos" como <TT
+CLASS="filename"
+>/dev/ttyS0</TT
+> (c,4,64), <TT
+CLASS="filename"
+>/dev/ttyS1</TT
+> (c,4,65), <TT
+CLASS="filename"
+>/dev/ttyS3</TT
+> (c,4,66) y <TT
+CLASS="filename"
+>/dev/ttyS4</TT
+> (c,4,66) (que
+      corresponden en nomenclatura de DOS a los puertos seriales COM1
+      a COM4).  Además de sus funciones estándar, con hardware
+      apropiado, puede soportar más de 4 puertos
+      <A
+NAME="AEN9446"
+HREF="#FTN.AEN9446"
+>[28]</A
+>,
+      (<TT
+CLASS="varname"
+>CONFIG_SERIAL_MANY_PORTS</TT
+>,
+      <TT
+CLASS="varname"
+>CONFIG_SERIAL_SHARE_IRQ</TT
+>).
+    </P
+><A
+NAME="AEN9450"
+></A
+><P
+>Archivo que
+	   abstrae el primer puerto serial.  </P
+><A
+NAME="AEN9454"
+></A
+><P
+>Programa
+	   que permite modificar la configuración de un puerto serial.
+	 </P
+><P
+>Una vez el kernel está operando la configuración de un
+      puerto serial a nivel de sistema operativo puede verse y
+      cambiarse con <TT
+CLASS="literal"
+>setserial</TT
+>, el siguiente ejemplo
+      muestra como se examina la configuración de
+      <TT
+CLASS="literal"
+>/dev/ttyS0</TT
+>
+<PRE
+CLASS="programlisting"
+>&#13;# setserial -a /dev/ttyS0
+/dev/ttyS0, Line 0, UART: 16550A, Port: 0x03f8, IRQ: 4
+	Baud_base: 115200, close_delay: 50, divisor: 0
+	closing_wait: 3000
+	Flags: spd_normal skip_test
+</PRE
+>
+      El ejemplo también presenta la configuración estándar del primer
+      puerto serial, la configuración estándar de los otros 4 puertos
+      es:
+    </P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>/dev/ttyS1</TT
+></DT
+><DD
+><P
+>Dir. base 0x2f8, IRQ 3.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/dev/ttyS2</TT
+></DT
+><DD
+><P
+>Dir. base 0x3e8, IRQ 4.
+	</P
+></DD
+><DT
+><TT
+CLASS="filename"
+>/dev/ttyS3</TT
+></DT
+><DD
+><P
+>Dir. base 0x2e8, IRQ 3.
+	</P
+></DD
+></DL
+></DIV
+><P
+>Al emplear puertos seriales tenga en cuenta que una misma línea IRQ 
+      normalmente no puede ser usada por más de un dispositivo (ver<A
+HREF="x8783.htm#generalidades-sobre-dispositivos"
+>Generalidades sobre
+    dispositivos</A
+>).
+    </P
+><P
+>Para establecer una configuración no estándar en un puerto
+     se emplearía algo como:
+<PRE
+CLASS="programlisting"
+>&#13;setserial /dev/ttyS1 uart=16450 irq=10 port=0x3e8 baud_rate=115200
+</PRE
+>
+<TT
+CLASS="literal"
+>setserial</TT
+> recibe otros parámetros para configurar más detalles del
+puerto serial (pueden consultarse en las página <TT
+CLASS="literal"
+>man</TT
+>).
+</P
+><A
+NAME="AEN9484"
+></A
+><P
+>Archivo
+	   en el que se mantiene configuración de puertos seriales y
+	   que es leido durante el arranque.
+	 </P
+><P
+>En Debian <B
+CLASS="command"
+>setserial</B
+> es ejecutado durante
+      el arranque con la información de configuración de
+      <TT
+CLASS="filename"
+>/etc/serial.conf</TT
+>. Los cambios a la
+      configuración que se hagan serán salvados automáticamente a ese
+      archivo cuando apague (puede ver el script
+      <TT
+CLASS="filename"
+>/etc/init.d/setserial</TT
+> ver <A
+HREF="c8032.htm#inicializacion-del-sistema"
+>Inicialización del
+      sistema</A
+>).
+    </P
+><P
+>De acuerdo a <I
+CLASS="citetitle"
+>Text-Terminal-HOWTO</I
+> es
+      posible emplear un puerto serial junto con un modem
+      nulo
+      <A
+NAME="AEN9495"
+HREF="#FTN.AEN9495"
+>[29]</A
+> y
+      <B
+CLASS="command"
+>getty</B
+> (ver <A
+HREF="x5590.htm#inicio-de-sesiones-en-consolas-virtuales"
+>Inicio de
+	sesiones en consolas virtuales</A
+>) para conectarse desde
+	otro computador (o desde una terminal) y abrir una sesión.
+	Incluso, de acuerdo a la documentación del kernel 2.4
+	(Documentation/serial-console.txt), hay soporte
+	(<TT
+CLASS="literal"
+>CONFIG_SERIAL_CONSOLE</TT
+>) para que una
+	terminal conectada al puerto serial pueda ser la consola
+	principal.
+    </P
+><P
+>De acuerdo a <I
+CLASS="citetitle"
+>Laplink-HOWTO</I
+> también
+      es posible establecer una conexión PPP sobre una conexión entre
+      puertos seriales (con un modem nulo), por ejemplo para compartir
+      una conexión a Internet entre dos computadores a muy bajo costo.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="puerto-paralelo"
+>Puerto paralelo</A
+></H3
+><A
+NAME="AEN9504"
+></A
+><P
+>Este puerto
+	   permite transmitir información simultaneamente por diversos
+	   cables (a diferencia del puerto serial).  Es comunmente usado
+	   por impresoras, el conector es de 25 pines.</P
+><P
+>La mayoría de torres cuentan con al menos un puerto
+      paralelo, el conector en el computador es hembra de 25 pines.
+      Se llama paralelo porque transmite simultáneamente por varios
+      cables información digital, mientras que por el puerto serial la
+      transmisión se hace por un sólo cable.  Aunque fue diseñado
+      inicialmente junto con el IBM PC para enviar información a
+      impresoras (el protocolo inicial se conoce hoy como SPP -
+      Standard Paralle Port y se basa en el conector Centronics), hoy
+      se pueden conectar muchos otros tipos de dispositivos, por lo
+      mismo hay varios protocolos estándar para este
+      puerto. Eventualmente su BIOS le permite cambiar de uno a otro o
+      configurarlos (la configuración depende del dispositivo que
+      conecte).  PS/2, es una extensión a SPP que permite transmitir
+      información desde el dispositivo hacia el computador (el SPP
+      normalmente transmite sólo de computador a dispositivo).  EPP
+      (Enhance Parallel Port): permite transmitir información en ambas
+      direcciones, un byte por cada ciclo del reloj del bus, puede
+      emular SPP y eventualmente PS/2.  ECP (Extended Capabilities
+      Port): también permite transmitir en ambas direcciones
+      sincronizado con el bus, así como transferencias DMA y
+      compresión de datos.  Cada puerto tiene varias direcciones, una
+      línea IRQ y los puertos ECP tienen un canal DMA.  De acuerdo a
+      Printing-HOWTO algunos BIOS tratan de manejar el puerto paralelo
+      como dispositivo Plug and Play, en tal caso es recomendable que
+      cambie la configuración (para que sea "Legacy", "ISA" o
+      "0x378").
+    </P
+><A
+NAME="AEN9508"
+></A
+><P
+>Módulo
+	   que maneja puerto paralelo.
+	 </P
+><P
+>En Linux los recursos del puerto paralelos (dirección E/S,
+      IRQ y DMA) son manejados por <TT
+CLASS="literal"
+>parport</TT
+>
+      (<TT
+CLASS="literal"
+>CONFIG_PARPORT</TT
+>, módulo
+      <TT
+CLASS="literal"
+>parport</TT
+>) y <TT
+CLASS="literal"
+>parport_pc</TT
+>
+      (<TT
+CLASS="literal"
+>CONFIG_PARPORT_PC</TT
+>, módulo
+      <TT
+CLASS="literal"
+>parport_pc</TT
+>)<A
+NAME="AEN9518"
+HREF="#FTN.AEN9518"
+>[30]</A
+>.  Con estos controladores cargados
+      (como módulos o estáticamente ver <A
+HREF="x8370.htm"
+>Kernel y módulos</A
+>) puede
+      examinar los recursos que estén siendo usado por dispositivos
+      paralelos en los subdirectorios de
+      <TT
+CLASS="filename"
+>/proc/parport</TT
+>, por ejemplo la configuración
+      del primer puerto paralelo en
+      <TT
+CLASS="filename"
+>/proc/parport/0/hardware</TT
+>. Al iniciar
+      <TT
+CLASS="literal"
+>parport_pc</TT
+> detecta automáticamente la
+      configuración de los puertos, también puede especificarse manualmente
+      con:
+<PRE
+CLASS="programlisting"
+>&#13;insmod parport_pc.o io=0x378,0x278 irq=7,5 
+</PRE
+>
+      que haría la configuración estándar de un puerto
+      paralelo
+      <A
+NAME="AEN9528"
+HREF="#FTN.AEN9528"
+>[31]</A
+>, el primero con dirección base
+      0x378
+      <A
+NAME="AEN9530"
+HREF="#FTN.AEN9530"
+>[32]</A
+> e IRQ 7, el segundo con dirección base 0x278 e IRQ
+      5, puede emplearse en lugar de un número la palabra
+      <TT
+CLASS="literal"
+>auto</TT
+> para que parport detecte la
+      configuración.  Si <TT
+CLASS="literal"
+>parport_pc</TT
+> es compilado
+      estáticamente en el kernel puede configurarse desde el cargador
+      de arranque con parametros como: <TT
+CLASS="literal"
+>parport=0x378,7
+      parport=0x278,auto</TT
+> (puede deshabilitarse con
+      <TT
+CLASS="literal"
+>parport=0</TT
+> o solicitar autodetección ---que de
+      acuerdo a la documentación de parport puede fallar en la
+      detección de IRQs--- con: <TT
+CLASS="literal"
+>parport=auto</TT
+>
+    </P
+><P
+>Cada dispositivo conectado al puerto paralelo requiere un
+      controlador que interactúe con <TT
+CLASS="literal"
+>parport</TT
+>, en el
+      caso de impresoras el controlador es <TT
+CLASS="literal"
+>lp</TT
+> (ver
+      <A
+HREF="x9697.htm#impresora"
+>Impresora</A
+>), otros dispositivos
+      cuentan con controladores particulares (e.g
+      <TT
+CLASS="literal"
+>c-qcam</TT
+>, <TT
+CLASS="literal"
+>CONFIG_VIDEO_CQCAM</TT
+>
+      para manejar Connectix Quickcam a color), y otros tipo IDE
+      pueden emplear <TT
+CLASS="literal"
+>paride</TT
+> como se explica a
+      continuación.  Hay también dispositivos SCSI que pueden
+      conectarse (e.g Drives Zip), sobre los cuales puede consultarse
+      en: <A
+HREF="http://www.torque.net/parport/ppscsi.html"
+TARGET="_top"
+>http://www.torque.net/parport/ppscsi.html</A
+>.
+    </P
+><DIV
+CLASS="sect4"
+><H4
+CLASS="sect4"
+><A
+NAME="AEN9545"
+>Dispositivos IDE por puerto paralelo y
+       adaptadores</A
+></H4
+><P
+>De acuerdo a la documentación de las
+      fuentes del kernel, empleando adaptadores especiales pueden
+       conectarse dispositivos IDE a puertos paralelos.  Algunos
+       diseños permiten tener hasta 4 de estos dispositivos en un
+       mismo puerto.  Para usarlos se requieren 3 tipos de
+       controladores (disponibles tanto en 2.2 como 2.4):
+
+
+      <P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Controlador base
+	 (<TT
+CLASS="literal"
+>CONFIG_PARIDE</TT
+></DT
+><DD
+><P
+>Módulo <TT
+CLASS="literal"
+>paride</TT
+>).</P
+></DD
+><DT
+>Controladores genéricos de acuerdo al tipo de
+	dispositivo por conectar</DT
+><DD
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+>Discos duros</DT
+><DD
+><P
+>Variable de configuración del kernel
+	     <TT
+CLASS="varname"
+>CONFIG_PARIDE_PD</TT
+>; módulo
+	     <TT
+CLASS="literal"
+>pd</TT
+>.
+	    </P
+></DD
+><DT
+>CD-ROMs ATAPI</DT
+><DD
+><P
+>Variable de configuración
+	     <TT
+CLASS="varname"
+>CONFIG_PARIDE_PCD</TT
+>; módulo
+	     <TT
+CLASS="literal"
+>pcd</TT
+>.
+	    </P
+></DD
+><DT
+>Discos ATAPI</DT
+><DD
+><P
+>Variable de configuración
+	     <TT
+CLASS="varname"
+>CONFIG_PARIDE_PF</TT
+>; módulo
+	     <TT
+CLASS="literal"
+>pf</TT
+>.
+	    </P
+></DD
+><DT
+>Unidades de cinta</DT
+><DD
+><P
+>Variable de configuración
+	     <TT
+CLASS="varname"
+>CONFIG_PARIDE_PT</TT
+>; módulo
+	     <TT
+CLASS="literal"
+>pt</TT
+>.
+	  </P
+></DD
+><DT
+>Dispositivo genérico</DT
+><DD
+><P
+>Variable de configuración
+	     <TT
+CLASS="varname"
+>CONFIG_PARIDE_PG</TT
+>; módulo
+	     <TT
+CLASS="literal"
+>pg</TT
+>.
+	    </P
+></DD
+></DL
+></DIV
+></DD
+><DT
+>Controladores para los adaptadores puerto paralelo/IDE
+	 paticulares</DT
+><DD
+><P
+>aten ATEN EH-100, bpck Microsolutions backpack, comm
+	  DataStor "commuter" adapter, dstr DataStor EP-2000, epat
+	  Shuttle EPAT.</P
+></DD
+></DL
+></DIV
+>
+     </P
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="bios-y-otras-caracteristicas"
+>BIOS y otras características</A
+></H3
+><A
+NAME="AEN9595"
+></A
+><P
+>Es un estándar
+	   para computadores, que busca ahorrar energía, permitiendole
+	   entrar en estado de ibernación cuando no se usa y apagarlo
+	   automáticamente.
+	 </P
+><P
+>APM (Advanced Power Managment) busca ahorrar energía
+      entrando a un estado de menor consumo cuando el computador no ha
+      sido usado durante un tiempo, así mismo permite apagar el
+      computador por software.  Debian 2.2 incluye por defecto este
+      controlador estáticamente, debe activarse pasando durante el
+      arranque el parámetro <TT
+CLASS="literal"
+>apm=on</TT
+> (ver <A
+HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
+>Parámetros
+      desde el cargador de arranque</A
+>).  
+    </P
+><P
+>Es posible configurar el kernel
+     (<TT
+CLASS="varname"
+>CONFIG_NVRAM</TT
+>) para que emplee el dispositivo
+     <TT
+CLASS="filename"
+>/dev/nvram</TT
+> para leer y escribir en el CMOS
+     de la BIOS.
+    </P
+><P
+>También puede configurarse (<TT
+CLASS="varname"
+>CONFIG_RTC</TT
+>)
+     para que el el reloj de tiempo real del sistema presente su
+     estado en <TT
+CLASS="filename"
+>/proc/driver/rtc</TT
+>.
+    </P
+><P
+>Para diversos programas, por ejemplo los relacionados con
+      criptografía, es importante un generador de números aleatorios.
+      Programar uno de tales generadores no es posible (sólo pueden
+      programarse generadores seudo-aleatorios que repiten una
+      secuencia de números muy larga), el kernel ofrece un generador
+      más aleatorio que depende del "ruido" producido por diversos
+      controladores.  Pueden obtenerse sus datos leyendo de los
+      dispositivos <TT
+CLASS="filename"
+>/dev/random</TT
+> (c, 1, 8) y
+      <TT
+CLASS="filename"
+>/dev/urandom</TT
+> (c, 1, 9) (el primero más
+      seguro pero un poco más demorado).  Hay algunas tarjetas que
+      ofrecen generación de números aleatorios (basadas en "ruido"
+      producido por componentes electrónicos), el kernel soporta los
+      generadores incluidos en tarjetas Intel 8xx
+      (<TT
+CLASS="varname"
+>CONFIG_INTEL_RNG</TT
+>,
+      <TT
+CLASS="literal"
+>i810_rng</TT
+>).
+    </P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-hardware-basico-y-linux"
+>Lecturas recomendadas: Hardware básico y Linux</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Puede revisar más sobre riesgos y precauciones al
+       manipular componentes de un computador en: <A
+HREF="http://home.att.net/~t.f.cook/tc15.htm"
+TARGET="_top"
+>http://home.att.net/~t.f.cook/tc15.htm</A
+>
+      </P
+></LI
+><LI
+><P
+>Puede consultar generalidades sobre CPUs, su
+       funcionamiento y proceso de fabricación en en
+       <I
+CLASS="citetitle"
+>CPU-Design-HOWTO</I
+>.  Disponible en su
+       computador en:
+       <TT
+CLASS="filename"
+>/usr/share/doc/HOWTO/en-txt/CPU-Design-HOWTO.gz</TT
+>.
+       y en Internet en <A
+HREF="http://www.tldp.org/HOWTO/CPU-Design-HOWTO.html"
+TARGET="_top"
+>http://www.tldp.org/HOWTO/CPU-Design-HOWTO.html</A
+>.
+      </P
+></LI
+><LI
+><P
+>Para comprar hardware recomendamos revisar comparaciones
+       por ejemplo en: <A
+HREF="http://www6.tomshardware.com/"
+TARGET="_top"
+>/</A
+>, en ese sitio
+       pueden encontrarse entre otras una guía para placas base <A
+HREF="http://www6.tomshardware.com/mainboard/97q1/970101-1/index.html"
+TARGET="_top"
+>http://www6.tomshardware.com/mainboard/97q1/970101-1/index.html</A
+>,
+       una guía sobre tipos de memoria <A
+HREF="http://www6.tomshardware.com/mainboard/98q4/981024/index.html"
+TARGET="_top"
+>http://www6.tomshardware.com/mainboard/98q4/981024/index.html</A
+>,
+       una guía sobre tipos de chipset <A
+HREF="http://www6.tomshardware.com/mainboard/97q1/970101-1/index.html"
+TARGET="_top"
+>http://www6.tomshardware.com/mainboard/97q1/970101-1/index.html</A
+>
+      </P
+></LI
+><LI
+><P
+>Los parámetros que el kernel recibe desde el cargador de
+       arranque pueden consultarse con <B
+CLASS="command"
+>man bootparam</B
+>.
+      </P
+></LI
+><LI
+><P
+>Puede consultar más sobre Plug and Play en el
+       <I
+CLASS="citetitle"
+>Plug-and-Play-HOWTO</I
+> disponible en su
+       sistema en el directorio
+       <TT
+CLASS="filename"
+>/usr/share/doc/HOWTO</TT
+> y en Internet en
+       <A
+HREF="http://www.tldp.org/HOWTO/Plug-and-Play-HOWTO.html"
+TARGET="_top"
+>http://www.tldp.org/HOWTO/Plug-and-Play-HOWTO.html</A
+>.
+       Para conocer más sobre <I
+CLASS="foreignphrase"
+>ISA Plug and
+       Play</I
+>, puede consultar las páginas man de
+       <B
+CLASS="command"
+>isapnp</B
+>, <B
+CLASS="command"
+>isapnp.conf</B
+> el
+       completo <SPAN
+CLASS="acronym"
+>FAQ</SPAN
+> sobre este tema disponible en:
+       <A
+HREF="http://www.roestock.demon.co.uk/isapnptools/isapnpfaq.html#toc1"
+TARGET="_top"
+>http://www.roestock.demon.co.uk/isapnptools/isapnpfaq.html#toc1</A
+>
+       </P
+></LI
+><LI
+><P
+>Para conocer más sobre puertos SCSI y su soporte en Linux
+       <I
+CLASS="citetitle"
+>SCSI-2.4-HOWTO</I
+>, disponible en 
+      </P
+><P
+><A
+HREF="http://www.linuxdoc.org/HOWTO/SCSI-2.4-HOWTO/"
+TARGET="_top"
+>http://www.linuxdoc.org/HOWTO/SCSI-2.4-HOWTO/</A
+>
+      </P
+></LI
+><LI
+><P
+>Hay más información sobre dispositivos USB en las fuentes
+       del kernel en el directorio
+       <TT
+CLASS="filename"
+>Documentation/usb</TT
+>.  En Internet puede
+       consultarse una base de dispositivos USB soportados en: <A
+HREF="http://www.qbik.ch/usb/devices/"
+TARGET="_top"
+>http://www.qbik.ch/usb/devices/</A
+>
+      </P
+></LI
+><LI
+><P
+>Puede consultar más sobre el soporte de Linux al puerto
+       paralelo en las fuentes del kernel en Documentation/parport.txt
+       o en: <A
+HREF="http://www.torque.net/linux-pp.html"
+TARGET="_top"
+>http://www.torque.net/linux-pp.html</A
+>
+       donde en particular encontrará un listado de los dispositivos,
+       diferentes a impresoras, que pueden conectarse a puertos
+       paralelos (e.g Unidades Zip).
+      </P
+><P
+>Para conocer más sobre el puerto paralelo, puede consultar
+       el primer capítulo del libro Parallel Port Complete de Jan
+       Alexon o el FAQ del mismo autor: <A
+HREF="http://www.lvr.com/parport.htm"
+TARGET="_top"
+>http://www.lvr.com/parport.htm</A
+>
+      </P
+><P
+>Para conectar una impresora puede consultar estas guías
+       (ver <A
+HREF="x9697.htm#impresora"
+>Impresora</A
+>) o
+       <I
+CLASS="citetitle"
+>Printing-HOWTO</I
+>, en su sistema disponible en
+       <TT
+CLASS="filename"
+>/usr/doc/HOWTO/en-txt/Printing-HOWTO.txt.gz</TT
+>
+       y en Internet en <A
+HREF="http://www.tldp.org/HOWTO/Printing-HOWTO/index.html"
+TARGET="_top"
+>http://www.tldp.org/HOWTO/Printing-HOWTO/index.html</A
+>.
+      </P
+><P
+>Hay más información sobre PARIDE en las fuentes del kernel
+       en el archivo <TT
+CLASS="filename"
+>Documentation/paride.txt</TT
+> y
+       en las fuentes del directorio
+       <TT
+CLASS="filename"
+>drivers/block/paride</TT
+>.  En Internet: <A
+HREF="http://www.torque.net/parport/"
+TARGET="_top"
+>http://www.torque.net/parport/</A
+>
+      </P
+></LI
+><LI
+><P
+>Puede consultarse más sobre el generador de números
+       aleatorios del kernel en las fuentes
+       <TT
+CLASS="filename"
+>drivers/char/random.c</TT
+>.
+      </P
+></LI
+><LI
+><P
+>Encontrará más información sobre puertos seriales en
+       <I
+CLASS="citetitle"
+>Serial-HOWTO</I
+>
+       <TT
+CLASS="filename"
+>/usr/share/doc/HOWTO/en-txt/Serial-HOWTO.gz</TT
+>
+       y en la página del manual de <TT
+CLASS="literal"
+>setserial</TT
+>.  En
+       <I
+CLASS="citetitle"
+>Serial-Programming-HOWTO</I
+> encontrará
+       información para programar a bajo nivel un puerto serial.  En
+       <I
+CLASS="citetitle"
+>Terminal-Text-HOWTO</I
+> encuentra
+       información para conectar terminales a un puerto serial y en
+       <I
+CLASS="citetitle"
+>Laplink-HOWTO</I
+> se describe como crear una
+       conexión PPP sobre un puerto serial.
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-hardware-basico-y-linux"
+>Ejercicios: Hardware básico y Linux</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x8783.htm#hardware.comp.1"
+>Para referencia futura, o en caso de fallas y para
+       conocer su computador escriba un script que presente las
+	siguientes características: </A
+></DT
+><DT
+>2. <A
+HREF="x8783.htm#hardware.basico.1"
+>Opcional: en algunos casos, cuando un componente de su
+       computador falla, el sistema completo deja de funcionar. Para
+       estos casos, una forma de identificar el componente defectuoso
+       es quitando todo el hardware de su computador e instalando una
+       a una las partes y reiniciando el computador con cada parte
+       agregada.  Generalmente al iniciar un computador sin memoria ni
+       dispositivos conectados el procesador debe hacer sonar el
+       parlante, puede aprovechar esto y los mensajes que salgan en
+       pantalla (si es que ya la tiene conectada) para determinar que
+       componente falla.  Un orden posible para instalar los
+       componentes es: teclado, memoria, tarjeta de video, disco(s)
+       duro(s), unidades de disquete, otras tarjetas.  Si tiene la
+       posibilidad y el tiempo saque todos los componentes de su
+       computador y agréguelos uno a uno (siguiendo las precauciones
+       mencionadas al comienzo de esta guía y las que se indiquen en
+       los manuales).</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="hardware.comp.1"
+></A
+><B
+>1. </B
+>Para referencia futura, o en caso de fallas y para
+       conocer su computador escriba un script que presente las
+	siguientes características: </P
+><P
+></P
+><UL
+><LI
+><P
+>Marca y referencia del procesador, así como su
+	 velocidad.  También la cantidad de memoria RAM disponible.
+	 </P
+></LI
+><LI
+><P
+>Asignación de líneas IRQ, canales DMA y direcciones E/S.
+	 </P
+></LI
+><LI
+><P
+>Dispositivos PCI y recursos que emplean.
+	</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><PRE
+CLASS="screen"
+>&#13;idcomp=`uname -a`
+echo "Configuración de: $idcomp";
+echo;
+echo "+
+Procesador===================================================";
+echo;
+cat /proc/cpuinfo
+echo;
+echo "+
+Memoria======================================================";
+echo;
+free
+echo;
+echo "+ IRQ, DMA, Puertos ===========================================";
+echo
+cat /proc/interrupts
+cat /proc/dma
+cat /proc/ioports
+echo;
+echo "+ PCI========================================================";
+echo;
+cat /proc/pci
+     </PRE
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="hardware.basico.1"
+></A
+><B
+>2. </B
+>Opcional: en algunos casos, cuando un componente de su
+       computador falla, el sistema completo deja de funcionar. Para
+       estos casos, una forma de identificar el componente defectuoso
+       es quitando todo el hardware de su computador e instalando una
+       a una las partes y reiniciando el computador con cada parte
+       agregada.  Generalmente al iniciar un computador sin memoria ni
+       dispositivos conectados el procesador debe hacer sonar el
+       parlante, puede aprovechar esto y los mensajes que salgan en
+       pantalla (si es que ya la tiene conectada) para determinar que
+       componente falla.  Un orden posible para instalar los
+       componentes es: teclado, memoria, tarjeta de video, disco(s)
+       duro(s), unidades de disquete, otras tarjetas.  Si tiene la
+       posibilidad y el tiempo saque todos los componentes de su
+       computador y agréguelos uno a uno (siguiendo las precauciones
+       mencionadas al comienzo de esta guía y las que se indiquen en
+       los manuales).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+       Seguir instrucciones</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8817"
+HREF="x8783.htm#AEN8817"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Cualquier  elemento  por  el  que usted  pueda
+	  descargarse pasando la carga estática a la tierra
+	 </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8827"
+HREF="x8783.htm#AEN8827"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Del inglés <I
+CLASS="foreignphrase"
+>mother
+	 board</I
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8835"
+HREF="x8783.htm#AEN8835"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Del inglés <I
+CLASS="foreignphrase"
+>I/O adress</I
+> o
+       <I
+CLASS="foreignphrase"
+>I/O ports</I
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8841"
+HREF="x8783.htm#AEN8841"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Del inglés
+	<I
+CLASS="foreignphrase"
+>shared memory</I
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8896"
+HREF="x8783.htm#AEN8896"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Esta arquitectura se refiere a PCs basados en
+	procesadores Intel 80386 sus descendientes, clones y
+	compatibles.  Linux soporta otras arquitecutras: Alpha,
+	ARM, IA-64, MIPS, MIPS64, PARISC, PPC, S390, Sparc y
+	Sparc64. Hay distribuciones Debian para las arquitecturas
+	Alpha, ARM, Intel x86, Motorola 680x0 (Atari, Amiga, VME y
+	Macintosh), PowerPC (Macintosh PowerMac) y SPARC (Sun4c, Sun4m
+	y Sun4u) y en preparación hay distribucions Debian para
+	UltraSparc, MIPS, HP PA, IA-64, S/390 y
+	SuperH.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8898"
+HREF="x8783.htm#AEN8898"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Un bit es uno de los niveles de voltaje alto o bajo,
+	puede representarse como un 1 o un 0.
+      </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8900"
+HREF="x8783.htm#AEN8900"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Hertz: ciclos por segundo.  En este contexto se usa con
+	los prefijos: Mega (un millon) y Giga (mil
+	millones)</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8906"
+HREF="x8783.htm#AEN8906"
+>[8]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Linux ofrece emulación de un coprocesador matemático para
+	ciertos procesadores como 80386SX y 80486SX o para
+	procesadores con coprocesador defectuoso.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8928"
+HREF="x8783.htm#AEN8928"
+>[9]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Un byte puede considerarse como un caracter (corresponde
+	a 8 bits). En el contexto de memoria se se usa con los
+	siguientes prefijos: K - Kilo (1024), M - Mega (1048576), G -
+	Giga (1073741824fff) y en vez de byte suele escribirse B.
+	Note que los prefijos para referirse a cantidad de memoria NO
+	corresponden al significado usual (en este caso son potencias
+	de 2 (1024=2^10) y no a potencias de 10)</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8931"
+HREF="x8783.htm#AEN8931"
+>[10]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><I
+CLASS="foreignphrase"
+>Chipset</I
+>: controla el flujo
+	de información hacia el procesador, por ejemplo desde buses y
+	memoria.  Algunos tipos de chipsets y sus velocidades típicas
+	son Slot 1 AGP 66Mhz/100Mhz, Socket 7 AGP (66/100Mhz), Socket
+	7 PCI (66/75/83Mhz), Socket A 133/266Mhz.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8935"
+HREF="x8783.htm#AEN8935"
+>[11]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Otra clasificación posible para memorias es por la
+	tecnología que emplean para almacenar los datos, algunos tipos
+	según esta clasificación son DRAM (Dynamic Random Access
+	Memory), SDRAM (Static DRAM), ambas soportadas por
+	Linux.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN8949"
+HREF="x8783.htm#AEN8949"
+>[12]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En diversas partes de estas guías usamos
+	   la notación
+	   (c,<TT
+CLASS="replaceable"
+><I
+>x</I
+></TT
+>,<TT
+CLASS="replaceable"
+><I
+>y</I
+></TT
+>)
+	   para denotar el número mayor
+	   (<TT
+CLASS="replaceable"
+><I
+>x</I
+></TT
+>) y menor
+	   (<TT
+CLASS="replaceable"
+><I
+>y</I
+></TT
+>) de un dispositivo por caracteres.
+	   Si el dispositivo es por bloques empleamos <TT
+CLASS="literal"
+>b</TT
+>
+	   en lugar de <TT
+CLASS="literal"
+>c</TT
+>.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9027"
+HREF="x8783.htm#AEN9027"
+>[13]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Encontrará en varias partes la notación
+	    0x<SPAN
+><I
+CLASS="emphasis"
+>número</I
+></SPAN
+> para referenciar un número
+	    escrito en base 16 --es la convención del lenguaje C.
+	   </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9068"
+HREF="x8783.htm#AEN9068"
+>[14]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Una ranura EISA en una placa base soporta
+	 también tarjetas ISA.
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9086"
+HREF="x8783.htm#AEN9086"
+>[15]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Es extensible porque pueden usarse
+	 puentes para conectar otros buses PCI o Cardbus o
+	 USB.
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9089"
+HREF="x8783.htm#AEN9089"
+>[16]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Las identificaciones conocidas por Linux pueden
+	 examinarse en las fuentes del kernel en el archivo
+	 <TT
+CLASS="filename"
+>include/linux/pci.h</TT
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9100"
+HREF="x8783.htm#AEN9100"
+>[17]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><SPAN
+CLASS="acronym"
+>FCC</SPAN
+> es sigla de
+	 <I
+CLASS="foreignphrase"
+>Federal Communications
+	 Commission</I
+> quienes vigilan que los
+	 dispositivos empleen eficientemente el espectro
+	 electromagéntico.
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9115"
+HREF="x8783.htm#AEN9115"
+>[18]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Concentrador: del inglés
+	 <I
+CLASS="foreignphrase"
+>hub</I
+>
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9150"
+HREF="x8783.htm#AEN9150"
+>[19]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Es posible montar <TT
+CLASS="filename"
+>/proc/bus/usb</TT
+>
+	 sólo si se configuró con
+	 <TT
+CLASS="literal"
+>CONFIG_USB_DEVICEFS</TT
+>
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9213"
+HREF="x8783.htm#AEN9213"
+>[20]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>IDE es sigla de <I
+CLASS="foreignphrase"
+>Integrated Drive
+	 Electronics</I
+>, recibe este nombre porque los
+	 dispositivos IDE (discos duros, CD-ROMs) incluyen hardware
+	 controlador ---por eso pueden conectarse casi directamente a
+	 un bus ISA de un PC. Las interfaces que usan están
+	 especificadas en los estándares ATA y ATA-2 (Attachment
+	 interfaces).
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9218"
+HREF="x8783.htm#AEN9218"
+>[21]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Si se usa un disco (o un <SPAN
+CLASS="acronym"
+>CDROM</SPAN
+>) por
+	interfaz debe configurarse como maestro o
+	<SPAN
+><I
+CLASS="emphasis"
+>single</I
+></SPAN
+>, si se usan dos discos (empleando
+	una correa con tres conectores) uno de los discos debe
+	configurarse como maestro y el otro como esclavo.  La
+	configuración se hace empleando jumpers ubicados en los discos
+	---debe consultar el manual para determinar la ubicación de
+	los jumpers.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9235"
+HREF="x8783.htm#AEN9235"
+>[22]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>De acuerdo a documentación de la configuración del
+	kernel, soporta incluso dos interfaces IDE defectuosas y
+	soluciona los errores: CMD650 y RZ1000
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9239"
+HREF="x8783.htm#AEN9239"
+>[23]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>De acuerdo a <A
+HREF="http://freshmeat.net/projects/lilo/?topic_id=139"
+TARGET="_top"
+>http://freshmeat.net/projects/lilo/?topic_id=139</A
+>,
+	las versiones de LILO posteriores a 21-3 con BIOS recientes
+	(posteriores a 1998), no tienen esta
+	limitación.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9287"
+HREF="x8783.htm#AEN9287"
+>[24]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Los recursos empleados por los puertos IDE normalment
+	son: <TT
+CLASS="literal"
+>ide0=0x1f0,0x3f6,14</TT
+>,
+	<TT
+CLASS="literal"
+>ide1=0x170,0x376,15</TT
+>,
+	<TT
+CLASS="literal"
+>ide2=0x1e8,0x3ee,11</TT
+>,
+	<TT
+CLASS="literal"
+>ide3=0x168,0x36e,10</TT
+>.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9427"
+HREF="x8783.htm#AEN9427"
+>[25]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Conector macho se refiere a un conector que tiene pines,
+	a ese se le puede conectar un conector hembra que debe tener
+	ranuras para los pines.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9429"
+HREF="x8783.htm#AEN9429"
+>[26]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Información digital: es información que se codifica con
+	dos níveles de voltaje, puede pensarse que se trata de
+	secuencias de ceros y unos.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9436"
+HREF="x8783.htm#AEN9436"
+>[27]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En comunicaciones se emplea baudio como 
+	  unidad para medir capacidad de transmisión.  Corresponde a
+	  número de "estados" por segundo (en algunos casos corresponde
+	  a bits por segundo).
+      </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9446"
+HREF="x8783.htm#AEN9446"
+>[28]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Los provedores de acceso a Internet requieren conectar
+	más de un modem para atender simultaneamente varias conexiones
+	de los usuarios, un computador con varias terminales
+	conectadas también requiere varios puertos seriales, para
+	lograrlo se usan tarjetas multipuerto, el kernel 2.2.19
+	soporta las siguientes: Hayes ESP, Digiboard Intelligent
+	Async, Cyclades async, Control Rocketport, Computone
+	IntelliPort Plus, Moxa Intellio, Moxa SmartIO, Multi-Tech
+	multiport, SDL RISCom/8, Specialix IO8+/SXm/RIO y Stallion
+	EasyIO/EC8/64.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9495"
+HREF="x8783.htm#AEN9495"
+>[29]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Un cable que tiene en sus extremos dos conectores hembra
+	para puerto serial y que intercambia algunas conexiones, si
+	ambos conectores son de 25 pines: (DSR) 6 &#38; (DCD) 8 -- 20,
+	(TxD) 2 -- 3, (RxD) 3 -- 2, (RTS) 4 -- 5, (CTS) 5 -- 4, (SG) 7
+	-- 7, (DTR) 20 -- 6 &#38; 8.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9518"
+HREF="x8783.htm#AEN9518"
+>[30]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><TT
+CLASS="literal"
+>parport</TT
+>
+      es un controlador genérico para puerto paralelo, sobre este debe
+      usarse soporte particular para la arquitectura, e.g
+      <TT
+CLASS="literal"
+>parport_pc</TT
+> para i386,
+      <TT
+CLASS="literal"
+>parport_ax</TT
+> para Sun
+      Ultra/AX.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9528"
+HREF="x8783.htm#AEN9528"
+>[31]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En modo SPP cada puerto paralelo usa 3 direcciones
+	consecutivas, en modo EPP usa 5 también consecutivas, en modo
+	ECP usa también 5 aunque no consecutivas.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN9530"
+HREF="x8783.htm#AEN9530"
+>[32]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Algunos puertos paralelos no tan recientes, para el
+	primer puerto paralelo requieren io=0x3bc
+	irq=none
+       </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x8370.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x9697.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Kernel y módulos</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c8032.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Dispositivos y Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

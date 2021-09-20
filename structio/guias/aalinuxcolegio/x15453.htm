@@ -1,0 +1,485 @@
+<HTML
+><HEAD
+><TITLE
+>Instalación del nuevo kernel</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Actualización del kernel de
+   Debian Linux"
+HREF="a14885.htm"><LINK
+REL="PREVIOUS"
+TITLE="Compilación del kernel"
+HREF="x14983.htm"><LINK
+REL="NEXT"
+TITLE="Referencias"
+HREF="x15543.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x14983.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Apéndice C. Actualización del <I
+CLASS="foreignphrase"
+>kernel</I
+> de
+   Debian Linux</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x15543.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN15453"
+>Instalación del nuevo <I
+CLASS="foreignphrase"
+>kernel</I
+></A
+></H1
+><P
+>Por el contrario, la instalación del nuevo
+    <I
+CLASS="foreignphrase"
+>kernel</I
+> es tarea que sólo el root
+    puede realizar.
+   </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN15458"
+>Instalación de los archivos del <I
+CLASS="foreignphrase"
+>kernel</I
+></A
+></H2
+><DIV
+CLASS="procedure"
+><OL
+TYPE="1"
+><LI
+><P
+>Para comenzar de un vistazo al contenido del directorio
+       <TT
+CLASS="filename"
+>/boot</TT
+> y tome atenta nota
+       de ello. Note que algunos archivos son vínculos
+       simbólicos.</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>ls -l /boot</B
+>
+</PRE
+><P
+>Algunos de los archivos allí contenidos son: </P
+><PRE
+CLASS="screen"
+>&#13;-rw-r--r--  1 root    root        4540 Feb 2 1999 boot.b
+-rw-r--r--  1 root    root        4540 Feb 2 1999 boot.b.preserved
+-rw-r--r--  1 root    root         612 Feb 2 1999 chain.b
+-rw-r--r--  1 root    root         612 Feb 2 1999 chain.b.preserved
+-rw-------  1 root    root       17408 Apr 9 00:45 map
+-rw-r--r--  1 root    root         444 Dec 12 1997 mbr.b
+-rw-r--r--  1 root    root         620 Feb 2 1999 os2_d.b
+-rw-r--r--  1 root    root         620 Feb 2 1999 os2_d.b.preserved
+-rwxr-xr-x  1 root    root      715259 Apr 8 17:56 vmlinuz-2.0.36
+
+</PRE
+></LI
+><LI
+><P
+>Mire el contenido del archivo
+       <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+>, dando como un hecho que se
+       está utilizando <SPAN
+CLASS="application"
+>LILO</SPAN
+>:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root #]</TT
+> <B
+CLASS="command"
+>cat /etc/lilo.conf</B
+>
+</PRE
+><P
+>Por ejemplo, ese archivo podría contener:</P
+><PRE
+CLASS="programlisting"
+>&#13;boot=/dev/hda1
+root=/dev/hda1
+install=/boot/boot.b
+map=/boot/map
+vga=normal
+delay=20
+image=/vmlinuz
+ label=Linux
+ read-only
+</PRE
+></LI
+><LI
+><P
+>Desde el directorio linux utilizado, proceda a copiar el
+       archivo <TT
+CLASS="filename"
+>bzImage</TT
+> generado durante la
+       compilación dentro del directorio <TT
+CLASS="filename"
+>/boot</TT
+>.  Por ejemplo, de esta
+       forma:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>cp -i arch/i386/boot/bzImage/boot/vmlinuz-2.2.18</B
+>
+</PRE
+></LI
+><LI
+><P
+>Desde el directorio linux utilizado, proceda a hacer lo
+       propio con el archivo <TT
+CLASS="filename"
+>System.map</TT
+>.  Por ejemplo, de
+       esta forma:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>cp -i System.map /boot/System.map-2.2.18</B
+>
+</PRE
+></LI
+><LI
+><DIV
+CLASS="highlights"
+><A
+NAME="AEN15493"
+></A
+><P
+>Instalación de los módulos del
+       <I
+CLASS="foreignphrase"
+>kernel</I
+></P
+></DIV
+><P
+>&#13;       Ahora proceda a instalar los módulos.  Si está instalando un
+       <I
+CLASS="foreignphrase"
+>kernel</I
+> de la misma versión del
+       que ya tiene en el sistema, ejecute primero, por ejemplo:
+      </P
+><PRE
+CLASS="screen"
+><TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>mv /lib/modules/2.2.12-20 /lib/modules/2.2.12-20.old</B
+></PRE
+><P
+>y luego si:</P
+><PRE
+CLASS="screen"
+><TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>make modules_install</B
+>
+</PRE
+></LI
+><LI
+><DIV
+CLASS="highlights"
+><A
+NAME="AEN15506"
+></A
+><P
+>Edición del archivo <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+> e
+	instalación de un nuevo <SPAN
+CLASS="acronym"
+>MBR</SPAN
+></P
+></DIV
+><P
+>&#13;       Edite el archivo <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+> y adicione
+       una nueva sección para el nuevo
+       <I
+CLASS="foreignphrase"
+>kernel</I
+>, para el ejemplo, así:
+      </P
+><PRE
+CLASS="programlisting"
+>&#13;boot=/dev/hda1
+root=/dev/hda1
+install=/boot/boot.b
+map=/boot/map
+vga=normal
+default=nuevo
+delay=20
+image=/vmlinuz
+ label=Linux
+ read-only
+image=/boot/vmlinuz-2.2.18
+     label=nuevo
+     read-only
+</PRE
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>Note el cambio realizado en la línea <TT
+CLASS="option"
+>default</TT
+>.</P
+></BLOCKQUOTE
+></DIV
+></LI
+><LI
+><P
+>Ubíquese dentro del directorio <TT
+CLASS="filename"
+>/boot</TT
+>:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>cd /boot</B
+>
+</PRE
+></LI
+><LI
+><P
+>Pruebe sin llevar a cabo la instalación del nuevo <SPAN
+CLASS="acronym"
+>MBR</SPAN
+>
+       ejecutando:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>lilo -t -v</B
+>
+</PRE
+></LI
+><LI
+><P
+>Si no observó nada anormal proceda a la instalación del
+       nuevo <SPAN
+CLASS="acronym"
+>MBR</SPAN
+> ejecutando:</P
+><PRE
+CLASS="screen"
+>&#13;<TT
+CLASS="prompt"
+>[root]#</TT
+> <B
+CLASS="command"
+>lilo -v</B
+>
+debian:/usr/src/linux# lilo -v
+     LILO version 21, Copyright 1992-1998 Werner Almesberger
+Reading boot sector from /dev/hda1
+Merging with /boot/boot.b
+Boot image: /vmlinuz
+Added Linux
+Boot image: /boot/vmlinuz-2.2.18
+Added nuevo *
+/boot/boot.0301 exists - no backup copy made.
+Writing boot sector.
+</PRE
+></LI
+><LI
+><P
+>Reinicie el sistema</P
+><P
+>Si en un dado caso tuviera problemas con el nuevo
+      <I
+CLASS="foreignphrase"
+>kernel</I
+> puede arrancar utilizando
+      el <I
+CLASS="foreignphrase"
+>kernel</I
+> anterior, escribiendo
+      linux frente al indicador de lilo, cuando apenas se inicie el
+      arranque.
+      </P
+><P
+>&#13;       Al reiniciar, el comando <B
+CLASS="command"
+>uname -a</B
+> mostrará algo similar a:
+      </P
+><PRE
+CLASS="screen"
+>Linux debian 2.2.18 #2 Tue Apr 9 00:32:31 COT 2002 i586 unknown
+</PRE
+></LI
+></OL
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x14983.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x15543.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Compilación del <I
+CLASS="foreignphrase"
+>kernel</I
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="a14885.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Referencias</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

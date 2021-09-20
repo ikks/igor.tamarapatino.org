@@ -1,0 +1,2244 @@
+<HTML
+><HEAD
+><TITLE
+>Procesos y tareas</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Linux desde la perspectiva de un usuario con más
+   experiencia"
+HREF="c2347.htm"><LINK
+REL="PREVIOUS"
+TITLE="bash y el juego de
+    herramientas"
+HREF="x2787.htm"><LINK
+REL="NEXT"
+TITLE="Scripts básicos para bash"
+HREF="x3773.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x2787.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 3. Linux desde la perspectiva de un usuario con más
+   experiencia</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x3773.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="procesos-y-tareas"
+>Procesos y tareas</A
+></H1
+><P
+>Indicadores de Logros</P
+><P
+></P
+><UL
+><LI
+><A
+NAME="proc.proc"
+></A
+><P
+>Puede iniciar, detener y ver el estado de procesos
+       (<TT
+CLASS="literal"
+>&#38;</TT
+> en <SPAN
+CLASS="application"
+>bash</SPAN
+>,
+       programas <B
+CLASS="command"
+>ps</B
+>, <B
+CLASS="command"
+>pstree</B
+>,
+       <B
+CLASS="command"
+>top</B
+>, <B
+CLASS="command"
+>gtop</B
+> y
+       <B
+CLASS="command"
+>kill</B
+>).
+      </P
+></LI
+><LI
+><A
+NAME="proc.tareas"
+></A
+><P
+>Maneja control de tareas del intérprete de comandos
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> (i.e. <B
+CLASS="command"
+>%</B
+>,
+       <B
+CLASS="command"
+>fg</B
+>, <B
+CLASS="command"
+>bg</B
+>).  </P
+></LI
+><LI
+><A
+NAME="proc.tiempo"
+></A
+><P
+>Programa tareas en el futuro y maneja comandos
+       relacionados con el tiempo (<B
+CLASS="command"
+>at</B
+>,
+       <B
+CLASS="command"
+>date</B
+>, <B
+CLASS="command"
+>sleep</B
+>,
+       <B
+CLASS="command"
+>time</B
+>, <B
+CLASS="command"
+>crontab</B
+>). 
+      </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-procesos-y-tareas"
+>Lectura: Procesos y tareas</A
+></H2
+><P
+>Un sistema Linux típico puede prestar muchos servicios
+     simultáneamente, puede ser servidor de web, al tiempo que es
+     servidor de correo electrónico, puede atender varios usuarios y
+     cada usuario puede estar realizando simultáneamente diversas
+     acciones.  Por esto Linux es llamado un sistema multitarea.
+   </P
+><P
+>A cada acción en un sistema Linux se le llama proceso.  Un
+     proceso abstrae una acción que el sistema debe realizar,
+     independiente del momento en que debe ejecutarse.  En esta
+     sección se explica como puede controlar procesos y como puede
+     aprovechar al máximo las capacidades multitarea de Linux, por
+     ejemplo realizando diversas labores simultáneamente, o haciendo
+     que la ejecución de un programa continúe después de que usted
+     cierra su sesión (por ejemplo si se trata de un programa que debe
+     correr durante varias horas o días), o incluso programando el
+     inicio de procesos en momentos en los que usted no tiene una
+     sesión abierta (por ejemplo durante la noche --claro está
+     mientras el computador esté encendido a la hora que programe la
+     tarea).
+    </P
+><A
+NAME="AEN3312"
+></A
+><P
+>Abstracción de una labor que el
+     sistema debe realizar, un comando creará al menos uno de estos,
+     pueden recibir señales enviadas por el comando
+     <B
+CLASS="command"
+>kill</B
+>.
+    </P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="procesos"
+>Procesos</A
+></H3
+><P
+>Cada proceso tiene asociado un
+     número que lo identifica, un estado que indica como está
+     operando, un grupo que lo asocia con otros procesos, una
+     prioridad que determina su "importancia" con respecto a otros
+     procesos y un dueño que puede controlarlo (normalmente el dueño
+     es el usuario que inicia el proceso).  Todos los procesos
+     comparten el procesador ---su computador normalmente tendrá un
+     solo procesador---, para lograrlo, cada proceso emplea el
+     procesador durante un intervalo corto de tiempo y después
+     duerme
+      <A
+NAME="AEN3319"
+HREF="#FTN.AEN3319"
+>[1]</A
+> o se bloquea para dar posibilidad a otro proceso de
+      emplearlo (el orden en el que se ejecutan depende de la
+      prioridad de cada proceso).  Normalmente junto con cada programa
+      iniciado por el usuario se inicia un
+      proceso
+      <A
+NAME="AEN3327"
+HREF="#FTN.AEN3327"
+>[2]</A
+>, que a su vez puede iniciar otros procesos formando
+      así un árbol; puede examinar tal árbol con el programa
+      <B
+CLASS="command"
+>pstree</B
+>.  Existen también procesos que no son
+      iniciados explícitamente por un usuario, por ejemplo procesos
+      iniciados durante el arranque del sistema o por X-Window, tales
+      procesos generalmente pueden ser controlados sólo por el
+      administrador del sistema ---quien también podría controlar los
+      procesos de los usuarios.
+     </P
+><A
+NAME="AEN3332"
+></A
+><P
+>Comando para ver el árbol de
+      procesos</P
+><P
+>Cada programa o tubería que inicie desde el intérprete de
+      comando se ejecutará en un nuevo proceso que por defecto estará
+      en primer plano
+     <A
+NAME="AEN3336"
+HREF="#FTN.AEN3336"
+>[3]</A
+>
+      , es decir que <SPAN
+CLASS="application"
+>bash</SPAN
+> suspenderá su
+      ejecución y la reanudará cuando el programa que inició termine.
+      Si desea iniciar un programa (o una secuencia de programas
+      unidos por tuberías) en segundo plano
+     <A
+NAME="AEN3340"
+HREF="#FTN.AEN3340"
+>[4]</A
+>
+      , agregué al final del comando un espacio y el carácter
+      '<TT
+CLASS="literal"
+>&#38;</TT
+>'.  Esto es útil cuando debe ejecutar
+      un programa no interactivo que toma bastante tiempo en
+      completarse, porque mientras la ejecución del programa se
+      completa puede continuar trabajando en el intérprete de comandos
+      ---el programa que inicie se ejecutará en segundo plano mientras
+      <TT
+CLASS="literal"
+>bash</TT
+> continua ejecutándose en primer plano.
+      Por ejemplo la conversión de DVI a PostScript (ver <A
+HREF="c2347.htm#sistemas-para-preparar-documentos"
+>Sistemas para
+       preparar documentos</A
+>) de un documento grande puede tomar
+      bastante tiempo, para realizar la labor en el fondo puede
+      emplear:</P
+><PRE
+CLASS="screen"
+>&#13;dvi2ps -o salida.ps entrada.dvi &#38;
+</PRE
+><P
+>&#13;      o aún mejor redireccionando salida estándar a archivos para que
+      no se mezclen con su sesión con <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      (error estándar sigue redireccionado a consola así que verá en
+      su sesión con <SPAN
+CLASS="application"
+>bash</SPAN
+> los errores que
+      puedan producirse):
+     </P
+><PRE
+CLASS="screen"
+>&#13;dvi2ps -o salida.ps entrada.dvi &#62;log  &#38;
+</PRE
+><P
+>&#13;      Cuando inicia un programa (o una tubería) en segundo plano,
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> reanuda su ejecución inmediatamente,
+      presenta el número de tarea que asignó al comando y a
+      continuación el número del proceso.
+    </P
+><A
+NAME="AEN3353"
+></A
+><P
+>Caracter empleado para indicar que un
+      comando se ejecute en segundo plano,, se pone después del nombre
+      del comando.</P
+><P
+>Además de <B
+CLASS="command"
+>pstree</B
+>, un usuario puede ver
+      sus procesos con el programa <B
+CLASS="command"
+>ps</B
+> (con la
+      opción <TT
+CLASS="option"
+>-e</TT
+>, <B
+CLASS="command"
+>ps</B
+> muestra todos
+      los procesos del sistema).  Junto con cada proceso
+      <B
+CLASS="command"
+>ps</B
+> presenta: identificación del proceso; la
+      terminal en la que presenta información, en caso de que funcione
+      de forma interactiva (por ejemplo una consola virtual como
+      <TT
+CLASS="literal"
+>tty1</TT
+> o una terminal de X-Window como
+      <TT
+CLASS="literal"
+>pts/0</TT
+>); el estado del proceso y el tiempo que
+      ha usado el procesador ---el resto del tiempo que el proceso
+      haya existido ha estado durmiendo o esperando algún evento o
+      recurso.  Para examinar interactivamente los procesos de un
+      sistema pueden emplearse los programas <B
+CLASS="command"
+>top</B
+> o
+      <B
+CLASS="command"
+>gtop</B
+>, los cuales además de presentar los
+      procesos y refrescar continuamente sus estadísticas, permiten
+      enviar señales a cada proceso (entre otras diferencias
+      <B
+CLASS="command"
+>top</B
+> funciona en modo texto mientras que
+      <TT
+CLASS="literal"
+>gtop</TT
+> es una aplicación Gnome).
+     </P
+><A
+NAME="AEN3368"
+></A
+><P
+>Programa que permite ver los procesos
+      que están desarrollándose.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="senales"
+>Señales</A
+></H3
+><P
+>En ocasiones usted deseará terminar algún proceso, por
+      ejemplo porque deja de responder o tarda demasiado en
+      completarse; para hacerlo puede emplear el programa
+      <B
+CLASS="command"
+>kill</B
+> para enviarle una señal de terminación.
+      Una señal es como un "llamado de atención" que se hace a un
+      proceso en situaciones excepcionales (por ejemplo errores),
+      pueden ser producidas por otros procesos, por el usuario o por
+      el sistema operativo y en la mayoría de los casos conducen a la
+      terminación del proceso que recibe la señal.  Hay diversos tipos
+      de señales, cada una tiene un número, un nombre que la
+      identifica y una acción predefinida (que generalmente puede ser
+      cambiada por el proceso).  Un usuario puede enviar una señal a
+      un proceso con el programa <B
+CLASS="command"
+>kill</B
+> seguido de la
+      señal que enviará y del proceso que la recibirá:</P
+><PRE
+CLASS="screen"
+>&#13;kill -SIGTERM 945
+</PRE
+><P
+>&#13;      Este ejemplo envía la señal <TT
+CLASS="literal"
+>SIGTERM</TT
+> al
+     proceso con identificación 945 (en vez de
+     <TT
+CLASS="literal"
+>SIGTERM</TT
+> pudo haberse usado 15 que es el número
+     que corresponde a esa señal).  Puede consultar un listado de
+     todas las señales y sus números con <B
+CLASS="command"
+>kill -l</B
+>.
+     </P
+><A
+NAME="AEN3382"
+></A
+><P
+>Programa empleado para enviar
+      señales a un proceso, por ejemplo permite enviar la señal
+      <TT
+CLASS="literal"
+>SIGTERM</TT
+> que termina un proceso.</P
+><P
+>A continuación se presenta una breve descripción de algunas
+      señales comúnmente empleadas por usuarios:
+     </P
+><A
+NAME="AEN3387"
+></A
+><P
+>Señal empleada para solicitar la
+      terminación de un proceso, su número es 15.</P
+><A
+NAME="AEN3390"
+></A
+><P
+>Señal empleada para terminar un
+      proceso de forma inmediata, su número es 9</P
+><A
+NAME="AEN3393"
+></A
+><P
+>Señal generada cuando un usuario
+      emplea las secuencia de teclas <B
+CLASS="keycap"
+>Control-C</B
+>
+      para terminarlo.</P
+><A
+NAME="AEN3397"
+></A
+><P
+>Señal generada cuando un usuario
+      emplea las secuencia de teclas <B
+CLASS="keycap"
+>Control-\</B
+>
+      para terminarlo y generar una volcado de memoria.</P
+><A
+NAME="AEN3401"
+></A
+><P
+>Señal generada cuando un usuario
+      emplea la secuencia de teclas <B
+CLASS="keycap"
+>Control-z</B
+> para
+      suspender temporalmente la ejecución de un programa.</P
+><A
+NAME="AEN3405"
+></A
+><P
+>Señal que se envia a un proceso para
+      que reanude su ejecución, despues de haberla suspendido con
+      SIGTSTP.</P
+><A
+NAME="AEN3408"
+></A
+><P
+>Señal que por defecto es enviada al
+      salir de <SPAN
+CLASS="application"
+>bash</SPAN
+> a todos los procesos que se
+      ejecutan en segundo plano para terminarlos ---aunque puede
+      iniciarse un proceso que la ignore con
+      <TT
+CLASS="literal"
+>nohup</TT
+>.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="literal"
+>15 SIGTERM</TT
+></DT
+><DD
+><P
+>Esta señal solicita la terminación del proceso que la
+	 recibe.
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>9 SIGKILL</TT
+></DT
+><DD
+><P
+>Esta señal termina el proceso que la recibe de forma
+	 inmediata. Empleela sólo para detener procesos que no
+	 terminan con la señal <TT
+CLASS="literal"
+>SIGTERM</TT
+>.
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>2 SIGINT</TT
+></DT
+><DD
+><P
+>Es la misma señal que se produce cuando un usuario en
+	 un programa interactivo presiona, <B
+CLASS="keycap"
+>Control-C</B
+>
+	 para solicitar su terminación. 
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>3 SIGQUIT</TT
+></DT
+><DD
+><P
+>La misma señal producida por
+	 <B
+CLASS="keycap"
+>Control-\</B
+>, su efecto es análogo al de
+	 <TT
+CLASS="literal"
+>SIGINT</TT
+> pero además actúa como si el
+	 programa hubiera provocado algún error interno (volcando el
+	 contenido de memoria a un archivo <TT
+CLASS="filename"
+>core</TT
+>).
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>20 SIGTSTP</TT
+></DT
+><DD
+><P
+>La misma señal producida por
+	<B
+CLASS="keycap"
+>Control-z</B
+>, su efecto es suspender la
+	ejecución de un proceso ---para reanudarla después.
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>18 SIGCONT</TT
+></DT
+><DD
+><P
+>Reanuda un proceso suspendido previamente por la señal
+	 <TT
+CLASS="literal"
+>SIGTSTP</TT
+>.
+	</P
+></DD
+><DT
+><TT
+CLASS="literal"
+>1 SIGHUP</TT
+></DT
+><DD
+><P
+>Esta señal es enviada por <SPAN
+CLASS="application"
+>bash</SPAN
+>
+	 a todas las tareas que se ejecutan en segundo plano, cuando
+	 el usuario cierra la sesión (por ejemplo al cerrar una
+	 terminal en X-Window o cuando sale de su sesión desde una
+	 consola virtual).  Normalmente un proceso terminará cuando
+	 reciba esta señal, pero puede lograrse que el proceso
+	 continué (es decir que ignore la señal
+	 <TT
+CLASS="literal"
+>SIGHUP</TT
+>) si el comando se inició con
+	 <TT
+CLASS="literal"
+>nohup</TT
+> ---que evita que el programa reciba
+	 la señal <TT
+CLASS="literal"
+>SIGHUP</TT
+>) o si durante su ejecución
+	 se indicó a <TT
+CLASS="literal"
+>bash</TT
+> no enviarle esta señal
+	 cuando se cierre la sesión, empleando el comando
+	 <TT
+CLASS="literal"
+>disown</TT
+>.  Esto es muy útil cuando debe
+	 dejar corriendo un proceso muy demorado (horas o días)
+	 mientras usted no tiene una sesión abierta, por ejemplo para
+	 ejecutar el programa
+	 <B
+CLASS="command"
+>make</B
+>
+	 <A
+NAME="AEN3463"
+HREF="#FTN.AEN3463"
+>[5]</A
+> en segundo plano, redireccionado salida estándar
+	 al archivo <TT
+CLASS="filename"
+>sm</TT
+>, error estándar a
+	 <TT
+CLASS="filename"
+>esm</TT
+> y lograr que continue después de que
+	 se cierre la sesión:</P
+><PRE
+CLASS="screen"
+>&#13;nohup make &#62; sm 2&#62; esm &#38;
+</PRE
+></DD
+></DL
+></DIV
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="control-de-tareas"
+>Control de tareas</A
+></H3
+><P
+>Además de las facilidades para controlar procesos que se
+      han presentado en esta sección, <SPAN
+CLASS="application"
+>bash</SPAN
+>
+      ofrece "control de tareas".  Una tubería o un programa que se
+      ejecute desde <SPAN
+CLASS="application"
+>bash</SPAN
+> tiene asociado un
+      número de tarea, diferente al número del proceso.  El número de
+      la tarea aparece entre paréntesis cuadrados después de ejecutar
+      un programa en segundo plano.  La lista de las tareas de una
+      sesión de <SPAN
+CLASS="application"
+>bash</SPAN
+>, puede verse con el
+      comando <TT
+CLASS="literal"
+>jobs</TT
+>, por ejemplo allí vera los
+      programas que inició en segundo plano o que haya suspendido con
+      la tecla <B
+CLASS="keycap"
+>Control-z</B
+>.  Con el comando
+      <TT
+CLASS="literal"
+>fg</TT
+> puede poner en primer plano una tarea que
+      esté en segundo plano, es decir reanudar la aplicación
+      permitiendo que controle la consola mientras que
+      <SPAN
+CLASS="application"
+>bash</SPAN
+> se suspende.  Por ejemplo si
+      está editando un correo electrónico con <B
+CLASS="command"
+>mail</B
+>,
+      suspende la edición con <B
+CLASS="keycap"
+>Control-z</B
+> y después
+      desde <SPAN
+CLASS="application"
+>bash</SPAN
+> emplea
+      <B
+CLASS="command"
+>jobs</B
+> verá algo como:</P
+><PRE
+CLASS="screen"
+>&#13;[1]+ Stopped          mail amigo@micolegio.edu.co
+</PRE
+><P
+>&#13;      que indica que el programa <B
+CLASS="command"
+>mail</B
+> esta
+      suspendido y su número de tarea es 1.  Para
+     <SPAN
+CLASS="application"
+>bash</SPAN
+> los números precedidos del caracter
+     '<TT
+CLASS="literal"
+>%</TT
+>' indican tareas, así que para reanudar su
+      ejecución en primer plano puede usar:</P
+><PRE
+CLASS="screen"
+>&#13;fg %1
+</PRE
+><P
+>&#13;      claro que <B
+CLASS="command"
+>fg</B
+> le permite emplear el nombre del
+      programa o sus primeras letras en lugar de
+      <TT
+CLASS="literal"
+>%1</TT
+>, omitir el símbolo <TT
+CLASS="literal"
+>%</TT
+>, o
+      incluso si emplea el símbolo <TT
+CLASS="literal"
+>%</TT
+> puede omitir
+      <TT
+CLASS="literal"
+>fg</TT
+>.  Así que los siguientes comandos son
+      equivalentes al ejemplo anterior:</P
+><PRE
+CLASS="screen"
+>&#13;fg ma
+fg 1
+%1
+</PRE
+><A
+NAME="AEN3496"
+></A
+><P
+>Comando que permite ver
+      identificador y nombre de las tareas iniciadas desde una sesión
+      de <SPAN
+CLASS="application"
+>bash</SPAN
+> o suspendidas con
+      <B
+CLASS="keycap"
+>Control-Z</B
+>.</P
+><A
+NAME="AEN3502"
+></A
+><P
+>Comando que permite poner en primer
+      plano una tarea suspendida o que está en segundo plano.</P
+><P
+>&#13;      Otro comando que le permite controlar tareas desde
+     <SPAN
+CLASS="application"
+>bash</SPAN
+> es <B
+CLASS="command"
+>bg</B
+> el cual
+     le permite ejecutar en segundo plano un programa que está
+     suspendido.  Por ejemplo si inicia una impresión de un documento
+     postscript que imprime 2 páginas del original en una con:</P
+><PRE
+CLASS="screen"
+>&#13;a2ps ­­columns=2 documento.ps
+</PRE
+><P
+>&#13;      puede suspenderla con <B
+CLASS="keycap"
+>Control-z</B
+>, y continuarla
+      en segundo plano con <B
+CLASS="command"
+>bg -</B
+> (- es una
+      convención que indica la tarea más reciente) o suponiendo que el
+      número de tarea es 1, con <B
+CLASS="command"
+>bg %1</B
+> o con
+      <TT
+CLASS="literal"
+>%1 &#38;</TT
+>.
+     </P
+><A
+NAME="AEN3515"
+></A
+><P
+>Comando que permite poner en
+     segundo plano y continuar una tarea suspendida.</P
+><P
+>Note que cuando suspende un programa con
+      <B
+CLASS="keycap"
+>Control-z</B
+>, la ejecución se
+      <SPAN
+><I
+CLASS="emphasis"
+>suspende</I
+></SPAN
+>, si desea continuarla en segundo
+      plano debe reanudarla en segundo plano con
+      <B
+CLASS="command"
+>bg</B
+>.
+    </P
+><P
+>La tecla Control seguida de esta
+     letra permite suspender la ejecución de un programa, i.e envia la
+     señal SIGTSTP ---puede reanudarse con los comandos
+     <B
+CLASS="command"
+>fg</B
+> o <B
+CLASS="command"
+>bg</B
+> que envian la señal
+     SIGCONT.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="tiempo"
+>Tiempo</A
+></H3
+><P
+>Usted también puede programar cuando ejecutar un proceso
+      con el programa <B
+CLASS="command"
+>at</B
+> o eventualmente puede
+      programar eventos periódicos con <B
+CLASS="command"
+>cron</B
+>.  Antes
+      de introducirlos, describimos algunos programas relacionados con
+      tiempo:
+     </P
+><A
+NAME="AEN3531"
+></A
+><P
+>Comando que permite ver la hora del
+     sistema, al administrador le permite también establecerla.</P
+><A
+NAME="AEN3534"
+></A
+><P
+>Comando interno de bash para medir
+      el tiempo que un programa requiere para ejecutarse.</P
+><A
+NAME="AEN3538"
+></A
+><P
+>Programa que duerme un proceso
+      durante un tiempo, el tiempo (por defecto en segundos) se
+      especifica a continuación del comando.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><B
+CLASS="command"
+>date</B
+></DT
+><DD
+><P
+>Programa para ver o poner la fecha y hora del sistema
+	 (aunque sólo puede ser cambiada por el administrador).  Por
+	 defecto presenta la hora local de acuerdo a la zona
+	 geográfica donde esté el computador que está usando, con la
+	 opción <TT
+CLASS="option"
+>-u</TT
+> presenta la hora en el meridiano
+	 0 (i.e tiempo universal coordinado).  El administrador puede
+	 establecer la fecha y la hora con la opción
+	 <TT
+CLASS="option"
+>-s</TT
+> seguida de la fecha y/o hora entre
+	 comillas.  La información que el comando
+	 <B
+CLASS="command"
+>date</B
+> presenta puede ser desplegada con un
+	 formato diferente con las opciones <TT
+CLASS="option"
+>-I</TT
+> y
+	 <TT
+CLASS="option"
+>-R</TT
+>.
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>time</B
+></DT
+><DD
+><P
+>Es un comando interno de <SPAN
+CLASS="application"
+>bash</SPAN
+>, que
+	 permite medir el tiempo que emplea la ejecución de un
+	 programa.  Por ejemplo:</P
+><PRE
+CLASS="screen"
+>&#13;time cat /etc/hosts
+</PRE
+><P
+>&#13;	 ejecuta el programa <B
+CLASS="command"
+>cat</B
+> con argumento
+	 <TT
+CLASS="filename"
+>/etc/hosts</TT
+> y después presenta el tiempo
+	 real, de usuario y del sistema que requirió la operación.  La
+	 diferencia en estos tiempos se debe a las diversas tareas que
+	 Linux realiza.  Tiempo real se refiere a el tiempo que
+	 transcurre desde que se inicia el programa hasta que este
+	 termina (sumando tiempos de otros procesos), el tiempo que
+	 emplea sólo el proceso es la suma del tiempo de usuario y
+	 tiempo del sistema (el primero indica tiempo realizando
+	 operaciones fuera del kernel y el segundo tiempo dentro del
+	 kernel).
+	</P
+></DD
+><DT
+><B
+CLASS="command"
+>sleep</B
+></DT
+><DD
+><P
+>Este programa duerme el proceso en el que se ejecuta
+	 durante un tiempo, por defecto especificado en segundos.
+	 Pueden emplearse los posfijos <TT
+CLASS="literal"
+>s</TT
+>,
+	 <TT
+CLASS="literal"
+>m</TT
+>, <TT
+CLASS="literal"
+>h</TT
+> y
+	 <TT
+CLASS="literal"
+>d</TT
+> para indicar segundos, minutos, horas o
+	 días.  Por ejemplo para dormir un proceso durante 10 segundos
+	 <B
+CLASS="command"
+>sleep 10</B
+>.
+
+	</P
+></DD
+></DL
+></DIV
+><P
+>&#13;     <SPAN
+CLASS="application"
+>bash</SPAN
+> puede ejecutar diversos programas y
+     comandos uno después de otro cuando se separan con punto y coma
+     ";", puede aprovechar esto y el programa
+     <B
+CLASS="command"
+>sleep</B
+>, para ejecutar tareas después de cierto
+     intervalo de tiempo.  Por ejemplo para iniciar la conversión de
+     un documento de PostScript a PDF (ver <A
+HREF="c2347.htm#sistemas-para-preparar-documentos"
+>Sistemas para
+     preparar documentos</A
+>) 30 minutos después de dar el comando:
+<PRE
+CLASS="screen"
+>&#13;sleep 30m ; pdf2ps carta.pdf carta.ps
+</PRE
+>
+</P
+><P
+>Sin embargo una mejor forma de iniciar tareas en el futuro
+      es con el comando <B
+CLASS="command"
+>at</B
+>.  Este comando recibe la
+      hora a la que debe ejecutarse el o los programas que se le den
+      por entrada estándar (puede especificar un archivo con comandos
+      con la opción <TT
+CLASS="option"
+>-f</TT
+>).  Por ejemplo:</P
+><PRE
+CLASS="programlisting"
+>&#13;at 8:40PM today &#60;&#60; EOF
+pdf2ps carta.pdf carta.ps
+EOF
+</PRE
+><P
+>&#13;      convertirá el documento <TT
+CLASS="filename"
+>carta.pdf</TT
+> a formato
+      postscript a las 8:40PM del mismo día.  La fecha puede
+      especificarse de muchas maneras, por ejemplo <TT
+CLASS="literal"
+>20:40
+      20.01.2005</TT
+> o <TT
+CLASS="literal"
+>now+2 hours</TT
+>.  Con el
+      comando <B
+CLASS="command"
+>atq</B
+> puede ver las tareas programadas
+      y con <B
+CLASS="command"
+>atrm</B
+> puede eliminar una tarea
+      especificando el número (el número de cada tarea programada es
+      mostrado por <B
+CLASS="command"
+>atq</B
+>).  Cuando programa una tarea
+      con <B
+CLASS="command"
+>at</B
+>, esta se ejecutará aún cuando usted no
+      tenga una sesión abierta y mientras el sistema esté operando a
+      la hora programada.
+     </P
+><A
+NAME="AEN3590"
+></A
+><P
+>Programa para programar el inicio
+      de un proceso a una hora o fecha futura.</P
+><A
+NAME="AEN3594"
+></A
+><P
+>Programa para examinar la lista de
+      procesos cuya ejecución fue programada con el comando
+     <B
+CLASS="command"
+>at</B
+>.</P
+><A
+NAME="AEN3599"
+></A
+><P
+>Programa para eliminar la ejecución
+     de un proceso futuro programado con <B
+CLASS="command"
+>at</B
+>.</P
+><P
+>Para que un usuario pueda programar eventos periódicos con
+      <B
+CLASS="command"
+>cron</B
+>, el administrador del sistema debe
+      otorgarle permiso.  Si usted tiene el permiso podrá emplear el
+      programa <B
+CLASS="command"
+>crontab</B
+> para agregar acciones que se
+      ejecutaran periodicamente.  Si teclea sólo <B
+CLASS="command"
+>crontab
+      -e</B
+> entrará al editor que tenga configurado (variable
+      <TT
+CLASS="envar"
+>EDITOR</TT
+> ver <A
+HREF="x3773.htm#ambiente-y-variables-de-ambiente"
+>Ambiente y variables
+      de ambiente</A
+>) para modificar su archivo de acciones
+      periódicas
+      (<TT
+CLASS="filename"
+>/var/spool/cron/crontabs/<TT
+CLASS="replaceable"
+><I
+>usuario</I
+></TT
+></TT
+>),
+      un ejemplo de tal archivo es:
+    </P
+><A
+NAME="AEN3612"
+></A
+><P
+>Programa que permite a un usuario
+      manejar su archivo de acciones periodicas, ese archivo reside en
+     <TT
+CLASS="filename"
+>/var/spool/cron/crontab</TT
+> y es usado por el
+      proceso <B
+CLASS="command"
+>cron</B
+> para determinar que tareas
+     ejecutar.</P
+><PRE
+CLASS="programlisting"
+>&#13;# Mi archivo de acciones periodicas para cron
+PATH=/usr/bin:/usr/local/bin
+0 0 24 12 *	$HOME/cron/recuerda1.sh   # Cumpleaños
+0 * * * *	$HOME/cron/hora.sh
+</PRE
+><P
+>&#13;     que establece la variable de ambiente <TT
+CLASS="envar"
+>PATH</TT
+> que
+     se usará al realizar las acciones y especifica dos comandos por
+     ejecutar periodicamente.  El script
+     <TT
+CLASS="filename"
+>$HOME/cron/recuerda1.sh</TT
+> se ejecutará el 24
+     de diciembre de cada año a las 00:00 (medianoche), mientras que
+     <TT
+CLASS="filename"
+>$HOME/cron/hora.sh</TT
+> se ejecutara cada hora (a
+     las 0:00, 1:00, 2:00, ... 23:00), todos los días, todos los
+     meses, todos los años.  Un archivo para
+     <B
+CLASS="command"
+>crontab</B
+> puede tener líneas con comentarios
+     (iniciadas con el caracter '#'), líneas que definen variables de
+     ambiente y líneas que especifican acciones periodicas compuestas
+     por 6 campos y eventualmente seguidas por un comentario.   
+    </P
+><P
+>Los campos de estas acciones se separan unos de otros con
+      uno o más espacios y son en orden: minuto, hora, dia del mes,
+      mes, dia de la semana y comando por ejecutar.
+      <B
+CLASS="command"
+>cron</B
+> es un proceso que cada minuto examina
+      los archivos <B
+CLASS="command"
+>crontab</B
+> de los usuarios y
+      ejecuta los comandos cuyo tiempo concuerde con la hora del
+      sistema.  El tiempo de un comando concuerda con la hora del
+      sistema si la hora, los minutos, el mes y bien el día del mes o
+      bien el día de la semana
+     <A
+NAME="AEN3626"
+HREF="#FTN.AEN3626"
+>[6]</A
+>
+      concuerdan.  La hora del sistema concuerda con la hora de una
+      acción si ambas son iguales o sni la hora de la acción es el
+      caracter '*', lo analogo ocurre con los minutos, meses y días.
+     </P
+><P
+>Puede examinar su archivo de acciones periódicas bien
+      editandolo o con <B
+CLASS="command"
+>crontab -l</B
+>, para borrarlo
+      puede usar <B
+CLASS="command"
+>crontab -r</B
+>, puede remplazar sus
+      acciones periodicas con las de un archivo (digamos
+      <TT
+CLASS="filename"
+>microntab</TT
+>) con:
+<PRE
+CLASS="screen"
+>&#13;crontab microntab
+</PRE
+>
+     </P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-procesos-y-tareas"
+>Lecturas recomendadas: Procesos y tareas</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Los programas <B
+CLASS="command"
+>pstree</B
+>,
+      <B
+CLASS="command"
+>ps</B
+>, <B
+CLASS="command"
+>top</B
+> y
+      <B
+CLASS="command"
+>gtop</B
+> tiene muchas opciones que permiten
+      configurar qué información presentar y la forma de presentarla,
+      puede consultarlas en el manual ---la documentación de
+      <B
+CLASS="command"
+>gtop</B
+> puede consultarse con el sistema de
+      ayuda de Gnome (ver <A
+HREF="x836.htm#lectura-busqueda-y-consulta-de-documentacion"
+>Lectura
+      Búsqueda y consulta de documentación</A
+>).
+      </P
+></LI
+><LI
+><P
+>Puede consultar más sobre señales en la página del manual
+      sobre <B
+CLASS="command"
+>kill</B
+>, también puede consultar la
+      explicación detallada sobre cada señal que se presenta en el
+      manual info de <TT
+CLASS="literal"
+>libc</TT
+> (Ver (<B
+CLASS="command"
+>info
+      libc</B
+>)).
+      </P
+></LI
+><LI
+><P
+>Podrá encontrar información completa sobre control de
+       tareas en la página del manual correspondiente a
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> (sección Task Control).
+      </P
+></LI
+><LI
+><P
+>Otra explicación en español, sobre procesos y control de
+      tareas está disponible en la sección 3.11 del libro de Matt
+      Welsh "<I
+CLASS="citetitle"
+>Linux: Instalación y Primeros
+      Pasos</I
+>", traducido a español por los miembros del
+      proyecto Lucas: <A
+HREF="http://lucas.hispalinux.es/Manuales-LuCAS/LIPP/lipp-1.1-html-2/lipp3.htm#3.11"
+TARGET="_top"
+>http://lucas.hispalinux.es/Manuales-LuCAS/LIPP/lipp-1.1-html-2/lipp3.htm#3.11</A
+>
+      </P
+></LI
+><LI
+><P
+>La descripción del comando <B
+CLASS="command"
+>time</B
+> que se
+       presentó en esta sección corresponde a un comando interno de
+       <SPAN
+CLASS="application"
+>bash</SPAN
+>, puede consultar más sobre la
+       misma en la página del manual de
+       <SPAN
+CLASS="application"
+>bash</SPAN
+>.  Su sistema tiene también un
+       programa <TT
+CLASS="filename"
+>/usr/bin/time</TT
+> que se emplea de
+       forma análoga pero que puede presentar más información de los
+       recursos empleados durante la ejecución de un programa. See
+       (time), para más información.  </P
+></LI
+><LI
+><P
+>Puede consultar más sobre <B
+CLASS="command"
+>at</B
+> en la
+      página del manual.  La sintaxis precisa del formato de fechas y
+      horas que <B
+CLASS="command"
+>at</B
+> acepta, puede consultarla en
+      <TT
+CLASS="filename"
+>/usr/doc/at/timespec</TT
+>.  </P
+></LI
+><LI
+><P
+>El programa <B
+CLASS="command"
+>batch</B
+> permite ejecutar un
+       proceso cuando la carga en el sistema es baja.  El programa
+       <B
+CLASS="command"
+>nice</B
+> inicia un proceso con una prioridad
+       especificada por el usuario, la prioridad de un proceso que se
+       está ejecutando puede cambiarse con el programa
+       <B
+CLASS="command"
+>renice</B
+>.  La información completa sobre estos
+       programas puede verla en las páginas del manual.
+      </P
+></LI
+><LI
+><P
+>El comando <B
+CLASS="command"
+>trap</B
+> permite asociar una
+      secuencia de comandos a una señal, es decir que ciertos
+      programas se ejecuten cuando <SPAN
+CLASS="application"
+>bash</SPAN
+> recibe
+      cierta señal.  Por ejemplo <B
+CLASS="command"
+>trap "rm *.err"
+      SIGTERM</B
+> hará que el comando <B
+CLASS="command"
+>rm
+      *.tmp</B
+> se ejecute cuando <SPAN
+CLASS="application"
+>bash</SPAN
+> reciba
+      la señal <TT
+CLASS="literal"
+>SIGTERM</TT
+>.  Puede consultar más sobre
+      trap en la página del manual de <SPAN
+CLASS="application"
+>bash</SPAN
+>.
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-procesos-y-tareas"
+>Ejercicios: Procesos y tareas</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x3282.htm#proc.proc.1"
+>Revise los procesos que están corriendo en su
+       sistema con los programas <B
+CLASS="command"
+>ps</B
+>,
+       <B
+CLASS="command"
+>pstree</B
+>, <B
+CLASS="command"
+>top</B
+> y
+       <B
+CLASS="command"
+>gtop</B
+>.</A
+></DT
+><DT
+>2. <A
+HREF="x3282.htm#proc.proc.2"
+>¿Qué hace el siguiente comando?
+       <B
+CLASS="command"
+>dvi2ps -o salida.ps entrada.dvi &#62;log 2&#62;err
+       &#38;</B
+></A
+></DT
+><DT
+>3. <A
+HREF="x3282.htm#proc.proc.3"
+>Inicie un proceso que no termine en el fondo
+       (por ejemplo <B
+CLASS="command"
+>cat &#60; /dev/zero &#62;
+       /dev/null</B
+> o <TT
+CLASS="literal"
+>yes</TT
+>), revise su estado
+       empleando <B
+CLASS="command"
+>ps</B
+>, después suspenda el proceso
+       enviando la señal apropiada con <B
+CLASS="command"
+>kill</B
+>, revise
+       nuevamente el estado y compruebe que es <TT
+CLASS="literal"
+>T</TT
+>;
+       reanude la ejecución enviando la señal
+       <TT
+CLASS="literal"
+>SIGCONT</TT
+>; compruebe que el estado sea
+       nuevamente en ejecución y finalmente termine el proceso
+       enviando la señal <TT
+CLASS="literal"
+>SIGTERM</TT
+>.</A
+></DT
+><DT
+>4. <A
+HREF="x3282.htm#proc.tareas.1"
+>Inicie un programa interactivo (que requiera
+       interacción con el usuario, por ejemplo
+       <SPAN
+CLASS="application"
+>vi</SPAN
+>), desde
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> y después de iniciado
+       suspéndalo.  Revise entonces la lista de procesos y compruebe
+       que el nuevo proceso esté y que su estado sea
+       suspendido. Después reinicielo y finalmente eliminelo.</A
+></DT
+><DT
+>5. <A
+HREF="x3282.htm#proc.tiempo.1"
+>Mida el tiempo que el siguiente programa tarda
+       en ejecutarse: <B
+CLASS="command"
+>ls -R /usr/doc</B
+>
+      </A
+></DT
+><DT
+>6. <A
+HREF="x3282.htm#proc.tiempo.2"
+>Usando el comando <B
+CLASS="command"
+>at</B
+>
+      haga recordatorios de la fecha de cumpleaños de un familiar, de
+      forma tal que el día anterior le envíe un correo
+      recordando.</A
+></DT
+><DT
+>7. <A
+HREF="x3282.htm#proc.tiempo.3"
+>&#13;	Algunos programas requieren mucho tiempo para ejecutarse
+	(horas o días).  Por ejemplo el siguiente programa para bc(42)
+	que presenta los factores de un número, puede demorarse mucho
+	tiempo para factorizar un número grande.
+       </A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="proc.proc.1"
+></A
+><B
+>1. </B
+>Revise los procesos que están corriendo en su
+       sistema con los programas <B
+CLASS="command"
+>ps</B
+>,
+       <B
+CLASS="command"
+>pstree</B
+>, <B
+CLASS="command"
+>top</B
+> y
+       <B
+CLASS="command"
+>gtop</B
+>.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Basta teclearlos.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="proc.proc.2"
+></A
+><B
+>2. </B
+>¿Qué hace el siguiente comando?
+       <B
+CLASS="command"
+>dvi2ps -o salida.ps entrada.dvi &#62;log 2&#62;err
+       &#38;</B
+></P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Convierte el archivo <B
+CLASS="command"
+>entrada.dvi</B
+> a
+	  PostScript, dejando el resultado en 
+	  <B
+CLASS="command"
+>salida.ps</B
+>.  La operación se realiza en 
+	  segundo plano, la salida estándar es enviada al archivo 
+	  <TT
+CLASS="filename"
+>log</TT
+> y el error estándar al archivo 
+	  <TT
+CLASS="filename"
+>err</TT
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="proc.proc.3"
+></A
+><B
+>3. </B
+>Inicie un proceso que no termine en el fondo
+       (por ejemplo <B
+CLASS="command"
+>cat &#60; /dev/zero &#62;
+       /dev/null</B
+> o <TT
+CLASS="literal"
+>yes</TT
+>), revise su estado
+       empleando <B
+CLASS="command"
+>ps</B
+>, después suspenda el proceso
+       enviando la señal apropiada con <B
+CLASS="command"
+>kill</B
+>, revise
+       nuevamente el estado y compruebe que es <TT
+CLASS="literal"
+>T</TT
+>;
+       reanude la ejecución enviando la señal
+       <TT
+CLASS="literal"
+>SIGCONT</TT
+>; compruebe que el estado sea
+       nuevamente en ejecución y finalmente termine el proceso
+       enviando la señal <TT
+CLASS="literal"
+>SIGTERM</TT
+>.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	<PRE
+CLASS="screen"
+>&#13;yes &#38; 
+ps -e 
+kill -SIGTSTP <TT
+CLASS="replaceable"
+><I
+>n_p</I
+></TT
+>
+ps -e 
+kill -SIGCONT <TT
+CLASS="replaceable"
+><I
+>n_p</I
+></TT
+> 
+ps -e 
+kill -SIGTERM <TT
+CLASS="replaceable"
+><I
+>n_p</I
+></TT
+></PRE
+></P
+><P
+>&#13;	Tenga en cuenta que <TT
+CLASS="replaceable"
+><I
+>n_p</I
+></TT
+> es el
+	número de proceso que tenga el proceso (que verá con el
+	primer <B
+CLASS="command"
+>ps -e</B
+>).</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="proc.tareas.1"
+></A
+><B
+>4. </B
+>Inicie un programa interactivo (que requiera
+       interacción con el usuario, por ejemplo
+       <SPAN
+CLASS="application"
+>vi</SPAN
+>), desde
+       <SPAN
+CLASS="application"
+>bash</SPAN
+> y después de iniciado
+       suspéndalo.  Revise entonces la lista de procesos y compruebe
+       que el nuevo proceso esté y que su estado sea
+       suspendido. Después reinicielo y finalmente eliminelo.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Una vez esté ejecutando <B
+CLASS="command"
+>vi</B
+>, presione
+	  <B
+CLASS="keycap"
+>Ctrl</B
+>-<B
+CLASS="keycap"
+>Z</B
+> para interrumpir
+	  sesión e ir a línea de comandos.  Desde la línea de comandos
+	  vea los procesos con <B
+CLASS="command"
+>ps</B
+>, regrese entonces
+	  al proceso interrumpido con <B
+CLASS="command"
+>fg %-</B
+>. 
+	  Vuelva a interrumpir con <B
+CLASS="keycap"
+>Ctrl</B
+>-<B
+CLASS="keycap"
+>Z</B
+>
+	  y termine el proceso con <B
+CLASS="command"
+>kill %-</B
+>.
+      </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="proc.tiempo.1"
+></A
+><B
+>5. </B
+>Mida el tiempo que el siguiente programa tarda
+       en ejecutarse: <B
+CLASS="command"
+>ls -R /usr/doc</B
+>
+      </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>time ls -R /usr/doc</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="proc.tiempo.2"
+></A
+><B
+>6. </B
+>Usando el comando <B
+CLASS="command"
+>at</B
+>
+      haga recordatorios de la fecha de cumpleaños de un familiar, de
+      forma tal que el día anterior le envíe un correo
+      recordando.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	<PRE
+CLASS="screen"
+> 
+at 10:00 4.06.1977 &#60;&#60; FIN1 
+mail $(USERNAME)@localhost &#60;&#60; FIN2
+Acuerdese 
+FIN2 
+FIN1</PRE
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="proc.tiempo.3"
+></A
+><B
+>7. </B
+>
+	Algunos programas requieren mucho tiempo para ejecutarse
+	(horas o días).  Por ejemplo el siguiente programa para bc(42)
+	que presenta los factores de un número, puede demorarse mucho
+	tiempo para factorizar un número grande.
+       </P
+><PRE
+CLASS="programlisting"
+>&#13;     define factores(x) {
+          f=2;
+          maxf=x/f;
+          while (f&#60;=maxf) {
+            if (x%f==0)
+              { x=x/f; maxf=x/f; print f,"\n"; } else { f=f+1; }
+            if (f%100000==0) { print "*"; }
+         }
+         return (x);
+       }
+</PRE
+><P
+>&#13;	Puede entrar a <SPAN
+CLASS="application"
+>bc</SPAN
+> y teclear el
+	programa presentado, después probarlo por ejemplo con
+	<TT
+CLASS="literal"
+>factores(10)</TT
+> --que indica que se debe
+	factorizar el número 10-- el cual presentará como respuesta 2
+	y 5. El objetivo de este ejercicio es factorizar
+	<A
+NAME="AEN3759"
+HREF="#FTN.AEN3759"
+>[7]</A
+>
+	el número 129098564527119574834 empleando
+	<SPAN
+CLASS="application"
+>bc</SPAN
+>, el programa presentado y lo que
+	ha aprendido sobre procesos en esta guía, opcionalmente
+	también se quiere saber el tiempo que toma la factorización.
+	Ayudas: Emplee redireccionamiento y
+	<SPAN
+CLASS="application"
+>nohup</SPAN
+>. Para salir de
+	<SPAN
+CLASS="application"
+>bc</SPAN
+> emplee <TT
+CLASS="literal"
+>quit</TT
+>
+       </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Crear archivo con comandos para bc (digamos
+	  <TT
+CLASS="filename"
+>factores.bc</TT
+>) con la 
+	  definición de la función <TT
+CLASS="literal"
+>factores</TT
+> presentada
+	  seguida de <TT
+CLASS="literal"
+>factores(129098564527119574834)</TT
+> y de
+	  <TT
+CLASS="literal"
+>quit</TT
+>.  Ejecutar: <PRE
+CLASS="screen"
+>&#13;nohup /usr/bin/time -o restime.txt bc &#60; factores.bc &#62; resfactor.txt &#38; </PRE
+>
+	 Que requiere 12 minutos en un Pentium MMX de 266Mhz para dar 
+	 2 12323 25849 202642820971</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3319"
+HREF="x3282.htm#AEN3319"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Dormido en este contexto se refiere a un estado al cual
+	entra un proceso durante cierto intervalo de tiempo para dar
+	oportunidad a otros procesos de emplear el procesador (en
+	<B
+CLASS="command"
+>ps</B
+> se identifica con la letra
+	<TT
+CLASS="literal"
+>S</TT
+>). Un proceso está en estado bloqueado
+	(letra <TT
+CLASS="literal"
+>D</TT
+> en <B
+CLASS="command"
+>ps</B
+>) si está
+	esperando un recurso que otro proceso está ocupando ---por
+	ejemplo un dispositivo.  El estado suspendido (letra
+	<TT
+CLASS="literal"
+>T</TT
+> en <B
+CLASS="command"
+>ps</B
+>) indica que el
+	usuario solicitó suspender el proceso para reanudarlo
+	después.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3327"
+HREF="x3282.htm#AEN3327"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Puede hacerse que un programa corra en el mismo proceso
+	del intérprete de comandos ejecutándolo con el comando
+	<B
+CLASS="command"
+>exec</B
+>.  Con <B
+CLASS="command"
+>exec</B
+> también
+	puede redireccionarse descriptores de archivos del intérprete
+	de comandos.
+       </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3336"
+HREF="x3282.htm#AEN3336"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Primer plano: del inglés
+     <I
+CLASS="foreignphrase"
+>foreground</I
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3340"
+HREF="x3282.htm#AEN3340"
+>[4]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Fondo: del inglés
+	<I
+CLASS="foreignphrase"
+>background</I
+></P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3463"
+HREF="x3282.htm#AEN3463"
+>[5]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+><B
+CLASS="command"
+>make</B
+> se emplea para compilar
+	   rogramas o documentos (como estás guías).  En ocasiones
+	   esta labor puede tomar mucho tiempo.
+	  </P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3626"
+HREF="x3282.htm#AEN3626"
+>[6]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>En un archivo <TT
+CLASS="filename"
+>crontab</TT
+> los días de la
+	semana se especifican con números de 0 a 6, 0 es domingo, 1 lunes
+	y así sucesivamente.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN3759"
+HREF="x3282.htm#AEN3759"
+>[7]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>&#13;	  El problema de factorizar un número es muy importante porque
+	  de su dificultad dependen muchos sistemas de criptografía,
+	  incluso hay premios en dinero para quienes logren factorizar
+	  ciertos números <A
+HREF="http://www.rsasecurity.com/rsalabs/challenges/factoring/numbers.html"
+TARGET="_top"
+>http://www.rsasecurity.com/rsalabs/challenges/factoring/numbers.html</A
+>
+	 </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x2787.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x3773.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><SPAN
+CLASS="application"
+>bash</SPAN
+> y el juego de
+    herramientas</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c2347.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Scripts básicos para <SPAN
+CLASS="application"
+>bash</SPAN
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

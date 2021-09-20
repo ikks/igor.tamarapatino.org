@@ -1,0 +1,551 @@
+<HTML
+><HEAD
+><TITLE
+>Disquetes y CDROM</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Primera exploración de Linux desde
+   la perspectiva de un usuario"
+HREF="c84.htm"><LINK
+REL="PREVIOUS"
+TITLE="Directorios y archivos"
+HREF="x536.htm"><LINK
+REL="NEXT"
+TITLE="Búsqueda y consulta de documentación"
+HREF="x836.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x536.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x836.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="disquetes-y-cdrom"
+>Disquetes y CDROM</A
+></H1
+><DIV
+CLASS="highlights"
+><A
+NAME="AEN751"
+></A
+><P
+></P
+><UL
+><LI
+><A
+NAME="disq.gnome"
+></A
+><P
+>Puede montar y desmotar diskettes y transferir información
+	   empleando GNOME.</P
+></LI
+><LI
+><A
+NAME="disq.com"
+></A
+><P
+>Puede montar y desmontar diskettes desde la línea de
+	   comandos.</P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-disquetes-y-cdrom"
+>Lectura: Disquetes y <SPAN
+CLASS="acronym"
+>CDROM</SPAN
+></A
+></H2
+><P
+>Para transferir información de un computador a otro, o para
+     tener copias de respaldo de alguna información que tenga en su
+     espacio personal, puede emplear disquetes.  En los sistemas Unix
+     antes de poder usar un disquete es necesario "montar" el sistema
+     de archivos del diquete en el árbol de directorios; para realizar
+     esta operación puede bien usar el icono de disquete que encuentra
+     en su escritorio y el botón derecho del ratón o desde un
+     intérprete de comandos teclear:</P
+><PRE
+CLASS="screen"
+>&#13;mount /floppy 
+</PRE
+><A
+NAME="AEN762"
+></A
+><P
+>Comando que puede
+     emplear para montar un disquete (eventualmente en lugar de esto
+     puede emplear un icono en su escritorio).</P
+><A
+NAME="AEN766"
+></A
+><P
+>Comando para desmontar 
+      un disquete.</P
+><P
+>De forma análoga antes de sacar un disquete debe desmontar
+     la unidad, esto también lo podrá hacer con el icono del disquete
+     y el botón derecho del ratón o desde un intérprete de comandos
+     con el comando</P
+><PRE
+CLASS="screen"
+>&#13;umount /floppy
+</PRE
+><P
+>Una vez montado un disquete puede leer o escribir información
+    en el mismo en el directorio <TT
+CLASS="filename"
+>/floppy</TT
+> ---note que cuando desmonta
+    el disquete no se ve información en ese directorio.
+   </P
+><P
+>Linux puede leer y escribir disquetes formateados para otros
+     sistemas operativos, así que puede usar disquetes que emplea por
+    ejemplo en Windows.  Si desea formatear un disquete con un formato
+    que pueda emplear en Windows o DOS emplee el comando
+    <B
+CLASS="command"
+>mformat</B
+> desde un intérprete de
+    comandos.</P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+BORDER="1"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="CENTER"
+><B
+>Aviso</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+><P
+>Al formatear un disquete se pierde la información que antes
+      hubiera.</P
+></TD
+></TR
+></TABLE
+></DIV
+><A
+NAME="AEN778"
+></A
+><P
+>Comando para formatear un disquete
+     que pueda emplearse tanto en Linux como en Windows.</P
+><P
+>Si la distribución de Linux que está usando es Debian, para
+     poder emplear la unidad de disquete, el administrador debe
+     otorgarle permiso ---agregándolo al grupo
+     <TT
+CLASS="literal"
+>floppy</TT
+>.  Sin tal permiso, las instrucciones
+     presentadas en esta guía no le serán de utilidad.
+    </P
+><P
+>Si su computador cuenta con unidad de CDROM y su login tiene
+     permiso para usarlo ---lo tiene si pertenece a los grupos
+     <TT
+CLASS="literal"
+>disk</TT
+> y <TT
+CLASS="literal"
+>cdrom</TT
+>--- puede
+     montar CDROMs con datos y escuchar CDs con música (claro puede
+     escucharlos mientras tenga tarjeta de sonido configurada,
+     parlantes o audifonos y su login esté en el grupo
+     <TT
+CLASS="literal"
+>audio</TT
+>).  Para montar un CD con datos emplee el
+     comando <B
+CLASS="command"
+>mount /cdrom</B
+> y consulte la información
+     en el directorio <TT
+CLASS="filename"
+>/cdrom</TT
+>.
+     Si desea escuchar la música de un CD busque un programa apropiado
+     entre los menús de Gnome.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-disquetes-y-cdrom"
+>Lecturas recomendadas: Disquetes y CDROM</A
+></H2
+><P
+>Como complemento a esta lectura puede consultar de la "<I
+CLASS="citetitle"
+>Guía
+     de usuario de GNOME</I
+>" la sección "Montando y desmontando
+     dispositivos": 
+   </P
+><P
+>&#13;     <A
+HREF="http://www.croftj.net/~barreiro/spanish/gnome-es/gnome-users-guide/new-mount.html"
+TARGET="_top"
+>http://www.croftj.net/~barreiro/spanish/gnome-es/gnome-users-guide/new-mount.html</A
+>.
+   </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-disquetes-y-cdrom"
+>Ejercicios: Disquetes y <SPAN
+CLASS="acronym"
+>CDROM</SPAN
+></A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x749.htm#disq.gnome.1"
+>Averigüe el formato de disquetes que puede
+	    usar en el sistema Linux que tiene disponible y consiga un
+	    disquete con tal formato.</A
+></DT
+><DT
+>2. <A
+HREF="x749.htm#disq.com.1"
+>Ponga el disquete en la unidad, montela
+	    y copie algún archivo (por ejemplo una gráfica).</A
+></DT
+><DT
+>3. <A
+HREF="x749.htm#disq.com.2"
+>Desmonte la unidad y saque el disquete.</A
+></DT
+><DT
+>4. <A
+HREF="x749.htm#disq.com.3"
+>Opcional. Existe otra forma de emplear
+       disquetes que no requiere montarlos ni desmotarlos: con las
+       herramientas <SPAN
+CLASS="application"
+>mtools</SPAN
+>. Consulte la
+       documentación de estas herramientas con el comando
+       <B
+CLASS="command"
+>info mtools</B
+> desde un intérprete de comandos
+       y úselas.</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="disq.gnome.1"
+></A
+><B
+>1. </B
+>Averigüe el formato de disquetes que puede
+	    usar en el sistema Linux que tiene disponible y consiga un
+	    disquete con tal formato.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Puede preguntar al administrador o eventualmente
+	    revisar <TT
+CLASS="filename"
+>/etc/fstab</TT
+>, revise el tipo
+	    de disquete (puede ser <TT
+CLASS="literal"
+>auto</TT
+>,
+	    <TT
+CLASS="literal"
+>ext2</TT
+> o <TT
+CLASS="literal"
+>vfat</TT
+> junto al
+	    dispositivo del disquete (normalmente 
+	    <TT
+CLASS="filename"
+>/dev/fd0</TT
+>). </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="disq.com.1"
+></A
+><B
+>2. </B
+>Ponga el disquete en la unidad, montela
+	    y copie algún archivo (por ejemplo una gráfica).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+	  <PRE
+CLASS="screen"
+>&#13;mount /floppy
+cp /usr/share/pixmaps/uno.jpg /floppy</PRE
+>
+	  </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="disq.com.2"
+></A
+><B
+>3. </B
+>Desmonte la unidad y saque el disquete.</P
+><DIV
+CLASS="warning"
+><P
+></P
+><TABLE
+CLASS="warning"
+BORDER="1"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="CENTER"
+><B
+>Aviso</B
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+><P
+>No olvide desmontar la unidad, antes de sacar un
+	 disquete o de lo contrario puede perder información.</P
+></TD
+></TR
+></TABLE
+></DIV
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>umount /floppy</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="disq.com.3"
+></A
+><B
+>4. </B
+>Opcional. Existe otra forma de emplear
+       disquetes que no requiere montarlos ni desmotarlos: con las
+       herramientas <SPAN
+CLASS="application"
+>mtools</SPAN
+>. Consulte la
+       documentación de estas herramientas con el comando
+       <B
+CLASS="command"
+>info mtools</B
+> desde un intérprete de comandos
+       y úselas.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Para copiar el archivo <TT
+CLASS="filename"
+>~/carta.txt</TT
+> a
+	    la primera unidad de disquetel
+	    <B
+CLASS="command"
+>mcopy ~/carta.txt a:</B
+>.  Para
+	    eliminar <TT
+CLASS="filename"
+>doc.txt</TT
+> se usa
+	    <B
+CLASS="command"
+>mdel a:doc.txt</B
+>, para crear
+	    un directorio <B
+CLASS="command"
+>mmd a:midir</B
+>; y
+	    para formatear el disquete: <B
+CLASS="command"
+>mformat a:</B
+></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x536.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x836.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Directorios y archivos</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c84.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Búsqueda y consulta de documentación</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

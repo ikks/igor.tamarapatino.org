@@ -1,0 +1,1017 @@
+<HTML
+><HEAD
+><TITLE
+>Directorios y archivos</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Primera exploración de Linux desde
+   la perspectiva de un usuario"
+HREF="c84.htm"><LINK
+REL="PREVIOUS"
+TITLE="Escritorio y herramientas Gnome"
+HREF="x449.htm"><LINK
+REL="NEXT"
+TITLE="Disquetes y CDROM"
+HREF="x749.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x449.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 1. Primera exploración de Linux desde
+   la perspectiva de un usuario</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x749.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="directorios-y-archivos"
+>Directorios y archivos</A
+></H1
+><DIV
+CLASS="highlights"
+><A
+NAME="AEN538"
+></A
+><P
+></P
+><UL
+><LI
+><A
+NAME="arch.gnome"
+></A
+><P
+>Emplea el administrador de archivos.
+	 </P
+></LI
+><LI
+><A
+NAME="arch.com"
+></A
+><P
+>Emplea los comandos <B
+CLASS="command"
+>cd</B
+>,
+	   <B
+CLASS="command"
+>ls</B
+> y <B
+CLASS="command"
+>pwd</B
+> desde un
+	   intérprete de comandos.  </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-directorios-y-archivos"
+>Lectura: Directorios y archivos</A
+></H2
+><P
+>La primera vez que inicie una sesión, posiblemente además
+     del escritorio se iniciará un programa que le permite administrar
+     sus archivos empleando el ratón (esta aplicación puede iniciarse
+     también desde los menús de Gnome bajo el nombre
+     <SPAN
+CLASS="guimenuitem"
+>Administrador de Archivos</SPAN
+> o
+     <SPAN
+CLASS="application"
+>gmc</SPAN
+> o bien
+     <SPAN
+CLASS="application"
+>Nautilus</SPAN
+>).  Este programa y el
+     intérprete de comandos son importantes porque le permiten
+     organizar la información que se almacena en discos duros,
+     disquetes y otros dispositivos.
+    </P
+><P
+>Un sistema Linux instalado puede tener más de 1'000.000 de
+     archivos que afortunadamente se identifican por nombres que
+     pueden organizarse dentro de directorios.  En el sistema de
+     archivos de Linux, los directorios se organizan a manera de árbol
+     (un directorio puede contener otros directorios distintos) a
+     partir de un directorio principal llamado directorio raiz y que
+     se denota por '<TT
+CLASS="filename"
+>/</TT
+>'. Cada
+     directorio puede contener otros directorios o nombres de
+     archivos.  Un archivo es información de un mismo tipo localizada
+     en algún dispositivo de almacenamiento junto con atributos como:
+     fecha de creación, fecha de última actualización, login del
+     dueño, grupo al que pertenece y permisos.  Cada archivo puede
+     tener diversos nombres en diversos directorios, cada nombre es
+     como un enlace a la información del archivo.
+    </P
+><A
+NAME="AEN555"
+></A
+><P
+>En el árbol de directorios, es el
+     directorio del cual se desprenden los demás; se denota por
+     /.</P
+><A
+NAME="AEN558"
+></A
+><P
+>Un mismo archivo puede tener
+     diversos nombres referenciados en uno o más directorios, cada uno
+     de esos nombres es un ...</P
+><P
+>Como cada programa tiene su propia forma de almacenar
+     información, para facilitarnos la identificación de un archivo,
+     suele agregarse un postfijo al nombre del archivo --tales
+     postfijos suelen llamarse extensiones.  Algunos postfijos comunes
+     se presentan a continuación junto con el programa que puede
+     emplearse para verlos/editarlos: </P
+><A
+NAME="AEN562"
+></A
+><P
+>Extensión para archivos cuyo
+     contenido es un texto plano.</P
+><A
+NAME="AEN565"
+></A
+><P
+>Extensión para hipertextos
+     HTML.</P
+><A
+NAME="AEN568"
+></A
+><P
+>Comando para ejecutar un script
+     para un interprete de comandos.</P
+><A
+NAME="AEN571"
+></A
+><P
+>En inglés
+     <I
+CLASS="foreignphrase"
+>path</I
+>.  Camino al nombre de un
+     archivo en el árbol de directorios.</P
+><P
+></P
+><DIV
+CLASS="variablelist"
+><DL
+><DT
+><TT
+CLASS="filename"
+>.txt</TT
+></DT
+><DD
+><P
+>Textos planos, pueden editarse con un editor de texto.
+       </P
+></DD
+><DT
+><TT
+CLASS="filename"
+>.jpg, .xpm, .gif, .png</TT
+></DT
+><DD
+><P
+>Gráficas en diversos formatos, pueden editarse por
+	ejemplo con <SPAN
+CLASS="application"
+>gimp</SPAN
+>.
+       </P
+></DD
+><DT
+><TT
+CLASS="filename"
+>.gz, .Z, .zip</TT
+></DT
+><DD
+><P
+>Información comprimida, pueden descomprimirse con
+	<B
+CLASS="command"
+>gzip -d</B
+>, <B
+CLASS="command"
+>uncompress</B
+> y
+	<B
+CLASS="command"
+>unzip</B
+> respectivamente.  Para comprimir en
+	estos formatos se usa <B
+CLASS="command"
+>gzip</B
+>,
+	<B
+CLASS="command"
+>compress</B
+> y <B
+CLASS="command"
+>zip</B
+>. Por
+	ejemplo si en el directorio de trabajo exsite un archivo
+	<TT
+CLASS="filename"
+>cartalarga.txt</TT
+> el comando <B
+CLASS="command"
+>gzip
+	cartalarga.txt</B
+> producirá en el mismo directorio el
+	archivo comprimido <TT
+CLASS="filename"
+>cartalarga.txt.gz</TT
+>.
+       </P
+></DD
+><DT
+><TT
+CLASS="filename"
+>.html</TT
+></DT
+><DD
+><P
+>Hipertextos <SPAN
+CLASS="acronym"
+>HTML</SPAN
+> que pueden verse con
+	un navegador y editarse con un editor de texto --también hay
+	herramientas especializadas para editar <SPAN
+CLASS="acronym"
+>HTML</SPAN
+>.
+       </P
+></DD
+><DT
+><TT
+CLASS="filename"
+>.tar .tgz .tar.gz</TT
+></DT
+><DD
+><P
+>Archivo con varios archivos empaquetados, pueden
+	desempaquetarse con el programa <B
+CLASS="command"
+>tar</B
+> (si
+	están además comprimidos el sufijo puede ser
+	<TT
+CLASS="filename"
+>.tar.gz</TT
+> o <TT
+CLASS="filename"
+>.tgz</TT
+>).
+	Para crear un empaquetado <TT
+CLASS="filename"
+>tareas.tar</TT
+> a
+	partir del contenido del directorio <TT
+CLASS="filename"
+>/home/pepe/tareas</TT
+> puede usarse:
+	<B
+CLASS="command"
+>tar cvf tareas.tar /home/pepe/tareas</B
+>. Para
+	desempaquete el archivo <TT
+CLASS="filename"
+>juego.tar</TT
+> en el
+	directorio de trabajo se usa: <B
+CLASS="command"
+>tar xvf
+	juego.tar</B
+>.  Para desempaquetar y descomprimir
+	<TT
+CLASS="filename"
+>llevar.tgz</TT
+> (o
+	<TT
+CLASS="filename"
+>llevar.tar.gz</TT
+>) puede descomprimir primero
+	con <B
+CLASS="command"
+>gzip</B
+> y el resultado desempaquetarlo con
+	<B
+CLASS="command"
+>tar</B
+> o puede emplear la opción
+	<TT
+CLASS="option"
+>z</TT
+> de <B
+CLASS="command"
+>tar</B
+>: <B
+CLASS="command"
+>tar
+	 xvfz llevar.tgz</B
+>.  De forma análoga para empaquetar
+	el directorio llevar y comprimir el empaquetado puede emplear
+	<B
+CLASS="command"
+>tar cvfz llevar.tgz llevar</B
+>.
+       </P
+></DD
+><DT
+><TT
+CLASS="filename"
+></TT
+></DT
+><DD
+><P
+>Los programas (e.g el calendario, un editor de texto,
+	etc) son también archivos.  Los nombres de los programas
+	ejecutables usualmente no tienen un postfijo común.  Para
+	ejecutarlos puede teclear el nombre desde un interprete de
+	comandos.  Para crearlos se emplea algún lenguaje de
+	programación y un compilador
+	<A
+NAME="AEN634"
+HREF="#FTN.AEN634"
+>[1]</A
+>.
+       </P
+></DD
+><DT
+><TT
+CLASS="filename"
+>.sh</TT
+></DT
+><DD
+><P
+>Script para el intérpete de comandos.  Puede ejecutarse
+	tecleando el nombre desde un interprete de comandos o con el
+	comando <B
+CLASS="command"
+>source</B
+>.
+       </P
+></DD
+></DL
+></DIV
+><P
+>Como un archivo puede referenciarse con un nombre en un
+     directorio, es posible localizarlo en el árbol completo de
+     directorios indicando la secuencia de directorios que se debe
+     pasar para llegar al directorio donde está el nombre.  A esa
+     secuencia se le llama <SPAN
+CLASS="bold"
+><B
+CLASS="emphasis"
+>ruta</B
+></SPAN
+>, se
+     escribe comenzando con <TT
+CLASS="literal"
+>/</TT
+> (para denotar el
+     directorio raiz) y separando un directorio de otro con un
+     <TT
+CLASS="literal"
+>/</TT
+>.  Cuando interactúe con el sistema o con
+     programas podrá referenciar archivos anteponiendoles su ruta, por
+     ejemplo un archivo con nombre <TT
+CLASS="filename"
+>a</TT
+> ubicado en
+     el directorio <TT
+CLASS="filename"
+>n</TT
+> que a su
+     vez está en el directorio <TT
+CLASS="filename"
+>j</TT
+>, él cual es un directorio en el
+     directorio raiz se identifca con: <TT
+CLASS="filename"
+>/j/n/a</TT
+>.
+    </P
+><P
+>Ruta completa de 
+      un archivo con nombre <TT
+CLASS="filename"
+>cfil.txt</TT
+> ubicado en el 
+      directorio del usuario patricio.</P
+><DIV
+CLASS="informalfigure"
+><A
+NAME="AEN652"
+></A
+><P
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="mc.png"
+ALT="Administrador de archivos de Gnome"
+></IMG
+></P
+></DIV
+><P
+></P
+></DIV
+><P
+>Desde un administrador de archivos podrá ver una
+     representación gráfica del arbol de directorios y puede emplear
+     el ratón para pasar de un directorio a otro. En un interprete de
+     comandos siempre estará ubicado en un directorio llamado
+     directorio de trabajo y que cuando inicie una sesión
+     corresponderá a su directorio personal. Puede examinar su
+     directorio de trabajo con el comando <B
+CLASS="command"
+>pwd</B
+>,
+     puede emplear el comando <B
+CLASS="command"
+>cd</B
+> para cambiarse de
+     un directorio a otro y puede examinar el contenido de un
+     directorio con el comando <B
+CLASS="command"
+>ls</B
+>.  Por ejemplo el
+     comando <B
+CLASS="command"
+>cd /</B
+> lo ubicara en el directorio raiz,
+     si teclea entonces <B
+CLASS="command"
+>pwd</B
+> verá <TT
+CLASS="filename"
+>/</TT
+>, al teclar <B
+CLASS="command"
+>ls</B
+>
+     verá algo como:
+    </P
+><PRE
+CLASS="screen"
+>&#13;bin   cdrom  etc     home    lib         mnt   root  tmp  var
+boot  dev    floppy  initrd  lost+found  proc  sbin  usr  vmlinuz
+</PRE
+><P
+>&#13;     que corresponde al contenido del directorio raíz --en este caso
+     son sólo directorios.  Si teclea <B
+CLASS="command"
+>cd home</B
+>
+     pasará al directorio <TT
+CLASS="filename"
+>home</TT
+>
+     ---también puede pasar a ese directorio con <B
+CLASS="command"
+>cd
+     /home</B
+>
+     <A
+NAME="AEN674"
+HREF="#FTN.AEN674"
+>[2]</A
+>.
+    </P
+><A
+NAME="AEN683"
+></A
+><P
+>Comando para examinar su
+     directorio de trabajo.</P
+><A
+NAME="AEN687"
+></A
+><P
+>Comando para cambiarse de
+     directorio desde un intérprete de comandos.</P
+><A
+NAME="AEN691"
+></A
+><P
+>Desde un interprete de comandos
+     puede ver los archivos del directorio en el que está con este
+     comando.</P
+><P
+>Empleando el administrador de archivos, verá que puede
+     organizar los nombres de sus archivos en directorios.  Puede
+     mover un archivo de un directorio a otro seleccionándolo con el
+     puntero del ratón y arrastrándolo, es decir moviendo el ratón
+     manteniendo presionado el botón izquierdo; arrastrando
+     directorios o nombres de archivos creará nuevos iconos.  Puede
+     copiar archivos de la misma forma como los mueve pero manteniendo
+     presionada la tecla Control, o alternativamente puede emplear
+     opciones de los menús ---por ejemplo la opción "Copiar" y
+     posteriormente la opción "Pegar".  Puede borrar un nombre de
+     archivo o un directorio seleccionándolo y presionando la tecla
+     <B
+CLASS="keycap"
+>Supr</B
+> (o <B
+CLASS="keycap"
+>Del</B
+> si su teclado es en
+     inglés) o alternativamente después de seleccionar puede escoger
+     una opción apropiada de un menú ---por ejemplo "Cortar".  Para
+     renombrar un archivo o un directorio después de seleccionarlo
+     presione nuevamente el botón izquierdo o alternativamente busque
+     la opción "Renombrar" entre los menús del administrador de
+     archivos o emplee el botón derecho una vez el puntero esté sobre
+     el archivo.  Al emplear el administrador de archivo descubrirá
+     que sólo puede escribir o leer de ciertos directorios, esto
+     ocurre por un sistema de permisos que se explicará más adelante,
+     por lo pronto basta que sepa que su directorio personal (donde
+     usted tiene permiso para leer, escribir y cambiar permisos) es un
+     directorio dentro del directorio <TT
+CLASS="filename"
+>/home</TT
+>, es el directorio cuyo nombre
+     es su login ---el nombre completo de su directorio es entonces de
+     la forma <TT
+CLASS="filename"
+>/home/sulogin</TT
+>.
+    </P
+><P
+>Para copiar un archivo con un
+     administrador de archivos gráfico debe mantener presionada esta
+     tecla mientras arrastra el archivo al sitio donde desea la
+     copia.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-directorios-y-archivos"
+>Lecturas recomendadas: Directorios y archivos</A
+></H2
+><P
+>A manera de complemento, de la "<I
+CLASS="citetitle"
+>Guía de usuario
+     de GNOME</I
+>" puede consultar las secciones "Archivo y
+     nombre de Archivos" y "Directorio y Rutas": 
+   </P
+><P
+>&#13;     <A
+HREF="http://www.croftj.net/~barreiro/spanish/gnome-es/gnome-users-guide/new-file.html"
+TARGET="_top"
+>http://www.croftj.net/~barreiro/spanish/gnome-es/gnome-users-guide/new-file.html</A
+>
+     <A
+HREF="http://www.croftj.net/~barreiro/spanish/gnome-es/gnome-users-guide/new-dirs.html"
+TARGET="_top"
+>http://www.croftj.net/~barreiro/spanish/gnome-es/gnome-users-guide/new-dirs.html</A
+>
+   </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-directorios-y-archivos"
+>Ejercicios: Directorios y archivos</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x536.htm#arch.gnome.1"
+>Abra <TT
+CLASS="literal"
+>gmc</TT
+>, explore los menús y 
+	    las posibilidades de este programa. Si lo desea puede leer la 
+	    ayuda de <TT
+CLASS="literal"
+>gmc</TT
+> (con el sistema de ayuda de GNOME 
+	    puede consultar la ayuda en
+	    <TT
+CLASS="filename"
+>file:/usr/share/gnome/help/users-guide/C/gmc.html</TT
+>).</A
+></DT
+><DT
+>2. <A
+HREF="x536.htm#arch.gnome.2"
+>Cree un directorio
+	    <TT
+CLASS="filename"
+>graficas</TT
+> en su espacio
+	    personal.</A
+></DT
+><DT
+>3. <A
+HREF="x536.htm#arch.gnome.3"
+>Busque una gráfica en el directorio <TT
+CLASS="filename"
+>/usr/share/pixmaps</TT
+> y cópiela en el
+	    directorio <TT
+CLASS="filename"
+>graficas</TT
+> que creó --si lo desea
+	    puede veral bien con doble clic desde el administrador de
+	    archivos o con el comando <B
+CLASS="command"
+>gimp graf</B
+>
+	    remplazando graf por el nombre de la gráfica.</A
+></DT
+><DT
+>4. <A
+HREF="x536.htm#arch.gnome.4"
+>Borre la gráfica y el directorio que había
+	    creado.</A
+></DT
+><DT
+>5. <A
+HREF="x536.htm#arch.gnome.5"
+>Intente borrar una gráfica del directorio
+	    <TT
+CLASS="filename"
+>/usr/share/pixmaps</TT
+> (no
+	    podrá a menos que usted sea el administrador del sistema, aún
+	    así, compruébelo).</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="arch.gnome.1"
+></A
+><B
+>1. </B
+>Abra <TT
+CLASS="literal"
+>gmc</TT
+>, explore los menús y 
+	    las posibilidades de este programa. Si lo desea puede leer la 
+	    ayuda de <TT
+CLASS="literal"
+>gmc</TT
+> (con el sistema de ayuda de GNOME 
+	    puede consultar la ayuda en
+	    <TT
+CLASS="filename"
+>file:/usr/share/gnome/help/users-guide/C/gmc.html</TT
+>).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>desplazarse; copiar; renombrar;
+	    borrar; mover; buscar; ordenar</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="arch.gnome.2"
+></A
+><B
+>2. </B
+>Cree un directorio
+	    <TT
+CLASS="filename"
+>graficas</TT
+> en su espacio
+	    personal.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>mkdir graficas</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="arch.gnome.3"
+></A
+><B
+>3. </B
+>Busque una gráfica en el directorio <TT
+CLASS="filename"
+>/usr/share/pixmaps</TT
+> y cópiela en el
+	    directorio <TT
+CLASS="filename"
+>graficas</TT
+> que creó --si lo desea
+	    puede veral bien con doble clic desde el administrador de
+	    archivos o con el comando <B
+CLASS="command"
+>gimp graf</B
+>
+	    remplazando graf por el nombre de la gráfica.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+><B
+CLASS="command"
+>cp /usr/share/pixmaps/una.jpg graficas</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="arch.gnome.4"
+></A
+><B
+>4. </B
+>Borre la gráfica y el directorio que había
+	    creado.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Sobre el directorio graficas
+	    presionar <B
+CLASS="keycap"
+>del</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="arch.gnome.5"
+></A
+><B
+>5. </B
+>Intente borrar una gráfica del directorio
+	    <TT
+CLASS="filename"
+>/usr/share/pixmaps</TT
+> (no
+	    podrá a menos que usted sea el administrador del sistema, aún
+	    así, compruébelo).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Sobre el directorio <TT
+CLASS="filename"
+>/usr/share/pixmaps</TT
+> presionar
+	    <B
+CLASS="keycap"
+>del</B
+></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN634"
+HREF="x536.htm#AEN634"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Un compilador transforma un programa escrito en un
+	  lenguaje de programación a lenguaje de máquina que puede ser
+	  ejecutado por el computador --un computador sólo puede
+	  ejecutar programas escritos en lenguaje de
+	  máquina.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN674"
+HREF="x536.htm#AEN674"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>La diferencia entre usar <B
+CLASS="command"
+>cd home</B
+> y
+       <B
+CLASS="command"
+>cd /home</B
+> es que la primera forma indica un
+       directorio relativo al directorio en el cual está ubicado,
+       mientras la segunda especifica la ruta completa.  Asi el
+       archivo <TT
+CLASS="filename"
+>/home/pepe/e.txt</TT
+> puede
+       referenciarse como <TT
+CLASS="literal"
+>pepe/e.txt</TT
+> desde el
+       directorio <TT
+CLASS="filename"
+>/home</TT
+> o
+       simplemente como <TT
+CLASS="filename"
+>e.txt</TT
+> desde el directorio
+       <TT
+CLASS="filename"
+>/home/pepe</TT
+>
+      </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x449.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x749.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Escritorio y herramientas Gnome</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c84.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Disquetes y CDROM</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

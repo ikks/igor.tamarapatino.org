@@ -1,0 +1,1127 @@
+<HTML
+><HEAD
+><TITLE
+>Localización y configuración de algunos programas</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Administración de Linux en computadores aislados"
+HREF="c8032.htm"><LINK
+REL="PREVIOUS"
+TITLE="Instalación de Debian"
+HREF="x11422.htm"><LINK
+REL="NEXT"
+TITLE="Administración de una red con Linux"
+HREF="c11890.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x11422.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 5. Administración de Linux en computadores aislados</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c11890.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="localizacion-y-configuracion-de-algunos-programas"
+>Localización y configuración de algunos programas</A
+></H1
+><P
+>Indicadores de Logros: </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="instala.localiza"
+></A
+><P
+>Configura dispositivos y programas para usarlos en Colombia.
+     </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-localizacion"
+>Lectura: Localización y configuración de algunos programas</A
+></H2
+><P
+>&#13;      Por su caracter abierto y por la diversidad de quienes lo
+     desarrollan, Linux puede configurarse para ser usado en varios
+     países, con alfabetos diferentes, dispostivos diferentes y gustos
+     diferentes.  En esta sección se presentan ideas para configurar
+     mejor Debian y usarlo en Colombia, así como 
+     detalles sobre la configuración de diversos programas. Sin embargo
+     una buena fuente de consulta puede ser la documentación
+     que acompaña a cada program y que normalmente quedará en un subdirectorio
+     de <TT
+CLASS="filename"
+>/usr/share/doc</TT
+>. Puede examinar exactamente que 
+    documentación y archivos son instalados por un paquete con 
+    <B
+CLASS="command"
+>dpkg -L linux-util</B
+> cambiando 
+    <TT
+CLASS="literal"
+>linux-util</TT
+> por el nombre del paquete 
+    (ver <A
+HREF="x7217.htm#paquetes-en-debian"
+>Paquetes en Debian</A
+>)</P
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="teclado-en-espanol"
+>Configuración del teclado</A
+></H3
+><P
+>Si la distribución es latinoamericana o española basta que
+      configure el mapa del teclado (ver <A
+HREF="x9697.htm"
+>Dispositivos y Linux</A
+>) y el
+      teclado en X-Window (la configuración general ver <A
+HREF="x9697.htm"
+>Dispositivos y Linux</A
+> o
+      para usuarios ver <A
+HREF="x4476.htm"
+>Configuración de una
+      sesión</A
+>).
+    </P
+><P
+>Si tiene un teclado US recomendamos que emplee el mapa de
+      teclado
+      <TT
+CLASS="filename"
+>/usr/share/keymaps/i386/qwerty/us-latin1.kmap.gz</TT
+>
+      que permite generar ¿ con <B
+CLASS="keycap"
+>AltGr+/</B
+>, ! con
+      <B
+CLASS="keycap"
+>AltGr+1</B
+>, ñ y Ñ con <B
+CLASS="keycap"
+>AltGr+n</B
+> y
+      <B
+CLASS="keycap"
+>AltGr+N</B
+>, y vocales tildadas con
+      <B
+CLASS="keycap"
+>AltGr+<TT
+CLASS="replaceable"
+><I
+>vocal</I
+></TT
+></B
+>.  Sugerimos
+      que edite ese mapa (descomprimalo, editelo y pruebe los cambios
+      con <TT
+CLASS="literal"
+>loadkeys</TT
+>), modificando:
+<PRE
+CLASS="programlisting"
+>&#13;keycode  40 = dead_acute dead_diaeresis dead_acute dead_acute Control_g
+</PRE
+>
+      así cómo:
+<PRE
+CLASS="programlisting"
+>&#13;keycode  41 = grave            dead_tilde
+</PRE
+>
+      y agregando (por ejemplo al final):
+<PRE
+CLASS="programlisting"
+>&#13;compose '~' 'n' to 'ñ'
+compose '~' 'N' to 'Ñ'
+compose '"' 'u' to 'ü'
+compose '"' 'U' to 'Ü'
+</PRE
+>
+      Para configurar como tecla muerta <B
+CLASS="keycap"
+>'</B
+> para la
+      tilde, <B
+CLASS="keycap"
+>~</B
+> para la virgulilla y
+      <B
+CLASS="keycap"
+>"</B
+> para la dieresis (para producir los
+      caracteres de español al hacer la edición puede usar digrafos de
+      <SPAN
+CLASS="application"
+>vim</SPAN
+> ver <A
+HREF="x2000.htm#lecturas-editores-de-texto"
+>Lecturas Editores de
+      texto</A
+>).
+    </P
+><P
+>Puede dejar su cambio de forma permanente comprimiendolo y
+     copiandolo en
+     <TT
+CLASS="filename"
+>/etc/console-tools/default.kmap.gz</TT
+> (ver
+     <A
+HREF="c8032.htm#secuencia-de-inicio"
+>Secuencia de inicio</A
+>).
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="locale-para-colombia-y-mensajes-en-espanol"
+><I
+CLASS="foreignphrase"
+>Locale</I
+> para Colombia y
+     mensajes en español</A
+></H3
+><A
+NAME="AEN11702"
+></A
+><P
+>Archivo global
+	de configuración de la librearía readline ---que maneja interaccion
+	con teclado por ejemplo en <B
+CLASS="command"
+>bash</B
+>.
+     </P
+><P
+>Para poder ingresar y ver caracteres del español desde
+      programas que empleen la librería readline (por ejemplo
+      <SPAN
+CLASS="application"
+>bash</SPAN
+>) edite el archivo
+      <TT
+CLASS="filename"
+>/etc/inputrc</TT
+> y agregue las siguientes
+      líneas :
+<PRE
+CLASS="programlisting"
+>&#13;set input-meta on
+set output-meta on
+set convert-meta off
+</PRE
+>
+      Para que los cambios surgan efecto debe cerrar y abrir una nueva
+      sesión del programa. Alternativamente cada usuario podría
+      modificar el archivo <TT
+CLASS="filename"
+>~/.inputrc</TT
+> (ver <A
+HREF="x4476.htm"
+>Configuración de una
+      sesión</A
+>).
+    </P
+><P
+>Para que otros programas tipo texto que no usan
+      <TT
+CLASS="literal"
+>readline</TT
+> reciban y presenten caracteres de
+      español, debe configurar un locale apropiado y asegurarse de que
+      la terminal permita caracteres de 8 bits.
+    </P
+><P
+>Programas como <SPAN
+CLASS="application"
+>vi</SPAN
+>, emplean
+     funciones de la libreria de C para presentar y recibir
+     información de acuerdo al locale.  La librería de C emplea
+     algunas variables de ambiente (<TT
+CLASS="envar"
+>LANG</TT
+>,
+     <TT
+CLASS="envar"
+>LANGUAGE</TT
+>, <TT
+CLASS="envar"
+>LC_CTYPE</TT
+>,
+     <TT
+CLASS="envar"
+>LC_NUMERIC</TT
+>, <TT
+CLASS="envar"
+>LC_TIME</TT
+>,
+     <TT
+CLASS="envar"
+>LC_COLLATE</TT
+>, <TT
+CLASS="envar"
+>LC_MONETARY</TT
+>,
+     <TT
+CLASS="envar"
+>LC_MESSAGES</TT
+> y <TT
+CLASS="envar"
+>LC_ALL</TT
+>) y la
+     información del directorio <TT
+CLASS="filename"
+>/usr/share/locale</TT
+> cuando "responde"
+     a programas que emplean funciones de locale.  En particular los
+     caracteres que el locale identifica como imprimibles se
+     configuran con la variable de ambiente
+     <TT
+CLASS="envar"
+>LC_CTYPE</TT
+>.  El valor que está variable (al
+     igual que las otras mencionadas) debería tener es "es_CO" que
+     corresponde a español de Colombia.
+     </P
+><P
+>Sin embargo Debian 2.2 no soporta este locale por defecto
+      (la próxima versión Debian 3.0 si lo soporta), para suplir la
+      carencia instale el paquete <TT
+CLASS="literal"
+>i18ndata</TT
+> y
+      después ejecute:
+<PRE
+CLASS="programlisting"
+>&#13;cd /usr/share/i18n/locales
+localedef -i es_CO -f ISO-8859-1 es_CO
+</PRE
+>
+      Con lo cual se crearán los directorios y archivos apropiados en
+      <TT
+CLASS="filename"
+>/usr/share/locale/es_CO</TT
+>
+      (ISO-8859-1 o Latin1 se refieren a una codificación de
+      caracteres apropiada para idiomas de europa occidental
+      ---incluyendo español.  ISO-8859-1 es la referencia del
+      documento ISO donde tal codificación se estandariza).
+    </P
+><P
+>Puede comprobar que los cambios surgen efecto poniendo la
+      variable <TT
+CLASS="envar"
+>LC_CTYPE</TT
+> en es_CO
+      (i.e. <B
+CLASS="command"
+>export LC_CTYPE=es_CO</B
+>), entrando por
+      ejemplo a <SPAN
+CLASS="application"
+>vi</SPAN
+> e ingresando un caracter tildado
+      o propio del español (sólo cuando el locale y la terminal están
+      bien configurados verá la tilde, cuando no verá códigos que
+      corresponden a los caracteres tildados).  Ponga el resto de
+      variables <TT
+CLASS="envar"
+>LC_*</TT
+> también en es_CO con
+      <B
+CLASS="command"
+>export LC_ALL=es_CO</B
+>.
+    </P
+><P
+>Para comprobar que los mensajes se presentan en español
+      ponga las variables <TT
+CLASS="envar"
+>LANG</TT
+> y
+      <TT
+CLASS="envar"
+>LANGUAGE</TT
+> en <TT
+CLASS="literal"
+>es_CO</TT
+> y entre
+      a algun programa que emplee mensajes traducidos a español como
+      <SPAN
+CLASS="application"
+>dselect</SPAN
+>.
+    </P
+><P
+>Cada usuario podrá entonces configurar de manera permanente
+      el <I
+CLASS="foreignphrase"
+>locale</I
+> de Colombia (ver <A
+HREF="x4476.htm"
+>Configuración de una
+      sesión</A
+>) o usted puede establecer las variables de
+      localización en <TT
+CLASS="filename"
+>/etc/security/pam_env.conf</TT
+>
+      (ver <A
+HREF="x5590.htm"
+>Administración
+      de usuarios</A
+>).
+     </P
+><P
+>Además del locale, recomendamos instalar el paquete
+      <TT
+CLASS="literal"
+>task-spanish</TT
+>.
+    </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="tiempo-y-zona-geografica"
+>Tiempo y zona geográfica</A
+></H3
+><P
+>En sistemas Linux hay dos horas: hora del reloj del
+      hardware y hora del sistema.  La primera se basa en un reloj
+      físico que está en la placa base del computador y que opera
+      incluso cuando este está apagado, la segunda es mantenida por el
+      kernel
+      <A
+NAME="AEN11753"
+HREF="#FTN.AEN11753"
+>[1]</A
+> como tiempo
+      UTC
+      <A
+NAME="AEN11755"
+HREF="#FTN.AEN11755"
+>[2]</A
+>.  Los programas que requieren información sobre la hora y
+      fecha, emplean funciones de la biblioteca de C; esta biblioteca,
+      a su vez emplea la hora del sistema y la información sobre la
+      zona geográfica en la que está el computador para calcular e
+      informar la hora local.
+    </P
+><A
+NAME="AEN11758"
+></A
+><P
+>Programa empleado
+	durante el arranque para establecer la hora del sistema con base
+	en el reloj del hardware.
+     </P
+><P
+>Durante el arranque del sistema la hora del sistema es
+      inicializada empleando el reloj del hardware con el programa
+      <SPAN
+CLASS="application"
+>hwclock</SPAN
+>, después el reloj del hardware no
+      vuelve a ser consultada (excepto si se configuran ajustes de
+      tiempo o si se emplea <SPAN
+CLASS="application"
+>hwclock</SPAN
+>).  En el reloj
+      del hardware el administrador puede decidir dejar bien la hora
+      local o bien la hora en el meridiano 0, (puede modificar esa
+      hora con <SPAN
+CLASS="application"
+>hwclock</SPAN
+> o seguramente desde el
+      programa de configuración de la BIOS de su computador).  La
+      decisión que tome debe indicarla al sistema para que haga el
+      ajuste apropiado durante el arranque, esto lo hace asignado
+      "yes" o "no" a la variable UTC del archivo
+      <TT
+CLASS="filename"
+>/etc/defaults/rcS</TT
+> --si emplea otros
+      sistemas operativos que dependan sólo de la hora del sistema
+      mejor mantenga la hora local en el reloj del hardware.
+    </P
+><P
+>El formato de los archivos de
+      <TT
+CLASS="filename"
+>/usr/share/zoneinfo</TT
+> está especificado en el
+      archivo <TT
+CLASS="filename"
+>/etc/localtime</TT
+>, el cual normalmente
+      debe ser un enlace a uno de los archivos del directorio
+      <TT
+CLASS="filename"
+>/usr/share/zoneinfo</TT
+>, los programas
+      <B
+CLASS="command"
+>tzselect</B
+> y <B
+CLASS="command"
+>tzconfig</B
+> le
+      presentan un menú que le permite establecer este enlace.
+    </P
+><A
+NAME="AEN11773"
+></A
+><P
+>La zona geográfica
+	se establece con un enlace de un archivo del directorio ...
+	a <TT
+CLASS="filename"
+>/etc/localtime</TT
+>
+     </P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN11778"
+>vim</A
+></H3
+><P
+>Vim es una versión mejorada de <SPAN
+CLASS="application"
+>vi</SPAN
+>. 
+	Instalelo con el paquete 
+	<SPAN
+CLASS="application"
+>vim</SPAN
+>. Para que todos los usuarios empleen 
+	este editor por defecto al ejecutar el comando <B
+CLASS="command"
+>vi</B
+>, 
+	puede crear un alias en <TT
+CLASS="filename"
+>/etc/profile</TT
+>:</P
+><PRE
+CLASS="screen"
+>&#13;   alias vi="vim"
+</PRE
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN11786"
+>LaTeX</A
+></H3
+><P
+>Para emplear TeX y LaTeX (versection 3.1.1.2 LaTeX), instale la 
+	distribución <SPAN
+CLASS="application"
+>Tetex</SPAN
+>, puede emplear el 
+	paquete (tarea) <TT
+CLASS="literal"
+>task-tex</TT
+> que instalará Tetex y 
+	otras aplicaciones útiles (por ejemplo <SPAN
+CLASS="application"
+>gv</SPAN
+> 
+	ver <A
+HREF="c2347.htm#impresion-y-formatos-para-impresion"
+>Impresión y 
+	formatos para impresión</A
+>).</P
+><P
+>Para convertir de LaTeX a HTML recomendamos las herramienta 
+	HeVea y latex2html. Las fuentes de la primera escritas en Ocaml
+	están sponibles en: 
+	<A
+HREF="http://para.inria.fr/~maranget/hevea/"
+TARGET="_top"
+>http://para.inria.fr/~maranget/hevea/</A
+>
+	</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN11795"
+>Gnome</A
+></H3
+><P
+>Si durante la instalación no eligió el escritorio Gnome, 
+	puede hacerlo posteriormente instalando <SPAN
+CLASS="application"
+>task-gnome</SPAN
+>.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN11799"
+>Ocaml</A
+></H3
+><P
+>Puede instalar los paquetes <SPAN
+CLASS="application"
+>ocaml</SPAN
+>, 
+	<SPAN
+CLASS="application"
+>ocamltk</SPAN
+> y <SPAN
+CLASS="application"
+>ocaml-doc</SPAN
+>, 
+	aunque la versión disponible en estos paquetes es la 2.04. Si desea 
+	la versión más reciente puede compilarla directamente de las fuentes. 
+	El sitio de distribución es 
+	<A
+HREF="http://caml.inria.fr/ocaml/distrib.html"
+TARGET="_top"
+>http://caml.inria.fr/ocaml/distrib.html</A
+>. 
+	Antes de compilar, si desea soporte para Labltk (Tcl/Tk desde Ocaml), 
+	instale los paquetes <SPAN
+CLASS="application"
+>tcl8.2-dev</SPAN
+>,
+	<SPAN
+CLASS="application"
+>tk8.2-dev</SPAN
+>.</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN11808"
+>DocBook</A
+></H3
+><P
+>Hay dos tipos de DocBook: XML y SGML, de cada uno hay 
+	diversas versiones. En el CD de Potato está DocBook SGML v3.1 
+	(paquete <SPAN
+CLASS="application"
+>docbook</SPAN
+>) y la versión 3.1.3 de 
+	DocBook XML (paquete <SPAN
+CLASS="application"
+>docbook-xml</SPAN
+>).
+	</P
+><P
+>Para realizar la conversión de DocBook SGML a PostScript, 
+	HTML y otros formatos puede emplear:
+<P
+></P
+><UL
+><LI
+><P
+> Las hojas de estilo DSSL (paquete 
+	<SPAN
+CLASS="application"
+>docbook-stylesheets</SPAN
+>) y el procesador 
+	<SPAN
+CLASS="application"
+>jade</SPAN
+> (paquete 
+	<SPAN
+CLASS="application"
+>jade</SPAN
+>). 
+	Por ejemplo para genera un HTML a partir del archivo 
+	<TT
+CLASS="filename"
+>ej.db</TT
+>:</P
+><PRE
+CLASS="screen"
+>&#13;dsl=/usr/lib/sgml/stylesheet/dsssl/dcbook/nwalsh/html/docbook.dsl
+jade -t sgml -ihtml -d$dsl ej.db
+</PRE
+></LI
+><LI
+><P
+> Las herramientas del paquete sgmltools-2 (ver 
+	<A
+HREF="c2347.htm#docbook"
+>DocBook</A
+>). Con     
+     estas puede generar un HTML con:</P
+><PRE
+CLASS="screen"
+>&#13;       sgmltools -b html ej.db
+</PRE
+><P
+>Si requiere una versión más reciente de DocBook SGML (4.1) 
+	puede emplear el repositorio no oficial (ver
+	<A
+HREF="x7217.htm#paquetes-en-debian"
+>Paquetes en Debian</A
+>):
+<PRE
+CLASS="screen"
+>&#13;        deb http://dtype.org/debian/potato ./
+</PRE
+>
+	Instale de allí los paquetes <SPAN
+CLASS="application"
+>docbook</SPAN
+>
+	 y <SPAN
+CLASS="application"
+>sgmltools-lite</SPAN
+> (el segundo remplaza
+	a <SPAN
+CLASS="application"
+>sgmltools-2</SPAN
+>). Podrá generar a partir de 
+	DocBook en otros formatos tal como con 
+	<SPAN
+CLASS="application"
+>sgmltools</SPAN
+>.</P
+><P
+>Si desea la versión más reciente de DocBook (SGML o XML) puede 
+	consultar 
+	<A
+HREF="http://www.oasis-open.org/docbook/"
+TARGET="_top"
+>http://www.oasis-open.org/docbook/</A
+>.
+	La versión más reciente de las hojas de estilo DSSSL, así como hojas
+	de estilo XSL están disponibles en:
+	<A
+HREF="http://docbook.sourceforge.net/projects/index.html"
+TARGET="_top"
+>http://docbook.sourceforge.net/projects/index.html</A
+> 
+	que pueden emplearse con un procesaro XSL como 
+	<B
+CLASS="command"
+>xsltproc</B
+> disponible en el paquete 
+	<TT
+CLASS="literal"
+>libxslt</TT
+> o la versión más reciente en: 
+	<A
+HREF="http://www.xmlsoft.org/XSLT/"
+TARGET="_top"
+>http://www.xmlsoft.org/XSLT/</A
+>.
+	</P
+></LI
+></UL
+>
+	</P
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN11839"
+>Mozilla</A
+></H3
+><P
+>La versión incluida en los paquetes oficiales no es tan 
+	reciente. Puede instalar una reciente agregando la línea:</P
+><PRE
+CLASS="screen"
+>&#13;   deb http://dtype.org/debian/potato ./
+</PRE
+><P
+>a `/etc/apt/sources.list' y ejecutando </P
+><PRE
+CLASS="screen"
+>&#13;apt-get update 
+apt-get install mozilla
+</PRE
+></DIV
+><DIV
+CLASS="sect3"
+><H3
+CLASS="sect3"
+><A
+NAME="AEN11845"
+>Diccionarios</A
+></H3
+><P
+>Para que puedan funcionar los diccionarios (ver
+	<A
+HREF="x2000.htm"
+>Edición de texto</A
+>),
+	instale los paquetes <SPAN
+CLASS="application"
+>dict</SPAN
+> (cliente) y 
+	<SPAN
+CLASS="application"
+>dictd</SPAN
+> (servidor). Los diccionarios que
+	hay disponibles (todos en inglés) son:
+<P
+></P
+><UL
+><LI
+><P
+>dict-web1913 Diccionario Webster de 1913 (de dominio público)</P
+></LI
+><LI
+><P
+>dict-wn Diccionario WordNet 1.6
+</P
+></LI
+><LI
+><P
+>dict-jargon Diccionario con jerga de hackers.
+</P
+></LI
+><LI
+><P
+>dict-easton Diccionario de términos bíblicos de 1897
+</P
+></LI
+><LI
+><P
+>dict-elements Datos sobre los Elementos
+</P
+></LI
+><LI
+><P
+>dict-gazetteer U.S. Gazeteer
+</P
+></LI
+><LI
+><P
+>dict-hitchcock Diccionario de nombres bíblicos de Hitchcock
+</P
+></LI
+></UL
+>
+	</P
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-localizacion"
+>Lecturas recomendadas: Localización y configuración de algunos programas</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Puede consultar más sobre el locale en la sección
+       "Locales" del manual info de la libreria de C (<B
+CLASS="command"
+>info
+	       libc</B
+>) o en línea en
+       <A
+HREF="http://www.gnu.org/manual/glibc-2.2.3/html_chapter/libc_7.html#SEC108"
+TARGET="_top"
+>http://www.gnu.org/manual/glibc-2.2.3/html_chapter/libc_7.html#SEC108</A
+></P
+><P
+>&#13;		Puede consultar la especificación que define como escribir su 
+		propio locale:
+       <A
+HREF="http://www.opengroup.org/onlinepubs/7908799/xbd/locale.html"
+TARGET="_top"
+>http://www.opengroup.org/onlinepubs/7908799/xbd/locale.html</A
+>
+       </P
+></LI
+><LI
+><P
+>&#13;       Puede ver más sobre el tiempo y Linux en el
+       <I
+CLASS="citetitle"
+>Mini-HOWTO sobre el reloj</I
+>
+       <A
+HREF="http://www.linuxdoc.org/HOWTO/mini/Clock.html"
+TARGET="_top"
+>http://www.linuxdoc.org/HOWTO/mini/Clock.html</A
+>
+      </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-localizacion"
+>Ejercicios: Localización y configuración de algunos programas</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x11660.htm#instala.localiza.1"
+>En la sugerencia hecha en
+       esta guía para modificar un mapa del teclado US, se presupone
+       que ya pueden generarse los caracteres especiales de español,
+       sin emplear digrafos de vim o de otro editor de texto.  Cómo
+       puede generarlos?</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.localiza.1"
+></A
+><B
+>1. </B
+>En la sugerencia hecha en
+       esta guía para modificar un mapa del teclado US, se presupone
+       que ya pueden generarse los caracteres especiales de español,
+       sin emplear digrafos de vim o de otro editor de texto.  Cómo
+       puede generarlos?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Se carga
+       el archivo original con <TT
+CLASS="literal"
+>loadkeys</TT
+> así ya se
+       pueden generar todas excepto la ü y Ü.  Para generar estas dos
+       últimas puede navegarse sobre las guías y copiar y pegar, puede
+       usarse <TT
+CLASS="literal"
+>+udiaeresis</TT
+> y
+       <TT
+CLASS="literal"
+>+Udiaeresis</TT
+> o puede emplearse un editor de
+       texto que permita ingresar un código ASCII o
+       Unicode.</P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN11753"
+HREF="x11660.htm#AEN11753"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>La hora del sistema corresponde al tiempo
+	en segundos transcurrido desde Enero 1 de 1970 a las 00:00 medido
+	sobre el meridiano 0.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN11755"
+HREF="x11660.htm#AEN11755"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>UTC - <I
+CLASS="foreignphrase"
+>Universal Time
+	Coordination</I
+>, es la hora medida en el
+	meridiano 0, también se llama GMT Greenwich Meridian
+	Time.
+       </P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x11422.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c11890.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Instalación de Debian</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c8032.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Administración de una red con Linux</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

@@ -1,0 +1,1211 @@
+<HTML
+><HEAD
+><TITLE
+>Instalación de Debian</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="UP"
+TITLE="Administración de Linux en computadores aislados"
+HREF="c8032.htm"><LINK
+REL="PREVIOUS"
+TITLE="Dispositivos y Linux"
+HREF="x9697.htm"><LINK
+REL="NEXT"
+TITLE="Localización y configuración de algunos programas"
+HREF="x11660.htm"></HEAD
+><BODY
+CLASS="sect1"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="x9697.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+>Capítulo 5. Administración de Linux en computadores aislados</TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x11660.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="instalacion-de-debian"
+>Instalación de Debian</A
+></H1
+><P
+>Indicadores de Logros: </P
+><P
+></P
+><UL
+><LI
+><A
+NAME="instala.instala"
+></A
+><P
+>Puede instalar Debian Linux siguiendo los lineamientos de la
+     plataforma de referencia (ver<A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de
+     referencia</A
+>).  </P
+></LI
+></UL
+><P
+>&#13;    Hay diversas distribuciones de Linux, cada una con debilidades y
+   fortalezas propias.  Nuestra recomendación es la distribución
+   Debian 2.2. Que si bien no es la distribución más fácil de
+   instalar, ofrece a cambio otras ventajas:
+   </P
+><P
+></P
+><UL
+><LI
+><P
+>Es una distribución de caracter social, que antepone los
+      intereses de la comunidad a la publicidad o el beneficio de los
+      desarrolladores.  </P
+></LI
+><LI
+><P
+>Técnicamente está muy bien afinada y provee un excelente
+     manejador de paquetes.  </P
+></LI
+><LI
+><P
+>Con respecto a otras distribuciones ampliamente conocidas,
+     es la única sobre cuyo futuro podemos decidir, pues su desarrollo
+     es abierto a quién quiera participar y es democrático.
+     </P
+></LI
+></UL
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lectura-instalacion-de-debian"
+>Lectura: Instalación de Debian</A
+></H2
+><P
+></P
+><UL
+><LI
+><P
+>Antes de iniciar la instalación haga un
+       listado del hardware que tiene disponible y de los recursos de
+     hardware que emplean (ver<A
+HREF="x8783.htm"
+>Hardware básico y
+	Linux</A
+>).
+      </P
+></LI
+><LI
+><P
+>Planee la forma como distribuirá el espacio en su(s)
+       disco(s) duro(s), las particiones que destinará para los
+       directorios de Linux y la forma como arrancará Linux y
+       eventualmente otro(s) sistema(s) operativo(s) (ver<A
+HREF="x9697.htm#discos-duros"
+>Discos duros</A
+>).  Tenga en cuenta
+       que podrá configurar el cargador de arranque para cargar más de
+       un sistema operativo, ubicados en distintas particiones o en
+       distintos discos, pero que con algunas BIOS la información para
+       arrancar Linux debe estar en los primeros 1024 cilindros de un
+       disco (ver<A
+HREF="x9697.htm#discos-duros"
+>Discos duros</A
+>)
+      </P
+></LI
+><LI
+><A
+NAME="AEN11448"
+></A
+><P
+>Programa 
+	para DOS que permite cambiar el tamaño de una partición FAT.
+     </P
+><P
+>De requerirlo cree espacio para las particiones que
+       planeó, si tiene DOS o Windows puede defragmentar y emplear el
+       programa <TT
+CLASS="literal"
+>fips</TT
+> (disponible en el directorio
+       <TT
+CLASS="filename"
+>/tools</TT
+> del CD 1), si tiene Linux puede
+       crear espacio con el program parted (Cambio del tamaño de un
+       sistema de archivos ver <A
+HREF="x9697.htm#discos-duros"
+>Discos
+       duros</A
+>).
+      </P
+></LI
+><LI
+><P
+>De los métodos de instalación posibles el más sencillo es
+       usar un CD-ROM. Si su BIOS lo permite, configúrela para
+       arrancar el sistema por el CD-ROM y emplee el CD 1 de
+       Debian. Si su BIOS no lo permite o si requiere otro método de
+       instalación cree dos disquetes (de 1.44) con las imagenes:
+       <TT
+CLASS="filename"
+>rescue.bin</TT
+> y
+       <TT
+CLASS="filename"
+>root.bin</TT
+><A
+NAME="AEN11460"
+HREF="#FTN.AEN11460"
+>[1]</A
+>
+       disponibles en el CD 1 en el directorio
+       <TT
+CLASS="filename"
+>/install</TT
+>.  Por ejemplo para copiar la
+       imagen <TT
+CLASS="filename"
+>rescue.bin</TT
+> desde DOS/Windows en un
+       disquete (unidad A en terminología DOS), puede emplear el
+       programa <TT
+CLASS="filename"
+>rawrite2</TT
+> disponible en el mismo
+       directorio <TT
+CLASS="filename"
+>/install</TT
+> del CD 1:</P
+><PRE
+CLASS="programlisting"
+>&#13;rawrite2 -f rescue.bin -d a
+</PRE
+><P
+>&#13;       Desde Linux y otras versiones de Unix podría usar
+       <B
+CLASS="command"
+>dd</B
+>:
+     </P
+><A
+NAME="AEN11469"
+></A
+><P
+>Este programa permite
+	copiar información por bloques. Es usado por ejemplo para copiar
+	la imagen de un disquete en un disquete.
+     </P
+><PRE
+CLASS="programlisting"
+>&#13;dd if=rescue.bin of=/dev/fd0 bs=1024
+</PRE
+><P
+>&#13;       Después arranque el sistema iniciando por el disquete con
+       <TT
+CLASS="filename"
+>rescue.bin</TT
+>.
+	<DIV
+CLASS="informalfigure"
+><A
+NAME="AEN11476"
+></A
+><P
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="inst22-1.png"
+ALT="Instalación de Debian 2.2xdvi"
+></IMG
+></P
+></DIV
+><P
+></P
+></DIV
+>
+	</P
+><P
+>&#13;       Este disquete permitirá iniciar un sistema Linux mínimo para
+       iniciar una instalación o para recuperar un sistema que pueda
+       fallar
+       <A
+NAME="AEN11487"
+HREF="#FTN.AEN11487"
+>[2]</A
+>.
+      </P
+></LI
+><LI
+><P
+>El programa de instalación le permitirá configurar un
+       teclado sencillo, (<TT
+CLASS="literal"
+>qwerty/us</TT
+> o
+       <TT
+CLASS="literal"
+>qwerty/es</TT
+>) después de completar la
+       instalación podrá refinar su elección (ver<A
+HREF="x9697.htm#teclado"
+>Teclado</A
+>).
+	<DIV
+CLASS="informalfigure"
+><A
+NAME="AEN11498"
+></A
+><P
+></P
+><DIV
+CLASS="mediaobject"
+><P
+><IMG
+SRC="inst22-2.png"
+ALT="Instalación de Debian 2.2xdvi"
+></IMG
+></P
+></DIV
+><P
+></P
+></DIV
+>
+ </P
+></LI
+><LI
+><P
+>En la mayoría de computadores no requerirá cargar módulos
+       adicionales para realizar la instalación, esto podría ser
+       necesario si desea hacer una instalación en red (para
+       configurar la tarjeta) o si su unidad de CD-ROM no es IDE/ATAPI
+       (ver<A
+HREF="x9697.htm#unidades-de-cd-dash-rom-y-dvd"
+>Unidades de
+       CD-ROM y DVD</A
+>).
+      </P
+></LI
+><LI
+><P
+>Durante la instalación eligiendo "Partition a Hard Disk"
+       podrá emplear el programa <TT
+CLASS="literal"
+>cfdisk</TT
+> (ver<A
+HREF="x9697.htm#discos-duros"
+>Discos duros</A
+>), para dividir el
+       espacio que abrió y marcar las particiones nuevas como Linux
+       (tipo 83) y una como Linux swap (tipo 82). Con
+       <TT
+CLASS="literal"
+>cfdisk</TT
+> para dividir una partición en dos,
+       primero debe borrarla y después crear dos nuevas.
+      </P
+></LI
+><LI
+><P
+>Formatee cada partición Linux para que pueda usar el
+       sistema de archivos ext2, para esto eliga la opción del menú
+       "Initialize a Linux Partition" (ver<A
+HREF="x6433.htm#sistema-de-archivos-ext-two"
+>Sistema de archivos
+       ext2</A
+>).  Podrá especificar también el directorio en el
+       que desea montar cada partición que inicialice (si tiene otras
+       particiones Linux en algunos de sus discos también podría
+       escoger directorios para montarlas con "Mount a
+       Previously-Initialized Partition" ver <A
+HREF="x6433.htm#montaje-y-desmontaje-de-sistemas-de-archivos"
+>Montaje
+       y desmontaje de sistemas de archivos</A
+>).  Formatee y
+       active la partición para swap con la opción "Initialize and
+       Activate a Swap Partition".
+      </P
+></LI
+><LI
+><P
+>Cuando termine de inicializar y activar todas las
+       particiones instale el kernel y los módulos con la opción del
+       menú "Install Operating System Kernel and Modules", después
+       podría cargar algunos módulos de acuerdo a los dispositivos de
+       su computador<A
+NAME="AEN11522"
+HREF="#FTN.AEN11522"
+>[3]</A
+>, pero esta
+       operación puede aplazarse hasta tener un sistema mínimo
+       funcionando ---podrá realizarla posteriormente con el programa
+       <TT
+CLASS="literal"
+>modconf</TT
+> (ver<A
+HREF="x8370.htm#modulos"
+>Módulos</A
+>).
+      </P
+></LI
+><LI
+><P
+>Si el computador que instala funcionará en red LAN (por
+       ejemplo en una red de computadores de un colegio), es
+       recomendable que intente cargar el módulo apropiado para la
+       tarjeta de red, así el programa de instalación le permitirá
+       especificar más información sobre la red. Eventualmente puede
+       querer emplear los siguientes datos generales:</P
+><PRE
+CLASS="programlisting"
+>&#13;Dirección IP: 192.168.0.1
+Netmask: 255.255.255.0
+Gateway: 192.168.0.1
+Servidor DNS: 192.168.0.1
+</PRE
+><P
+>Dirección IP que puede usar
+      durante una instalación en la que no desea tener en cuenta
+      detalles de la red (Ayuda: termina en .0.1). </P
+><P
+>&#13;       Con esta configuración puede escoger cualquier nombre para su
+       máquina y su dominio.
+      </P
+></LI
+><LI
+><P
+>Si elige instalar el cargador de arranque (opción del menú
+       "Make Linux Bootable directly from H.D"), podrá instalar LILO
+       bien en el MBR o en el primer sector de la partición
+       <TT
+CLASS="filename"
+>/</TT
+>.  Si tiene sólo Windows en su disco
+       puede ser mejor instalarlo en el MBR ---cuando reinicie entrará
+       a Linux y podrá configurar LILO para permitirle entrar también
+       a Windows, ver más adelante---, si tiene otras particiones con
+       Linux que usen LILO o algún otro cargador de arranque puede
+       dejar LILO en el sector de arranque de <TT
+CLASS="filename"
+>/</TT
+> y
+       configurar el otro cargador de arranque (ver Cargador de
+       arranque ver <A
+HREF="x9697.htm#discos-duros"
+>Discos duros</A
+>).
+      </P
+></LI
+><LI
+><P
+>Cuando reinicie el computador entrará al Linux que instaló
+       y el programa de instalación continuará.  Por seguridad es
+       mejor emplear claves MD5 y Shadow (ver<A
+HREF="x5590.htm#usuarios"
+>Usuarios</A
+>).  Al elegir las tareas que
+       realizará con su sistema es recomendable que instale
+       herramientas de desarrollo (para compilar programas ver <A
+HREF="x7217.htm#compilacion-e-instalacion-de-programas-a-partir-de-fuentes"
+>Compilación
+       e instalación de programas a partir de fuentes</A
+>).  Si por
+     algún motivo se interrumpe o usted desea reiniciar el proceso de
+     instalación, use desde la cuenta root:
+<PRE
+CLASS="programlisting"
+>&#13;dpkg-reconfigure base-config
+</PRE
+>
+       (paquete <TT
+CLASS="literal"
+>base-config</TT
+>), las acciones
+       realizadas durante la instalación se registran en la bitacora
+       <TT
+CLASS="filename"
+>/var/log/installer</TT
+>.  También podrá entrar
+       al programa <TT
+CLASS="literal"
+>dselect</TT
+> para refinar aún más la
+       selección de paquetes, o para instalar paquetes de otras
+       fuentes (ver <A
+HREF="x7217.htm#paquetes-en-debian"
+>Paquetes en
+       Debian</A
+>)
+      </P
+></LI
+><LI
+><P
+>Mientras se instalan y configuran los paquetes, tendrá que
+       intervenir en ocasiones, por ejemplo para configurar X-Window.
+       Al igual que con módulos para dispositivos, si no resulta
+       fácil, no es indispensable que lo configure durante la
+       instalación (para configurar X-Window posteriormente vea <A
+HREF="x9697.htm#monitor-y-tarjeta-graficadora"
+>Monitor y tarjeta
+       graficadora</A
+>).  En ocasiones la instalación de paquetes
+       no se completa, es recomendable que entre al programa
+       <TT
+CLASS="literal"
+>dselect</TT
+> y eliga la opción
+       <TT
+CLASS="literal"
+>Install</TT
+>.
+      </P
+></LI
+><LI
+><P
+>Una vez la instalación de paquetes concluya, si instaló
+       LILO en el MBR puede configurarlo para permitirle entrar a
+       otros sistemas operativos. Por ejemplo si tiene Windows en la
+       partición <TT
+CLASS="filename"
+>/dev/hda1</TT
+> (ver <A
+HREF="x9697.htm#discos-duros"
+>Discos duros</A
+>), edite al archivo
+       <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+> y agregue:
+<PRE
+CLASS="programlisting"
+>&#13;other=/dev/hda1
+       label=dos
+</PRE
+>
+       cambiando dos por la etiqueta con la que desee entrar al otro sistema, 
+       después ejecute <TT
+CLASS="literal"
+>/sbin/lilo</TT
+>.  
+      </P
+></LI
+><LI
+><P
+>Para completar la instalación puede:
+      </P
+><P
+></P
+><UL
+><LI
+><P
+>Instalar otros paquetes que pueda requerir, configurando
+	   de ser necesario otras fuentes en 
+	   <TT
+CLASS="filename"
+>/etc/apt/sources.list</TT
+>, por ejemplo si
+	   tiene conexión a Internet:
+<PRE
+CLASS="programlisting"
+>&#13;deb http://non-us.debian.org/debian-non-US stable/non-US main contrib non-free.
+</PRE
+>
+	 (ver <A
+HREF="x7217.htm#paquetes-en-debian"
+>Paquetes en
+	   Debian</A
+>).  
+	</P
+></LI
+><LI
+><P
+>Refinar configuración del teclado para español
+	 (ver <A
+HREF="x11660.htm#teclado-en-espanol"
+>Teclado en
+	español</A
+>) </P
+></LI
+><LI
+><P
+>Instalar
+	 locale para Colombia y configurar mensajes en español (ver
+	 <A
+HREF="x11660.htm#locale-para-colombia-y-mensajes-en-espanol"
+>Locale
+	  para Colombia y mensajes en español</A
+>) </P
+></LI
+><LI
+><P
+>Configurar X-Window (ver<A
+HREF="x9697.htm#monitor-y-tarjeta-graficadora"
+>Monitor y tarjeta
+	  graficadora</A
+>).  </P
+></LI
+><LI
+><P
+>Cargar controladores que requiera, por ejemplo
+	 para tarjeta de sonido (ver<A
+HREF="x9697.htm#tarjetas-de-sonido"
+>Tarjetas de sonido</A
+>).
+	</P
+></LI
+><LI
+><P
+>Configurar otros
+	dispositivos/servicios como impresión (ver<A
+HREF="x9697.htm#impresora"
+>Impresora</A
+>).  </P
+></LI
+><LI
+><P
+>Contarle a quienes desarrollan esta guía sobre
+	su experiencia
+	<TT
+CLASS="literal"
+>structio-guias@lists.sourceforge.net</TT
+>.
+	</P
+></LI
+></UL
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="lecturas-recomendadas-instalacion-de-debian"
+>Lecturas recomendadas: Instalación de Debian</A
+></H2
+><P
+>Recomendamos de forma especial <SPAN
+><I
+CLASS="emphasis"
+>Instalación de
+      Debian Linux 2.2 para Intel x86</I
+></SPAN
+> <A
+HREF="http://www.debian.org/releases/stable/i386/install.es.html"
+TARGET="_top"
+>http://www.debian.org/releases/stable/i386/install.es.html</A
+>
+   </P
+><P
+>Además de otras secciones de este capítulo, en caso de que
+     las necesite, sugerimos algunas lecturas que pueden ayudarle a
+     tomar decisiones al instalar Linux en su equipo:
+     </P
+><P
+></P
+><UL
+><LI
+><P
+>Durante el proceso de instalación puede necesitar conocer
+       mejor su disco duro y el esquema de Linux para nombrar este
+       tipo de dispositivos: The Linux System Administrators' Guide
+       (version 0.6.2), Capítulo 4. Using Disks and Other Storage
+       Media <A
+HREF="http://www.linuxdoc.org/LDP/sag/x754.html"
+TARGET="_top"
+>http://www.linuxdoc.org/LDP/sag/x754.html</A
+>
+       </P
+></LI
+><LI
+><P
+>Para entender como está organizado lógicamente su disco,
+       puede consultar The Linux System Administrators' Guide (version
+       0.6.2), capítulo 4. Using Disks and Other Storage Media <A
+HREF="http://www.linuxdoc.org/LDP/sag/x885.html"
+TARGET="_top"
+>http://www.linuxdoc.org/LDP/sag/x885.html</A
+>
+       </P
+></LI
+><LI
+><P
+>Para determinar como asignar espacio en la partición
+       <TT
+CLASS="literal"
+>swap</TT
+>: The Linux System Administrators' Guide
+       (version 0.6.2), capítulo 5. Memory Management <A
+HREF="http://www.linuxdoc.org/LDP/sag/x1546.html"
+TARGET="_top"
+>http://www.linuxdoc.org/LDP/sag/x1546.html</A
+>
+       </P
+></LI
+></UL
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="ejercicios-instalacion-de-debian"
+>Ejercicios: Instalación de Debian</A
+></H2
+><DIV
+CLASS="qandaset"
+><DL
+><DT
+>1. <A
+HREF="x11422.htm#instala.instala.2"
+>Verifique que puede teclear y ver los carácteres de
+       español en las consolas virtuales y en X-Window, verifique que
+       los mensajes se presenten en español.</A
+></DT
+><DT
+>2. <A
+HREF="x11422.htm#instala.instala.3"
+>Compruebe que todos los dispositivos de su computador
+       funcionan.  En particular las unidades de disquete y CD-ROM
+       (recuerde cambiar el archivo <TT
+CLASS="filename"
+>/etc/fstab</TT
+>
+       para que todos los usuarios puedan montar esos
+       dispositivos,  ver <A
+HREF="x9697.htm#disquetes"
+>Disquetes</A
+>, ver <A
+HREF="x9697.htm#unidades-de-cd-dash-rom-y-dvd"
+>Unidades de CD-ROM y
+       DVD</A
+>).</A
+></DT
+><DT
+>3. <A
+HREF="x11422.htm#instala.instala.4"
+>Examine la memoria de su computador (comando
+       <B
+CLASS="command"
+>free</B
+>), verifique que el espacio swap esté
+       siendo usado. </A
+></DT
+><DT
+>4. <A
+HREF="x11422.htm#instala.instala.5"
+>Revise los programas que están corriendo en su
+       máquina. Revise la secuencia de inicialización.  Elimine de
+       esta secuencia programas que no vaya a utilizar (si los deja
+       estará desperdiciando memoria).</A
+></DT
+><DT
+>5. <A
+HREF="x11422.htm#instala.instala.6"
+>Verifique que esté instalada la documentación
+       y todos los programas recomendados en la plataforma de
+       referencia (ver <A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de
+       referencia</A
+>).</A
+></DT
+><DT
+>6. <A
+HREF="x11422.htm#instala.instala.7"
+>En <TT
+CLASS="filename"
+>/usr/share</TT
+>
+       busque los archivos de configuración de
+       <SPAN
+CLASS="application"
+>emacs</SPAN
+>, vea los directorios de las fuentes y
+       de ser posible instale paquetes que puedan ser útiles para los
+       usuarios finales (e.g <SPAN
+CLASS="application"
+>w3</SPAN
+>,
+       <SPAN
+CLASS="application"
+>gnus</SPAN
+>).</A
+></DT
+><DT
+>7. <A
+HREF="x11422.htm#instala.instala.9"
+>Opcional: ¿Es posible generar su propia
+       distribución o elegir por lo menos paquetes para hacer la
+       instalación de una red con software homogéneo? ¿Qué
+       distribución le permite hacer esto con facilidad?</A
+></DT
+></DL
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.instala.2"
+></A
+><B
+>1. </B
+>Verifique que puede teclear y ver los carácteres de
+       español en las consolas virtuales y en X-Window, verifique que
+       los mensajes se presenten en español.</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Para verificar puede emplearse <B
+CLASS="command"
+>vi</B
+>.
+   </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.instala.3"
+></A
+><B
+>2. </B
+>Compruebe que todos los dispositivos de su computador
+       funcionan.  En particular las unidades de disquete y CD-ROM
+       (recuerde cambiar el archivo <TT
+CLASS="filename"
+>/etc/fstab</TT
+>
+       para que todos los usuarios puedan montar esos
+       dispositivos,  ver <A
+HREF="x9697.htm#disquetes"
+>Disquetes</A
+>, ver <A
+HREF="x9697.htm#unidades-de-cd-dash-rom-y-dvd"
+>Unidades de CD-ROM y
+       DVD</A
+>).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Puede intentarse la compilación de un programa
+	  grande para tratar de verificar que procesador y memoria
+          funcionan.</P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.instala.4"
+></A
+><B
+>3. </B
+>Examine la memoria de su computador (comando
+       <B
+CLASS="command"
+>free</B
+>), verifique que el espacio swap esté
+       siendo usado. </P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+       <B
+CLASS="command"
+>free</B
+></P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.instala.5"
+></A
+><B
+>4. </B
+>Revise los programas que están corriendo en su
+       máquina. Revise la secuencia de inicialización.  Elimine de
+       esta secuencia programas que no vaya a utilizar (si los deja
+       estará desperdiciando memoria).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>
+       Revisar procesos con <B
+CLASS="command"
+>ps</B
+>.  Buscar
+       en la secuencia de arranque del nivel en el que está los
+       que quiere eliminar y retirar el enlace apropiado de
+       <TT
+CLASS="filename"
+>/etc/rc<TT
+CLASS="replaceable"
+><I
+>x</I
+></TT
+>.d</TT
+>
+   </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.instala.6"
+></A
+><B
+>5. </B
+>Verifique que esté instalada la documentación
+       y todos los programas recomendados en la plataforma de
+       referencia (ver <A
+HREF="a14434.htm#plataforma-de-referencia"
+>Plataforma de
+       referencia</A
+>).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Puede por ejemplo revisar la lista de los 
+	   programas que están instalados en su computador con el 
+	   siguiente script awk (digamos que lo llama 
+	   <TT
+CLASS="filename"
+>s2l.awk</TT
+>):<PRE
+CLASS="screen"
+>&#13;/^Package:/ {
+  pack=substr($0,9,length($0)-8);
+}
+
+/^Status: install ok installed/ {
+  print pack;
+}
+
+/.*/ {
+} </PRE
+>
+      usando <B
+CLASS="command"
+>awk -f s2l.awk /var/lib/dpkg/status</B
+>
+  </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.instala.7"
+></A
+><B
+>6. </B
+>En <TT
+CLASS="filename"
+>/usr/share</TT
+>
+       busque los archivos de configuración de
+       <SPAN
+CLASS="application"
+>emacs</SPAN
+>, vea los directorios de las fuentes y
+       de ser posible instale paquetes que puedan ser útiles para los
+       usuarios finales (e.g <SPAN
+CLASS="application"
+>w3</SPAN
+>,
+       <SPAN
+CLASS="application"
+>gnus</SPAN
+>).</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Pude consultarse
+       <TT
+CLASS="filename"
+>/usr/share/emacs/site-lisp/debian-startup.el</TT
+>
+       que indica que los archivos que se cargan al arranque están
+       en: <TT
+CLASS="filename"
+>/etc/emacs/site-start.d</TT
+>. 
+   </P
+></DIV
+></DIV
+><DIV
+CLASS="qandaentry"
+><DIV
+CLASS="question"
+><P
+><A
+NAME="instala.instala.9"
+></A
+><B
+>7. </B
+>Opcional: ¿Es posible generar su propia
+       distribución o elegir por lo menos paquetes para hacer la
+       instalación de una red con software homogéneo? ¿Qué
+       distribución le permite hacer esto con facilidad?</P
+></DIV
+><DIV
+CLASS="answer"
+><P
+><B
+> </B
+>Si es posible. <A
+HREF="http://www.rocklinux.de/about.html"
+TARGET="_top"
+>http://www.rocklinux.de/about.html</A
+></P
+></DIV
+></DIV
+></DIV
+></DIV
+></DIV
+><H3
+CLASS="FOOTNOTES"
+>Notas</H3
+><TABLE
+BORDER="0"
+CLASS="FOOTNOTES"
+WIDTH="100%"
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN11460"
+HREF="x11422.htm#AEN11460"
+>[1]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Estos disquetes
+       permiten iniciar un sistema con hardware usual, hay otros
+       disquetes para sistemas con discos o dispositivos no tan
+       comunes, ver manual de instalación.</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN11487"
+HREF="x11422.htm#AEN11487"
+>[2]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Para recuperar un computador con una partición Linux,
+	 puede emplear el disquete de arranque, después de configurar
+	 el teclado pase a la segunda consola virtual, monte el disco
+	 duro con la raiz de Linux e.g <TT
+CLASS="literal"
+>mount /dev/hda3
+	 /mnt</TT
+>, establezcalo como nueva raíz <TT
+CLASS="literal"
+>chroot
+	 /mnt</TT
+> y haga los ajustes necesarios para recuperar
+	 el sistema (e.g editar <TT
+CLASS="filename"
+>/etc/lilo.conf</TT
+> y
+	 ejectuar <TT
+CLASS="literal"
+>/sbin/lilo</TT
+>.
+	</P
+></TD
+></TR
+><TR
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="5%"
+><A
+NAME="FTN.AEN11522"
+HREF="x11422.htm#AEN11522"
+>[3]</A
+></TD
+><TD
+ALIGN="LEFT"
+VALIGN="TOP"
+WIDTH="95%"
+><P
+>Entre los módulos presentados en
+       la sección misc, dice <TT
+CLASS="literal"
+>sb</TT
+> "VIA 82Cxxx audio
+       support", debería ser <TT
+CLASS="literal"
+>sb</TT
+> "SoundBlaster and
+       100% compatible support".</P
+></TD
+></TR
+></TABLE
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="x9697.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x11660.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Dispositivos y Linux</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="c8032.htm"
+ACCESSKEY="U"
+>Subir</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Localización y configuración de algunos programas</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

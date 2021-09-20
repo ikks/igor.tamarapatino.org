@@ -1,0 +1,601 @@
+<HTML
+><HEAD
+><TITLE
+>Actualización del kernel de
+   Debian Linux</TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+"><LINK
+REL="HOME"
+TITLE="Aprendiendo a Aprender Linux"
+HREF="book1.htm"><LINK
+REL="PREVIOUS"
+TITLE="Sobre estas guías"
+HREF="a14863.htm"><LINK
+REL="NEXT"
+TITLE="Compilación del kernel"
+HREF="x14983.htm"></HEAD
+><BODY
+CLASS="appendix"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>Aprendiendo a Aprender Linux: Guías para colegios con plataforma de referencia
+   S-Helio 1.1</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="a14863.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="x14983.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="appendix"
+><H1
+><A
+NAME="actualizacion-del-kernel-de-linux"
+>Apéndice C. Actualización del <I
+CLASS="foreignphrase"
+>kernel</I
+> de
+   Debian Linux</A
+></H1
+><DIV
+CLASS="TOC"
+><DL
+><DT
+><B
+>Tabla de contenidos</B
+></DT
+><DT
+><A
+HREF="a14885.htm#AEN14901"
+>Introducción</A
+></DT
+><DT
+><A
+HREF="x14983.htm"
+>Compilación del <I
+CLASS="foreignphrase"
+>kernel</I
+></A
+></DT
+><DT
+><A
+HREF="x15453.htm"
+>Instalación del nuevo <I
+CLASS="foreignphrase"
+>kernel</I
+></A
+></DT
+><DT
+><A
+HREF="x15543.htm"
+>Referencias</A
+></DT
+></DL
+></DIV
+><P
+>El <I
+CLASS="foreignphrase"
+>kernel</I
+> o núcleo es una de
+   las partes esenciales de un sistema operativo. El
+   <I
+CLASS="foreignphrase"
+>kernel</I
+> proporciona todos los
+   servicios básicos requeridos por otras partes del sistema operativo
+   y aplicaciones, y en complemento, se encarga de la administración
+   de la memoria, los procesos y los discos.  El
+   <I
+CLASS="foreignphrase"
+>kernel</I
+> es independiente de la
+   distribución Linux utilizada, de tal forma que el mismo
+   <I
+CLASS="foreignphrase"
+>kernel</I
+> debería servir en cualquier
+   caso. La actualización del <I
+CLASS="foreignphrase"
+>kernel</I
+> se
+   divide en 2 partes: compilación e instalación del nuevo
+   <I
+CLASS="foreignphrase"
+>kernel</I
+>.
+  </P
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN14901"
+>Introducción</A
+></H1
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14903"
+>Acerca de esta guía</A
+></H2
+><P
+>En esta guía se desarrolla el ejemplo de la compilación del
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> versión 2.2.18 bajo Debian
+     2.1 Citius (<I
+CLASS="foreignphrase"
+>kernel</I
+> 2.0.36). Si
+     desea compilar un <I
+CLASS="foreignphrase"
+>kernel</I
+> 2.4.x
+     bajo un sistema con <I
+CLASS="foreignphrase"
+>kernel</I
+> 2.0.x o
+     2.2.x deberá consultar otros documentos que tratan
+     específicamente sobre el tema.
+    </P
+><P
+>De cualquier forma al final de este instructivo se presentan
+     algunas referencias de documentos disponibles en Internet para
+     mayor ilustración.
+    </P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14911"
+>¿Por qué compilar?</A
+></H2
+><P
+>Hay diversas razones para
+    querer reconstruir el <I
+CLASS="foreignphrase"
+>kernel</I
+> de
+    Linux:
+    </P
+><P
+>Es útil recompilar un <I
+CLASS="foreignphrase"
+>kernel</I
+>
+     porque trabajando con <I
+CLASS="foreignphrase"
+>kernel</I
+>s
+     nuevos generalmente se obtiene:
+    </P
+><P
+></P
+><OL
+TYPE="1"
+><LI
+><P
+>Un sistema más rápido, estable y robusto.</P
+></LI
+><LI
+><P
+>Un sistema con soporte a elementos de hardware no
+       encontrado en <I
+CLASS="foreignphrase"
+>kernel</I
+>s
+       viejos.</P
+></LI
+><LI
+><P
+>Un sistema con soporte a características especiales
+     disponibles pero no habilitadas en
+     <I
+CLASS="foreignphrase"
+>kernel</I
+>s viejos.</P
+></LI
+></OL
+><P
+>Una alternativa a recompilar el
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> es instalar una nueva
+     versión de la distribución Linux que esté utilizando. Dependiendo
+     de las circunstancias puede resultar conveniente o preferible lo
+     uno o lo otro. Por ejemplo, si tiene un sistema Linux que le
+     costó esfuerzo y tiempo para instalar y configurar, y no desea
+     volver a realizar todo ese trabajo otra vez, es posible que
+     recompilar el <I
+CLASS="foreignphrase"
+>kernel</I
+> sea lo más
+     sencillo para dar solución a su necesidad particular.
+    </P
+><P
+>Recompilar el <I
+CLASS="foreignphrase"
+>kernel</I
+> de Linux
+     no es más que personalizar el
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> y como con cualquier
+     aplicación, la personalización se hace para sacar un mayor
+     provecho de las diferentes características que ofrece el
+     software.
+    </P
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>
+      Si usted no tiene experiencia compilando el
+      <I
+CLASS="foreignphrase"
+>kernel</I
+> es recomendable que
+      utilice un equipo donde usted pueda practicar sin temor de que
+      su sistema eventualmente vaya a quedar estropeado. No hay ningún
+      riesgo al compilar el <I
+CLASS="foreignphrase"
+>kernel</I
+>
+      (salvo que se quede sin espacio), en cambio, la instalación del
+      mismo debe de realizarse con algo de cuidado.</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14937"
+>Versiones de producción y de desarrollo.</A
+></H2
+><P
+>Los
+    <I
+CLASS="foreignphrase"
+>kernel</I
+>s pueden corresponder a
+    versiones de "producción" o a versiones de "desarrollo". Las
+    versiones 2.0.x, 2.2.x y 2.4.x son versiones de producción, por el
+    contrario, las versiones 2.1.x y 2.3.x son versiones de
+    desarrollo. En forma particular se tiene que, por ejemplo, la
+    versión 2.2.17 o la versión 2.2.18 son versiones de producción,
+    estables y para usuarios finales y las versiones 2.1.1 o 2.1.2
+    corresponden a versiones de desarrollo, inestables, utilizadas por
+    desarrolladores o por ciertos usuarios que desean probar.
+    </P
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>No utilice <I
+CLASS="foreignphrase"
+>kernel</I
+>s de
+     desarrollo a menos que usted sepa lo que está haciendo.</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14944"
+>Acerca de los módulos</A
+></H2
+><P
+>Varias partes de código del
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> pueden compilarse por
+     separado en forma de módulos, dando flexibilidad al sistema. Los
+     módulos no están enlazados directamente en el
+     <I
+CLASS="foreignphrase"
+>kernel</I
+>, siendo necesario
+     insertarlos en él ya sea durante el proceso de arranque o si se
+     quiere, posteriormente, de tal forma que sólo se usan cuando se
+     necesitan, sin utilizar innecesariamente la memoria RAM del
+     sistema.
+    </P
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>Hay componentes que no deben compilarse como módulos porque
+      son esenciales para hacer posible el arranque del sistema, por
+      ejemplo el soporte para el sistema de archivos ext2, que Linux
+      utiliza en forma predeterminada. Otros componentes si pueden
+      hacerlo, por ejemplo, el soporte para una cierta tarjeta de
+      red.</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14951"
+>Software requerido</A
+></H2
+><P
+>Los requisitos de software necesario para compilar el
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> varian considerablemente de
+     una versión mayor del <I
+CLASS="foreignphrase"
+>kernel</I
+> a
+     otra, por ejemplo para compilar un
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> 2.4.x bajo un sistema con
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> 2.2.x. Si es esa su
+     necesidad, es mejor que consulte la nota respecto a la
+     instalación de <I
+CLASS="foreignphrase"
+>kernel</I
+>s 2.4.x, en
+     la sección de Introducción de este documento.
+    </P
+><P
+>Para compilar un nuevo <I
+CLASS="foreignphrase"
+>kernel</I
+>
+     correspondiente a una misma versión mayor del
+     <I
+CLASS="foreignphrase"
+>kernel</I
+>, como es el caso del
+     ejemplo escogido (instalar <I
+CLASS="foreignphrase"
+>kernel</I
+>
+     2.2.18 bajo Red Hat 6.1/<I
+CLASS="foreignphrase"
+>kernel</I
+>
+     2.2.12), seguramente no necesitará software adicional al incluido
+     en la distribución Linux que esté empleando.
+    </P
+><P
+>Para compilar un nuevo <I
+CLASS="foreignphrase"
+>kernel</I
+>
+     generalmente no necesitará software adicional al incluido en la
+     distribución Linux que esté empleando, a menos que se trate de un
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> 2.4.x, caso en el cual es
+     posible que si se lo requiera.
+    </P
+><P
+>En cualquier caso es recomendable consultar primero el
+     archivo <TT
+CLASS="filename"
+>README</TT
+> principal incluido en los
+     fuentes del <I
+CLASS="foreignphrase"
+>kernel</I
+> a instalar bajo
+     el directorio base linux.
+    </P
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>En particular, para el ejercicio planteado en este
+      documento basado en Debian 2.1 Citius, fue necesario instalar,
+      adicionalmente al software base, el paquete bin86 para lograr el
+      objetivo.</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14972"
+>Tiempo de compilación</A
+></H2
+><P
+>El tiempo necesario para compilar es muy variable,
+     dependiendo del computador que se vaya a utilizar. En
+     computadores recientes, por ejemplo en equipos Pentium Celeron o
+     superiores, el proceso toma 10 minutos o menos. Tenga en cuenta
+     que si utiliza computadores poco recientes, por ejemplo en
+     equipos Pentium viejos, 486s y 386s el proceso puede tardar
+     incluso varias horas.
+    </P
+><DIV
+CLASS="important"
+><BLOCKQUOTE
+CLASS="important"
+><P
+><B
+>Importante: </B
+>El tiempo de compilación puede reducirse a la mitad o
+      menos, si primero se optimiza el disco duro donde se encuentra
+      instalado Linux, utilizando el comando hdparm. Las mejoras en
+      velocidad de lectura/escritura en discos será mayor cuanto más
+      nuevos sean los discos. La optimización de un disco debe
+      realizarse con cuidado ya que existe algún riesgo de malograr
+      los archivos contenidos en el disco. Al final se presentan
+      algunas referencias al respecto.  Una vez se consigue optimizar
+      un disco, se configura el sistema operativo para trabajo en modo
+      optimizado en forma permanente.</P
+></BLOCKQUOTE
+></DIV
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN14977"
+>Espacio en disco requerido</A
+></H2
+><P
+>El espacio necesario para compilar el
+     <I
+CLASS="foreignphrase"
+>kernel</I
+> varía de acuerdo a la
+     versión del <I
+CLASS="foreignphrase"
+>kernel</I
+> a utilizar. Los
+     fuentes del <I
+CLASS="foreignphrase"
+>kernel</I
+> 2.2.18 ocupan
+     cerca de 92 MB, así que para este caso tomado de ejemplo sería
+     bueno disponer de al menos unos 100 MB libres.
+    </P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="a14863.htm"
+ACCESSKEY="P"
+>Anterior</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.htm"
+ACCESSKEY="H"
+>Inicio</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="x14983.htm"
+ACCESSKEY="N"
+>Siguiente</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Sobre estas guías</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>Compilación del <I
+CLASS="foreignphrase"
+>kernel</I
+></TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>
