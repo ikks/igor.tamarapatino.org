@@ -1,176 +1,176 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2. Kernel y módulos</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-dos.html" title="Capítulo 5. Administración de Linux en computadores aislados"><link rel="previous" href="administracion-dos.html" title="Capítulo 5. Administración de Linux en computadores aislados"><link rel="next" href="hardware-basico-y-linux.html" title="3. Hardware básico y Linux"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Kernel y módulos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="administracion-dos.html">Anterior</a> </td><th width="60%" align="center">Capítulo 5. Administración de Linux en computadores aislados</th><td width="20%" align="right"> <a accesskey="n" href="hardware-basico-y-linux.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="kernel-y-modulos"></a>2. Kernel y módulos</h2></div></div><p>Indicadores de Logros:  </p><div class="itemizedlist"><ul type="disc"><li><p><a name="init.modulos"></a>Maneja sistema de módulos.</p></li><li><p><a name="init.kernel"></a>Puede configurar, cambiar o recompilar el kernel.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-kernel-y-modulos"></a>2.1. Lectura: Kernel y módulos</h3></div></div><p>
-     En un sistema Linux la interacción final con dispositivos la
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Kernel y mÃ³dulos</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-dos.html" title="CapÃ­tulo 5. AdministraciÃ³n de Linux en computadores aislados"><link rel="previous" href="administracion-dos.html" title="CapÃ­tulo 5. AdministraciÃ³n de Linux en computadores aislados"><link rel="next" href="hardware-basico-y-linux.html" title="3. Hardware bÃ¡sico y Linux"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Kernel y mÃ³dulos</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="administracion-dos.html">Anterior</a>Â </td><th width="60%" align="center">CapÃ­tulo 5. AdministraciÃ³n de Linux en computadores aislados</th><td width="20%" align="right">Â <a accesskey="n" href="hardware-basico-y-linux.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="kernel-y-modulos"></a>2. Kernel y mÃ³dulos</h2></div></div><p>Indicadores de Logros:  </p><div class="itemizedlist"><ul type="disc"><li><p><a name="init.modulos"></a>Maneja sistema de mÃ³dulos.</p></li><li><p><a name="init.kernel"></a>Puede configurar, cambiar o recompilar el kernel.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-kernel-y-modulos"></a>2.1. Lectura: Kernel y mÃ³dulos</h3></div></div><p>
+     En un sistema Linux la interacciÃ³n final con dispositivos la
      realizan los controladores o el kernel.  Dicho de otra forma, un
-     dispositivo sólo podrá ser usado si el kernel lo soporta o si
+     dispositivo sÃ³lo podrÃ¡ ser usado si el kernel lo soporta o si
      existe un controlador capaz de controlarlo y si se configura
      apropiadamente para hacerlo.  Por esto, los dispositivos que se
      produzcan hoy, no pueden ser operados con controladores ya
-     existentes (a menos que los dispositivos hayan sido diseñados
+     existentes (a menos que los dispositivos hayan sido diseÃ±ados
      para ser operados con estos ---caso que para algunos dispositivos
      como tarjetas de sonido, tarjetas de video o modems es poco
-     común), por esto mismo, eventualmente, si actualiza el hardware
+     comÃºn), por esto mismo, eventualmente, si actualiza el hardware
      de su computador o si desea usar un cierto servicio del kernel,
-     también deberá actualizar algún módulo o eventualmente el kernel
+     tambiÃ©n deberÃ¡ actualizar algÃºn mÃ³dulo o eventualmente el kernel
      completo.  Aunque algunos controladores autodetectan la
-     configuración del dispositivo, esto no siempre ocurre y en
-     algunos casos tendrá que probar (cacharrear), hasta hacer
-     funcionar el módulo que maneja el dispositivo (en estas pruebas
-     la documentación del dispositivo, la del módulo y estas guías,
+     configuraciÃ³n del dispositivo, esto no siempre ocurre y en
+     algunos casos tendrÃ¡ que probar (cacharrear), hasta hacer
+     funcionar el mÃ³dulo que maneja el dispositivo (en estas pruebas
+     la documentaciÃ³n del dispositivo, la del mÃ³dulo y estas guÃ­as,
      esperamos le sean de utilidad ---si desea experimentar
      rapidamente emplee <b>modconf</b>).
-    </p><p>Las fuentes en C de cada versión del kernel cuentan con
+    </p><p>Las fuentes en C de cada versiÃ³n del kernel cuentan con
      controladores para diversos dispositivos.  Cuando se compila una
-     versión, algunos de esos controladores pueden unirse con el
-     kernel mismo (estáticamente), otros pueden dejarse como módulos para
-     cargarse/descargarse cuando la parte estática del kernel este
+     versiÃ³n, algunos de esos controladores pueden unirse con el
+     kernel mismo (estÃ¡ticamente), otros pueden dejarse como mÃ³dulos para
+     cargarse/descargarse cuando la parte estÃ¡tica del kernel este
      operando,
-     otros pueden ser excluidos del proceso de compilación (y por lo
-     tanto no podrán ser usados ni cuando el kernel esté operando).
-   </p><a class="indexterm" name="id423790"></a><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="modulos"></a>2.1.1. Módulos</h4></div></div><a class="indexterm" name="id423822"></a><p>En este contexto, módulo se refiere a un controlador de
+     otros pueden ser excluidos del proceso de compilaciÃ³n (y por lo
+     tanto no podrÃ¡n ser usados ni cuando el kernel estÃ© operando).
+   </p><a class="indexterm" name="id423790"></a><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="modulos"></a>2.1.1. MÃ³dulos</h4></div></div><a class="indexterm" name="id423822"></a><p>En este contexto, mÃ³dulo se refiere a un controlador de
       un dispositivos o servicio que puede cargarse o descargarse
-      cuando el usuario o algún dispositivo lo solicita (i.e
-      dinámicamente).  Los módulos que se distribuyen con en el kernel
-      están ubicados en el directorio <tt>/lib/modules/<i><tt>version</tt></i></tt>,
-      donde <i><tt>version</tt></i> es la versión de su
+      cuando el usuario o algÃºn dispositivo lo solicita (i.e
+      dinÃ¡micamente).  Los mÃ³dulos que se distribuyen con en el kernel
+      estÃ¡n ubicados en el directorio <tt>/lib/modules/<i><tt>version</tt></i></tt>,
+      donde <i><tt>version</tt></i> es la versiÃ³n de su
       kernel
-      <sup>[<a name="id423944" href="#ftn.id423944">112</a>]</sup>, con la extensión
+      <sup>[<a name="id423944" href="#ftn.id423944">112</a>]</sup>, con la extensiÃ³n
       <tt>.o</tt>
       <sup>[<a name="id423966" href="#ftn.id423966">113</a>]</sup> organizados en directorios que indican el tipo de
-      dispositivo o el propósito, por ejemplo <tt>fs</tt>
+      dispositivo o el propÃ³sito, por ejemplo <tt>fs</tt>
       - sistema de archivos, <tt>net</tt> - protocolos y
       hardware para redes.
      </p><p>Para lograr configurar un dispositivo controlado por un
-      módulo, puede emplear las herramientas del paquete
+      mÃ³dulo, puede emplear las herramientas del paquete
       <tt>modutils</tt> o <b>modconf</b> para:
       </p><div class="orderedlist"><ol type="1"><li><p>Asegurar que no haya conflictos entre el dispositivo con
-	otros y eventualmente conocer la configuración que usa
-	(algunos controladores autodetectan la configuración del
+	otros y eventualmente conocer la configuraciÃ³n que usa
+	(algunos controladores autodetectan la configuraciÃ³n del
 	dispositivo, pero no todos).
-       </p></li><li><p>Encontrar un módulo que pueda manejar el dispositivo.
-       </p></li><li><p>Eventualmente pasar opciones al módulo de acuerdo a la
-	configuración del dispositivo (e.g IRQ o
-	dirección base).
+       </p></li><li><p>Encontrar un mÃ³dulo que pueda manejar el dispositivo.
+       </p></li><li><p>Eventualmente pasar opciones al mÃ³dulo de acuerdo a la
+	configuraciÃ³n del dispositivo (e.g IRQ o
+	direcciÃ³n base).
        </p></li></ol></div><a class="indexterm" name="id424158"></a><p>En Debian las herraminetas del paquete
       <tt>modutils</tt> se configuran en los achivos del
       directorio <tt>/etc/modutils</tt>
-      (con la información de esos archivos y de <tt>/etc/modules</tt>
-      se genera el archivo de configuración de módulos 
+      (con la informaciÃ³n de esos archivos y de <tt>/etc/modules</tt>
+      se genera el archivo de configuraciÃ³n de mÃ³dulos 
       <tt>/etc/modules.conf</tt>
       <sup>[<a name="id424308" href="#ftn.id424308">114</a>]</sup>).  Los programas que ese paquete incluye son:
      </p><a class="indexterm" name="id424331"></a><a class="indexterm" name="id424358"></a><a class="indexterm" name="id424385"></a><a class="indexterm" name="id424412"></a><a class="indexterm" name="id424439"></a><a class="indexterm" name="id424466"></a><a class="indexterm" name="id424493"></a><div class="variablelist"><dl><dt><span class="term">
 	<b>lsmod</b>
-       </span></dt><dd><p>Lista los módulos cargados, de cada uno presenta nombre,
-	 tamaño, cuenta de usos y lista de módulos que lo usan (es
+       </span></dt><dd><p>Lista los mÃ³dulos cargados, de cada uno presenta nombre,
+	 tamaÃ±o, cuenta de usos y lista de mÃ³dulos que lo usan (es
 	 equivalente a <b>cat /proc/modules</b>).
-	</p></dd><dt><span class="term"><b>rmmod <i><tt>módulos</tt></i></b>
-       </span></dt><dd><p>Descarga uno o más módulos cargados, mientras estos no
-	 estén siendo usados.  Con la opción <tt>-r</tt>
-	 intenta descargar recursivamente módulos de los cuales el
-	 módulo especificado dependa.  El comando <b>rmmod
-	 -a</b> descarga todos los módulos que no estén siendo
+	</p></dd><dt><span class="term"><b>rmmod <i><tt>mÃ³dulos</tt></i></b>
+       </span></dt><dd><p>Descarga uno o mÃ¡s mÃ³dulos cargados, mientras estos no
+	 estÃ©n siendo usados.  Con la opciÃ³n <tt>-r</tt>
+	 intenta descargar recursivamente mÃ³dulos de los cuales el
+	 mÃ³dulo especificado dependa.  El comando <b>rmmod
+	 -a</b> descarga todos los mÃ³dulos que no estÃ©n siendo
 	 usados.
-	</p></dd><dt><span class="term"><b>insmod <i><tt>módulo</tt></i>
+	</p></dd><dt><span class="term"><b>insmod <i><tt>mÃ³dulo</tt></i>
 	 <tt>[<i><tt>opciones</tt></i>]</tt></b>
-       </span></dt><dd><p>Trata de cargar el módulo especificado.  Pueden pasarse
-	 opciones específicas para el módulo, a continuación del
+       </span></dt><dd><p>Trata de cargar el mÃ³dulo especificado.  Pueden pasarse
+	 opciones especÃ­ficas para el mÃ³dulo, a continuaciÃ³n del
 	 nombre con la sintaxis
-	 <tt>símbolo</tt>=<i><tt>valor</tt></i>
-	 (los símbolos posibles dependen del módulo, pueden verse
-	 algunos en estas guías o en
+	 <tt>sÃ­mbolo</tt>=<i><tt>valor</tt></i>
+	 (los sÃ­mbolos posibles dependen del mÃ³dulo, pueden verse
+	 algunos en estas guÃ­as o en
 	 <tt>/usr/share/modconf/descr.gz</tt> --- que es
 	 la ayuda presentada por <b>modconf</b> --- o en
-	 último caso en las fuentes del módulo en los macros
+	 Ãºltimo caso en las fuentes del mÃ³dulo en los macros
 	 <tt>MODULE_PARAM</tt> y
 	 <tt>MODULE_PARAM_DESCR</tt>). Puede indicarse una
-	 ruta no estándar para buscar módulos estableciéndola en la
+	 ruta no estÃ¡ndar para buscar mÃ³dulos estableciÃ©ndola en la
 	 variable <tt>MODPATH</tt> o en
-	 <tt>/etc/modules.conf</tt>.  Dado que los módulos
+	 <tt>/etc/modules.conf</tt>.  Dado que los mÃ³dulos
 	 se enlazan directamente con el kernel, deben ser compilados
-	 para una versión precisa, con la opción <tt>-f</tt>
+	 para una versiÃ³n precisa, con la opciÃ³n <tt>-f</tt>
 	 puede evitarse el chequeo de versiones.
 	</p></dd><dt><span class="term"><b>depmod</b>
-       </span></dt><dd><p>Como un módulo puede requerir otros, hay dependencias
-	 que deben respetarse al cargar y descargar módulos.
+       </span></dt><dd><p>Como un mÃ³dulo puede requerir otros, hay dependencias
+	 que deben respetarse al cargar y descargar mÃ³dulos.
 	 <b>depmod</b> permite calcular tales dependencias
-	 entre varios módulos o entre todos los disponibles con la
-	 opción <tt>-a</tt>
+	 entre varios mÃ³dulos o entre todos los disponibles con la
+	 opciÃ³n <tt>-a</tt>
 	 <sup>[<a name="id424862" href="#ftn.id424862">115</a>]</sup>.  Por defecto <b>depmod -a</b>
 	 escribe las dependencias en el archivo
 	 <tt>/lib/modules/<i><tt>version</tt></i>/modules.emp</tt>
-	 Cada línea de ese archivo tiene el nombre de un módulo
-	 seguido del caracter ':' y los módulos de los cuales depende,
+	 Cada lÃ­nea de ese archivo tiene el nombre de un mÃ³dulo
+	 seguido del caracter ':' y los mÃ³dulos de los cuales depende,
 	 separados por espacios.
-	</p></dd><dt><span class="term"><b>modprobe <i><tt>módulo</tt></i>
+	</p></dd><dt><span class="term"><b>modprobe <i><tt>mÃ³dulo</tt></i>
 	 <i><tt>opciones</tt></i></b>
-       </span></dt><dd><p>Emplea la información de dependencias generada por
-	 <b>depmod</b> e información de
-	 <tt>/etc/modules.conf</tt> para cargar el módulo
-	 especificado, cargando antes todos los módulos de los cuales
-	 dependa.  Para especificar el módulo basta escribir el nombre
-	 (sin la ruta, ni la extensión <tt>.o</tt>) o uno de
+       </span></dt><dd><p>Emplea la informaciÃ³n de dependencias generada por
+	 <b>depmod</b> e informaciÃ³n de
+	 <tt>/etc/modules.conf</tt> para cargar el mÃ³dulo
+	 especificado, cargando antes todos los mÃ³dulos de los cuales
+	 dependa.  Para especificar el mÃ³dulo basta escribir el nombre
+	 (sin la ruta, ni la extensiÃ³n <tt>.o</tt>) o uno de
 	 los alias definidos en
 	 <tt>/etc/modutils/alias</tt> (o en otro archivo
 	 del directorio <tt>/etc/modutils</tt>).  Si hay
-	 líneas <tt>pre-install</tt> o
+	 lÃ­neas <tt>pre-install</tt> o
 	 <tt>post-install</tt> en
 	 <tt>/etc/modules.conf</tt>,
 	 <b>modprobe</b> puede ejecutar un comando antes
-	 y/o después de cargar el módulo.  Como opciones para cargar
-	 el módulo usa prioritariamente las dadas en la línea de
-	 comandos y después las especificadas en líneas de la forma
-	 <tt>options <i><tt>módulo</tt></i>
+	 y/o despuÃ©s de cargar el mÃ³dulo.  Como opciones para cargar
+	 el mÃ³dulo usa prioritariamente las dadas en la lÃ­nea de
+	 comandos y despuÃ©s las especificadas en lÃ­neas de la forma
+	 <tt>options <i><tt>mÃ³dulo</tt></i>
 	 <i><tt>opciones</tt></i></tt> en el archivo
 	 <tt>/etc/modules.conf</tt>
 	 <sup>[<a name="id425169" href="#ftn.id425169">116</a>]</sup>
-	</p></dd></dl></div><p>Puede emplear estos programas para configurar sus módulos y
-      puede hacer permanentes los cambios, agregando el módulo y las
+	</p></dd></dl></div><p>Puede emplear estos programas para configurar sus mÃ³dulos y
+      puede hacer permanentes los cambios, agregando el mÃ³dulo y las
       opciones en el archivo
       <tt>/etc/modules</tt>
       <sup>[<a name="id425202" href="#ftn.id425202">117</a>]</sup>.
-    </p><p>Para hacer más fácil la configuración de módulos, Debian
+    </p><p>Para hacer mÃ¡s fÃ¡cil la configuraciÃ³n de mÃ³dulos, Debian
       ofrece las siguientes herramientas: </p><div class="variablelist"><dl><dt><span class="term">
 	<b>modconf</b>
-       </span></dt><dd><p>Para listar, cargar y descargar módulos con menús. Este
-	 programa muestra los módulos disponbiles en categorías y con
+       </span></dt><dd><p>Para listar, cargar y descargar mÃ³dulos con menÃºs. Este
+	 programa muestra los mÃ³dulos disponbiles en categorÃ­as y con
 	 ayudas sobre su uso y permite cargarlos o descargarlos del
-	 kernel, actualizando automáticamente los archivos
+	 kernel, actualizando automÃ¡ticamente los archivos
 	 <tt>/etc/modules</tt> y
 	 <tt>/etc/modules.conf</tt> (cambiando los
 	 archivos apropiados de <tt>/etc/modutils</tt>)
-	 para que los módulos configurados sean cargados
-	 automáticamente en el siguiente arranque.  La información
-	 sobre los módulos disponibles la obtiene del directorio
-	 <tt>/lib/modules</tt>, los módulos cargados y sus
-	 parámetros los lee de <tt>/etc/modutils</tt> y
+	 para que los mÃ³dulos configurados sean cargados
+	 automÃ¡ticamente en el siguiente arranque.  La informaciÃ³n
+	 sobre los mÃ³dulos disponibles la obtiene del directorio
+	 <tt>/lib/modules</tt>, los mÃ³dulos cargados y sus
+	 parÃ¡metros los lee de <tt>/etc/modutils</tt> y
 	 <tt>/etc/modules.conf</tt> y la ayuda y la
-	 información interna de los archivos en
+	 informaciÃ³n interna de los archivos en
 	 <tt>/usr/share/modules.conf</tt>
-	 ---<b>modconf</b> es un script para el intérprete
+	 ---<b>modconf</b> es un script para el intÃ©rprete
 	 de comandos.
 	</p></dd><dt><span class="term"><b>update-modules</b>
        </span></dt><dd><p>Actualiza el archivo
 	 <tt>/etc/modules.conf</tt> a partir de la
-	 información de los archivos del directorio
+	 informaciÃ³n de los archivos del directorio
 	 <tt>/etc/modutils</tt> --- en Debian no se edita
 	 directamente <tt>/etc/modules.conf</tt>.
 	</p></dd></dl></div><p>Es posible que el kernel del que disponga no cuente con
-      módulos que soporten ciertos dispositivos, en tal caso se puede:
-      </p><div class="orderedlist"><ol type="1"><li><p>buscar en Internet un módulo precompilado para la versión
+      mÃ³dulos que soporten ciertos dispositivos, en tal caso se puede:
+      </p><div class="orderedlist"><ol type="1"><li><p>buscar en Internet un mÃ³dulo precompilado para la versiÃ³n
 	del kernel que tiene,
-       </p></li><li><p>buscar fuentes de un módulo o
-       </p></li><li><p>buscar una versión del kernel que incluya soporte para el
+       </p></li><li><p>buscar fuentes de un mÃ³dulo o
+       </p></li><li><p>buscar una versiÃ³n del kernel que incluya soporte para el
        dispositivo. 
-       </p></li></ol></div><p>En el último caso las instrucciones de la siguiente sección
-      le serán de utilidad. </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="configuracion-del-kernel"></a>2.1.2. Configuración del kernel</h4></div></div><p>Además de cargar y descargar módulos, algunas
-      características del kernel pueden ser modificadas mientras está
+       </p></li></ol></div><p>En el Ãºltimo caso las instrucciones de la siguiente secciÃ³n
+      le serÃ¡n de utilidad. </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="configuracion-del-kernel"></a>2.1.2. ConfiguraciÃ³n del kernel</h4></div></div><p>AdemÃ¡s de cargar y descargar mÃ³dulos, algunas
+      caracterÃ­sticas del kernel pueden ser modificadas mientras estÃ¡
       en funcionamiento el sistema, bien escribiendo en algunos
       archivos del directorio <tt>/proc</tt>, o con el programa
-      <b>sysctl</b>.  Este programa con la opción
+      <b>sysctl</b>.  Este programa con la opciÃ³n
       <tt>-a</tt> presenta todas las variables modificables
       y su valor, entre otras encuentra variables que mantienen datos
       autodetectados en dispositivos (en particular del CDROM), datos
-      de la interacción entre el kernel y el sistema de archivos (ver
+      de la interacciÃ³n entre el kernel y el sistema de archivos (ver
       <a href="administracion-de-archivos.html#sistema-de-archivos-ext-two" title="4.1.4. Sistema de archivos ext2">Sistema de archivos
       ext2</a>), datos sobre los protocolos y dispositivos de
       redes, y detalles del kernel.
@@ -183,63 +183,63 @@
       en lugar de <i><tt>comp</tt></i>.
       Pueden hacerse cambios que se vuelven a tomar cada vez que el
       sistema inicia en el archivo <tt>/etc/sysctl.conf</tt>.
-    </p><p>En cuanto a los módulos, las imagenes precompiladas del
-      kernel producidas por Debian incluyen estáticamente varios
-      controladores comunes y prácticamente los demás controladores
-      los incluye como módulos.  Por esto, si la versión del kernel
+    </p><p>En cuanto a los mÃ³dulos, las imagenes precompiladas del
+      kernel producidas por Debian incluyen estÃ¡ticamente varios
+      controladores comunes y prÃ¡cticamente los demÃ¡s controladores
+      los incluye como mÃ³dulos.  Por esto, si la versiÃ³n del kernel
       que tiene soporta sus dispositivos y los servicios que desea,
       casi con seguridad usted NO necesita recompilar el kernel (puede
       confirmar si la imagen que tiene, soporta el controlador como
-      módulo revisando en el directorio de módulos, o puede comprobar
-      si éste se incluye estáticamente, efectuando el segundo paso
-      para una instalación que se explica más adelante, usando como
-      archivo de configuración el de la imagen de su kernel).
+      mÃ³dulo revisando en el directorio de mÃ³dulos, o puede comprobar
+      si Ã©ste se incluye estÃ¡ticamente, efectuando el segundo paso
+      para una instalaciÃ³n que se explica mÃ¡s adelante, usando como
+      archivo de configuraciÃ³n el de la imagen de su kernel).
     </p><p>Eventualmente, si su dispositivo no es detectado
-     automáticamente o el módulo apropiado no es cargado
-     automáticamente
-      <sup>[<a name="id425634" href="#ftn.id425634">118</a>]</sup>, tendrá que pasar los paramétros apropiados de una
+     automÃ¡ticamente o el mÃ³dulo apropiado no es cargado
+     automÃ¡ticamente
+      <sup>[<a name="id425634" href="#ftn.id425634">118</a>]</sup>, tendrÃ¡ que pasar los paramÃ©tros apropiados de una
       de las dos siguientes formas:
-    </p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><b>Controlado estático</b></span>
-      </span></dt><dd><a class="indexterm" name="id425666"></a><p>Pase los parámetros apropiados desde el cargador de
+    </p><div class="variablelist"><dl><dt><span class="term"><span class="bold"><b>Controlado estÃ¡tico</b></span>
+      </span></dt><dd><a class="indexterm" name="id425666"></a><p>Pase los parÃ¡metros apropiados desde el cargador de
 	arranque o configurelos de forma permanente con su cargardor
-	de arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. Parámetros desde el cargador de arranque">Parámetros
+	de arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. ParÃ¡metros desde el cargador de arranque">ParÃ¡metros
 	 desde el cargador de arranque</a>).
-       </p></dd><dt><span class="term"><span class="bold"><b>Módulo (dinámico)</b></span>
-      </span></dt><dd><p>Pase los paramétros de configuración a
+       </p></dd><dt><span class="term"><span class="bold"><b>MÃ³dulo (dinÃ¡mico)</b></span>
+      </span></dt><dd><p>Pase los paramÃ©tros de configuraciÃ³n a
 	<b>insmod</b>/<b>modprobe</b> o 
 	configurelos de forma permanente en
 	<tt>/etc/modules</tt>, o en un archivo de
-	<tt>/etc/modutils</tt> (vea la sección anterior
-	sobre módulos).
-       </p></dd></dl></div><a class="indexterm" name="id425756"></a><p>Eventualmente puede encontrar y usar algún programa que le
-      ayude a determinar los parámetros apropiados y/o a realizar las
+	<tt>/etc/modutils</tt> (vea la secciÃ³n anterior
+	sobre mÃ³dulos).
+       </p></dd></dl></div><a class="indexterm" name="id425756"></a><p>Eventualmente puede encontrar y usar algÃºn programa que le
+      ayude a determinar los parÃ¡metros apropiados y/o a realizar las
       configuraciones (algunos se mencionan en las secciones de este
-      capítulo), o tendrá que consultar los manuales del dispositivo o
+      capÃ­tulo), o tendrÃ¡ que consultar los manuales del dispositivo o
       incluso probar varias opciones hasta determinarlos.
-     </p><p>Si tras consultar esta documentación o la del kernel o
-      cualquier otra más actualizada, determina que una versión del
+     </p><p>Si tras consultar esta documentaciÃ³n o la del kernel o
+      cualquier otra mÃ¡s actualizada, determina que una versiÃ³n del
       kernel diferente a la que tiene, soporta cierto dispositivo o
-      servicio que requiere, el método más sencillo que puede intentar
-      es instalar una imagén precompilada disponible en algún depósito
+      servicio que requiere, el mÃ©todo mÃ¡s sencillo que puede intentar
+      es instalar una imagÃ©n precompilada disponible en algÃºn depÃ³sito
       de paquetes de Debian (el nombre es de la forma
       <tt>kernel-image-<i><tt>version</tt></i></tt>).
-      Como parte del archivo oficial de Debian encontrará imagenes
+      Como parte del archivo oficial de Debian encontrarÃ¡ imagenes
       recientes de las series 2.2.x y 2.0.x (por defecto Debian 2.2r5
       emplea el kernel 2.2.19).
-    </p><a class="indexterm" name="id425799"></a><p>Fuera del depósito oficial encontrará paquetes para Debian
-     2.2 de imágenes de la versión 2.4.18 para diversos procesadores e
+    </p><a class="indexterm" name="id425799"></a><p>Fuera del depÃ³sito oficial encontrarÃ¡ paquetes para Debian
+     2.2 de imÃ¡genes de la versiÃ³n 2.4.18 para diversos procesadores e
      instrucciones en: <a href="http://www.fs.tum.de/~bunk/kernel-24.html" target="_top">http://www.fs.tum.de/~bunk/kernel-24.html</a>
-     La instalación es bastante directa y automática (sólo debe tener
-     en cuenta agregar una línea a <tt>/etc/lilo.conf</tt>
+     La instalaciÃ³n es bastante directa y automÃ¡tica (sÃ³lo debe tener
+     en cuenta agregar una lÃ­nea a <tt>/etc/lilo.conf</tt>
      para usar <b>initrd</b>).
-     </p><p>En caso de requerir un kernel con una configuración muy
-      especial (por ejemplo, que incluya estáticamente ciertos módulos
-      o que excluya de la compilación módulos para hacer un kernel
-      pequeño) o si requiere una versión para la que que no haya
+     </p><p>En caso de requerir un kernel con una configuraciÃ³n muy
+      especial (por ejemplo, que incluya estÃ¡ticamente ciertos mÃ³dulos
+      o que excluya de la compilaciÃ³n mÃ³dulos para hacer un kernel
+      pequeÃ±o) o si requiere una versiÃ³n para la que que no haya
       imagenes precompiladas de Debian, recomendamos instalar primero
-      una versión precompilada con una versión cercana a la que desea
-      instalar, para tomar la configuración de esta y modificarla
-      antes de compilar la nueva versión. Además recomendamos esto
+      una versiÃ³n precompilada con una versiÃ³n cercana a la que desea
+      instalar, para tomar la configuraciÃ³n de esta y modificarla
+      antes de compilar la nueva versiÃ³n. AdemÃ¡s recomendamos esto
       porque las imagenes precompiladas actualizan otros programas
       indispensables para las nuevas versiones del kernel ---en
       especial si cambia de la serie 2.2 a la serie 2.4 se deben
@@ -250,16 +250,16 @@
       <tt>pcmcia-cs 3.1.21</tt>, <tt>PPP
       2.4.0</tt>.
      </p><p>Para obtener las fuentes, puede recurrir a paquetes Debian
-     para algunas versiones de las fuentes en depósitos oficiales
+     para algunas versiones de las fuentes en depÃ³sitos oficiales
      (paquetes con nombres de la forma
      <tt>kernel-sources-<i><tt>version</tt></i></tt>)
-     y las fuentes de cualquier versión en el sitio de desarrollo del
+     y las fuentes de cualquier versiÃ³n en el sitio de desarrollo del
      kernel (<a href="http://www.kernel.org" target="_top">http://www.kernel.org</a>). Cuando
      obtenga fuentes del kernel de Linux, tenga en cuenta que el
-     segundo número de la versión sea par ---si es impar se trata de
-     una versión para desarrolladores pero NO para usuarios finales.
-   </p><a class="indexterm" name="id426312"></a><p>En esta sección presentamos un breve resumen de los pasos
-      requeridos en una compilación de kernels versiones 2.2.x y
+     segundo nÃºmero de la versiÃ³n sea par ---si es impar se trata de
+     una versiÃ³n para desarrolladores pero NO para usuarios finales.
+   </p><a class="indexterm" name="id426312"></a><p>En esta secciÃ³n presentamos un breve resumen de los pasos
+      requeridos en una compilaciÃ³n de kernels versiones 2.2.x y
       2.4.x, suponiendo que ya ha actualizado todas los programas que
       estas versiones requieren.
     </p><a class="indexterm" name="id426343"></a><div class="orderedlist"><ol type="1"><li><p>Limpieza Para limpiar posibles compilaciones anteriores
@@ -268,10 +268,10 @@
 make mrproper
 make clean
 </pre><p>
-</p></li><li><p>Preparación de la versión extra La versión de un kernel
+</p></li><li><p>PreparaciÃ³n de la versiÃ³n extra La versiÃ³n de un kernel
 	(que puede examinar con <b>uname -r</b>) se
-	compone de 3 números separados por el caracter '.'
-	eventualmente seguidos de una cadena (versión extra).  Usted
+	compone de 3 nÃºmeros separados por el caracter '.'
+	eventualmente seguidos de una cadena (versiÃ³n extra).  Usted
 	puede establecer esta cadena arbitrariamente y especificarla
 	en el archivo <tt>Makefile</tt> de las fuentes (variable
 	<tt>EXTRAVERSION</tt>), por ejemplo:
@@ -279,70 +279,70 @@ make clean
 EXTRAVERSION= -tobias
 </pre><p>
       </p><p>Cuando compile, instale y le funcione un nuevo kernel,
-	esa versión será la reportada por <b>uname -r</b>,
-	los módulos que instale por defecto quedarán en <tt>/lib/modules/<i><tt>version</tt></i></tt>
-	y serán usados por <tt>modutils</tt> (ver <a href="kernel-y-modulos.html" title="2. Kernel y módulos">Kernel y módulos</a>).
-       </p><p>Si escoge una versión extra que coincida con una ya
-	existente, los módulos anteriores serán remplazados durante la
-	instalación.  Recomendamos emplear una versión extra diferente
+	esa versiÃ³n serÃ¡ la reportada por <b>uname -r</b>,
+	los mÃ³dulos que instale por defecto quedarÃ¡n en <tt>/lib/modules/<i><tt>version</tt></i></tt>
+	y serÃ¡n usados por <tt>modutils</tt> (ver <a href="kernel-y-modulos.html" title="2. Kernel y mÃ³dulos">Kernel y mÃ³dulos</a>).
+       </p><p>Si escoge una versiÃ³n extra que coincida con una ya
+	existente, los mÃ³dulos anteriores serÃ¡n remplazados durante la
+	instalaciÃ³n.  Recomendamos emplear una versiÃ³n extra diferente
 	a las que pueda haber, mantener el kernel original junto con
-	sus módulos en disco y agregar una etiqueta y los datos
+	sus mÃ³dulos en disco y agregar una etiqueta y los datos
 	requeridos por el cargador de arranque) ---mientras se
 	aprende, es muy normal producir kernels con configuraciones
-	erradas que no podrán arrancar.
-       </p></li><li><p>Configuración En general el paso más difícil es la
-	configuración de las características que desea del kernel
-	(dada la gran cantidad de preguntas y de términos técnicos,
-	que esperamos estén explicados a lo largo de este capítulo).
-	Para iniciar una configuración completa puede emplear
-	<b>make menuconfig</b> que presentará menús y
-	ayuda, tenga en cuenta que algunas características puede
-	incluirlas estáticamente en el kernel y otras como módulos
-	(las características estáticas aumentan el tamaño).
+	erradas que no podrÃ¡n arrancar.
+       </p></li><li><p>ConfiguraciÃ³n En general el paso mÃ¡s difÃ­cil es la
+	configuraciÃ³n de las caracterÃ­sticas que desea del kernel
+	(dada la gran cantidad de preguntas y de tÃ©rminos tÃ©cnicos,
+	que esperamos estÃ©n explicados a lo largo de este capÃ­tulo).
+	Para iniciar una configuraciÃ³n completa puede emplear
+	<b>make menuconfig</b> que presentarÃ¡ menÃºs y
+	ayuda, tenga en cuenta que algunas caracterÃ­sticas puede
+	incluirlas estÃ¡ticamente en el kernel y otras como mÃ³dulos
+	(las caracterÃ­sticas estÃ¡ticas aumentan el tamaÃ±o).
 	Alternativamente puede emplear <b>make xconfig</b>
-	que presenta una interfaz gráfica o <b>make
+	que presenta una interfaz grÃ¡fica o <b>make
 	config</b> que presenta una serie de preguntas.  El
-	resultado de cualquier de estos métodos es un archivo
+	resultado de cualquier de estos mÃ©todos es un archivo
 	<tt>.config</tt> con las variables de
-	configuración y sus valores.
-       </p><a class="indexterm" name="id426569"></a><p>Otra posibilidad es que emplee la configuración de un
+	configuraciÃ³n y sus valores.
+       </p><a class="indexterm" name="id426569"></a><p>Otra posibilidad es que emplee la configuraciÃ³n de un
 	kernel ya instalado y la modifique para acomodarla a sus
-	necesidades.  En Debian los archivos de configuración del
+	necesidades.  En Debian los archivos de configuraciÃ³n del
 	kernel
 	<sup>[<a name="id426598" href="#ftn.id426598">119</a>]</sup>
-	están en el directorio <tt>/boot</tt> con nombres
+	estÃ¡n en el directorio <tt>/boot</tt> con nombres
 	de la forma
 	<tt>config-<i><tt>version_kernel</tt></i></tt>.
-	Copie uno de estos que corresponda a una versión cercana al
+	Copie uno de estos que corresponda a una versiÃ³n cercana al
 	que desea compilar, al directorio con las fuentes con el
-	nombre <tt>.config</tt> después puede modificar la
-	configuración de cualquiera de las siguientes formas: (1)
-	ejecutando <b>make menuconfig</b> que leerá el
+	nombre <tt>.config</tt> despuÃ©s puede modificar la
+	configuraciÃ³n de cualquiera de las siguientes formas: (1)
+	ejecutando <b>make menuconfig</b> que leerÃ¡ el
 	archivo <tt>.config</tt> por defecto, (2)
 	ejecutando <b>make xconfig</b> y eligiendo cargar
 	ese archivo o (3) editando <tt>.config</tt> con un
-	editor de texto y ejecutando después <b>make
+	editor de texto y ejecutando despuÃ©s <b>make
 	oldconfig</b>.
-       </p></li><li><p>Compilación Primero se calculan interdepencias entre
-	archivos fuente de acuerdo a la configuación con <b>make
-	dep</b>, después se compila una imagen del kernel con
+       </p></li><li><p>CompilaciÃ³n Primero se calculan interdepencias entre
+	archivos fuente de acuerdo a la configuaciÃ³n con <b>make
+	dep</b>, despuÃ©s se compila una imagen del kernel con
 	<b>make bzImage</b> y finalmente se compilan
-	módulos con <b>make modules</b>.
-       </p></li><li><p>Instalación Es necesario instalar la imagen del kernel,
-	los archivos auxiliares y módulos, configurar el cargador de
-	arranque y eventualmente si está compilando un kernel con
+	mÃ³dulos con <b>make modules</b>.
+       </p></li><li><p>InstalaciÃ³n Es necesario instalar la imagen del kernel,
+	los archivos auxiliares y mÃ³dulos, configurar el cargador de
+	arranque y eventualmente si estÃ¡ compilando un kernel con
 	<b>initrd</b> (los kernels 2.4 precompildos de
 	Debian por defecto lo usan) debe crear la imagen apropiada.
-	Antes de instalar módulos.  En este punto es recomendable que saque 
+	Antes de instalar mÃ³dulos.  En este punto es recomendable que saque 
 	una copia
-	de respaldo del directorio de módulos (en caso de que este
-	remplazandolos por la versión extra que escogió). Para
+	de respaldo del directorio de mÃ³dulos (en caso de que este
+	remplazandolos por la versiÃ³n extra que escogiÃ³). Para
 	instalar emplee <b>make modules_install</b> que
-	copiará todos los módulos y las dependencias entre ellos al
+	copiarÃ¡ todos los mÃ³dulos y las dependencias entre ellos al
 	directorio
 	<tt>/lib/modules/<i><tt>version_kernel</tt></i></tt>.
-	A continuación se presenta un ejemplo que debe adaptar a la
-	versión de su kernel:
+	A continuaciÃ³n se presenta un ejemplo que debe adaptar a la
+	versiÃ³n de su kernel:
 </p><pre class="programlisting">
 cd /usr/src/kernel-source-2.2.21
 make modules_install
@@ -351,9 +351,9 @@ ln -s /boot/vmlinuz-2.2.21-tobias /vmlinuz-2.2.21-tobias
 cp System.map /boot/System.map-2.2.21-tobias
 cp .config /boot/config-2.2.21-tobias
 </pre><p>
-       </p><p>Después deberá editar la configuración de su cargador de
+       </p><p>DespuÃ©s deberÃ¡ editar la configuraciÃ³n de su cargador de
 	arranque para que emplee la nueva imagen del kernel, por
-	ejemplo puede agregarse una sección como:
+	ejemplo puede agregarse una secciÃ³n como:
 </p><pre class="programlisting">
 image=/vmlinuz-2.2.21-tobias
 	root=/dev/hda2
@@ -363,89 +363,89 @@ image=/vmlinuz-2.2.21-tobias
 </pre><p>
 	Cambiando el dispositivo <tt>root</tt> por el apropiado, 
 	la etiqueta y de no requerirse soporte para APM
-	quitando la última línea (ver 
-	<a href="hardware-basico-y-linux.html#bios-y-otras-caracteristicas" title="3.1.11. BIOS y otras características">BIOS y otras
-	características</a>) 
-       </p><p>Si está compilando un kernel con
+	quitando la Ãºltima lÃ­nea (ver 
+	<a href="hardware-basico-y-linux.html#bios-y-otras-caracteristicas" title="3.1.11. BIOS y otras caracterÃ­sticas">BIOS y otras
+	caracterÃ­sticas</a>) 
+       </p><p>Si estÃ¡ compilando un kernel con
 	<b>initrd</b>
 	<sup>[<a name="id427008" href="#ftn.id427008">120</a>]</sup>
 	(por ejemplo los kernel 2.4 para Debian lo emplean por
-	defecto), debe agregar a la misma sección en
+	defecto), debe agregar a la misma secciÃ³n en
 	  <tt>/etc/lilo.conf</tt>:
 </p><pre class="programlisting">
 initrd=/initrd.img
 </pre><p>
-       </p><p>Después debe ejecutar <b>/sbin/lilo</b>
+       </p><p>DespuÃ©s debe ejecutar <b>/sbin/lilo</b>
 	para poner un nuevo cargador de arranque en el MBR o en el
-	sector de arranque donde esté configurado.</p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="./important.png"></td><th>Importante</th></tr><tr><td colspan="2" align="left" valign="top"><p>Después de compilar un kernel, ejecute 
-	   <b>/sbin/lilo</b> aún si no modifica
-	 <tt>/etc/lilo.conf</tt></p></td></tr></table></div></li></ol></div><a class="indexterm" name="id427063"></a></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadadas-kernel-y-modulos"></a>2.2. Lecturas recomendadas: Kernel y módulos</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Para manejar mejor las herramientas de
-	módulos, puede consultar las páginas <b>man</b> de
+	sector de arranque donde estÃ© configurado.</p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="./important.png"></td><th>Importante</th></tr><tr><td colspan="2" align="left" valign="top"><p>DespuÃ©s de compilar un kernel, ejecute 
+	   <b>/sbin/lilo</b> aÃºn si no modifica
+	 <tt>/etc/lilo.conf</tt></p></td></tr></table></div></li></ol></div><a class="indexterm" name="id427063"></a></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadadas-kernel-y-modulos"></a>2.2. Lecturas recomendadas: Kernel y mÃ³dulos</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Para manejar mejor las herramientas de
+	mÃ³dulos, puede consultar las pÃ¡ginas <b>man</b> de
 	<tt>modules.conf</tt>,
        <b>insmod</b>, <b>modprobe</b>
-      </p></li><li><p>En caso de que esté interesado o que necesite más
-       información sobre módulos puede consultar &quot;<i>Introduction to
+      </p></li><li><p>En caso de que estÃ© interesado o que necesite mÃ¡s
+       informaciÃ³n sobre mÃ³dulos puede consultar &quot;<i>Introduction to
        Linux Kernel Modules</i>&quot; en <a href="http://www.luv.asn.au/overheads/kernelmodules/" target="_top">http://www.luv.asn.au/overheads/kernelmodules/</a>
-      </p></li><li><p>Algunos módulos que se distribuyen separados del kernel
+      </p></li><li><p>Algunos mÃ³dulos que se distribuyen separados del kernel
        requieren ser compilados.  Puede encontrar ayuda de como
        hacerlo en: <a href="http://www.scyld.com/expert/modules.html" target="_top">http://www.scyld.com/expert/modules.html</a>
       </p></li><li><p>Otro documento donde puede consultar el proceso de
-       compilación está disponible en Internet en: <a href="http://structio.sourceforge.net/paz/actualiz-kernel.html" target="_top">http://structio.sourceforge.net/paz/actualiz-kernel.html</a>
-      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-kernel-y-modulos"></a>2.3. Ejercicios: Kernel y módulos</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id427195"></a><a name="init.kernel.1"></a><b>2.3.1. </b></td><td align="left" valign="top"><p>¿Qué versión del kernel Linux tiene
+       compilaciÃ³n estÃ¡ disponible en Internet en: <a href="http://structio.sourceforge.net/paz/actualiz-kernel.html" target="_top">http://structio.sourceforge.net/paz/actualiz-kernel.html</a>
+      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-kernel-y-modulos"></a>2.3. Ejercicios: Kernel y mÃ³dulos</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id427195"></a><a name="init.kernel.1"></a><b>2.3.1. </b></td><td align="left" valign="top"><p>Â¿QuÃ© versiÃ³n del kernel Linux tiene
        instalado su sistema? Ayuda: emplee el programa
-       <tt>kernelversion</tt></p></td></tr><tr class="question"><td align="left" valign="top"><a name="id427233"></a><a name="init.modulos.1"></a><b>2.3.2. </b></td><td align="left" valign="top"><p>Revise los módulos que están cargados en su sistema, y
-       trate de determinar que dispositivo controla o qué servicio
-       presta cada uno. </p></td></tr><tr class="question"><td align="left" valign="top"><a name="id427345"></a><a name="init.modulos.2"></a><b>2.3.3. </b></td><td align="left" valign="top"><p>Examine el archivo de configuración de X-Window, si desea
-       experimentar con este, saque una copia y modifíquelo
+       <tt>kernelversion</tt></p></td></tr><tr class="question"><td align="left" valign="top"><a name="id427233"></a><a name="init.modulos.1"></a><b>2.3.2. </b></td><td align="left" valign="top"><p>Revise los mÃ³dulos que estÃ¡n cargados en su sistema, y
+       trate de determinar que dispositivo controla o quÃ© servicio
+       presta cada uno. </p></td></tr><tr class="question"><td align="left" valign="top"><a name="id427345"></a><a name="init.modulos.2"></a><b>2.3.3. </b></td><td align="left" valign="top"><p>Examine el archivo de configuraciÃ³n de X-Window, si desea
+       experimentar con este, saque una copia y modifÃ­quelo
        directamente o por medio del programa
        <tt>XF86Setup</tt> (si no tiene disponible
        <tt>XF86Setup</tt> puede intentar con
-       <tt>xf86config</tt>).</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id427392"></a><a name="init.modulos.3"></a><b>2.3.4. </b></td><td align="left" valign="top"><p>Al cargar un módulo, <b>insmod</b> revisa que
-       los símbolos del kernel que el módulo espera puedan ser
-       resueltos.  ¿Qué son estos símbolos?  Describa también como
-       buscó su respuesta.</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id423944" href="#id423944">112</a>] </sup>Versión tal como la reporta <b>uname
+       <tt>xf86config</tt>).</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id427392"></a><a name="init.modulos.3"></a><b>2.3.4. </b></td><td align="left" valign="top"><p>Al cargar un mÃ³dulo, <b>insmod</b> revisa que
+       los sÃ­mbolos del kernel que el mÃ³dulo espera puedan ser
+       resueltos.  Â¿QuÃ© son estos sÃ­mbolos?  Describa tambiÃ©n como
+       buscÃ³ su respuesta.</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id423944" href="#id423944">112</a>] </sup>VersiÃ³n tal como la reporta <b>uname
 	 -r</b>
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id423966" href="#id423966">113</a>] </sup>Esta extensión es típica de <span class="emphasis"><em>código
-	objeto</em></span> que es código generado por un compilador a
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id423966" href="#id423966">113</a>] </sup>Esta extensiÃ³n es tÃ­pica de <span class="emphasis"><em>cÃ³digo
+	objeto</em></span> que es cÃ³digo generado por un compilador a
 	partir de un archivo fuente (en el caso de Linux el compilador
-	es <tt>gcc</tt>).  Puede &quot;unirse&quot; estáticamente con
-	más código objeto empleando un encadenador (en el caso de
-	Linux el encadenador es <tt>ld</tt>) o dinámicamente
-	usando <tt>/lib/ld.so</tt> (ver <a href="administracion-de-programas.html" title="5. Administración de programas">Administración de
-	programas</a>) o en el caso de módulos con
+	es <tt>gcc</tt>).  Puede &quot;unirse&quot; estÃ¡ticamente con
+	mÃ¡s cÃ³digo objeto empleando un encadenador (en el caso de
+	Linux el encadenador es <tt>ld</tt>) o dinÃ¡micamente
+	usando <tt>/lib/ld.so</tt> (ver <a href="administracion-de-programas.html" title="5. AdministraciÃ³n de programas">AdministraciÃ³n de
+	programas</a>) o en el caso de mÃ³dulos con
 	<tt>insmod</tt>.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id424308" href="#id424308">114</a>] </sup>El archivo de configuración de
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id424308" href="#id424308">114</a>] </sup>El archivo de configuraciÃ³n de
 	<tt>modutils</tt> puede variarse especificando uno
 	diferente en la variable <tt>MODULECONF</tt>
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id424862" href="#id424862">115</a>] </sup>La especificación de las rutas para buscar módulos
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id424862" href="#id424862">115</a>] </sup>La especificaciÃ³n de las rutas para buscar mÃ³dulos
 	   puede hacerse con <tt>MODPATH</tt> o en
-	   <tt>/etc/modules.conf</tt> en las líneas de la
+	   <tt>/etc/modules.conf</tt> en las lÃ­neas de la
 	   forma
 	   <b>path[<i><tt>tipo</tt></i>]</b>
 	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id425169" href="#id425169">116</a>] </sup>El archivo <tt>/etc/modules.conf</tt>
-	   puede tener comentarios en líneas iniciadas con el caracter
-	   '#', puede tener líneas para: modificar las dependencias
-	   entre módulos (below, above, probe, probeall, depfile);
-	   para manejar las rutas donde buscar módulos (path, keep);
-	   para ejecutar comandos antes, en vez o después de instalar
-	   o descargar los módulos (pre-install, install,
+	   puede tener comentarios en lÃ­neas iniciadas con el caracter
+	   '#', puede tener lÃ­neas para: modificar las dependencias
+	   entre mÃ³dulos (below, above, probe, probeall, depfile);
+	   para manejar las rutas donde buscar mÃ³dulos (path, keep);
+	   para ejecutar comandos antes, en vez o despuÃ©s de instalar
+	   o descargar los mÃ³dulos (pre-install, install,
 	   post-install, pre-remove, remove, post-remove); para
-	   especificar opciones por defecto para algunos módulos o
+	   especificar opciones por defecto para algunos mÃ³dulos o
 	   <b>insmod</b> (options, insmod_opt); para crear
-	   alias o para definir variables o tener en cuenta sólo
+	   alias o para definir variables o tener en cuenta sÃ³lo
 	   ciertas partes del archivo (alias, define, if, else,
 	   elseif, endif).
-	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id425202" href="#id425202">117</a>] </sup>Durante el arranque las dependencias entre módulos son
-	generadas automáticamente y los módulos especificados (junto
+	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id425202" href="#id425202">117</a>] </sup>Durante el arranque las dependencias entre mÃ³dulos son
+	generadas automÃ¡ticamente y los mÃ³dulos especificados (junto
 	con sus opciones) en el archivo
 	<tt>/etc/modules</tt> son cargados.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id425634" href="#id425634">118</a>] </sup><b>kmod</b> es el
-	programa que se encarga de cargar módulos automáticamente por
-	demanda i.e. sin intervención del usuario
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id426598" href="#id426598">119</a>] </sup>Los archivos de configuración del kernel
+	programa que se encarga de cargar mÃ³dulos automÃ¡ticamente por
+	demanda i.e. sin intervenciÃ³n del usuario
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id426598" href="#id426598">119</a>] </sup>Los archivos de configuraciÃ³n del kernel
 	son dejados en <tt>/boot</tt> por los paquetes
-	<tt>kernel-image-<i><tt>version</tt></i></tt>.</p></div><div class="footnote"><p><sup>[<a name="ftn.id427008" href="#id427008">120</a>] </sup>Es una imagen de una partición raíz mínima que reside
+	<tt>kernel-image-<i><tt>version</tt></i></tt>.</p></div><div class="footnote"><p><sup>[<a name="ftn.id427008" href="#id427008">120</a>] </sup>Es una imagen de una particiÃ³n raÃ­z mÃ­nima que reside
 	  en memoria RAM, una imagen initrd suele tener controladores
 	  y configuraciones que el kernel debe configurar/realizar
 	  antes de emplear el dispositivo raiz real.
-	 </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="administracion-dos.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="administracion-dos.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="hardware-basico-y-linux.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">Capítulo 5. Administración de Linux en computadores aislados </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 3. Hardware básico y Linux</td></tr></table></div></body></html>
+	 </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="administracion-dos.html">Anterior</a>Â </td><td width="20%" align="center"><a accesskey="u" href="administracion-dos.html">Subir</a></td><td width="40%" align="right">Â <a accesskey="n" href="hardware-basico-y-linux.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">CapÃ­tulo 5. AdministraciÃ³n de Linux en computadores aisladosÂ </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top">Â 3. Hardware bÃ¡sico y Linux</td></tr></table></div></body></html>

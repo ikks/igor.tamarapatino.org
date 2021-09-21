@@ -1,52 +1,52 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>3. Direcciones, enrutamiento y transporte</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-tres.html" title="Capítulo 6. Administración de una red con Linux"><link rel="previous" href="dispositivos-para-interconexion-y-linux.html" title="2. Dispositivos para interconexión y Linux "><link rel="next" href="protocolos-de-soporte-y-de-usuario.html" title="4. Protocolos de soporte y de usuario"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Direcciones, enrutamiento y transporte</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="dispositivos-para-interconexion-y-linux.html">Anterior</a> </td><th width="60%" align="center">Capítulo 6. Administración de una red con Linux</th><td width="20%" align="right"> <a accesskey="n" href="protocolos-de-soporte-y-de-usuario.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="direcciones-enrutamiento-y-transporte"></a>3. Direcciones, enrutamiento y transporte</h2></div></div><p>Indicadores de Logros 
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3. Direcciones, enrutamiento y transporte</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-tres.html" title="CapÃ­tulo 6. AdministraciÃ³n de una red con Linux"><link rel="previous" href="dispositivos-para-interconexion-y-linux.html" title="2. Dispositivos para interconexiÃ³n y Linux "><link rel="next" href="protocolos-de-soporte-y-de-usuario.html" title="4. Protocolos de soporte y de usuario"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Direcciones, enrutamiento y transporte</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="dispositivos-para-interconexion-y-linux.html">Anterior</a>Â </td><th width="60%" align="center">CapÃ­tulo 6. AdministraciÃ³n de una red con Linux</th><td width="20%" align="right">Â <a accesskey="n" href="protocolos-de-soporte-y-de-usuario.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="direcciones-enrutamiento-y-transporte"></a>3. Direcciones, enrutamiento y transporte</h2></div></div><p>Indicadores de Logros 
     </p><div class="itemizedlist"><ul type="disc"><li><p><a name="insred.ip"></a>Emplea direcciones IP y configura direcciones privadas
        para una red local.</p></li><li><p><a name="insred.enruta"></a>Puede configurar enrutamiento en una red local.</p></li></ul></div><p>
    </p><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-direcciones-y-enrutamiento"></a>3.1. Lectura: Direcciones, enrutamiento y transporte</h3></div></div><p>
-     En una red TCP/IP, cada computador tiene como identificación una
-     dirección IP única.  Esta dirección consta de
-     32 bits, y suele escribirse como 4 números/bytes separando unos
-     de otros por punto (cada uno es un número entre 0 y 255), por
-     ejemplo 66.35.250.209.  Cómo TCP/IP se diseño para interconectar
-     redes, una dirección IP consta de una parte
-     que identifica de forma única la red y otra que identifica de
-     forma única el computador dentro de la red.  Una máscara de red
-     determina que parte identifica la red y cuáles computadores en la
-     red puede denotarse con el número de bits del comienzo de la
-     dirección que identifican la red (e.g 16 si los primeros 16 bits
-     identifican la red) o como otra dirección que al hacer la
-     operación lógica y con la dirección IP dará la
-     dirección de red (por ejemplo 255.255.0.0 es una máscara que
-     indica que los primeros 16 bits de una dirección IP son la
-     dirección de red).
-    </p><a class="indexterm" name="id463693"></a><p>Al diseñar una red debe escogerse una dirección de red junto
-     con la máscara de acuerdo al número de computadores, algunas
-     posibilidades son:</p><div class="variablelist"><dl><dt><span class="term">/8 o 255.0.0.0</span></dt><dd><p>16777216 computadores</p></dd><dt><span class="term">/12 o 255.242.0.0</span></dt><dd><p>1048576 computadores</p></dd><dt><span class="term">/16 o 255.255.0.0</span></dt><dd><p>65536 computadores</p></dd><dt><span class="term">/24 o 255.255.255.0</span></dt><dd><p>255 computadores</p></dd></dl></div><p>Además la dirección de red que escoja debe ser única para no
+     En una red TCP/IP, cada computador tiene como identificaciÃ³n una
+     direcciÃ³n IP Ãºnica.  Esta direcciÃ³n consta de
+     32 bits, y suele escribirse como 4 nÃºmeros/bytes separando unos
+     de otros por punto (cada uno es un nÃºmero entre 0 y 255), por
+     ejemplo 66.35.250.209.  CÃ³mo TCP/IP se diseÃ±o para interconectar
+     redes, una direcciÃ³n IP consta de una parte
+     que identifica de forma Ãºnica la red y otra que identifica de
+     forma Ãºnica el computador dentro de la red.  Una mÃ¡scara de red
+     determina que parte identifica la red y cuÃ¡les computadores en la
+     red puede denotarse con el nÃºmero de bits del comienzo de la
+     direcciÃ³n que identifican la red (e.g 16 si los primeros 16 bits
+     identifican la red) o como otra direcciÃ³n que al hacer la
+     operaciÃ³n lÃ³gica y con la direcciÃ³n IP darÃ¡ la
+     direcciÃ³n de red (por ejemplo 255.255.0.0 es una mÃ¡scara que
+     indica que los primeros 16 bits de una direcciÃ³n IP son la
+     direcciÃ³n de red).
+    </p><a class="indexterm" name="id463693"></a><p>Al diseÃ±ar una red debe escogerse una direcciÃ³n de red junto
+     con la mÃ¡scara de acuerdo al nÃºmero de computadores, algunas
+     posibilidades son:</p><div class="variablelist"><dl><dt><span class="term">/8 o 255.0.0.0</span></dt><dd><p>16777216 computadores</p></dd><dt><span class="term">/12 o 255.242.0.0</span></dt><dd><p>1048576 computadores</p></dd><dt><span class="term">/16 o 255.255.0.0</span></dt><dd><p>65536 computadores</p></dd><dt><span class="term">/24 o 255.255.255.0</span></dt><dd><p>255 computadores</p></dd></dl></div><p>AdemÃ¡s la direcciÃ³n de red que escoja debe ser Ãºnica para no
      producir conflictos con otras redes en caso de conectarse a
-     Internet y puede facilitar la interconexión de diversas redes y
-     el enrutamiento al interior de una organización.</p><p>Para facilitar la adopción de redes TCP/IP en
-     organizaciones, el RFC 1918 destinó algunas
+     Internet y puede facilitar la interconexiÃ³n de diversas redes y
+     el enrutamiento al interior de una organizaciÃ³n.</p><p>Para facilitar la adopciÃ³n de redes TCP/IP en
+     organizaciones, el RFC 1918 destinÃ³ algunas
      direcciones de red para usar al interior de organizaciones (no
      puede haber computadores en Internet con esas direcciones):
-     </p><div class="variablelist"><dl><dt><span class="term">10.0.0.0 - 10.255.255.255</span></dt><dd><p>máscara /8</p></dd><dt><span class="term">172.16.0.0 - 172.31.255.255</span></dt><dd><p>máscara /12</p></dd><dt><span class="term">192.168.0.0 - 192.168.255.255</span></dt><dd><p>máscara /16</p></dd></dl></div><p>Para nuestra plataforma de referencia, recomendamos emplear
-     direcciones entre 192.168.1.1 y 192.168.1.255 con máscara de red
-     /24 o 255.255.255.0.  O en caso de contar con más redes en el
+     </p><div class="variablelist"><dl><dt><span class="term">10.0.0.0 - 10.255.255.255</span></dt><dd><p>mÃ¡scara /8</p></dd><dt><span class="term">172.16.0.0 - 172.31.255.255</span></dt><dd><p>mÃ¡scara /12</p></dd><dt><span class="term">192.168.0.0 - 192.168.255.255</span></dt><dd><p>mÃ¡scara /16</p></dd></dl></div><p>Para nuestra plataforma de referencia, recomendamos emplear
+     direcciones entre 192.168.1.1 y 192.168.1.255 con mÃ¡scara de red
+     /24 o 255.255.255.0.  O en caso de contar con mÃ¡s redes en el
      mismo colegio, la segunda con direcciones entre 192.168.2.1 y
-     192.168.2.255 y así sucesivamente.  Además de usar direcciones
+     192.168.2.255 y asÃ­ sucesivamente.  AdemÃ¡s de usar direcciones
      privadas, se facilita el crecimiento de la infraestructura de
-     redes y la configuración del enrutamiento entre unas y
-     otras</p><p>Como se presentó en la descripción de las capas en redes
+     redes y la configuraciÃ³n del enrutamiento entre unas y
+     otras</p><p>Como se presentÃ³ en la descripciÃ³n de las capas en redes
      TCP/IP (ver <a href="administracion-tres.html#redes-protocolos-e-internet" title="1. Redes, protocolos e Internet">Redes,
      protocolos e Internet</a>), el protocolo IP
      mantiene una tabla de enrutamiento que asocia direcciones de red
      con compuertas, es decir con computadores conectados a la misma
-     red que pueden retransmitir información a la red destino.</p><p>Puede ver la tabla de enrutamiento estático en
+     red que pueden retransmitir informaciÃ³n a la red destino.</p><p>Puede ver la tabla de enrutamiento estÃ¡tico en
      <tt>/proc/net/route</tt> o mejor con
      <b>route</b> o con <b>netstat -r</b>.
-     Entre los campos de cada entrada de esta tabla están: red
+     Entre los campos de cada entrada de esta tabla estÃ¡n: red
      destino, mascara de la red destino, interfaz por la cual
      enviar/recibir paquetes con ese destino, compuerta a la cual
-     enviar para retransmisión (o * si se envia a toda la red
+     enviar para retransmisiÃ³n (o * si se envia a toda la red
      conectada a la interfaz), opciones entre las que puede aparecer:
      U enrutamiento funcionando, H destino es un computador, G destino
      es una compuerta, ! ruta rechazada. </p><p>Hay una compuerta por defecto (<tt>default</tt>) a
@@ -57,33 +57,33 @@
     </p><a class="indexterm" name="id464049"></a><p>De requerirse pueden agregarse compuertas con
      <b>route add</b> por ejemplo,
      para agregar una ruta a la red 192.168.2.0/24 
-     usando como compuerta 192.168.1.60 que está en la misma
+     usando como compuerta 192.168.1.60 que estÃ¡ en la misma
      red:</p><pre class="screen">
 route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.1.60
 	 </pre><p>
-     Y pueden elminarse de forma análoga con <b>route
+     Y pueden elminarse de forma anÃ¡loga con <b>route
       del</b>.
     </p><p>
      Para determinar problemas de enrutamiento o en general de la red, 
-     puede emplear algunas herramientas de diagnóstico por ejemplo:
+     puede emplear algunas herramientas de diagnÃ³stico por ejemplo:
 
      </p><div class="variablelist"><dl><dt><span class="term"><b>traceroute</b></span></dt><dd><p>Disponible en el paquete
 	 <tt>traceroute</tt>, presenta las direcciones de
 	 los computadores y enrutadores que transmiten un paquete
 	 hasta llegar a su destino. Por ejemplo
 		 </p><pre class="screen">
-traceroute 192.168.2.2</pre><a class="indexterm" name="id464297"></a></dd><dt><span class="term"><b>netstat -s</b></span></dt><dd><p>Éste presenta estadísticas sobre IP,
+traceroute 192.168.2.2</pre><a class="indexterm" name="id464297"></a></dd><dt><span class="term"><b>netstat -s</b></span></dt><dd><p>Ã‰ste presenta estadÃ­sticas sobre IP,
 	 ICMP y TCP</p></dd><dt><span class="term"><b>ip link list</b></span></dt><dd><p>Que presenta direcciones MAC (debe instalar
 	 primero el paquete <tt>iproute</tt></p></dd><dt><span class="term"><b>tcpdump</b></span></dt><dd><p>Disponible en el paquete <tt>tcpdump</tt>
-	 permite analizar el tráfico de una red TCP/IP.  Desde la
+	 permite analizar el trÃ¡fico de una red TCP/IP.  Desde la
 	 cuenta root puede usarse este programa para examinar todo el
-	 tráfico que circule por una red.
+	 trÃ¡fico que circule por una red.
        </p><a class="indexterm" name="id464396"></a></dd></dl></div><p>
     </p><p>Y para realizar configuraciones a los protocolos
     IP y TCP:
 
      </p><div class="variablelist"><dl><dt><span class="term"><tt>/etc/hosts</tt></span></dt><dd><p>En este archivo se listan nombres asociados a
-       la dirección IP de algunos computadores, por
+       la direcciÃ³n IP de algunos computadores, por
        ejemplo:
 	 
 		 </p><pre class="screen">
@@ -92,17 +92,17 @@ traceroute 192.168.2.2</pre><a class="indexterm" name="id464297"></a></dd><dt><s
 		 </pre><p>
 	     </p></dd><dt><span class="term"><b>sysctl</b></span></dt><dd><p>Para configurar algunas variables del
 	 kernel relacionadas con redes (ver 
-	 <a href="kernel-y-modulos.html#configuracion-del-kernel" title="2.1.2. Configuración del kernel">Configuración
+	 <a href="kernel-y-modulos.html#configuracion-del-kernel" title="2.1.2. ConfiguraciÃ³n del kernel">ConfiguraciÃ³n
 	  del kernel</a>). Los cambios que pueden hacerse
-	 con <b>sysctl</b> también se pueden hacer
+	 con <b>sysctl</b> tambiÃ©n se pueden hacer
 	 escribiendo en los archivos del directorio 
 	 <tt>/proc/sys/net/ipv4</tt>. Algunos son:
-	 </p><div class="variablelist"><dl><dt><span class="term"><tt>net/ipv4/ip_local_port_range</tt></span></dt><dd><p>El cuál determina el rango de puertos que pueden
+	 </p><div class="variablelist"><dl><dt><span class="term"><tt>net/ipv4/ip_local_port_range</tt></span></dt><dd><p>El cuÃ¡l determina el rango de puertos que pueden
 	     usarse. 
 	    </p></dd><dt><span class="term"><tt>net/ipv4/ip_forward</tt></span></dt><dd><p>Que habilita reenvio en puertos
 	   IP.  Esto es indispensable para hacer
 	   enmascaramiento y para que el sistema actue como enrutador.
-	   También puede establecerse en el archivo
+	   TambiÃ©n puede establecerse en el archivo
 	   <tt>/etc/network/options</tt> con
 		       </p><pre class="screen">
 ip_forward=yes			 
@@ -116,34 +116,34 @@ ip_forward=yes
 	 contrafuegos<sup>[<a name="id464656" href="#ftn.id464656">207</a>]</sup>.
 	</p></dd></dl></div><p>
      
-    </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="caso-conexion-de-dos-redes-de-area-local"></a>3.1.1. Caso: Conexión de dos redes de área local</h4></div></div><p> Suponga que hay dos redes LAN con
+    </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="caso-conexion-de-dos-redes-de-area-local"></a>3.1.1. Caso: ConexiÃ³n de dos redes de Ã¡rea local</h4></div></div><p> Suponga que hay dos redes LAN con
        direcciones privadas que desea interconectar, cada una tiene un
        concentrador, una tiene direcciones de la forma 192.168.1.x
-       (i.e 192.168.1.0 con netmask 255.255.255.0 o más breve
+       (i.e 192.168.1.0 con netmask 255.255.255.0 o mÃ¡s breve
        192.168.1.0/24), y la otra 192.168.2.x.
      </p><p> Para que las dos redes mantengan cada una su concentrador,
-      se requeriría un computador conectado a ambas redes que pueda
-      retransmitir los paquetes a la red apropiada, y se tendría que
+      se requerirÃ­a un computador conectado a ambas redes que pueda
+      retransmitir los paquetes a la red apropiada, y se tendrÃ­a que
       configurar el enrutamiento en cada red (puede ser en cada
       computador o en la compuerta por defecto de cada uno), para que
       envie paquetes dirigidos a la otra red por el computador
       intermediario.
      </p><a class="indexterm" name="id464694"></a><p>
        Para conectarse a ambas redes el computador intermediario
-      debería tener dos tarjetas de red, una conectada a la primera
-      red (digamos <tt>eth0</tt> con dirección
+      deberÃ­a tener dos tarjetas de red, una conectada a la primera
+      red (digamos <tt>eth0</tt> con direcciÃ³n
       192.168.1.200), la otra a la segunda (digamos
-      <tt>eth1</tt> con dirección 192.168.2.100) y debe
+      <tt>eth1</tt> con direcciÃ³n 192.168.2.100) y debe
       estar configurado para retransmitir paquetes.  La interfaz de
       red para la tarjeta conectada a la red 192.168.1.x, debe
-      configurarse con una dirección en esa red. Por ejemplo la
+      configurarse con una direcciÃ³n en esa red. Por ejemplo la
       primera tarjeta conectada a la red 192.168.1.x puede asociarse
-      con la interfaz <tt>eth0</tt> con dirección
+      con la interfaz <tt>eth0</tt> con direcciÃ³n
       192.168.1.200 con:
        </p><pre class="screen">
 ifconfig eth0 192.168.1.200 netmask 255.255.255.0  
        </pre><p>
-       o podría configurarse en <tt>/etc/networks/interfaces</tt> 
+       o podrÃ­a configurarse en <tt>/etc/networks/interfaces</tt> 
        con:
        </p><pre class="screen">
 	iface eth0 inet static
@@ -154,102 +154,102 @@ ifconfig eth0 192.168.1.200 netmask 255.255.255.0
 
        </pre><p>
      </p><p>
-       Una vez configuradas las dos tarjetas, podría configurar el
+       Una vez configuradas las dos tarjetas, podrÃ­a configurar el
       enrutamiento primero habilitando reenvio de paquetes
       IP:</p><pre class="screen">
 echo 1 &gt; /proc/sys/net/ipv4/ip_forward </pre><p>
-      o para que la configuración sea tomada durante el arranque en el 
+      o para que la configuraciÃ³n sea tomada durante el arranque en el 
 	archivo <tt>/etc/network/options</tt> 
-      (ver <a href="administracion-dos.html#inicializacion-del-sistema" title="1. Inicialización del sistema">Inicialización del 
+      (ver <a href="administracion-dos.html#inicializacion-del-sistema" title="1. InicializaciÃ³n del sistema">InicializaciÃ³n del 
        sistema</a>): </p><pre class="screen">
 ip_forward=yes
 spoofprotect=yes
 syncookies=no </pre><p>
-      después puede configurar desde la línea de comandos (o un script
+      despuÃ©s puede configurar desde la lÃ­nea de comandos (o un script
       durante el arranque del sistema) el enrutamiento de acuerdo a
       las interfaces:
      </p><pre class="screen">
 route add -net 192.168.1.0 netmask 255.255.255.0 dev eth0
 route add -net 192.168.2.0 netmask 255.255.255.0 dev eth1 </pre><p>
       Para que otros computadores de la red 192.168.1.x se puedan
-      comunicar con otros de 192.168.2.x y viceversa, debería
+      comunicar con otros de 192.168.2.x y viceversa, deberÃ­a
       configurar en los que se comunicaran o en las computertas de
       cada red (<span class="emphasis"><em>EN AMBOS</em></span>) al intermediario.
-      Por ejemplo si 192.168.1.2 se conectará con 192.168.2.2, en el
+      Por ejemplo si 192.168.1.2 se conectarÃ¡ con 192.168.2.2, en el
       primero debe usar:</p><pre class="screen">
 route add -net 192.168.2.0 netmask 255.255.255.0 gw 192.168.1.200 </pre><p>
 	y en el segundo 
      </p><pre class="screen">
 route add -net 192.168.1.0 netmask 255.255.255.0 gw 192.168.2.100
      </pre><p>
-	después de hacer esta configuración en los dos, puede probar por
+	despuÃ©s de hacer esta configuraciÃ³n en los dos, puede probar por
 	ejemplo desde 192.168.2.2 
      </p><pre class="screen">
 ping 192.168.1.2</pre><p>
-      Si tiene problemas en la conexión, puede verificar las tablas
+      Si tiene problemas en la conexiÃ³n, puede verificar las tablas
 	de enrutamiento (con <b>route</b> o 
 	<b>netstat -r</b>) o puede rastrear la ruta que
 	toman los paquetes con <b>traceroute</b>, por ejemplo
 	desde 192.168.2.2:</p><pre class="screen">
 traceroute 192.168.1.2
-	</pre></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="caso-enmascaramiento"></a>3.1.2. Caso: Enmascaramienton</h4></div></div><p>En caso de que cuente con una conexión a Internet en el
-       servidor de su red, bien sea permanente o esporádica (por
-       ejemplo con un modem), le será posible establecer conexiones
+	</pre></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="caso-enmascaramiento"></a>3.1.2. Caso: Enmascaramienton</h4></div></div><p>En caso de que cuente con una conexiÃ³n a Internet en el
+       servidor de su red, bien sea permanente o esporÃ¡dica (por
+       ejemplo con un modem), le serÃ¡ posible establecer conexiones
        desde cualquier computador de la red con computadores en
        Internet empleando enmascaramiento (note que todas las
        direcciones IP de la red local son privadas
        y no corresponden a direcciones IP reales, globlamente
-       localizables, así que sin enmascaramiento NO podrían emplear
+       localizables, asÃ­ que sin enmascaramiento NO podrÃ­an emplear
        Internet).
      </p><p>El computador que conecte a Internet debe tener al menos
-       dos interfaces de red además de loopback: una tipo ethernet
+       dos interfaces de red ademÃ¡s de loopback: una tipo ethernet
        para comunicarse con la red interna y otra para comunicarse con
        Internet (por ejemplo una interfaz PPP).
-       Cada una de las interfaces tendrá una dirección IP, la de la
-       interfaz conectada a Internet será una dirección IP real,
-       localizable en el mundo entero (digamos 1.2.3.4) y la otra será
-       una dirección privada no utilizable en Internet (digamos
+       Cada una de las interfaces tendrÃ¡ una direcciÃ³n IP, la de la
+       interfaz conectada a Internet serÃ¡ una direcciÃ³n IP real,
+       localizable en el mundo entero (digamos 1.2.3.4) y la otra serÃ¡
+       una direcciÃ³n privada no utilizable en Internet (digamos
        192.168.1.1).</p><p>Al emplear enmascaramiento las conexiones iniciadas en un
-       computador de la red privada pasarán por el servidor, el cual
-       cambiará la dirección del computador que inicia la conexión por
-       la del mismo servidor y reenviará la información a Internet.
-       De esta forma el computador que conteste en Internet responderá
-       al servidor, el cual podrá ajustar la dirección de la
-       información que reciba para que llegue al computador dentro de
+       computador de la red privada pasarÃ¡n por el servidor, el cual
+       cambiarÃ¡ la direcciÃ³n del computador que inicia la conexiÃ³n por
+       la del mismo servidor y reenviarÃ¡ la informaciÃ³n a Internet.
+       De esta forma el computador que conteste en Internet responderÃ¡
+       al servidor, el cual podrÃ¡ ajustar la direcciÃ³n de la
+       informaciÃ³n que reciba para que llegue al computador dentro de
        la Intranet.</p><p>
        Para configurar enmascaramiento
       <sup>[<a name="id465142" href="#ftn.id465142">208</a>]</sup> en Debian instale el paquete
 	<tt>ipmasq</tt>, el cual instala el script
 	<b>ipmasq</b>, lo ejecuta y prepara el proceso de
-	inicialización para ejecutarlo siempre durante el arranque
-	(vea <a href="administracion-dos.html#inicializacion-del-sistema" title="1. Inicialización del sistema">Inicialización
+	inicializaciÃ³n para ejecutarlo siempre durante el arranque
+	(vea <a href="administracion-dos.html#inicializacion-del-sistema" title="1. InicializaciÃ³n del sistema">InicializaciÃ³n
 	del sistema</a>.  <b>ipmasq</b> configura el
 	computador donde se instala para hacer enmascaramiento y como
-	contrafuegos básico (que tras la instalación permite iniciar
-	todo tipo de conexión desde la red interna hacia la externa
+	contrafuegos bÃ¡sico (que tras la instalaciÃ³n permite iniciar
+	todo tipo de conexiÃ³n desde la red interna hacia la externa
 	con un poco de seguridad
 	<sup>[<a name="id465200" href="#ftn.id465200">209</a>]</sup>).  El contrafuego
 	puede restringirse agregando reglas para
 	<b>ipchains</b> en archivos del directorio
 	<tt>/etc/ipmasq/rules</tt>.
-       </p><a class="indexterm" name="id465388"></a><p>En el caso de una conexión a Internet usando
+       </p><a class="indexterm" name="id465388"></a><p>En el caso de una conexiÃ³n a Internet usando
       <b>ppp</b>, puede crear el archivo
       <tt>/etc/ipmasq/ppp</tt> para que las reglas del
       contrafuegos sean configuradas cuando <b>pppd</b>
-      inicia o termina una conexión.</p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-direcciones-y-enrutamiento"></a>3.2. Lecturas recomendadas: Direcciones, enrutamiento y transporte</h3></div></div><p>
+      inicia o termina una conexiÃ³n.</p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-direcciones-y-enrutamiento"></a>3.2. Lecturas recomendadas: Direcciones, enrutamiento y transporte</h3></div></div><p>
      </p><div class="itemizedlist"><ul type="disc"><li><p><i>Net-HOWTO</i>. 5.1.2. IP Addresses, an
 	Explanation.  <a href="http://linuxdoc.org/HOWTO/Net-HOWTO/c135.html#AEN138" target="_top">http://linuxdoc.org/HOWTO/Net-HOWTO/c135.html#AEN138</a>
       </p></li><li><p><i>Net-HOWTO</i>. 5.5.1. What&quot;s in a name
        ?  <a href="http://linuxdoc.org/HOWTO/Net-HOWTO/x398.html#AEN404" target="_top">http://linuxdoc.org/HOWTO/Net-HOWTO/x398.html#AEN404</a>
-      </p></li><li><p>Puede consultar más sobre enmascaramiento después de instalar
+      </p></li><li><p>Puede consultar mÃ¡s sobre enmascaramiento despuÃ©s de instalar
 	el paquete <tt>ipmasq</tt> en el directorio
-	<tt>/usr/share/doc/ipmasq</tt> y en las página
+	<tt>/usr/share/doc/ipmasq</tt> y en las pÃ¡gina
 	<b>man</b> de <tt>ipmasq-rule</tt>  que 
 	indica como agregar reglas al contrafuego.</p></li></ul></div><p>
      </p></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-direcciones-y-enrutamiento"></a>3.3. Ejercicios: Direcciones, enrutamiento y transporte</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id465623"></a><a name="insred.ip.2"></a><b>3.3.1. </b></td><td align="left" valign="top"><p>Suponga que a una red como la de la plataforma de referencia,
-	desea agreguarsele un computador cliente, ¿qué pasos deben
-	seguirse y cómo se configura?
-       </p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id464656" href="#id464656">207</a>] </sup>Contrafuego del inglés
+	desea agreguarsele un computador cliente, Â¿quÃ© pasos deben
+	seguirse y cÃ³mo se configura?
+       </p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id464656" href="#id464656">207</a>] </sup>Contrafuego del inglÃ©s
 	   <i>firewall</i></p></div><div class="footnote"><p><sup>[<a name="ftn.id465142" href="#id465142">208</a>] </sup>Para emplear enmascaramiento el kernel debe ser compilado
 	con las opciones <tt>CONFIG_FIREWALL</tt>,
 	<tt>CONFIG_IP_FIREWALL</tt>,
@@ -258,5 +258,5 @@ traceroute 192.168.1.2
 	hechas en los kernels por defecto de Debian).
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id465200" href="#id465200">209</a>] </sup>ipmasq evita
 	algunos ataques que emplean
-	<i>spoofing</i>, es decir suplantación
-	de la IP de un computador.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="dispositivos-para-interconexion-y-linux.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="administracion-tres.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="protocolos-de-soporte-y-de-usuario.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">2. Dispositivos para interconexión y Linux  </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 4. Protocolos de soporte y de usuario</td></tr></table></div></body></html>
+	<i>spoofing</i>, es decir suplantaciÃ³n
+	de la IP de un computador.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="dispositivos-para-interconexion-y-linux.html">Anterior</a>Â </td><td width="20%" align="center"><a accesskey="u" href="administracion-tres.html">Subir</a></td><td width="40%" align="right">Â <a accesskey="n" href="protocolos-de-soporte-y-de-usuario.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">2. Dispositivos para interconexiÃ³n y Linux Â </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top">Â 4. Protocolos de soporte y de usuario</td></tr></table></div></body></html>

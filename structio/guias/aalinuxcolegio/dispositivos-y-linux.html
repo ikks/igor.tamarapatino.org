@@ -1,52 +1,52 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>4. Dispositivos y Linux</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-dos.html" title="Capítulo 5. Administración de Linux en computadores aislados"><link rel="previous" href="hardware-basico-y-linux.html" title="3. Hardware básico y Linux"><link rel="next" href="instalacion-de-debian.html" title="5. Instalación de Debian"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Dispositivos y Linux</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="hardware-basico-y-linux.html">Anterior</a> </td><th width="60%" align="center">Capítulo 5. Administración de Linux en computadores aislados</th><td width="20%" align="right"> <a accesskey="n" href="instalacion-de-debian.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="dispositivos-y-linux"></a>4. Dispositivos y Linux</h2></div></div><p>Indicadores de Logros: </p><div class="itemizedlist"><ul type="disc"><li><p><a name="hardware.linux"></a>Identifica dispositivos que puede funcionar con Linux.
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>4. Dispositivos y Linux</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-dos.html" title="CapÃ­tulo 5. AdministraciÃ³n de Linux en computadores aislados"><link rel="previous" href="hardware-basico-y-linux.html" title="3. Hardware bÃ¡sico y Linux"><link rel="next" href="instalacion-de-debian.html" title="5. InstalaciÃ³n de Debian"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">4. Dispositivos y Linux</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="hardware-basico-y-linux.html">Anterior</a>Â </td><th width="60%" align="center">CapÃ­tulo 5. AdministraciÃ³n de Linux en computadores aislados</th><td width="20%" align="right">Â <a accesskey="n" href="instalacion-de-debian.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="dispositivos-y-linux"></a>4. Dispositivos y Linux</h2></div></div><p>Indicadores de Logros: </p><div class="itemizedlist"><ul type="disc"><li><p><a name="hardware.linux"></a>Identifica dispositivos que puede funcionar con Linux.
      </p></li><li><p><a name="hardware.conf"></a>Puede configurar dispositivos soportados con Linux.
-     </p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-dispositivos-y-linux"></a>4.1. Lectura: Dispositivos y Linux</h3></div></div><p>En esta sección se presenta información sobre dispositivos
-      que normalmente están separados de la placa base, así como
+     </p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-dispositivos-y-linux"></a>4.1. Lectura: Dispositivos y Linux</h3></div></div><p>En esta secciÃ³n se presenta informaciÃ³n sobre dispositivos
+      que normalmente estÃ¡n separados de la placa base, asÃ­ como
      detalles de su
-     configuración en Linux.  Esta sección complementa las secciones
-     sobre hardware que típicamente está en la placa base (ver <a href="hardware-basico-y-linux.html" title="3. Hardware básico y Linux">Hardware básico y Linux</a>)
-     y sobre dispositivos para interconexión de varios computadores
-     (ver <a href="dispositivos-para-interconexion-y-linux.html" title="2. Dispositivos para interconexión y Linux ">Dispositivos
-     para interconexión y Linux</a>).
-   </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="soporte-de-hardware-en-linux"></a>4.1.1. Soporte de hardware en Linux</h4></div></div><p>La distribución Debian 2.2 incluye un kernel reciente con
-      todos los módulos compilados y puede detectar hardware en el
+     configuraciÃ³n en Linux.  Esta secciÃ³n complementa las secciones
+     sobre hardware que tÃ­picamente estÃ¡ en la placa base (ver <a href="hardware-basico-y-linux.html" title="3. Hardware bÃ¡sico y Linux">Hardware bÃ¡sico y Linux</a>)
+     y sobre dispositivos para interconexiÃ³n de varios computadores
+     (ver <a href="dispositivos-para-interconexion-y-linux.html" title="2. Dispositivos para interconexiÃ³n y Linux ">Dispositivos
+     para interconexiÃ³n y Linux</a>).
+   </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="soporte-de-hardware-en-linux"></a>4.1.1. Soporte de hardware en Linux</h4></div></div><p>La distribuciÃ³n Debian 2.2 incluye un kernel reciente con
+      todos los mÃ³dulos compilados y puede detectar hardware en el
       momento del arranque, de forma que un administrador o un usuario
       en general no debe encargarse de esto.  Sin embargo puede haber
-      algunos casos excepcionales: </p><div class="orderedlist"><ol type="1"><li><p>Si compra hardware diseñado para Windows o que no tenga
-	especificaciones abiertas puede ser difícil usarlo en Linux.
-       </p></li><li><p>Si compra hardware muy moderno para el cual aún no haya
-	controladores para Linux (o si su distribución de Linux no es
-	la más reciente).  </p></li><li><p>Si Linux no reconoce automáticamente su hardware (aún
-	cuando pueda soportarlo).  </p></li></ol></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id436574"></a>4.1.1.1. Hardware diseñado sólo para Windows</h5></div></div><p> Algunos fabricantes de hardware están diseñando
-       componentes que sólo funcionan con el sistema operativo
+      algunos casos excepcionales: </p><div class="orderedlist"><ol type="1"><li><p>Si compra hardware diseÃ±ado para Windows o que no tenga
+	especificaciones abiertas puede ser difÃ­cil usarlo en Linux.
+       </p></li><li><p>Si compra hardware muy moderno para el cual aÃºn no haya
+	controladores para Linux (o si su distribuciÃ³n de Linux no es
+	la mÃ¡s reciente).  </p></li><li><p>Si Linux no reconoce automÃ¡ticamente su hardware (aÃºn
+	cuando pueda soportarlo).  </p></li></ol></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id436574"></a>4.1.1.1. Hardware diseÃ±ado sÃ³lo para Windows</h5></div></div><p> Algunos fabricantes de hardware estÃ¡n diseÃ±ando
+       componentes que sÃ³lo funcionan con el sistema operativo
        Windows, o se niegan a publicar especificaciones que permitan
        crear controladores.  Un ejemplo son los &quot;Winmodems&quot; y otros
-       componentes que mantienen parte de la información que
+       componentes que mantienen parte de la informaciÃ³n que
        usualmente va en el hardware en software, disminuyendo con esto
-       el desempeño y haciendo difícil su uso en otros sistemas
+       el desempeÃ±o y haciendo difÃ­cil su uso en otros sistemas
        operativos.</p><a class="indexterm" name="id436585"></a><p>Para sobrellevar este problema usted puede considerar:
        </p><div class="itemizedlist"><ul type="disc"><li><p>Cuando compre hardware
-	 nuevo, pregunte siempre de forma explícita al vendedor si el
-       hardware que le está ofreciendo funciona con Linux y en
-       particular pregunte la versión del kernel con la que funciona
+	 nuevo, pregunte siempre de forma explÃ­cita al vendedor si el
+       hardware que le estÃ¡ ofreciendo funciona con Linux y en
+       particular pregunte la versiÃ³n del kernel con la que funciona
        (para que usted sepa si funciona con el que usted tiene).  Su
-       pregunta no sólo le permitirá saber a usted si el hardware le
-       servirá, también le permitirá saber al vendedor que hay un
+       pregunta no sÃ³lo le permitirÃ¡ saber a usted si el hardware le
+       servirÃ¡, tambiÃ©n le permitirÃ¡ saber al vendedor que hay un
        mercado para hardware que funciona con Linux.
        </p></li><li><p>Para determinar si un dispositivo particular es
-	 soportado, puede consultar la sección respectiva de esta guía
-	 o las lecturas que recomendamos.  </p></li><li><p>También puede consultar en los empaques del hardware, el
+	 soportado, puede consultar la secciÃ³n respectiva de esta guÃ­a
+	 o las lecturas que recomendamos.  </p></li><li><p>TambiÃ©n puede consultar en los empaques del hardware, el
 	 sitio web del fabricante, en el sitio de la compra, en grupos
 	 de usuarios o en listados de hardware disponibles en Internet.
 	 Si en el website del fabricante, encuentra forma de escribir
-	 un correo electrónico, hágalo y hágales saber que usted quiere
-	 emplear ese hardware con Linux, así ellos se enterarán que hay
-	 un mercado potencial para Linux.  </p></li></ul></div><p>Si desea conocer más sobre este problema y formas de
-       solucionarlo, puede consultar la sección &quot;Adquisición de
-       hardware específicamente para Linux&quot; de &quot;<i>Instalación
+	 un correo electrÃ³nico, hÃ¡galo y hÃ¡gales saber que usted quiere
+	 emplear ese hardware con Linux, asÃ­ ellos se enterarÃ¡n que hay
+	 un mercado potencial para Linux.  </p></li></ul></div><p>Si desea conocer mÃ¡s sobre este problema y formas de
+       solucionarlo, puede consultar la secciÃ³n &quot;AdquisiciÃ³n de
+       hardware especÃ­ficamente para Linux&quot; de &quot;<i>InstalaciÃ³n
        de Debian Linux 2.2 para Intel x86</i>&quot;: <a href="http://www.debian.org/releases/2.2/i386/ch-hardware-req.es.html#s2.5" target="_top">http://www.debian.org/releases/2.2/i386/ch-hardware-req.es.html#s2.5</a>
-      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id436807"></a>4.1.1.2. Hardware no soportado por su distribución de
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id436807"></a>4.1.1.2. Hardware no soportado por su distribuciÃ³n de
        Linux</h5></div></div><p>
        A medida que se produce nuevo hardware,
        los desarrolladores de Linux crean controladores.  Es posible
@@ -54,49 +54,49 @@
        soportado por versiones nuevas de Linux, no sea soportado por
        la que usted tiene.
       </p><p>Para determinar si tiene este problema busque el dispositivo
-       en la sección respectiva de esta guía o en las lecturas que
+       en la secciÃ³n respectiva de esta guÃ­a o en las lecturas que
        recomendamos.  Si no encuentra el dispositivo, puede:
-      </p><div class="itemizedlist"><ul type="disc"><li><p>Buscar un módulo (precompilado o fuentes) que pueda
-	 funcionar con la versión del kernel que tiene, note que un
-	 módulo para una versión diferente del kernel NO servirá (ver
-	 <a href="kernel-y-modulos.html" title="2. Kernel y módulos">Kernel y módulos</a>).
-	</p></li><li><p>Determinar si una versión más reciente del kernel
+      </p><div class="itemizedlist"><ul type="disc"><li><p>Buscar un mÃ³dulo (precompilado o fuentes) que pueda
+	 funcionar con la versiÃ³n del kernel que tiene, note que un
+	 mÃ³dulo para una versiÃ³n diferente del kernel NO servirÃ¡ (ver
+	 <a href="kernel-y-modulos.html" title="2. Kernel y mÃ³dulos">Kernel y mÃ³dulos</a>).
+	</p></li><li><p>Determinar si una versiÃ³n mÃ¡s reciente del kernel
 	 soporta el hardware ---o en el caso de tarjetas graficadoras,
-	 una versión más reciente de XFree86.  Si encuentra una
-	 versión más nueva que lo soporte, puede obtenerla de Internet
-	 e instalar sólo el kernel (ver <a href="kernel-y-modulos.html#configuracion-del-kernel" title="2.1.2. Configuración del kernel">Configuración del
+	 una versiÃ³n mÃ¡s reciente de XFree86.  Si encuentra una
+	 versiÃ³n mÃ¡s nueva que lo soporte, puede obtenerla de Internet
+	 e instalar sÃ³lo el kernel (ver <a href="kernel-y-modulos.html#configuracion-del-kernel" title="2.1.2. ConfiguraciÃ³n del kernel">ConfiguraciÃ³n del
 	 kernel</a>) o XFree86 (ver<a href="dispositivos-y-linux.html#monitor-y-tarjeta-graficadora" title="4.1.4. Monitor y tarjeta graficadora">Monitor y tarjeta
-	 graficadora</a>) sin actualizar la distribución completa.
-	 </p></li></ul></div><p>Puede ver el hardware soportado por la distribución Debian
-      2.2 en estas guías la sección que corresponde al tipo de
-      dispositivo, en las lecturas que se recomiendan en cada sección,
-      en la sección &quot;Hardware soportado&quot; de &quot;Instalación de Debian
+	 graficadora</a>) sin actualizar la distribuciÃ³n completa.
+	 </p></li></ul></div><p>Puede ver el hardware soportado por la distribuciÃ³n Debian
+      2.2 en estas guÃ­as la secciÃ³n que corresponde al tipo de
+      dispositivo, en las lecturas que se recomiendan en cada secciÃ³n,
+      en la secciÃ³n &quot;Hardware soportado&quot; de &quot;InstalaciÃ³n de Debian
       Linux 2.2 para Intel x86&quot;: <a href="http://www.debian.org/releases/2.2/i386/ch-hardware-req.es.html" target="_top">http://www.debian.org/releases/2.2/i386/ch-hardware-req.es.html</a>
       o en el <i>Hardware-HOWTO</i>, disponible en su
       sistema en
       <tt>/usr/share/doc/HOWTO/en-txt/Hardware-HOWTO.gz</tt>
       o en Internet en: <a href="http://www.linuxdoc.org/HOWTO/Hardware-HOWTO.html" target="_top">http://www.linuxdoc.org/HOWTO/Hardware-HOWTO.html</a>
-      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id436968"></a>4.1.1.3. Hardware no reconocido por su distribución de
-       Linux</h5></div></div><p>Si su distribución de Linux no reconoce
-       automáticamente un dispositivo, pero usted sabe que lo soporta,
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id436968"></a>4.1.1.3. Hardware no reconocido por su distribuciÃ³n de
+       Linux</h5></div></div><p>Si su distribuciÃ³n de Linux no reconoce
+       automÃ¡ticamente un dispositivo, pero usted sabe que lo soporta,
        intente determinar y/o configurar usted mismo los recursos de
        hardware que emplea ---sin que entre en conflicto con otros
-       dispositivos--- y configure después Linux bien 
-       </p><div class="itemizedlist"><ul type="disc"><li><p>Activando el módulo apropiado pasando como parámetro
-	  los recursos si es que el controlador es un módulo</p></li><li><p>pasando los parámetros desde el cargador de arranque
-	  (ver <a href="kernel-y-modulos.html#configuracion-del-kernel" title="2.1.2. Configuración del kernel">Configuración
-	  del kernel</a>) si el controlador está incluido en el
-	  kernel. Puede consultar los parámetros en la sección
-	  correspondiente de esta guía o en las lecturas que
-	  recomendamos en cada sección.</p></li></ul></div><p>
+       dispositivos--- y configure despuÃ©s Linux bien 
+       </p><div class="itemizedlist"><ul type="disc"><li><p>Activando el mÃ³dulo apropiado pasando como parÃ¡metro
+	  los recursos si es que el controlador es un mÃ³dulo</p></li><li><p>pasando los parÃ¡metros desde el cargador de arranque
+	  (ver <a href="kernel-y-modulos.html#configuracion-del-kernel" title="2.1.2. ConfiguraciÃ³n del kernel">ConfiguraciÃ³n
+	  del kernel</a>) si el controlador estÃ¡ incluido en el
+	  kernel. Puede consultar los parÃ¡metros en la secciÃ³n
+	  correspondiente de esta guÃ­a o en las lecturas que
+	  recomendamos en cada secciÃ³n.</p></li></ul></div><p>
        
-      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="teclado"></a>4.1.2. Teclado </h4></div></div><a class="indexterm" name="id437016"></a><p>Los conectores de teclado típicamente son redondos de 5
+      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="teclado"></a>4.1.2. Teclado </h4></div></div><a class="indexterm" name="id437016"></a><p>Los conectores de teclado tÃ­picamente son redondos de 5
       pines o 6 pines
-      <sup>[<a name="id437041" href="#ftn.id437041">153</a>]</sup>, aunque también hay teclados USB.  Linux soporta
+      <sup>[<a name="id437041" href="#ftn.id437041">153</a>]</sup>, aunque tambiÃ©n hay teclados USB.  Linux soporta
       gran variedad de distribuciones de teclado, el soporte para el
-      tipo de teclado debe estar incluido estáticamente en el kernel
-      (aunque la mayoría de kernels NO incluyen soporte para teclados
-      USB, puede consultar más adelante en esta sección como emplear
+      tipo de teclado debe estar incluido estÃ¡ticamente en el kernel
+      (aunque la mayorÃ­a de kernels NO incluyen soporte para teclados
+      USB, puede consultar mÃ¡s adelante en esta secciÃ³n como emplear
       tal tipo de teclado).
     </p><a class="indexterm" name="id437051"></a><p>Un teclado produce en los puertos del teclado, secuencias
       de 1 a 6 bytes por cada tecla oprimida o soltada, estas
@@ -104,45 +104,45 @@
       <sup>[<a name="id437079" href="#ftn.id437079">154</a>]</sup>.  El kernel recibe estas secuencias y
       normalmente
       <sup>[<a name="id437257" href="#ftn.id437257">155</a>]</sup>
-      las traduce a código internos (keycodes), que después son
+      las traduce a cÃ³digo internos (keycodes), que despuÃ©s son
       traducidos a ASCII o Unicode de acuerdo al mapa del teclado.
-    </p><a class="indexterm" name="id437267"></a><p>Los mapas de teclado asocian a códigos de teclado
+    </p><a class="indexterm" name="id437267"></a><p>Los mapas de teclado asocian a cÃ³digos de teclado
      (keycode
       <sup>[<a name="id437299" href="#ftn.id437299">156</a>]</sup>) caracteres que deben producirse.  Pueden definirse
-      secuencias simultáneas de teclas (por ejemplo
+      secuencias simultÃ¡neas de teclas (por ejemplo
       <b>Ctrl-Alt-A</b>) o secuencias con teclas muertas
-      (para producir por ejemplo á al oprimir primero ' y después a).
-      Encontrará mapas de teclado para diversas distribuciones en el
+      (para producir por ejemplo Ã¡ al oprimir primero ' y despuÃ©s a).
+      EncontrarÃ¡ mapas de teclado para diversas distribuciones en el
       directorio <tt>/usr/share/keymaps/i386</tt>, el mapa
-      que se carga durante el arranque está en
+      que se carga durante el arranque estÃ¡ en
       <tt>/etc/console-tools/default.kmap.gz</tt>, archivo
       que puede remplazarse o editarse (descomprima antes de editar y
-      comprima cuando termine ver <a href="exploracion-dos.html#administracion-de-archivos-directorios-y-enlaces" title="1.1.1. Administración de archivos, directorios y enlaces">Administración
+      comprima cuando termine ver <a href="exploracion-dos.html#administracion-de-archivos-directorios-y-enlaces" title="1.1.1. AdministraciÃ³n de archivos, directorios y enlaces">AdministraciÃ³n
       de archivos directorios y enlaces</a>).  X-Window tiene su
-      propia configuración del teclado, que durante el arranque de
+      propia configuraciÃ³n del teclado, que durante el arranque de
       X-Window toma del archivo
       <tt>/etc/X11/XF86Config</tt> (ver <a href="dispositivos-y-linux.html#monitor-y-tarjeta-graficadora" title="4.1.4. Monitor y tarjeta graficadora">Monitor y tarjeta
       graficadora</a>) pero que cada usuario puede personalizar con
-      <tt>xmodmap</tt> (ver <a href="configuracion-de-una-sesion.html#una-sesion-con-x-dash-window" title="5.1.2. Una sesión con X-Window">Una sesión con
+      <tt>xmodmap</tt> (ver <a href="configuracion-de-una-sesion.html#una-sesion-con-x-dash-window" title="5.1.2. Una sesiÃ³n con X-Window">Una sesiÃ³n con
        X-Window</a>).
-     </p><a class="indexterm" name="id437614"></a><p>En Colombia las distribuciones de teclado más usadas son
+     </p><a class="indexterm" name="id437614"></a><p>En Colombia las distribuciones de teclado mÃ¡s usadas son
       QWERTY (la primera fila de teclas con letras
       de izquierda a derecha tiene las teclas <b>q</b>,
       <b>w</b>, <b>e</b>, <b>r</b>,
       <b>t</b>, <b>y</b>), y en particular:
      </p><div class="variablelist"><dl><dt><span class="term">US
-       </span></dt><dd><p>que no tiene <b>ñ</b>, ni símbolos de idiomas
-	 diferentes a los requeridos en inglés, recomendamos que use
+       </span></dt><dd><p>que no tiene <b>Ã±</b>, ni sÃ­mbolos de idiomas
+	 diferentes a los requeridos en inglÃ©s, recomendamos que use
 	 el mapa
 	 <tt>/usr/share/keymaps/i386/qwerty/us-latin1.kmap.gz</tt>
-	 con algunas modificaciones (ver <a href="localizacion-y-configuracion-de-algunos-programas.html" title="6. Localización y configuración de algunos programas">Localización y configuración de programas</a>).
-	</p></dd><dt><span class="term">Español
-       </span></dt><dd><p>Tiene <b>ñ</b> y a la derecha de esta tiene el
+	 con algunas modificaciones (ver <a href="localizacion-y-configuracion-de-algunos-programas.html" title="6. LocalizaciÃ³n y configuraciÃ³n de algunos programas">LocalizaciÃ³n y configuraciÃ³n de programas</a>).
+	</p></dd><dt><span class="term">EspaÃ±ol
+       </span></dt><dd><p>Tiene <b>Ã±</b> y a la derecha de esta tiene el
 	 apostrofe <b>'</b>.  Mapa:
 	 <tt>/usr/share/keymaps/i386/qwerty/es.kmap.gz</tt>
 	</p></dd><dt><span class="term">Latinoamericano
-       </span></dt><dd><p>Tiene <b>ñ</b> y a la derecha de esta tiene el
-	 paréntesis cuadrado izquierdo <b>[</b>.  Mapa:
+       </span></dt><dd><p>Tiene <b>Ã±</b> y a la derecha de esta tiene el
+	 parÃ©ntesis cuadrado izquierdo <b>[</b>.  Mapa:
 	 <tt>/usr/share/keymaps/i386/qwerty/la-latin1.kmap.gz</tt>
 	</p></dd></dl></div><a class="indexterm" name="id437809"></a><p>Antes de cambiar el mapa de teclado que se carga en el
       arranque, puede probar el nuevo mapa desde una consola virtual
@@ -151,20 +151,20 @@
 loadkeys /usr/share/keymaps/i386/qwerty/es.kmap.gz
 </pre><p>
     </p><p>Al editar un mapa de teclado del kernel tenga en cuenta que
-     las líneas iniciadas con ! o # son comentarios, cada definición
-     debe estar una línea o en varias sólo si cada línea se terminen
-     con el caracter '\'.  Pueden incluirse otros mapas con líneas
+     las lÃ­neas iniciadas con ! o # son comentarios, cada definiciÃ³n
+     debe estar una lÃ­nea o en varias sÃ³lo si cada lÃ­nea se terminen
+     con el caracter '\'.  Pueden incluirse otros mapas con lÃ­neas
      como:
 </p><pre class="programlisting">
 include &quot;euro&quot;
 </pre><p>
      Cada tecla debe configurarse (o estar configurada en un archivo incluido)
-     con líneas de la forma:
+     con lÃ­neas de la forma:
 </p><pre class="programlisting">
 keycode  39 = +ntilde +Ntilde
         alt     keycode  39 = semicolon
 </pre><p>
-     la primera línea configura la tecla con código 39, como la ñ (i.e
+     la primera lÃ­nea configura la tecla con cÃ³digo 39, como la Ã± (i.e
      ntilde), la segunda indica que al oprimir <b>Alt</b>
      con esa tecla debe producirse el caracter ';'.  +ntilde por estar
      en la &quot;columna 0&quot; de la tecla 39 es el caracter que debe
@@ -172,48 +172,48 @@ keycode  39 = +ntilde +Ntilde
      producirse si se emplea con Shift
       <sup>[<a name="id437870" href="#ftn.id437870">157</a>]</sup> El caracter '+' antes de ntilde y Ntilde indica que
       Shift debe invertir el efecto de Caps Lock (i.e si Caps Lock
-      está activado Shift pasa a minusculas).
-    </p><p>El código de cada tecla puede consultarlo con el programa
-     <b>showkey</b>, que mostrará el código de cada tecla
-     que oprima (el teclado no podrá usarse para nada más, este
-     programa terminará después de 10 segundos sin oprimir tecla
-     alguna).  Los nombres de los símbolos que pueden producirse
+      estÃ¡ activado Shift pasa a minusculas).
+    </p><p>El cÃ³digo de cada tecla puede consultarlo con el programa
+     <b>showkey</b>, que mostrarÃ¡ el cÃ³digo de cada tecla
+     que oprima (el teclado no podrÃ¡ usarse para nada mÃ¡s, este
+     programa terminarÃ¡ despuÃ©s de 10 segundos sin oprimir tecla
+     alguna).  Los nombres de los sÃ­mbolos que pueden producirse
      pueden consultarse desde una consola texto con
      <b>dumpkeys</b>, por ejemplo: <b>dumpkeys
      --long-info</b>.
-     </p><p>El administrador, puede configurar la rata de repetición del
+     </p><p>El administrador, puede configurar la rata de repeticiÃ³n del
      teclado con <b>kbdrate</b>, por ejemplo:
 </p><pre class="programlisting">
 kbdrate -r 30 -d 250
 </pre><p>
-      Cambiará la rata a 30 caracteres por segunda, con un intervalo de espera
+      CambiarÃ¡ la rata a 30 caracteres por segunda, con un intervalo de espera
       de 250mseg antes de empezar a repetir.
-     </p><p>Aunque el mapa de teclado y la rata de repetición es común
+     </p><p>Aunque el mapa de teclado y la rata de repeticiÃ³n es comÃºn
       a todas las consolas virtuales, cada una tiene su propio modo y
       estado de leds.  Puede configurarse el modo en el que el teclado
       produce caracteres en una consola virtual con el programa
       kbd_mode y el estado de los leds con
-      setleds. Para el caso de español el
-      modo ASCII que está configurado por defecto es suficiente, pero
+      setleds. Para el caso de espaÃ±ol el
+      modo ASCII que estÃ¡ configurado por defecto es suficiente, pero
       para otros idiomas o eventualmente para algunos programas el
       modo Unicode
       <sup>[<a name="id437952" href="#ftn.id437952">158</a>]</sup> es apropiado, lo puede establecer con
       <b>kbd_mode -u</b>
       <sup>[<a name="id438124" href="#ftn.id438124">159</a>]</sup>.  Cada consola tiene su propio estado con respecto a
-      mayúsculas sostenidas (Caps Lock), detención de desplazamiento
-      (Scroll Lock) y teclado númerico (Num Lock), estos estados
+      mayÃºsculas sostenidas (Caps Lock), detenciÃ³n de desplazamiento
+      (Scroll Lock) y teclado nÃºmerico (Num Lock), estos estados
       pueden cambiarse con los parametros <tt>-num</tt>,
       <tt>+num</tt>, <tt>-caps</tt>,
       <tt>+caps</tt>, <tt>-scroll</tt> o
       <tt>+scroll</tt> de <b>setleds</b> ('+'
       indica activar).  Estos estados pueden o no verse en los leds
-      del teclado físico, con el parámetro <tt>-F</tt> se
+      del teclado fÃ­sico, con el parÃ¡metro <tt>-F</tt> se
       cambia el estado de la consola pero no los leds, con
       <tt>-D</tt> se cambia el estado de ambos y con
-      <tt>-L</tt> sólo el de los leds (puede haber algunos
+      <tt>-L</tt> sÃ³lo el de los leds (puede haber algunos
       teclados cuyos leds no pueden ser controlados por
       <tt>setleds</tt>).
-     </p><p>En X-Window, además de poder configurar el teclado con
+     </p><p>En X-Window, ademÃ¡s de poder configurar el teclado con
       <b>xmodmap</b>, el estado de los leds puede
       controlarse con <b>xset</b>, e.g.  <b>xset led
      3</b> o <b>xset -led 3</b> para activar o
@@ -221,230 +221,230 @@ kbdrate -r 30 -d 250
      </p><p>Teclado USB</p><p>Dado que el teclado es uno de los
       primeros dispositivos detectados y manejados por el kernel y
       dado que por defecto los kernels disponibles para Debian 2.2 no
-      incluyen estáticamente ninguno de estos controladores, si su
+      incluyen estÃ¡ticamente ninguno de estos controladores, si su
       teclado es USB recomendamos instalar un kernel 2.4 y compilarlo
       con el controlador <tt>hid</tt> o
-      <tt>usbkbd</tt> incluido estáticamente (ver <a href="kernel-y-modulos.html" title="2. Kernel y módulos">Kernel y módulos</a>).  
+      <tt>usbkbd</tt> incluido estÃ¡ticamente (ver <a href="kernel-y-modulos.html" title="2. Kernel y mÃ³dulos">Kernel y mÃ³dulos</a>).  
     </p><p>Hay dos controladores, uno general que se apoya en el
       controlado HID (<tt>CONFIG_INPUT_KEYBDEV</tt>;
       <tt>keybdev</tt>) y uno restringido pero independiente
       de HID (<tt>CONFIG_USB_KBD</tt>;
-      <tt>usbkbd</tt>) (sección sobre buses USB ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>).  HID requiere más memoria porque
-      además de teclados USB controla otros dispositivos para
-      interacción con humanos (como ratón y game pads), para incluirlo
-      estáticamente en el kernel debe configurar también Input Core
+      <tt>usbkbd</tt>) (secciÃ³n sobre buses USB ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>).  HID requiere mÃ¡s memoria porque
+      ademÃ¡s de teclados USB controla otros dispositivos para
+      interacciÃ³n con humanos (como ratÃ³n y game pads), para incluirlo
+      estÃ¡ticamente en el kernel debe configurar tambiÃ©n Input Core
       Support (<tt>CONFIG_INPUT</tt>).
-     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="raton"></a>4.1.3. Ratón</h4></div></div><p>El tipo de puerto de un ratón puede ser serial (conector
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="raton"></a>4.1.3. RatÃ³n</h4></div></div><p>El tipo de puerto de un ratÃ³n puede ser serial (conector
       rectangular de 9 o 25 pines
       <sup>[<a name="id438444" href="#ftn.id438444">160</a>]</sup>),
-      PS/2 (conector redondo de 6 pines, también llamado
+      PS/2 (conector redondo de 6 pines, tambiÃ©n llamado
       Mini-DIN
       <sup>[<a name="id438451" href="#ftn.id438451">161</a>]</sup>), USB (conector rectangular) o Bus Mouse (tiene una
       tarjeta dedicada o se conecta a un puerto de algunas tarjetas
       graficadoras --ATI).
     </p><a class="indexterm" name="id438461"></a><p>Como recursos de Hardware un mouse emplea algunas
-      direcciones de entrada sálida y una línea IRQ (ver <a href="hardware-basico-y-linux.html#generalidades-sobre-dispositivos" title="3.1.3. Generalidades sobre dispositivos">Generalidades sobre
+      direcciones de entrada sÃ¡lida y una lÃ­nea IRQ (ver <a href="hardware-basico-y-linux.html#generalidades-sobre-dispositivos" title="3.1.3. Generalidades sobre dispositivos">Generalidades sobre
       dispositivos</a>), recursos que son atendidos por un
       controlador, de acuerdo al puerto donde se conecte.  El
       controlador puede ser usado por algunos programas con un archivo
       para dispositivos (normalmente <tt>/dev/mouse</tt>
       que debe ser un enlace al dispositivo apropiado). Por ejemplo es
-      usado por <tt>gpm</tt> que permite emplear el ratón en
+      usado por <tt>gpm</tt> que permite emplear el ratÃ³n en
       consolas virtuales (ver<a href="sistema-de-usuarios-y-manejo-de-clave.html" title="3. Sistema de usuarios y manejo de clave">Sistema de
       usuarios y manejo de clave</a>) y por X-Window.
-     </p><div class="variablelist"><dl><dt><span class="term">Ratón serial</span></dt><dd><p>Es manejado por el controlador de puertos seriales del
+     </p><div class="variablelist"><dl><dt><span class="term">RatÃ³n serial</span></dt><dd><p>Es manejado por el controlador de puertos seriales del
 	 kernel, el dispositivo puede ser por ejemplo <tt>/dev/ttyS0</tt> (primer puerto
 	 serial c, 4, 64) o <tt>/dev/ttyS1</tt> (c, 4, 65), que
-	 normalmente será configurado automáticamente por el
-	 controlador incluido estáticamente en el kernel.  De requerir
-	 una configuración no estándar del puerto puede emplear el
+	 normalmente serÃ¡ configurado automÃ¡ticamente por el
+	 controlador incluido estÃ¡ticamente en el kernel.  De requerir
+	 una configuraciÃ³n no estÃ¡ndar del puerto puede emplear el
 	 programa <b>setserial</b> (ver <a href="hardware-basico-y-linux.html#puertos-y-dispositivos-seriales" title="3.1.9. Puertos y dispositivos seriales">Puertos y
 	  dispositivos seriales</a>).
-	</p></dd><dt><span class="term">Ratón PS/2</span></dt><dd><p>El puerto para ratón PS/2 emplea algunas direcciones de
-	 entrada sálida y la interrupción 1el En el kernel original de
-	 Debian 2.2, este controlador está incluido estáticamente
+	</p></dd><dt><span class="term">RatÃ³n PS/2</span></dt><dd><p>El puerto para ratÃ³n PS/2 emplea algunas direcciones de
+	 entrada sÃ¡lida y la interrupciÃ³n 1el En el kernel original de
+	 Debian 2.2, este controlador estÃ¡ incluido estÃ¡ticamente
 	 (<tt>CONFIG_PSMOUSE</tt>), el dispositivo es
 	 <tt>/dev/psaux</tt> (c,10,1).
 
 	</p></dd><dt><span class="term">Bus mouse</span></dt><dd><p>Las versiones recientes del kernel 2.2 (posterior o igual
 	 a 2.2.19) y del kernel 2.4, soportan los siguientes bus
-	 mouse, cuyos controladores son por defecto módulos en Debian
+	 mouse, cuyos controladores son por defecto mÃ³dulos en Debian
 	 2.2: 
 
 	 </p><div class="variablelist"><dl><dt><span class="term">Inport</span></dt><dd><p>(<tt>CONFIG_MS_BUSMOUSE</tt>), se
 	    conecta a una tarjeta dedicada con un conector de 9
-	    pines. Módulo <tt>msbusmouse</tt>, dispositivo
-	    <tt>/dev/inportbm</tt> (c,10,2).  El módulo
-	    recibe el parámetro <tt>mouse_irq</tt> seguido
-	    del número de la interrupción, si se incluye estáticamente
+	    pines. MÃ³dulo <tt>msbusmouse</tt>, dispositivo
+	    <tt>/dev/inportbm</tt> (c,10,2).  El mÃ³dulo
+	    recibe el parÃ¡metro <tt>mouse_irq</tt> seguido
+	    del nÃºmero de la interrupciÃ³n, si se incluye estÃ¡ticamente
 	    en el kernel puede configurarse desde del cargador de
-	    arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. Parámetros desde el cargador de arranque">Parámetros
+	    arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. ParÃ¡metros desde el cargador de arranque">ParÃ¡metros
 	    desde el cargador de arranque</a>) con
-	    <tt>msmouse=3</tt> (cambiando 3 por el número de
-	     interrupción).  </p></dd><dt><span class="term">Logitech</span></dt><dd><p>El conector es redondo de 9 pines,
-	     (<tt>CONFIG_BUSMOUSE</tt>), módulo
+	    <tt>msmouse=3</tt> (cambiando 3 por el nÃºmero de
+	     interrupciÃ³n).  </p></dd><dt><span class="term">Logitech</span></dt><dd><p>El conector es redondo de 9 pines,
+	     (<tt>CONFIG_BUSMOUSE</tt>), mÃ³dulo
 	     <tt>busmouse</tt>, dispositivo
 	     <tt>/dev/logibm</tt> (c,10,0).  Al igual que
-	     Inport el módulo recibe el parámetro
+	     Inport el mÃ³dulo recibe el parÃ¡metro
 	     <tt>mouse_irq=3</tt> y desde el cargador de
 	     arranque puede usarse <tt>bmouse=3</tt>
-	     (remplazando 3 por el número de interrupción).
-	    </p></dd><dt><span class="term">ATI-XL</span></dt><dd><p>(<tt>CONFIG_ATIXL_BUSMOUSE</tt>) módulo
+	     (remplazando 3 por el nÃºmero de interrupciÃ³n).
+	    </p></dd><dt><span class="term">ATI-XL</span></dt><dd><p>(<tt>CONFIG_ATIXL_BUSMOUSE</tt>) mÃ³dulo
 	     <tt>atixlmouse</tt>, dispositivo
 	     <tt>/dev/atibm</tt> (c,10,3).  Por defecto
-	     emplea la interrupción 5 (que puede configurarse en la
+	     emplea la interrupciÃ³n 5 (que puede configurarse en la
 	     tarjeta), de requerir otra debe editarse y recompilarse
-	     el módulo (en las fuentes
-	     <tt>driver/char/atixlmouse.c</tt> línea con
+	     el mÃ³dulo (en las fuentes
+	     <tt>driver/char/atixlmouse.c</tt> lÃ­nea con
 	     <tt>ATIXL_MOUSE_IRQ</tt>). 
 	    </p></dd><dt><span class="term">C&amp;T 82C710 del TI Travelmate</span></dt><dd><p>
-	     (<tt>CONFIG_82C710_MOUSE</tt>), módulo
+	     (<tt>CONFIG_82C710_MOUSE</tt>), mÃ³dulo
 	     <tt>qpmouse</tt> emplea por defecto la
-	     interrupción 12, emplea el mismo dispositivo de PS/2 (i.e
+	     interrupciÃ³n 12, emplea el mismo dispositivo de PS/2 (i.e
 	     <tt>/dev/psaux</tt>, c,10,1).
 	     </p></dd></dl></div><p>
 	</p></dd><dt><span class="term">PC110 digitizer pad</span></dt><dd><p>Usado para emular un mouse PS/2 con la tableta
 	 digitalizadora del palmtop IBM PC110
-	 (<tt>CONFIG_PC110_PAD</tt>), módulo
+	 (<tt>CONFIG_PC110_PAD</tt>), mÃ³dulo
 	 <tt>pc110pad</tt>.  Dispositivo
 	 <tt>/dev/pc110pad</tt> (c,10,9).
-	   </p></dd><dt><span class="term">Ratón USB</span></dt><dd><p>Hay un controlador general apoyado en HID (ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>, sección USB),
+	   </p></dd><dt><span class="term">RatÃ³n USB</span></dt><dd><p>Hay un controlador general apoyado en HID (ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>, secciÃ³n USB),
 	 (<tt>CONFIG_INPUT_MOUSEDEV</tt>,
 	 <tt>CONFIG_INPUT_MOUSEDEV_SCREEN_X</tt>,
-	 <tt>CONFIG_INPUT_MOUSEDEV_SCREEN_Y</tt>), módulo
+	 <tt>CONFIG_INPUT_MOUSEDEV_SCREEN_Y</tt>), mÃ³dulo
 	 <tt>mousedev</tt>. Maneja los dispositivos
 	 <tt>/dev/input/mouse0</tt> (13,32) y
 	 <tt>/dev/input/mice</tt> (13,63) que emulan un
 	 mouse PS/2.  En situaciones especiales pueden emplearse en
 	 lugar de este un controlador restringido que no requiere HID:
-	 <tt>CONFIG_USB_MOUSE</tt>; módulo
+	 <tt>CONFIG_USB_MOUSE</tt>; mÃ³dulo
 	 <tt>usbmouse</tt>.  De requerir el controlador
-	 basado en HID incluido estáticamente en el kernel recuerde
-	 agregar también Input core support
+	 basado en HID incluido estÃ¡ticamente en el kernel recuerde
+	 agregar tambiÃ©n Input core support
 	 <tt>CONFIG_INPUT</tt>.
-	</p></dd></dl></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id439133"></a>4.1.3.1. Programas específicas para el ratón</h5></div></div><p>Es recomendable que cree el enlace
-     <tt>/dev/mouse</tt> al dispositivo de su ratón:
+	</p></dd></dl></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id439133"></a>4.1.3.1. Programas especÃ­ficas para el ratÃ³n</h5></div></div><p>Es recomendable que cree el enlace
+     <tt>/dev/mouse</tt> al dispositivo de su ratÃ³n:
 </p><pre class="programlisting">
 ln -s /dev/psaux /dev/mouse
 </pre><p>
       </p><a class="indexterm" name="id439159"></a><p>El programa <b>gpm</b> (paquete
-       <tt>gpm</tt>) le permitirá copiar y pegar textos
+       <tt>gpm</tt>) le permitirÃ¡ copiar y pegar textos
        entre consolas virtuales. Se trata de un programa que se inicia
        durante el arranque y permanentemente monitorea el estado del
        mouse para copiar y pegar textos
        <sup>[<a name="id439200" href="#ftn.id439200">162</a>]</sup>.  Para configurar <b>gpm</b> ---una vez
-       el controlador del puerto al que está conectado el ratón esté
+       el controlador del puerto al que estÃ¡ conectado el ratÃ³n estÃ©
        operando--- puede emplear el programa
-       gpmconfig, que le pedirá algunos
-       parámetros de configuración como el puerto al que está
+       gpmconfig, que le pedirÃ¡ algunos
+       parÃ¡metros de configuraciÃ³n como el puerto al que estÃ¡
        conectado (e.g <tt>/dev/mouse</tt>) y el protocolo que
        usa (normalmente <tt>ms</tt> para ratones seriales y
        <tt>ps2</tt> para ratones PS/2).
-     </p><a class="indexterm" name="id439264"></a><p>X-Window emplea el ratón de acuerdo a la configuración del
+     </p><a class="indexterm" name="id439264"></a><p>X-Window emplea el ratÃ³n de acuerdo a la configuraciÃ³n del
        archivo <tt>/etc/X11/XF86Config</tt> (ver <a href="dispositivos-y-linux.html#monitor-y-tarjeta-graficadora" title="4.1.4. Monitor y tarjeta graficadora">Monitor y tarjeta
-       graficadora</a>), en la sección <tt>Pointer</tt>.
-       Soporta diversos protocolos (el más común para puertos seriales
+       graficadora</a>), en la secciÃ³n <tt>Pointer</tt>.
+       Soporta diversos protocolos (el mÃ¡s comÃºn para puertos seriales
        es el protocolo Microsoft y para puertos PS/2 el protocolo
-       PS/2).  Puede emular 3 botones con mouse que sólo tienen dos
+       PS/2).  Puede emular 3 botones con mouse que sÃ³lo tienen dos
        (el tercero se &quot;obtiene&quot; oprimiendo simultaneamente los dos)
-       agregando <tt>Emulate3Buttons</tt>.  También permite
-       configurar la rueda para desplazamiento (junto con 3 botón) de
-       algunos ratones, agregando en la sección
-       <tt>Pointer</tt> una línea con <tt>ZAxisMapping
-	4 5</tt>, aunque también se requieren programas que puedan
-       aprovechar esta última característica (e.g Mozilla, programas
+       agregando <tt>Emulate3Buttons</tt>.  TambiÃ©n permite
+       configurar la rueda para desplazamiento (junto con 3 botÃ³n) de
+       algunos ratones, agregando en la secciÃ³n
+       <tt>Pointer</tt> una lÃ­nea con <tt>ZAxisMapping
+	4 5</tt>, aunque tambiÃ©n se requieren programas que puedan
+       aprovechar esta Ãºltima caracterÃ­stica (e.g Mozilla, programas
        de Gnome y KDE).
-      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="monitor-y-tarjeta-graficadora"></a>4.1.4. Monitor y tarjeta graficadora</h4></div></div><p>El tipo de monitor más común en la actualidad tiene un tubo
-      de rayos catódicos (CRT), que emplea imanes para apuntar un haz
+      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="monitor-y-tarjeta-graficadora"></a>4.1.4. Monitor y tarjeta graficadora</h4></div></div><p>El tipo de monitor mÃ¡s comÃºn en la actualidad tiene un tubo
+      de rayos catÃ³dicos (CRT), que emplea imanes para apuntar un haz
       de electrones sobre una capa de fluorescente en el interior del
       monitor.  Este haz recorre permanentemente la pantalla de de
       izquierda a derecha (con una frecuencia horizontal) y de arriba
       hacia abajo (con una frecuencia vertical) haciendo brillar
-      algunas zonas durante un corto período de tiempo.  De un monitor
+      algunas zonas durante un corto perÃ­odo de tiempo.  De un monitor
       a otro tanto la frecuencia horizontal
       <sup>[<a name="id439426" href="#ftn.id439426">163</a>]</sup> como vertical
       <sup>[<a name="id439433" href="#ftn.id439433">164</a>]</sup> varian, consulte las precisas de su monitor en el
-      manual o si X-Window ya está configurado puede verlos en
-      <tt>/etc/X11/XF86Config</tt> en líneas iniciadas con
+      manual o si X-Window ya estÃ¡ configurado puede verlos en
+      <tt>/etc/X11/XF86Config</tt> en lÃ­neas iniciadas con
       <tt>HorizSync</tt> y <tt>VertRefresh</tt>.
-    </p><a class="indexterm" name="id439540"></a><p>La tarjeta graficadora puede tener memoria RAM específica
-      para gráficas, que le permitirán soportar diversas resoluciones
-      (las más comunes son 640x480, 800x600, 1024x768, 1152x864,
-      1280x1024, 1600x1200 y 1800x1440), y una cantidad máxima de
+    </p><a class="indexterm" name="id439540"></a><p>La tarjeta graficadora puede tener memoria RAM especÃ­fica
+      para grÃ¡ficas, que le permitirÃ¡n soportar diversas resoluciones
+      (las mÃ¡s comunes son 640x480, 800x600, 1024x768, 1152x864,
+      1280x1024, 1600x1200 y 1800x1440), y una cantidad mÃ¡xima de
       colores (2,16,256, 65536 y 16 millones).
      </p><p>Para operar un sistema Linux en un i386, no se requiere
       configurar la tarjeta graficadora porque puede operarse en modo
-      texto.  Sin embargo para emplear características de
-      internacionalización del kernel (como fuentes para alfabetos
-      diferentes al del español), consolas en modo gráfico o para
+      texto.  Sin embargo para emplear caracterÃ­sticas de
+      internacionalizaciÃ³n del kernel (como fuentes para alfabetos
+      diferentes al del espaÃ±ol), consolas en modo grÃ¡fico o para
       iniciar X-Window se debe configurar la tarjeta graficadora y el
       monitor.
-     </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id439574"></a>4.1.4.1. X-Window</h5></div></div><p>Esta sección presenta configuración de la tarjeta
-       graficadora y el monitor en X-Window, operación que normalmente
+     </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id439574"></a>4.1.4.1. X-Window</h5></div></div><p>Esta secciÃ³n presenta configuraciÃ³n de la tarjeta
+       graficadora y el monitor en X-Window, operaciÃ³n que normalmente
        debe hacer una sola vez (otros aspectos de X-Windows se
        documentan en otras secciones, ver <a href="administracion-de-usuarios.html#inicio-de-sesiones-x-dash-window" title="3.1.4. Inicio de sesiones X-Window">Inicio de sesiones
        X-Window</a>).
-      </p><p>Como implementación de X-Window, Linux y otros sistemas de
-       libre redistribución para i386 emplean XFree86 (<a href="http://www.xfree86.org" target="_top">http://www.xfree86.org</a>).  Por esto, si no planea
-       usar fuentes de otros idiomas en la consola, para la mayoría de
-       tarjetas graficadoras sólo requerirá configurar XFree86 (aunque
-       para algunas tarjetas recientes con aceleración 3D que emplean
-       DRI/DRM puede requerir soporte del kernel i.e un módulo).
+      </p><p>Como implementaciÃ³n de X-Window, Linux y otros sistemas de
+       libre redistribuciÃ³n para i386 emplean XFree86 (<a href="http://www.xfree86.org" target="_top">http://www.xfree86.org</a>).  Por esto, si no planea
+       usar fuentes de otros idiomas en la consola, para la mayorÃ­a de
+       tarjetas graficadoras sÃ³lo requerirÃ¡ configurar XFree86 (aunque
+       para algunas tarjetas recientes con aceleraciÃ³n 3D que emplean
+       DRI/DRM puede requerir soporte del kernel i.e un mÃ³dulo).
      </p><a class="indexterm" name="id439603"></a><p>Debian 2.2 incluye el servidor XFree86 3.3.6, el cual en
-       el momento de este escrito ya ha sido descontinuado (ver más
+       el momento de este escrito ya ha sido descontinuado (ver mÃ¡s
        adelante sobre como actualizar a uno de la serie 4.x de
        requerirse), aunque soporta gran variedad de tarjetas recientes
        y no tan recientes (hay algunas tarjetas que 3.3.6 soporta,
-       pero que la serie 4.x no), en cuanto a memoria aunque el mínimo
-       requerido por un XFree86 3.3.6 es 4MB de RAM, sólo puede
-       trabajarse confortablemente con 16MB o más.
+       pero que la serie 4.x no), en cuanto a memoria aunque el mÃ­nimo
+       requerido por un XFree86 3.3.6 es 4MB de RAM, sÃ³lo puede
+       trabajarse confortablemente con 16MB o mÃ¡s.
      </p><a class="indexterm" name="id439709"></a><p>Para que X-Window pueda emplear los dispositivos que
        tiene, deben configurar: 1) El servidor por defecto 2) el
        archivo <tt>/etc/X11/XF86Config</tt> que incluye
-       información sobre el monitor, el mouse (ver <a href="dispositivos-y-linux.html#raton" title="4.1.3. Ratón">Ratón</a>), la tarjeta de video y el teclado
-       (aunque por defecto cuando X inicia emplea la configuración del
+       informaciÃ³n sobre el monitor, el mouse (ver <a href="dispositivos-y-linux.html#raton" title="4.1.3. RatÃ³n">RatÃ³n</a>), la tarjeta de video y el teclado
+       (aunque por defecto cuando X inicia emplea la configuraciÃ³n del
        teclado del kernel ver <a href="dispositivos-y-linux.html#teclado" title="4.1.2. Teclado ">Teclado</a>). Para algunas tarjetas la
-       configuración puede realizarse facilmente con el programa
+       configuraciÃ³n puede realizarse facilmente con el programa
        <tt>anXious</tt>, que es ejecutado durante la
-       instalación de Debian, pero que sólo soporta algunas tarjetas
+       instalaciÃ³n de Debian, pero que sÃ³lo soporta algunas tarjetas
        PCI (paquete <tt>xviddetect</tt>).
-     </p><p>En la mayoría de casos el servidor por defecto que debe
+     </p><p>En la mayorÃ­a de casos el servidor por defecto que debe
        usar es XF86_SVGA (paquete
        <tt>xserver-svga</tt>), si su hardware lo requiere o
-       lo soporta puede emplear otro como se presenta más adelante.
-       Para cambiar la configuración puede emplear el programa
+       lo soporta puede emplear otro como se presenta mÃ¡s adelante.
+       Para cambiar la configuraciÃ³n puede emplear el programa
        XF86Setup (paquete
        xf86setup) que funciona en modo
-       gráfico y requiere el servidor <tt>XF86_VGA</tt>
+       grÃ¡fico y requiere el servidor <tt>XF86_VGA</tt>
        instalado (paquete <tt>xserver-vga16</tt>), o puede
        emplear en modo texto el programa
        xf86config o eventualmente puede
        editar directamente el archivo
        <tt>/etc/X11/XF86Config</tt>.  En todos los casos,
        no siempre es indispensable que escoja la tarjeta, ni el mouse
-       que tiene (al iniciar X-Window intentará autodetectarlos), y
-       normalmente será muy importante que escoja correctamente la
+       que tiene (al iniciar X-Window intentarÃ¡ autodetectarlos), y
+       normalmente serÃ¡ muy importante que escoja correctamente la
        frecuencia horizontal y vertical de su monitor (consulte el
        manual o intente con diversos valores sin sobrepasar los
-       límites máximos de su monitor).  Cada vez que cambie la
-       configuración puede intentar arrancar el servidor con
+       lÃ­mites mÃ¡ximos de su monitor).  Cada vez que cambie la
+       configuraciÃ³n puede intentar arrancar el servidor con
        X, o con el nombre del servidor (e.g
        XF86_SVGA), o con
        startx, o con
        <tt>initx</tt> (ver <a href="administracion-de-usuarios.html#inicio-de-sesiones-x-dash-window" title="3.1.4. Inicio de sesiones X-Window">Inicio de sesiones
-       X-Window</a>), mientras hace pruebas con la configuración,
+       X-Window</a>), mientras hace pruebas con la configuraciÃ³n,
        es recomendablep que redireccione errores a un archivo para
-       buscar allí eventuales fallas:
+       buscar allÃ­ eventuales fallas:
 </p><pre class="programlisting">
 startx 2&gt; errores.txt
 </pre><p>
 </p><p>El servidor por defecto es un programa del directorio
       <tt>/usr/X11R6/bin</tt> apropiado para su tarjeta y
       que debe enlazarse desde <tt>/usr/X11R6/bin/X</tt>,
-      así mismo debe ser especificado en la primera línea del archivo
-      <tt>/etc/X11/Xserver</tt>.  Así, si su servidor es
-      <tt>/usr/X11R6/bin/XF86_SVGA</tt> (que es el más
-      común porque soporta tarjetas con chips Cirrus 542x, 543x,
+      asÃ­ mismo debe ser especificado en la primera lÃ­nea del archivo
+      <tt>/etc/X11/Xserver</tt>.  AsÃ­, si su servidor es
+      <tt>/usr/X11R6/bin/XF86_SVGA</tt> (que es el mÃ¡s
+      comÃºn porque soporta tarjetas con chips Cirrus 542x, 543x,
       Western Digital 90c3x y Oak) debe ejecutar:
 </p><pre class="programlisting">
 ln -s /usr/X11R6/bin/XF86_SVGA /usr/X11R6/bin/X
@@ -453,11 +453,11 @@ ln -s /usr/X11R6/bin/XF86_SVGA /usr/X11R6/bin/X
      </p><p>Si el servidor <tt>XF86_SVGA</tt> no logra
       emplear su tarjeta, eventualmente puede intentar primero con
       <tt>/usr/X11R6/bin/XF86_VGA</tt> (paquete
-      <tt>xserver-vga</tt>) que es un servidor genérico que
-      soporta una resolución máxima de 640x480 y 16 colores (existen
+      <tt>xserver-vga</tt>) que es un servidor genÃ©rico que
+      soporta una resoluciÃ³n mÃ¡xima de 640x480 y 16 colores (existen
       unas pocas tarjetas que no pueden usarse con este
       servidor). Eventualmente su tarjeta puede contar con soporte
-      especial con otro servidor (también ubicados en el directorio
+      especial con otro servidor (tambiÃ©n ubicados en el directorio
       <tt>/usr/X11R6/bin/</tt> con nombres que comienzan
       con <tt>XF86_</tt>) disponible en alguno de los
       siguientes paquetes: </p><div class="variablelist"><dl><dt><span class="term"><tt>xserver-rage128</tt>
@@ -477,16 +477,16 @@ ln -s /usr/X11R6/bin/XF86_SVGA /usr/X11R6/bin/X
        </span></dt><dd><p>Tarjetas basadas en IBM XGA e IIT AGX.
 	</p></dd><dt><span class="term"><tt>xserver-ggi</tt>
        </span></dt><dd><p>Tarjetas LibGGI (no emplean XF86Config, consultar
-	documentación del paquete).
+	documentaciÃ³n del paquete).
 	</p></dd><dt><span class="term"><tt>xserver-8514</tt>
        </span></dt><dd><p>Tarjetas basadas en ATI 8514/A.
 	</p></dd><dt><span class="term"><tt>xserver-s3v</tt>
        </span></dt><dd><p>Tarjetas basadas en S3 ViRGE y ViRGE/VX, aunque el
-	 servidor XF86_SVGA también las soporta.
+	 servidor XF86_SVGA tambiÃ©n las soporta.
 	</p></dd><dt><span class="term"><tt>xserver-w32</tt>
        </span></dt><dd><p>Tarjetas basadas en Tseng ET4000/W32 y ET6000-based.
 	</p></dd><dt><span class="term"><tt>xserver-mono</tt>
-       </span></dt><dd><p>Tarjetas y/o monitores monocromáticos.
+       </span></dt><dd><p>Tarjetas y/o monitores monocromÃ¡ticos.
 	</p></dd><dt><span class="term"><tt>xserver-sis</tt>
        </span></dt><dd><p>Para algunas tarjetas SiS como SiS 86c201, SiS 86c202,
 	 SiS 86c205, SiS 5597, SiS 5598, SiS 6326 AGP, SiS 530/620,
@@ -509,12 +509,12 @@ ln -s /usr/X11R6/bin/XF86_SVGA /usr/X11R6/bin/X
       (<tt>CONFIG_DRM_R128</tt>), Intel 810
       (<tt>CONFIG_DRM_I810</tt>, <tt>i810</tt>),
       Matrox g200/g400 (<tt>CONFIG_DRM_MGA</tt>,
-      <tt>mga</tt>) y el kernel 2.4.16 soporta también ATI
+      <tt>mga</tt>) y el kernel 2.4.16 soporta tambiÃ©n ATI
       Radeon (<tt>CONFIG_DRM_RADEON</tt>).
     </p><p>Si su tarjeta no es soportada por el servidor 3.3.6 de
-      Xfree86 puede actualizar a la versión 4.1, empleando paquetes no
+      Xfree86 puede actualizar a la versiÃ³n 4.1, empleando paquetes no
       oficiales para Debian 2.2, para eso agregue al archivo
-      <tt>/etc/apt/sources.list</tt> las líneas:
+      <tt>/etc/apt/sources.list</tt> las lÃ­neas:
     </p><pre class="programlisting">
 deb http://people.debian.org/%7Ecpbotha/ xf410_potato/i386/
 deb http://people.debian.org/%7Ecpbotha/ xf410_potato/all/
@@ -527,49 +527,49 @@ wget http://people.debian.org/%7Ecpbotha/xf4_potato_deps/libfreetype6_potato/lib
 dpkg -i libfreetype6_2.0.2.20010514-1_i386.deb
 apt-get -u dist-upgrade
 </pre><p>
-    </p><p>Después de actualizar o si lo requiere puede ejecutar el
-     programa de configuración con:
+    </p><p>DespuÃ©s de actualizar o si lo requiere puede ejecutar el
+     programa de configuraciÃ³n con:
 </p><pre class="programlisting">
 dpkg-reconfigure xserver-xfree86
 </pre><p>
-      o emplear el nuevo programa de configuración de XFree 4.x 
-      <tt>xf86cfg</tt>.  El archivo de configuración en Debian es 
+      o emplear el nuevo programa de configuraciÃ³n de XFree 4.x 
+      <tt>xf86cfg</tt>.  El archivo de configuraciÃ³n en Debian es 
       <tt>/etc/X11/XF86Config-4</tt>, si emplea un teclado US
-      puede habilitar teclas muertas en la sección Keyboard con:</p><pre class="screen">
+      puede habilitar teclas muertas en la secciÃ³n Keyboard con:</p><pre class="screen">
    Option          &quot;XkbLayout&quot;     &quot;us-intl&quot; 
 </pre><p>Si su tarjeta de video no es soportada por las versiones
-     3.3.6 ni 4.1 de XFree86, puede intentar compilar la versión más
-     reciente (ver <a href="administracion-de-programas.html#compilacion-e-instalacion-de-programas-a-partir-de-fuentes" title="5.1.2. Compilación e instalación de programas a partir de fuentes">Compilación
-     e instalación de programas a partir de fuentes</a>).  Para
-     compilar la versión 4.2 (y eventualmente otras) puede aprovechar
+     3.3.6 ni 4.1 de XFree86, puede intentar compilar la versiÃ³n mÃ¡s
+     reciente (ver <a href="administracion-de-programas.html#compilacion-e-instalacion-de-programas-a-partir-de-fuentes" title="5.1.2. CompilaciÃ³n e instalaciÃ³n de programas a partir de fuentes">CompilaciÃ³n
+     e instalaciÃ³n de programas a partir de fuentes</a>).  Para
+     compilar la versiÃ³n 4.2 (y eventualmente otras) puede aprovechar
      los tipos de letra del paquete 4.1 (que debe instalar primero) y
-     compilar sólo la parte mínima de XFree86.  En tal caso instale
+     compilar sÃ³lo la parte mÃ­nima de XFree86.  En tal caso instale
      los paquetes <tt>libncurses5-dev</tt>,
      <tt>zlib1g-dev</tt>, <tt>libpam0g-dev</tt> y una 
      vez descargue las fuentes de XFree86 4.2 (<a href="http://www.xfree86.org" target="_top">http://www.xfree86.org</a>), edite el
-     archivo <tt>xt/config/cf/site.def</tt> y agregue la línea
-     <tt>#define BuildFonts NO</tt>, después puede compilar,
+     archivo <tt>xt/config/cf/site.def</tt> y agregue la lÃ­nea
+     <tt>#define BuildFonts NO</tt>, despuÃ©s puede compilar,
 	instalar y probar sus cambios. Para compilar  e instalar emplee 
-    <tt>make World</tt> (tomará más de 30 minutos) seguido de 
-    <tt>make install</tt> (eventualmente tendrá que borrar los 
+    <tt>make World</tt> (tomarÃ¡ mÃ¡s de 30 minutos) seguido de 
+    <tt>make install</tt> (eventualmente tendrÃ¡ que borrar los 
     archivos <tt>/etc/X11/lbxproxy/AtomControl</tt> y  
-    <tt>/etc/X11/proxymngr/pmconfig</tt> y eliminar la línea 
+    <tt>/etc/X11/proxymngr/pmconfig</tt> y eliminar la lÃ­nea 
     <tt>case ABS_WHEEL</tt> de la fuente 
     <tt>programs/Xserver/hw/xfree86/input/wacom/xf86Wacom.c</tt>
-      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="impresora"></a>4.1.5. Impresora</h4></div></div><a class="indexterm" name="id441019"></a><p>En esta sección se presenta como configurar una nueva
+      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="impresora"></a>4.1.5. Impresora</h4></div></div><a class="indexterm" name="id441019"></a><p>En esta secciÃ³n se presenta como configurar una nueva
       impresora local (conectada a uno de los puertos parelelos del
       computador en el que se configura) o como reconfigurar una
       existente con el sisteam
       lpd
       <sup>[<a name="id441053" href="#ftn.id441053">166</a>]</sup>, 
     </p><p>el uso de una impresora ya configurada y algunas nociones
-      básicas se presentan en el capítulo 3 (ver <a href="exploracion-tres.html#impresion-y-formatos-para-impresion" title="1.1.1. Impresión y formatos para impresión">Impresión y
-      formatos para impresión</a>) mientras que la configuración de
-      impresoras remotas en el siguiente capítulo (ver <a href="protocolos-de-soporte-y-de-usuario.html#impresora-en-red" title="4.1.10. Impresora en red">Impresora en red</a>).
-    </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id441090"></a>4.1.5.1. Impresora local</h5></div></div><a class="indexterm" name="id441097"></a><p>La mayoría de impresoras se conectan al puerto paralelo
+      bÃ¡sicas se presentan en el capÃ­tulo 3 (ver <a href="exploracion-tres.html#impresion-y-formatos-para-impresion" title="1.1.1. ImpresiÃ³n y formatos para impresiÃ³n">ImpresiÃ³n y
+      formatos para impresiÃ³n</a>) mientras que la configuraciÃ³n de
+      impresoras remotas en el siguiente capÃ­tulo (ver <a href="protocolos-de-soporte-y-de-usuario.html#impresora-en-red" title="4.1.10. Impresora en red">Impresora en red</a>).
+    </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id441090"></a>4.1.5.1. Impresora local</h5></div></div><a class="indexterm" name="id441097"></a><p>La mayorÃ­a de impresoras se conectan al puerto paralelo
        (por ejemplo utilizables con dispositivos
        <tt>/dev/lp0</tt> o <tt>/dev/lp1</tt>).
-       Eventualmente el kernel cargará por demanda los controladores
+       Eventualmente el kernel cargarÃ¡ por demanda los controladores
        apropiados, cuando intente usarla (e.g. cuando inicie
        <tt>lpd</tt>). E n ese caso o si ya ha configurado
        manualmente el controlador apropiado (ver<a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>, ver <a href="hardware-basico-y-linux.html#puertos-y-dispositivos-seriales" title="3.1.9. Puertos y dispositivos seriales">Puertos y
@@ -579,16 +579,16 @@ dpkg-reconfigure xserver-xfree86
        &gt;/dev/lp0</tt> o <tt>lptest &gt;
        /dev/lp0</tt>.
     </p><p>Si su impresora se conecta al puerto paralelo y requiere
-       configuración manual tenga en cuenta que se requiere soporte
-       del kernel (<tt>CONFIG_PRINTER</tt>, módulo
-       <tt>lp</tt>), el cual en el caso de Debian 2.2 está
-       incluido como módulo, así que de requerirlo sólo debe cargarlo
-       durante el arranque y eventualmente pasar los parámetros
+       configuraciÃ³n manual tenga en cuenta que se requiere soporte
+       del kernel (<tt>CONFIG_PRINTER</tt>, mÃ³dulo
+       <tt>lp</tt>), el cual en el caso de Debian 2.2 estÃ¡
+       incluido como mÃ³dulo, asÃ­ que de requerirlo sÃ³lo debe cargarlo
+       durante el arranque y eventualmente pasar los parÃ¡metros
        apropiados (use por ejemplo <tt>modconf</tt> ver
-       <a href="kernel-y-modulos.html#modulos" title="2.1.1. Módulos">Módulos</a>). Dado que
+       <a href="kernel-y-modulos.html#modulos" title="2.1.1. MÃ³dulos">MÃ³dulos</a>). Dado que
        <tt>lp</tt> emplea <tt>parport</tt> para el
        manejo a bajo nivel del puerto paralelo (ver<a href="hardware-basico-y-linux.html#puerto-paralelo" title="3.1.10. Puerto paralelo">Puerto paralelo</a>) los
-       parámetros que este controlador recibe hacen referencia a
+       parÃ¡metros que este controlador recibe hacen referencia a
        dispositivios configurados con <tt>parport</tt>:
        </p><div class="variablelist"><dl><dt><span class="term"><tt>parport=0,none,1</tt>
 	</span></dt><dd><p>Para configurar <tt>/dev/lp0</tt> (c, 6, 0)
@@ -596,25 +596,25 @@ dpkg-reconfigure xserver-xfree86
 	  deshabilitar <tt>/dev/lp1</tt> (c, 6, 1) y
 	  configurar <tt>/dev/lp2</tt> (c, 6, 2) con el
 	  segundo dispositivo de <tt>parport</tt>.  En caso
-	  de tener el controlador estáticamente en el kernel, el
-	  parámetro análogo que debería pasar desde el cargador de
+	  de tener el controlador estÃ¡ticamente en el kernel, el
+	  parÃ¡metro anÃ¡logo que deberÃ­a pasar desde el cargador de
 	  arranque es <tt>lp=parport0,none,parport1</tt>.
 	  Note que con este esquema <tt>dev/lp0</tt>
-	  podría referirse a un puerto paralelo arbitrario.
+	  podrÃ­a referirse a un puerto paralelo arbitrario.
 	</p></dd><dt><span class="term"><tt>parport=auto</tt>
 	</span></dt><dd><p>Intenta autodetectar impresoras y crear los dispositivos
-	  necesarios.  Si el controlador está incluido estaticamente
+	  necesarios.  Si el controlador estÃ¡ incluido estaticamente
 	  <tt>lp=auto</tt>.
 	</p></dd><dt><span class="term"><tt>reset=1</tt>
-	</span></dt><dd><p>Reinicializa impresora cuando carga el módulo.  Si el
-	  controlador está incluido estaticamente
+	</span></dt><dd><p>Reinicializa impresora cuando carga el mÃ³dulo.  Si el
+	  controlador estÃ¡ incluido estaticamente
 	  <tt>lp=reset</tt> o para desactivar por completo el
 	  controlador <tt>lp=off</tt>.
-	 </p></dd></dl></div><a class="indexterm" name="id441600"></a><p>Para atender solicitudes de impresión hechas por
-       <tt>lpr</tt> (ver <a href="exploracion-tres.html#impresion-y-formatos-para-impresion" title="1.1.1. Impresión y formatos para impresión">Impresión y
-       formatos para impresión</a>) debe configurar
-       <tt>lpd</tt> durante el arranque, esto ocurrirá
-       automáticamente cuando instale el paquete
+	 </p></dd></dl></div><a class="indexterm" name="id441600"></a><p>Para atender solicitudes de impresiÃ³n hechas por
+       <tt>lpr</tt> (ver <a href="exploracion-tres.html#impresion-y-formatos-para-impresion" title="1.1.1. ImpresiÃ³n y formatos para impresiÃ³n">ImpresiÃ³n y
+       formatos para impresiÃ³n</a>) debe configurar
+       <tt>lpd</tt> durante el arranque, esto ocurrirÃ¡
+       automÃ¡ticamente cuando instale el paquete
        <tt>lpr</tt> y debe configurar la impresora en
        <tt>/etc/printcap</tt>.  El siguiente es un ejemplo
        de tal archivo:
@@ -630,89 +630,89 @@ psprn|rp|remote line printer:\
        <tt>lp</tt> o <tt>local line printer</tt> y
        la segunda remota llamada <tt>psprn</tt> o
        <tt>rp</tt> o <tt>remote line printer</tt>.
-       La impresora local está conectada a
-       <tt>/dev/lp0</tt>, la cola de impresión la mantiene
+       La impresora local estÃ¡ conectada a
+       <tt>/dev/lp0</tt>, la cola de impresiÃ³n la mantiene
        en <tt>/var/spool/lp</tt> y envia errores a
        <tt>/var/log/lp-errs</tt>.  La impresora remota
-       está conectada a <tt>rojo.micolegio.edu.co</tt>
+       estÃ¡ conectada a <tt>rojo.micolegio.edu.co</tt>
        (suponiendo que <tt>micolegio.edu.co</tt> es el
-       dominio del sistemas donde está
-       <tt>/etc/printcap</tt>), el nombre en la máquina
-       remota es también <tt>psprn</tt> y la cola de
-       impresión en la máquina local es
+       dominio del sistemas donde estÃ¡
+       <tt>/etc/printcap</tt>), el nombre en la mÃ¡quina
+       remota es tambiÃ©n <tt>psprn</tt> y la cola de
+       impresiÃ³n en la mÃ¡quina local es
        <tt>/var/spool/lpd/psprn</tt>.
      </p><a class="indexterm" name="id441869"></a><p>El ejemplo anterior no presenta como se configura filtros
        (para que <tt>lpd</tt> pueda imprimir documentos
        PostScript o PDF), ni muchos otros detalles configurables en
        <tt>/etc/printcap</tt> (ver <tt>man
        printcap</tt>).  Para configurar un filtro de PostScript y
-       PDF y ayudarle en la configuración de una impresora local puede
+       PDF y ayudarle en la configuraciÃ³n de una impresora local puede
        emplear el programa <tt>magicfilter</tt>, el cual con
        base en los filtros de Ghostscript le puede ayudar a elegir el
        apropiado para su impresora.
-       <tt>magicfilterconf</tt> le hará algunas preguntas
-       sobre su impresora, modificará el archivo
+       <tt>magicfilterconf</tt> le harÃ¡ algunas preguntas
+       sobre su impresora, modificarÃ¡ el archivo
        <tt>/etc/printcap</tt> y creara los directorios
        apropiados.  
     </p><p>Si no logra determinar un filtro apropiado para su
        impresora puede revisar la base de datos de impresoras
        soportadas en Linux en: <a href="http://www.linuxprinting.org/database.html" target="_top">http://www.linuxprinting.org/database.html</a>
-       donde además de filtros para algunas impresoras que Ghostscript
-       no soporta, encontrará concejo sobre que impresora comprar.
-      </p><p>Mientras cambia su configuración puede probar imprimir un
+       donde ademÃ¡s de filtros para algunas impresoras que Ghostscript
+       no soporta, encontrarÃ¡ concejo sobre que impresora comprar.
+      </p><p>Mientras cambia su configuraciÃ³n puede probar imprimir un
        texto simple por ejemplo con <b>lptest | lpr</b>.
-       Una vez configurada una impresora los usuarios locales podrán
+       Una vez configurada una impresora los usuarios locales podrÃ¡n
        imprimir con el programa <b>lpr</b> (tanto textos
-       como PostScript como PDF) y podrá controlar las colas con el
+       como PostScript como PDF) y podrÃ¡ controlar las colas con el
        programa <b>lpc</b>.
       </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="discos-duros"></a>4.1.6. Discos duros</h4></div></div><p>Un disco duro consta de varias placas circulares sobre las
-      que se almacena información magneticamente.  La organización o
-      geometría de un disco suele especificarse como cantidad de
+      que se almacena informaciÃ³n magneticamente.  La organizaciÃ³n o
+      geometrÃ­a de un disco suele especificarse como cantidad de
       cilindros
       <sup>[<a name="id442065" href="#ftn.id442065">167</a>]</sup>, cantidad de cabezas
       <sup>[<a name="id442077" href="#ftn.id442077">168</a>]</sup> y cantidad de sectores.  Para poder emplear un disco
 	en Linux, se requiere un controlador que lo maneje, el disco
 	debe estar formateado a bajo nivel, debe estar particionado,
-	una o más particiones deben ser para Linux (tipo 83), una
+	una o mÃ¡s particiones deben ser para Linux (tipo 83), una
 	puede ser para swap (tipo 82) y las particiones para Linux
 	deben tener un sistema de archivos apropiado para montarlo
 	(ver <a href="administracion-de-archivos.html#montaje-y-desmontaje-de-sistemas-de-archivos" title="4.1.2. Montaje y desmontaje de sistemas de archivos">Montaje
 	y desmontaje de sistemas de archivos</a>), como ext2 (ver
 	<a href="administracion-de-archivos.html#sistema-de-archivos-ext-two" title="4.1.4. Sistema de archivos ext2">Sistema de
 	archivos ext2</a>).
-    </p><p>Además de esto para iniciar un computador con un disco
-      duro, debe tener una partición marcada como iniciable en la
+    </p><p>AdemÃ¡s de esto para iniciar un computador con un disco
+      duro, debe tener una particiÃ³n marcada como iniciable en la
       tabla de particiones o debe emplear un cargador de arranque (e.g
       LILO o GRUB).
      </p><p>Todo disco duro cuya interfaz sea soportada por Linux debe
-      funcionar sin requerir configuración manual.  Debian 2.2 incluye
+      funcionar sin requerir configuraciÃ³n manual.  Debian 2.2 incluye
       estaticamente controladores para interfaces de discos RLL, MFM
-      diversos IDE/EIDE y tiene módulos para diversos discos SCSI, así
-      como módulos para discos conectados a puerto paralelo (ver <a href="hardware-basico-y-linux.html#puerto-paralelo" title="3.1.10. Puerto paralelo">Puerto paralelo</a>) y
+      diversos IDE/EIDE y tiene mÃ³dulos para diversos discos SCSI, asÃ­
+      como mÃ³dulos para discos conectados a puerto paralelo (ver <a href="hardware-basico-y-linux.html#puerto-paralelo" title="3.1.10. Puerto paralelo">Puerto paralelo</a>) y
       controladores para arreglos de de discos RAID (0,1,4/5) ---para
-      respaldar información
+      respaldar informaciÃ³n
       <sup>[<a name="id442119" href="#ftn.id442119">169</a>]</sup>.
-    </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id442231"></a>4.1.6.1. Discos IDE</h5></div></div><p>Como se presentó en la sección sobre dispositivos IDE (ver
+    </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id442231"></a>4.1.6.1. Discos IDE</h5></div></div><p>Como se presentÃ³ en la secciÃ³n sobre dispositivos IDE (ver
        <a href="hardware-basico-y-linux.html#interfaz-y-dispositivos-ide" title="3.1.7. Interfaz y dispositivos IDE">Interfaz y
-       dispositivos IDE</a>) el controlador de esta interfaz está
-       incluido estáticamente en el kernel y reconoce automáticamente
+       dispositivos IDE</a>) el controlador de esta interfaz estÃ¡
+       incluido estÃ¡ticamente en el kernel y reconoce automÃ¡ticamente
        los discos conectados (probando o acudiendo a CMOS/BIOS), si
        ustede requiere configurar manualmente el disco conectado a un
-       puerto IDE puede hacerlo pasando como parámetro desde el
-       cargador de arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. Parámetros desde el cargador de arranque">Parámetros
-       desde el cargador de arranque</a>) la geometría del disco,
+       puerto IDE puede hacerlo pasando como parÃ¡metro desde el
+       cargador de arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. ParÃ¡metros desde el cargador de arranque">ParÃ¡metros
+       desde el cargador de arranque</a>) la geometrÃ­a del disco,
        e.g: <tt>hdd=cdrom</tt> o
-       <tt>hdc=1050,32,64</tt> remplazando 1050 por número
-       de cilindros, 32 por número de cabezas y 64 por número de
+       <tt>hdc=1050,32,64</tt> remplazando 1050 por nÃºmero
+       de cilindros, 32 por nÃºmero de cabezas y 64 por nÃºmero de
        sectores.
      </p><a class="indexterm" name="id442270"></a><p>Los nombres de los dispositivos son:
       <tt>/dev/hda</tt> (primaria maestro),
       <tt>/dev/hdb</tt> (primario esclavo),
       <tt>/dev/hdc</tt> (secundario maestro) y
       <tt>/dev/hdd</tt> (secundario
-      esclavo). </p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="./important.png"></td><th>Importante</th></tr><tr><td colspan="2" align="left" valign="top"><p>Cuando lea o escriba en estos dispositivos (sólo lo puede
-	hacer el usuario <tt>root</tt>), estará leyendo y
-	escribiendo directamente sobre sectores de su disco</p></td></tr></table></div><p>Para verificar la detección de su(s) disco(s) IDE puede
+      esclavo). </p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="./important.png"></td><th>Importante</th></tr><tr><td colspan="2" align="left" valign="top"><p>Cuando lea o escriba en estos dispositivos (sÃ³lo lo puede
+	hacer el usuario <tt>root</tt>), estarÃ¡ leyendo y
+	escribiendo directamente sobre sectores de su disco</p></td></tr></table></div><p>Para verificar la detecciÃ³n de su(s) disco(s) IDE puede
        consultar los mensajes del arranque (con
        <b>dmesg</b> o <b>less
        /var/log/dmesg</b>) o puede emplear el programa
@@ -729,152 +729,152 @@ SERIAL_NO=&quot;KY0KYJC0917&quot;
        primario maestro se identifican con: <tt>/dev/hda1</tt>,
        <tt>/dev/dha2</tt> y <tt>/dev/hda3</tt>
        (dispositivo por bloques con mayor 3, menor 0 para el disco
-       entero 1 para la primera partición, 2 para la segunda y así
-       sucesivamente hasta máximo 63).
+       entero 1 para la primera particiÃ³n, 2 para la segunda y asÃ­
+       sucesivamente hasta mÃ¡ximo 63).
       </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id442647"></a>4.1.6.2. Discos SCSI</h5></div></div><p>Los discos con interfaz SCSI
-      son en general más rápidos que los IDE pero más costosos y
-      típicamente requieren una tarjeta controladora.  Tal como se
-      presentó en otra sección (ver <a href="hardware-basico-y-linux.html#adaptadores-y-dispositivos-scsi" title="3.1.8. Adaptadores y dispositivos SCSI">Adaptadores y
+      son en general mÃ¡s rÃ¡pidos que los IDE pero mÃ¡s costosos y
+      tÃ­picamente requieren una tarjeta controladora.  Tal como se
+      presentÃ³ en otra secciÃ³n (ver <a href="hardware-basico-y-linux.html#adaptadores-y-dispositivos-scsi" title="3.1.8. Adaptadores y dispositivos SCSI">Adaptadores y
       dispositivos SCSI</a>), con una controladora SCSI soportada,
-      se puede emplear el módulo <tt>sd_mod</tt>
+      se puede emplear el mÃ³dulo <tt>sd_mod</tt>
       (<tt>CONFIG_BLK_DEV_SD</tt>) para manejar uno o varios
       discos SCSI.  
-    </p><a class="indexterm" name="id442681"></a><p>El primero disco SCSI es <tt>/dev/sda</tt> y su primera partición
+    </p><a class="indexterm" name="id442681"></a><p>El primero disco SCSI es <tt>/dev/sda</tt> y su primera particiÃ³n
        es <tt>/dev/sda1</tt>, el
-       segundo, <tt>/dev/sdb</tt> y así
+       segundo, <tt>/dev/sdb</tt> y asÃ­
        sucesivamente hasta <tt>/dev/sdh</tt>.
-      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id442748"></a>4.1.6.3. Particiones</h5></div></div><p>Una partición es una porción de un disco duro destinada
+      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id442748"></a>4.1.6.3. Particiones</h5></div></div><p>Una particiÃ³n es una porciÃ³n de un disco duro destinada
       para un sistema de archivos.  Un disco duro puede particionarese
       para: </p><a class="indexterm" name="id442759"></a><div class="itemizedlist"><ul type="disc"><li><p>Mantener varios sistemas operativos.  </p></li><li><p>Destinar varias particiones a Linux montando cada
-	partición como un directorio (y limitando así el espacio de
-	esos directorios), por ejemplo <tt>/var</tt> (donde está la cola de
+	particiÃ³n como un directorio (y limitando asÃ­ el espacio de
+	esos directorios), por ejemplo <tt>/var</tt> (donde estÃ¡ la cola de
 	correo), <tt>/usr</tt> donde se
 	ubican programas, <tt>/home</tt> donde cada usuario tiene
-	su espacio personal (ver <a href="administracion-de-archivos.html#ubicacion-de-archivos-y-directorios" title="4.1.1. Ubicación de archivos y directorios">Ubicación de
-	archivos y directorios</a>).  </p></li><li><p>Destinar alguna partición como zona de
+	su espacio personal (ver <a href="administracion-de-archivos.html#ubicacion-de-archivos-y-directorios" title="4.1.1. UbicaciÃ³n de archivos y directorios">UbicaciÃ³n de
+	archivos y directorios</a>).  </p></li><li><p>Destinar alguna particiÃ³n como zona de
 	 intercambio (swap) para emplear espacio de disco como si fuera
 	 memoria RAM.  
-	</p></li><li><p>Destinar alguna partición al directorio <tt>/boot</tt> para facilitar el
+	</p></li><li><p>Destinar alguna particiÃ³n al directorio <tt>/boot</tt> para facilitar el
 	 arranque de Linux en algunos computadores con discos duros de
-	 más de 1024 cilindros, como se explica a continuación.
-	 </p></li></ul></div><p>La división en particiones de un disco duro se mantiene en
-      una <span class="emphasis"><em>tabla de particiones</em></span> que está en el
-      primer sector físico, que además puede tener un cargador de
-      arranque (ver <a href="administracion-dos.html#inicializacion-del-sistema" title="1. Inicialización del sistema">Inicialización del
+	 mÃ¡s de 1024 cilindros, como se explica a continuaciÃ³n.
+	 </p></li></ul></div><p>La divisiÃ³n en particiones de un disco duro se mantiene en
+      una <span class="emphasis"><em>tabla de particiones</em></span> que estÃ¡ en el
+      primer sector fÃ­sico, que ademÃ¡s puede tener un cargador de
+      arranque (ver <a href="administracion-dos.html#inicializacion-del-sistema" title="1. InicializaciÃ³n del sistema">InicializaciÃ³n del
       sistema</a>).
       </p><p>Linux en un PC puede manejar a lo sumo 4 particiones
        <span class="bold"><b>primarias</b></span> (en el caso de un
-       disco IDE las particiones primarias están asociadas a los
+       disco IDE las particiones primarias estÃ¡n asociadas a los
        dispositivos <tt>/dev/hda1</tt>,
        <tt>/dev/hda2</tt>, <tt>/dev/hda3</tt> y
-       <tt>/dev/hda4</tt>).  Dado que pueden requerirse más
+       <tt>/dev/hda4</tt>).  Dado que pueden requerirse mÃ¡s
        de 4, una de las particones primarias puede remplazarse por una
-       partición extendida, y tal partición extendida puede entonces
-       dividirse en una o más particiones lógicas (que en el caso de
+       particiÃ³n extendida, y tal particiÃ³n extendida puede entonces
+       dividirse en una o mÃ¡s particiones lÃ³gicas (que en el caso de
        un disco IDE primario se referencian como
        <tt>/dev/hda5</tt>, <tt>/dev/hda6</tt>,
-       y así sucesivamente).
-     </p><a class="indexterm" name="id443020"></a><a class="indexterm" name="id443043"></a><p>Para la operación de Debian se requiere al menos una
-       partición de 300MB (o de 800MB para un sistema básico o 2GB
-       para una instalación completa), aunque consideramos
-       recomendable al menos una partición más para
+       y asÃ­ sucesivamente).
+     </p><a class="indexterm" name="id443020"></a><a class="indexterm" name="id443043"></a><p>Para la operaciÃ³n de Debian se requiere al menos una
+       particiÃ³n de 300MB (o de 800MB para un sistema bÃ¡sico o 2GB
+       para una instalaciÃ³n completa), aunque consideramos
+       recomendable al menos una particiÃ³n mÃ¡s para
        <span class="emphasis"><em>swap</em></span> (memoria
        virtual
-       <sup>[<a name="id443073" href="#ftn.id443073">170</a>]</sup>) de un tamaño cercano a la
+       <sup>[<a name="id443073" href="#ftn.id443073">170</a>]</sup>) de un tamaÃ±o cercano a la
 	 cantidad de RAM del computador.  En los casos de un servidor
 	 o un cliente para una red en un colegio lo invitamos a
-	 consultar nuestra sugerencia para la división del espacio en
+	 consultar nuestra sugerencia para la divisiÃ³n del espacio en
 	 particiones Ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
 	referencia</a>.
       </p><p>Aunque en un mismo disco duro pueden dejarse diversos
-       sistemas operativos, por razones históricas, con diversas BIOS
+       sistemas operativos, por razones histÃ³ricas, con diversas BIOS
        (previas a 1998 o que no soporten LBA32) es indispensable dejar
        el arranque de cada sistema operativo en los primeros 1024
        cilindros.  Para facilitar esto, en caso de requerirse, el
-       arranque básico de Linux (directorio <tt>/boot</tt>) puede dejarse en una
-       partición pequeña (e.g 10MB) en los primeros 1024 cilindros o
+       arranque bÃ¡sico de Linux (directorio <tt>/boot</tt>) puede dejarse en una
+       particiÃ³n pequeÃ±a (e.g 10MB) en los primeros 1024 cilindros o
        incluso como un directorio en DOS, mientras que el resto del
-       sistema puede estar en una o más particiones en cualquier
-       ubicación del disco.
+       sistema puede estar en una o mÃ¡s particiones en cualquier
+       ubicaciÃ³n del disco.
      </p><a class="indexterm" name="id443179"></a><p>Para cambiar la tabla de particiones de un disco en Linux
        pueden emplearse los programas <b>cfdisk</b> o
        <b>fdisk</b>
        <sup>[<a name="id443219" href="#ftn.id443219">171</a>]</sup>.  Ambos se
-       inician pasando como parámetro el dispositivo del disco que
+       inician pasando como parÃ¡metro el dispositivo del disco que
        desea editar (e.g <tt>/dev/hda</tt> o
        <tt>/dev/sda</tt>), le permiten modificar la
-       partición hasta que este satisfecho con la distribución y
-       finalmente permiten salvar la partición configurada en el
-	 disco. </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="./warning.png"></td><th>Aviso</th></tr><tr><td colspan="2" align="left" valign="top"><p> Al modificar una partición el sistema de archivos que en
-	 ella hubiera no podrá usarse, es muy recomendable que
+       particiÃ³n hasta que este satisfecho con la distribuciÃ³n y
+       finalmente permiten salvar la particiÃ³n configurada en el
+	 disco. </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="./warning.png"></td><th>Aviso</th></tr><tr><td colspan="2" align="left" valign="top"><p> Al modificar una particiÃ³n el sistema de archivos que en
+	 ella hubiera no podrÃ¡ usarse, es muy recomendable que
 	 mantenga en un escrito la tabla de particiones de su disco
 	 incluyendo tipo, inicio y fin de cada una para recuperarla de
-	 requerirse.</p></td></tr></table></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id443335"></a>4.1.6.4. Zonas de intercambio</h5></div></div><a class="indexterm" name="id443342"></a><p>Normalmente se destinará una partición como zona de
+	 requerirse.</p></td></tr></table></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id443335"></a>4.1.6.4. Zonas de intercambio</h5></div></div><a class="indexterm" name="id443342"></a><p>Normalmente se destinarÃ¡ una particiÃ³n como zona de
       intercambio.  Una vez en funcionamiento puede desactivarse el
       uso de memoria virtual con <b>swapoff</b> y
-      reactivarse con <b>swapon</b>.  De requerirse más
-      memoria virtual puede destinarse una nueva partición para esto
+      reactivarse con <b>swapon</b>.  De requerirse mÃ¡s
+      memoria virtual puede destinarse una nueva particiÃ³n para esto
       (tipo 82) y puede inicializarse con el programa
       <b>mkswap</b>.  El dispositivo debe ser entonces
-      agregado a <tt>/etc/fstab</tt> en una línea de la
+      agregado a <tt>/etc/fstab</tt> en una lÃ­nea de la
       forma:
 </p><pre class="programlisting">
 /dev/hdb6    none   swap    sw    0   0
 </pre><p>
 para que pueda ser usada durante el arranque por <tt>swapon -a</tt>.
-    </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id443492"></a>4.1.6.5. Cambio del tamaño de un sistema de archivos</h5></div></div><p>En otras secciones se presentan las generalidades sobre
+    </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id443492"></a>4.1.6.5. Cambio del tamaÃ±o de un sistema de archivos</h5></div></div><p>En otras secciones se presentan las generalidades sobre
        sistemas de archivos (ver <a href="administracion-de-archivos.html#montaje-y-desmontaje-de-sistemas-de-archivos" title="4.1.2. Montaje y desmontaje de sistemas de archivos">Montaje
        y desmontaje de sistemas de archivos</a>, ver <a href="administracion-de-archivos.html#sistemas-de-archivos-en-linux" title="4.1.3. Sistemas de archivos en Linux">Sistemas de archivos en
-       Linux</a>) y sobre el sistema de archivos ext2 típico de
+       Linux</a>) y sobre el sistema de archivos ext2 tÃ­pico de
        Linux (ver <a href="administracion-de-archivos.html#sistema-de-archivos-ext-two" title="4.1.4. Sistema de archivos ext2">Sistema
-       de archivos ext2</a>), aquí encontrará información para
-       cambiar el tamaño de un sistema de archivos.
-      </p><p>Después de que un disco ha sido particionado y se le ha
-       instalado un sistema de archivos, puede ser difícil cambiar el
-       tamaño de una partición.  Si se desea una partición más grande
+       de archivos ext2</a>), aquÃ­ encontrarÃ¡ informaciÃ³n para
+       cambiar el tamaÃ±o de un sistema de archivos.
+      </p><p>DespuÃ©s de que un disco ha sido particionado y se le ha
+       instalado un sistema de archivos, puede ser difÃ­cil cambiar el
+       tamaÃ±o de una particiÃ³n.  Si se desea una particiÃ³n mÃ¡s grande
        sin borrar el sistema de archivos es necesario liberar espacio
-       a continuación de la partición, aumentar el tamaño de la
-       partición (desde Linux puede usarse <b>fdisk</b> o
-       <b>cfdisk</b>) y después aumentar el tamaño del
-       sistema de archivos.  Si se desea una partición más pequeña,
-       primero debe disminuirse el tamaño del sistema de archivos y
-       después debe disminuirse el tamaño de la partición recortando
+       a continuaciÃ³n de la particiÃ³n, aumentar el tamaÃ±o de la
+       particiÃ³n (desde Linux puede usarse <b>fdisk</b> o
+       <b>cfdisk</b>) y despuÃ©s aumentar el tamaÃ±o del
+       sistema de archivos.  Si se desea una particiÃ³n mÃ¡s pequeÃ±a,
+       primero debe disminuirse el tamaÃ±o del sistema de archivos y
+       despuÃ©s debe disminuirse el tamaÃ±o de la particiÃ³n recortando
        el final ---teniendo cuidado de no sobreescribir sobre otro
-       sistema de archivos.  El tamaño de un sistema ext2 puede
-       cambiarse con <b>rezisee2fs</b>, el tamaño de otros
+       sistema de archivos.  El tamaÃ±o de un sistema ext2 puede
+       cambiarse con <b>rezisee2fs</b>, el tamaÃ±o de otros
        sistemas de archivos (entre otros vfat de Windows) puede
        cambiarse desde Linux con el programa
        <tt>parted</tt>.
      </p><a class="indexterm" name="id443792"></a><p>Al instalar Linux, si ya tiene otro sistema operativo que
-       ocupa el disco entero puede emplear un programa análogo a
+       ocupa el disco entero puede emplear un programa anÃ¡logo a
        <b>parted</b> que funcione en el sistema operativo
        ya instalado.  Para el caso de Windows y DOS puede emplearse
-       <b>fips</b> que disminuye el tamaño de un sistema
-       de archivos FAT12, FAT16 o FAT32, así como el de la partición
-       en la que está, liberando con esto espacio que puede asignarse
-       a una o más particiones para Linux.  De acuerdo a la
-       documentación de <b>fips</b>, la forma más precisa
-       de usarlo es desde un disquete de arranque (para DOS) después
+       <b>fips</b> que disminuye el tamaÃ±o de un sistema
+       de archivos FAT12, FAT16 o FAT32, asÃ­ como el de la particiÃ³n
+       en la que estÃ¡, liberando con esto espacio que puede asignarse
+       a una o mÃ¡s particiones para Linux.  De acuerdo a la
+       documentaciÃ³n de <b>fips</b>, la forma mÃ¡s precisa
+       de usarlo es desde un disquete de arranque (para DOS) despuÃ©s
        de defragmentar el disco y de evitar dejar bloques inamobibles
-       al final de la partición (puede ser quitando temporalmente
+       al final de la particiÃ³n (puede ser quitando temporalmente
        soporte para swap a Windows o borrando los archivos image.idx o
-       mirorsav.fil que volverán a generarse posteriormente:
+       mirorsav.fil que volverÃ¡n a generarse posteriormente:
        <tt>attrib -r -s -h image.idx</tt>, <tt>attrib
        -r -s -h mirorsav.fil</tt> y <tt>del
        image.idx</tt>, <tt>del mirrorsav.fil</tt>).
       </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id443945"></a>4.1.6.6. Cargador de arranque</h5></div></div><p>LILO puede instalarse en el MBR de un disco, o en el
-       sector de arranque de alguna partición (incluso de particiones
-       lógicas) o en el sector de arranque de un disquete.  Se
+       sector de arranque de alguna particiÃ³n (incluso de particiones
+       lÃ³gicas) o en el sector de arranque de un disquete.  Se
        configura en el archivo <tt>/etc/lilo.conf</tt>,
-       después de modificar ese archivo debe ejecutarse el programa
+       despuÃ©s de modificar ese archivo debe ejecutarse el programa
        <b>/sbin/lilo</b>.  Un ejemplo de este archivo con
-       comentarios (líneas iniciadas con el caracter '#') que explican
+       comentarios (lÃ­neas iniciadas con el caracter '#') que explican
        su uso es:
       </p><pre class="programlisting">
-# Soporte LBA para discos grandes (más de 8GB)
+# Soporte LBA para discos grandes (mÃ¡s de 8GB)
 lba32
 
-# En este dispositivo LILO se instalará
+# En este dispositivo LILO se instalarÃ¡
 boot=/dev/hda3
 
 # Dispositivo que debe montarse como raiz
@@ -883,7 +883,7 @@ root=/dev/hda3
 # Archivo con nuevo sector de arranque
 install=/boot/boot.b
 
-# Localización del mapa creado por lilo
+# LocalizaciÃ³n del mapa creado por lilo
 map=/boot/map
 
 # Milisegundos por esperar antes de arrancar imagen por defecto
@@ -908,27 +908,27 @@ image=/vmlinuz.old
 other=/dev/hda1
         label=OpenBSD
         table=/dev/hda
-</pre><p>Además de estas posibilidades de configuración, se
-       presentan otras y la forma de pasar parámetros al kernel en
-       otra sección (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. Parámetros desde el cargador de arranque">Parámetros
+</pre><p>AdemÃ¡s de estas posibilidades de configuraciÃ³n, se
+       presentan otras y la forma de pasar parÃ¡metros al kernel en
+       otra secciÃ³n (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. ParÃ¡metros desde el cargador de arranque">ParÃ¡metros
        desde el cargador de arranque</a>).
-      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="disquetes"></a>4.1.7. Disquetes</h4></div></div><p>Una unidad de disquete permite almacenar datos magnéticos
-      en un disquete, emplea una línea de DMA (por defecto 2), una
-      interrupción IRQ (por defecto 6).  Dependiendo de la cantidad de
-      información que puede almacenar una unidad o un disquete pueden
+      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="disquetes"></a>4.1.7. Disquetes</h4></div></div><p>Una unidad de disquete permite almacenar datos magnÃ©ticos
+      en un disquete, emplea una lÃ­nea de DMA (por defecto 2), una
+      interrupciÃ³n IRQ (por defecto 6).  Dependiendo de la cantidad de
+      informaciÃ³n que puede almacenar una unidad o un disquete pueden
       ser de densidad doble, alta y extra alta, las dimensiones pueden
       ser de 3 1/2 pulgadas o 5 1/4.
     </p><p>El controlador de Linux
-      (<tt>CONFIG_BLK_DEV_FD</tt>, módulo
+      (<tt>CONFIG_BLK_DEV_FD</tt>, mÃ³dulo
       <tt>floppy</tt>) soporta unidades de baja, alta y
-      extra alta densidad, puede soportar más de dos y soporta algunos
+      extra alta densidad, puede soportar mÃ¡s de dos y soporta algunos
       formatos de capacidad extra
       <sup>[<a name="id444017" href="#ftn.id444017">172</a>]</sup>.
-    </p><p>Los parámetros cuando está incluido estáticamente son los
-      mismos del módulo: <tt>floppy=daring</tt> mejor el
-      desempeño de algunas unidades, <tt>floppy=two_fdc</tt>
+    </p><p>Los parÃ¡metros cuando estÃ¡ incluido estÃ¡ticamente son los
+      mismos del mÃ³dulo: <tt>floppy=daring</tt> mejor el
+      desempeÃ±o de algunas unidades, <tt>floppy=two_fdc</tt>
       indica que tiene dos conroladoras de floppy, la seguda en la
-      dirección 0x370 (puede cambiarse poniendo la dirección antes de
+      direcciÃ³n 0x370 (puede cambiarse poniendo la direcciÃ³n antes de
       <tt>two_fdc</tt>), <tt>floopy=thinkpad</tt>
       para usuarios de Thinkpad, <tt>floppy=nodma</tt>
       para evitar uso de DMA, <tt>floppy=nofifo</tt>
@@ -936,15 +936,15 @@ other=/dev/hda1
       <tt>floppy=<i><tt>unidad</tt></i>,<i><tt>tipo</tt></i>,cmos</tt>
       establece tipo CMOS de una unidad (1 - 5 1/4DD, 2 - 5 1/4HD, 3 -
       3 1/2DD, 4 - 3 1/2HD, 5 - 3 1/2 ED, 6 3 1/2 ED),
-      <tt>floppy=broken_dcl</tt> no usar línea de cambio de
+      <tt>floppy=broken_dcl</tt> no usar lÃ­nea de cambio de
       disco, <tt>floppy=6,irq</tt> para establecer IRQ,
       <tt>floppy=2,dma</tt> para establecer DMA.
-      Documentación completa en
+      DocumentaciÃ³n completa en
       <tt>driver/block/README.fd</tt>.
     </p><p>Aunque hay varios dispositivos para unidades de disquete
       (dependiendo del formato), los dispositivos
       <tt>/dev/fd0</tt>, <tt>/dev/fd1</tt>,
-      etc.  autodetectarán el formato.  Para acceder a un disquete
+      etc.  autodetectarÃ¡n el formato.  Para acceder a un disquete
       pueden usarse estos con
       <b>mount</b>/<b>umount</b> o con las
       herramientas del paquete <tt>mtools</tt>.  Si se
@@ -954,11 +954,11 @@ other=/dev/hda1
 /dev/fd0  /floppy  auto  defaults,user,noauto   0  0
 </pre><p>
       que permitira a los usuario montar sus disquetes (sistema de
-      archivo autodetectado) y que no montará la unidad durante el
+      archivo autodetectado) y que no montarÃ¡ la unidad durante el
       arranque (ver <a href="disquetes-y-cdrom.html#lectura-disquetes-y-cdrom" title="6.1. Lectura: Disquetes y CDROM">Lectura
       Disquetes y CDROM</a>).
   </p><a class="indexterm" name="id444349"></a><p>Para formatear un disquete con sistema de archivos vfat
-      (leible también en Windows) puede emplearse:
+      (leible tambiÃ©n en Windows) puede emplearse:
 </p><pre class="programlisting">
 mformat a:
 </pre><p>
@@ -968,189 +968,189 @@ mformat a:
       de la unidad periodicamente (para quitar el polvo),
       <b>xdfcopy</b> para copiar discos con formato XDF
       (1840MB), <b>floppymeter</b> para medir capacidad y
-      velocidad de rotación de la unidad, <b>fdmount</b>
+      velocidad de rotaciÃ³n de la unidad, <b>fdmount</b>
       monta un disquete, <b>floppycontrol</b> para
       configurar la unidad, <b>fdumount</b> para desmontar
       un disquete, <b>superformat</b> para formatear un
-      disquete (puede ser a capacidades no estándar),
+      disquete (puede ser a capacidades no estÃ¡ndar),
       <b>fdrawcmd</b> para enviar comandos a la unidad,
       <b>xdfformat</b> para formatear un disquete con
-      formato XDF, <b>setfdprm</b> establece parámetros
+      formato XDF, <b>setfdprm</b> establece parÃ¡metros
       para un disquete, <b>fdlist</b> lista de unidades de
       disquete, <b>getfdprm</b> permite examinar
-      parámetros establecidos con <b>setfdprm</b>.
+      parÃ¡metros establecidos con <b>setfdprm</b>.
       <b>fdmountd</b> monta un disquete autodetectando el
       formato.
-     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="unidades-de-cd-dash-rom-y-dvd"></a>4.1.8. Unidades de CD-ROM y DVD</h4></div></div><p>Una vez configure su unidad de CD o DVD podrá montar CDs de
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="unidades-de-cd-dash-rom-y-dvd"></a>4.1.8. Unidades de CD-ROM y DVD</h4></div></div><p>Una vez configure su unidad de CD o DVD podrÃ¡ montar CDs de
       datos ---si se trata de un CD con datos--- o con un programa
-      apropiado podrá escuchar CDs de audio (ver al final de esta
-      sección).  Los controladores para los tipos más comunes de
-      unidades de CD y DVD también soportan CDs multisesión (PhotoCD)
+      apropiado podrÃ¡ escuchar CDs de audio (ver al final de esta
+      secciÃ³n).  Los controladores para los tipos mÃ¡s comunes de
+      unidades de CD y DVD tambiÃ©n soportan CDs multisesiÃ³n (PhotoCD)
       y algunos soportan lectura de datos digitales.
      </p><p>En el momento de este escrito tanto la serie 2.2.x como la
-     2.4.x del kernel soportan las unidades de CD-ROM y DVD más
-     estándares IDE/ATAPI y SCSI así como algunas unidades no tan
+     2.4.x del kernel soportan las unidades de CD-ROM y DVD mÃ¡s
+     estÃ¡ndares IDE/ATAPI y SCSI asÃ­ como algunas unidades no tan
      recientes con sus propias interfaces.  No soporta unidades
      Vertos, Genoa y algunos modelos Funai.
     </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id444599"></a>4.1.8.1. Unidades IDE/ATAPI y SCSI</h5></div></div><p>Muchas unidades de CD-ROM y DVD comunes se conectan a un
-       puerto IDE y siguen la especificación ATAPI.  La configuración
-       del hardware es análoga a la de discos IDE (maestro o esclavo)
-       y el nombre del dispositivo en Linux sigue la misma convención
+       puerto IDE y siguen la especificaciÃ³n ATAPI.  La configuraciÃ³n
+       del hardware es anÃ¡loga a la de discos IDE (maestro o esclavo)
+       y el nombre del dispositivo en Linux sigue la misma convenciÃ³n
        de discos duros IDE (<tt>/dev/hda</tt>,
        <tt>/dev/hdb</tt>, etc. <a href="hardware-basico-y-linux.html#interfaz-y-dispositivos-ide" title="3.1.7. Interfaz y dispositivos IDE">Interfaz y dispositivos
        IDE</a>).  El controlador de estas unidades es
-       <b>ide-cd</b>, que por defecto está incluido
-       estáticamente en el kernel y que reconoce y configura
-       automáticamente su(s) unidad(es) mientras empleen dirección
-       base estándar (ie. 0x1f0, 0x3f6 para ide0 y 0x170, 0x376 para
-       ide1).  Si la autodetección no reconoce su unidad puede pasar
-       como parámetro al kernel (desde el cargador de arranque):
+       <b>ide-cd</b>, que por defecto estÃ¡ incluido
+       estÃ¡ticamente en el kernel y que reconoce y configura
+       automÃ¡ticamente su(s) unidad(es) mientras empleen direcciÃ³n
+       base estÃ¡ndar (ie. 0x1f0, 0x3f6 para ide0 y 0x170, 0x376 para
+       ide1).  Si la autodetecciÃ³n no reconoce su unidad puede pasar
+       como parÃ¡metro al kernel (desde el cargador de arranque):
        <tt>hdb=cdrom</tt> cambiando <tt>hdb</tt>
        por el dispositivo IDE apropiado, o puede especificar
        direcciones base e IRQ del puerto IDE:
        <tt>ide1=0x170,0x376,15</tt> remplazando 0x170 por la
-       primera dirección base, 0x376 por la segunda 15 por la IRQ (ver
-       <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. Parámetros desde el cargador de arranque">Parámetros
-       desde el cargador de arranque</a>). Puede consultar más
-       documentación sobre CD-ROMs IDE y el soporte en Linux en
+       primera direcciÃ³n base, 0x376 por la segunda 15 por la IRQ (ver
+       <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. ParÃ¡metros desde el cargador de arranque">ParÃ¡metros
+       desde el cargador de arranque</a>). Puede consultar mÃ¡s
+       documentaciÃ³n sobre CD-ROMs IDE y el soporte en Linux en
        <tt>Documentation/cdrom/ide-cd</tt>.
       </p><p>Si emplea una unidad SCSI debe antes verificar que Linux
-       reconozca la tarjeta controladora.  Después emplee el
+       reconozca la tarjeta controladora.  DespuÃ©s emplee el
        dispositivo adecuado para referenciar la unidad de CD-ROM (e.g
        <tt>/dev/scd0</tt> o
        <tt>dev/scd1</tt>).
       </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id444768"></a>4.1.8.2. Otras unidades de CD-ROM</h5></div></div><p>Hay otras unidades que emplean una tarjeta controladora
        especial para conectarse al bus, o se conectan por medio de una
        tarjeta de sonido (aunque varias tarjetas de sonido recientes
-       siguen el estándar IDE/ATAPI, así que las unidades conectados a
-       estas se configuran como se presentó en la sección anterior).
+       siguen el estÃ¡ndar IDE/ATAPI, asÃ­ que las unidades conectados a
+       estas se configuran como se presentÃ³ en la secciÃ³n anterior).
       </p><div class="variablelist"><dl><dt><span class="term"><tt>aztcd (CONFIG_AZTCD)</tt>
 	</span></dt><dd><p>Aztech,Orchid,Okano,Wearnes.  Parametros de arranque
-	  aztcd=dirbase.  Dispositivo: <tt>/dev/aztcd0</tt>.  Documentación en
+	  aztcd=dirbase.  Dispositivo: <tt>/dev/aztcd0</tt>.  DocumentaciÃ³n en
 	  <tt>Documentation/cdrom/aztcd</tt>.
 
 	 </p></dd><dt><span class="term">
 	<tt>gscd (CONFIG_GSCD)</tt>
 	</span></dt><dd><p>Goldstar GCDR-420. Dispositivo: <tt>/dev/gscd0</tt>.
-	 Documentación: <tt>Documentation/cdrom/gscd</tt>.
+	 DocumentaciÃ³n: <tt>Documentation/cdrom/gscd</tt>.
 	 </p></dd><dt><span class="term"><tt>mcd, mcdx (CONFIG_MCD, CONFIG_MCD_IRQ,
 	  CONFIG_MCD_BASE, CONFIG_MCDX)</tt>
 	</span></dt><dd><p>Ambos soportan unidades Mitsumi modelos LU-005, FX-001
-	  y FX-001D, pero el primero no soporta CD multisesión,
-	  mientras el segundo tiene soporte experimental.  Parámetros
+	  y FX-001D, pero el primero no soporta CD multisesiÃ³n,
+	  mientras el segundo tiene soporte experimental.  ParÃ¡metros
 	  para insmod: <tt>mcdx=0x300,11,0x304,5</tt>.
 	  Dispositivos: <tt>/dev/mcd</tt> o
 	  <tt>/dev/mcdx</tt> (mcdx soporta hasta 4 drives
 	  con nombres de la forma
-	  <tt>/dev/mcdx1</tt>). Documentación:
+	  <tt>/dev/mcdx1</tt>). DocumentaciÃ³n:
 	  <tt>Documentation/cdrom/mcd</tt> y
 	  <tt>Documentation/cdrom/mcdx</tt>.
 
 	 </p></dd><dt><span class="term"><tt>cm206 (CONFIG_CM206)</tt>
 	</span></dt><dd><p>Philips/LMS CM206 con tarjeta adaptadora CM206.
-	  Documentación: Documentation/cdrom/cm206.  Autodetecta
-	  configuración. Parámetro del kernel o
+	  DocumentaciÃ³n: Documentation/cdrom/cm206.  Autodetecta
+	  configuraciÃ³n. ParÃ¡metro del kernel o
 	  <b>insmod</b>:
 	  <tt>cm206=0x300,11</tt>. Dispositivo:
 	  <tt>/dev/cm206cd</tt>.
 	 
 	 </p></dd><dt><span class="term"><tt>optcd (CONFIG_OPTCD)</tt>
 	</span></dt><dd><p>Optics Storage Dolphin 8000AT (interfaz de 34 pines).
-	  Dispositivo: <tt>/dev/optcd</tt>. Parámetro para
-	  cargador de arranque e insmod: optcd=0x340 (dirección base
-	  en lugar de 0x340).  Documentación:
+	  Dispositivo: <tt>/dev/optcd</tt>. ParÃ¡metro para
+	  cargador de arranque e insmod: optcd=0x340 (direcciÃ³n base
+	  en lugar de 0x340).  DocumentaciÃ³n:
 	  <tt>Documentation/cdrom/optcd</tt>. Este CD-ROM
 	  puede estar conectado a una tarjeta de sonido ISP16, MAD16 o
-	  Mozart, en tal caso también debe instalarse
-	  <tt>isp16</tt> (ver más adelante).
+	  Mozart, en tal caso tambiÃ©n debe instalarse
+	  <tt>isp16</tt> (ver mÃ¡s adelante).
 	 </p></dd><dt><span class="term"><tt>sjcd (CONFIG_SJCD)</tt>
-       </span></dt><dd><p>Sanyo CDR-H94A.  Documentación:
-	 Documentation/cdrom/sjcd.  Dispositivo: <tt>/dev/sjcd</tt> (18 0). Parámetros
-	 del kernel sjcd=0x340 (dirección base en lugar de 0x340).
-	 Parámetros para insmod: sjcd_base=0x340.  Este CD-ROM puede
+       </span></dt><dd><p>Sanyo CDR-H94A.  DocumentaciÃ³n:
+	 Documentation/cdrom/sjcd.  Dispositivo: <tt>/dev/sjcd</tt> (18 0). ParÃ¡metros
+	 del kernel sjcd=0x340 (direcciÃ³n base en lugar de 0x340).
+	 ParÃ¡metros para insmod: sjcd_base=0x340.  Este CD-ROM puede
 	 estar conectado a una tarjeta de sonido ISP16, MAD16 o
-	 Mozart, en tal caso también debe instalarse
-	 <tt>isp16</tt> (ver más adelante).
+	 Mozart, en tal caso tambiÃ©n debe instalarse
+	 <tt>isp16</tt> (ver mÃ¡s adelante).
 	</p></dd><dt><span class="term"><tt>isp16 (CONFIG_ISP16_CDI)</tt>
 	</span></dt><dd><p>Permite configurar tarjetas de sonidos que usan los
 	  chips 82c928 o 82c929 como interfaces de CD-ROM. ISP16,
 	  MAD16, Mozart.  Ha funcionado con CD-ROMs que emplean los
-	  módulos sjcd y optcd.  Documentación:
-	  <tt>Documentation/cdrom/isp16</tt>.  Parámetros
+	  mÃ³dulos sjcd y optcd.  DocumentaciÃ³n:
+	  <tt>Documentation/cdrom/isp16</tt>.  ParÃ¡metros
 	  para el kernel: isp16=0x340,11,5,Sanyo --no se requieren
-	  todos-- remplazar 0x340 por dirección base (0x340, 0x320,
+	  todos-- remplazar 0x340 por direcciÃ³n base (0x340, 0x320,
 	  0x330 o 0x360), 11 por IRQ (3, 5, 7, 9, 10, 11 o 0 que
 	  indica no usar IRQ), 5 por DMA (0, 3, 5, 6 o 7) y Sanyo por
 	  tipo de unidad (noisp16, Sanyo, Panasonic, Sony o Mitsumi).
-	  Parámetros para insmod: isp16_cdrom_base=0x340
+	  ParÃ¡metros para insmod: isp16_cdrom_base=0x340
 	  isp16_cdrom_irq=0 isp16_cdrom_dma=0
 	  isp16_cdrom_type=Panasonic.
 	  
 	 </p></dd><dt><span class="term"><tt>sbpcd (CONFIG_SBPCD)</tt>
 	</span></dt><dd><p>Matsushita/Panasonic/Creative CR52x, CR56x, CD200,
-	  Longshine LCS-7260, TEAC CD-55A.  Parámetros para el kernel:
-	  <tt>sbpcd=0x230, LaserMater</tt> con la dirección
+	  Longshine LCS-7260, TEAC CD-55A.  ParÃ¡metros para el kernel:
+	  <tt>sbpcd=0x230, LaserMater</tt> con la direcciÃ³n
 	  base en lugar de 0x230 y en lugar de LaserMater puede ser 0 o
-	  SoundBlaster (1), SoundScape (2) y Teac16bit (3).  Parámetros
+	  SoundBlaster (1), SoundScape (2) y Teac16bit (3).  ParÃ¡metros
 	  para insmod: <tt>sbpcd=0x230,1</tt> Dispositivo:
 	  <tt>/dev/sbpcd</tt>
 	  <sup>[<a name="id445170" href="#ftn.id445170">173</a>]</sup>.
 	  
 	 </p></dd><dt><span class="term"><tt>cdu31a (CONFIG_CDU31A)</tt>
-	</span></dt><dd><p>Para las unidades Sony CDU31A/CDU33A. Documentación:
+	</span></dt><dd><p>Para las unidades Sony CDU31A/CDU33A. DocumentaciÃ³n:
 	  <tt>Documentation/cdrom/cdu31a</tt>.  No
-	  autodetecta, debe especificarse dirección base e IRQ (la
-	  descripción de la configuración del hardaware está en la
-	  documentación). Parámetros para el kernel:
+	  autodetecta, debe especificarse direcciÃ³n base e IRQ (la
+	  descripciÃ³n de la configuraciÃ³n del hardaware estÃ¡ en la
+	  documentaciÃ³n). ParÃ¡metros para el kernel:
 	  <tt>cdu31a=0x320,5</tt> (remplazando 0x320 por la
-	  dirección base y 5 por la IRQ), si se usa con una tarjeta de
+	  direcciÃ³n base y 5 por la IRQ), si se usa con una tarjeta de
 	  sonido PAS-16 <tt>cdu31a=0x1f88,0,PAS</tt>.
-	  Parámetros para <tt>insmod</tt>:
+	  ParÃ¡metros para <tt>insmod</tt>:
 	  <tt>cdu31a_port=0x340</tt>,
 	  <tt>cdu31a_irq=5</tt>.  Dispositivo
 	  <tt>/dev/sonycd</tt> (15,0).  
 
 	 </p></dd><dt><span class="term"><tt>sonycd535 (CONFIG_CDU535)</tt>
-	</span></dt><dd><p>Sony CDU-531/535, CDU-510/515.  Documentación:
+	</span></dt><dd><p>Sony CDU-531/535, CDU-510/515.  DocumentaciÃ³n:
 	 <tt>Documentation/cdrom/sonycd535</tt>.  No debe
 	  activarse DMA, ni IRQ en la unidad, debe ser la unidad 1, la
-	  dirección base debe pasarse como parámetro del kernel:
-	  <tt>sonycd535=0x320</tt>.  Si la unidad está
-	  apagado durante el arranque no será reconocida, pero puede
-	  después cargarse el controlador como módulo; el parámetro
-	  para <tt>insmod</tt> es también
+	  direcciÃ³n base debe pasarse como parÃ¡metro del kernel:
+	  <tt>sonycd535=0x320</tt>.  Si la unidad estÃ¡
+	  apagado durante el arranque no serÃ¡ reconocida, pero puede
+	  despuÃ©s cargarse el controlador como mÃ³dulo; el parÃ¡metro
+	  para <tt>insmod</tt> es tambiÃ©n
 	  <tt>sonycd535=0x320</tt>. Dispositivo
 	  <tt>/dev/cdu535</tt>.
 
-	 </p></dd></dl></div><p>También existen unidades que se conectan al puerto paralelo,
+	 </p></dd></dl></div><p>TambiÃ©n existen unidades que se conectan al puerto paralelo,
        a tarjetas PCMCIA (en computadores portatiles) y a puertos USB.
-       Puede consultase más sobre estas unidades en el CDROM-HOWTO.
+       Puede consultase mÃ¡s sobre estas unidades en el CDROM-HOWTO.
       </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id445479"></a>4.1.8.3. Uso de CDs y DVDs</h5></div></div><a class="indexterm" name="id445486"></a><p>Dado que varios programas usan <tt>/dev/cdrom</tt> para comunicarse con
-	la unidad de CD o DVD, ese archivo debería ser un enlace al
-	dispositivo al que esté conectado su unidad (creelo por
+	la unidad de CD o DVD, ese archivo deberÃ­a ser un enlace al
+	dispositivo al que estÃ© conectado su unidad (creelo por
 	ejemplo con <b>ln -s /dev/hdb /dev/cdrom</b>
 	remplazando <tt>/dev/hdb</tt>
 	por el dispositivo de su unidad).
       </p><a class="indexterm" name="id445542"></a><p>Para almacenar datos en un CD hay diversos sistemas de
-       archivos, el más usado es ISO9660
+       archivos, el mÃ¡s usado es ISO9660
        (<tt>CONFIG_ISO9660_FS</tt> incluido por defecto en
        el kernel), para DVDs el sistema de archivos es UDF.  
       </p><p>Es usual montar un CD o un DVD en <tt>/cdrom</tt>, para esto puede agregar al
        archivo <tt>/etc/fstab</tt> (ver <a href="administracion-de-archivos.html#montaje-y-desmontaje-de-sistemas-de-archivos" title="4.1.2. Montaje y desmontaje de sistemas de archivos">Montaje
-       y desmontaje de sistemas de archivos</a>) la línea:
+       y desmontaje de sistemas de archivos</a>) la lÃ­nea:
 </p><pre class="programlisting">
 /dev/cdrom /cdrom iso9660 defaults,ro,user,noauto  0  0
 </pre><p>
-       que también especifica que no debe montarse durante el arranque
+       que tambiÃ©n especifica que no debe montarse durante el arranque
        el CD y que otorga permiso a los usuarios para montarlo y
        desmontarlo con <b>mount /cdrom</b> y
       <b>umount /cdrom</b> respectivamente.
-      </p><p>En Debian por convención los usuarios que requieran
+      </p><p>En Debian por convenciÃ³n los usuarios que requieran
        emplear la unidad de CD-ROM o DVD para leer datos deben estar
        en los grupos <tt>disk</tt>, <tt>cdrom</tt>
        y <tt>tape</tt>, los que requieran escuchar CDs de
-       música además deben estar en el grupo <tt>audio</tt>.
-      </p><p>Para escuchar CDs de música no es necesario (ni posible)
+       mÃºsica ademÃ¡s deben estar en el grupo <tt>audio</tt>.
+      </p><p>Para escuchar CDs de mÃºsica no es necesario (ni posible)
        montar el CD antes, se debe emplear un programa como
        <tt>workbone</tt> que funciona en modo texto.  Para
        abrir una unidad de CD-ROM puede emplear el comando
@@ -1159,48 +1159,48 @@ mformat a:
     IDE y SCSI, el kernel 2.4 soporta algunas quemadoras USB: HP
     CD-Writer 82xx y otras basadas en ISD-200 como Sony CRX10U
     CD-R/RW, CyQ've CQ8060A CDRW.
-    </p><p>Si su quemadora es SCSI será especialmente fácil de usar con
+    </p><p>Si su quemadora es SCSI serÃ¡ especialmente fÃ¡cil de usar con
      el programa por excelencia para quemar CDs en ambientes Unix:
      <b>cdrecord</b>.  Si la quemadora es IDE debe
      &quot;emular&quot; una quemadora SCSI; para lograrlo debe:
-    </p><a class="indexterm" name="id445858"></a><a class="indexterm" name="id445883"></a><div class="procedure"><ol type="1"><li><p>Activar los módulos del
+    </p><a class="indexterm" name="id445858"></a><a class="indexterm" name="id445883"></a><div class="procedure"><ol type="1"><li><p>Activar los mÃ³dulos del
 	kernel: <tt>ide-scsi</tt> y <tt>sg</tt>
 	(puede por ejemplo emplear <tt>modconf</tt> y buscar
-	ambos módulos en la sección SCSI ver <a href="kernel-y-modulos.html" title="2. Kernel y módulos">Kernel y módulos</a>).
+	ambos mÃ³dulos en la secciÃ³n SCSI ver <a href="kernel-y-modulos.html" title="2. Kernel y mÃ³dulos">Kernel y mÃ³dulos</a>).
        </p></li><li><p>Indicar al kernel que para manejar la quemadora IDE
 	emplee ide-scsi en lugar de un driver IDE usual. Esto puede
-	hacerse pasando al kernel durante el arranque el parámetro
+	hacerse pasando al kernel durante el arranque el parÃ¡metro
 	<tt>hdd=ide-scsi</tt> (en vez de
-	<tt>hdd</tt> el IDE al cual está conectada la
+	<tt>hdd</tt> el IDE al cual estÃ¡ conectada la
 	quemadora ver <a href="hardware-basico-y-linux.html#interfaz-y-dispositivos-ide" title="3.1.7. Interfaz y dispositivos IDE">Interfaz y dispositivos
-	IDE</a>).  Puede pasar el parámetro durante el arranque
+	IDE</a>).  Puede pasar el parÃ¡metro durante el arranque
 	desde el prompt de LILO, o puede configurar LILO para que lo
-	pase automáticamente durante el arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. Parámetros desde el cargador de arranque">Parámetros
-	desde el cargador de arranque</a>) (i.e agregando una línea
-	cómo <tt>append=&quot;hdd=ide-scsi&quot;</tt> en la sección
-	apropiada y después ejectuando <tt>/sbin/lilo</tt>).
+	pase automÃ¡ticamente durante el arranque (ver <a href="apagado-y-encendido-de-una-red.html#parametros-desde-el-cargador-de-arranque" title="2.1.3. ParÃ¡metros desde el cargador de arranque">ParÃ¡metros
+	desde el cargador de arranque</a>) (i.e agregando una lÃ­nea
+	cÃ³mo <tt>append=&quot;hdd=ide-scsi&quot;</tt> en la secciÃ³n
+	apropiada y despuÃ©s ejectuando <tt>/sbin/lilo</tt>).
 	</p></li><li><p>Finalmente, reinicie su sistema y vea entre los mensajes
-	de arranque el número de drive SCSI que se le asigna a su
+	de arranque el nÃºmero de drive SCSI que se le asigna a su
 	quemadora (puede revisarlos posteriormente con
 	<b>dmesg</b>) o averiguelo ejecutando
 	<b>cdrecord -scanbus</b>.  Cree entonces el enlace
-	simbólico <tt>/dev/cdrom</tt> o
+	simbÃ³lico <tt>/dev/cdrom</tt> o
 	<tt>/dev/quemadora</tt> para
 	que referencie el dispositivo SCSI asignado por el kernel, por
 	ejemplo suponiendo que le hubiera asignado el 0 (caso que se
-	da cuando no hay más dispositivos SCSI):
+	da cuando no hay mÃ¡s dispositivos SCSI):
 </p><pre class="programlisting">
 rm /dev/cdrom
 ln -s /dev/scd0 /dev/cdrom
 </pre><p>
-      </p></li></ol></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id446198"></a>4.1.9.1. Quemado de CDs</h5></div></div><p>Hay algunos programas gráficos para ayudarle a quemar un
+      </p></li></ol></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id446198"></a>4.1.9.1. Quemado de CDs</h5></div></div><p>Hay algunos programas grÃ¡ficos para ayudarle a quemar un
        CD, estos programas emplean <b>cdrecord</b>.  Este
-       programa espera la especificación de la quemadora como
+       programa espera la especificaciÃ³n de la quemadora como
        dispositivo SCSI, puede ver la de su quemadora (una vez bien
        configurada) con <b>cdrecord -scanbus</b>.
-      </p><p>cdrecord también permite
+      </p><p>cdrecord tambiÃ©n permite
        controlar todos los detalles del proceso de escritura. A
-       continuación presentamos dos ejemplos de su uso, suponiendo que
+       continuaciÃ³n presentamos dos ejemplos de su uso, suponiendo que
        su quemadora es reportada por cdrecord -scanbus como
        dispositivo 0,0,0 y que soporta velocidad 10x.  Para transferir
        una imagen de un CD-ROM emplee:
@@ -1211,8 +1211,8 @@ cdrecord -v speed=10 dev=0,0,0 -data imagen.iso
 </p><pre class="screen">
 dd 
 </pre><p>
-      </p><p>O puede crear una imagen ISO-9660 con extensión Rock Ridge a
-       partir de la información de un directorio
+      </p><p>O puede crear una imagen ISO-9660 con extensiÃ³n Rock Ridge a
+       partir de la informaciÃ³n de un directorio
      <tt>/home/paz/cd</tt> con:
 </p><pre class="screen">
 mkisofs -R -o imagen.iso /home/paz/cd
@@ -1222,7 +1222,7 @@ mkisofs -R -o imagen.iso /home/paz/cd
 </p><pre class="screen">
 mount -o loop -t iso9660 imagen.iso /mnt/im
 </pre><p>
-      y desmontarlo cuando no necesite ver más el contenido con
+      y desmontarlo cuando no necesite ver mÃ¡s el contenido con
       <b>umount /mnt/im</b>.
      </p><p>Para transferir audio emplee:
 </p><pre class="screen">
@@ -1234,261 +1234,261 @@ cdda2wav -v255 -D2,0 -B -0wav
 cdrecord -v dev=2,0 -dao -useinfo *.wav
 </pre><p>
       </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="tarjetas-de-sonido"></a>4.1.10. Tarjetas de sonido</h4></div></div><p>Una tarjeta de sonido puede convertir una sonido almacenado
-      como señal digital, en una señal análoga que por medio de un
-      parlante produce el sonido (conversos digital/análogo) ,
-      típicamente también puede convertir información análoga que
-      recibe de un micrófono en una señal digital (conversor análogo
-      digital) para almacenarla en un archivo en algún formato
+      como seÃ±al digital, en una seÃ±al anÃ¡loga que por medio de un
+      parlante produce el sonido (conversos digital/anÃ¡logo) ,
+      tÃ­picamente tambiÃ©n puede convertir informaciÃ³n anÃ¡loga que
+      recibe de un micrÃ³fono en una seÃ±al digital (conversor anÃ¡logo
+      digital) para almacenarla en un archivo en algÃºn formato
       apropiado.
-    </p><p>Algunas tarjetas de sonidos además pueden tener: mezclador
+    </p><p>Algunas tarjetas de sonidos ademÃ¡s pueden tener: mezclador
       para controlar fuentes y volumen, secuenciador MIDI,
       sintetizador FM, sintetizador Wavetable o ofrecer funcionalidad
       no directamente relacionada con sonido: interfaz para Joystick,
       interfaces IDE o para CD-ROMs (ver <a href="dispositivos-y-linux.html#unidades-de-cd-dash-rom-y-dvd" title="4.1.8. Unidades de CD-ROM y DVD">Unidades de CD-ROM y
       DVD</a>).
-  </p><p>Para la mezcla, reproducción y captura de audio una tarjeta
+  </p><p>Para la mezcla, reproducciÃ³n y captura de audio una tarjeta
        normalmente emplea un codec (e.g manejado por ac97_codec) 
-      usa una línea IRQ, uno o dos canales DMA y dos direcciones
+      usa una lÃ­nea IRQ, uno o dos canales DMA y dos direcciones
       E/S. Si la tarjeta tiene un secuenciador MIDI (e.g manejado por
-      mpu401) puede requerir otra línea IRQ y una dirección base, si
+      mpu401) puede requerir otra lÃ­nea IRQ y una direcciÃ³n base, si
       tiene un sintetizador FM (e.g manejado por opl3) requiere una
-      dirección base (normalmente 0x388), si tiene un sintetizador
+      direcciÃ³n base (normalmente 0x388), si tiene un sintetizador
       Wavetable (e.g manejado por <b>awe_wave</b>) puede
       requerir 3 direcciones base.
     </p><p>En el momento de este escrito hay tres conjutos de
-      controladores para tarjetas de sonido que le podrían ayudar a
-      configurar manual o automáticamente su tarjeta de sonido (aunque
+      controladores para tarjetas de sonido que le podrÃ­an ayudar a
+      configurar manual o automÃ¡ticamente su tarjeta de sonido (aunque
       hay tarjetas no soportadas por controlador alguno):
       </p><div class="orderedlist"><ol type="1"><li><p>El que se distribuye con el
-	kernel, cuyos controladores siguen normalmente el estándar Open
+	kernel, cuyos controladores siguen normalmente el estÃ¡ndar Open
 	Sound System (empleado en diversos sistemas Unix).
-       </p></li><li><p>Los controladores del proyecto ALSA (la versión 0.4.1
-	está disponible en los paquetes <tt>alsa-base</tt>,
+       </p></li><li><p>Los controladores del proyecto ALSA (la versiÃ³n 0.4.1
+	estÃ¡ disponible en los paquetes <tt>alsa-base</tt>,
 	<tt>alsadriver</tt>, <tt>alsautils</tt>,
 	<tt>alsaconf</tt>), estos controladores siguen la
 	arquitectura ALSA (particular para Linux).  La herramienta
 	<tt>alsaconf</tt> autodetecta y trata de configurar
-	diversas tarjetas.  Puede obtenerse una versión reciente (en
-	el momento de este escrito la más reciente es 0.9) en: <a href="http://www.alsa-project.org" target="_top">http://www.alsa-project.org</a>
+	diversas tarjetas.  Puede obtenerse una versiÃ³n reciente (en
+	el momento de este escrito la mÃ¡s reciente es 0.9) en: <a href="http://www.alsa-project.org" target="_top">http://www.alsa-project.org</a>
 	aunque debe compilarse antes de usarse.  </p></li><li><p>Los controladores comerciales del proyecto Open Sound
 	System <a href="http://www.opensound.com" target="_top">http://www.opensound.com</a>
-	</p></li></ol></div><a class="indexterm" name="id446583"></a><p>La configuración manual empleando los controladores del
-      kernel se presenta más adelante en esta sección.  Una vez
+	</p></li></ol></div><a class="indexterm" name="id446583"></a><p>La configuraciÃ³n manual empleando los controladores del
+      kernel se presenta mÃ¡s adelante en esta secciÃ³n.  Una vez
       configurado el sonido, puede usar (con el kernel 2.2 y con
       algunos controladores) <b>cat /proc/sound</b> o
       <b>cat /dev/sndstat</b> para ver los dispositivos
-      reconocidos y su configuración.  Puede verificar rápidamente si
-      está funcionando la reproducción de sonido instalando el paquete
+      reconocidos y su configuraciÃ³n.  Puede verificar rÃ¡pidamente si
+      estÃ¡ funcionando la reproducciÃ³n de sonido instalando el paquete
       <b>sox</b> y reproduciendo un sonido:
 </p><pre class="programlisting">
 play /usr/share/sounds/login.wav
 </pre><p>
     </p><p>Algunas aplicaciones para sonido se presentan al final de
-      esta sección. </p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="./important.png"></td><th>Importante</th></tr><tr><td colspan="2" align="left" valign="top"><p>Las aplicaciones de audio pueden ser usadas por todo usuario de 
+      esta secciÃ³n. </p><div class="important" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Important"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Important]" src="./important.png"></td><th>Importante</th></tr><tr><td colspan="2" align="left" valign="top"><p>Las aplicaciones de audio pueden ser usadas por todo usuario de 
 	 Debian que pertenezca al grupo <tt>audio</tt></p></td></tr></table></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id446729"></a>4.1.10.1. Controladores del kernel</h5></div></div><p>Dado que los controladores de Linux siguen la arquitectura
       Open Sound System<sup>[<a name="id446738" href="#ftn.id446738">174</a>]</sup>, algunos de los
-      siguientes dispositivos podrán ser usados una vez configure su
+      siguientes dispositivos podrÃ¡n ser usados una vez configure su
       tarjeta:
     </p><div class="variablelist"><dl><dt><span class="term"><tt>/dev/sndstat</tt>
-       </span></dt><dd><p>Presenta información sobre los dispositivos de sonido en
+       </span></dt><dd><p>Presenta informaciÃ³n sobre los dispositivos de sonido en
 	 forma legible para humanos, por ejemplo con <tt>cat
 	  /dev/sndstat</tt>.
 	</p></dd><dt><span class="term"><tt>/dev/dsp  /dev/audio</tt>
        </span></dt><dd><p>Voz digitalizada, los datos enviados a esta interfaz son
 	 reproducidos por la tarjeta. Cuando se lee, el sonido
 	 capturado por la tarjeta de sonido es retornado.  Mientras
-	 que <tt>/dev/dsp</tt> emplea codificación lineal
+	 que <tt>/dev/dsp</tt> emplea codificaciÃ³n lineal
 	 de 8 bits sin signo, mientras que
-	 <tt>/dev/audio</tt> usa codificación logaritmica
+	 <tt>/dev/audio</tt> usa codificaciÃ³n logaritmica
 	 mu-law (por ejemplo empleada por el formato
 	 <tt>.au</tt> de Sun).
 	</p></dd><dt><span class="term"><tt>/dev/mixer</tt>
        </span></dt><dd><p>Permite a los programas que lo usen controlar niveles de
-	 reproducción y grabación.
+	 reproducciÃ³n y grabaciÃ³n.
 	</p></dd><dt><span class="term"><tt>/dev/sequencer /dev/music /dev/sequencer2</tt>
        </span></dt><dd><p>Acceso a sintetizadores FM y MIDI de la tarjeta.
 	</p></dd><dt><span class="term"><tt>/dev/midi</tt>
        </span></dt><dd><a class="indexterm" name="id446867"></a><p>Envio de datos a un sintetizador MIDI.
 	</p></dd></dl></div><p>Para configurarla debe:
-    </p><div class="orderedlist"><ol type="1"><li><p>Identificar un módulo que pueda servir para el
-	chip de su tarjeta, puede buscar en esta guía ayudandose del
+    </p><div class="orderedlist"><ol type="1"><li><p>Identificar un mÃ³dulo que pueda servir para el
+	chip de su tarjeta, puede buscar en esta guÃ­a ayudandose del
 	nombre de la tarjeta y preferiblement del nombre del chip
 	principal (puede verlo en la tarjeta misma o en la
-	documentación o si se trata de una tarjeta PCI puede consultar
-	la identificación ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>).
-	También puede consultar el Sound-HOWTO referenciado en las
-	lecturas recomendadas de esta sección.  </p></li><li><p>Si es una tarjeta ISA o ISA PnP, debe
-	determinar los recursos de hardware que usa (sección ISA PnP
+	documentaciÃ³n o si se trata de una tarjeta PCI puede consultar
+	la identificaciÃ³n ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>).
+	TambiÃ©n puede consultar el Sound-HOWTO referenciado en las
+	lecturas recomendadas de esta secciÃ³n.  </p></li><li><p>Si es una tarjeta ISA o ISA PnP, debe
+	determinar los recursos de hardware que usa (secciÃ³n ISA PnP
 	ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>).  Puede revisar el
-	hardware y los manuales o la configuración en otro sistema
-	operativo donde ya esté configurada.  </p></li></ol></div><p>Con estos datos puede intentar cargar el módulo apropiado y
-      pasarle, de ser necesario, los parámetros de acuerdo a la
-      configuración y al módulo.  Si usa <tt>modprobe</tt>
-      sólo necesitará especificar el controlador para el chip
-      principal de su tarjeta y <tt>modprobe</tt> cargará
-      automáticamente los otros (aunque no necesariamente todas las
-      características opcionales ver <a href="kernel-y-modulos.html#modulos" title="2.1.1. Módulos">Módulos</a>).
-    </p><p>Si la tarjeta es PCI normalmente será configurada durante el
-     arranque y no necesitará especificar parámetros (sección PCI ver
-     <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>) ni cargar el módulo, si la
-     tarjeta es ISA PnP necesitará configurarla manualmente con
-     <tt>isapnptools</tt> y cargar el módulo apropiado
-     (sección ISA PnP ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>).
-    </p><p>Los controladores del kernel están organizados en una
-     jerarquía de módulos:
+	hardware y los manuales o la configuraciÃ³n en otro sistema
+	operativo donde ya estÃ© configurada.  </p></li></ol></div><p>Con estos datos puede intentar cargar el mÃ³dulo apropiado y
+      pasarle, de ser necesario, los parÃ¡metros de acuerdo a la
+      configuraciÃ³n y al mÃ³dulo.  Si usa <tt>modprobe</tt>
+      sÃ³lo necesitarÃ¡ especificar el controlador para el chip
+      principal de su tarjeta y <tt>modprobe</tt> cargarÃ¡
+      automÃ¡ticamente los otros (aunque no necesariamente todas las
+      caracterÃ­sticas opcionales ver <a href="kernel-y-modulos.html#modulos" title="2.1.1. MÃ³dulos">MÃ³dulos</a>).
+    </p><p>Si la tarjeta es PCI normalmente serÃ¡ configurada durante el
+     arranque y no necesitarÃ¡ especificar parÃ¡metros (secciÃ³n PCI ver
+     <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>) ni cargar el mÃ³dulo, si la
+     tarjeta es ISA PnP necesitarÃ¡ configurarla manualmente con
+     <tt>isapnptools</tt> y cargar el mÃ³dulo apropiado
+     (secciÃ³n ISA PnP ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>).
+    </p><p>Los controladores del kernel estÃ¡n organizados en una
+     jerarquÃ­a de mÃ³dulos:
     </p><div class="itemizedlist"><ul type="disc"><li><p>Controladores generales que deben cargarse primero
        (<tt>CONFIG_SOUND</tt>): <tt>soundcore</tt>
        funciones para registrar dispositivos por tipo,
        <tt>soundlow</tt> controladores de bajo nivel que no
        hacen parte de OSS/Lite, <tt>sound</tt> funciones
-       comunes requeridas por todos los módulos.
-      </p></li><li><p>Controladores específicos para cada tarjeta de sonido,
+       comunes requeridas por todos los mÃ³dulos.
+      </p></li><li><p>Controladores especÃ­ficos para cada tarjeta de sonido,
        dependen del chip principal de la tarjeta de sonido.  Pueden
-       requerir que otros módulos estén cargados.
+       requerir que otros mÃ³dulos estÃ©n cargados.
       </p></li><li><p>Controladores generales para soportar o emular
-       características.  Las tarjetas que incluyen un codec
+       caracterÃ­sticas.  Las tarjetas que incluyen un codec
        AC97<sup>[<a name="id447270" href="#ftn.id447270">175</a>]</sup>, requieren que se carge
        primero <tt>ac97_codec</tt>.  Las tarjetas
-       compatibles con la Roland MPU-401, pueden emplear el módulo
-       <tt>mpu401</tt> como secuenciador MIDI, este módulo
-       puede recibir como parámetros: <tt>irq</tt>,
+       compatibles con la Roland MPU-401, pueden emplear el mÃ³dulo
+       <tt>mpu401</tt> como secuenciador MIDI, este mÃ³dulo
+       puede recibir como parÃ¡metros: <tt>irq</tt>,
        <tt>io</tt>.  Otras tarjetas con sintetizador midi
        pueden emplear bien <tt>uart401</tt> (que puede
-       recibir como parámetros: <tt>io</tt>,
+       recibir como parÃ¡metros: <tt>io</tt>,
        <tt>irq</tt>) o el sintetizador MIDI
        <tt>uart6850</tt>
        (<tt>CONFIG_SOUND_UART6850</tt>) que puede recibir
-       los mismo parámetros.  Diversas tarjetas con sintetizador FM
-       OPL3 emplean el módulo <tt>opl3</tt> (que debe
-       cargarse de forma independiente).  </p></li></ul></div><p>A continuación listamos los controladores disponibles junto
+       los mismo parÃ¡metros.  Diversas tarjetas con sintetizador FM
+       OPL3 emplean el mÃ³dulo <tt>opl3</tt> (que debe
+       cargarse de forma independiente).  </p></li></ul></div><p>A continuaciÃ³n listamos los controladores disponibles junto
        con el kernel 2.2.19 (incluido en Debian 2.2r6) , con algunas
        tarjetas que los usan y en algunos casos detalles de la
-       configuración, la información ha sido extraida especialmente de
-       las fuentes del kernel y su documentación.
+       configuraciÃ³n, la informaciÃ³n ha sido extraida especialmente de
+       las fuentes del kernel y su documentaciÃ³n.
     </p><div class="variablelist"><dl><dt><span class="term">C-Media PCI audio chip (CMI8338/8738)
-       </span></dt><dd><p>(CONFIG_SOUND_CMPCI, módulo <tt>cmpci</tt>).
+       </span></dt><dd><p>(CONFIG_SOUND_CMPCI, mÃ³dulo <tt>cmpci</tt>).
 	 Tarjeta PCI que usa el chip CMI8338 o CMI8337, este chip de
 	 cmedia (ID vendedor 0x13f6, ID dispositivos 0x0100, 0x101,
-	 0x111) El controlador puede recibir los parámetros:
+	 0x111) El controlador puede recibir los parÃ¡metros:
 	 <tt>spdif_loop</tt> (1 para habilitar ciclo SPDIF),
 	 <tt>four_ch</tt> (1 para habilitar modo de 4
 	 canales), <tt>rear_out</tt> (1 si la tarjeta tiene
 	 un conector de salida separado), <tt>mpu_io</tt>
 	 <tt>synth_io</tt>.  El controlador disponible en el
-	 kernel 2.4 soporta más características.
+	 kernel 2.4 soporta mÃ¡s caracterÃ­sticas.
 	</p></dd><dt><span class="term">Crystal CS4281
-       </span></dt><dd><p>(módulo <tt>cs4281</tt>). Integrado de Cirrus
+       </span></dt><dd><p>(mÃ³dulo <tt>cs4281</tt>). Integrado de Cirrus
 	 (ID Vendor 0x1013, ID Dispositivo 0x6005), el controlador no
-	 requiere parámetro alguno.
+	 requiere parÃ¡metro alguno.
 	</p></dd><dt><span class="term">Crystal SoundFusion (CS4280/461x)
-       </span></dt><dd><p>(CONFIG_SOUND_FUSION, módulo
+       </span></dt><dd><p>(CONFIG_SOUND_FUSION, mÃ³dulo
 	 <tt>cs46xx</tt>). Son chips con codec AC97.  El
-	 controlador puede recibir los parámetros:
+	 controlador puede recibir los parÃ¡metros:
 	 <tt>external_amp=1</tt> para activar soporte para
 	 Crystal EAPD, <tt>thinkpad=1</tt> para habilitar
 	 soporte especial para Thinkpad.
 	 </p></dd><dt><span class="term">Creative SBLive (EMU10K1)
-	</span></dt><dd><p>(<tt>CONFIG_SOUND_EMU10K1</tt>, módulo
-	 <tt>emu10k1</tt>) El integrado emu10k1 está en
+	</span></dt><dd><p>(<tt>CONFIG_SOUND_EMU10K1</tt>, mÃ³dulo
+	 <tt>emu10k1</tt>) El integrado emu10k1 estÃ¡ en
 	 tarjetas PCI como Creative SBLive!, SB PCI512 o emu10k1.  El
-	 controlador no requiere parámetros.
+	 controlador no requiere parÃ¡metros.
 	 
-	</p></dd><dt><span class="term">Ensoniq AudioPCI (ES1370) (<tt>CONFIG_SOUND_ES1370</tt>, módulo <tt>es1370</tt>)
-	</span></dt><dd><p>Identificación PCI 1274:5000 (ver con lspci -n).  Las
+	</p></dd><dt><span class="term">Ensoniq AudioPCI (ES1370) (<tt>CONFIG_SOUND_ES1370</tt>, mÃ³dulo <tt>es1370</tt>)
+	</span></dt><dd><p>IdentificaciÃ³n PCI 1274:5000 (ver con lspci -n).  Las
 	  tarjetas Sound Blaster 64/PCI pueden emplear este chip.
 	  
 	  El controlador de Linux no soporta <tt>/dev/audio</tt> (usar el programa
-	  <tt>play</tt>).  Los posibles parámetros son:
+	  <tt>play</tt>).  Los posibles parÃ¡metros son:
 	  <tt>joystick=1</tt> para habilita puerto de
 	  joystick, <tt>lineout=1</tt> para convertir una
-	  línea de entrada en línea de salida,
-	  <tt>micbias=1</tt> para establecer desviación +5V
+	  lÃ­nea de entrada en lÃ­nea de salida,
+	  <tt>micbias=1</tt> para establecer desviaciÃ³n +5V
 	  para un microfono electret.
 
 	</p></dd><dt><span class="term">Ensoniq ES1371 (<tt>CONIFG_SOUND_ES1371</tt>,
-	módulo <tt>es1371</tt>)
+	mÃ³dulo <tt>es1371</tt>)
 	</span></dt><dd><p>PCI ID 1273:1371 o 1273:5880.  Las tarjetas Sound
-	 Blaster 64/PCI pueden emplear este chip. El controlador está
-	 más depurado en el kernel 2.2.21 o en la serie 2.4. (El
+	 Blaster 64/PCI pueden emplear este chip. El controlador estÃ¡
+	 mÃ¡s depurado en el kernel 2.2.21 o en la serie 2.4. (El
 	 controlador incluido en 2.2.19 no soporta bien 1273:5880).
 
 	 El controlador de Linux no soporta <tt>/dev/audio</tt> (usar
-	 <tt>play</tt>), sus posibles parámetros son:
+	 <tt>play</tt>), sus posibles parÃ¡metros son:
 	 <tt>joystick=&lt;io&gt;</tt> para establecer
-	 dirección E/S del puerto de joystick,
+	 direcciÃ³n E/S del puerto de joystick,
 	 <tt>spdif=1</tt> para habilitar salida en modo
 	 digital S/PDIF.
 	 
 	</p></dd><dt><span class="term">ESS Maestro (<tt>CONFIG_SOUND_MAESTRO</tt>,
-       módulo <tt>maestro</tt>)
+       mÃ³dulo <tt>maestro</tt>)
        </span></dt><dd><p>Usado en tarjetas Maestro 1 (Vendedor ID 0x1285,
 	  Dispositivo 0x100), Maestro 2 (Vendedor ID 0x125D,
 	 Dispositivo 0x1968) y Maestro 2E (0x125D:0x1978).  Los
-	  parámetros que este controlador puede recibir son:
+	  parÃ¡metros que este controlador puede recibir son:
 	  <tt>debug=1</tt> para habilitar mensajes de
-	  depuración
+	  depuraciÃ³n
 	  <sup>[<a name="id447875" href="#ftn.id447875">176</a>]</sup>, <tt>dsps_order=2</tt> para usar esta
 	  tarjeta con tarjeta de sonido secundaria,
 	  <tt>use_pm</tt> 0 o 1 para deshabilitar/habilitar
 	  manejo de potencia en la tarjeta Maestro 2E.  Hay disponible
-	  más documentación en
+	  mÃ¡s documentaciÃ³n en
 	  <tt>Documentation/sound/MAESTRO</tt>
 	</p></dd><dt><span class="term">ESS Maestro 3 (<tt>CONFIG_SOUND_MAESTRO3</tt>,
-       módulo <tt>maestro3</tt>)
+       mÃ³dulo <tt>maestro3</tt>)
 	</span></dt><dd><p>Tarjeta PCI Maestro 3 (0x1998 o 0x199a, vendedor
 	  0x125D) y Allegro (vendedor 0x125D, dispositivo PCI ID
-	  0x1988).  Los parámetros para el controlador pueden ser:
+	  0x1988).  Los parÃ¡metros para el controlador pueden ser:
 	  <tt>debug=1</tt> para habilitar mensajes de
-	  depuración,
+	  depuraciÃ³n,
 	  <tt>global_dsp_speed=<i><tt>velocidad</tt></i></tt>
 	  por defecto 49, <tt>external_amp</tt> 1 o 0 para
-	  habilitar/deshabilitar amplificador externo.  Más
-	  documentación en
+	  habilitar/deshabilitar amplificador externo.  MÃ¡s
+	  documentaciÃ³n en
 	  <tt>Documentation/sound/MAESTRO3</tt>.
 	</p></dd><dt><span class="term">ESS_SOLO1
-	(<tt>CONFIG_SOUND_ESSSOLO1</tt>,módulo
+	(<tt>CONFIG_SOUND_ESSSOLO1</tt>,mÃ³dulo
 	<tt>esssolo1</tt>)
        </span></dt><dd><p>PCI ID 125D:1969.  El controlador de Linux no soporta
 	 <tt>/dev/audio</tt> (usar
-	 <tt>play</tt>).  Más información en
+	 <tt>play</tt>).  MÃ¡s informaciÃ³n en
 	 <tt>Documentation/sound/solo1</tt>.
 	</p></dd><dt><span class="term">Intel ICH (810,820,440MX)
-       (<tt>CONFIG_SOUND_ICH</tt>, módulo i810_audio)
+       (<tt>CONFIG_SOUND_ICH</tt>, mÃ³dulo i810_audio)
        </span></dt><dd><p>En algunos computadores donde no se escucha bien pueden
-	  emplearse los parámetros <tt>ftsodell=1</tt> o
+	  emplearse los parÃ¡metros <tt>ftsodell=1</tt> o
 	 <tt>clocking=<i><tt>frecuencia</tt></i></tt>.
-	  Hay más documentación en el archivo
+	  Hay mÃ¡s documentaciÃ³n en el archivo
 	 <tt>drivers/sound/i810_audio</tt>.
 	  
 	 </p></dd><dt><span class="term">
 	 S3 Sonic Vibes (<tt>CONFIG_SOUND_SONICVIBES</tt>,
-	  módulo <tt>sonicvibes</tt>)
+	  mÃ³dulo <tt>sonicvibes</tt>)
 	</span></dt><dd><p>PCI ID 5333:CA00.  El controlador puede recibir los
-	 parámetros: <tt>reverb=1</tt> para habilitar
-	  reverberación, <tt>wavetable=1</tt> para habilitar
+	 parÃ¡metros: <tt>reverb=1</tt> para habilitar
+	  reverberaciÃ³n, <tt>wavetable=1</tt> para habilitar
 	 sintetizador wavetable y
 	  <tt>dmaio=<i><tt>dir_ES</tt></i></tt> para
-	  asignar dirección E/S inicial para DMA (si el BIOS no lo
-	  hace).  Hay más documentación en
+	  asignar direcciÃ³n E/S inicial para DMA (si el BIOS no lo
+	  hace).  Hay mÃ¡s documentaciÃ³n en
 	  <tt>Documentation/sound/sonicvibes</tt>.
 	</p></dd><dt><span class="term">
 	 Trident 4DWave-DX/NX
 	  (<tt>CONFIG_SOUND_TRIDENT</tt>,
-	</span></dt><dd><p>módulo <tt>trident</tt>).  Incluido en
+	</span></dt><dd><p>mÃ³dulo <tt>trident</tt>).  Incluido en
 	 tarjetas Trident 4Dwave (PCI ID 1023:2000 o 1023:2001),
 	 Sis7018 (1039:7018), ALi 5451 (10b9:5451).
 	</p></dd><dt><span class="term">
 	 Turtel Beach MultiSound Pinnacle Fiji
-	(<tt>CONFIG_SOUND_MSNDPIN</tt>, módulo
+	(<tt>CONFIG_SOUND_MSNDPIN</tt>, mÃ³dulo
 	 <tt>msdn_pinnacle</tt>) y Turtle Beach MultiSound
 	 Classic, Tahiti, Monterrey
-	 (<tt>CONFIG_SOUND_MSNDCLASS</tt>, módulo
+	 (<tt>CONFIG_SOUND_MSNDCLASS</tt>, mÃ³dulo
 	 <tt>msnd_pinnacle</tt>)
 	</span></dt><dd><p>
-	  Requiere código para el firmware.  El controlador requiere
-	  los parámetros: <tt>io</tt>,
+	  Requiere cÃ³digo para el firmware.  El controlador requiere
+	  los parÃ¡metros: <tt>io</tt>,
 	  <tt>irq</tt> y <tt>mem</tt>, y puede
-	  recibir también: <tt>write_ndelay</tt>,
+	  recibir tambiÃ©n: <tt>write_ndelay</tt>,
 	  <tt>major</tt>, <tt>fifosize</tt>,
 	  <tt>calibrate_signal</tt> (0 o 1),
 	  <tt>digital</tt>, <tt>cfg</tt> (para
@@ -1497,20 +1497,20 @@ play /usr/share/sounds/login.wav
 	  <tt>mpu_io</tt>, <tt>mpu_irq</tt>,
 	  <tt>ide_io0</tt>, <tt>ide_io1</tt>,
 	  <tt>ide_irq</tt>, <tt>joystick_io</tt>.
-	  Documentación y utilidades en
+	  DocumentaciÃ³n y utilidades en
 	  <tt>Documentation/sound/MultiSound</tt>.
 	</p></dd><dt><span class="term">
 	 Codec VIA 82C686 (<tt>CONFIG_SOUND_VIA82Cxxx</tt>,
-	módulo
+	mÃ³dulo
        </span></dt><dd><p><tt>via82cxxx_audio</tt>) Normalmente incluido
 	  en placas base como Kinetiz 7E-A.
 	 </p></dd><dt><span class="term">
 	 ProAudioSpectrum 16 support
-	(<tt>CONFIG_SOUND_PAS</tt>, módulo
+	(<tt>CONFIG_SOUND_PAS</tt>, mÃ³dulo
 	<tt>pas2</tt>)
        </span></dt><dd><p>Soporta las tarjetas Pro Audio Spectrum 16, ProAudio
 	  Studio 16, Logitech SoundMan 16. El controlador puede recibir
-	  los siguientes parámetros: <tt>io</tt>,
+	  los siguientes parÃ¡metros: <tt>io</tt>,
 	  <tt>irq</tt>, <tt>dma</tt>,
 	 <tt>dma16</tt>, <tt>sb_io</tt>,
 	  <tt>sb_irq</tt>, <tt>sb_dma</tt>,
@@ -1519,17 +1519,17 @@ play /usr/share/sounds/login.wav
 	  <tt>broken_bus_clock</tt> que puede ser 0 o 1.
 	 </p></dd><dt><span class="term">
 	 100% Sound Blaster compatibles (SB16/32/64, ESS, Jazz16)
-	 (<tt>CONFIG_SOUND_SB</tt>,módulo
+	 (<tt>CONFIG_SOUND_SB</tt>,mÃ³dulo
 	 <tt>sb</tt>)
        </span></dt><dd><p>Soporta las tarjetas SoundBlaster, Thunderboard, SM
 	  Games, Avance Logic ALS-007, ESS, SB AWE 32, SB AWE 64, IBM
 	  Mwave
 	  <sup>[<a name="id448589" href="#ftn.id448589">177</a>]</sup>.
 	  Otras tarjetas que dicen ser compatibles con SoundBlaster
-	 normalmente no funcionarán con este controlador.
+	 normalmente no funcionarÃ¡n con este controlador.
 
 	  Si la tarjeta es ISA Plug and Play debe usarse isapnpntools
-	  para la configuración (ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>), un ejemplo de
+	  para la configuraciÃ³n (ver <a href="hardware-basico-y-linux.html#buses" title="3.1.6. Buses">Buses</a>), un ejemplo de
 	  <tt>/etc/isapnp.conf</tt> sin comentarios es:
 </p><pre class="programlisting">
 (CONFIGURE CTL0044/1132685 (LD 0 
@@ -1542,25 +1542,25 @@ play /usr/share/sounds/login.wav
 (ACT Y)))
 </pre><p>
 
-	  Cómo módulos podrían cargarse:
+	  CÃ³mo mÃ³dulos podrÃ­an cargarse:
 </p><pre class="programlisting">
 modprobe sound
 insmod uart401
 modprobe sb io=0x220 irq=5 dma=1 dma16=5 mpu_io=0x330
 </pre><p>
 	
-	  La mayoría de tarjetas SoundBlaster y compatibles soportan
+	  La mayorÃ­a de tarjetas SoundBlaster y compatibles soportan
 	  sintetizador FM con:
 </p><pre class="programlisting">
 insmod opl3 io=0x388
 </pre><p>
 
 	  Eventualmente si su tarjeta no soporta DMA de 16 bits, puede
-	  emplear como parámetro <tt>dma16=-1</tt>.
+	  emplear como parÃ¡metro <tt>dma16=-1</tt>.
 	  
 	  Si su tarjeta soporta Wavetable, en
-	  <tt>/etc/isapnp.conf</tt> podría agregarse los
-	  puertos E/S 0xA20 y 0xE20 en la sección sobre WaveTable:
+	  <tt>/etc/isapnp.conf</tt> podrÃ­a agregarse los
+	  puertos E/S 0xA20 y 0xE20 en la secciÃ³n sobre WaveTable:
 </p><pre class="programlisting">
   (CONFIGURE CTL0048/58128 (LD 2
   #     ANSI string --&gt;WaveTable&lt;--
@@ -1571,16 +1571,16 @@ insmod opl3 io=0x388
   ))
 </pre><p>
 
-	  y para cargar el controlador (después de cargar
+	  y para cargar el controlador (despuÃ©s de cargar
 	  <tt>sb</tt>): <tt>insmod awe_wave</tt>.
-	  El módulo <tt>awe_wave</tt> puede recibir los
-	  parámetros:
+	  El mÃ³dulo <tt>awe_wave</tt> puede recibir los
+	  parÃ¡metros:
 	  <tt>io=<i><tt>dir_ES</tt></i></tt>
 	  puerto E/S base de Emu8000,
 	  <tt>memsize=<i><tt>mem</tt></i></tt>
 	  cantidad de memoria DRAM de la tarjeta en Kbytes.
 	  
-	  Hay más documentación en
+	  Hay mÃ¡s documentaciÃ³n en
 	  <tt>Documentation/sound/AWE32</tt>,
 	  <tt>INSTALL.awe</tt>,
 	  <tt>README.awe</tt>.
@@ -1596,7 +1596,7 @@ insmod opl3 io=0x388
 	   </span></dt><dd><p>para detectar tarjetas en algunos portatiles ACER
 	    </p></dd><dt><span class="term"><tt>esstype=<i><tt>tipo</tt></i></tt>
 	   </span></dt><dd><p>De acuerdo a Documentation/sound/ESS puede tener los
-	     siguientes valores: -1 sólo autodetectar ES688 o ES1688,
+	     siguientes valores: -1 sÃ³lo autodetectar ES688 o ES1688,
 	     0 intentar autodetectar el chip ESS (puede fallar para
 	     ES1688), 688 chip ES688, 1788 chip ES1788, 1688 chip
 	     ES1688, 1888 chip ES1888, 1868 chip ES1868, 1869 chip
@@ -1615,22 +1615,22 @@ insmod opl3 io=0x388
 	    </p></dd></dl></div><p>El mismo driver soporta tarjetas AVance Logic ALS007 y
 	  Avance Logic ALS100.  Ambas se configuran con isapnptools,
 	  dejando un DMA de 8 bits (0,1 o 3), pero DMA de 16 bits debe
-	  dejarse en -1.  Más documentación en
+	  dejarse en -1.  MÃ¡s documentaciÃ³n en
 	  <tt>Documentation/sound/ALS</tt>.</p></dd><dt><span class="term">Gravis Ultrasound (<tt>CONFIG_SOUND_GUS</tt>,
-	módulo <tt>gus</tt>)
+	mÃ³dulo <tt>gus</tt>)
        </span></dt><dd><p>Tarjetas GUS y GUS MAX.  El controlador puede recibir
-	  como parámetros: <tt>io</tt>,
+	  como parÃ¡metros: <tt>io</tt>,
 	  <tt>irq</tt>, <tt>dma</tt>,
 	  <tt>dma16</tt>, <tt>type=1</tt> para
 	  indicar que es PnP, <tt>gus16</tt>,
 	  <tt>no_wave_dma</tt>, <tt>db16=1</tt>
 	  para habilitar Gus16 AD1848.
 	</p></dd><dt><span class="term">Personal Sound System (ECHO ESC614)
-	(<tt>CONFIG_SOUND_PSS</tt>, módulo
+	(<tt>CONFIG_SOUND_PSS</tt>, mÃ³dulo
 	<tt>pss</tt>)
 	</span></dt><dd><p>Funciona con las tarjetas Orchid SW32, Cardinal DSP16,
 	  Beethoven ADSP-16, PSS y otras basadas en ECHO.  Los
-	  posibles parámetros del módulo son:
+	  posibles parÃ¡metros del mÃ³dulo son:
 	  <tt>pss_io=0x220</tt> puerto E/s base (0x240),
 	  <tt>mss_io=0x530</tt> o 0x604 o 0xE80 o 0xF40 WSS
 	  (audio) E/S base, <tt>mss_irq=3</tt> o 5 o 7 o 9 o
@@ -1642,29 +1642,29 @@ insmod opl3 io=0x388
 	  CDROM PSS, <tt>pss_enable_joystick=1</tt> o 0 para
 	  habilitar/deshabilitar puerto de Joystick en tarjeta PSS,
 	  <tt>pss_no_sound=1</tt> para no configurar
-	  componentes de sonido, útil para quienes sólo quieren
+	  componentes de sonido, Ãºtil para quienes sÃ³lo quieren
 	  configurar CDROM o Joystick de la tarjeta,
 	  <tt>pss_keep_settings=1</tt> para mantener
-	  configuración de hardware después de descargar módulo,
+	  configuraciÃ³n de hardware despuÃ©s de descargar mÃ³dulo,
 	  <tt>pss_firmware=/etc/sound/pss_synth</tt>
-	  localización del archivo con el firmware (está en los discos
-	  de instalación para DOS), <tt>pss_mixer=1</tt> o 0
+	  localizaciÃ³n del archivo con el firmware (estÃ¡ en los discos
+	  de instalaciÃ³n para DOS), <tt>pss_mixer=1</tt> o 0
 	  para habilitar o deshabilitar mezclador PSS.
 
-	  Más documentación en
+	  MÃ¡s documentaciÃ³n en
 	  <tt>Documentation/sound/PSS</tt> y
 	  <tt>Documentation/PSS-updates</tt>.
 
 
 	 </p></dd><dt><span class="term">Microsoft Sound System
-	(<tt>CONFIG_SOUND_MSS</tt>, módulo
+	(<tt>CONFIG_SOUND_MSS</tt>, mÃ³dulo
 	<tt>ad1848</tt>)
 	</span></dt><dd><p>Funciona con varias tarjetas en particular Windows
 	  Sound System, Aztech SG 16 Pro o NX16 Pro, CMI8330 (ver
 	  Documentation/sound/CMI8330).  El codec ad1848/cs4248 es un
 	  chip usado en el MS Sound System, compatible con CS4231
 	  (usada en GUS MAX) y CS4231A, AD1845, CS4232, CS4232A, Los
-	  parámetros, junto con valores típicos son:
+	  parÃ¡metros, junto con valores tÃ­picos son:
 	  <tt>io=0x530</tt>, <tt>irq=11</tt>,
 	  <tt>dma=0</tt> canal primario,
 	  <tt>dma2=5</tt> canal secundario,
@@ -1676,10 +1676,10 @@ insmod opl3 io=0x388
 	  para chips SoundPro (ver Documentation/sound/SoundPro).
 	  
 	 </p></dd><dt><span class="term">Ensoniq SoundScape
-	(<tt>CONFIG_SOUND_SSCAPE</tt>, módulo
+	(<tt>CONFIG_SOUND_SSCAPE</tt>, mÃ³dulo
 	<tt>sscape</tt>)
        </span></dt><dd><p>Algunas tarjetas de Ensoniq, Spea y Reveal.  El
-	  controlador puede recibir los parámetros:
+	  controlador puede recibir los parÃ¡metros:
 	  <tt>dma</tt>, <tt>irq</tt>,
 	  <tt>io</tt>, <tt>spea</tt> (1 o 0),
 	  <tt>mpu_irq</tt>, <tt>mpu_io</tt>,
@@ -1687,9 +1687,9 @@ insmod opl3 io=0x388
 	  Microsoft Sound System).
 	  
 	 </p></dd><dt><span class="term">MediaTrix AudioTrix Pro
-	(<tt>CONFIG_SOUND_TRIX</tt>, módulo
+	(<tt>CONFIG_SOUND_TRIX</tt>, mÃ³dulo
 	<tt>trix</tt>)
-</span></dt><dd><p>El controlador recibe los parámetros:
+</span></dt><dd><p>El controlador recibe los parÃ¡metros:
 	  <tt>io</tt>, <tt>irq</tt>,
 	  <tt>dma</tt>, <tt>dma2</tt>,
 	  <tt>sb_io</tt>, <tt>sb_dma</tt>,
@@ -1698,15 +1698,15 @@ insmod opl3 io=0x388
 	  es 1 habilita interfaz para Joystick).
 	  
 	 </p></dd><dt><span class="term">OPTi MAD16, Mozart
-	(<tt>CONFIG_SOUND_MAD16</tt>, módulo
+	(<tt>CONFIG_SOUND_MAD16</tt>, mÃ³dulo
 	<tt>mad16</tt>)
 	</span></dt><dd><p>Mozart (OAK OTI-601), MAD16 (OPTi 82C928, 82C929, 82C931).
 	  
-	 Un uso típico es:
+	 Un uso tÃ­pico es:
 </p><pre class="programlisting">
 modprobe mad16 io=0x530 irq=7 dma=0 dma16=1 mpu_io=816 mpu_irq=5
 </pre><p>
-	  además puede recibir los siguientes parámetros:
+	  ademÃ¡s puede recibir los siguientes parÃ¡metros:
 	  <tt>joystick=0</tt> (deshabilitado) o 1
 	  (habilitado), <tt>cdtype=0x00</tt>
 	  (deshabilitado), 0x02 (Sony CDU31A), 0x04 (Mitsumi), 0x06
@@ -1716,96 +1716,96 @@ modprobe mad16 io=0x530 irq=7 dma=0 dma16=1 mpu_io=816 mpu_irq=5
 	  1,2,3 (DMA3 para Sony o Panasonic), 5, 6,7, (DMA5 para
 	  Mitsumi o IDE), <tt>opl4=0</tt> (OPL3), 1 (OPL4).
 
-	 Más documentación en
+	 MÃ¡s documentaciÃ³n en
 	 <tt>Documentation/sound/MAD16</tt> y
 	 <tt>Documentation/sound/Opti</tt>.
 
 	</p></dd><dt><span class="term">TurtleBeach WaveFront
-	</span></dt><dd><p>(CONFIG_SOUND_WAVEFRONT, módulo
+	</span></dt><dd><p>(CONFIG_SOUND_WAVEFRONT, mÃ³dulo
 	  <tt>wavefront</tt>), Tropez Plus, Tropez o Maui.
-	 Una configuración típica de una tarjeta Tropez+ es:
+	 Una configuraciÃ³n tÃ­pica de una tarjeta Tropez+ es:
 </p><pre class="programlisting">
 modprobe wavefront io=0x200 irq=9
 modprobe cs4232 synthirq=9 syntio=0x200 io=0x530 irq=5 dma=1 dma2=0
 modprobe opl3 io=0x388
 </pre><p>
-	  El controlador <tt>wavfront</tt> también puede
-	  recibir los parámetros: <tt>io</tt>,
+	  El controlador <tt>wavfront</tt> tambiÃ©n puede
+	  recibir los parÃ¡metros: <tt>io</tt>,
 	  <tt>irq</tt>, <tt>wf_raw=1</tt> para
-	  evitar revisión de estado limpio antes de cargar firmware,
-	  <tt>fx_raw=0</tt> para evitar limpiar después de
+	  evitar revisiÃ³n de estado limpio antes de cargar firmware,
+	  <tt>fx_raw=0</tt> para evitar limpiar despuÃ©s de
 	  cargar firmware, <tt>debug_default</tt> para
-	  depuración, <tt>wait_usecs=150</tt>,
+	  depuraciÃ³n, <tt>wait_usecs=150</tt>,
 	  <tt>sleep_interval=100</tt>,
 	  <tt>sleep_tries=50</tt>,
-	  <tt>ospath=/etc/sound/wavefront.os</tt> vía donde
+	  <tt>ospath=/etc/sound/wavefront.os</tt> vÃ­a donde
 	  encontrar firmware, <tt>reset_time=2</tt>,
 	  <tt>ramcheck_time=20</tt>,
 	  <tt>osrun_time=10</tt>.
 
-	  Más documentación en
+	  MÃ¡s documentaciÃ³n en
 	  <tt>Documentation/sound/TROPEZ+</tt>.  Para
-	  tarjetas Maui o Tropez también puede emplearse el módulo
-	  <tt>maui</tt> que recibe los parámteros:
+	  tarjetas Maui o Tropez tambiÃ©n puede emplearse el mÃ³dulo
+	  <tt>maui</tt> que recibe los parÃ¡mteros:
 	  <tt>io</tt> e <tt>irq</tt>.
 
 	 
 	 </p></dd><dt><span class="term">Crystal CS4232
 	</span></dt><dd><p>(CONFIG_SOUND_CS4232), tarjetas basada en CS4232, usan
-	  Plug and Play.  Un uso típico es:
+	  Plug and Play.  Un uso tÃ­pico es:
 </p><pre class="programlisting">
 modprobe cs4232 io=0x534 irq=5 dma=3 dma2=0
 </pre><p>
-	  Además de los mostrados recibe los parámetros
+	  AdemÃ¡s de los mostrados recibe los parÃ¡metros
 	  <tt>mpuio</tt>, <tt>mpuirq</tt>,
 	  <tt>syntirq</tt>, <tt>syntio</tt>.  Para
 	  tener sintesis FM: <tt>insmod opl3 io=0x388</tt>
-	  Ver también TurtelBeach WaveFront
+	  Ver tambiÃ©n TurtelBeach WaveFront
 	  
 	 </p></dd><dt><span class="term">Yamaha OPL3-SA2, SA3 y SAx PnP
-	 (<tt>CONFIG_SOUND_OPL3SA2</tt>, módulo
+	 (<tt>CONFIG_SOUND_OPL3SA2</tt>, mÃ³dulo
 	 <tt>opl3sa2</tt>)
-       </span></dt><dd><p>El controlador recibe los parámetros:
-	  <tt>io</tt> para establecr dirección E/S base (e.g
+       </span></dt><dd><p>El controlador recibe los parÃ¡metros:
+	  <tt>io</tt> para establecr direcciÃ³n E/S base (e.g
 	  0x370), <tt>mss_io</tt> establece base E/S de MSS
 	  (audio) (e.g 0x530, 0xE80, las direcciones posibles deben
 	  terminar en 0 o 4 y deben estar entre 0x530 y 0xF48),
 	  <tt>mpu_io</tt> base E/S para MIDI (e.g 0x330,
-	  debe ser una dirección entre 0x300 y 0x334),
-	  <tt>irq</tt> línea IRQ para irq MSS (5, 7, 9, 10,
+	  debe ser una direcciÃ³n entre 0x300 y 0x334),
+	  <tt>irq</tt> lÃ­nea IRQ para irq MSS (5, 7, 9, 10,
 	  11, 12), <tt>dma</tt> primer canal DMA MSS (0, 1,
 	  3), <tt>dma2</tt> segundo canal DMA MSS (0, 1, 3).
 
 	</p></dd><dt><span class="term">Aztech Sound Galaxy (no PnP)
-	(<tt>CONFIG_SOUND_SGALAXY</tt>, módulo
+	(<tt>CONFIG_SOUND_SGALAXY</tt>, mÃ³dulo
 	<tt>sgalaxy</tt>)
 	</span></dt><dd><p>Soporta Waverider Pro 32 - 3D y Galaxy Washington
-	  16. El controlador puede recibir los parámetros:
+	  16. El controlador puede recibir los parÃ¡metros:
 	  <tt>io</tt>, <tt>irq</tt>,
 	  <tt>dma</tt>, <tt>dma2</tt>,
-	  <tt>sgbase</tt> (para especificar la dirección E/S
-	  básica).
+	  <tt>sgbase</tt> (para especificar la direcciÃ³n E/S
+	  bÃ¡sica).
 	  
 	 </p></dd><dt><span class="term">Tarjetas basadas en AD1816
-	</span></dt><dd><p>(<tt>CONFIG_SOUND_AD1816</tt>, módulo
+	</span></dt><dd><p>(<tt>CONFIG_SOUND_AD1816</tt>, mÃ³dulo
 	  <tt>ad1816</tt>) Tarjeta basada en el chip Analog
 	  Devices AD1816, algunas tarjetas que lo usan son: Terratec
 	  Base 1, Terratec Base 64, HP Kayak, Acer FX-3D, SY-1816,
 	  Highscreen Sound-Boostar 32 Wave 3D, Highscreen
 	  Sound-Boostar 16 , AVM Apex Pro card y las siguientes
-	  pasando el parámetro <tt>option=1</tt> al cargar
-	  el módulo: Aztech SC-16 3D, Newcom SC-16 3D, Terratec
-	  EWS64S.  Cuando este controlador se incluye estáticamente
-	  puede configurarse con un parámetro del kernel de la forma:
+	  pasando el parÃ¡metro <tt>option=1</tt> al cargar
+	  el mÃ³dulo: Aztech SC-16 3D, Newcom SC-16 3D, Terratec
+	  EWS64S.  Cuando este controlador se incluye estÃ¡ticamente
+	  puede configurarse con un parÃ¡metro del kernel de la forma:
 	  <tt>ad1816=0x530,5,1,3</tt>, remplazando los
-	  valores por la dirección E/S base, línea IRQ, primer y
-	  segundo canales DMA.  Como módulo los parámetros podrían
+	  valores por la direcciÃ³n E/S base, lÃ­nea IRQ, primer y
+	  segundo canales DMA.  Como mÃ³dulo los parÃ¡metros podrÃ­an
 	  ser:
 </p><pre class="programlisting">
 modprobe ad1816 io=0x530 irq=5 dma=1 dma2=3 ad1816_clockfreq=33000
 </pre><p>
 	  Debe usarse <tt>isapnp</tt> para configurarla,
-	  líneas como las siguientes son relevantes:
+	  lÃ­neas como las siguientes son relevantes:
 </p><pre class="programlisting">
 	(INT 0 (IRQ 5 (MODE +E)))
 	(DMA 0 (CHANNEL 1))
@@ -1814,60 +1814,60 @@ modprobe ad1816 io=0x530 irq=5 dma=1 dma2=3 ad1816_clockfreq=33000
 	(IO 1 (BASE 0x0388))
 	(IO 2 (BASE 0x0530))
 </pre><p>
-	  Más documentación en el kernel <tt>Documentation/sound/AD1816</tt>.
+	  MÃ¡s documentaciÃ³n en el kernel <tt>Documentation/sound/AD1816</tt>.
 	  
 	 </p></dd><dt><span class="term">Yamaha OPL3-SA1 (<tt>CONFIG_SOUND_OPL3SA1</tt>,
-      módulo <tt>opl3sa</tt>)
+      mÃ³dulo <tt>opl3sa</tt>)
 	</span></dt><dd><p>Para emplear este chip en modo WSS (Windows Sound System) puede 
 	  usarse:
 </p><pre class="programlisting">
 modprobe  opl3sa io=0x530 irq=11 dma=0 dma2=1 mpu_io=0x330 mpu_irq=5
 </pre><p>
-	 también podrían cargarse módulos para soportar sintetizador
+	 tambiÃ©n podrÃ­an cargarse mÃ³dulos para soportar sintetizador
 	 FM (opl3 o SoftOSS) con:<b>insmod op3
 	 io=0x388r</b> o <b>insmod softoss</b>.
 	 
-	 Más documentación en
+	 MÃ¡s documentaciÃ³n en
 	 <tt>Documentation/sound/OPL3-SA</tt>.
 
 	 </p></dd><dt><span class="term">NeoMagic NM256AV/NM256ZX
-	(<tt>CONFIG_SOUND_NM256</tt>, módulo
+	(<tt>CONFIG_SOUND_NM256</tt>, mÃ³dulo
 	<tt>nm256</tt>)
 	</span></dt><dd><p>
 	  Chip NeoMagic 256AV/256ZX, usado en laptops como: Sony
 	  Z505S/SX/DX/RX, F150, F160, F180, F250, F270, F28, PCG-F26,
 	  Dell Latitude CPi, CPt.  El controlador soporta los
-	  parámetros: <tt>usecache</tt>,
+	  parÃ¡metros: <tt>usecache</tt>,
 	  <tt>buffertop</tt>,
 	  <tt>nm256_debug</tt>,
-	  <tt>force_load</tt>.  <tt>Más documentación
+	  <tt>force_load</tt>.  <tt>MÃ¡s documentaciÃ³n
 	  en Documentation/sound/NM256</tt>.
 
 	  
-	 </p></dd><dt><span class="term">Adlib (<tt>CONFIG_SOUND_ADLIB</tt>, módulo
+	 </p></dd><dt><span class="term">Adlib (<tt>CONFIG_SOUND_ADLIB</tt>, mÃ³dulo
 	<tt>adlib_card</tt>)
-	</span></dt><dd><p>El controlador recibe la dirección E/S base con el
-	  parámetro <tt>io</tt>.
+	</span></dt><dd><p>El controlador recibe la direcciÃ³n E/S base con el
+	  parÃ¡metro <tt>io</tt>.
 	  
 	 </p></dd><dt><span class="term">Yamaha YMF7xx PCI
-	 (<tt>CONFIG_SOUND_YMFPCI</tt>, módulo
+	 (<tt>CONFIG_SOUND_YMFPCI</tt>, mÃ³dulo
 	 <tt>ymfpci</tt>)
-	</span></dt><dd><p>Tarjetas YMF711, el controlador puede recibir como parámetros:
+	</span></dt><dd><p>Tarjetas YMF711, el controlador puede recibir como parÃ¡metros:
 	  <tt>mpu_io</tt> y <tt>synth_io</tt>.
 	  
 	 </p></dd><dt><span class="term">Tarjetas Gallant (SC-600, SC-6600)
-	 (<tt>CONFIG_SOUND_AEDSP16</tt>, módulo
+	 (<tt>CONFIG_SOUND_AEDSP16</tt>, mÃ³dulo
 	 <tt>aedsp16</tt>)
        </span></dt><dd><p>Para tarjetas que incluyen el DSP Audio Excel. El
 	  controlador establece los recursos del DSP desde Linux, un
-	  uso típico es:
+	  uso tÃ­pico es:
 </p><pre class="programlisting">
 modprobe aedsp16 io=0x220 irq=5 dma=1
 </pre><p>
-	  También podría pasar como parámetros: mss_base (e.g 0x530 o
+	  TambiÃ©n podrÃ­a pasar como parÃ¡metros: mss_base (e.g 0x530 o
 	  0xE80), mpu_base (0x300, 0x310, 0x320 o 0x330) mpu_irq (5, 7,
 	  9, 10 o 0).
-	 </p></dd></dl></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id450649"></a>4.1.10.2. Programas que emplean la tarjeta de sonido</h5></div></div><p>Hay gran variedad algunos gráficos otros para consola,
+	 </p></dd></dl></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id450649"></a>4.1.10.2. Programas que emplean la tarjeta de sonido</h5></div></div><p>Hay gran variedad algunos grÃ¡ficos otros para consola,
        puede buscarlos con <b>apt-cache search sound |
        less</b> (ver <a href="administracion-de-programas.html#paquetes-en-debian" title="5.1.3. Paquetes en Debian">Paquetes
 	en Debian</a>).
@@ -1875,7 +1875,7 @@ modprobe aedsp16 io=0x220 irq=5 dma=1
 	</span></dt><dd><a class="indexterm" name="id450691"></a><p>Incluye el program sox que permite
 	 convertir de un formato de sonido a otro,
 	 play que permite reproducir un sonido
-	  almacenado prácticamente en cualquier formato y
+	  almacenado prÃ¡cticamente en cualquier formato y
 	  rec que permite grabar un sonido.  Por
 	  ejemplo para convertir de formato raw (PCM 11025 Hetz, 16
 	 bits) a .wav:
@@ -1884,10 +1884,10 @@ sox -r 11025 -s -w voz.raw voz.wav
 </pre><p>
 
 </p></dd><dt><span class="term">playmidi
-	</span></dt><dd><p>Útil si su tarjeta incluye un sintetizador MIDI que ha
+	</span></dt><dd><p>Ãštil si su tarjeta incluye un sintetizador MIDI que ha
 	 logrado configurar.  Incluye los programas
 	 playmidi (consola) y
-	 xplaymidi (X11), así como algunos
+	 xplaymidi (X11), asÃ­ como algunos
 	 ejemplos.  Si su tarjeta no tiene sintetizador MIDI puede
 	 emplear Timidity.
 	</p></dd><dt><span class="term"><tt>timidity  timidity-patches</tt>
@@ -1895,68 +1895,68 @@ sox -r 11025 -s -w voz.raw voz.wav
 	</p></dd><dt><span class="term">aumix
        </span></dt><dd><p>Mezclador modo texto, se inicia con <b>aumix</b>.
 	 </p></dd><dt><span class="term">soundtracker
-       </span></dt><dd><p>Editor y reproductor gráfico de archivos MOD para Amiga.
+       </span></dt><dd><p>Editor y reproductor grÃ¡fico de archivos MOD para Amiga.
 	</p></dd><dt><span class="term">xmms
-	</span></dt><dd><p>Aplicación gráfica para reproducir MP3 y otros formatos.
-	 </p></dd></dl></div></div></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-dispositivos-y-linux"></a>4.2. Lecturas recomendadas: Dispositivos y Linux</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Para conocer más sobre el teclado y su
-       configuración puede consultar las páginas
+	</span></dt><dd><p>AplicaciÃ³n grÃ¡fica para reproducir MP3 y otros formatos.
+	 </p></dd></dl></div></div></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-dispositivos-y-linux"></a>4.2. Lecturas recomendadas: Dispositivos y Linux</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Para conocer mÃ¡s sobre el teclado y su
+       configuraciÃ³n puede consultar las pÃ¡ginas
        <b>man</b> de keymaps, loadkeys, dumpkey, showkey,
        kbd_mode, setleds, kbdrate.  Si desea ver diversos tipos de
        teclados soportados por Linux y sus scancodes puede consultar
        en Internet: <a href="http://www.win.tue.nl/~aeb/linux/kbd/scancodes.html" target="_top">http://www.win.tue.nl/~aeb/linux/kbd/scancodes.html</a>
-       </p></li><li><p>Hay más detalles sobre configuración de Bus Mouse en el
+       </p></li><li><p>Hay mÃ¡s detalles sobre configuraciÃ³n de Bus Mouse en el
        <i>Busmouse-HOWTO</i>, disponible en Internet
        en: <a href="http://www.ibiblio.org/pub/Linux/docs/HOWTO/unmaintained/Busmouse-HOWTO" target="_top">http://www.ibiblio.org/pub/Linux/docs/HOWTO/unmaintained/Busmouse-HOWTO</a>
-       Y sobre la configuración del mouse con XFree86 3.3.6 puede
+       Y sobre la configuraciÃ³n del mouse con XFree86 3.3.6 puede
        consultar &quot;<i>Mouse Support in XFree86</i>&quot;: <a href="http://www.xfree86.org/3.3.6/mouse.html" target="_top">http://www.xfree86.org/3.3.6/mouse.html</a>
-      </p></li><li><p>Puede aprender más sobre las posibilidades de
-       internacioanlización de teclado y pantalla del kernel
-       consultado las páginas <b>man</b> de: unicode,
+      </p></li><li><p>Puede aprender mÃ¡s sobre las posibilidades de
+       internacioanlizaciÃ³n de teclado y pantalla del kernel
+       consultado las pÃ¡ginas <b>man</b> de: unicode,
        console, charsets.  
-      </p></li><li><p>Puede aprender más sobre las secuencias de control de la
-       consola de Linux consultado la página <tt>man</tt>
+      </p></li><li><p>Puede aprender mÃ¡s sobre las secuencias de control de la
+       consola de Linux consultado la pÃ¡gina <tt>man</tt>
        de: console, console-codes. Y el Keyboard and Console HOWTO,
        disponible en su sistema en
        <tt>/usr/share/doc/HOWTO/en-txt/Keyboard-and-Console-HOWTO.txt.gz</tt>
        y en Internet en: <a href="http://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html" target="_top">http://www.tldp.org/HOWTO/Keyboard-and-Console-HOWTO.html</a>
        </p></li><li><p>Para configurar impresoras (incluyendo seriales y algo de
        USB): <a href="http://www.linuxdoc.org/HOWTO/Printing-HOWTO.html" target="_top">http://www.linuxdoc.org/HOWTO/Printing-HOWTO.html</a>
-       y las páginas <tt>man</tt> de <tt>lpd</tt>,
+       y las pÃ¡ginas <tt>man</tt> de <tt>lpd</tt>,
        <tt>lpr</tt> y <tt>printcap</tt>.  Dado que
-       <tt>lpd</tt> es un sistema de impresión común en
-       Linux y otros sistemas Unix, también puede consultar sobre este
+       <tt>lpd</tt> es un sistema de impresiÃ³n comÃºn en
+       Linux y otros sistemas Unix, tambiÃ©n puede consultar sobre este
        tema en el manual de FreeBSD: <a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/printing.html" target="_top">http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/printing.html</a>
-       </p></li><li><p>Los discos SCSI en general son más veloces que los discos
-       IDE, aunque son más costosos.  Puede conocer más sobre
-       características que afectan la velocidad de un disco en:
+       </p></li><li><p>Los discos SCSI en general son mÃ¡s veloces que los discos
+       IDE, aunque son mÃ¡s costosos.  Puede conocer mÃ¡s sobre
+       caracterÃ­sticas que afectan la velocidad de un disco en:
 
        <a href="http://www4.tomshardware.com/storage/97q3/970728/index.html" target="_top">  http://www4.tomshardware.com/storage/97q3/970728/index.html</a>
-      </p></li><li><p>Puede consultarse información completa sobre fdutils (y
+      </p></li><li><p>Puede consultarse informaciÃ³n completa sobre fdutils (y
        superformat) con <b>man superformat</b>,
        <b>info fdutils</b> o en Internet en: <a href="http://www.tux.org/pub/knaff/fdutils/Fdutils.html" target="_top">http://www.tux.org/pub/knaff/fdutils/Fdutils.html</a>
-       La información completa sobre <b>mtools</b> con
+       La informaciÃ³n completa sobre <b>mtools</b> con
        <b>info mtools</b> o en Internet en: <a href="http://mtools.linux.lu/mtools.html#SEC1" target="_top">http://mtools.linux.lu/mtools.html#SEC1</a>
-      </p></li><li><p>Para conocer más sobre quemadoras de CD y su configuración
+      </p></li><li><p>Para conocer mÃ¡s sobre quemadoras de CD y su configuraciÃ³n
        en Linux puede consultar El <i>CD-Writing
        HOWTO</i> que debe estar en su computador en
        <tt>/usr/share/doc/HOWTO/en-txt/CD-Writing-HOWTO.txt.gz</tt>,
        o en Internet en <a href="http://www.linuxdoc.org/HOWTO/CD-Writing-HOWTO.html" target="_top">http://www.linuxdoc.org/HOWTO/CD-Writing-HOWTO.html</a>
-      </p></li><li><p>Puede consultar más sobre CD-ROMs en Linux en las fuentes
+      </p></li><li><p>Puede consultar mÃ¡s sobre CD-ROMs en Linux en las fuentes
        del kernel, los archivos del directorio Documention/cdrom.
 
-       </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="./warning.png"></td><th>Aviso</th></tr><tr><td colspan="2" align="left" valign="top"><p>Esa documentación ha sido escrita en diversos momentos
+       </p><div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;"><table border="0" summary="Warning"><tr><td rowspan="2" align="center" valign="top" width="25"><img alt="[Warning]" src="./warning.png"></td><th>Aviso</th></tr><tr><td colspan="2" align="left" valign="top"><p>Esa documentaciÃ³n ha sido escrita en diversos momentos
 	 del desarrollo del kernel e infortunadamente no siempre ha
-	 sido actualizada.  La distribución Debian incluye soporte
-	 como módulos para todos los controladores de CD-ROM, no debe
+	 sido actualizada.  La distribuciÃ³n Debian incluye soporte
+	 como mÃ³dulos para todos los controladores de CD-ROM, no debe
 	 ser necesario recompilar el kernel (excepto para algunos
-	 módulos que no pueden ser configurados desde el arranque ni
-	 con parámetros para <b>insmod</b>).  Los
-	 dispositivos para todos estos módulos son creados
-	 automáticamente durante la instalación de Debian.  También
+	 mÃ³dulos que no pueden ser configurados desde el arranque ni
+	 con parÃ¡metros para <b>insmod</b>).  Los
+	 dispositivos para todos estos mÃ³dulos son creados
+	 automÃ¡ticamente durante la instalaciÃ³n de Debian.  TambiÃ©n
 	 puede consultar <i>CDROM-HOWTO</i> en su sistema
 	 <tt>/usr/share/doc/HOWTO/en-txt/CDROM-HOWT.gz</tt>
 	 o en Internet: <a href="http://www.tldp.org/HOWTO/CDROM-HOWTO/index.html" target="_top">http://www.tldp.org/HOWTO/CDROM-HOWTO/index.html</a>.</p></td></tr></table></div><p>
-      </p></li><li><p>Encontrará más información para configurar una tarjeta de
+      </p></li><li><p>EncontrarÃ¡ mÃ¡s informaciÃ³n para configurar una tarjeta de
        sonido en el <i>Sound-HOWTO</i>, disponible
        localmente en
        <tt>/usr/share/doc/HOWTO/en-text/Sound-HOWTO.gz</tt>
@@ -1964,11 +1964,11 @@ sox -r 11025 -s -w voz.raw voz.wav
        para emplear su tarjeta de sonido en el Sound-Playing-HOWTO:
        <tt>/usr/share/doc/HOWTO/en-text/Sound-Playing-HOWTO.gz</tt>
        o en Internet: <a href="http://www.linuxdoc.org/HOWTO/Sound-Playing-HOWTO.html" target="_top">http://www.linuxdoc.org/HOWTO/Sound-Playing-HOWTO.html</a>.
-       Si desea conocer más sobre los dispositivos de sonido
+       Si desea conocer mÃ¡s sobre los dispositivos de sonido
        (<tt>/dev/dsp</tt>, <tt>/dev/mixer</tt>) y como programarlo
-       puede consultar la guía de programación del Open Sound System
+       puede consultar la guÃ­a de programaciÃ³n del Open Sound System
        disponible en: <a href="http://www.opensound.com/pguide/index.html" target="_top">http://www.opensound.com/pguide/index.html</a>
-      </p></li><li><p>Si necesita información adicional para configurar el
+      </p></li><li><p>Si necesita informaciÃ³n adicional para configurar el
        sistema X-Window, puede consultar el FAQ de XFree86 disponible
        en <a href="http://www.xfree86.org/FAQ/" target="_top">http://www.xfree86.org/FAQ/</a>, o las
        secciones 5.3 a 5.7 de &quot;<i>Linux Installation and
@@ -1976,94 +1976,94 @@ sox -r 11025 -s -w voz.raw voz.wav
        Puede consultar un glosario corto sobre terminos relacionados
        con monitores y tarjetas graficadoras en: <a href="http://www.algonet.se/~lear/modes/glossary.html#freq" target="_top">http://www.algonet.se/~lear/modes/glossary.html#freq</a>
       </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-dispositivos-y-linux"></a>4.3. Ejercicios: Dispositivos y Linux</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id451545"></a><a name="hardware.conf.1"></a><b>4.3.1. </b></td><td align="left" valign="top"><p>
-	  Continue el ejercicio 1 de la sección
+	  Continue el ejercicio 1 de la secciÃ³n
 	  anterior, completando el script para que reporte:
       </p><div class="itemizedlist"><ul type="disc"><li><p>Marca y referencia de cada disco duro. Capacidad de cada
-	 uno y forma como cada uno está particionado.  (Ayuda:
+	 uno y forma como cada uno estÃ¡ particionado.  (Ayuda:
 	 <b>fdisk -l</b>) 
-	</p></li><li><p>Marca y referencia de la tarjeta de video, así como el
+	</p></li><li><p>Marca y referencia de la tarjeta de video, asÃ­ como el
 	 nombre del controlador que Linux emplea. (Ayuda:
 	 <tt>/etc/X11/XF86Config</tt>).
-	</p></li><li><p>Marca y referencia del monitor, así como los parámetros
-	 de configuración del mismo para X-Window. (Ayuda:
+	</p></li><li><p>Marca y referencia del monitor, asÃ­ como los parÃ¡metros
+	 de configuraciÃ³n del mismo para X-Window. (Ayuda:
 	 <tt>/etc/X11/XF86Config</tt>).
-	 </p></li><li><p>Marca del ratón, cantidad de botones, tipo de puerto al
-	 que está conectado y recurso que emplea (puerto COM en caso
+	 </p></li><li><p>Marca del ratÃ³n, cantidad de botones, tipo de puerto al
+	 que estÃ¡ conectado y recurso que emplea (puerto COM en caso
 	 de que sea serial).  
 	</p></li><li><p>En caso de que tenga tarjeta de sonido, marca y
 	 referencia de la misma junto con los recursos de hardware que
-	 emplea (IRQs, DMA, puertos). Módulo que usa y parámetros que
-	 recibe el módulo.  
-	</p></li><li><p>Si el computador tiene modem, marca y referencia, así
+	 emplea (IRQs, DMA, puertos). MÃ³dulo que usa y parÃ¡metros que
+	 recibe el mÃ³dulo.  
+	</p></li><li><p>Si el computador tiene modem, marca y referencia, asÃ­
 	 como recursos de hardware que emplea (puerto serial, IRQ).
-	 Si el modem requiere controladores especiales, también nombre
-	 y los parámetros de los mismos.  
+	 Si el modem requiere controladores especiales, tambiÃ©n nombre
+	 y los parÃ¡metros de los mismos.  
 	</p></li><li><p>Marca y referencia de otros dispositivos externos que
-	 estén conectados al computador, así como controladores y
-	 parámetros de configuración.  (e.g. de scanners, unidades
-	 para quemar CD-ROM, camaras, etc.).  </p></li><li><p>Si el computador está conectado a una red, también es
+	 estÃ©n conectados al computador, asÃ­ como controladores y
+	 parÃ¡metros de configuraciÃ³n.  (e.g. de scanners, unidades
+	 para quemar CD-ROM, camaras, etc.).  </p></li><li><p>Si el computador estÃ¡ conectado a una red, tambiÃ©n es
 	 importante que el script extraiga:
-	 </p><div class="itemizedlist"><ul type="circle"><li><p>Marca y referencia de la tarjeta de red así
+	 </p><div class="itemizedlist"><ul type="circle"><li><p>Marca y referencia de la tarjeta de red asÃ­
 	   como los recursos de hardware que emplee (IRQ, DMA,
 	   puertos).  De ser necesario (si el kernel no lo configura
-	   automáticamente), el nombre del controlador y los
-	   parámetros que requiera.
-	   </p></li><li><p>Dirección IP del computador y nombre.
-	  </p></li><li><p>Dirección del servidor DNS, del gateway y mascara de red.
+	   automÃ¡ticamente), el nombre del controlador y los
+	   parÃ¡metros que requiera.
+	   </p></li><li><p>DirecciÃ³n IP del computador y nombre.
+	  </p></li><li><p>DirecciÃ³n del servidor DNS, del gateway y mascara de red.
 	  </p></li></ul></div></li></ul></div><p>
       
 	</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id451987"></a><a name="hardware.linux.1"></a><b>4.3.2. </b></td><td align="left" valign="top"><p>
-	    Además del algo de información en estas guías y del Hardware-HOWTO, 
+	    AdemÃ¡s del algo de informaciÃ³n en estas guÃ­as y del Hardware-HOWTO, 
 	    hay algunas bases de datos de hardware soportado por Linux.  
-	    Busque alguna(s) y comparta la información con sus compañeros.  
+	    Busque alguna(s) y comparta la informaciÃ³n con sus compaÃ±eros.  
 	</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id452022"></a><a name="hardware.linux.2"></a><b>4.3.3. </b></td><td align="left" valign="top"><p>
       Opcional: busque controladores para Linux de algunos
        componentes de su computador en cada casa que hace el hardware,
-       en caso de que no encuentre, es recomendable que les envíe un
-       correo preguntando por el controlador específico.  Si ellos no
-       tienen el controlador, tendrán la oportunidad de enterarse de
-       la necesidad del controlador para el hardware que usted está
-       utilizando, y los instará a crearlo o liberarlo al público.
-	</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id437041" href="#id437041">153</a>] </sup>Los teclados no USB emplean la línea IRQ 1, y las
+       en caso de que no encuentre, es recomendable que les envÃ­e un
+       correo preguntando por el controlador especÃ­fico.  Si ellos no
+       tienen el controlador, tendrÃ¡n la oportunidad de enterarse de
+       la necesidad del controlador para el hardware que usted estÃ¡
+       utilizando, y los instarÃ¡ a crearlo o liberarlo al pÃºblico.
+	</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id437041" href="#id437041">153</a>] </sup>Los teclados no USB emplean la lÃ­nea IRQ 1, y las
 	direcciones de E/S 0x60 a 0x6F.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id437079" href="#id437079">154</a>] </sup>por ejemplo al oprimir
 	<b>s</b> se produce 0x1f y al soltarlo 0x9f, puede ver
 	estas secuencias con <b>showkey
 	 -s</b>.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id437257" href="#id437257">155</a>] </sup>Cada consola virtual puede tener un modo que controle la
-	traducción de acuerdo a la aplicación que corra: por ejemplo
+	traducciÃ³n de acuerdo a la aplicaciÃ³n que corra: por ejemplo
 	bash --modo ASCII o Unicode--- o X-Window ---modo Raw--- o
 	showkeys ---modo keycode).
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id437299" href="#id437299">156</a>] </sup>La asociación entre scancodes y keycodes puede verse con
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id437299" href="#id437299">156</a>] </sup>La asociaciÃ³n entre scancodes y keycodes puede verse con
 	<b>getkeycodes</b> y puede cambiarse con
 	<b>setkeycode</b>.
       </p></div><div class="footnote"><p><sup>[<a name="ftn.id437870" href="#id437870">157</a>] </sup>Pueden especificarse, combinaciones de teclas bien con
-	nuevas líneas iniciadas con modificadores (e.g <tt>shift
+	nuevas lÃ­neas iniciadas con modificadores (e.g <tt>shift
 	keycode 39=+Ntilde</tt> o bien en otras columnas de la
-	definición sin modificadores (i.e iniciada con
-	<b>keycode</b>), el número de columna corresponde
+	definiciÃ³n sin modificadores (i.e iniciada con
+	<b>keycode</b>), el nÃºmero de columna corresponde
 	a la suma de las siguientes posibles teclas modificadoras:
 	Shift 1, AltGr 2, Control 4, Alt 8, ShiftL 16, ShiftR 32,
 	CtrlL 64, CtrlR 128. Pueden omitirse algunas de las 256
-	columnas, con una línea que indique que columnas se
+	columnas, con una lÃ­nea que indique que columnas se
 	especifican como <tt>keymaps
 	0-2,4-5,8,12</tt>.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id437952" href="#id437952">158</a>] </sup>Unicode es un estándar que codifica con números de 16
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id437952" href="#id437952">158</a>] </sup>Unicode es un estÃ¡ndar que codifica con nÃºmeros de 16
 	bits los caracteres de diversos idiomas.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id438124" href="#id438124">159</a>] </sup>En realidad establecerá modo UTF-8, UTF-8 es una
-	codificación para Unicode que resulta compatible con ASCII
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id438124" href="#id438124">159</a>] </sup>En realidad establecerÃ¡ modo UTF-8, UTF-8 es una
+	codificaciÃ³n para Unicode que resulta compatible con ASCII
 	para los primeros 256 caracteres.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id438444" href="#id438444">160</a>] </sup>Si un ratón serial maneja también el protocolo PS/2,
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id438444" href="#id438444">160</a>] </sup>Si un ratÃ³n serial maneja tambiÃ©n el protocolo PS/2,
 	puede emplearse un conversor (por ejemplo de D-SUB 9 a
 	Mini-DIN: DTR+RTS+RI,4+7+9 - 4,+5V; CD,1 - 1,Data; TXD+GND,
 	3+5 - 3, Gnd; DSR,6 - 5, Clock.
 	http://www.hardwarebook.net/adapter/serial/mouseserialps2.html
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id438451" href="#id438451">161</a>] </sup>Si un mouse PS/2 maneja también el
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id438451" href="#id438451">161</a>] </sup>Si un mouse PS/2 maneja tambiÃ©n el
 	protocolo serial, puede emplear un conversor de PS/2 a Serial:
 	GND, 3 - 5, GND, RxD,2-2,RxD; TxD,6-3,TxD; +5V,4-7,RTS.
 	http://www.pchardware.org/HWB/ad_MousePs2Serial.html
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id439200" href="#id439200">162</a>] </sup>Si se inició con el parámetro <tt>-R</tt>,
-	 gpm retransmite la información al
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id439200" href="#id439200">162</a>] </sup>Si se iniciÃ³ con el parÃ¡metro <tt>-R</tt>,
+	 gpm retransmite la informaciÃ³n al
 	 dispositivo <tt>/dev/gpmdata</tt> (con el protocolo
 	 de ratones Microsoft) lo cual puede ser util para emplear gpm
 	 simultaneamente con otros programas (como
@@ -2075,29 +2075,29 @@ sox -r 11025 -s -w voz.raw voz.wav
 	50Hz y 135Hz ---en televisores en Colombia es
 	60Hz.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id440605" href="#id440605">165</a>] </sup>Direct Rendering Interface/Direct
-      Rendering Manager</p></div><div class="footnote"><p><sup>[<a name="ftn.id441053" href="#id441053">166</a>] </sup>Para atender trabajos de impresión hay disponibles varios
-	sistemas: lpd, LPRng, CUPS, QPD.  El más popular en sistemas
+      Rendering Manager</p></div><div class="footnote"><p><sup>[<a name="ftn.id441053" href="#id441053">166</a>] </sup>Para atender trabajos de impresiÃ³n hay disponibles varios
+	sistemas: lpd, LPRng, CUPS, QPD.  El mÃ¡s popular en sistemas
 	Unix es <b>lpd</b> que permite a varios
 	computadores en red compartir una misma
-	impresora.</p></div><div class="footnote"><p><sup>[<a name="ftn.id442065" href="#id442065">167</a>] </sup>cilindros: del inglés
+	impresora.</p></div><div class="footnote"><p><sup>[<a name="ftn.id442065" href="#id442065">167</a>] </sup>cilindros: del inglÃ©s
 	<i>cylinder</i>.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id442077" href="#id442077">168</a>] </sup>cabeza: del inglés <i>head</i>.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id442119" href="#id442119">169</a>] </sup>El kernel también cuenta con controladores para tarjetas
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id442077" href="#id442077">168</a>] </sup>cabeza: del inglÃ©s <i>head</i>.
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id442119" href="#id442119">169</a>] </sup>El kernel tambiÃ©n cuenta con controladores para tarjetas
 	controladoras para discos duros XT
-	(<tt>CONFIG_BLK_DEV_XD</tt>, módulo
+	(<tt>CONFIG_BLK_DEV_XD</tt>, mÃ³dulo
 	<tt>xd</tt>) y para discos ESDI de PS/2
-	(<tt>CONFIG_BLK_DEV_PS2</tt>, módulo
-	<tt>ps2esdi</tt>), así como 2 discos con interfaces
+	(<tt>CONFIG_BLK_DEV_PS2</tt>, mÃ³dulo
+	<tt>ps2esdi</tt>), asÃ­ como 2 discos con interfaces
 	defectuosas (cuyos problemas soluciona): CMD-640 y
 	RZ1000.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id443073" href="#id443073">170</a>] </sup>Memoria virtual es un espacio en disco que puede
-	 emplearse para mantener información que típicamente está en
-	 memoria RAM, dotando de más memoria RAM un computador a
-	 cambio de una disminución en el desempeño ---el acceso a un
-	 disco duro (ms) es mucho más demorado que el acceso a memoria
+	 emplearse para mantener informaciÃ³n que tÃ­picamente estÃ¡ en
+	 memoria RAM, dotando de mÃ¡s memoria RAM un computador a
+	 cambio de una disminuciÃ³n en el desempeÃ±o ---el acceso a un
+	 disco duro (ms) es mucho mÃ¡s demorado que el acceso a memoria
 	 RAM (ns).</p></div><div class="footnote"><p><sup>[<a name="ftn.id443219" href="#id443219">171</a>] </sup>Otro programa para particionar discos, menos interactivo
 	 es <b>sfdisk</b>.
-	</p></div><div class="footnote"><p><sup>[<a name="ftn.id444017" href="#id444017">172</a>] </sup>De acuerdo a la documentación de
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id444017" href="#id444017">172</a>] </sup>De acuerdo a la documentaciÃ³n de
 	<tt>superformat</tt>, puede formatearse un disquete
 	de alta densidad a 1734K (83 cilindros, 21 sectores) con
 	<tt>superformat /dev/fd0 sect=21 cyl=83</tt> y a
@@ -2108,10 +2108,10 @@ sox -r 11025 -s -w voz.raw voz.wav
 	    <tt>/dev/sbpcd2</tt> y
 	    <tt>/dev/sbpcd3</tt>
 	   </p></div><div class="footnote"><p><sup>[<a name="ftn.id446738" href="#id446738">174</a>] </sup>Los controladores de ALSA
-      también pueden soportar OSS.</p></div><div class="footnote"><p><sup>[<a name="ftn.id447270" href="#id447270">175</a>] </sup>AC97 es un estándar para mezcla
-       análoga/digital.</p></div><div class="footnote"><p><sup>[<a name="ftn.id447875" href="#id447875">176</a>] </sup>Mensajes útiles para desarrolladores del
+      tambiÃ©n pueden soportar OSS.</p></div><div class="footnote"><p><sup>[<a name="ftn.id447270" href="#id447270">175</a>] </sup>AC97 es un estÃ¡ndar para mezcla
+       anÃ¡loga/digital.</p></div><div class="footnote"><p><sup>[<a name="ftn.id447875" href="#id447875">176</a>] </sup>Mensajes Ãºtiles para desarrolladores del
 	   controlador.
 	   </p></div><div class="footnote"><p><sup>[<a name="ftn.id448589" href="#id448589">177</a>] </sup>En <tt>Documentation/sound/mwave</tt>,
-	    hay documentación particular para IBM Mwave que permite
+	    hay documentaciÃ³n particular para IBM Mwave que permite
 	    usarlo, cargando primero el firmware desde DOS.
-	   </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="hardware-basico-y-linux.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="administracion-dos.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="instalacion-de-debian.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">3. Hardware básico y Linux </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 5. Instalación de Debian</td></tr></table></div></body></html>
+	   </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="hardware-basico-y-linux.html">Anterior</a>Â </td><td width="20%" align="center"><a accesskey="u" href="administracion-dos.html">Subir</a></td><td width="40%" align="right">Â <a accesskey="n" href="instalacion-de-debian.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">3. Hardware bÃ¡sico y LinuxÂ </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top">Â 5. InstalaciÃ³n de Debian</td></tr></table></div></body></html>

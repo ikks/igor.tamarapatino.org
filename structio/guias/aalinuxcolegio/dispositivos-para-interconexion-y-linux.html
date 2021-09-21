@@ -1,15 +1,15 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>2. Dispositivos para interconexión y Linux </title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-tres.html" title="Capítulo 6. Administración de una red con Linux"><link rel="previous" href="administracion-tres.html" title="Capítulo 6. Administración de una red con Linux"><link rel="next" href="direcciones-enrutamiento-y-transporte.html" title="3. Direcciones, enrutamiento y transporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Dispositivos para interconexión y Linux </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="administracion-tres.html">Anterior</a> </td><th width="60%" align="center">Capítulo 6. Administración de una red con Linux</th><td width="20%" align="right"> <a accesskey="n" href="direcciones-enrutamiento-y-transporte.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="dispositivos-para-interconexion-y-linux"></a>2. Dispositivos para interconexión y Linux </h2></div></div><p>Indicadores de Logro:
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>2. Dispositivos para interconexiÃ³n y Linux </title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-tres.html" title="CapÃ­tulo 6. AdministraciÃ³n de una red con Linux"><link rel="previous" href="administracion-tres.html" title="CapÃ­tulo 6. AdministraciÃ³n de una red con Linux"><link rel="next" href="direcciones-enrutamiento-y-transporte.html" title="3. Direcciones, enrutamiento y transporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">2. Dispositivos para interconexiÃ³n y Linux </th></tr><tr><td width="20%" align="left"><a accesskey="p" href="administracion-tres.html">Anterior</a>Â </td><th width="60%" align="center">CapÃ­tulo 6. AdministraciÃ³n de una red con Linux</th><td width="20%" align="right">Â <a accesskey="n" href="direcciones-enrutamiento-y-transporte.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="dispositivos-para-interconexion-y-linux"></a>2. Dispositivos para interconexiÃ³n y Linux </h2></div></div><p>Indicadores de Logro:
    </p><div class="itemizedlist"><ul type="disc"><li><p><a name="redbas.compra"></a>Puede configurar y comprar dispositivos para instalar una
       red Ethernet como la de la plataforma de referencia.
      </p></li><li><p><a name="redbas.loopback"></a>Puede configurar el
       <i>loopback</i> de un computador.
       </p></li><li><p><a name="redbas.tarjeta"></a>Puede instalar y configurar una tarjeta de red Ethernet junto con
       una interfaz de red.</p></li><li><p><a name="redbas.cablea"></a>Puede instalar cableado de una red Ethernet como la
-      especificada en la plataforma de referencia.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-dispositivos-para-interconexion-y-linux"></a>2.1. Lectura: Dispositivos para interconexión y Linux</h3></div></div><p>De acuerdo al uso hay diversos dispositivos que permiten
-     conectar computadores. Para el caso de redes pequeñas algunos
-     ejemplos son: </p><div class="variablelist"><dl><dt><span class="term">Modems</span></dt><dd><p>Permiten conectar dos computadores empleando una línea 
-	     telefónica.
+      especificada en la plataforma de referencia.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-dispositivos-para-interconexion-y-linux"></a>2.1. Lectura: Dispositivos para interconexiÃ³n y Linux</h3></div></div><p>De acuerdo al uso hay diversos dispositivos que permiten
+     conectar computadores. Para el caso de redes pequeÃ±as algunos
+     ejemplos son: </p><div class="variablelist"><dl><dt><span class="term">Modems</span></dt><dd><p>Permiten conectar dos computadores empleando una lÃ­nea 
+	     telefÃ³nica.
 	   </p><a class="indexterm" name="id460093"></a></dd><dt><span class="term">Cable serial</span></dt><dd><p>Permite conectar dos computadores por sus puertos
 	  seriales.</p><a class="indexterm" name="id460131"></a></dd><dt><span class="term">Cable Base10T</span></dt><dd><p>Consta de 8 cables internos trenzados en
 	 parejas (azul con azul/blanco, verde con verde/blanco,
@@ -25,89 +25,89 @@
 	 conectar varios computadores que tengan tarjetas Ethernet de
 	 10MB, cada uno en un puerto del concentrador. Normalmente los
 	 concentradores son repetidores que retransmiten por todos sus
-	 puertos la señal que llega por uno de ellos y detectan
+	 puertos la seÃ±al que llega por uno de ellos y detectan
 	 colisiones.  Hay modelos por ejemplo de 4, 8, 10 y 16
-	 puertos, algunos tienen un puerto más para conectar a otro
+	 puertos, algunos tienen un puerto mÃ¡s para conectar a otro
 	 concentrador.  </p><a class="indexterm" name="id460240"></a></dd></dl></div><p>
      Para operar dispositivos de red conectados a un computador con
      Linux, es necesario emplear el controlador apropiado y asociar el
-     dispositivo a una interfaz de red, que a su vez tendrá una
-     dirección IP.  Así por ejemplo a un modem se le puede asociar la
-     interfaz <tt>ppp0</tt> (o con otro número en lugar de
+     dispositivo a una interfaz de red, que a su vez tendrÃ¡ una
+     direcciÃ³n IP.  AsÃ­ por ejemplo a un modem se le puede asociar la
+     interfaz <tt>ppp0</tt> (o con otro nÃºmero en lugar de
      0) y a una tarjeta Ethernet se le puede asociar la interfaz
-     <tt>eth0</tt> (o con otro número en lugar de 0). Hay
-     además una interfaz que siempre debe estar presente:
-     <tt>lo</tt> (loopback) que representa una conexión con
+     <tt>eth0</tt> (o con otro nÃºmero en lugar de 0). Hay
+     ademÃ¡s una interfaz que siempre debe estar presente:
+     <tt>lo</tt> (loopback) que representa una conexiÃ³n con
      el mismo computador. Los nombres de las interfaces activas en un
      sistema Linux pueden consultarse con:
      <b>/sbin/ifconfig</b> o con <b>netstat
      -i</b>.</p><a class="indexterm" name="id460301"></a><a class="indexterm" name="id460486"></a><p>
-     En esta sección se presentan detalles de algunos dispositivos para
-     interconexión y su configuración. Hemos procurado dar especial
-     enfasis a los requeridos en una red local Ethernet.</p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="modem"></a>2.1.1. Modem</h4></div></div><p>Un modem permite modular información digital para
-      transmitirla por una línea telefónica. Infortunadamente la
-      tecnología de modems está en gran parte patentada y muchas
-      especificaciones son secretas, así que hay muchos modems que
+     En esta secciÃ³n se presentan detalles de algunos dispositivos para
+     interconexiÃ³n y su configuraciÃ³n. Hemos procurado dar especial
+     enfasis a los requeridos en una red local Ethernet.</p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="modem"></a>2.1.1. Modem</h4></div></div><p>Un modem permite modular informaciÃ³n digital para
+      transmitirla por una lÃ­nea telefÃ³nica. Infortunadamente la
+      tecnologÃ­a de modems estÃ¡ en gran parte patentada y muchas
+      especificaciones son secretas, asÃ­ que hay muchos modems que
       <span class="emphasis"><em>NO</em></span> son soportados en Linux.  Por esto, el
-      paso más difícil es lograr que su modem sea reconocido y
+      paso mÃ¡s difÃ­cil es lograr que su modem sea reconocido y
       manejado por Linux.
-      </p><p>No tendrá problemas con modems que puedan configurarse con
-      jumpers y que no sean especifícos para Windows
+      </p><p>No tendrÃ¡ problemas con modems que puedan configurarse con
+      jumpers y que no sean especifÃ­cos para Windows
       (<i>winmodems</i>), tal es el caso de
       modems externos que se conectan a los puertos seriales o modems
-      que se conectan directamente al bus, pero que sean genéricos.
-      Mientras que los primeros emplean la configuración estándar de
+      que se conectan directamente al bus, pero que sean genÃ©ricos.
+      Mientras que los primeros emplean la configuraciÃ³n estÃ¡ndar de
       los puertos seriales, los segundos normalmente pueden
       configurarse con jumpers o por software, para emplear una
-      dirección base y un puerto libres.
-     </p><p>Aún si tiene un winmodem es posible que exista un controlador para
+      direcciÃ³n base y un puerto libres.
+     </p><p>AÃºn si tiene un winmodem es posible que exista un controlador para
       Linux, puede consultar una base de datos en: <a href="http://www.idir.net/~gromitkc/winmodem.html#drivers" target="_top">http://www.idir.net/~gromitkc/winmodem.html#drivers</a>
       o puede buscar en el sitio web del fabricante.
 
 
      </p><p>Para emplear el modem desde Linux, debe haber un archivo
       para dispositivos en el directorio <tt>dev</tt>, que
-      permita usarlo.  Comunmente un modem quedará asociado a uno
+      permita usarlo.  Comunmente un modem quedarÃ¡ asociado a uno
       de los dispositivo seriales: 
       <tt>/dev/ttyS0</tt>,
       <tt>/dev/ttyS1</tt>,
       <tt>/dev/ttyS2</tt> o
       <tt>/dev/ttyS3</tt>.
-      Tal dispositivo serial empleará puertos y direcciones base, 
+      Tal dispositivo serial emplearÃ¡ puertos y direcciones base, 
       que tienen valores por defecto o que en caso de requerirse
       pueden modificarse con <b>setserial</b> (ver
       <a href="hardware-basico-y-linux.html#puertos-y-dispositivos-seriales" title="3.1.9. Puertos y dispositivos seriales">Puertos y
       dispositivos seriales</a>).
-  </p><a class="indexterm" name="id460691"></a><p>Una vez haya configurado el hardware de forma que esté
+  </p><a class="indexterm" name="id460691"></a><p>Una vez haya configurado el hardware de forma que estÃ©
       asociado a un dispositivo serial, puede probar que este
-      funcionando.  Una forma fácil de hacerlo es enviando la cadena
+      funcionando.  Una forma fÃ¡cil de hacerlo es enviando la cadena
       <tt>ATA</tt> al dispositivo del modem Por ejemplo si
-      configuró su modem como primer puerto serial, intente:
+      configurÃ³ su modem como primer puerto serial, intente:
 </p><pre class="screen">
 echo &quot;ATA&quot; &gt; /dev/ttyS0 </pre><p>
-     al hacerlo debe escuchar la línea telefónica en el parlante del
-     computador o en el del modem (claro está debe tener conectada la
-     línea telefónica al modem)
+     al hacerlo debe escuchar la lÃ­nea telefÃ³nica en el parlante del
+     computador o en el del modem (claro estÃ¡ debe tener conectada la
+     lÃ­nea telefÃ³nica al modem)
       <sup>[<a name="id460811" href="#ftn.id460811">200</a>]</sup></p><a class="indexterm" name="id460825"></a><p>
-      También puede emplear un programa como
+      TambiÃ©n puede emplear un programa como
       minicom para enviar comandos a su
       modem y ver las respuesta que el mismo genera (por ejemplo al
       enviar la cadena <tt>ATZ</tt> debe responder
       <tt>OK</tt>).
-     </p><a class="indexterm" name="id460875"></a><a class="indexterm" name="id460980"></a><p>Cuando haya determinado que su modem está operando
+     </p><a class="indexterm" name="id460875"></a><a class="indexterm" name="id460980"></a><p>Cuando haya determinado que su modem estÃ¡ operando
       correctamente en un dispositivo puede emplear
       minicom para conectarse a un
-      BBS o al computador de algún amigo.  Para
+      BBS o al computador de algÃºn amigo.  Para
       conectarse a Internet debe configurar el protocolo
-      PPP y dar información sobre su provedor de
+      PPP y dar informaciÃ³n sobre su provedor de
       acceso a Internet.  En Debian puede hacer estos pasos con los
       programas <b>pppconfig</b> o con
       <b>wvdial</b>.  Con
-      <b>pppconfig</b> podrá configurar más de un
+      <b>pppconfig</b> podrÃ¡ configurar mÃ¡s de un
       provedor y asignarle a cada uno un nombre, tal nombre puede
-      usarlo posteriormente para iniciar una conexión con el programa
+      usarlo posteriormente para iniciar una conexiÃ³n con el programa
       <b>pon</b>.
-     </p><p>Hay también algunos Modems USB
+     </p><p>Hay tambiÃ©n algunos Modems USB
       soportados (que cumplen ACM
       --<i>Abstract Control Model</i>): 3Com
       OfficeConnect 56k, 3Com Voice FaxModem Pro, 3Com Sportster
@@ -149,8 +149,8 @@ echo &quot;ATA&quot; &gt; /dev/ttyS0 </pre><p>
 	 (znet),</p></li><li><p>Puerto paralelo: AT-LAN-TEC/RealTek (atp), D-Link DE600
 	(de600), D-Link DE620 (de620)
 	</p></li><li><p>Tarjetas PCMCIA: Una gran variedad de tarjetas Ethernet
-	 PCMCIA (para portátiles) es soportada.  Los controladores
-	 están incluidos en el paquete <tt>pcmcia-cs</tt>,
+	 PCMCIA (para portÃ¡tiles) es soportada.  Los controladores
+	 estÃ¡n incluidos en el paquete <tt>pcmcia-cs</tt>,
 	 una vez instalado puede consultarse en:
 	 <tt>/usr/share/doc/pcmcia-cs/SUPPORTED.CARDS.gz</tt>
        </p></li><li><p>USB. Kawasaki USB-ethenet controller (kaweth), ADMtek
@@ -160,91 +160,91 @@ echo &quot;ATA&quot; &gt; /dev/ttyS0 </pre><p>
 	 USB100TX, USB10TX, LANEED Ethernet LD-USB/TX, SMC 202,
 	 SOHOware NUB Ethernet (pegasus).
 	</p></li><li><p>PLUSB Puede consultarse un listado por tarjetas y
-	 fabricantes, así como un descripción detallada del estado de
+	 fabricantes, asÃ­ como un descripciÃ³n detallada del estado de
 	 cada una en <i>Ethernet-HOWTO</i>.
        </p></li><li><p>Otros dispositivos de comunicaciones, Prolific PL-2302
 	conector USB-USB (plusb), red punto a punto con ancho de
 	banda de 5 Mbits/s.
        </p></li></ul></div><p>
      </p><p>En el sitio del principal desarrollador de controladores
-      para tarjetas de red encontrará programas e información útil:
+      para tarjetas de red encontrarÃ¡ programas e informaciÃ³n Ãºtil:
       <a href="http://www.scyld.com/network/" target="_top">http://www.scyld.com/network/</a>
      </p><p>Varios controladores compilados junto con el kernel
       pueden configurarse desde el cargador de arranque con
-      el parámetro <tt>ether=12,0x300,eth0</tt> remplazando
-      12 por la IRQ, 0x300 por la dirección base y
-      <tt>eth0</tt> por la interfaz.  Entre la dirección
-      base y la interfaz pueden pasarse uno o dos parámetros cuyo
+      el parÃ¡metro <tt>ether=12,0x300,eth0</tt> remplazando
+      12 por la IRQ, 0x300 por la direcciÃ³n base y
+      <tt>eth0</tt> por la interfaz.  Entre la direcciÃ³n
+      base y la interfaz pueden pasarse uno o dos parÃ¡metros cuyo
       significado depende del controlador, el primero es usado por
       tarjetas WD80x3 para establecer comienzo de memoria compartida,
-      otros lo usan para establecer nível de mensajes de depuración y
+      otros lo usan para establecer nÃ­vel de mensajes de depuraciÃ³n y
       el controldor <tt>lance</tt> lo usa para especificar canal 
       DMA; el segundo es usado por el controlador 3c503 (0 transreceptor
       interno, 1 - AUI externo) y por e2100 para escoger medio de
-      sálida.
-     </p><p>Cómo módulos estos controladores reciben diversos
-      parámetros los más comunes para tarjetas ISA
-      son <tt>irq=<i><tt>número</tt></i></tt> y
+      sÃ¡lida.
+     </p><p>CÃ³mo mÃ³dulos estos controladores reciben diversos
+      parÃ¡metros los mÃ¡s comunes para tarjetas ISA
+      son <tt>irq=<i><tt>nÃºmero</tt></i></tt> y
       <tt>io=<i><tt>puerto base</tt></i></tt>. Una
-      lista de parámetros de algunos módulo está en las fuentes del
+      lista de parÃ¡metros de algunos mÃ³dulo estÃ¡ en las fuentes del
       kernel en
       <tt>Documention/networking/net-modles.txt</tt>.
      </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="tarjeta-ethernet-e-interfaz-de-red"></a>2.1.3. Tarjeta Ethernet e interfaz de red</h4></div></div><p>
       Para emplear una tarjeta de red Ethernet en Linux para conectarse
       a una LAN debe:
-     </p><div class="orderedlist"><ol type="1"><li><p>Instalarla físicamente en el computador.
+     </p><div class="orderedlist"><ol type="1"><li><p>Instalarla fÃ­sicamente en el computador.
       </p></li><li><p>Lograr que el kernel pueda comunicarse con la tarjeta,
 	empleando el controlador apropiado
-      </p></li><li><p>Configurar una interfaz de red que servirá como
-	abstracción de la tarjeta.
-       </p></li></ol></div><p>El primer paso no tendrá inconvenientes mientras manipule
+      </p></li><li><p>Configurar una interfaz de red que servirÃ¡ como
+	abstracciÃ³n de la tarjeta.
+       </p></li></ol></div><p>El primer paso no tendrÃ¡ inconvenientes mientras manipule
       con cuidado el hardware y en el caso de tarjetas
       ISA si no emplea el mismos recurso para dos
-      dispositivos (ver <a href="hardware-basico-y-linux.html" title="3. Hardware básico y Linux">Hardware básico y
-      Linux</a>). Puede serle de útilidad la información
-      sobre configuración con jumpers de tarjetas Ethernet disponible
+      dispositivos (ver <a href="hardware-basico-y-linux.html" title="3. Hardware bÃ¡sico y Linux">Hardware bÃ¡sico y
+      Linux</a>). Puede serle de Ãºtilidad la informaciÃ³n
+      sobre configuraciÃ³n con jumpers de tarjetas Ethernet disponible
       en: <a href="http://www.slug.org.au/NIC/" target="_top">http://www.slug.org.au/NIC/</a>
      </p><p>El segundo paso requiere cargar el controlador apropiado
-      para su tarjeta, para esto puede consultar la sección anterior
+      para su tarjeta, para esto puede consultar la secciÃ³n anterior
       (ver <a href="dispositivos-para-interconexion-y-linux.html#tarjeta-ethernet" title="2.1.2. Tarjeta Ethernet">Tarjeta Ethernet</a>) o
       emplear <b>modconf</b> o examinar los controladores
       disponibles para tarjetas de red en
       <tt>/usr/lib/&lt;version_de_su_kernel&gt;/modules/net</tt>.
       Puede que tenga que probar con varios y con diversos parametros
-      (no necesita reiniciar después de cada intento, sólo descargar
-      el módulo que haya cargado).  Para esto le serán de utilidad los
-      programas para administrar módulos (ver <a href="kernel-y-modulos.html#modulos" title="2.1.1. Módulos">Módulos</a>).  Si no encuentra un
+      (no necesita reiniciar despuÃ©s de cada intento, sÃ³lo descargar
+      el mÃ³dulo que haya cargado).  Para esto le serÃ¡n de utilidad los
+      programas para administrar mÃ³dulos (ver <a href="kernel-y-modulos.html#modulos" title="2.1.1. MÃ³dulos">MÃ³dulos</a>).  Si no encuentra un
       controlador apropiado para su tarjeta (o el chip que esta use),
-      puede intentar con los controladores genéricos
+      puede intentar con los controladores genÃ©ricos
       <tt>ne</tt> (si su tarjeta es ISA) o
       <tt>ne2k-pci</tt> (si su tarjeta es PCI).
-     </p><a class="indexterm" name="id461672"></a><a class="indexterm" name="id461699"></a><p>Cuando haya configurado el controlador, podrá activar una
+     </p><a class="indexterm" name="id461672"></a><a class="indexterm" name="id461699"></a><p>Cuando haya configurado el controlador, podrÃ¡ activar una
       interfaz de red.  El kernel puede manejar varias interfaces
       simultaneamente, para ver la lista emplee el comando
       <b>/sbin/ifconfig</b> o <b>netstat
-      -i</b>.  Al emplearlo, debe ver al menos la interfaz más
+      -i</b>.  Al emplearlo, debe ver al menos la interfaz mÃ¡s
       sencilla: <tt>lo</tt> que representa una
-      conexión a su propio computador empleando como dirección
+      conexiÃ³n a su propio computador empleando como direcciÃ³n
       IP: 127.0.0.1 y normalmente configurada en
       <tt>/etc/hosts</tt> con el nombre
       <tt>localhost</tt>.
      </p><a class="indexterm" name="id461766"></a><p>Los nombres de las interfaces de red dependen del protocolo
-      que soporte el dispositivo que empleará, para el caso de
+      que soporte el dispositivo que emplearÃ¡, para el caso de
       ethernet los nombres son <tt>eth0</tt> para la primera
-      tarjeta, <tt>eth1</tt> para la segunda y así
-      sucesivamente (un computador puede tener más de una tarjeta de
+      tarjeta, <tt>eth1</tt> para la segunda y asÃ­
+      sucesivamente (un computador puede tener mÃ¡s de una tarjeta de
       red ethernet, aunque para nuestra plataforma cada computador
       requiere una sola).
     </p><a class="indexterm" name="id461811"></a><a class="indexterm" name="id461921"></a><p>Para activar o desactivar una interfaz de red en Debian
       puede emplear <b>ifconfig</b> con las opciones
       <b>up</b> y <b>down</b> respectivamente
-      junto con parametros del protocolo (dirección IP del computador,
+      junto con parametros del protocolo (direcciÃ³n IP del computador,
       mascara de red, compuerta).  Otra forma de hacer esto en Debian
-      (que además mantendrá la configuración después de reiniciar) es
+      (que ademÃ¡s mantendrÃ¡ la configuraciÃ³n despuÃ©s de reiniciar) es
       editando los parametros de las interfaces en el archivo
       <tt>/etc/network/interfaces</tt> y empleando los
       programas <b>/sbin/ifup</b> y
-      <b>/sbin/ifdown</b> que reciben como parámetro el
+      <b>/sbin/ifdown</b> que reciben como parÃ¡metro el
       nombre de la interfaz por activar o desactivar, por ejemplo:
 </p><pre class="programlisting">
 ifup eth0
@@ -252,7 +252,7 @@ ifup eth0
      </p><p>Su archivo <tt>/etc/network/interface</tt> debe
       tener datos como los siguientes (aunque cambiando los valores de
       <tt>address</tt>  y <tt>gateway</tt> de 
-      acuerdo al diseño de la red):
+      acuerdo al diseÃ±o de la red):
      </p><pre class="programlisting">
 # Interfaz loopback
 iface lo inet loopback
@@ -264,55 +264,55 @@ iface eth0 inet static
 	network 192.168.1.0
 	broadcast 192.168.1.255
 	gateway 192.168.1.1
-</pre><p>La línea <tt>iface eth0 inet static</tt> indica
-     que la interfaz <tt>eth0</tt> empleará el protocolo
-     TCP/IP4 (<tt>inet</tt>) con una dirección
-     IP estática
+</pre><p>La lÃ­nea <tt>iface eth0 inet static</tt> indica
+     que la interfaz <tt>eth0</tt> emplearÃ¡ el protocolo
+     TCP/IP4 (<tt>inet</tt>) con una direcciÃ³n
+     IP estÃ¡tica
      <sup>[<a name="id462209" href="#ftn.id462209">202</a>]</sup>.
-     </p><p>Aunque comúnmente cada tarjeta de red tiene asociado una
-      sóla interfaz de red y una sóla IP, en
-      algunas circunstancias puede requerir más.  Una segunda interfaz
+     </p><p>Aunque comÃºnmente cada tarjeta de red tiene asociado una
+      sÃ³la interfaz de red y una sÃ³la IP, en
+      algunas circunstancias puede requerir mÃ¡s.  Una segunda interfaz
       para eth0 se puede configurar con el nombre
-      <tt>eth0:0</tt> que podrá configurar de forma análoga
+      <tt>eth0:0</tt> que podrÃ¡ configurar de forma anÃ¡loga
       a la primera en
-      <tt>/etc/network/interface</tt>.</p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="instalacion-de-una-red-local-ethernet"></a>2.1.4. Instalación de una red local Ethernet</h4></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id462257"></a>2.1.4.1. Planeación de la red</h5></div></div><p>
+      <tt>/etc/network/interface</tt>.</p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="instalacion-de-una-red-local-ethernet"></a>2.1.4. InstalaciÃ³n de una red local Ethernet</h4></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id462257"></a>2.1.4.1. PlaneaciÃ³n de la red</h5></div></div><p>
        De acuerdo a la plataforma de referencia S-Helio 1.1
-       necesitará un concentrador con suficientes puertos para todos
+       necesitarÃ¡ un concentrador con suficientes puertos para todos
        los computadores que tenga, cable 10BaseT con conectores RJ-45
-       y en cada computador deberá tener una tarjeta Ethernet (de
+       y en cada computador deberÃ¡ tener una tarjeta Ethernet (de
        10MB) como NE2000 o compatible con un puerto para un conector
        RJ-45 (ver <a href="dispositivos-para-interconexion-y-linux.html#tarjeta-ethernet" title="2.1.2. Tarjeta Ethernet">tarjeta-ethernet</a>)
-     .</p><a class="indexterm" name="id462274"></a><p>El espacio físico en el que esté la red será la primera
-       restricción que debe tener en cuenta.  Haga un plano de ese
+     .</p><a class="indexterm" name="id462274"></a><p>El espacio fÃ­sico en el que estÃ© la red serÃ¡ la primera
+       restricciÃ³n que debe tener en cuenta.  Haga un plano de ese
        espacio con las distancias a escala, ubique los computadores y
-       diseñe el recorrido de los cables al concentrador.  Hay varias
-       recomendaciones que puede tener en cuenta al diseñar el mapa:
-       </p><div class="itemizedlist"><ul type="disc"><li><p>Es aconsejable por estética y seguridad que los cables vayan
+       diseÃ±e el recorrido de los cables al concentrador.  Hay varias
+       recomendaciones que puede tener en cuenta al diseÃ±ar el mapa:
+       </p><div class="itemizedlist"><ul type="disc"><li><p>Es aconsejable por estÃ©tica y seguridad que los cables vayan
 	 por canaletas (aunque no es indispensable).  
-	</p></li><li><p>La longitud máxima de cada cable (para unir concentrador y
+	</p></li><li><p>La longitud mÃ¡xima de cada cable (para unir concentrador y
 	 computador) es de 100 m.
        </p><a class="indexterm" name="id462321"></a></li><li><p>Busque que los cables/canaletas vayan por las paredes
-	 del recinto y estén resguardadas (para evitar que alguien se
+	 del recinto y estÃ©n resguardadas (para evitar que alguien se
 	 tropiece).
-	</p></li></ul></div><p>En el mapa que haga también puede consignar las
+	</p></li></ul></div><p>En el mapa que haga tambiÃ©n puede consignar las
        direcciones IP que planee usar en cada
        computador.  Emplee direcciones asignadas para redes privadas,
        por ejemplo 192.168.1.1 al servidor y los clientes 192.168.1.2,
-       192.168.1.3 y así sucesivamente. Cómo compuerta emplee en todos
-       los clientes la dirección del servidor y como máscara de red
+       192.168.1.3 y asÃ­ sucesivamente. CÃ³mo compuerta emplee en todos
+       los clientes la direcciÃ³n del servidor y como mÃ¡scara de red
        emplee <tt>255.255.255.0</tt> (ver <a href="direcciones-enrutamiento-y-transporte.html" title="3. Direcciones, enrutamiento y transporte">Direcciones,
 	enrutamiento y transporte</a>).
-    </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="adquisicion-de-hardware"></a>2.1.4.2. Adquisición de Hardware</h5></div></div><p>
-       En el mercado encontrará diversos precios y sugerencias
+    </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="adquisicion-de-hardware"></a>2.1.4.2. AdquisiciÃ³n de Hardware</h5></div></div><p>
+       En el mercado encontrarÃ¡ diversos precios y sugerencias
        distintas a las que damos.  Por ejemplo es posible que pueda
        conformar una red con cable coaxial, sin necesidad de
-       concentrador a menor precio.  Ese esquema está cada vez en más
-       desuso, su instalación es un poco más difícil (debe poner
+       concentrador a menor precio.  Ese esquema estÃ¡ cada vez en mÃ¡s
+       desuso, su instalaciÃ³n es un poco mÃ¡s difÃ­cil (debe poner
        resistencias de 50ohmios a los extremos del cable) y no
-       escalará tan bien como concentradores en cascada.
-      </p><p>Para hacer la adquisición de Hardware tenga en cuenta:
+       escalarÃ¡ tan bien como concentradores en cascada.
+      </p><p>Para hacer la adquisiciÃ³n de Hardware tenga en cuenta:
       </p><div class="itemizedlist"><ul type="disc"><li><p>Los nombres de los componentes pueden variar de
-	 un almacén a otro, algunos sinónimos son:
+	 un almacÃ©n a otro, algunos sinÃ³nimos son:
 	 </p><div class="itemizedlist"><ul type="circle"><li><p>tarjeta ethernet, tarjeta compatible NE2000 con 
 	       conectores RJ45</p></li><li><p>concentrador o <i>hub</i> o
 	   <i>hub</i> repetidor</p></li><li><p>cable de pares trenzados, par trenzado, twisted pair,
@@ -321,8 +321,8 @@ iface eth0 inet static
 	    Pair</i>).</p></li></ul></div><p>
 	</p></li><li><p>Use el plano de red para determinar la longitud de cada
 	 cable, recuerde que todo computador debe tener un cable que
-	 lo una con el concentrador (compre un poco más de la longitud
-	 que midió pues al intentar ensamblar los conectores podría
+	 lo una con el concentrador (compre un poco mÃ¡s de la longitud
+	 que midiÃ³ pues al intentar ensamblar los conectores podrÃ­a
 	 perder algo de cable en cada intento).
 	</p></li><li><p>El concentrador debe tener suficientes puertos para todos
 	 los computadores (pueden ponerse varios concentradores en cascada).
@@ -333,12 +333,12 @@ iface eth0 inet static
        </p></li><li><p>Cada cable debe tener dos conectores RJ-45.  Uno para
 	 conectarlo al computador y el otro para conectarlo al
 	 concentrador.  (Compre varios conectores RJ-45 adicionales
-	 pues al intentar ensamblar podría perder algunos).
-       </p><a class="indexterm" name="id462722"></a></li></ul></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="instalacion-de-cables-y-concentrador"></a>2.1.4.3. Instalación</h5></div></div><p>
+	 pues al intentar ensamblar podrÃ­a perder algunos).
+       </p><a class="indexterm" name="id462722"></a></li></ul></div></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="instalacion-de-cables-y-concentrador"></a>2.1.4.3. InstalaciÃ³n</h5></div></div><p>
        Una vez tenga instaladas las tarjetas de red debe conectar los
        cables a tales tarjetas y al concentrador.  Como eventualmente
-       usted mismo hará los cables, en esta sección damos
-       instrucciones para que le resulte fácil el proceso.  Requerirá
+       usted mismo harÃ¡ los cables, en esta secciÃ³n damos
+       instrucciones para que le resulte fÃ¡cil el proceso.  RequerirÃ¡
        unas pinzas especiales
        <sup>[<a name="id462763" href="#ftn.id462763">203</a>]</sup> para conectores RJ-45 y un probador
        (<i>tester</i>) para comprobar que
@@ -353,27 +353,27 @@ iface eth0 inet static
 	</p></li><li><p>Empareje los 8 cablecitos antes de intentar ponerlos en el
 	  conector RJ-45. Pongalos en este orden: 1 naranja/blanco, 2
 	  naranja, 3 verde/blanco, 4 azul, 5 azul/blanco, 6 verde, 
-	 7 café/blanco, 8 café
+	 7 cafÃ©/blanco, 8 cafÃ©
 	 <sup>[<a name="id462889" href="#ftn.id462889">205</a>]</sup>.
 	</p></li><li><p>El conector RJ45 tiene varios canales, por cada uno de
 	 esos canales debe pasar un cablecito de color.  Empuje bien los 
 	 cablecitos hasta el fondo del conector RJ-45 y con las pinzas 
 	 especiales baje los contactos del conector y asegure el cable.  
-	</p></li><li><p>Después de ensamblar el primer extremo verifique con un
-	 probador que todos los cablecitos hagan contacto.  Después
+	</p></li><li><p>DespuÃ©s de ensamblar el primer extremo verifique con un
+	 probador que todos los cablecitos hagan contacto.  DespuÃ©s
 	 ensamble el segundo extremo empleando la misma secuencia de
-	 colores y después verifique que estén haciendo buen contacto
+	 colores y despuÃ©s verifique que estÃ©n haciendo buen contacto
    	 con un probador.</p></li></ol></div><p>
        Una vez tenga los cables verifique que la tarjeta de red de 
-       cada computador esté bien instalada (algunas tienen luces
+       cada computador estÃ© bien instalada (algunas tienen luces
        <sup>[<a name="id462921" href="#ftn.id462921">206</a>]</sup> 
-       que se encienden cuando transmite o recibe información por el cable),
+       que se encienden cuando transmite o recibe informaciÃ³n por el cable),
        y conecte con cables todas las tarjetas al concentrador.
-      </p><p>Verifique también que cada tarjeta de red sea reconocida
-       por el kernel y asigne la IP que planeó para
+      </p><p>Verifique tambiÃ©n que cada tarjeta de red sea reconocida
+       por el kernel y asigne la IP que planeÃ³ para
        cada una en <tt>/etc/network/interfaces</tt> (ver
        <a href="dispositivos-para-interconexion-y-linux.html#tarjeta-ethernet-e-interfaz-de-red" title="2.1.3. Tarjeta Ethernet e interfaz de red">Tarjeta
-       Ethernet e interfaz de red</a>).</p><p>Finalmente verifique la instalación trasnmitiendo paquetes
+       Ethernet e interfaz de red</a>).</p><p>Finalmente verifique la instalaciÃ³n trasnmitiendo paquetes
        de un computador a otro. Por ejemplo desde el servidor (tal vez
        con IP 192.168.1.1) intente conectarse a un
        cliente (tal vez IP 192.168.1.2) con 
@@ -381,75 +381,75 @@ iface eth0 inet static
 	  </p><pre class="screen">
 ping 192.168.1.2	
 	  </pre><p>
-	</p></div></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-dispositivos-para-interconexion-y-linux"></a>2.2. Lecturas recomendadas: Dispositivos para interconexión y Linux</h3></div></div><p><div class="itemizedlist"><ul type="disc"><li><p>Recomendamos de forma especial las siguientes páginas del
+	</p></div></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-dispositivos-para-interconexion-y-linux"></a>2.2. Lecturas recomendadas: Dispositivos para interconexiÃ³n y Linux</h3></div></div><p><div class="itemizedlist"><ul type="disc"><li><p>Recomendamos de forma especial las siguientes pÃ¡ginas del
        manual: <b>ifconfig</b>, <b>ifup</b>,
        <b>ifdown</b> y <tt>interfaces</tt> (que
-       presenta la sintaxis del archivo de configuración
+       presenta la sintaxis del archivo de configuraciÃ³n
        <tt>/etc/network/interfaces</tt>.
-       </p></li><li><p>En Internet, puede consultar más sobre controladores para
+       </p></li><li><p>En Internet, puede consultar mÃ¡s sobre controladores para
        tarjetas Ethernet en: <a href="http://www.linuxdoc.org/LDP/nag2/x-087-2-hardware.drivers.ethernet.html" target="_top">http://www.linuxdoc.org/LDP/nag2/x-087-2-hardware.drivers.ethernet.html</a>
-       </p></li><li><p>Si desea conocer más sobre redes Ethernet
+       </p></li><li><p>Si desea conocer mÃ¡s sobre redes Ethernet
        puede consultar la siguiente referencia: Charles
        Spurgeon.<i> Quick Reference Guides to 10 Mbps Ethernet</i>.  <a href="http://wwwhost.ots.utexas.edu/ethernet/descript-10quickref.html" target="_top">http://wwwhost.ots.utexas.edu/ethernet/descript-10quickref.html</a>
-      </p></li><li><p>Puede consultar más sobre cables UTP en
+      </p></li><li><p>Puede consultar mÃ¡s sobre cables UTP en
 	<a href="http://www.johnscloset.net/wiring/index.html" target="_top">Wiring:
-	Color Codes, Terms and Tools</a></p></li><li><p>Otra fuente de información sobre redes Ethernet y Linux: 
-       Guido Socher. Redes Caseras, glosario y resúmen. Linux Focus. 
-      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-dispositivos-para-interconexion-y-linux"></a>2.3. Ejercicios: Dispositivos para interconexión y Linux</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id463192"></a><a name="redbas.loopback.1"></a><b>2.3.1. </b></td><td align="left" valign="top"><p>Compruebe que el 
-       <i>loopback</i> esté operando bien empleando 
-	 <b>ping</b> y revisando la configuración que recibe
+	Color Codes, Terms and Tools</a></p></li><li><p>Otra fuente de informaciÃ³n sobre redes Ethernet y Linux: 
+       Guido Socher. Redes Caseras, glosario y resÃºmen. Linux Focus. 
+      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-dispositivos-para-interconexion-y-linux"></a>2.3. Ejercicios: Dispositivos para interconexiÃ³n y Linux</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id463192"></a><a name="redbas.loopback.1"></a><b>2.3.1. </b></td><td align="left" valign="top"><p>Compruebe que el 
+       <i>loopback</i> estÃ© operando bien empleando 
+	 <b>ping</b> y revisando la configuraciÃ³n que recibe
 	 cada vez que inicia el sistema.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id463323"></a><a name="redbas.loopback.2"></a><b>2.3.2. </b></td><td align="left" valign="top"><p>Desactive el loopback de su computador,
-       examine el cambio con <b>ifconfig</b> y después
+       examine el cambio con <b>ifconfig</b> y despuÃ©s
        reactivelo.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id463357"></a><a name="redbas.tarjeta.1"></a><b>2.3.3. </b></td><td align="left" valign="top"><p>El programa <b>ifconfig</b>
-       presenta información sobre el dispositivo y el protocolo que
-       abstrae.  Por ejemplo dirección en la red, cantidad de paquetes
-       recibidos, máscara de red, MTU, etc.  Que
-       significa el dato MTU?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id463395"></a><a name="redbas.tarjeta.2"></a><b>2.3.4. </b></td><td align="left" valign="top"><p>Instale una tarjeta de red o configúrela de
+       presenta informaciÃ³n sobre el dispositivo y el protocolo que
+       abstrae.  Por ejemplo direcciÃ³n en la red, cantidad de paquetes
+       recibidos, mÃ¡scara de red, MTU, etc.  Que
+       significa el dato MTU?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id463395"></a><a name="redbas.tarjeta.2"></a><b>2.3.4. </b></td><td align="left" valign="top"><p>Instale una tarjeta de red o configÃºrela de
        forma que se cumplan todas las siguientes condiciones: 
        </p><div class="itemizedlist"><ul type="disc"><li><p>Al arranque del sistema la tarjeta de red sea
 	 reconocida.
 	</p></li><li><p>La interfaz <tt>eth0</tt> abstraiga la tarjeta
-	 y tenga asignada la dirección IP apropiada de acuerdo a su
-	 planeación de la red, que la máscara sea 255.255.255.0 y que
-	 el nombre de la máquina sea el que planeó.
+	 y tenga asignada la direcciÃ³n IP apropiada de acuerdo a su
+	 planeaciÃ³n de la red, que la mÃ¡scara sea 255.255.255.0 y que
+	 el nombre de la mÃ¡quina sea el que planeÃ³.
 	</p></li><li><p>Como compuerta debe estar la IP del
 	servidor.
 	</p></li></ul></div></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id460164" href="#id460164">197</a>] </sup>Los conectores RJ45 son similares a los conectores de
-	   teléfono (RJ11), sólo que RJ45 tiene 8 pines mientras RJ11
+	   telÃ©fono (RJ11), sÃ³lo que RJ45 tiene 8 pines mientras RJ11
 	   tiene 4 o 6
 	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id460179" href="#id460179">198</a>] </sup>
-	 Para Ethernet sólo se requieren los pines 1,2,3 y 6 del
+	 Para Ethernet sÃ³lo se requieren los pines 1,2,3 y 6 del
 	 conector RJ45, en un cable cruzado deben unirse 1 con 3
 	 (preferiblemente con cable verde/blanco), 2 con 6 (cable
 	 verde), 3 con 1 (cable rojo/blanco), 6 con 2 (cable
-	 rojo).</p></div><div class="footnote"><p><sup>[<a name="ftn.id460219" href="#id460219">199</a>] </sup>Concentrado del inglés
+	 rojo).</p></div><div class="footnote"><p><sup>[<a name="ftn.id460219" href="#id460219">199</a>] </sup>Concentrado del inglÃ©s
 	<i>hub</i>.  De acuerdo al
-	RFC 1516 se define en la sección 9
-	&quot;Repeater Unit for 10 Mb/s Baseband Networks&quot; del estándar
+	RFC 1516 se define en la secciÃ³n 9
+	&quot;Repeater Unit for 10 Mb/s Baseband Networks&quot; del estÃ¡ndar
 	IEEE 802.3/ISO 8802-3 CSMA/CD</p></div><div class="footnote"><p><sup>[<a name="ftn.id460811" href="#id460811">200</a>] </sup>El comando <b>ATA</b> es entendido por el modem como 
        &quot;contestar una llamada&quot;, por eso cuando lo da sin que haya una llamada
-	entrante escucha la línea.
+	entrante escucha la lÃ­nea.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id461085" href="#id461085">201</a>] </sup>Al lado de cada integrado o tarjeta soportada se presenta
-	entre paréntesis el módulo del kernel que lo puede
-	controlar.</p></div><div class="footnote"><p><sup>[<a name="ftn.id462209" href="#id462209">202</a>] </sup>Una alternativa difere es configurar direcciones dinámicas
-       don el protoclo DHCP.  Con este protocolo la dirección IP de
+	entre parÃ©ntesis el mÃ³dulo del kernel que lo puede
+	controlar.</p></div><div class="footnote"><p><sup>[<a name="ftn.id462209" href="#id462209">202</a>] </sup>Una alternativa difere es configurar direcciones dinÃ¡micas
+       don el protoclo DHCP.  Con este protocolo la direcciÃ³n IP de
        cada computador es asignada por un servidor, cuando el
-       computador entra a la red.  Esto es útil para redes
-       inalámbricas o cuando debe conectar y desconectar con
+       computador entra a la red.  Esto es Ãºtil para redes
+       inalÃ¡mbricas o cuando debe conectar y desconectar con
        frecuencia computadores de la red ---supuestos que no forman
        parte de nuestra (ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
        referencia</a>)
       </p></div><div class="footnote"><p><sup>[<a name="ftn.id462763" href="#id462763">203</a>] </sup>En Colombia a tal &quot;pinza especial&quot; se le conoce como
 	 &quot;ponchadora&quot;.
-	</p></div><div class="footnote"><p><sup>[<a name="ftn.id462873" href="#id462873">204</a>] </sup>Pablo Chamorro nos indicó que &quot;algunas pinzas
+	</p></div><div class="footnote"><p><sup>[<a name="ftn.id462873" href="#id462873">204</a>] </sup>Pablo Chamorro nos indicÃ³ que &quot;algunas pinzas
 	   tienen un tope, entonces al colocar las puntas de los cables
 	   junto al tope, el corte de la envoltura del cable siempre se
-	   realiza en el mismo punto para que ni sobre ni falte y así no
-	   hay que preocuparse por estimar el punto de corte.&quot;  </p></div><div class="footnote"><p><sup>[<a name="ftn.id462889" href="#id462889">205</a>] </sup>Dado que sólo se requieren
-	   los pines 1 (recepción +), 2 (recepción -), 3 (transmisión
-	   +) y 6 (transmisión -), en realidad sólo se
-	   requiere conectar los pines de ambos conectores así:
+	   realiza en el mismo punto para que ni sobre ni falte y asÃ­ no
+	   hay que preocuparse por estimar el punto de corte.&quot;  </p></div><div class="footnote"><p><sup>[<a name="ftn.id462889" href="#id462889">205</a>] </sup>Dado que sÃ³lo se requieren
+	   los pines 1 (recepciÃ³n +), 2 (recepciÃ³n -), 3 (transmisiÃ³n
+	   +) y 6 (transmisiÃ³n -), en realidad sÃ³lo se
+	   requiere conectar los pines de ambos conectores asÃ­:
 	   1 - 1, 2 - 2, 3 - 3 y 6 - 6.  Pero debe hacerse con una
 	   pareja de cables trenzado (para evitar deterioro de la
-	   señal).</p></div><div class="footnote"><p><sup>[<a name="ftn.id462921" href="#id462921">206</a>] </sup>Luces es traducción de <i>LED 
-	(Light emitting diode)</i>.  </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="administracion-tres.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="administracion-tres.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="direcciones-enrutamiento-y-transporte.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">Capítulo 6. Administración de una red con Linux </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 3. Direcciones, enrutamiento y transporte</td></tr></table></div></body></html>
+	   seÃ±al).</p></div><div class="footnote"><p><sup>[<a name="ftn.id462921" href="#id462921">206</a>] </sup>Luces es traducciÃ³n de <i>LED 
+	(Light emitting diode)</i>.  </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="administracion-tres.html">Anterior</a>Â </td><td width="20%" align="center"><a accesskey="u" href="administracion-tres.html">Subir</a></td><td width="40%" align="right">Â <a accesskey="n" href="direcciones-enrutamiento-y-transporte.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">CapÃ­tulo 6. AdministraciÃ³n de una red con LinuxÂ </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top">Â 3. Direcciones, enrutamiento y transporte</td></tr></table></div></body></html>

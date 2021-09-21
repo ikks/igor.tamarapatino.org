@@ -1,16 +1,16 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>5. Administración de programas</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-uno.html" title="Capítulo 4. Desarrollo de habilidades para administrar computadores con
-   Linux"><link rel="previous" href="administracion-de-archivos.html" title="4. Administración de archivos"><link rel="next" href="colaboracion-y-soporte.html" title="6. Colaboración y soporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. Administración de programas</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="administracion-de-archivos.html">Anterior</a> </td><th width="60%" align="center">Capítulo 4. Desarrollo de habilidades para administrar computadores con
-   Linux</th><td width="20%" align="right"> <a accesskey="n" href="colaboracion-y-soporte.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="administracion-de-programas"></a>5. Administración de programas</h2></div></div><p>Indicadores de Logros</p><div class="itemizedlist"><ul type="disc"><li><p><a name="admprog.busca"></a>Sabe donde buscar software para Linux que pueda solucionar
-       necesidades de la institución.  </p></li><li><p><a name="admprog.instala"></a>Puede instalar paquetes <tt>deb</tt> y programas
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>5. AdministraciÃ³n de programas</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-uno.html" title="CapÃ­tulo 4. Desarrollo de habilidades para administrar computadores con
+   Linux"><link rel="previous" href="administracion-de-archivos.html" title="4. AdministraciÃ³n de archivos"><link rel="next" href="colaboracion-y-soporte.html" title="6. ColaboraciÃ³n y soporte"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">5. AdministraciÃ³n de programas</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="administracion-de-archivos.html">Anterior</a>Â </td><th width="60%" align="center">CapÃ­tulo 4. Desarrollo de habilidades para administrar computadores con
+   Linux</th><td width="20%" align="right">Â <a accesskey="n" href="colaboracion-y-soporte.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="administracion-de-programas"></a>5. AdministraciÃ³n de programas</h2></div></div><p>Indicadores de Logros</p><div class="itemizedlist"><ul type="disc"><li><p><a name="admprog.busca"></a>Sabe donde buscar software para Linux que pueda solucionar
+       necesidades de la instituciÃ³n.  </p></li><li><p><a name="admprog.instala"></a>Puede instalar paquetes <tt>deb</tt> y programas
        distribuidos como fuentes. 
       </p></li><li><p><a name="admprog.bibliotecas"></a>Puede configurar rutas de directorios donde el sistema
-       busca bibliotecas.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-administracion-de-programas"></a>5.1. Lecturas: Administración de programas</h3></div></div><p>Otra labor del administrador es buscar, instalar, actualizar
-     y configurar los programas que requiera algún grupo de usuarios
+       busca bibliotecas.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lectura-administracion-de-programas"></a>5.1. Lecturas: AdministraciÃ³n de programas</h3></div></div><p>Otra labor del administrador es buscar, instalar, actualizar
+     y configurar los programas que requiera algÃºn grupo de usuarios
      (es decir los programas disponibles normalmente en <tt>/usr/bin</tt> 
 	<tt>/usr/local/bin</tt> y <tt>/opt</tt>).  Eventualmente puede promover
-     el desarrollo de software para la institución.
-   </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="ejecucion-de-programas-y-bibliotecas-compartidas"></a>5.1.1. Ejecución de programas y bibliotecas compartidas</h4></div></div><p>El formato binario que soportan las distribuciones actuales
+     el desarrollo de software para la instituciÃ³n.
+   </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="ejecucion-de-programas-y-bibliotecas-compartidas"></a>5.1.1. EjecuciÃ³n de programas y bibliotecas compartidas</h4></div></div><p>El formato binario que soportan las distribuciones actuales
       de Linux es ELF
 
      <sup>[<a name="id413763" href="#ftn.id413763">89</a>]</sup>
@@ -19,10 +19,10 @@
       compartidas
      <sup>[<a name="id413769" href="#ftn.id413769">90</a>]</sup>
 
-     durante la ejecución ---pueden verse datos del formato de un
+     durante la ejecuciÃ³n ---pueden verse datos del formato de un
      ejecutable ELF con el programa <b>readelf</b>.  En
      este contexto biblioteca compartida se refiere a un conjunto de
-     servicios que uno o más programas puede emplear y que están
+     servicios que uno o mÃ¡s programas puede emplear y que estÃ¡n
      agrupados en un archivo ---para ver las bibliotecas compartidas
      que un programa requiere puede emplear el programa
      <b>ldd</b> seguido de la ruta del programa (e.g
@@ -30,17 +30,17 @@
      ofrece una biblioteca puede emplear <b>objdump</b>.
     </p><a class="indexterm" name="id413809"></a><a class="indexterm" name="id413836"></a><p>Para ejecutar un programa, el kernel lo transmite del
       dispositivo de almacenamiento a memoria RAM
-      (después de que el intérprete de comandos lo ha ubicado
+      (despuÃ©s de que el intÃ©rprete de comandos lo ha ubicado
       empleando la variable <tt>PATH</tt> y ha decidido que no
       es un script ver <a href="scripts-basicos-para-bash.html#lectura-scripts-basicos-para-bash" title="4.1. Lectura: Scripts para
      bash">Lectura Scripts
-      básicos para bash</a>).
+      bÃ¡sicos para bash</a>).
     </p><p>una vez en RAM identifica el tipo de
-     ejecutable y de ser un ELF emplea como intérprete
+     ejecutable y de ser un ELF emplea como intÃ©rprete
      <tt>/lib/ld-linux.so</tt>.
     </p><p>El programa <tt>/lib/ld-linux.so</tt> es el
-      encadenador dinámico, que encuentra las bibliotecas compartidas
-      requeridas por el ejecutable, prepara el programa para ejecución
+      encadenador dinÃ¡mico, que encuentra las bibliotecas compartidas
+      requeridas por el ejecutable, prepara el programa para ejecuciÃ³n
       y lo ejecuta
       <sup>[<a name="id413905" href="#ftn.id413905">91</a>]</sup>
       .  Para localizar bibliotecas compartidas
@@ -55,35 +55,35 @@
       bibliotecas disponibles en <tt>/lib</tt> y <tt>/usr/lib</tt> y en las rutas
       especificadas en <tt>/etc/ld.so.conf</tt>.  Por
       esto si se instalan nuevas bibliotecas compartidas en rutas
-      estándar es indispensable ejecutar <b>ldconfig</b>
-      ---la gran mayoría de programas de instalación lo harán
-      automáticamente--- y si se instalan en rutas no estándar
-      asegurarse de que la ruta esté en
+      estÃ¡ndar es indispensable ejecutar <b>ldconfig</b>
+      ---la gran mayorÃ­a de programas de instalaciÃ³n lo harÃ¡n
+      automÃ¡ticamente--- y si se instalan en rutas no estÃ¡ndar
+      asegurarse de que la ruta estÃ© en
       <tt>/etc/ld.so.conf</tt> antes de ejecutar
       <b>ldconfig</b>.
-     </p><a class="indexterm" name="id414244"></a><p>Una vez se ejecute el programa, este podría leer algunos
-      archivos de configuración (usualmente de <tt>/etc/</tt>) y variables de
-      entorno. También podría cargar datos que requiera para operar
+     </p><a class="indexterm" name="id414244"></a><p>Una vez se ejecute el programa, este podrÃ­a leer algunos
+      archivos de configuraciÃ³n (usualmente de <tt>/etc/</tt>) y variables de
+      entorno. TambiÃ©n podrÃ­a cargar datos que requiera para operar
       (e.g mensajes para el locale apropiado, sonidos o imagenes
       usualmente del directorio <tt>/usr/share</tt>).
-    </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="compilacion-e-instalacion-de-programas-a-partir-de-fuentes"></a>5.1.2. Compilación e instalación de programas a partir de fuentes</h4></div></div><p>Aunque en los repositorios oficialesAlgunos programas de libre redistribución son liberados al
-      público junto con el código fuente escrito en algún lenguaje de
-      programación (tipicamente C o C++).  Antes de usarlos debe
+    </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="compilacion-e-instalacion-de-programas-a-partir-de-fuentes"></a>5.1.2. CompilaciÃ³n e instalaciÃ³n de programas a partir de fuentes</h4></div></div><p>Aunque en los repositorios oficialesAlgunos programas de libre redistribuciÃ³n son liberados al
+      pÃºblico junto con el cÃ³digo fuente escrito en algÃºn lenguaje de
+      programaciÃ³n (tipicamente C o C++).  Antes de usarlos debe
       compilarlos e instalarlos siguiendo las instrucciones que
-      acompañan el código fuente; y claro antes debe descomprimirlo y/o
+      acompaÃ±an el cÃ³digo fuente; y claro antes debe descomprimirlo y/o
       desempaquetarlo.
-    </p><p>El código fuente podría estar comprimido con diversos
+    </p><p>El cÃ³digo fuente podrÃ­a estar comprimido con diversos
       programas, dos muy comunes son: <b>gzip</b> -
-      extensión .gz, <b>bzip2</b> - extensión .bz2.  Ambos
-      permiten descomprimir con la opción <tt>-d</tt> seguida
-      del nombre del fichero comprimido.  Además de comprimidas, las
-      fuentes podrían estar archivadas con el programa
-      <b>tar</b> (extensión .tar), para desarchivar
+      extensiÃ³n .gz, <b>bzip2</b> - extensiÃ³n .bz2.  Ambos
+      permiten descomprimir con la opciÃ³n <tt>-d</tt> seguida
+      del nombre del fichero comprimido.  AdemÃ¡s de comprimidas, las
+      fuentes podrÃ­an estar archivadas con el programa
+      <b>tar</b> (extensiÃ³n .tar), para desarchivar
       ficheros creados por este programa se emplea <b>tar xvf
-      <i><tt>archivo</tt></i></b> (ver <a href="exploracion-dos.html#administracion-de-archivos-directorios-y-enlaces" title="1.1.1. Administración de archivos, directorios y enlaces">
-	Administración de archivos, directorios y enlaces</a>).
+      <i><tt>archivo</tt></i></b> (ver <a href="exploracion-dos.html#administracion-de-archivos-directorios-y-enlaces" title="1.1.1. AdministraciÃ³n de archivos, directorios y enlaces">
+	AdministraciÃ³n de archivos, directorios y enlaces</a>).
      </p><a class="indexterm" name="id414359"></a><a class="indexterm" name="id414386"></a><a class="indexterm" name="id414413"></a><p>Aunque en general debe consultar las instrucciones para
-      lograr la instalación y configuración, varios programas
+      lograr la instalaciÃ³n y configuraciÃ³n, varios programas
       requieren la siguiente secuencia de comandos para compilar
       (secuencia establecida por autoconf):
 </p><pre class="screen">
@@ -91,51 +91,51 @@
 make
 make install
 </pre><p>
-     </p><a class="indexterm" name="id414456"></a><a class="indexterm" name="id414480"></a><p>Esta secuencia instalará por defecto en el directorio
+     </p><a class="indexterm" name="id414456"></a><a class="indexterm" name="id414480"></a><p>Esta secuencia instalarÃ¡ por defecto en el directorio
       <tt>/usr/local</tt>, si desea
-      instalar en otra vía puede cambiar el primer comando por
+      instalar en otra vÃ­a puede cambiar el primer comando por
       <b>configure
       --prefix=<i><tt>nueva_via</tt></i></b> con el
       directorio destino en lugar de
       <i><tt>nueva_via</tt></i>.  Si las fuentes incluyen
-      mensajes en diversos idiomas (locales) se instalarán los
+      mensajes en diversos idiomas (locales) se instalarÃ¡n los
       especificados en la variable <tt>LINGUAS</tt> o todos si
-      tal variable no está definida. La variable
-      <tt>LINGUAS</tt> debe tener códigos ISO 639 (2 letras como
-      LC_MESSAGE ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: Configuración de una sesión">Lectura
-      Configuración de una sesión</a>) de los idiomas que se
+      tal variable no estÃ¡ definida. La variable
+      <tt>LINGUAS</tt> debe tener cÃ³digos ISO 639 (2 letras como
+      LC_MESSAGE ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: ConfiguraciÃ³n de una sesiÃ³n">Lectura
+      ConfiguraciÃ³n de una sesiÃ³n</a>) de los idiomas que se
       desean, unos separados de otro por espacios.
     </p><p>
       Cuando busque software, tenga en cuenta que funcione en el
-      computador en el que operará (consulte los requerimientos de
+      computador en el que operarÃ¡ (consulte los requerimientos de
       hardware y software), y revise la licencia del programa para
       asegurarse de la posibilidad de usarlo y redistribuirlo sin
-      restricciones (ver <a href="exploracion-uno.html#lectura-software-de-libre-redistribucion" title="1.1. Lectura: Software de libre redistribución">Lectura
-      Software de libre redistribución</a>) ---si no lee con
-      detalle la licencia, podría infringir la ley.
+      restricciones (ver <a href="exploracion-uno.html#lectura-software-de-libre-redistribucion" title="1.1. Lectura: Software de libre redistribuciÃ³n">Lectura
+      Software de libre redistribuciÃ³n</a>) ---si no lee con
+      detalle la licencia, podrÃ­a infringir la ley.
     </p><p>
       Una vez consiga software que solucione una necesidad de su
-      institución, debe instalarlo y configurarlo.  Es posible que
+      instituciÃ³n, debe instalarlo y configurarlo.  Es posible que
       encuentre las fuentes comprimidas o de un archivo precompilado
       <tt>deb</tt>
       <sup>[<a name="id414727" href="#ftn.id414727">92</a>]</sup>
-      .  Por ejemplo para la distribución Debian, hay un inmenso
+      .  Por ejemplo para la distribuciÃ³n Debian, hay un inmenso
       repositorio de archivos precompilados.  Cuando busque un
       programa, ese repositorio es el primer sitio quee puede
       consultar: <a href="http://packages.debian.org/stable/" target="_top">http://packages.debian.org/stable/</a>.
       Para hacerlo, puede emplear el programa
-      dselect, que le permitirá entrar al
-      repositorio principal de Debian o a otros, le permitirá elegir
-      el o los programas que desee, le indicará si el programa es
-      libre o no y le ayudará a resolver conflictos con otros
-      programas o le indicará otros programas que son prerequisitos;
+      dselect, que le permitirÃ¡ entrar al
+      repositorio principal de Debian o a otros, le permitirÃ¡ elegir
+      el o los programas que desee, le indicarÃ¡ si el programa es
+      libre o no y le ayudarÃ¡ a resolver conflictos con otros
+      programas o le indicarÃ¡ otros programas que son prerequisitos;
       tras esto, dselect se encarga de
-      descargarlos a su máquina, instalarlos y configurarlos, todo
-      automáticamente!
+      descargarlos a su mÃ¡quina, instalarlos y configurarlos, todo
+      automÃ¡ticamente!
     </p><div class="informalfigure"><div class="screenshot"><div class="mediaobject"><img src="packages.png" align="center" alt="Paquetes en 
 	      
 		http://packages.debian.org"></div></div></div><a class="indexterm" name="id414893"></a><a class="indexterm" name="id414920"></a><a class="indexterm" name="id414948"></a><p>Puede darse el caso que el programa que usted busque no
-      esté en ese repositorio, pero que lo logre encontrar en otra
+      estÃ© en ese repositorio, pero que lo logre encontrar en otra
       parte ya precompilado como <tt>deb</tt>.  En ese caso
       puede descargarlo y emplear el programa
       dpkg para instalarlo en su sistema.
@@ -143,66 +143,66 @@ make install
       problemas que se presentan al compilar e instalar se emplean
       paquetes.  Cada paquete es creado y mantenido por un voluntario
       (normalmente de Debian) e incluye programas precompilados,
-      datos, archivos de configuración, scripts de instalación y
-      desinstalación y datos de control (como nombre, firma digital,
-      descripción, sección, paquetes de los que depende, paquetes con
+      datos, archivos de configuraciÃ³n, scripts de instalaciÃ³n y
+      desinstalaciÃ³n y datos de control (como nombre, firma digital,
+      descripciÃ³n, secciÃ³n, paquetes de los que depende, paquetes con
       los que entra en conflicto, etc.).  Dado que en un computador
-      pueden instalarse muchos paquetes y su administración resulta
+      pueden instalarse muchos paquetes y su administraciÃ³n resulta
       delicada (porque algunos dependen o entran en conflicto con
       otros), en Debian se emplean herramientas que evitan conflictos
-      y facilitan la instalación, desinstalación y actualización.  La
-      administración del sistema de paquetes (configuración de
-      repositorios), así como las operaciones de paquetes pueden
+      y facilitan la instalaciÃ³n, desinstalaciÃ³n y actualizaciÃ³n.  La
+      administraciÃ³n del sistema de paquetes (configuraciÃ³n de
+      repositorios), asÃ­ como las operaciones de paquetes pueden
       realizarse con el programa dselect
-      que es guiado por menús y ofrece extensa ayuda.  Como método de
+      que es guiado por menÃºs y ofrece extensa ayuda.  Como mÃ©todo de
       acceso es recomendable apt y
       especificar los repositorios editando el archivo
       <tt>/etc/apt/sources.list</tt>.  Si planea emplear
       varios CDs con paquetes para Debian, al emplear
-      <tt>apt-cdrom add</tt> el CD quedará registrado en
-      <tt>/etc/apt/sources.list</tt> y podrá seleccionar e
+      <tt>apt-cdrom add</tt> el CD quedarÃ¡ registrado en
+      <tt>/etc/apt/sources.list</tt> y podrÃ¡ seleccionar e
       instalar los paquetes con dselect.
-    </p><a class="indexterm" name="id415224"></a><a class="indexterm" name="id415257"></a><a class="indexterm" name="id415367"></a><p>En esta sección se presentan detalles del sistema de
+    </p><a class="indexterm" name="id415224"></a><a class="indexterm" name="id415257"></a><a class="indexterm" name="id415367"></a><p>En esta secciÃ³n se presentan detalles del sistema de
       paquetes de Debian y las herramientas que hay disponibles (las
       herramientas que usa <b>dselect</b> para automatizar
-      la catalogación, obtención, instalación y desinstalación de
+      la catalogaciÃ³n, obtenciÃ³n, instalaciÃ³n y desinstalaciÃ³n de
       paquetes).  </p><p>Un paquete para Debian (archivo con postfijo
       <tt>.deb</tt>) es un archivo de ficheros creado con el
       programa <b>ar</b>
 
       <sup>[<a name="id415420" href="#ftn.id415420">93</a>]</sup>
       , que sigue diversas convenciones (por ejemplo contiene los
-      datos del programa y datos para controlar instalación y
-      desintalación comprimidos con <b>gzip</b> empleando
-      nombres estándar).  La herramienta dpkg-deb
+      datos del programa y datos para controlar instalaciÃ³n y
+      desintalaciÃ³n comprimidos con <b>gzip</b> empleando
+      nombres estÃ¡ndar).  La herramienta dpkg-deb
       permite operar estos paquetes como archivos (no es recomendable
       instalar paquetes usando dpkg-deb).
      </p><a class="indexterm" name="id415480"></a><a class="indexterm" name="id415507"></a><p>Para instalar propiamente un paquete se emplea
       <b>dpkg -i <i><tt>archivo</tt></i> ...</b>.  El
-      programa <b>dpkg</b> además de verificar
+      programa <b>dpkg</b> ademÃ¡s de verificar
       dependencias, eliminar versiones previas del mismo paquete,
-      extraer archivos, ejecutar los scripts de instalación y
-      configurar el paquete, actualiza los archivos con información
+      extraer archivos, ejecutar los scripts de instalaciÃ³n y
+      configurar el paquete, actualiza los archivos con informaciÃ³n
       sobre paquetes instalados y disponibles:
       <tt>/var/lib/dpkg/status</tt> y
       <tt>/var/lib/dpkg/available</tt> (estos archivos son
-      también llamados caches por <tt>apt-cache</tt>).
-     </p><p>Los caches además del nombre, descripción, versión,
+      tambiÃ©n llamados caches por <tt>apt-cache</tt>).
+     </p><p>Los caches ademÃ¡s del nombre, descripciÃ³n, versiÃ³n,
       arquitectura y espacio en disco de cada paquete incluyen
-      información para organizar y controlar los paquetes: estado,
-      estado de selección, sección, prioridad, paquetes de los que
+      informaciÃ³n para organizar y controlar los paquetes: estado,
+      estado de selecciÃ³n, secciÃ³n, prioridad, paquetes de los que
       depende, paquetes que reemplaza, con los que entra en conflicto
       y los que recomienda.  Los posibles estados de un paquete son:
       instalado, instalado a medias, no-instalado, desempaquetado
       (archivos ubicados pero no configurado), configurado a medias,
-      archivos de configuración
-      <sup>[<a name="id415576" href="#ftn.id415576">94</a>]</sup> (sólo los archivos de configuración estan).  Los
-      estados de selección (usados por
+      archivos de configuraciÃ³n
+      <sup>[<a name="id415576" href="#ftn.id415576">94</a>]</sup> (sÃ³lo los archivos de configuraciÃ³n estan).  Los
+      estados de selecciÃ³n (usados por
       dselect) son: instalar, desinstalar,
-      limpiar (desinstalar incluso archivos de configuración).  Las
+      limpiar (desinstalar incluso archivos de configuraciÃ³n).  Las
       secciones posibles son <tt>main</tt>,
       <tt>contrib</tt>, <tt>non-US</tt> y
-      <tt>non-free</tt> diferenciadas por los términos de
+      <tt>non-free</tt> diferenciadas por los tÃ©rminos de
       las licencias y la posibilidad de redistribuirlos.  Los paquetes
       en main cumplen con los lineamientos de Debian para decidir si
       un programa es libre o no
@@ -212,10 +212,10 @@ make install
        <tt>contrib</tt> cumplen con esos lineamientos pero
        requieren paquetes en <tt>non-free</tt> o
        <tt>non-US</tt>, los paquetes en
-       <tt>non-free</tt> permiten libre redistribución pero
+       <tt>non-free</tt> permiten libre redistribuciÃ³n pero
        no otros requerimientos de DFSG, los
        paquetes en <tt>non-US</tt> contienen material
-       criptográfico que no puede exportarse de EUA
+       criptogrÃ¡fico que no puede exportarse de EUA
        (estos paquetes pueden ser usados en todo el mundo pero no
        pueden obtenerse de servidores en EUA). Las
        secciones se dividen en subsecciones: <tt>admin</tt>,
@@ -231,53 +231,53 @@ make install
        <tt>web</tt>, <tt>x11</tt>,
        <tt>comm</tt>, <tt>devel</tt>.  Las
        prioridades posibles son:
-       <i>required</i> (mínimo para que el
+       <i>required</i> (mÃ­nimo para que el
        administrador inicie el sistema),
-       <i>important</i> (aplicaciones mínimas
+       <i>important</i> (aplicaciones mÃ­nimas
        encontradas en cualquier sistema Unix),
-       <i>standard</i> (mínimo para tener un
-       sistema en modo texto), optional (aplicación que no requiere
+       <i>standard</i> (mÃ­nimo para tener un
+       sistema en modo texto), optional (aplicaciÃ³n que no requiere
        ser instalada) y extra.
      </p><a class="indexterm" name="id416081"></a><a class="indexterm" name="id416108"></a><a class="indexterm" name="id416135"></a><a class="indexterm" name="id416162"></a><p><b>dpkg</b> cuenta con varios comandos para
-      operar paquetes y los caches, a continuación se presentan
+      operar paquetes y los caches, a continuaciÃ³n se presentan
       algunos:
     </p><div class="variablelist"><dl><dt><span class="term"><b>dpkg --configure
 	 <i><tt>paquetes</tt></i></b>
-       </span></dt><dd><p>Configura un paquete cuya configuración esta
+       </span></dt><dd><p>Configura un paquete cuya configuraciÃ³n esta
 	 pendiente.  Si en lugar de usar un nombre de paquete se
 	 emplea <tt>-a</tt> configura todos los paquetes
-	 cuya configuración esté pendiente.  Para reconfigurar un
-	 paquete que ya está instalado y que empleaba debconf se usa
+	 cuya configuraciÃ³n estÃ© pendiente.  Para reconfigurar un
+	 paquete que ya estÃ¡ instalado y que empleaba debconf se usa
 	 <b>dpkg-reconfigure
 	  <i><tt>paquete</tt></i></b>.
 	</p></dd><dt><span class="term">
 	<b>dpkg -r <i><tt>paquetes</tt></i></b>
        </span></dt><dd><p>Desinstala un paquete. Si se emplea
 	 <tt>-a</tt> en lugar del nombre de un paquete
-	 desinstala todos los que estén pendientes.  La desinstalación
-	 de un paquete no elimina archivos de configuración, para
+	 desinstala todos los que estÃ©n pendientes.  La desinstalaciÃ³n
+	 de un paquete no elimina archivos de configuraciÃ³n, para
 	 eliminarlos puede emplearse <tt>--purge</tt> en
 	 lugar de <tt>-r</tt>.
 	</p></dd><dt><span class="term"><b>dpkg --clear-avail</b>
-       </span></dt><dd><p>Elimina información sobre paquetes disponibles
+       </span></dt><dd><p>Elimina informaciÃ³n sobre paquetes disponibles
 	(<tt>/var/lib/dpkg</tt>).
 	</p></dd><dt><span class="term">
 	<b>dpkg -A -R <i><tt>directorio</tt></i></b>
-       </span></dt><dd><p>Agrega al cache de paquetes disponibles, información de
+       </span></dt><dd><p>Agrega al cache de paquetes disponibles, informaciÃ³n de
 	 todos los paquetes en el directorio especificado y en sus
-	 subdirectorios.  Pueden emplearse con un propósito análogo
+	 subdirectorios.  Pueden emplearse con un propÃ³sito anÃ¡logo
 	 las opciones <tt>--update-avail</tt> y
 	 <tt>--merge-avail</tt> seguidas del nombre de un
-	 archivo con descripciones de paquetes (típicamente
-	 <tt>Packages.gz</tt>).  Este método NO es el
-	 recomendado para actualizar paquetes disponibles, es más
-	 flexible emplear <b>apt</b> como se explica más
+	 archivo con descripciones de paquetes (tÃ­picamente
+	 <tt>Packages.gz</tt>).  Este mÃ©todo NO es el
+	 recomendado para actualizar paquetes disponibles, es mÃ¡s
+	 flexible emplear <b>apt</b> como se explica mÃ¡s
 	 adelante.
 	</p></dd><dt><span class="term">
 	<b>dpkg -l '<i><tt>cadena</tt></i>'</b>
-       </span></dt><dd><p>Presenta información de los paquetes disponibles que
+       </span></dt><dd><p>Presenta informaciÃ³n de los paquetes disponibles que
 	 concuerden con la cadena.  La cadena puede tener caracteres
-	 para expansión de nombres.
+	 para expansiÃ³n de nombres.
 	</p></dd><dt><span class="term">
 	<b>dpkg -s <i><tt>paquetes</tt></i></b>
 	</span></dt><dd><p>
@@ -285,11 +285,11 @@ make install
 	</p></dd><dt><span class="term">
 	 <b>dpkg -C</b>
 	</span></dt><dd><p>
-	 Busca paquetes cuya instalación no este completa.
+	 Busca paquetes cuya instalaciÃ³n no este completa.
 	</p></dd><dt><span class="term">
 	 <b>dpkg  -L <i><tt>paquetes</tt></i></b>
 	</span></dt><dd><p>
-	 Muestra la ubicación de los ficheros de los paquetes dados.
+	 Muestra la ubicaciÃ³n de los ficheros de los paquetes dados.
 	</p></dd><dt><span class="term">
 	<b>dpkg -S <i><tt>fichero</tt></i></b>
 	</span></dt><dd><p>
@@ -302,9 +302,9 @@ make install
 	</p></dd></dl></div><p>El inconveniente de usar <b>dpkg -i
        <i><tt>archivo</tt></i> ...</b> para instalar
        un paquete es que no resuelve problemas de dependencias (por
-       ejemplo si el paquete que se instala requiere otro que aún no
+       ejemplo si el paquete que se instala requiere otro que aÃºn no
        se ha instalado).  Para resolver dependencias y obtener e
-       instalar paquetes se requiere uno o más repositorios de
+       instalar paquetes se requiere uno o mÃ¡s repositorios de
        paquetes y se usa <b>apt-get install
        <i><tt>paquete</tt></i> ...</b>
       <sup>[<a name="id416663" href="#ftn.id416663">96</a>]</sup>.
@@ -312,7 +312,7 @@ make install
       paquetes disponibles para Debian, pueden ser medios de
       almacenamiento (CD-ROMs, directorios locales
       o compartidos, disquettes) o sitios en una red a la que su
-      computador está conectado (pueden usarse los protocolos
+      computador estÃ¡ conectado (pueden usarse los protocolos
       FTP y HTTP).  Los posibles
       repositorios de paquetes se especifican en el archivo
       <tt>/etc/apt/sources.list</tt> y normalmente el
@@ -320,19 +320,19 @@ make install
       (<tt>/var/lib/dpkg/available</tt>) es extraido de
       los archivos <tt>Packages.gz</tt> de cada
       repositorio de paquetes.
-     </p><a class="indexterm" name="id416749"></a><p>Para actualizar el cache con la información más reciente en
+     </p><a class="indexterm" name="id416749"></a><p>Para actualizar el cache con la informaciÃ³n mÃ¡s reciente en
       los repositorios puede emplear <b>apt-get
       update</b>, para agregar un CD-ROM como repositorio y
       actualizar el cache de paquetes disponibles emplee
-      <tt>apt-cdrom</tt> con la opción
+      <tt>apt-cdrom</tt> con la opciÃ³n
       <tt>add</tt>.  Para agregar repositorios
       FTP o HTTP edite el
       archivo <tt>/etc/apt/souces.list</tt> y agregue
-      líneas de la forma:
+      lÃ­neas de la forma:
 </p><pre class="screen">
 deb ftp://ftp.debian.org/debian stable main contrib non-free
 </pre><p>
-      remplazando el URL por el del depósito.  A la
+      remplazando el URL por el del depÃ³sito.  A la
       derecha del URL se especifican las secciones
       que desea emplear de ese repositorio.  La cadena &quot;deb&quot; a la
       izquierda del URL indica que se trata de un
@@ -341,7 +341,7 @@ deb ftp://ftp.debian.org/debian stable main contrib non-free
     </p><p>Los comandos para <tt>apt-get</tt> son:
     </p><div class="variablelist"><dl><dt><span class="term">
 	 <i><tt>update</tt></i>
-	</span></dt><dd><p>Actualiza caches de paquetes con información de los
+	</span></dt><dd><p>Actualiza caches de paquetes con informaciÃ³n de los
 	 repositorios especificados en
 	 <tt>/etc/apt/sources.list</tt>.  De cada
 	 repositorio extrae los paquetes disponibles del archivo
@@ -349,8 +349,8 @@ deb ftp://ftp.debian.org/debian stable main contrib non-free
 	 <i><tt>upgrade</tt></i> o
 	 <i><tt>dist-upgrade</tt></i>.
 	</p></dd><dt><span class="term"><i><tt>upgrade</tt></i>
-       </span></dt><dd><p>Instala las versiones más recientes de todos los
-	 paquetes, mientras para una instalación no requiera
+       </span></dt><dd><p>Instala las versiones mÃ¡s recientes de todos los
+	 paquetes, mientras para una instalaciÃ³n no requiera
 	 reinstalar otro paquete.  Emplea los repositorios
 	 especificados en <tt>/etc/apt/sources.list</tt>.
 	</p></dd><dt><span class="term">
@@ -359,34 +359,34 @@ deb ftp://ftp.debian.org/debian stable main contrib non-free
 	 (pero no completado) con <tt>dselect</tt>.
 	</p></dd><dt><span class="term">
 	 <i><tt>dist-upgrade</tt></i>
-       </span></dt><dd><p>Realiza la misma función de <tt>upgrade</tt>
+       </span></dt><dd><p>Realiza la misma funciÃ³n de <tt>upgrade</tt>
 	 tratando de resolver conflictos entre nuevas versiones y
 	 existentes.
 	</p></dd><dt><span class="term">
 	<i><tt>install <i><tt>paquete</tt></i> ...</tt></i>
 	</span></dt><dd><p>Obtiene el/los paquete(s) especificado(s) de alguna de
-	 los repositorios y lo(s) instala, así como los paquetes que
+	 los repositorios y lo(s) instala, asÃ­ como los paquetes que
 	 sean requeridos. El nombre del paquete no es una ruta, es la
-	 identificación del paquete en el cache o una expresión
+	 identificaciÃ³n del paquete en el cache o una expresiÃ³n
 	 regular de identificaciones de paquetes.  Puede marcarse un
-	 paquete para su futura desintalación agregandole al nombre el
-	 caracter '-' (con '+' se marca para futura instalación).
+	 paquete para su futura desintalaciÃ³n agregandole al nombre el
+	 caracter '-' (con '+' se marca para futura instalaciÃ³n).
 	</p></dd><dt><span class="term">
 	<i><tt>remove <i><tt>paquete</tt></i> ...</tt></i>
        </span></dt><dd><p>Desinstala el(los) paquete(s) especificado(s).  Sigue
-	 convenciones análogas a <b>install</b>.
+	 convenciones anÃ¡logas a <b>install</b>.
 	</p></dd><dt><span class="term">
 	 <i><tt>source</tt></i>
        </span></dt><dd><p>Obtiene las fuentes de un paquete de un repositorio de
 	 fuentes (los especificados en
-	 <tt>/etc/apt/sources/lists</tt> en líneas
+	 <tt>/etc/apt/sources/lists</tt> en lÃ­neas
 	 <tt>deb-src</tt>).  Dejas las fuentes en el
 	 directorio de trabajo.
 	</p></dd><dt><span class="term">
 	 <i><tt>build-dep <i><tt>paquete</tt></i>
 	 ...</tt></i>
 	</span></dt><dd><p>
-	 Instala paquetes que satisfacen dependencias de uno o más
+	 Instala paquetes que satisfacen dependencias de uno o mÃ¡s
 	 paquetes.
 	</p></dd><dt><span class="term">
 	<i><tt>clean</tt></i>
@@ -394,14 +394,14 @@ deb ftp://ftp.debian.org/debian stable main contrib non-free
 	 de repositorios <tt>/var/cache/apt/archives</tt>.
 	</p></dd><dt><span class="term">
 	 <i><tt>autoclean</tt></i>
-       </span></dt><dd><p>Realiza la misma función de <b>clean</b>
-	 pero evita eliminar paquetes útiles.
+       </span></dt><dd><p>Realiza la misma funciÃ³n de <b>clean</b>
+	 pero evita eliminar paquetes Ãºtiles.
 	</p></dd><dt><span class="term">
 	<i><tt>check</tt></i>
        </span></dt><dd><p>Examina el cache de paquetes buscando posibles
 	 problemas en las dependencias.
 	</p></dd></dl></div><p>Entre las opciones que <b>apt-get</b> recibe
-      están: </p><div class="variablelist"><dl><dt><span class="term"><tt>-f</tt>
+      estÃ¡n: </p><div class="variablelist"><dl><dt><span class="term"><tt>-f</tt>
 	</span></dt><dd><p>Intenta solucionar problemas de dependencias.
 	</p></dd><dt><span class="term"><tt>-d</tt>
 	</span></dt><dd><p>Descarga todos los paquetes pero no los instala.  Una
@@ -415,14 +415,14 @@ deb ftp://ftp.debian.org/debian stable main contrib non-free
 	</p></dd><dt><span class="term">
 	<tt>-no-download</tt>
 	</span></dt><dd><p>
-	 Evita que se descarguen paquetes de la red (útil junto con
+	 Evita que se descarguen paquetes de la red (Ãºtil junto con
 	 <tt>-m</tt>).
 	</p></dd><dt><span class="term">
 	<tt>-o</tt>
 	</span></dt><dd><p>
-	 Opción para establecer una opción que tome precedencia sobre
-	 las opciones del archivo de configuración.  El archivo de
-	 configuración es indicado por la variable
+	 OpciÃ³n para establecer una opciÃ³n que tome precedencia sobre
+	 las opciones del archivo de configuraciÃ³n.  El archivo de
+	 configuraciÃ³n es indicado por la variable
 	 <tt>APT_CONFIG</tt> o en su defecto es
 	 <tt>/etc/apt/apt.conf</tt>.
 	</p></dd></dl></div><p>El programa <b>apt-cache</b> le permite operar
@@ -430,48 +430,48 @@ deb ftp://ftp.debian.org/debian stable main contrib non-free
      algunas de las operaciones que permite son:
      </p><div class="variablelist"><dl><dt><span class="term">
 	<b>show <i><tt>paquete</tt></i></b>
-       </span></dt><dd><p>Muestra la información de control del paquete
+       </span></dt><dd><p>Muestra la informaciÃ³n de control del paquete
 	 especificado.
 	</p></dd><dt><span class="term">
 	<b>showpkg <i><tt>paquete</tt></i></b>
-       </span></dt><dd><p>Muestra información de dependencias de un paquete.
+       </span></dt><dd><p>Muestra informaciÃ³n de dependencias de un paquete.
 	 Presenta tanto los paquetes de los cuales depende como los
 	 paquetes que dependen de ese (dependencias reversas).
 	</p></dd><dt><span class="term">
 	<b>search <i><tt>expreg</tt></i></b>
        </span></dt><dd><p>Busca paquetes disponibles e instalados cuyo nombre
-	 concuerde con una expresión regular.
-	</p></dd></dl></div><a class="indexterm" name="id417848"></a></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="repositorios-de-software-de-libre-redistribucion"></a>5.1.4. Depósitos de software de libre redistribución</h4></div></div><p>
+	 concuerde con una expresiÃ³n regular.
+	</p></dd></dl></div><a class="indexterm" name="id417848"></a></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="repositorios-de-software-de-libre-redistribucion"></a>5.1.4. DepÃ³sitos de software de libre redistribuciÃ³n</h4></div></div><p>
       Cuando busque software, tenga en cuenta que funcione en el
-      computador en el que operará (consulte los requerimientos de
+      computador en el que operarÃ¡ (consulte los requerimientos de
       hardware y software), y revise la licencia del programa para
       asegurarse de la posibilidad de usarlo y redistribuirlo sin
-      restricciones (ver <a href="exploracion-uno.html#lectura-software-de-libre-redistribucion" title="1.1. Lectura: Software de libre redistribución">Lectura
-      Software de libre redistribución</a>) ---si no lee con
-      detalle la licencia, podría infringir la ley.
+      restricciones (ver <a href="exploracion-uno.html#lectura-software-de-libre-redistribucion" title="1.1. Lectura: Software de libre redistribuciÃ³n">Lectura
+      Software de libre redistribuciÃ³n</a>) ---si no lee con
+      detalle la licencia, podrÃ­a infringir la ley.
     </p><p>En Internet hay varios sitios que indexan fuentes de
-      software de libre redistribución que funciona en Linux algunos
+      software de libre redistribuciÃ³n que funciona en Linux algunos
       son: </p><div class="itemizedlist"><ul type="disc"><li><p><a href="http://www.freshmeat.net" target="_top">http://www.freshmeat.net</a>
        </p></li><li><p><a href="http://www.ibiblio.org/pub/Linux/" target="_top">http://www.ibiblio.org/pub/Linux/</a>
        </p></li><li><p>
        <a href="http://www.sourceforge.net" target="_top">http://www.sourceforge.net</a>
-      </p></li></ul></div><a class="indexterm" name="id417939"></a><p>Para la distribución Debian hay varios repositorios de
+      </p></li></ul></div><a class="indexterm" name="id417939"></a><p>Para la distribuciÃ³n Debian hay varios repositorios de
      fuentes y precompilados, puede consultar el principal (el
      repositorio oficial de Debian) en: <a href="http://packages.debian.org/stable/" target="_top">http://packages.debian.org/stable/</a>.
     </p><a class="indexterm" name="id418051"></a><p>
       Para configurar los repositorios que usa apt, puede emplear el
-     programa <tt>apt-setup</tt>, o agregar líneas a su
+     programa <tt>apt-setup</tt>, o agregar lÃ­neas a su
       archivo <tt>/etc/apt/sources.list</tt> como:
      </p><a class="indexterm" name="id418092"></a><a class="indexterm" name="id418116"></a><div class="variablelist"><dl><dt><span class="term">
 	<tt>deb ftp://ftp.debian.org/debian potato main contrib
 	 non-free</tt>
        </span></dt><dd><p>Repositorio principal de Debian. Puede haber un espejo
-	 que funcione mejor con la conexión a Internet que tiene,
+	 que funcione mejor con la conexiÃ³n a Internet que tiene,
 	 consulte la lista de espejos en <a href="http://www.debian.org/misc/README.mirrors" target="_top">http://www.debian.org/misc/README.mirrors</a>
 	</p></dd><dt><span class="term"><tt>deb ftp://ftp.debian.org/debian-non-US potato
 	non-US/main</tt>
 	</span></dt><dd><p>Repositorio non-US de Alemania.  Contiene software que
-	 no puede exportarse de EUA por restricciones en criptografía.
+	 no puede exportarse de EUA por restricciones en criptografÃ­a.
 	</p></dd><dt><span class="term">
 	<tt>deb http://red-carpet.ximian.com/debian potato
 	 main</tt>
@@ -486,23 +486,23 @@ deb ftp://ftp.debian.org/debian stable main contrib non-free
 	</p></dd><dt><span class="term"><tt>deb
 	 http://people.debian.org/~synrg/task-junior /</tt>
        </span></dt><dd><p>Repositorio de Debian-Jr, con paquetes enfocados a
-	 educación en casa (en especial juegos).
+	 educaciÃ³n en casa (en especial juegos).
 	</p></dd></dl></div><p>Adicionalmente puede encontrar un listado de otras fuentes
       no oficiales de paquetes debian en <a href="http://www.internatif.org/bortzmeyer/debian/apt-sources/" target="_top">http://www.internatif.org/bortzmeyer/debian/apt-sources/</a>
       o <a href="http://channel.debian.de/faq/DebianDE-15.html" target="_top">http://channel.debian.de/faq/DebianDE-15.html</a>.
-     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="su-propio-repositorio-de-paquetes"></a>5.1.5. Su propio depósito de paquetes</h4></div></div><p>En una red puede configurarse un computador para mantener
-      los paquetes que se emplean en el resto y para así hacer
-      actualizacioes por ftp o http.  La forma más sencilla es copiar
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="su-propio-repositorio-de-paquetes"></a>5.1.5. Su propio depÃ³sito de paquetes</h4></div></div><p>En una red puede configurarse un computador para mantener
+      los paquetes que se emplean en el resto y para asÃ­ hacer
+      actualizacioes por ftp o http.  La forma mÃ¡s sencilla es copiar
       los paquetes en un directorio que pueda accederse por http y
       emplear tal ruta desde los computadores clientes en
       <tt>/etc/apt/sources.list</tt>.  Por ejemplo si
       copia paquetes en un directorio que pueda consultarse con el URL
       <tt>http://servidor.micolegio.edu.co/paquetes</tt>
-      agregue a <tt>/etc/apt/sources.list</tt> la línea:
+      agregue a <tt>/etc/apt/sources.list</tt> la lÃ­nea:
 </p><pre class="programlisting">
 deb http://servidor.micolegio.edu.co/paquetes /
 </pre><p>
-</p><p>También puede copiar los CDs de instalación de Debian en un
+</p><p>TambiÃ©n puede copiar los CDs de instalaciÃ³n de Debian en un
      directorio de ftp (digamos /debian) y agregar en
      <tt>/etc/apt/sources.list</tt>:
 </p><pre class="programlisting">
@@ -513,15 +513,15 @@ deb ftp://servidor.micolegio.edu.co/debian/cd2 stable main contrib non-free
 deb ftp://servidor.micolegio.edu.co/debian/cd3 stable/non-US main contrib 
 deb ftp://servidor.micolegio.edu.co/debian/cd3 stable main contrib non-free
 </pre><p>
-</p><p>A continuación se explica como puede crear su propio
-     repositorio de paquetes sólo con los paquetes que usted
+</p><p>A continuaciÃ³n se explica como puede crear su propio
+     repositorio de paquetes sÃ³lo con los paquetes que usted
      escoja
       <sup>[<a name="id418441" href="#ftn.id418441">97</a>]</sup>.
-     </p><p>Un repositorio http (o ftp) puede constar de uno o más
+     </p><p>Un repositorio http (o ftp) puede constar de uno o mÃ¡s
      directorios, en cada directorio debe haber paquetes .deb y un
-     índice Packages o mejor Packages.gz.  El índice contiene la
-     descripción de cada paquete separada por varias líneas en blanco,
-     por ejemplo una entrada de un índice es:
+     Ã­ndice Packages o mejor Packages.gz.  El Ã­ndice contiene la
+     descripciÃ³n de cada paquete separada por varias lÃ­neas en blanco,
+     por ejemplo una entrada de un Ã­ndice es:
 </p><pre class="programlisting">
 Package: asigna
 Version: 1.0-1
@@ -541,31 +541,31 @@ teachers (at certain hour in certain room).
 installed-size: 104
 </pre><p>
     </p><a class="indexterm" name="id418481"></a><p>
-      Este índice preferiblemente debe generarse automáticamente con
+      Este Ã­ndice preferiblemente debe generarse automÃ¡ticamente con
       el programa dpkg-scanpackage, creando
       antes un archivo <tt>override</tt>.  El archivo
-      <tt>override</tt> contiene un mínimo de información
-      de los paquetes, cada línea tiene nombre, prioridad y sección de
-      un paquete separados por espacio.  Por ejemplo una línea puede
+      <tt>override</tt> contiene un mÃ­nimo de informaciÃ³n
+      de los paquetes, cada lÃ­nea tiene nombre, prioridad y secciÃ³n de
+      un paquete separados por espacio.  Por ejemplo una lÃ­nea puede
       ser:
      </p><a class="indexterm" name="id418685"></a><pre class="programlisting">
 asigna optional education
 </pre><p>Estando en el directorio del repositorio, si el archivo
-      <tt>override</tt> está allí mismo se genera el índice de
+      <tt>override</tt> estÃ¡ allÃ­ mismo se genera el Ã­ndice de
       paquetes con:
 </p><pre class="programlisting">
 dpkg-scanpackages . override &gt; Packages
 rm Packages.gz
 gzip Packages
 </pre><p>
-    </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="creacion-de-paquetes"></a>5.1.6. Creación de paquetes</h4></div></div><p>Para crear sus paquetes Debian, debe contar con las fuentes
+    </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="creacion-de-paquetes"></a>5.1.6. CreaciÃ³n de paquetes</h4></div></div><p>Para crear sus paquetes Debian, debe contar con las fuentes
       del programa que desea empaquetar e instalar, con las
       herramientas requeridas para compilarlo e instalar el paquete
       <tt>task-debian-devel</tt>.  El nombre del directorio
       con fuentes debe ser de la forma
       <span class="emphasis"><em>paquete</em></span>-<span class="emphasis"><em>version</em></span> con el
-      nombre del paquete en minúsculas y la versión con digitos,
-      letras, punto y guión.  Pase al directorio con las fuentes y
+      nombre del paquete en minÃºsculas y la versiÃ³n con digitos,
+      letras, punto y guiÃ³n.  Pase al directorio con las fuentes y
       ejecute <tt>dh_make</tt>, por ejemplo:
 </p><pre class="screen">
 cd AA_Linux_colegio-1.1
@@ -577,23 +577,23 @@ dh_make -e paz@micolegio.edu.co -f ../AA_Linux_colegio-1.1.tar.gz
 </p><pre class="screen">
 dpkg-buildpackage -rfakeroot
 </pre><p>
-    </p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-administracion-de-programas"></a>5.2. Lecturas recomendadas: Administración de programas</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Para conocer más sobre librerías compartidas puede
-      consultar las páginas <tt>man</tt> de
+    </p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomendadas-administracion-de-programas"></a>5.2. Lecturas recomendadas: AdministraciÃ³n de programas</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Para conocer mÃ¡s sobre librerÃ­as compartidas puede
+      consultar las pÃ¡ginas <tt>man</tt> de
       <tt>ld.so</tt>, <b>ldconfig</b> y
-      <b>ldd</b>.  También puede consultar
-      <i>Program Library HOWTO</i>. Sección 3: Shared
+      <b>ldd</b>.  TambiÃ©n puede consultar
+      <i>Program Library HOWTO</i>. SecciÃ³n 3: Shared
        Libraries.  <a href="http://www.linuxdoc.org/HOWTO/Program-Library-HOWTO/shared-libraries.html" target="_top">http://www.linuxdoc.org/HOWTO/Program-Library-HOWTO/shared-libraries.html</a>
-      </p></li><li><p>Otra explicación del sistema de paquetes en Debian, está
+      </p></li><li><p>Otra explicaciÃ³n del sistema de paquetes en Debian, estÃ¡
        disponible en: <i>Debian Guide. Removing and Installing
        Software</i>.  <a href="http://www.newriders.com/debian/html/noframes/node84.html" target="_top">http://www.newriders.com/debian/html/noframes/node84.html</a>
-       </p></li><li><p>Puede aprender más sobre el sistema de paquetes de Debian,
-      consultando las páginas <tt>man</tt> de
+       </p></li><li><p>Puede aprender mÃ¡s sobre el sistema de paquetes de Debian,
+      consultando las pÃ¡ginas <tt>man</tt> de
       <b>dpkg</b>, <b>apt-get</b>,
       <b>apt-cache</b>,
       <b>dpkg-reconfigure</b> y
-      <b>apt-cdrom</b>. La guía del usuario de
+      <b>apt-cdrom</b>. La guÃ­a del usuario de
       APT en el directorio
-      <tt>/usr/doc/apt/guide.text.gz</tt>, una guía para
+      <tt>/usr/doc/apt/guide.text.gz</tt>, una guÃ­a para
       actualizar varios computadores en red apoyandose en APT en
       <tt>/usr/doc/apt/offline.text.gz</tt> y los
       lineamientos de Debian sobre software libre
@@ -601,84 +601,84 @@ dpkg-buildpackage -rfakeroot
       Debian</i>
       <tt>/usr/doc/debian/social-contract.txt</tt> y en la
       red en <a href="http://www.debian.org/social_contract" target="_top">http://www.debian.org/social_contract</a>.
-      </p></li><li><p>Para aprender más sobre compresión y archivos, consulte
-       las páginas <tt>man</tt> de <b>zip</b>,
+      </p></li><li><p>Para aprender mÃ¡s sobre compresiÃ³n y archivos, consulte
+       las pÃ¡ginas <tt>man</tt> de <b>zip</b>,
        <b>unzip</b>, <b>gzip</b> y
        <b>tar</b>.  
-      </p></li><li><p>El paquete <tt>maint-guide</tt> es una guía
+      </p></li><li><p>El paquete <tt>maint-guide</tt> es una guÃ­a
       para quienes desean crear paquetes Debian (queda instalada al
       instalar <tt>task-debian-devel</tt>).  Una vez
-      instalada puede consultar la guía en diversos formatos en
+      instalada puede consultar la guÃ­a en diversos formatos en
       <tt>/usr/doc/maint-guide</tt>, o en Internet en
       <a href="http://www.debian.org/doc/maint-guide/" target="_top">http://www.debian.org/doc/maint-guide/</a>
-      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-administracion-de-programas"></a>5.3. Ejercicios: Administración de programas</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id419304"></a><a name="id419307"></a><b>5.3.1. </b></td><td align="left" valign="top"><p class="ejer"><a name="admprog.bibliotecas.1"></a>Si un usuario instala
+      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-administracion-de-programas"></a>5.3. Ejercicios: AdministraciÃ³n de programas</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id419304"></a><a name="id419307"></a><b>5.3.1. </b></td><td align="left" valign="top"><p class="ejer"><a name="admprog.bibliotecas.1"></a>Si un usuario instala
        un programa en el directorio
        <tt>/home/pedro/bin</tt> y una biblioteca
        compartida nueva que ese programa requiere en el directorio
-       <tt>/home/pedro/lib</tt>, ¿qué debe agregar él
+       <tt>/home/pedro/lib</tt>, Â¿quÃ© debe agregar Ã©l
        a su archivo <tt>~/.bashrc</tt> para poder
-       ejecutarlo desde un intérprete de comandos sin especificar la
+       ejecutarlo desde un intÃ©rprete de comandos sin especificar la
        ruta completa?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419350"></a><a name="admprog.bibliotecas.2"></a><b>5.3.2. </b></td><td align="left" valign="top"><p>
       Con respecto al
        administrador no quiere usar <tt>LD_LIBRARY_PATH</tt> </p><p>Con respecto al punto anterior, si el administrador tras
        acuerdo con el usuario quiere permitir a otros usuarios usar el
-       programa desde un intérprete de comandos (para cargarlo sin
-       especificar la ruta completa), pero quiere además: que el
+       programa desde un intÃ©rprete de comandos (para cargarlo sin
+       especificar la ruta completa), pero quiere ademÃ¡s: que el
        programa se mantenga en el directorio del usuario, que no se
-       deben modificar los archivos de inicialización de los usuarios
+       deben modificar los archivos de inicializaciÃ³n de los usuarios
        y que no se use
        <tt>LD_LIBRARY_PATH</tt> </p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419408"></a><a name="admprog.busca.1"></a><b>5.3.3. </b></td><td align="left" valign="top"><p>Hay diversos sitios en Internet donde puede
        buscarse software para Linux: <a href="http://www.freshmeat.net" target="_top">http://www.freshmeat.net</a>,
        <a href="http://www.linux.org/apps/index.html" target="_top">http://www.linux.org/apps/index.html</a>.
-       Busque otro y compárelos.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419449"></a><a name="admprog.instala.1"></a><b>5.3.4. </b></td><td align="left" valign="top"><p>Puede consultar software enfocado al sector
+       Busque otro y compÃ¡relos.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419449"></a><a name="admprog.instala.1"></a><b>5.3.4. </b></td><td align="left" valign="top"><p>Puede consultar software enfocado al sector
        educativo que funciona sobre la plataforma de referencia en el
-       primer apéndice de estas guías (ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
-       referencia</a>) y en Internet en índices especializados:
+       primer apÃ©ndice de estas guÃ­as (ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
+       referencia</a>) y en Internet en Ã­ndices especializados:
        <a href="http://ingenieria.sanmartin.edu.co/cgi-bin/slec/slec.cgi/slec.software_librered?style=slec&amp;site=slec&amp;" target="_top">http://ingenieria.sanmartin.edu.co/cgi-bin/slec/slec.cgi/slec.software_librered?style=slec&amp;site=slec&amp;</a>,
        <a href="http://www.ofset.org/freeduc" target="_top">http://www.ofset.org/freeduc</a>, <a href="http://richtech.ca/seul/" target="_top">http://richtech.ca/seul/</a>, <a href="http://edvisor.org" target="_top">http://edvisor.org</a> .  Busque las fuentes de un
-       programa de libre redistribución que necesite, instálelo y
-       describa el proceso que siguió.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419499"></a><a name="admprog.bibliotecas.3"></a><b>5.3.5. </b></td><td align="left" valign="top"><p>Examine la lista de bibliotecas
+       programa de libre redistribuciÃ³n que necesite, instÃ¡lelo y
+       describa el proceso que siguiÃ³.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419499"></a><a name="admprog.bibliotecas.3"></a><b>5.3.5. </b></td><td align="left" valign="top"><p>Examine la lista de bibliotecas
       compartidas que requiere la calculadora
       gcalc.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419611"></a><a name="admprog.bibliotecas.4"></a><b>5.3.6. </b></td><td align="left" valign="top"><p>Algunos programas instalan o usan bibliotecas
-       compartidas.  Agregue la vía <tt>/opt/lib</tt> a la lista de directorios
-       donde el sistema buscará bibliotecas compartidas.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419648"></a><a name="admprog.instala.2"></a><b>5.3.7. </b></td><td align="left" valign="top"><p>Consiga  un programa  pequeño  (que
+       compartidas.  Agregue la vÃ­a <tt>/opt/lib</tt> a la lista de directorios
+       donde el sistema buscarÃ¡ bibliotecas compartidas.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419648"></a><a name="admprog.instala.2"></a><b>5.3.7. </b></td><td align="left" valign="top"><p>Consiga  un programa  pequeÃ±o  (que
        quepa en  un  disquete) en  formato <tt>deb</tt>,
-       instálelo, úselo y desinstálelo.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419696"></a><a name="admprog.instala.3"></a><b>5.3.8. </b></td><td align="left" valign="top"><p>Cree  un archivo
-      <tt>.tar.gz</tt>  de un  directorio pequeño  (por
-      ejemplo cree uno de prueba con al menos dos archivos).</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id413763" href="#id413763">89</a>] </sup>También soporta el formato binario aout en todas
+       instÃ¡lelo, Ãºselo y desinstÃ¡lelo.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id419696"></a><a name="admprog.instala.3"></a><b>5.3.8. </b></td><td align="left" valign="top"><p>Cree  un archivo
+      <tt>.tar.gz</tt>  de un  directorio pequeÃ±o  (por
+      ejemplo cree uno de prueba con al menos dos archivos).</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id413763" href="#id413763">89</a>] </sup>TambiÃ©n soporta el formato binario aout en todas
        las arquitecturas, en Sparc soporta el formato iBCS2, con el
-       módulo binfmt_misc puede agregarse soporte para otros formatos
-       dinánicamente.</p></div><div class="footnote"><p><sup>[<a name="ftn.id413769" href="#id413769">90</a>] </sup>Biblioteca compartida: en inglés
+       mÃ³dulo binfmt_misc puede agregarse soporte para otros formatos
+       dinÃ¡nicamente.</p></div><div class="footnote"><p><sup>[<a name="ftn.id413769" href="#id413769">90</a>] </sup>Biblioteca compartida: en inglÃ©s
        <i>shared library</i>.</p></div><div class="footnote"><p><sup>[<a name="ftn.id413905" href="#id413905">91</a>] </sup>En Linux recientes, por defecto todos los programas
 	requieren bibliotecas compartidas ---al menos requieren libc.
-	Aunque esto puede cambiarse durante la compilación del
-	programa con la opción <tt>-static</tt> del
+	Aunque esto puede cambiarse durante la compilaciÃ³n del
+	programa con la opciÃ³n <tt>-static</tt> del
 	compilador gcc.</p></div><div class="footnote"><p><sup>[<a name="ftn.id414727" href="#id414727">92</a>] </sup><tt>deb</tt> es
-	la extensión de los archivo precompilados para la distribución
-	Debian, en otras distribuciones el formato y extensión de los
+	la extensiÃ³n de los archivo precompilados para la distribuciÃ³n
+	Debian, en otras distribuciones el formato y extensiÃ³n de los
 	archivos precompilados es diferente.</p></div><div class="footnote"><p><sup>[<a name="ftn.id415420" href="#id415420">93</a>] </sup><b>ar</b> se usa para crear archivos con la
 	sintaxis <b>ar -r <i><tt>archivo</tt></i>
 	<i><tt>fichero1</tt></i>
 	<i><tt>fichero2</tt></i> ...</b>, y para
 	desempaquetarlos con <b>ar -x
 	<i><tt>archivo</tt></i></b>.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id415576" href="#id415576">94</a>] </sup>El estado archivos de configuración es típico tras
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id415576" href="#id415576">94</a>] </sup>El estado archivos de configuraciÃ³n es tÃ­pico tras
 	instalar y desintalar un programa, dpkg no borra archivos de
-	configuración para que en siguientes instalaciones se tomen
-	los valores por defecto de la instalación
+	configuraciÃ³n para que en siguientes instalaciones se tomen
+	los valores por defecto de la instalaciÃ³n
 	anterior.
-       </p></div><div class="footnote"><p><sup>[<a name="ftn.id415772" href="#id415772">95</a>] </sup>La licencia de cada paquete está en el archivo
+       </p></div><div class="footnote"><p><sup>[<a name="ftn.id415772" href="#id415772">95</a>] </sup>La licencia de cada paquete estÃ¡ en el archivo
 	<tt>copyright</tt> del directorio
 	<tt>/usr/doc/<i><tt>paquete</tt></i></tt>.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id416663" href="#id416663">96</a>] </sup>El programa <b>apt-get</b> resuelve
 	dependencias y descarga paquetes de repositirios, para la
-	instalación de un paquete ya descargado usa el programa
+	instalaciÃ³n de un paquete ya descargado usa el programa
 	<b>dpkg</b>.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id418441" href="#id418441">97</a>] </sup>Un ejemplo es el repositorio de paquetes de Structio,
-	donde en particular están estas guías. Si cuenta con acceso a
+	donde en particular estÃ¡n estas guÃ­as. Si cuenta con acceso a
 	Internet puede accederlo con <tt>apt</tt> agregando
-	a <tt>/etc/apt/sources.list</tt> la línea
+	a <tt>/etc/apt/sources.list</tt> la lÃ­nea
 	<tt>deb
 	http://structio.sourceforge.net/debian/binary-i386
 	/</tt>
-       </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="administracion-de-archivos.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="administracion-uno.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="colaboracion-y-soporte.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. Administración de archivos </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 6. Colaboración y soporte</td></tr></table></div></body></html>
+       </p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="administracion-de-archivos.html">Anterior</a>Â </td><td width="20%" align="center"><a accesskey="u" href="administracion-uno.html">Subir</a></td><td width="40%" align="right">Â <a accesskey="n" href="colaboracion-y-soporte.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">4. AdministraciÃ³n de archivosÂ </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top">Â 6. ColaboraciÃ³n y soporte</td></tr></table></div></body></html>

@@ -1,271 +1,271 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"><title>3. Administración de usuarios</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-uno.html" title="Capítulo 4. Desarrollo de habilidades para administrar computadores con
-   Linux"><link rel="previous" href="apagado-y-encendido-de-una-red.html" title="2. Apagado y encendido de una red"><link rel="next" href="administracion-de-archivos.html" title="4. Administración de archivos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. Administración de usuarios</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apagado-y-encendido-de-una-red.html">Anterior</a> </td><th width="60%" align="center">Capítulo 4. Desarrollo de habilidades para administrar computadores con
-   Linux</th><td width="20%" align="right"> <a accesskey="n" href="administracion-de-archivos.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="administracion-de-usuarios"></a>3. Administración de usuarios</h2></div></div><p>Indicadores de Logros</p><div class="itemizedlist"><ul type="disc"><li><p><a name="admus.politica"></a>Implementa una política para
-       administración de usuarios: grupos, usuarios, permisos.
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>3. AdministraciÃ³n de usuarios</title><meta name="generator" content="DocBook XSL Stylesheets V1.56.1"><link rel="home" href="AA_Linux_colegio.html" title="Aprendiendo a Aprender Linux"><link rel="up" href="administracion-uno.html" title="CapÃ­tulo 4. Desarrollo de habilidades para administrar computadores con
+   Linux"><link rel="previous" href="apagado-y-encendido-de-una-red.html" title="2. Apagado y encendido de una red"><link rel="next" href="administracion-de-archivos.html" title="4. AdministraciÃ³n de archivos"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div class="navheader"><table width="100%" summary="Navigation header"><tr><th colspan="3" align="center">3. AdministraciÃ³n de usuarios</th></tr><tr><td width="20%" align="left"><a accesskey="p" href="apagado-y-encendido-de-una-red.html">Anterior</a>Â </td><th width="60%" align="center">CapÃ­tulo 4. Desarrollo de habilidades para administrar computadores con
+   Linux</th><td width="20%" align="right">Â <a accesskey="n" href="administracion-de-archivos.html">Siguiente</a></td></tr></table><hr></div><div class="sect1"><div class="titlepage"><div><h2 class="title" style="clear: both"><a name="administracion-de-usuarios"></a>3. AdministraciÃ³n de usuarios</h2></div></div><p>Indicadores de Logros</p><div class="itemizedlist"><ul type="disc"><li><p><a name="admus.politica"></a>Implementa una polÃ­tica para
+       administraciÃ³n de usuarios: grupos, usuarios, permisos.
       </p></li><li><p><a name="admus.configura"></a>Configura el sistema buscando
-       mantener privacidad y hacer más fácil la adaptación de usuarios
-       nuevos.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-administracion-de-usuarios"></a>3.1. Lecturas: Administración de usuarios</h3></div></div><p>El objetivo de los usuarios, grupos y permisos en Unix es
-     brindar privacidad y organización permitiendo también compartir
-     información cuando así se desea.
+       mantener privacidad y hacer mÃ¡s fÃ¡cil la adaptaciÃ³n de usuarios
+       nuevos.</p></li></ul></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-administracion-de-usuarios"></a>3.1. Lecturas: AdministraciÃ³n de usuarios</h3></div></div><p>El objetivo de los usuarios, grupos y permisos en Unix es
+     brindar privacidad y organizaciÃ³n permitiendo tambiÃ©n compartir
+     informaciÃ³n cuando asÃ­ se desea.
    </p><p>Con respecto a usuarios el administrador puede crear,
-     eliminar o modificar información de cuentas y grupos.  También
+     eliminar o modificar informaciÃ³n de cuentas y grupos.  TambiÃ©n
      puede configurar detalles de los programas que permiten iniciar
-     sesiones (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: Configuración de una sesión">Lectura
-     Configuración de una sesión</a>) y prevenir fallas de
-     seguridad.  Si aún no lo ha hecho, antes de consultar esta
-     sección recomendamos estudiar la visión que un usuario tiene del
+     sesiones (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: ConfiguraciÃ³n de una sesiÃ³n">Lectura
+     ConfiguraciÃ³n de una sesiÃ³n</a>) y prevenir fallas de
+     seguridad.  Si aÃºn no lo ha hecho, antes de consultar esta
+     secciÃ³n recomendamos estudiar la visiÃ³n que un usuario tiene del
      sistema de usuarios y grupos (ver <a href="sistema-de-usuarios-y-manejo-de-clave.html" title="3. Sistema de usuarios y manejo de clave">Sistema de
      usuarios y manejo de clave</a>).
-    </p><p>En una red con NIS la información de
-     cuentas y grupos está centralizada en el servidor.  Desde este
-     debe hacerse la administración con los programas y archivos
-     presentados en esta sección y después de cada cambio debe
-     reconfigurarse NIS como se explicará posteriormente (ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-nis" title="4.1.4. Servicio NIS">Servicio NIS</a>).
+    </p><p>En una red con NIS la informaciÃ³n de
+     cuentas y grupos estÃ¡ centralizada en el servidor.  Desde este
+     debe hacerse la administraciÃ³n con los programas y archivos
+     presentados en esta secciÃ³n y despuÃ©s de cada cambio debe
+     reconfigurarse NIS como se explicarÃ¡ posteriormente (ver <a href="protocolos-de-soporte-y-de-usuario.html#servicio-nis" title="4.1.4. Servicio NIS">Servicio NIS</a>).
     </p><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="usuarios"></a>3.1.1. Usuarios</h4></div></div><p>Los siguientes programas permiten realizar operaciones
       relacionadas con usuarios:
      </p><a class="indexterm" name="id399684"></a><a class="indexterm" name="id399712"></a><a class="indexterm" name="id399740"></a><a class="indexterm" name="id399846"></a><a class="indexterm" name="id399873"></a><a class="indexterm" name="id399900"></a><a class="indexterm" name="id399927"></a><a class="indexterm" name="id399954"></a><a class="indexterm" name="id399982"></a><a class="indexterm" name="id400009"></a><a class="indexterm" name="id400038"></a><a class="indexterm" name="id400066"></a><a class="indexterm" name="id400173"></a><a class="indexterm" name="id400201"></a><a class="indexterm" name="id400230"></a><a class="indexterm" name="id400258"></a><a class="indexterm" name="id400285"></a><a class="indexterm" name="id400313"></a><a class="indexterm" name="id400340"></a><a class="indexterm" name="id400369"></a><a class="indexterm" name="id400396"></a><div class="variablelist"><dl><dt><span class="term"><b>su [<i><tt>usuario</tt></i>]</b>
        </span></dt><dd><p>
-	 Permite entrar a una sesión como un usuario diferente, si no
+	 Permite entrar a una sesiÃ³n como un usuario diferente, si no
 	 se especifica un usuario como primer parametro,
 	 <b>su</b> cambia al usuario root.  Desde una
-	 cuenta de usuario pedirá la clave del nuevo usuario, e
-	 iniciará el intérprete de comandos que el usuario haya
-	 configurado.  Si se emplea la opción <tt>-c
+	 cuenta de usuario pedirÃ¡ la clave del nuevo usuario, e
+	 iniciarÃ¡ el intÃ©rprete de comandos que el usuario haya
+	 configurado.  Si se emplea la opciÃ³n <tt>-c
 	 <i><tt>comando</tt></i></tt> el comando se
-	 ejecutará.  Por defecto el ambiente y el directorio de
-	 trabajo serán heredados de la sesión inicial, pero si se
+	 ejecutarÃ¡.  Por defecto el ambiente y el directorio de
+	 trabajo serÃ¡n heredados de la sesiÃ³n inicial, pero si se
 	 desea iniciar con un ambiente y directorio como el que
-	 tendría el usuario después de hacer login (pero sin ejecutar
-	 archivos de inicialización del interprete de comandos),
-	 emplee la opción <b>-</b>
+	 tendrÃ­a el usuario despuÃ©s de hacer login (pero sin ejecutar
+	 archivos de inicializaciÃ³n del interprete de comandos),
+	 emplee la opciÃ³n <b>-</b>
 
 	 <sup>[<a name="id400459" href="#ftn.id400459">63</a>]</sup>.
 	 
-	 Si desea ejecutar un intérprete de comandos diferente al
-	 configurado por el usuario emplee la opción <tt>-s
-	 <i><tt>intérprete</tt></i></tt>, donde
-	 <i><tt>intérprete</tt></i> debe ser la ruta
-	 completa del intérprete de comandos que además debe estar
+	 Si desea ejecutar un intÃ©rprete de comandos diferente al
+	 configurado por el usuario emplee la opciÃ³n <tt>-s
+	 <i><tt>intÃ©rprete</tt></i></tt>, donde
+	 <i><tt>intÃ©rprete</tt></i> debe ser la ruta
+	 completa del intÃ©rprete de comandos que ademÃ¡s debe estar
 	 listada en el archivo
 	 <tt>/etc/shells</tt>
 	 <sup>[<a name="id400761" href="#ftn.id400761">64</a>]</sup>.  En Debian 2.2 <b>su</b> al igual
 	 que <b>login</b> emplea los servicios de la
-	 librería PAM (<i>Pluggable authentication
-	 modules</i>), así que puede configurar varios
+	 librerÃ­a PAM (<i>Pluggable authentication
+	 modules</i>), asÃ­ que puede configurar varios
 	 detalles relacionados con seguridad de <b>su</b>
 	 en el archivo <tt>/etc/pam.d/su</tt> ---por
 	 ejemplo para restringir el uso de este comando.
 	</p></dd><dt><span class="term"><b>passwd
 	 [<i><tt>usuario</tt></i>]</b></span></dt><dd><p>
-	 Permite cambiar la clave del usuario especificado (sólo root
+	 Permite cambiar la clave del usuario especificado (sÃ³lo root
 	 puede especificar un usuario). Si no se especifia un usuario
 	 permite cambiar la clave de la cuenta desde la cual se
-	 ejecuta.  Por defecto un usuario podrá cambiar su clave
-	 cuando él/ella lo desee, aunque puede implementarse una
-	 política de expiración de claves.  La política de un usuario
-	 puede examinarse con la opción <tt>-S</tt> que
+	 ejecuta.  Por defecto un usuario podrÃ¡ cambiar su clave
+	 cuando Ã©l/ella lo desee, aunque puede implementarse una
+	 polÃ­tica de expiraciÃ³n de claves.  La polÃ­tica de un usuario
+	 puede examinarse con la opciÃ³n <tt>-S</tt> que
 	 presenta: estado de la cuenta (L bloqueada, NP sin clave, P
-	 con clave utilizable), fecha del último cambio de clave,
-	 tiempos mínimo y máximo para cambiar clave, tiempo de avisos
-	 y tiempo para desactivación.  Puede fijarse la política con
+	 con clave utilizable), fecha del Ãºltimo cambio de clave,
+	 tiempos mÃ­nimo y mÃ¡ximo para cambiar clave, tiempo de avisos
+	 y tiempo para desactivaciÃ³n.  Puede fijarse la polÃ­tica con
 	 las siguentes opciones: <tt>-x
-	 <i><tt>días</tt></i></tt> para especificar el
-	 máximo de días antes de que un usuario deba cambiar su clave
+	 <i><tt>dÃ­as</tt></i></tt> para especificar el
+	 mÃ¡ximo de dÃ­as antes de que un usuario deba cambiar su clave
 	 <sup>[<a name="id400840" href="#ftn.id400840">65</a>]</sup>; <tt>-w
-	 <i><tt>días</tt></i></tt> para indicar con
-	 cuantos días de anterioridad a la expiración de la clave el
+	 <i><tt>dÃ­as</tt></i></tt> para indicar con
+	 cuantos dÃ­as de anterioridad a la expiraciÃ³n de la clave el
 	 sistema debe empezar a enviar correos recordando el cambio;
-	 <tt>-i <i><tt>días</tt></i></tt> índica el
-	 mínimo número de días que el usuario debe esperar para
+	 <tt>-i <i><tt>dÃ­as</tt></i></tt> Ã­ndica el
+	 mÃ­nimo nÃºmero de dÃ­as que el usuario debe esperar para
 	 cambiar nuevamente su clave; <tt>-i
-	 <i><tt>días</tt></i></tt> para deshabilitar
-	 una cuenta cuya clave no haya sido cambiado en los días
+	 <i><tt>dÃ­as</tt></i></tt> para deshabilitar
+	 una cuenta cuya clave no haya sido cambiado en los dÃ­as
 	 especificados.  Una cuenta puede bloquearse para impedir que
 	 pueda usarse con el programa login. Pueden bloquear y
 	 desbloquear cuentas con las opciones <tt>-u</tt>
 	 (de <i>unlock</i>) y <tt>-l</tt>
 	 respectivamente.
-	</p></dd><dt><span class="term"><b>chage <i><tt>usuario</tt></i></b></span></dt><dd><p>Cambia la información sobre el envejecimiento de la
-	 clave de un usuario, cuando se están usando claves
-	 shadow. Para cambiar el mínimo de días entre cambios se usa
-	 la opción <tt>-m
-	 <i><tt>días</tt></i></tt> (0 índica que puede
+	</p></dd><dt><span class="term"><b>chage <i><tt>usuario</tt></i></b></span></dt><dd><p>Cambia la informaciÃ³n sobre el envejecimiento de la
+	 clave de un usuario, cuando se estÃ¡n usando claves
+	 shadow. Para cambiar el mÃ­nimo de dÃ­as entre cambios se usa
+	 la opciÃ³n <tt>-m
+	 <i><tt>dÃ­as</tt></i></tt> (0 Ã­ndica que puede
 	 cambiarse siempre), <tt>-M
-	 <i><tt>días</tt></i></tt> para indicar máximo
-	 de días antes de la expiración de la clave, <tt>-d
-	 <i><tt>días</tt></i></tt> para establecer
-	 fecha del último cambio de clave (contada en días a partir de
+	 <i><tt>dÃ­as</tt></i></tt> para indicar mÃ¡ximo
+	 de dÃ­as antes de la expiraciÃ³n de la clave, <tt>-d
+	 <i><tt>dÃ­as</tt></i></tt> para establecer
+	 fecha del Ãºltimo cambio de clave (contada en dÃ­as a partir de
 	 1/Ene/1975), <tt>-E
 	 <i><tt>fecha</tt></i></tt> fecha en la cual
 	 la cuenta expirar (puede especificarse como una fecha
-	 mm/dd/aaaa o contada en días a partir de 1/Ene/1975),
-	 <tt>-I <i><tt>días</tt></i></tt>
-	 establece cantidad de días de inactividad antes de bloquear
-	 una cuenta después de la expiración de la clave, <tt>-W
-	 <i><tt>días</tt></i></tt> cantidad de días de
-	 preaviso antes de la expriación de la clave.
+	 mm/dd/aaaa o contada en dÃ­as a partir de 1/Ene/1975),
+	 <tt>-I <i><tt>dÃ­as</tt></i></tt>
+	 establece cantidad de dÃ­as de inactividad antes de bloquear
+	 una cuenta despuÃ©s de la expiraciÃ³n de la clave, <tt>-W
+	 <i><tt>dÃ­as</tt></i></tt> cantidad de dÃ­as de
+	 preaviso antes de la expriaciÃ³n de la clave.
 	</p></dd><dt><span class="term"><b>adduser <i><tt>login</tt></i></b></span></dt><dd><p>Permite agregar un usuario con el login dado
 	 <sup>[<a name="id401036" href="#ftn.id401036">66</a>]</sup>, opcionalmente indicando el directorio de trabajo
-	 (opción <tt>--home</tt>) que de no existir será
-	 creado, un número que identificará al usuario de forma única
-	 (opción <tt>uid</tt>), el grupo principal al que
-	 pertenecerá (opción <tt>--ingroup
-	 <i><tt>grupo</tt></i></tt>), el intérprete de
-	 comandos por defecto (opción <tt>--shell
+	 (opciÃ³n <tt>--home</tt>) que de no existir serÃ¡
+	 creado, un nÃºmero que identificarÃ¡ al usuario de forma Ãºnica
+	 (opciÃ³n <tt>uid</tt>), el grupo principal al que
+	 pertenecerÃ¡ (opciÃ³n <tt>--ingroup
+	 <i><tt>grupo</tt></i></tt>), el intÃ©rprete de
+	 comandos por defecto (opciÃ³n <tt>--shell
 	 <i><tt>nombre</tt></i></tt>) y otros datos del
-	 usuario con la opción <tt>--gecos
+	 usuario con la opciÃ³n <tt>--gecos
 	 &quot;<i><tt>datos</tt></i>&quot;</tt> (los datos se
-	 separan con comas y por defecto son: nombre, número de
-	 cuarto, teléfono del trabajo y teléfono de la casa).  A menos
+	 separan con comas y por defecto son: nombre, nÃºmero de
+	 cuarto, telÃ©fono del trabajo y telÃ©fono de la casa).  A menos
 	 que se especifique <tt>--disabled-login</tt> o
-	 <tt>--disabled-password</tt> pedirá clave
-	 inmediatamente después de crear la cuenta
+	 <tt>--disabled-password</tt> pedirÃ¡ clave
+	 inmediatamente despuÃ©s de crear la cuenta
 	 (<tt>--disabled-login</tt> bloquea la cuenta hasta
 	 que se asigne una clave,
 	 <tt>--disabled-password</tt> no bloquea la cuenta
-	 pero asigna una clave no válida, el usuario podría entrar por
+	 pero asigna una clave no vÃ¡lida, el usuario podrÃ­a entrar por
 	 ejemplo con RSA ssh).
 	</p><p>
 	 Las operaciones que <b>adduser</b> realiza se
 	 configuran en el archivo
-	 <tt>/etc/adduser.conf</tt>.  Por defecto creará
+	 <tt>/etc/adduser.conf</tt>.  Por defecto crearÃ¡
 	 cuentas de usuarios en el directorio
-	 <tt>/home</tt> y copiará en los nuevos
+	 <tt>/home</tt> y copiarÃ¡ en los nuevos
 	 directorios los archivos del directorio
 	 <tt>/etc/skel</tt> (e.g
-	 <tt>.bash_profile</tt>), pondrá como intérprete de
+	 <tt>.bash_profile</tt>), pondrÃ¡ como intÃ©rprete de
 	 comandos por defecto <b>/usr/bin/bash</b> y
-	 asignará un número de usuario
-	 <sup>[<a name="id401272" href="#ftn.id401272">67</a>]</sup> de acuerdo a la política de Debian y asignará un
-	 grupo nuevo a cada usuario.  Normalmente después para agregar
-	 un usuario debe especificar la clave que tendrá, si prefiere
-	 crear una cuenta inicialmente sin clave emplee la opción
+	 asignarÃ¡ un nÃºmero de usuario
+	 <sup>[<a name="id401272" href="#ftn.id401272">67</a>]</sup> de acuerdo a la polÃ­tica de Debian y asignarÃ¡ un
+	 grupo nuevo a cada usuario.  Normalmente despuÃ©s para agregar
+	 un usuario debe especificar la clave que tendrÃ¡, si prefiere
+	 crear una cuenta inicialmente sin clave emplee la opciÃ³n
 	 <tt>--disabled-password</tt> (antes de poder
 	 emplear la cuenta debe establecer la clave con
 	 <b>passwd</b>).
 	 
 	</p></dd><dt><span class="term"><b>chfn [<i><tt>login</tt></i>]</b>
-	</span></dt><dd><p>Para cambiar la información GECOS de un usuario (si no
-	 se especifica un login se cambiará la información del usuario
+	</span></dt><dd><p>Para cambiar la informaciÃ³n GECOS de un usuario (si no
+	 se especifica un login se cambiarÃ¡ la informaciÃ³n del usuario
 	 que emplee el programa).  Como opciones recibe <tt>-f
 	 <i><tt>nombre</tt></i></tt>, <tt>-r
 	 <i><tt>cuarto</tt></i></tt>, <tt>-w
-	 <i><tt>teléfono_trabajo</tt></i></tt>, <tt>-h
-	 <i><tt>teléfono casa</tt></i></tt> y <tt>-o
+	 <i><tt>telÃ©fono_trabajo</tt></i></tt>, <tt>-h
+	 <i><tt>telÃ©fono casa</tt></i></tt> y <tt>-o
 	 <i><tt>otros_datos</tt></i></tt>. Nuestra
 	 sugerencia es emplear en lugar de cuarto el grado y en lugar
-	 del teléfono del trabajo la dirección de la casa.  Estos
+	 del telÃ©fono del trabajo la direcciÃ³n de la casa.  Estos
 	 datos no deben contener los caracteres ',' ';' ni '='. Los
-	 datos que no se especifiquen en la línea de comandos serán
+	 datos que no se especifiquen en la lÃ­nea de comandos serÃ¡n
 	 solicitados interactivamente.  <b>chfn</b>
-	 también será llamado por <b>passwd</b> si se
-	 emplea la opción <tt>-f</tt>.
+	 tambiÃ©n serÃ¡ llamado por <b>passwd</b> si se
+	 emplea la opciÃ³n <tt>-f</tt>.
 	</p></dd><dt><span class="term">
 	<b>chsh [<i><tt>login</tt></i>]</b>
-	</span></dt><dd><p>Para cambiar el intérprete de comandos de un usuario
-	 (si no se especifica un login se cambiará el intérprete del
-	 usuario que emplee el programa). Como opción recibe el nombre
-	 del intérprete, el cual debe estar listado en el archivo
+	</span></dt><dd><p>Para cambiar el intÃ©rprete de comandos de un usuario
+	 (si no se especifica un login se cambiarÃ¡ el intÃ©rprete del
+	 usuario que emplee el programa). Como opciÃ³n recibe el nombre
+	 del intÃ©rprete, el cual debe estar listado en el archivo
 	 <tt>/etc/shells</tt>.  Un usuario que emplee un
-	 intérprete de comandos restringido
+	 intÃ©rprete de comandos restringido
 	 (<tt>/bin/rsh</tt>) no puede cambiar su shell.
-	 <b>chsh</b> también será llamado por
-	 <b>passwd</b> si se emplea la opción
+	 <b>chsh</b> tambiÃ©n serÃ¡ llamado por
+	 <b>passwd</b> si se emplea la opciÃ³n
 	 <tt>-s</tt>.
  	</p></dd><dt><span class="term"><b>deluser <i><tt>login</tt></i></b>
        </span></dt><dd><p>Para eliminar una cuenta Por defecto no elimina el
 	 directorio personal ni la cola de correos, puede indicarse
-	 que se borren estos directorios con la opción
+	 que se borren estos directorios con la opciÃ³n
 	 <tt>--remove-home</tt> y puede indicarse que se
 	 busquen y eliminen todos los archivos del usuario (en los
-	 demás directorios) con la opción
-	 <tt>--remove-all-files</tt>.  Con la opción
-	 <tt>--backup</tt> creará un archivo comprimido con
+	 demÃ¡s directorios) con la opciÃ³n
+	 <tt>--remove-all-files</tt>.  Con la opciÃ³n
+	 <tt>--backup</tt> crearÃ¡ un archivo comprimido con
 	 los datos del usuario en el directorio de trabajo con nombre
 	 login.tar.gz.  El comportamiento por defecto de este comando
 	 puede configurarse en el archivo
 	 <tt>/etc/deluser.conf</tt>.
-	</p></dd></dl></div><p>La información sobre usuarios se mantiene en el archivo que
+	</p></dd></dl></div><p>La informaciÃ³n sobre usuarios se mantiene en el archivo que
       todos los usuarios pueden leer:
-      <tt>/etc/passwd</tt>.  Cada línea de este archivo
-      tiene información de un usuario separada con el caracter ':'.
+      <tt>/etc/passwd</tt>.  Cada lÃ­nea de este archivo
+      tiene informaciÃ³n de un usuario separada con el caracter ':'.
       De cada usuario mantiene:
      </p><div class="itemizedlist"><ul type="disc"><li><p><tt>login</tt> </p></li><li><p>Clave o un caracter de control. En sistemas Unix las
 	claves antes de ser almacenadas en este archivo (para su
-	posterior comparación) son convertidas a una secuencia de
-	letras y números con un algoritmo (bien DES o bien
+	posterior comparaciÃ³n) son convertidas a una secuencia de
+	letras y nÃºmeros con un algoritmo (bien DES o bien
 	MD5
 	<sup>[<a name="id401602" href="#ftn.id401602">68</a>]</sup> ), cada vez que un usuario desea ingresar al
        sistema la clave que teclea se transforma con ese algoritmo y
-       se compará con la almacenada para dar acceso sólo si son
-       iguales.  Por las características de DES y MD5 es muy dificil
-       recuperar la clave original partiendo de la información
-       almacenada en <tt>/etc/passwd</tt> así que una
-       persona con acceso a este archivo no podrá conocer facilmente
+       se comparÃ¡ con la almacenada para dar acceso sÃ³lo si son
+       iguales.  Por las caracterÃ­sticas de DES y MD5 es muy dificil
+       recuperar la clave original partiendo de la informaciÃ³n
+       almacenada en <tt>/etc/passwd</tt> asÃ­ que una
+       persona con acceso a este archivo no podrÃ¡ conocer facilmente
        las claves de los usuarios.  Sin embargo es mejor emplear el
        sistema de claves shadow, que mantiene las claves en un archivo
-       aparte que sólo pueda ser leido por el administrador:
+       aparte que sÃ³lo pueda ser leido por el administrador:
        <tt>/etc/shadow</tt>, las cuentas que empleen este
-       mecanismo tendrán un caracter 'x' en lugar de clave.  Tanto en
+       mecanismo tendrÃ¡n un caracter 'x' en lugar de clave.  Tanto en
        <tt>/etc/passwd</tt> como en
        <tt>/etc/shadow</tt> en lugar de clave transformada
        puede aparecer el caracter '*' para indicar que la cuenta tiene
-       clave deshabilitada (opción
+       clave deshabilitada (opciÃ³n
        <tt>--disabled-password</tt> de
-       <tt>adduser</tt>), el usuario podría ingresar con RSA
-       ssh.  En lugar de la clave también puede aparecer el caracter
-       '!' para indicar que la cuenta está bloqueada (opción
+       <tt>adduser</tt>), el usuario podrÃ­a ingresar con RSA
+       ssh.  En lugar de la clave tambiÃ©n puede aparecer el caracter
+       '!' para indicar que la cuenta estÃ¡ bloqueada (opciÃ³n
        <tt>--disabled-login</tt> de
-       <b>adduser</b>), en este caso el usuario no podrá
+       <b>adduser</b>), en este caso el usuario no podrÃ¡
 	entrar con <b>login</b> ni con
        gdm ni con RSA ssh, pero si con
-       <b>su</b> y se ejecutarán procesos del usuarios
+       <b>su</b> y se ejecutarÃ¡n procesos del usuarios
        iniciados por <b>cron</b> o <b>at</b>.
-      </p><p>está bloqueada (el usuario no podrá entrar con
+      </p><p>estÃ¡ bloqueada (el usuario no podrÃ¡ entrar con
 	login o
 	gdm pero si con
 	rlogin o <b>su</b> y se
-	ejecutarán procesos del usuarios iniciados por
+	ejecutarÃ¡n procesos del usuarios iniciados por
 	<b>cron</b> o <b>at</b>).
-       </p></li><li><p>GID, es decir número que identifica al
+       </p></li><li><p>GID, es decir nÃºmero que identifica al
        grupo principal del usuario.
-       </p></li><li><p>información GECOS
+       </p></li><li><p>informaciÃ³n GECOS
 	<sup>[<a name="id402057" href="#ftn.id402057">69</a>]</sup>, los datos se separan entre si con comas.
-	</p></li><li><p>directorio personal </p></li><li><p>intérprete de comandos
+	</p></li><li><p>directorio personal </p></li><li><p>intÃ©rprete de comandos
       </p></li></ul></div><p>En el archivo
       <tt>/etc/shadow</tt>
-      <sup>[<a name="id402093" href="#ftn.id402093">70</a>]</sup> hay una línea por cada usuario con los siguientes
-      datos separados por ':': </p><div class="itemizedlist"><ul type="disc"><li><p>Login</p></li><li><p>Clave transformada</p></li><li><p>Fecha del último cambio de la clave (contada en días a
-	partir del Enero 1 de 1975).  </p></li><li><p>Días por esperar antes de que la clave pueda ser
-      cambiada.</p></li><li><p>Máximo de días antes de exigir un cambio de clave.</p></li><li><p>Cantidad de días de preaviso antes de expiración de
-	clave.</p></li><li><p>Cantidad de días entre expiración de clave y bloqueo de
-	cuenta.</p></li><li><p>Fecha desde la cual la cuenta está deshabilitada (contada
-	en días desde Enero 1 de 1975).  </p></li><li><p>Campo reservado.</p></li></ul></div><p>Aunque puede editar manualmente
+      <sup>[<a name="id402093" href="#ftn.id402093">70</a>]</sup> hay una lÃ­nea por cada usuario con los siguientes
+      datos separados por ':': </p><div class="itemizedlist"><ul type="disc"><li><p>Login</p></li><li><p>Clave transformada</p></li><li><p>Fecha del Ãºltimo cambio de la clave (contada en dÃ­as a
+	partir del Enero 1 de 1975).  </p></li><li><p>DÃ­as por esperar antes de que la clave pueda ser
+      cambiada.</p></li><li><p>MÃ¡ximo de dÃ­as antes de exigir un cambio de clave.</p></li><li><p>Cantidad de dÃ­as de preaviso antes de expiraciÃ³n de
+	clave.</p></li><li><p>Cantidad de dÃ­as entre expiraciÃ³n de clave y bloqueo de
+	cuenta.</p></li><li><p>Fecha desde la cual la cuenta estÃ¡ deshabilitada (contada
+	en dÃ­as desde Enero 1 de 1975).  </p></li><li><p>Campo reservado.</p></li></ul></div><p>Aunque puede editar manualmente
       <tt>/etc/passwd</tt> y
       <tt>/etc/shadow</tt> es recomendable que emplee los
-      programas presentados en esta sección.  Los
+      programas presentados en esta secciÃ³n.  Los
       GID y UID reservados en un
-      sistema Debian están en los archivos
+      sistema Debian estÃ¡n en los archivos
       <tt>/usr/share/base-passwd/group.master</tt> y
       <tt>/usr/share/base-passwd/passwd.master</tt>, si
-      algún programa o adminsitrador erradamente asigna alguno de
-      estos números puede emplear update-passwd
+      algÃºn programa o adminsitrador erradamente asigna alguno de
+      estos nÃºmeros puede emplear update-passwd
       para reasignar los originales.
     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="grupos"></a>3.1.2. Grupos</h4></div></div><p>El objetivo de los grupos es dar o restringir permisos sobre
       algunos archivos a ciertos usuarios (ver <a href="exploracion-dos.html#archivos-y-permisos" title="1. Archivos y permisos">Archivos y permisos</a>).  Por
       ejemplo un archivo <tt>reporte.txt</tt> que pertenezca
       al grupo <tt>profesores</tt>, que tenga permiso de
       lectura para el grupo y no para otros usuarios (si por ejemplo
-      se estableció con <tt>chmod ug=rw reporte.txt</tt>),
-      podrá ser leído únicamente por el dueño y por usuarios que
+      se estableciÃ³ con <tt>chmod ug=rw reporte.txt</tt>),
+      podrÃ¡ ser leÃ­do Ãºnicamente por el dueÃ±o y por usuarios que
       pertenezcan al grupo <tt>profesores</tt>.</p><p>Cada usuario tiene un grupo principal (puede especificarse
-      durante la creación con la opción <tt>--gid
+      durante la creaciÃ³n con la opciÃ³n <tt>--gid
        <i><tt>GID</tt></i></tt> o <tt>--ingroup
        <i><tt>grupo</tt></i></tt> de
       <b>adduser</b>), puede pertenecer a diversos grupos y
-      si conoce la clave de algún grupo con clave puede volverse
-      miembro durante una sesión.  Los programas relacionados con
+      si conoce la clave de algÃºn grupo con clave puede volverse
+      miembro durante una sesiÃ³n.  Los programas relacionados con
       grupos son:
     </p><div class="variablelist"><dl><dt><span class="term">
 	<b>
@@ -276,16 +276,16 @@
 	 dispositivos pertenecen a ciertos grupos, de forma que es
 	 indispensable agregarlos como grupos secundarios de los
 	 usuarios que los requieran:
-	</p><div class="variablelist"><dl><dt><span class="term"><tt>audio</tt></span></dt><dd><p>Permite acceder a dispositivos de sonido.</p></dd><dt><span class="term"><tt>lp</tt></span></dt><dd><p>Permite acceder a los puertos locales de impresión.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>floppy</tt></span></dt><dd><p>Para acceder a la(s) unidad(es) de disquette.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>tape</tt>, <tt>cdrom</tt></span></dt><dd><p>Ambos son requeridos para acceder al
+	</p><div class="variablelist"><dl><dt><span class="term"><tt>audio</tt></span></dt><dd><p>Permite acceder a dispositivos de sonido.</p></dd><dt><span class="term"><tt>lp</tt></span></dt><dd><p>Permite acceder a los puertos locales de impresiÃ³n.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>floppy</tt></span></dt><dd><p>Para acceder a la(s) unidad(es) de disquette.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>tape</tt>, <tt>cdrom</tt></span></dt><dd><p>Ambos son requeridos para acceder al
 	   CDROM.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>dialout</tt></span></dt><dd><p>Para acceder a modems.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>disk</tt></span></dt><dd><p>Cuando se requiere acceder a discos a bajo nivel.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>kmem</tt></span></dt><dd><p>Para acceder de forma privilegiada la memoria.</p></dd></dl></div><div class="variablelist"><dl><dt><span class="term"><tt>tty</tt></span></dt><dd><p>Para acceder de forma privilegiada a la consola.</p></dd></dl></div></dd><dt><span class="term"><b>groups</b>
        </span></dt><dd><p>Un usuario puede ver los grupos a los que pertenece con
 	 este programa.
 	</p></dd><dt><span class="term">
 	<b>newgrp [<i><tt>grupo</tt></i>]</b>
-       </span></dt><dd><p>Para cambiarse a un grupo con clave.  Si no se específica
-	 grupo alguno se cambiará al grupo principal del usuario.  Con
-	 la opción <tt>-</tt> el ambiente será
-	 reinicializado como al inicio de la sesión
+       </span></dt><dd><p>Para cambiarse a un grupo con clave.  Si no se especÃ­fica
+	 grupo alguno se cambiarÃ¡ al grupo principal del usuario.  Con
+	 la opciÃ³n <tt>-</tt> el ambiente serÃ¡
+	 reinicializado como al inicio de la sesiÃ³n
 	 <sup>[<a name="id402813" href="#ftn.id402813">71</a>]</sup>.
 	</p></dd><dt><span class="term"><b>passwd -g <i><tt>grupo</tt></i></b>
      </span></dt><dd><p>Para cambiar la clave de un grupo.  Para quitar la clave
@@ -297,14 +297,14 @@
 	<b>gpasswd <i><tt>grupo</tt></i></b>
        </span></dt><dd><p>Para administrar grupos con clave, puede ser usado por
 	 el administrador del sistema y por el administrador de un
-	 grupo con clave.  Con la opción <tt>-A
+	 grupo con clave.  Con la opciÃ³n <tt>-A
 	 <i><tt>login</tt></i></tt> el administrador
 	 del sistema puede agregar un administrador de grupo a un
-	 grupo, con la opción <tt>-M
+	 grupo, con la opciÃ³n <tt>-M
 	 <i><tt>login</tt></i></tt> puede retirarse la
-	 administración de un grupo a un usuario, con la opción
+	 administraciÃ³n de un grupo a un usuario, con la opciÃ³n
 	 <tt>-r</tt> puede quitarse la clave a un grupo con
-	 clave y con la opción <tt>-R</tt> puede inhibir el
+	 clave y con la opciÃ³n <tt>-R</tt> puede inhibir el
 	 acceso con <b>newgrp</b> a un grupo con clave.
 	 Un administrador de grupo puede agregar y eliminar usuarios
 	 del grupo con las opciones <tt>-a
@@ -314,82 +314,82 @@
        </span></dt><dd><p>Permite agregar un grupo con el nombre
 	 dado
 	 <sup>[<a name="id402967" href="#ftn.id402967">72</a>]</sup>
-	 Con la opción <tt>--gid
+	 Con la opciÃ³n <tt>--gid
 	  <i><tt>ID</tt></i></tt> puede especificarse
-	  el número que identificará al grupo, número acorde con el
+	  el nÃºmero que identificarÃ¡ al grupo, nÃºmero acorde con el
 	 archivo <tt>/etc/adduser.conf</tt> y a las
-	 convenciones de Debian: 0-100 estáticos reservados para
-	 Debian, 100-999 localizados dinámicamente para grupos del
-	 sistema, 1000-29999 para grupos normales (ver descripción
-	  del comando <b>adduser</b> en la sección
+	 convenciones de Debian: 0-100 estÃ¡ticos reservados para
+	 Debian, 100-999 localizados dinÃ¡micamente para grupos del
+	 sistema, 1000-29999 para grupos normales (ver descripciÃ³n
+	  del comando <b>adduser</b> en la secciÃ³n
 	 anterior).
 	</p></dd><dt><span class="term"><b>groupdel <i><tt>group</tt></i></b>
-       </span></dt><dd><p>Permite eliminar un grupo.  Sólo pueden eliminarse grupos
-	 que no sean el grupo principal de algún usuario.
+       </span></dt><dd><p>Permite eliminar un grupo.  SÃ³lo pueden eliminarse grupos
+	 que no sean el grupo principal de algÃºn usuario.
 	</p></dd><dt><span class="term"><b>groupmod <i><tt>grupo</tt></i></b>
-       </span></dt><dd><p>Permite modificar información de un grupo. Las opciones
+       </span></dt><dd><p>Permite modificar informaciÃ³n de un grupo. Las opciones
 	 posible son: <tt>-g <i><tt>GID</tt></i></tt>
-	 para cambiar el número que identifica al grupo (ver
-	 convenciones en descripción de <b>addgroup</b>) y
+	 para cambiar el nÃºmero que identifica al grupo (ver
+	 convenciones en descripciÃ³n de <b>addgroup</b>) y
 	 <tt>-n <i><tt>nombre</tt></i></tt> para
-	 cambiar el nombre del grupo.  El número que identifica al
-	 grupo debe ser único, excepto si se emplea la opción
+	 cambiar el nombre del grupo.  El nÃºmero que identifica al
+	 grupo debe ser Ãºnico, excepto si se emplea la opciÃ³n
 	 <tt>-o</tt> (para crear grupos alias, aunque el
-	 sistema de archivos no necesariamente presentará el alias
-	 como grupo dueño).
+	 sistema de archivos no necesariamente presentarÃ¡ el alias
+	 como grupo dueÃ±o).
 	</p></dd><dt><span class="term"><b>grpck</b>
-       </span></dt><dd><p>Para verificar la información de grupos en
+       </span></dt><dd><p>Para verificar la informaciÃ³n de grupos en
 	 <tt>/etc/group</tt> y
-	 <tt>/etc/gshadow</tt>. Con la opción
-	 <tt>-r</tt> abre estos archivos en modo de sólo
+	 <tt>/etc/gshadow</tt>. Con la opciÃ³n
+	 <tt>-r</tt> abre estos archivos en modo de sÃ³lo
 	 lectura.
-	</p></dd></dl></div><p>La información de grupos se consigna en
-      <tt>/etc/groups</tt>, cada línea tiene los
+	</p></dd></dl></div><p>La informaciÃ³n de grupos se consigna en
+      <tt>/etc/groups</tt>, cada lÃ­nea tiene los
       siguientes datos de un grupo separados uno de otro con el
       caracter ':'
      </p><div class="itemizedlist"><ul type="disc"><li><p>Nombre del grupo</p></li><li><p>Clave del grupo transformada con DES o
        MD5.  Si el grupo tiene clave shadow en este
-       archivo aparecerá el caracter 'x' y la clave transformada
-       estará en otro archivo (por defecto
+       archivo aparecerÃ¡ el caracter 'x' y la clave transformada
+       estarÃ¡ en otro archivo (por defecto
        <tt>/etc/gshadow</tt>.
        </p></li><li><p>GID
       </p></li><li><p>Lista de usuarios del grupo separados con comas.
        </p></li></ul></div><p>No es recomendable editar directamente estos archivos, sino
-      más bien emplear los programas presentados en esta sección.
-     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="inicio-de-sesiones-en-consolas-virtuales"></a>3.1.3. Inicio de sesiones en consolas virtuales</h4></div></div><p>Una sesión iniciada desde una consola virtual o desde una
-      conexión remota (via <b>telnet</b>,
+      mÃ¡s bien emplear los programas presentados en esta secciÃ³n.
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="inicio-de-sesiones-en-consolas-virtuales"></a>3.1.3. Inicio de sesiones en consolas virtuales</h4></div></div><p>Una sesiÃ³n iniciada desde una consola virtual o desde una
+      conexiÃ³n remota (via <b>telnet</b>,
       <b>rsh</b> o <b>ssh</b>) es atendida
-      inicialmente por el programa <b>getty</b> (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: Configuración de una sesión">Lectura
-      Configuración de una sesión</a>.  El mensaje que presenta
+      inicialmente por el programa <b>getty</b> (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: ConfiguraciÃ³n de una sesiÃ³n">Lectura
+      ConfiguraciÃ³n de una sesiÃ³n</a>.  El mensaje que presenta
       <b>getty</b> se configura en el archivo
       <tt>/etc/issue</tt> y puede contener algunas
       secuencias especiales como: <tt>\d</tt> que
       corresponde a la fecha, <tt>\s</tt> al nombre del
-      sistema operativo, <tt>\l</tt> al número de la consola
-      virtual (línea tty), <tt>\m</tt> al tipo de procesador
-      (e.g i486), <tt>\n</tt> al nombre de la máquina,
+      sistema operativo, <tt>\l</tt> al nÃºmero de la consola
+      virtual (lÃ­nea tty), <tt>\m</tt> al tipo de procesador
+      (e.g i486), <tt>\n</tt> al nombre de la mÃ¡quina,
       <tt>\u</tt> cantidad de usuarios conectados. Por
       ejemplo, si el archivo <tt>/etc/issue</tt> es:
 </p><pre class="programlisting">
 Debian \s 2.2 en un \m. \n \u \l
 </pre><p>
 
-     <b>getty</b> mostrará un mensaje como:
+     <b>getty</b> mostrarÃ¡ un mensaje como:
 </p><pre class="screen">
 Debian Linux 2.2 en un i586. oxigeno 3 tty1
 </pre><p>
     </p><p>Cuando un usuario teclea su login, <b>getty</b>
      pasa el control al programa <b>login</b>.  El
-     programa <b>login</b> por intermedio de la librería
-     PAM espera la clave del usuario y la válida, cuando el usuario da
+     programa <b>login</b> por intermedio de la librerÃ­a
+     PAM espera la clave del usuario y la vÃ¡lida, cuando el usuario da
      la clave correcta verifica que el acceso para ese usuario a la
      hora del ingreso sea posible
       <sup>[<a name="id403592" href="#ftn.id403592">73</a>]</sup> y entonces inicializa algunas variables de ambiente,
-	muestra algunos mensajes (por defecto la fecha de la última
-	conexión y el contendio del archivo
+	muestra algunos mensajes (por defecto la fecha de la Ãºltima
+	conexiÃ³n y el contendio del archivo
 	<tt>/etc/motd</tt>
       <sup>[<a name="id403612" href="#ftn.id403612">74</a>]</sup>
-      ) e inicia un intérprete de comandos (el que está configurado
+      ) e inicia un intÃ©rprete de comandos (el que estÃ¡ configurado
       para el usuario en <tt>/etc/passwd</tt>).  Las
       acciones que <b>login</b> realiza pueden
       configurarse en los archivos <tt>/etc/login.def</tt>
@@ -399,50 +399,50 @@ Debian Linux 2.2 en un i586. oxigeno 3 tty1
       seguridad pueden configurarse en los archivos del directorio
       <tt>/etc/security</tt>
      <sup>[<a name="id403741" href="#ftn.id403741">75</a>]</sup>.
-     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="inicio-de-sesiones-x-dash-window"></a>3.1.4. Inicio de sesiones X-Window</h4></div></div><p>Algunas generalidades sobre X-Window y la visión del
-      usuario final se presentaron en el capítulo anterior (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: Configuración de una sesión">Lectura
-      Configuración de una sesión</a>), en esta sección presentamos
+     </p></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="inicio-de-sesiones-x-dash-window"></a>3.1.4. Inicio de sesiones X-Window</h4></div></div><p>Algunas generalidades sobre X-Window y la visiÃ³n del
+      usuario final se presentaron en el capÃ­tulo anterior (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: ConfiguraciÃ³n de una sesiÃ³n">Lectura
+      ConfiguraciÃ³n de una sesiÃ³n</a>), en esta secciÃ³n presentamos
       como puede iniciarse un servidor X-Window y algunos aspectos de
-      su configuración.
-     </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id403776"></a>3.1.4.1. Servidor X</h5></div></div><p>Un servidor X configurado maneja el modo gráfico de la
-       tarjeta de video, teclado y un apuntador (ratón, tarjeta
+      su configuraciÃ³n.
+     </p><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id403776"></a>3.1.4.1. Servidor X</h5></div></div><p>Un servidor X configurado maneja el modo grÃ¡fico de la
+       tarjeta de video, teclado y un apuntador (ratÃ³n, tarjeta
        graficadora) para interactuar con el usuario y atender
        programas que lo emplean como clientes X-Window.  Un cliente
-       X-Window normalmente estará corriendo en la misma máquina donde
-       está el servidor, aunque puede estar en otra máquina ver <a href="servicios-de-la-intranet.html" title="3. Servicios de la Intranet">Servicios de la
+       X-Window normalmente estarÃ¡ corriendo en la misma mÃ¡quina donde
+       estÃ¡ el servidor, aunque puede estar en otra mÃ¡quina ver <a href="servicios-de-la-intranet.html" title="3. Servicios de la Intranet">Servicios de la
        Intranet</a>.  Para iniciar un servidor X se emplea el
        programa <tt>X</tt> (cuya ruta completa normalmente
        es <tt>/usr/X11R6/bin/X</tt> y que es un enlace al
        ejecutable del servidor que haya configurado para su hardware).
-       Cada servidor X tiene una identificación como
+       Cada servidor X tiene una identificaciÃ³n como
        <tt>natura.micolegio.edu.co:0.0</tt> compuesta por el
-       nombre de la máquina, un número de vista (una vista se refiere
-       a una colección de monitores con un teclado y apuntador común)
-       y un número de pantalla (en caso de que un computador tenga más
+       nombre de la mÃ¡quina, un nÃºmero de vista (una vista se refiere
+       a una colecciÃ³n de monitores con un teclado y apuntador comÃºn)
+       y un nÃºmero de pantalla (en caso de que un computador tenga mÃ¡s
        de un monitor).  En un mismo computador pueden iniciarse varios
-       servidores X, cada uno con un númeo de vista diferente.  Por
+       servidores X, cada uno con un nÃºmeo de vista diferente.  Por
        ejemplo para iniciar como vista 0 un servidor X en la consola
        virtual 9 (pasa a ella con <b>Ctrl-Alt-F9</b>, ver
        <a href="sistema-de-usuarios-y-manejo-de-clave.html" title="3. Sistema de usuarios y manejo de clave">Sistema
        de usuarios y manejo de clave</a>):</p><pre class="screen">
 /usr/X11R6/bin/X :0 vt9 
 </pre><p>
-     Simultáneamente podría iniciarse como vista 1 en la consola
+     SimultÃ¡neamente podrÃ­a iniciarse como vista 1 en la consola
      virtual 3 otro con:</p><a class="indexterm" name="id403840"></a><pre class="screen">
 /usr/X11R6/bin/X :1 vt3 
  </pre><p>
        Por defecto si no se especifica una consola virtual por usar,
-      X buscara y empleará la primera libre.
+      X buscara y emplearÃ¡ la primera libre.
       </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id403961"></a>3.1.4.2. Administrador de vistas
        xdm</h5></div></div><p>Se configura en
        <tt>/etc/X11/xdm/xdm-config</tt> y
        <tt>/etc/X11/xdm/xdm.options</tt>, este
-       administrador de vistas puede administrar uno o más servidores
-       en una o varias máquinas (configurados en
+       administrador de vistas puede administrar uno o mÃ¡s servidores
+       en una o varias mÃ¡quinas (configurados en
        <tt>/usr/lib/X11/xdm/XServer</tt>), y permite usar
        terminales X con el protocolo XDMCP.
     </p><a class="indexterm" name="id404001"></a><p>En cada servidor que maneja ejecuta el script
-       <tt>/usr/lib/X11/xdm/XSetup</tt> y después permite
+       <tt>/usr/lib/X11/xdm/XSetup</tt> y despuÃ©s permite
        el inicio de sesiones presentando el widget Xlogin que pide
        login y clave a cada usuario y que usa los los recursos de
        X-Window definidos en
@@ -450,62 +450,62 @@ Debian Linux 2.2 en un i586. oxigeno 3 tty1
        la imagen presentada).
       </p><p>Cuando un usuario se autentica se ejecutan los scripts:
        <tt>/usr/lib/X11/xdm/Xstartup</tt> como root (que
-       por defecto sólo agrega la autenticación a la bitácora
-       <tt>utmp</tt>), después
+       por defecto sÃ³lo agrega la autenticaciÃ³n a la bitÃ¡cora
+       <tt>utmp</tt>), despuÃ©s
        <tt>/usr/lib/X11/xdm/Xsession</tt> como
-       usuario. Este último ejecuta
+       usuario. Este Ãºltimo ejecuta
        <b>/etc/X11/Xsession</b> el cual ejecuta todos los
        scripts del directorio <tt>/etc/X11/xsession.d</tt> que por
        defecto mezclan recursos de X-Window (tanto del sistema como de
        usuario) y ejecutan el script <tt>~/.xsession</tt>
-       el cual debe ser configurado por el usuario (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: Configuración de una sesión">Lectura
-       Configuración de una sesión</a>).  Algunas variables que
-       afectan la ejecución de los scripts de
+       el cual debe ser configurado por el usuario (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: ConfiguraciÃ³n de una sesiÃ³n">Lectura
+       ConfiguraciÃ³n de una sesiÃ³n</a>).  Algunas variables que
+       afectan la ejecuciÃ³n de los scripts de
        <tt>/etc/X11/Xsession.d</tt> se configuran en
        <tt>/etc/X11/Xsession.options</tt>, puede consultarse
        ayuda sobre estas variables con <b>man
 	Xsession.options</b>.
-      </p><p>Cuando la ejecución de <tt>~/.xsession</tt>
-       concluye, xdm cierra la sesión con el script
+      </p><p>Cuando la ejecuciÃ³n de <tt>~/.xsession</tt>
+       concluye, xdm cierra la sesiÃ³n con el script
        <tt>/usg/lib/X11/xdm/Xreset</tt>.
       </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id404144"></a>3.1.4.3. 
        xinit o
        startx</h5></div></div><p>
       xinit es un programa para iniciar
-      desde la línea de comandos una sesión de X-Window teniendo en
-      cuenta la configuración del usuario.  Para esto inicia el
+      desde la lÃ­nea de comandos una sesiÃ³n de X-Window teniendo en
+      cuenta la configuraciÃ³n del usuario.  Para esto inicia el
       servidor X configurado en <tt>~/.xserverrc</tt> o en
       <tt>/etc/X11/xinit/xserverrc</tt> (que normalmente
-      es <tt>/usr/X11R6/bin/X</tt>) y después ejecuta el
-      archivo de configuración <tt>~/.xinitrc</tt> o en su
+      es <tt>/usr/X11R6/bin/X</tt>) y despuÃ©s ejecuta el
+      archivo de configuraciÃ³n <tt>~/.xinitrc</tt> o en su
       defecto <tt>~/.xsession</tt> o a falta de los
       anteriores <tt>/usr/lib/X11/xinit/xinitrc</tt>. La
       sintaxis de <tt>~/.xinitrc</tt> es la misma de
-      <tt>~/.xsession</tt> ---sólo que el primero hereda
+      <tt>~/.xsession</tt> ---sÃ³lo que el primero hereda
       las variables de ambiente del interprete de comandos (la
       sintaxis de <tt>~/.xsession</tt> puede consultarse
-      en ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: Configuración de una sesión">Lectura
-      Configuración de una sesión</a>).
+      en ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: ConfiguraciÃ³n de una sesiÃ³n">Lectura
+      ConfiguraciÃ³n de una sesiÃ³n</a>).
     </p><p>startx tiene exactamente el mismo
-     propósito (de hecho ejecuta <tt>xinit</tt>).
-    </p><a class="indexterm" name="id404411"></a><a class="indexterm" name="id404438"></a><p>Estos comandos son especialmente útiles durante la
-      configuración de X-Window, bien cuando no se ha logrado
+     propÃ³sito (de hecho ejecuta <tt>xinit</tt>).
+    </p><a class="indexterm" name="id404411"></a><a class="indexterm" name="id404438"></a><p>Estos comandos son especialmente Ãºtiles durante la
+      configuraciÃ³n de X-Window, bien cuando no se ha logrado
       configurar para los dispositivos de su computador (y en ese caso
       <b>xdm</b> no puede iniciar), o bien para probar
-      cambios más rapidamente.
-     </p><p>Eventualmente mientras <b>xdm</b> esté operando
-      usted puede querer hacer cambios a la configuración de X-Window,
+      cambios mÃ¡s rapidamente.
+     </p><p>Eventualmente mientras <b>xdm</b> estÃ© operando
+      usted puede querer hacer cambios a la configuraciÃ³n de X-Window,
       termine en ese caso <b>xdm</b> (con
       <b>/etc/init.d/xdm stop</b> o buscando y matando el
-      proceso de <b>xdm</b>), términe el servidor X que
-      esté corriendo, haga los cambios necesarios y después ejecute
+      proceso de <b>xdm</b>), tÃ©rmine el servidor X que
+      estÃ© corriendo, haga los cambios necesarios y despuÃ©s ejecute
       <b>startx</b>.
      </p></div><div class="sect4"><div class="titlepage"><div><h5 class="title"><a name="id404668"></a>3.1.4.4. Administrador de vistas gdm y
        Gnome</h5></div></div><p>El administrador de vistas gdm es
        similar a xdm aunque ofrece mejoras en la
-       presentación.
+       presentaciÃ³n.
       </p><a class="indexterm" name="id404697"></a><p>Se configura en el archivo <tt>gdm.conf</tt> y
-       en scripts cuyo nombre sea el número de vista
+       en scripts cuyo nombre sea el nÃºmero de vista
        (e.g. <tt>:0</tt>) o <tt>Default</tt>
        en los directorios: </p><div class="variablelist"><dl><dt><span class="term">
 	 <tt>/etc/gdm/Init</tt>
@@ -514,48 +514,48 @@ Debian Linux 2.2 en un i586. oxigeno 3 tty1
 	 </p></dd><dt><span class="term">
 	 <tt>/ete/gdm/PreSession</tt>
 	</span></dt><dd><p>
-	  Cada vez que un usuario abre una sesión.
+	  Cada vez que un usuario abre una sesiÃ³n.
 	 </p></dd><dt><span class="term">
 	 <tt>/etc/gdm/PostSession</tt>
-	</span></dt><dd><p>Cada vez que un usuario cierra una sesión.
+	</span></dt><dd><p>Cada vez que un usuario cierra una sesiÃ³n.
 	 </p></dd></dl></div><p>En el directorio <tt>/etc/gdm/Sessions</tt>
-       hay scripts que serán ejecutados de acuerdo a la sesión que el
-       usuario en el menú tipo de sesión durante la autenticación.
-      </p><p>El script que inicia la sesión Gnome, por defecto carga
+       hay scripts que serÃ¡n ejecutados de acuerdo a la sesiÃ³n que el
+       usuario en el menÃº tipo de sesiÃ³n durante la autenticaciÃ³n.
+      </p><p>El script que inicia la sesiÃ³n Gnome, por defecto carga
        algunas variables de ambiente de
        <tt>/etc/login.defs</tt>, mezcla recursos del
        sistema <tt>/etc/X11/Xresources</tt> y del usuario
-       (<tt>~/.Xresources</tt>, activa configuración de
+       (<tt>~/.Xresources</tt>, activa configuraciÃ³n de
        teclado especializada del sistema y del usuario
        (<tt>/etc/X11/Xmodmap</tt> y
        <tt>~/.Xmodmap</tt>), ejecuta el archivo de
-       configuración de Gnome del usuario
+       configuraciÃ³n de Gnome del usuario
        <tt>~/.gnomerc</tt> e inicia el administrador de
        sesiones GNOME: <tt>gnome-session</tt>.
-      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="variables-de-ambiente-en-consolas-virtuales-y-x-dash-window"></a>3.1.5. Variables de ambiente en consolas virtuales y X-Window</h4></div></div><p>La mayoría de intérpretes de comandos, incluyendo
-      bash, leen información de configuración
-      primero del archivo <tt>/etc/profile</tt> y después
-      de archivos de configuración del usuario (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: Configuración de una sesión">Lectura
-      Configuración de una sesión</a>).
+      </p></div></div><div class="sect3"><div class="titlepage"><div><h4 class="title"><a name="variables-de-ambiente-en-consolas-virtuales-y-x-dash-window"></a>3.1.5. Variables de ambiente en consolas virtuales y X-Window</h4></div></div><p>La mayorÃ­a de intÃ©rpretes de comandos, incluyendo
+      bash, leen informaciÃ³n de configuraciÃ³n
+      primero del archivo <tt>/etc/profile</tt> y despuÃ©s
+      de archivos de configuraciÃ³n del usuario (ver <a href="configuracion-de-una-sesion.html#lectura-configuracion-de-una-sesion" title="5.1. Lectura: ConfiguraciÃ³n de una sesiÃ³n">Lectura
+      ConfiguraciÃ³n de una sesiÃ³n</a>).
      </p><p>Sin embargo si emplea un administrador de vistas como
       xdm, gdm o
       kdm estos programas por defecto no
-      leerán ese archivo, así que para establecer variables antes de
+      leerÃ¡n ese archivo, asÃ­ que para establecer variables antes de
       que un administrador de escritorio o un manejador de ventanas
-      inicie debe emplearse un archivo de configuración propio del
+      inicie debe emplearse un archivo de configuraciÃ³n propio del
       administrador de vistas.  En el caso de
       gdm el valor de la variable
       <tt>PATH</tt> puede establecerse en
-      <tt>/etc/X11/gdm/gdm.conf</tt> (línea DefaultPath) y
+      <tt>/etc/X11/gdm/gdm.conf</tt> (lÃ­nea DefaultPath) y
       otras variables pueden establecerse en el archivo que controla
-      el tipo de sesión (con gdm el usuario puede
-      escoger el tipo de sesión al que desea entrar e.g Xsession,
+      el tipo de sesiÃ³n (con gdm el usuario puede
+      escoger el tipo de sesiÃ³n al que desea entrar e.g Xsession,
       Debian, Gnome).  Los archivos que controlan las sesiones son
       scripts localizados en el directorio
       <tt>/etc/X11/gdm/Sessions</tt> --son scripts
       normalmente cortos que puede revisar y editar para configurar el
-      inicio de sesiones gráficas.
-     </p><p>La solución más general y rápida para establecer variables
+      inicio de sesiones grÃ¡ficas.
+     </p><p>La soluciÃ³n mÃ¡s general y rÃ¡pida para establecer variables
       de ambiente es configurarlas en el archivo
       <tt>/etc/security/pam_env.conf</tt> que es leido por
       PAM --que a su vez es usado tanto por
@@ -563,30 +563,30 @@ Debian Linux 2.2 en un i586. oxigeno 3 tty1
       como xdm y
       gdm.  Si desea configurar
       <tt>PATH</tt> tenga en cuenta modificar
-      <tt>/etc/profile</tt> y el archivo de configuración
+      <tt>/etc/profile</tt> y el archivo de configuraciÃ³n
       de su administrador de displays para que no la sobreescriban.
-    </p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomandadas-administracion-de-usuarios"></a>3.2. Lectura recomendadas: Administración de usuarios</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Otra presentación del sistema de usuarios está disponible
-       por ejemplo en la sección 4.6 de &quot;<i>Linux Installation
+    </p></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="lecturas-recomandadas-administracion-de-usuarios"></a>3.2. Lectura recomendadas: AdministraciÃ³n de usuarios</h3></div></div><div class="itemizedlist"><ul type="disc"><li><p>Otra presentaciÃ³n del sistema de usuarios estÃ¡ disponible
+       por ejemplo en la secciÃ³n 4.6 de &quot;<i>Linux Installation
        and Getting Started</i>&quot; <a href="http://www.linuxdoc.org/LDP/gs/node6.html#secmanageusers" target="_top">http://www.linuxdoc.org/LDP/gs/node6.html#secmanageusers</a>
-      </p></li><li><p>Páginas del manual del sistema de cada una de las
-       herramientas mencionadas en esta sección (en la primera guía se
+      </p></li><li><p>PÃ¡ginas del manual del sistema de cada una de las
+       herramientas mencionadas en esta secciÃ³n (en la primera guÃ­a se
        presentan direcciones en Internet donde puede consultar las
-       páginas <b>man</b> (ver <a href="busqueda-y-consulta-de-documentacion.html" title="7. Búsqueda y consulta de documentación">Búsqueda y
-	consulta de documentación</a>).  </p></li><li><p>Puede consultar las políticas sobre numeración de grupos y
-       usuarios en la sección 3.2 de &quot;<i>Debian Policy
-       Manual</i>&quot;.  En un sistema Debian están disponibles en
+       pÃ¡ginas <b>man</b> (ver <a href="busqueda-y-consulta-de-documentacion.html" title="7. BÃºsqueda y consulta de documentaciÃ³n">BÃºsqueda y
+	consulta de documentaciÃ³n</a>).  </p></li><li><p>Puede consultar las polÃ­ticas sobre numeraciÃ³n de grupos y
+       usuarios en la secciÃ³n 3.2 de &quot;<i>Debian Policy
+       Manual</i>&quot;.  En un sistema Debian estÃ¡n disponibles en
        el directorio <tt>/usr/doc/debian-policy</tt>, en
-       Internet el documento está en: <a href="http://www.debian.org/doc/debian-policy/" target="_top">http://www.debian.org/doc/debian-policy/</a>
-      </p></li><li><p>Puede consultar más documentación sobre el sistema de
+       Internet el documento estÃ¡ en: <a href="http://www.debian.org/doc/debian-policy/" target="_top">http://www.debian.org/doc/debian-policy/</a>
+      </p></li><li><p>Puede consultar mÃ¡s documentaciÃ³n sobre el sistema de
        claves en <b>info libc</b> el manual de libc o en
        Internet en <a href="http://www.gnu.org/manual/glibc-2.2.3/html_chapter/libc_29.html#SEC602" target="_top">http://www.gnu.org/manual/glibc-2.2.3/html_chapter/libc_29.html#SEC602</a>.
-     </p></li><li><p>Si instala en su sistema el paquete libpam-doc (ver <a href="administracion-de-programas.html" title="5. Administración de programas">Administración de
-	programas</a>), puede consultar más sobre
-	PAM, su configuración y los módulos
+     </p></li><li><p>Si instala en su sistema el paquete libpam-doc (ver <a href="administracion-de-programas.html" title="5. AdministraciÃ³n de programas">AdministraciÃ³n de
+	programas</a>), puede consultar mÃ¡s sobre
+	PAM, su configuraciÃ³n y los mÃ³dulos
 	disponibles en el directorio
 	<tt>/usr/share/doc/libpam-doc</tt>.
-      </p></li><li><p>Puede consultar información sobre X-Window y el
-       administrador de vistas x en las páginas man:
+      </p></li><li><p>Puede consultar informaciÃ³n sobre X-Window y el
+       administrador de vistas x en las pÃ¡ginas man:
        <tt>X</tt>, <tt>xdm</tt>,
        <tt>xdm.options</tt>.
      </p></li><li><p>Una buena referencia de X-Window (incluyendo
@@ -597,17 +597,17 @@ Debian Linux 2.2 en un i586. oxigeno 3 tty1
      </p></li><li><p>En Internet puede consultar sobre XDMCP
        en: <a href="http://www.xs4all.nl/~zweije/xauth-9.html" target="_top">http://www.xs4all.nl/~zweije/xauth-9.html</a>
      </p></li><li><p>
-       Puede consultar más sobre GDM en
+       Puede consultar mÃ¡s sobre GDM en
        &quot;<i>GNOME Display Manager Reference
        Manual</i>&quot;, disponible en su computador en
        <tt>file:/usr/share/gnome/help/gdm/C/gdm.html</tt>
        o en Internet en <a href="http://www.oswg.org/oswg-nightly/oswg/en_US.ISO_8859-1/articles/gdm-reference/gdm-reference.html" target="_top">http://www.oswg.org/oswg-nightly/oswg/en_US.ISO_8859-1/articles/gdm-reference/gdm-reference.html</a>
-      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-administracion-de-usuarios"></a>3.3. Ejercicios: Administración de usuarios</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id405497"></a><a name="admus.politica.1"></a><b>3.3.1. </b></td><td align="left" valign="top"><p>Los números UID y
+      </p></li></ul></div></div><div class="sect2"><div class="titlepage"><div><h3 class="title"><a name="ejercicios-administracion-de-usuarios"></a>3.3. Ejercicios: AdministraciÃ³n de usuarios</h3></div></div><div class="qandaset"><table border="0" summary="Q and A Set"><col align="left" width="1%"><tbody><tr class="question"><td align="left" valign="top"><a name="id405497"></a><a name="admus.politica.1"></a><b>3.3.1. </b></td><td align="left" valign="top"><p>Los nÃºmeros UID y
        GID del usuario root son fijos, investigue
        en su sistema cuales son.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id405607"></a><a name="admus.politica.2"></a><b>3.3.2. </b></td><td align="left" valign="top"><p>En el directorio <tt>tarea1</tt> se quiere que todos los
        miembros del grupo estudiantes puedan escribir, pero que un
        miembro de ese grupo no pueda borrar o renombrar archivos de
-       otros, ¿cómo puede lograrse?  si además se quiere que no
+       otros, Â¿cÃ³mo puede lograrse?  si ademÃ¡s se quiere que no
        puedan ver o modificar el contenido de archivos de otros
        miembros del mismo grupo que se requiere?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id405645"></a><a name="id405649"></a><b>3.3.3. </b></td><td align="left" valign="top"><p>Para transformar una clave con el algoritmo DES
        puede emplear el siguiente script escrito en lenguaje Perl:</p><pre class="programlisting">
@@ -617,69 +617,69 @@ print crypt($ARGV[0],$sal);
 print &quot;\n&quot;;
 </pre><p>
        Si el nombre del script es <b>enc.pl</b> y le da
-       permiso de ejecución, para transformar la clave &quot;vida&quot; bastaría
+       permiso de ejecuciÃ³n, para transformar la clave &quot;vida&quot; bastarÃ­a
        ejecutar <b>enc.pl vida</b>.</p><p>
        Emplee este script para transformar una clave,
-       después edite <tt>/etc/passwd</tt> o
+       despuÃ©s edite <tt>/etc/passwd</tt> o
        <tt>/etc/shadow</tt> agregue la nueva clave
        transformada a una cuenta de prueba y finalmente compruebe que
        la nueva clave funciona entrando a la cuenta de prueba.  Nota:
        Si desea experimentar con MD5 en lugar de DES debe cambiar la
        &quot;sal&quot;
        <sup>[<a name="id405694" href="#ftn.id405694">76</a>]</sup>,
-       remplazando la línea con la función <b>crypt</b>
+       remplazando la lÃ­nea con la funciÃ³n <b>crypt</b>
       por <b>print crypt($ARGV[0],&quot;\$1\$$sal&quot;);</b>
        </p></td></tr><tr class="question"><td align="left" valign="top"><a name="id405752"></a><a name="admus.configura.2"></a><b>3.3.4. </b></td><td align="left" valign="top"><p>
        Cree un usuario en el grupo <tt>users</tt> y
-       agréguelo a grupos que le permitan acceder a la impresora
+       agrÃ©guelo a grupos que le permitan acceder a la impresora
        local, a dispositivos de audio y a la unidad de
-       disquette. Después pase a la cuenta del nuevo usuario y
+       disquette. DespuÃ©s pase a la cuenta del nuevo usuario y
        compruebe que pueda usar disquettes. Finalmente elimine el
        usuario creado.
       </p></td></tr><tr class="question"><td align="left" valign="top"><a name="id405787"></a><a name="admus.configura.3"></a><b>3.3.5. </b></td><td align="left" valign="top"><p>Nuestra plataforma de referencia (ver <a href="plataforma.html#plataforma-de-referencia" title="1. Plataforma de referencia S-Helio 1.1">Plataforma de
-	referencia</a>) sugiere 3 grupos básicos: profesores,
-       estudiantes y administración.  Considere ventajas y desventajas
-       de esta política (o si lo prefiere de otra ideada por usted de
-       acuerdo a la infomación que se maneja en la red).  ¿Qué
-       usuarios deberían tener más de un grupo?  ¿qué grupos
-       podrían tener clave, quienes administrarían tales grupos y
-       quienes serían los usuarios?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id405817"></a><a name="admus.configura.4"></a><b>3.3.6. </b></td><td align="left" valign="top"><p>Cree los grupos que decidió en el punto
+	referencia</a>) sugiere 3 grupos bÃ¡sicos: profesores,
+       estudiantes y administraciÃ³n.  Considere ventajas y desventajas
+       de esta polÃ­tica (o si lo prefiere de otra ideada por usted de
+       acuerdo a la infomaciÃ³n que se maneja en la red).  Â¿QuÃ©
+       usuarios deberÃ­an tener mÃ¡s de un grupo?  Â¿quÃ© grupos
+       podrÃ­an tener clave, quienes administrarÃ­an tales grupos y
+       quienes serÃ­an los usuarios?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id405817"></a><a name="admus.configura.4"></a><b>3.3.6. </b></td><td align="left" valign="top"><p>Cree los grupos que decidiÃ³ en el punto
        anterior y usuarios de prueba (de forma que al menos un usuario
-       de prueba esté en dos grupos).</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id406002"></a><a name="admus.configura.5"></a><b>3.3.7. </b></td><td align="left" valign="top"><p>¿Qué cambios puede realizar en
+       de prueba estÃ© en dos grupos).</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id406002"></a><a name="admus.configura.5"></a><b>3.3.7. </b></td><td align="left" valign="top"><p>Â¿QuÃ© cambios puede realizar en
        <tt>/etc/adduser.conf</tt> para facilitar la
-       implementación de la política descrita en los ejercicios
-       anteriores?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id406065"></a><a name="admus.configura.6"></a><b>3.3.8. </b></td><td align="left" valign="top"><p>Piense una máscara de permisos apropiada para
+       implementaciÃ³n de la polÃ­tica descrita en los ejercicios
+       anteriores?</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id406065"></a><a name="admus.configura.6"></a><b>3.3.8. </b></td><td align="left" valign="top"><p>Piense una mÃ¡scara de permisos apropiada para
        todos los usuarios. Describa como la aplica empleando
        <b>umask</b> y los cambios que debe realizar para
        establecer tal mascara por defecto para todos los
        usuarios.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id406121"></a><a name="admus.configura.7"></a><b>3.3.9. </b></td><td align="left" valign="top"><p>Haga los cambios apropiados en su sistema,
        para que todo directorio creado para nuevos usuarios tenga un
        archivo <tt>ayuda.txt</tt> donde los usuarios
-       podrían escribir sus propias notas para emplear bien el
+       podrÃ­an escribir sus propias notas para emplear bien el
        sistema, y un mecanismo que le recuerde a los usuarios la
-       existencia de tal archivo.  Inicialmente ese archivo podía
+       existencia de tal archivo.  Inicialmente ese archivo podÃ­a
        tener un mensaje de bienvenida y/o instrucciones para comenzar
        a usar bien el sistema.</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id406328"></a><a name="admus.configura.8"></a><b>3.3.10. </b></td><td align="left" valign="top"><p>Haga una lista de chequeo de detalles que deba
        tener en cuenta para prevenir que alguien entre a cuentas que
-       no le pertenecen (especialmente como evitar que alguién pueda
+       no le pertenecen (especialmente como evitar que alguiÃ©n pueda
        entrar a la cuenta root).</p></td></tr><tr class="question"><td align="left" valign="top"><a name="id406352"></a><a name="admus.configura.9"></a><b>3.3.11. </b></td><td align="left" valign="top"><p>Opcional: Configure
       gdm para que en vez de presentar el
-      logo típico presente el logo de su institución educativa.</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id400459" href="#id400459">63</a>] </sup>Al emplear la opción <tt>-</tt> de
+      logo tÃ­pico presente el logo de su instituciÃ³n educativa.</p></td></tr></tbody></table></div></div><div class="footnotes"><br><hr width="100" align="left"><div class="footnote"><p><sup>[<a name="ftn.id400459" href="#id400459">63</a>] </sup>Al emplear la opciÃ³n <tt>-</tt> de
 	   <b>su</b> se inicializa el ambiente tal como el
-	   programa <b>login</b> lo haría, el valor de la
-	   variable <tt>PATH</tt> será tomado de
+	   programa <b>login</b> lo harÃ­a, el valor de la
+	   variable <tt>PATH</tt> serÃ¡ tomado de
 	   <tt>/etc/login.defs</tt>, de
 	   <tt>ENV_PATH</tt> si se pasa a un usuario normal o de
 	   <tt>ENV_SUPATH</tt> si se trata del usuario
 	   <tt>root</tt>
 	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id400761" href="#id400761">64</a>] </sup>En <tt>/etc/shells</tt> se listan los
-	   intérpretes de comandos disponibles. Algunos programas que
-	   opean en red sólo aceptan conexiones de usuarios cuyo
-	   intérprete de comandos esté listado en ese
+	   intÃ©rpretes de comandos disponibles. Algunos programas que
+	   opean en red sÃ³lo aceptan conexiones de usuarios cuyo
+	   intÃ©rprete de comandos estÃ© listado en ese
 	   archivo.
 	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id400840" href="#id400840">65</a>] </sup>Cuando un usuario no ha cambiado su clave dentro del
-	   máximo de días especificado, en la siguiente oportunidad
-	   que entre a una sesión el sistema solicitará una nueva
+	   mÃ¡ximo de dÃ­as especificado, en la siguiente oportunidad
+	   que entre a una sesiÃ³n el sistema solicitarÃ¡ una nueva
 	   clave --que debe ser diferente a la
 	   anterior.
 	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id401036" href="#id401036">66</a>] </sup>Hay varios programas similares a
@@ -688,26 +688,26 @@ print &quot;\n&quot;;
 	   trata de <b>useradd</b>,
 	   <b>groupadd</b>, <b>userdel</b> y
 	   <b>groupdel</b>.  Recomendamos emplear los
-	   primeros porque son más flexibles (se configuran en los
+	   primeros porque son mÃ¡s flexibles (se configuran en los
 	   archivos <tt>/etc/adduser.conf</tt> y
 	   <tt>/etc/deluser.conf</tt>) y porque permiten
-	   seguir las políticas de numeración de grupos y usuarios de
+	   seguir las polÃ­ticas de numeraciÃ³n de grupos y usuarios de
 	   Debian
-	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id401272" href="#id401272">67</a>] </sup>Si no se especifica un número de usuario o grupo a
+	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id401272" href="#id401272">67</a>] </sup>Si no se especifica un nÃºmero de usuario o grupo a
 	   <b>adduser</b> o <b>addgroup</b>,
-	   estos asignarán uno disponible de acuerdo a la política de
+	   estos asignarÃ¡n uno disponible de acuerdo a la polÃ­tica de
 	   Debian: en el rango 1000 a 29999 si es un usuario normal o
-	   en el rango 100 a 999 si es una cuenta requerida por algún
-	   programa (que se indica con la opción
-	   <tt>--system</tt>, además al usar --system con
-	   <b>adduser</b> el intérprete de comandos será
+	   en el rango 100 a 999 si es una cuenta requerida por algÃºn
+	   programa (que se indica con la opciÃ³n
+	   <tt>--system</tt>, ademÃ¡s al usar --system con
+	   <b>adduser</b> el intÃ©rprete de comandos serÃ¡
 	   <tt>/bin/false</tt>). Las identificaciones
 	   entre 0 y 100 son comunes a cualquier sistema Debian y no
 	   deben modificarse.
-	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id401602" href="#id401602">68</a>] </sup>Con DES el tamaño máximo de una clave es 8
-	  caracteres, el algoritmo MD5 es más seguro y permite claves de
+	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id401602" href="#id401602">68</a>] </sup>Con DES el tamaÃ±o mÃ¡ximo de una clave es 8
+	  caracteres, el algoritmo MD5 es mÃ¡s seguro y permite claves de
 	  mayor longitud.
-	 </p></div><div class="footnote"><p><sup>[<a name="ftn.id402057" href="#id402057">69</a>] </sup>De acuerdo a la página man de passwd, GECOS es sigla de
+	 </p></div><div class="footnote"><p><sup>[<a name="ftn.id402057" href="#id402057">69</a>] </sup>De acuerdo a la pÃ¡gina man de passwd, GECOS es sigla de
 	  General Electric Comprehensive Operating
 	  System.
 	 </p></div><div class="footnote"><p><sup>[<a name="ftn.id402093" href="#id402093">70</a>] </sup>Para convertir un archivo de claves shadow a passwd y
@@ -717,30 +717,30 @@ print &quot;\n&quot;;
 	off</tt> y activarse con <tt>shadowconfig
 	on</tt>
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id402813" href="#id402813">71</a>] </sup><b>sg</b> es un comando similar a
-	   <b>newgrp</b> que además permite especificar un
-	   comando por ejecutar con la opción <tt>-c
+	   <b>newgrp</b> que ademÃ¡s permite especificar un
+	   comando por ejecutar con la opciÃ³n <tt>-c
 	   <i><tt>comando</tt></i></tt>
 	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id402967" href="#id402967">72</a>] </sup>Un comando casi equivalente a
 	   <b>addgroup</b> es <b>groupadd</b>,
 	   sin embargo <b>addgroup</b> tiene en cuenta las
-	   políticas de Debian y la información de
+	   polÃ­ticas de Debian y la informaciÃ³n de
 	   <tt>/etc/adduser.conf</tt>.
 	  </p></div><div class="footnote"><p><sup>[<a name="ftn.id403592" href="#id403592">73</a>] </sup>Por defecto todos los usuarios pueden entrar a cualquier
 	hora, puede modificarse esto editando
 	<tt>/etc/security/time.conf</tt>.
        </p></div><div class="footnote"><p><sup>[<a name="ftn.id403612" href="#id403612">74</a>] </sup><b>motd</b> abrevia message of day (en
-	español mensaje del día).</p></div><div class="footnote"><p><sup>[<a name="ftn.id403741" href="#id403741">75</a>] </sup>access.conf login access control table, group.conf para
+	espaÃ±ol mensaje del dÃ­a).</p></div><div class="footnote"><p><sup>[<a name="ftn.id403741" href="#id403741">75</a>] </sup>access.conf login access control table, group.conf para
 	dar acceso a ciertos usuarios a ciertos grupos a los cuales no
-	pertenece, limits.conf para establecer límites en el uso de
+	pertenece, limits.conf para establecer lÃ­mites en el uso de
 	algunos recursos del sistema (como procesos, memoria, archivos
-	abiertos simultaneamente, tiempo de CPU, número de logins,
+	abiertos simultaneamente, tiempo de CPU, nÃºmero de logins,
 	prioridad de procesos), pam_env.conf donde pueden configurarse
 	variables de ambiente, time.conf donde se configura horarios
 	en el que ciertos usuarios pueden ingresar al sistema</p></div><div class="footnote"><p><sup>[<a name="ftn.id405694" href="#id405694">76</a>] </sup>Tanto MD5 como DES transforman una clave empleando un
-	 número, este número (llamado informalmente &quot;sal&quot;) produce una
-	 transformación diferente y se adjunta al comienzo de la clave
-	 transformada. Es útil para hacer más dificil a un intruso
+	 nÃºmero, este nÃºmero (llamado informalmente &quot;sal&quot;) produce una
+	 transformaciÃ³n diferente y se adjunta al comienzo de la clave
+	 transformada. Es Ãºtil para hacer mÃ¡s dificil a un intruso
 	 descubrir claves (porque si intenta descubrir claves probando
 	con algunas fijas, transformandolas y comparando con
 	<tt>/etc/passwd</tt> debe usar cada una de las
-	sales de cada usuario en sus intentos.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apagado-y-encendido-de-una-red.html">Anterior</a> </td><td width="20%" align="center"><a accesskey="u" href="administracion-uno.html">Subir</a></td><td width="40%" align="right"> <a accesskey="n" href="administracion-de-archivos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">2. Apagado y encendido de una red </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top"> 4. Administración de archivos</td></tr></table></div></body></html>
+	sales de cada usuario en sus intentos.</p></div></div></div><div class="navfooter"><hr><table width="100%" summary="Navigation footer"><tr><td width="40%" align="left"><a accesskey="p" href="apagado-y-encendido-de-una-red.html">Anterior</a>Â </td><td width="20%" align="center"><a accesskey="u" href="administracion-uno.html">Subir</a></td><td width="40%" align="right">Â <a accesskey="n" href="administracion-de-archivos.html">Siguiente</a></td></tr><tr><td width="40%" align="left" valign="top">2. Apagado y encendido de una redÂ </td><td width="20%" align="center"><a accesskey="h" href="AA_Linux_colegio.html">Inicio</a></td><td width="40%" align="right" valign="top">Â 4. AdministraciÃ³n de archivos</td></tr></table></div></body></html>
