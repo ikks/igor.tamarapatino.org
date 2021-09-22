@@ -4,7 +4,7 @@
 >Apagado y encendido de una red</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
@@ -18,7 +18,7 @@ TITLE="Desarrollo de habilidades para administrar computadores con
    Linux"
 HREF="c4966.htm"><LINK
 REL="NEXT"
-TITLE="AdministraciÛn de usuarios"
+TITLE="Administraci√≥n de usuarios"
 HREF="x5590.htm"></HEAD
 ><BODY
 CLASS="sect1"
@@ -39,7 +39,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -56,7 +56,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->CapÌtulo 4. Desarrollo de habilidades para administrar computadores con
+>Cap√≠tulo 4. Desarrollo de habilidades para administrar computadores con
    Linux</TD
 ><TD
 WIDTH="10%"
@@ -90,7 +90,7 @@ NAME="apagado-y-encendido-de-una-red"
 NAME="encap.apaga"
 ></A
 ><P
->Implementa una polÌtica para el apagado de los
+>Implementa una pol√≠tica para el apagado de los
        computadores.  </P
 ></LI
 ><LI
@@ -99,7 +99,7 @@ NAME="encap.enciende"
 ></A
 ><P
 >Inicia una red Linux y puede
-      solucionar eventuales inconvenientes desde el nivel de ejecuciÛn
+      solucionar eventuales inconvenientes desde el nivel de ejecuci√≥n
       1.  </P
 ></LI
 ><LI
@@ -107,7 +107,7 @@ NAME="encap.enciende"
 NAME="encap.bitacora"
 ></A
 ><P
->Emplea algunas bit·coras
+>Emplea algunas bit√°coras
        relacionadas con el inicio del sistema y de sesiones.
       </P
 ></LI
@@ -121,15 +121,15 @@ NAME="lectura-apagado-y-encendido-de-una-red"
 >Lectura: Apagado y encendido de una red</A
 ></H2
 ><P
->Los sistemas Unix fueron diseÒados para brindar operaciÛn
+>Los sistemas Unix fueron dise√±ados para brindar operaci√≥n
      continua (no requieren ser apagados), por eso antes de apagar
      cada computador debe "cerrar" el sistema operativo con el
      programa <B
 CLASS="command"
 >shutdown</B
->.  En esta secciÛn se
-     presentan indicaciones para apagar y encender una red Linux asÌ
-     como la forma de pasar par·metros al kernel cuando se inicia.
+>.  En esta secci√≥n se
+     presentan indicaciones para apagar y encender una red Linux as√≠
+     como la forma de pasar par√°metros al kernel cuando se inicia.
     </P
 ><DIV
 CLASS="sect3"
@@ -177,11 +177,11 @@ NAME="AEN5105"
 ></A
 ><P
 >Comando usado para apagar y cerrar
-      (con la opciÛn <TT
+      (con la opci√≥n <TT
 CLASS="option"
 >-h</TT
 > now) o para cerrar y
-      reiniciar (con la opciÛn <TT
+      reiniciar (con la opci√≥n <TT
 CLASS="option"
 >-r</TT
 > now).</P
@@ -220,17 +220,17 @@ NAME="AEN5123"
 HREF="#FTN.AEN5123"
 >[1]</A
 >
-	.  Este programa envÌa un mensaje a todos los usuarios
-	indicando que el sistema ser· apagado, envÌa a todos los
-	procesos la seÒal <TT
+	.  Este programa env√≠a un mensaje a todos los usuarios
+	indicando que el sistema ser√° apagado, env√≠a a todos los
+	procesos la se√±al <TT
 CLASS="literal"
 >SIGTERM</TT
 > (ver <A
 HREF="x3282.htm"
 >Procesos y tareas</A
 >) y cambia
-	el nivel de ejecuciÛn a 0 si se est· apagando, 6 si est·
-	reiniciando o 1 si se ejecuta desde la lÌnea de comandos sin
+	el nivel de ejecuci√≥n a 0 si se est√° apagando, 6 si est√°
+	reiniciando o 1 si se ejecuta desde la l√≠nea de comandos sin
 	las opciones <TT
 CLASS="option"
 >-h</TT
@@ -238,28 +238,28 @@ CLASS="option"
 CLASS="option"
 >-r</TT
 >.
-	Al cambiar el nivel de ejecuciÛn se ejecutar·n otras acciones
+	Al cambiar el nivel de ejecuci√≥n se ejecutar√°n otras acciones
 	especificadas en <TT
 CLASS="option"
 >/etc/inittab</TT
 > como se
-	explica en el siguiente capÌtulo (ver <A
+	explica en el siguiente cap√≠tulo (ver <A
 HREF="c8032.htm#inicializacion-del-sistema"
->InicializaciÛn del
+>Inicializaci√≥n del
 	sistema</A
 >).  </P
 ></LI
 ><LI
 ><P
->Salvan en disco informaciÛn que quede en memoria.  Esto es
+>Salvan en disco informaci√≥n que quede en memoria.  Esto es
        necesario porque para hacer eficiente el uso de discos, parte
-       de la informaciÛn de estos es mantenida por el sistema
+       de la informaci√≥n de estos es mantenida por el sistema
        operativo en memoria (en <SPAN
 ><I
 CLASS="emphasis"
 >cache</I
 ></SPAN
->) y sÛlo se
+>) y s√≥lo se
        escribe a disco cuando resulta indispensable o cuando el
        usuario lo solicita explicitamente con el programa
        <B
@@ -276,8 +276,8 @@ CLASS="command"
        <B
 CLASS="command"
 >poweroff</B
-> pueden no efectuar esta operaciÛn
-       con la opciÛn <TT
+> pueden no efectuar esta operaci√≥n
+       con la opci√≥n <TT
 CLASS="option"
 >-n</TT
 >.  
@@ -285,16 +285,16 @@ CLASS="option"
 ></LI
 ><LI
 ><P
->Registran la acciÛn de apagar en la bit·cora
+>Registran la acci√≥n de apagar en la bit√°cora
        <TT
 CLASS="filename"
 >/var/log/wtmp</TT
->.  Esta acciÛn no se realiza
-       si se emplea la opciÛn <TT
+>.  Esta acci√≥n no se realiza
+       si se emplea la opci√≥n <TT
 CLASS="literal"
 >-d</TT
-> y se efectuar·
-       pero sin reiniciar o apagar con la opciÛn
+> y se efectuar√°
+       pero sin reiniciar o apagar con la opci√≥n
        <TT
 CLASS="literal"
 >-w</TT
@@ -303,7 +303,7 @@ CLASS="literal"
 ><LI
 ><P
 >Detienen interfaces de redes y apagan o reinician el
-	computador.  En m·quinas que empleen <SPAN
+	computador.  En m√°quinas que empleen <SPAN
 CLASS="acronym"
 >APM</SPAN
 >
@@ -319,7 +319,7 @@ CLASS="command"
 CLASS="command"
 >poweroff</B
 >
-	  apagaran el computador despuÈs de cerrar el sistema.  En
+	  apagaran el computador despu√©s de cerrar el sistema.  En
 	  caso de que un computador emplee APM pero el comando
 	  <B
 CLASS="command"
@@ -328,23 +328,23 @@ CLASS="command"
 	  <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
-> la lÌnea
+> la l√≠nea
 <PRE
 CLASS="programlisting"
 >&#13; append="apm=on"
 </PRE
 >
-       y despuÈs ejecute el programa <B
+       y despu√©s ejecute el programa <B
 CLASS="command"
 >/sbin/lilo</B
 >.
-       Esta lÌnea indica al kernel durante el arranque que debe
+       Esta l√≠nea indica al kernel durante el arranque que debe
        activar el soporte para <SPAN
 CLASS="acronym"
 >APM</SPAN
 > (ver <A
 HREF="c8032.htm#inicializacion-del-sistema"
->InicializaciÛn del
+>Inicializaci√≥n del
        sistema</A
 >).  
        </P
@@ -363,17 +363,17 @@ HREF="c8032.htm#inicializacion-del-sistema"
 CLASS="application"
 >gdm</SPAN
 > permite que
-	todo usuario apague el computador con una opciÛn del men˙.
+	todo usuario apague el computador con una opci√≥n del men√∫.
 	Esto puede cambiarse editando el archivo
 	<TT
 CLASS="filename"
 >/etc/gdm/gdm.conf</TT
-> (lÌnea
+> (l√≠nea
 	<TT
 CLASS="literal"
 >HaltCommand</TT
 >) o empleando la herramienta de
-	configuraciÛn de gdm (men˙
+	configuraci√≥n de gdm (men√∫
 	<SPAN
 CLASS="guimenu"
 >System/Configure</SPAN
@@ -386,7 +386,7 @@ CLASS="guimenu"
 CLASS="keycap"
 >Ctrl-Alt-Del</B
 > se
-	ejecutar· el programa <B
+	ejecutar√° el programa <B
 CLASS="command"
 >shutdown</B
 >.  Puede
@@ -395,7 +395,7 @@ CLASS="command"
 CLASS="filename"
 >/etc/inittab</TT
 > eliminando o poniendo como
-	comentario (poniendo un caracter '#' al comienzo) la lÌnea de
+	comentario (poniendo un caracter '#' al comienzo) la l√≠nea de
 	la forma <TT
 CLASS="literal"
 >ca:12345:ctrlaltdel:/sbin/shutdown
@@ -405,15 +405,15 @@ CLASS="replaceable"
 >opciones</I
 ></TT
 ></TT
->.  Otra opciÛn es
-	agregar a tal lÌnea la opciÛn <TT
+>.  Otra opci√≥n es
+	agregar a tal l√≠nea la opci√≥n <TT
 CLASS="option"
 >-a</TT
 > que indica
 	a <B
 CLASS="command"
 >shutdown</B
-> sÛlo apagar el sistema en caso
+> s√≥lo apagar el sistema en caso
 	de que uno de los usuarios que tengan sesiones abiertas cuando
 	se presiona <B
 CLASS="keycap"
@@ -423,12 +423,12 @@ CLASS="keycap"
 CLASS="filename"
 >/etc/shutdown.allow</TT
 >.  Note que
-	esto solamente ocurre en una interfaz no gr·fica
+	esto solamente ocurre en una interfaz no gr√°fica
 	</P
 ></LI
 ></UL
 ><P
->Otra alternativa es enseÒar a los usuarios por quÈ y cÛmo
+>Otra alternativa es ense√±ar a los usuarios por qu√© y c√≥mo
       cerrar el sistema.
      </P
 ></DIV
@@ -442,9 +442,9 @@ NAME="encendido"
 ></H3
 ><P
 >Cuando inicie una red, encienda primero el servidor.
-      Eventualmente al arranque de alg˙n computador podrÌa realizarse
-      una revisiÛn de discos que toma m·s tiempo de lo normal (esta
-      revisiÛn se evita con la opciÛn <TT
+      Eventualmente al arranque de alg√∫n computador podr√≠a realizarse
+      una revisi√≥n de discos que toma m√°s tiempo de lo normal (esta
+      revisi√≥n se evita con la opci√≥n <TT
 CLASS="option"
 >-f</TT
 > de
@@ -452,32 +452,32 @@ CLASS="option"
 CLASS="command"
 >shutdown</B
 >).  En caso de que el sistema no haya
-      sido cerrado antes de apagar, la revisiÛn tomar· m·s tiempo,
-      tratar· de resolver inconsistencias en el sistema de archivos,
-      eventualmente puede requerir la intervenciÛn del administrador
-      para completar la revisiÛn con el programa
+      sido cerrado antes de apagar, la revisi√≥n tomar√° m√°s tiempo,
+      tratar√° de resolver inconsistencias en el sistema de archivos,
+      eventualmente puede requerir la intervenci√≥n del administrador
+      para completar la revisi√≥n con el programa
       <B
 CLASS="command"
 >fsck</B
-> y en un caso extremo se perder·
-      informaciÛn o no podr· iniciarse el sistema.
+> y en un caso extremo se perder√°
+      informaci√≥n o no podr√° iniciarse el sistema.
      </P
 ><A
 NAME="AEN5194"
 ></A
 ><P
->Programa que permite la revisiÛn
+>Programa que permite la revisi√≥n
       del sistema de archivo.</P
 ><P
->En caso de requerir intervenciÛn manual durante el
-      arranque, entrar· a nivel de ejecuciÛn 1 (tambiÈn llamado modo
+>En caso de requerir intervenci√≥n manual durante el
+      arranque, entrar√° a nivel de ejecuci√≥n 1 (tambi√©n llamado modo
       monousuario o <SPAN
 ><I
 CLASS="emphasis"
 >single</I
 ></SPAN
 >), aunque en algunos
-      casos ni siquiera podr· entrar a modo mono usuario y deber·
+      casos ni siquiera podr√° entrar a modo mono usuario y deber√°
       recurrir a un disquette de rescate (cuando Linux es instalado
       tiene la oportunidad de crearlo).
      </P
@@ -485,11 +485,11 @@ CLASS="emphasis"
 NAME="AEN5200"
 ></A
 ><P
->Nivel de ejecuciÛn
+>Nivel de ejecuci√≥n
       monousuario</P
 ><P
 >Tanto en modo monousuario como cuando emplee un disquette de
-      rescate, no podr· emplear X-Window, asÌ que debe estar preparado
+      rescate, no podr√° emplear X-Window, as√≠ que debe estar preparado
       para operar desde la consola modo texto, por ejemplo para:
      </P
 ><P
@@ -497,7 +497,7 @@ NAME="AEN5200"
 ><UL
 ><LI
 ><P
->editar archivos de configuraciÛn con un editor que opere
+>editar archivos de configuraci√≥n con un editor que opere
 	en modo texto como <SPAN
 CLASS="application"
 >vi</SPAN
@@ -505,7 +505,7 @@ CLASS="application"
 	<SPAN
 CLASS="application"
 >emacs</SPAN
-> con la opciÛn
+> con la opci√≥n
 	<TT
 CLASS="option"
 >-nw</TT
@@ -517,7 +517,7 @@ HREF="x2000.htm"
 ></LI
 ><LI
 ><P
->manejar el intÈrprete de comandos y el juego de
+>manejar el int√©rprete de comandos y el juego de
 	herramientas Unix (ver <A
 HREF="x2787.htm"
 >bash y el juego de
@@ -528,13 +528,13 @@ HREF="x2787.htm"
 ><LI
 ><P
 >usar diversos programas para configurar el sistema (que se
-	estudian en este capÌtulo y el siguiente).  
+	estudian en este cap√≠tulo y el siguiente).  
        </P
 ></LI
 ></UL
 ><P
 >Desde un sistema que haya iniciado normalmente (nivel de
-       ejecuciÛn entre 2 y 5), puede pasar a nivel de ejecuciÛn 1 con
+       ejecuci√≥n entre 2 y 5), puede pasar a nivel de ejecuci√≥n 1 con
        los comandos <B
 CLASS="command"
 >shutdown now</B
@@ -542,9 +542,9 @@ CLASS="command"
 CLASS="command"
 >init
        1</B
->. TambiÈn puede iniciar este nivel desde el cargador
-       de arranque, antes de entrar al sistema, pasando como par·metro
-       al kernel la opciÛn <TT
+>. Tambi√©n puede iniciar este nivel desde el cargador
+       de arranque, antes de entrar al sistema, pasando como par√°metro
+       al kernel la opci√≥n <TT
 CLASS="literal"
 >single</TT
 >.
@@ -552,7 +552,7 @@ CLASS="literal"
 ><P
 >El cargador de arranque es un programa que se ejecuta tras
        encender el computador, y cargar el kernel pasandole eventuales
-       par·metros.  En Debian 2.2 el cargador de arranque por defecto
+       par√°metros.  En Debian 2.2 el cargador de arranque por defecto
        es <SPAN
 CLASS="acronym"
 >LILO</SPAN
@@ -564,7 +564,7 @@ CLASS="acronym"
 CLASS="acronym"
 >Loadlin</SPAN
 >.
-       Estos cargadores permiten cargar m·s de un sistema operativo
+       Estos cargadores permiten cargar m√°s de un sistema operativo
        (en caso de que tenga en sus discos varios y que lo haya
        configurado apropiadamente).
       </P
@@ -587,19 +587,19 @@ NAME="AEN5230"
 ><P
 >Cargador de arranque.</P
 ><P
->Notar· que en Debian para entrar a modo mono usuario es
+>Notar√° que en Debian para entrar a modo mono usuario es
        necesario dar la clave de <TT
 CLASS="literal"
 >root</TT
 >, si la olvida
-       puede pasar como par·metro <TT
+       puede pasar como par√°metro <TT
 CLASS="parameter"
 ><I
 >init=/bin/sh</I
 ></TT
 >
        desde el cargador de arranque o puede iniciar con un disquette
-       de rescate.  Dado que la posibilidad de pasar par·metros podrÌa
+       de rescate.  Dado que la posibilidad de pasar par√°metros podr√≠a
        en algunos casos ser una falla de seguridad, puede configurar
        el cargador de arranque para restringirla.
     </P
@@ -610,7 +610,7 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="parametros-desde-el-cargador-de-arranque"
->Par·metros desde el cargador de arranque</A
+>Par√°metros desde el cargador de arranque</A
 ></H3
 ><P
 >Puede determinar si su cargador de arranque es
@@ -618,11 +618,11 @@ NAME="parametros-desde-el-cargador-de-arranque"
 CLASS="application"
 >LILO</SPAN
 >, observando si durante el
-     arranque, despuÈs de completar la inicializaciÛn del
+     arranque, despu√©s de completar la inicializaci√≥n del
      <SPAN
 CLASS="acronym"
 >BIOS</SPAN
->, aparece una lÌnea que comienza con la
+>, aparece una l√≠nea que comienza con la
      palabra <SPAN
 CLASS="application"
 >LILO</SPAN
@@ -630,8 +630,8 @@ CLASS="application"
      <SPAN
 CLASS="application"
 >GRUB</SPAN
-> puede presentar un men˙ o
-     presentar una lÌnea de comandos.
+> puede presentar un men√∫ o
+     presentar una l√≠nea de comandos.
      </P
 ><DIV
 CLASS="sect4"
@@ -639,7 +639,7 @@ CLASS="sect4"
 CLASS="sect4"
 ><A
 NAME="AEN5243"
->Par·metros desde <SPAN
+>Par√°metros desde <SPAN
 CLASS="acronym"
 >LILO</SPAN
 ></A
@@ -680,9 +680,9 @@ CLASS="application"
 >.
       </P
 ><P
->Una vez en el prompt puede pasar par·metros al kernel
-       d·ndolos a continuaciÛn de la etiqueta del sistema y separando
-       unos de otros con espacios.  AsÌ por ejemplo para pasar a modo
+>Una vez en el prompt puede pasar par√°metros al kernel
+       d√°ndolos a continuaci√≥n de la etiqueta del sistema y separando
+       unos de otros con espacios.  As√≠ por ejemplo para pasar a modo
        mono usuario, suponiendo que <TT
 CLASS="literal"
 >linux</TT
@@ -699,7 +699,7 @@ CLASS="screen"
        <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
-> (lÌneas de la forma
+> (l√≠neas de la forma
        <TT
 CLASS="literal"
 >label=<TT
@@ -709,7 +709,7 @@ CLASS="replaceable"
 ></TT
 ></TT
 >),
-       asÌ como el prompt (lÌnea de la forma
+       as√≠ como el prompt (l√≠nea de la forma
        <TT
 CLASS="literal"
 >message=<TT
@@ -727,7 +727,7 @@ CLASS="important"
 ><P
 ><B
 >Importante: </B
->Tenga en cuenta que despuÈs de modificar
+>Tenga en cuenta que despu√©s de modificar
 	<TT
 CLASS="filename"
 >/etc/lilo.conf</TT
@@ -743,7 +743,7 @@ CLASS="acronym"
 	<SPAN
 CLASS="acronym"
 >LILO</SPAN
-> est· instalado.  (secciÛn
+> est√° instalado.  (secci√≥n
 	cargador de arranque ver <A
 HREF="x9697.htm#discos-duros"
 >Discos
@@ -753,7 +753,7 @@ HREF="x9697.htm#discos-duros"
 ></DIV
 ><P
 >Por seguridad es posible restringir con una clave el paso de
-       par·metros con las lÌneas:
+       par√°metros con las l√≠neas:
 <PRE
 CLASS="programlisting"
 >&#13;password=<SPAN
@@ -767,26 +767,26 @@ restricted
 >
 
        de las cuales la primera establece una clave para LILO y la
-       segunda indica que sÛlo debe solicitarse si se pasan opciones a
+       segunda indica que s√≥lo debe solicitarse si se pasan opciones a
        una etiqueta.  Para evitar que la clave pueda ser vista por
        otros, establezca los permisos de
        <TT
 CLASS="literal"
 >/etc/lilo.conf</TT
-> para que sÛlo pueda ser leido
+> para que s√≥lo pueda ser leido
        y escrito por el usuario root (ver <A
 HREF="c1054.htm#archivos-y-permisos"
 >Archivos y permisos</A
 >).
     </P
 ><P
->Puede hacer el paso de un par·metro permanente (es decir
-       que se realice autom·ticamente cada vez que inicia),
-       agregandolo a la lÌnea <B
+>Puede hacer el paso de un par√°metro permanente (es decir
+       que se realice autom√°ticamente cada vez que inicia),
+       agregandolo a la l√≠nea <B
 CLASS="command"
 >append</B
 > (o creando
-       esta lÌnea) a continuaciÛn de la etiqueta de Linux.  Por
+       esta l√≠nea) a continuaci√≥n de la etiqueta de Linux.  Por
        ejemplo para indicar al kernel que el computador tiene 128Mb de
        RAM (en caso de que no lo detecte ver <A
 HREF="x8783.htm#memoria-ram"
@@ -810,7 +810,7 @@ CLASS="sect4"
 CLASS="sect4"
 ><A
 NAME="AEN5285"
->Par·metros desde <SPAN
+>Par√°metros desde <SPAN
 CLASS="application"
 >GRUB</SPAN
 ></A
@@ -822,7 +822,7 @@ CLASS="application"
 > tiene un modo interactivo desde el
        cual puede cargar el kernel que desee (si tiene varios en su
        computador).  Desde ese modo para iniciar Linux suponiendo que
-       est· en la raÌz, y que la raÌz est· en la primera particiÛn del
+       est√° en la ra√≠z, y que la ra√≠z est√° en la primera partici√≥n del
        primer disco <SPAN
 CLASS="acronym"
 >IDE</SPAN
@@ -833,20 +833,20 @@ CLASS="programlisting"
 >&#13;kernel (hd0,0)/vmlinuz root=/dev/hda1 single
 </PRE
 ><P
->TambiÈn puede configurarse un menu para
+>Tambi√©n puede configurarse un menu para
        <SPAN
 CLASS="application"
 >GRUB</SPAN
-> que permitir· al usuario elegir
+> que permitir√° al usuario elegir
        un sistema y ejecutar los comandos necesarios para iniciarlo y
        las opciones para el kernel.  Tal menu se configura en el
        archivo <TT
 CLASS="filename"
 >/boot/grub/menu.lst</TT
->, que podrÌa
+>, que podr√≠a
        contar con entradas diferentes para iniciar en modos diferentes
-       como se ejemplifica a continuaciÛn (suponiendo que el kernel y
-       la raÌz est·n en la primera particiÛn del disco
+       como se ejemplifica a continuaci√≥n (suponiendo que el kernel y
+       la ra√≠z est√°n en la primera partici√≥n del disco
        <SPAN
 CLASS="acronym"
 >IDE</SPAN
@@ -866,7 +866,7 @@ title  Debian
 kernel /vmlinuz root=/dev/hda1 single
 </PRE
 ><P
->Al emplear un men˙ un usuario tambiÈn puede emplear el
+>Al emplear un men√∫ un usuario tambi√©n puede emplear el
        modo interactivo de <SPAN
 CLASS="acronym"
 >GRUB</SPAN
@@ -881,13 +881,13 @@ CLASS="replaceable"
 ></TT
 ></B
 >
-       al archivo de configuraciÛn 
+       al archivo de configuraci√≥n 
        <A
 NAME="AEN5301"
 HREF="#FTN.AEN5301"
 >[4]</A
 >
-       Otra opciÛn es que cree dos men˙s, uno para usuarios normales
+       Otra opci√≥n es que cree dos men√∫s, uno para usuarios normales
        (<TT
 CLASS="filename"
 >/boot/grub/menu.lst</TT
@@ -916,15 +916,15 @@ CLASS="sect4"
 CLASS="sect4"
 ><A
 NAME="AEN5309"
->Algunos par·metros para el kernel</A
+>Algunos par√°metros para el kernel</A
 ></H4
 ><P
 >La referencia completa es
        <I
 CLASS="citetitle"
 >BootPrompt-HOWTO</I
->, a continuaciÛn
-       presentamos algunos par·metros: </P
+>, a continuaci√≥n
+       presentamos algunos par√°metros: </P
 ><P
 ></P
 ><DIV
@@ -949,21 +949,21 @@ CLASS="filename"
 	  lugar de <TT
 CLASS="literal"
 >/dev/hdd1</TT
-> la particiÛn que debe
-	  montarse como directorio raÌz (˙til por ejemplo si debiÛ
+> la partici√≥n que debe
+	  montarse como directorio ra√≠z (√∫til por ejemplo si debi√≥
 	  cambiar su disco duro con Linux a otra interfaz o si agrega o
-	  elimina particiones).  Por defecto ser· el configurado en
+	  elimina particiones).  Por defecto ser√° el configurado en
 	  <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
-> en la secciÛn apropiada
-	  en una lÌnea de la forma:
+> en la secci√≥n apropiada
+	  en una l√≠nea de la forma:
 <PRE
 CLASS="programlisting"
 >&#13;root=/dev/hda2
 </PRE
 >
-	  Los dispositivos que podrÌan especificarse son IDE (e.g
+	  Los dispositivos que podr√≠an especificarse son IDE (e.g
 	  <TT
 CLASS="filename"
 >/dev/hda1</TT
@@ -972,7 +972,7 @@ CLASS="filename"
 CLASS="filename"
 >/dev/sda1</TT
 >), NFS
-	  en caso de una terminal que cargue directorio raÌz por red
+	  en caso de una terminal que cargue directorio ra√≠z por red
 	  (<TT
 CLASS="filename"
 >/dev/nfs</TT
@@ -980,12 +980,12 @@ CLASS="filename"
 	  <TT
 CLASS="literal"
 >initrd</TT
-> como raÌz (<TT
+> como ra√≠z (<TT
 CLASS="filename"
 >/dev/ram</TT
 > ver <A
 HREF="x8370.htm#configuracion-del-kernel"
->ConfiguraciÛn del
+>Configuraci√≥n del
 	   kernel</A
 >)
 	 </P
@@ -997,7 +997,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Para montar la particiÛn raiz en modo sÛlo lectura.
+>Para montar la partici√≥n raiz en modo s√≥lo lectura.
 	 </P
 ></DD
 ></DL
@@ -1010,10 +1010,10 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="bitacoras"
->Bit·coras</A
+>Bit√°coras</A
 ></H3
 ><P
->Las bit·coras en Debian est·n configuradas por defecto en
+>Las bit√°coras en Debian est√°n configuradas por defecto en
       archivos del directorio <TT
 CLASS="filename"
 >/var/log</TT
@@ -1043,8 +1043,8 @@ CLASS="filename"
 ></DT
 ><DD
 ><P
->Mantiene mensajes de autenticaciÛn, producidos por
-	 ejemplo por la librerÌa PAM indicando que usuarios abrieron y
+>Mantiene mensajes de autenticaci√≥n, producidos por
+	 ejemplo por la librer√≠a PAM indicando que usuarios abrieron y
 	 cerraron sesiones. Manejado por syslog.
 	</P
 ></DD
@@ -1068,17 +1068,17 @@ CLASS="filename"
 ><TT
 CLASS="filename"
 >wtmp</TT
-> mantiene informaciÛn de
+> mantiene informaci√≥n de
 	 usuarios que han abierto o cerrado sesiones, se examina con
 	 el programa <B
 CLASS="command"
 >last</B
-> (est· relacionada con
+> (est√° relacionada con
 	 <TT
 CLASS="filename"
 >/var/run/utmp</TT
-> que mantiene informaciÛn
-	 de los usuarios que est·n conectados ---usado por el programa
+> que mantiene informaci√≥n
+	 de los usuarios que est√°n conectados ---usado por el programa
 	 <B
 CLASS="command"
 >who</B
@@ -1086,7 +1086,7 @@ CLASS="command"
 CLASS="filename"
 >btmp</TT
 > mantiene
-	 informaciÛn de sesiones que se intentaron abrir pero que no
+	 informaci√≥n de sesiones que se intentaron abrir pero que no
 	 pudieron autenticarse, se examina con el progama
 	 <B
 CLASS="command"
@@ -1156,7 +1156,7 @@ CLASS="filename"
 ></DT
 ><DD
 ><P
->Mensajes de depuraciÛn de algunos programas, empleados
+>Mensajes de depuraci√≥n de algunos programas, empleados
 	 usualmente por los desarrolladores para encontrar fallas.
 	</P
 ></DD
@@ -1191,7 +1191,7 @@ CLASS="filename"
 ></DL
 ></DIV
 ><P
->Algunas bit·coras son manejadas por el programa
+>Algunas bit√°coras son manejadas por el programa
       <B
 CLASS="command"
 >syslogd</B
@@ -1200,16 +1200,16 @@ CLASS="command"
 CLASS="literal"
 >sysklogd</TT
 >), que se ejecuta durante el arranque
-      y espera mensajes.  Cada mensaje que recibe de alg˙n programa,
+      y espera mensajes.  Cada mensaje que recibe de alg√∫n programa,
       lo registra junto con la fecha y la procedencia aun archivo o
       dispositivo (e.g. una consola).  Cada mensaje tiene un tipo y
       una prioridad, que permiten determinar el archivo o dispositivo
-      al cual se envia.  La relaciÛn entre tipos y prioridades con
+      al cual se envia.  La relaci√≥n entre tipos y prioridades con
       archivos se configura en el archivo
       <TT
 CLASS="filename"
 >/etc/syslogd.conf</TT
-> cuyas lÌneas pueden ser
+> cuyas l√≠neas pueden ser
       comentarios, o similares a:</P
 ><PRE
 CLASS="programlisting"
@@ -1241,7 +1241,7 @@ CLASS="literal"
 CLASS="literal"
 >security</TT
 >
-      empleados por programas que realizan autenticaciÛn de usuarios,
+      empleados por programas que realizan autenticaci√≥n de usuarios,
       <TT
 CLASS="literal"
 >cron</TT
@@ -1315,15 +1315,15 @@ CLASS="literal"
 >, <TT
 CLASS="literal"
 >panic</TT
->.  TambiÈn
+>.  Tambi√©n
       puede emplearse * para especificar todos los tipos o todas las
       prioridades.
     </P
 ><P
->Los programas que emplean syslogd, enviar·n mensajes con
+>Los programas que emplean syslogd, enviar√°n mensajes con
       tipos acordes con la funcionalidad del programa y con prioridad
       acorde con la gravedad o importancia.  Para agregar eventos a
-      una bit·cora desde el interprete de comandos (o desde un script)
+      una bit√°cora desde el interprete de comandos (o desde un script)
       puede emplear el programa <B
 CLASS="command"
 >logger</B
@@ -1339,8 +1339,8 @@ CLASS="command"
 >.
      </P
 ><P
->Dado que las bit·coras pueden crecer mucho (algunas en un
-      dÌa), en Debian son rotadas con cierta frecuencia (diarÌa,
+>Dado que las bit√°coras pueden crecer mucho (algunas en un
+      d√≠a), en Debian son rotadas con cierta frecuencia (diar√≠a,
       semanal o mensual) empleando cron (ver <A
 HREF="x3282.htm#tiempo"
 >Tiempo</A
@@ -1436,7 +1436,7 @@ NAME="lecturas-recomandadas-apagado-y-encendido-de-una-red"
 ><UL
 ><LI
 ><P
->P·ginas del manual de los programas
+>P√°ginas del manual de los programas
       <B
 CLASS="command"
 >shutdown</B
@@ -1455,8 +1455,8 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->Para aprender m·s sobre bit·coras puede consultar las
-       p·ginas del manual de <B
+>Para aprender m√°s sobre bit√°coras puede consultar las
+       p√°ginas del manual de <B
 CLASS="command"
 >last</B
 >,
@@ -1489,14 +1489,14 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->La bit·cora <TT
+>La bit√°cora <TT
 CLASS="filename"
 >/var/account/pacct</TT
 >
-       registra informaciÛn sobre los procesos iniciados por cada
-       usuario y que permiten sacar estadÌsticas de uso por usuario y
-       programas.  Puede consultar sobre esta bit·cora y los programas
-       que la usan en las p·ginas del manual de <B
+       registra informaci√≥n sobre los procesos iniciados por cada
+       usuario y que permiten sacar estad√≠sticas de uso por usuario y
+       programas.  Puede consultar sobre esta bit√°cora y los programas
+       que la usan en las p√°ginas del manual de <B
 CLASS="command"
 >ac</B
 >,
@@ -1550,7 +1550,7 @@ CLASS="replaceable"
 ></TT
 ></TT
 >.
-       Para conocer m·s sobre estos consulte las p·ginas del manual.
+       Para conocer m√°s sobre estos consulte las p√°ginas del manual.
       </P
 ></LI
 ><LI
@@ -1565,7 +1565,7 @@ CLASS="filename"
 CLASS="command"
 >info grup</B
 >)el manual
-       del usuario de GRUB.  En Internet el manual de LILO est·
+       del usuario de GRUB.  En Internet el manual de LILO est√°
        disponible en postscript en <A
 HREF="http://www.ibiblio.org/pub/Linux/system/boot/lilo/!INDEX.html"
 TARGET="_top"
@@ -1594,8 +1594,8 @@ CLASS="qandaset"
 ><DT
 >1. <A
 HREF="x5075.htm#encap.apaga.1"
->Escoja una polÌtica para el apagado de
-       los equipos y describa como la implementarÌa.</A
+>Escoja una pol√≠tica para el apagado de
+       los equipos y describa como la implementar√≠a.</A
 ></DT
 ><DT
 >2. <A
@@ -1604,15 +1604,15 @@ HREF="x5075.htm#encap.enciende.1"
        <B
 CLASS="command"
 >shutdown</B
-> desde la lÌnea de comandos para
-       pasar al nivel de ejecuciÛn 1 (tambiÈn llamado modo
+> desde la l√≠nea de comandos para
+       pasar al nivel de ejecuci√≥n 1 (tambi√©n llamado modo
        <SPAN
 ><I
 CLASS="emphasis"
 >single</I
 ></SPAN
->). øQuÈ procesos hay cuando
-       inicia este modo?  øPor quÈ se llama
+>). ¬øQu√© procesos hay cuando
+       inicia este modo?  ¬øPor qu√© se llama
        <SPAN
 ><I
 CLASS="emphasis"
@@ -1628,25 +1628,25 @@ HREF="x5075.htm#encap.bitacora.1"
 CLASS="command"
 >last</B
 >
-       para examinar la bit·cora <TT
+       para examinar la bit√°cora <TT
 CLASS="filename"
 >/var/log/wtmp</TT
 >,
-       øquÈ informaciÛn se consigna en esa bit·cora?</A
+       ¬øqu√© informaci√≥n se consigna en esa bit√°cora?</A
 ></DT
 ><DT
 >4. <A
 HREF="x5075.htm#encap.bitacora.2"
->Las bit·coras en Debian 2.2 son rotadas
-       periÛdicamente por el program <SPAN
+>Las bit√°coras en Debian 2.2 son rotadas
+       peri√≥dicamente por el program <SPAN
 CLASS="application"
 >logrotate</SPAN
 >.
-       Por defecto la bit·cora <TT
+       Por defecto la bit√°cora <TT
 CLASS="filename"
 >/var/log/wtmp</TT
 > se
-       borrar· mensualmente (quedar· una copia de la bit·cora del mes
+       borrar√° mensualmente (quedar√° una copia de la bit√°cora del mes
        anterior en <TT
 CLASS="filename"
 >/var/log/wtmp.1</TT
@@ -1656,14 +1656,14 @@ CLASS="filename"
 CLASS="filename"
 >/var/log/wtmp.report</TT
 >.  El periodo de
-       rotaciÛn o la cantidad de meses pasados que se deben mantener
+       rotaci√≥n o la cantidad de meses pasados que se deben mantener
        puede configurarse en el archivo
        <TT
 CLASS="filename"
 >/etc/logrotate.conf</TT
 >.  Configure ese
-       archivo para que almacene la informaciÛn de los 2 ˙ltimos
-       meses.  øQuÈ otras caracterÌsticas pueden configurarse
+       archivo para que almacene la informaci√≥n de los 2 √∫ltimos
+       meses.  ¬øQu√© otras caracter√≠sticas pueden configurarse
        con <TT
 CLASS="literal"
 >logrotate</TT
@@ -1672,7 +1672,7 @@ CLASS="literal"
 ><DT
 >5. <A
 HREF="x5075.htm#encap.bitacora.3"
->Una bit·cora que puede resultar importante
+>Una bit√°cora que puede resultar importante
        para detectar fallas de seguridad es
        <TT
 CLASS="filename"
@@ -1696,32 +1696,32 @@ CLASS="literal"
 > (ver <A
 HREF="x4476.htm#lectura-configuracion-de-una-sesion"
 >Lectura
-	ConfiguraciÛn de una sesiÛn</A
+	Configuraci√≥n de una sesi√≥n</A
 >) y los procesos iniciados
        son registrados por <TT
 CLASS="literal"
 >acct</TT
 >.  Para examinar la
-       bit·cora de los procesos iniciados puede emplear
+       bit√°cora de los procesos iniciados puede emplear
        <B
 CLASS="command"
 >lastcomm</B
-> y para ver estadÌsticas
+> y para ver estad√≠sticas
        <B
 CLASS="command"
 >ac</B
 > y <B
 CLASS="command"
 >sa</B
->.  øQuÈ
-       informaciÛn presentan estos programas y para que pueden
+>.  ¬øQu√©
+       informaci√≥n presentan estos programas y para que pueden
        servir?</A
 ></DT
 ><DT
 >7. <A
 HREF="x5075.htm#encap.enciende.2"
 >Restrinja el cargador de arranque para que
-       requiera clave antes de pasar par·metros al kernel.</A
+       requiera clave antes de pasar par√°metros al kernel.</A
 ></DT
 ></DL
 ><DIV
@@ -1734,8 +1734,8 @@ NAME="encap.apaga.1"
 ></A
 ><B
 >1. </B
->Escoja una polÌtica para el apagado de
-       los equipos y describa como la implementarÌa.</P
+>Escoja una pol√≠tica para el apagado de
+       los equipos y describa como la implementar√≠a.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -1743,7 +1743,7 @@ CLASS="answer"
 ><B
 > </B
 > En nuestro parecer la mejor
-       polÌtica es buena instrucciÛn, es enseÒar a los usuarios a
+       pol√≠tica es buena instrucci√≥n, es ense√±ar a los usuarios a
        apagar correctamente el sistema buscando que ellos quieran
        ayudar a mantener la red.</P
 ></DIV
@@ -1762,15 +1762,15 @@ NAME="encap.enciende.1"
        <B
 CLASS="command"
 >shutdown</B
-> desde la lÌnea de comandos para
-       pasar al nivel de ejecuciÛn 1 (tambiÈn llamado modo
+> desde la l√≠nea de comandos para
+       pasar al nivel de ejecuci√≥n 1 (tambi√©n llamado modo
        <SPAN
 ><I
 CLASS="emphasis"
 >single</I
 ></SPAN
->). øQuÈ procesos hay cuando
-       inicia este modo?  øPor quÈ se llama
+>). ¬øQu√© procesos hay cuando
+       inicia este modo?  ¬øPor qu√© se llama
        <SPAN
 ><I
 CLASS="emphasis"
@@ -1788,8 +1788,8 @@ CLASS="answer"
 CLASS="command"
 >ps
        -ax</B
->, sÛlo est·n procesos indispensables para el
-       kernel y para mantener una sesiÛn de <B
+>, s√≥lo est√°n procesos indispensables para el
+       kernel y para mantener una sesi√≥n de <B
 CLASS="command"
 >bash</B
 >
@@ -1819,9 +1819,9 @@ CLASS="command"
 CLASS="emphasis"
 >single</I
 ></SPAN
-> porque es para un sÛlo usuario y
+> porque es para un s√≥lo usuario y
        sin red, sirve para efectuar labores de mantenimiento como
-       correcciÛn de discos.</P
+       correcci√≥n de discos.</P
 ></DIV
 ></DIV
 ><DIV
@@ -1838,11 +1838,11 @@ NAME="encap.bitacora.1"
 CLASS="command"
 >last</B
 >
-       para examinar la bit·cora <TT
+       para examinar la bit√°cora <TT
 CLASS="filename"
 >/var/log/wtmp</TT
 >,
-       øquÈ informaciÛn se consigna en esa bit·cora?</P
+       ¬øqu√© informaci√≥n se consigna en esa bit√°cora?</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -1864,16 +1864,16 @@ NAME="encap.bitacora.2"
 ></A
 ><B
 >4. </B
->Las bit·coras en Debian 2.2 son rotadas
-       periÛdicamente por el program <SPAN
+>Las bit√°coras en Debian 2.2 son rotadas
+       peri√≥dicamente por el program <SPAN
 CLASS="application"
 >logrotate</SPAN
 >.
-       Por defecto la bit·cora <TT
+       Por defecto la bit√°cora <TT
 CLASS="filename"
 >/var/log/wtmp</TT
 > se
-       borrar· mensualmente (quedar· una copia de la bit·cora del mes
+       borrar√° mensualmente (quedar√° una copia de la bit√°cora del mes
        anterior en <TT
 CLASS="filename"
 >/var/log/wtmp.1</TT
@@ -1883,14 +1883,14 @@ CLASS="filename"
 CLASS="filename"
 >/var/log/wtmp.report</TT
 >.  El periodo de
-       rotaciÛn o la cantidad de meses pasados que se deben mantener
+       rotaci√≥n o la cantidad de meses pasados que se deben mantener
        puede configurarse en el archivo
        <TT
 CLASS="filename"
 >/etc/logrotate.conf</TT
 >.  Configure ese
-       archivo para que almacene la informaciÛn de los 2 ˙ltimos
-       meses.  øQuÈ otras caracterÌsticas pueden configurarse
+       archivo para que almacene la informaci√≥n de los 2 √∫ltimos
+       meses.  ¬øQu√© otras caracter√≠sticas pueden configurarse
        con <TT
 CLASS="literal"
 >logrotate</TT
@@ -1905,7 +1905,7 @@ CLASS="answer"
 CLASS="command"
 >vi /etc/logrotate</B
 >  
-	  buscar la secciÛn <TT
+	  buscar la secci√≥n <TT
 CLASS="literal"
 >/var/log/wtmp</TT
 > y cambiar 
@@ -1916,7 +1916,7 @@ CLASS="literal"
 CLASS="literal"
 >rotate 2</TT
 >.
-       Adem·s de rotar las bit·coras, eliminando la m·s antigua despuÈs de
+       Adem√°s de rotar las bit√°coras, eliminando la m√°s antigua despu√©s de
        cierto tiempo, puede mantenerlas comprimidos y enviar correos a
        usuarios.  Por defecto en Debian 2.2 este programa es ejecutado
        a diario.</P
@@ -1932,7 +1932,7 @@ NAME="encap.bitacora.3"
 ></A
 ><B
 >5. </B
->Una bit·cora que puede resultar importante
+>Una bit√°cora que puede resultar importante
        para detectar fallas de seguridad es
        <TT
 CLASS="filename"
@@ -1951,7 +1951,7 @@ CLASS="answer"
 ><P
 ><B
 > </B
->Crear esta bit·cora en blanco por ejemplo con 
+>Crear esta bit√°cora en blanco por ejemplo con 
 	  <B
 CLASS="command"
 >touch /var/log/btmp</B
@@ -1960,7 +1960,7 @@ CLASS="command"
        ejecutar <B
 CLASS="command"
 >lastb</B
-> y comprobar que se agregÛ una 
+> y comprobar que se agreg√≥ una 
        entrada.</P
 ></DIV
 ></DIV
@@ -1981,25 +1981,25 @@ CLASS="literal"
 > (ver <A
 HREF="x4476.htm#lectura-configuracion-de-una-sesion"
 >Lectura
-	ConfiguraciÛn de una sesiÛn</A
+	Configuraci√≥n de una sesi√≥n</A
 >) y los procesos iniciados
        son registrados por <TT
 CLASS="literal"
 >acct</TT
 >.  Para examinar la
-       bit·cora de los procesos iniciados puede emplear
+       bit√°cora de los procesos iniciados puede emplear
        <B
 CLASS="command"
 >lastcomm</B
-> y para ver estadÌsticas
+> y para ver estad√≠sticas
        <B
 CLASS="command"
 >ac</B
 > y <B
 CLASS="command"
 >sa</B
->.  øQuÈ
-       informaciÛn presentan estos programas y para que pueden
+>.  ¬øQu√©
+       informaci√≥n presentan estos programas y para que pueden
        servir?</P
 ></DIV
 ><DIV
@@ -2012,8 +2012,8 @@ CLASS="command"
 >lastcomm</B
 > presenta los programas
        iniciados, cada uno junto con el usuario que lo inicio, el
-       tiempo que durÛ la ejecuciÛn, la fecha cuando iniciÛ y flags
-       que indica como iniciÛ y terminÛ; la informaciÛn la extrae de
+       tiempo que dur√≥ la ejecuci√≥n, la fecha cuando inici√≥ y flags
+       que indica como inici√≥ y termin√≥; la informaci√≥n la extrae de
        <TT
 CLASS="filename"
 >/var/account/pacct</TT
@@ -2021,7 +2021,7 @@ CLASS="filename"
 CLASS="command"
 >ac</B
 >
-       presenta tiempo total de conexiÛn de cada usuario de acuerdo al
+       presenta tiempo total de conexi√≥n de cada usuario de acuerdo al
        archivo <TT
 CLASS="filename"
 >/var/log/wtmp</TT
@@ -2039,7 +2039,7 @@ NAME="encap.enciende.2"
 ><B
 >7. </B
 >Restrinja el cargador de arranque para que
-       requiera clave antes de pasar par·metros al kernel.</P
+       requiera clave antes de pasar par√°metros al kernel.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -2050,7 +2050,7 @@ CLASS="answer"
        <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
-> agregar las lÌneas
+> agregar las l√≠neas
        <TT
 CLASS="literal"
 >password=<TT
@@ -2063,7 +2063,7 @@ CLASS="replaceable"
        <TT
 CLASS="literal"
 >restricted</TT
->, despuÈs ejecutar
+>, despu√©s ejecutar
        <TT
 CLASS="literal"
 >/sbin/lilo</TT
@@ -2099,17 +2099,17 @@ WIDTH="95%"
 CLASS="command"
 >shutdown</B
 > es ejecutado desde
-	 la lÌnea de comandos recibe como parametro la hora a la que
+	 la l√≠nea de comandos recibe como parametro la hora a la que
 	 debe cerrar (<B
 CLASS="command"
 >now</B
 > indica en el mismo
-	 instante), como segundo par·metro opcional el mensaje por
+	 instante), como segundo par√°metro opcional el mensaje por
 	 presentar a los usuarios, y entre las opciones que acepta
 	 <TT
 CLASS="option"
 >-h</TT
-> indica apagar despuÈs de cerrar,
+> indica apagar despu√©s de cerrar,
 	 <TT
 CLASS="option"
 >-r</TT
@@ -2134,8 +2134,8 @@ CLASS="option"
 CLASS="option"
 >-t seg</TT
 > para que realice una pausa de los
-	 segundos especificados entre el envÌo de la seÒal SIGTERM y
-	 el cambio de nivel de ejecuciÛn (puede servir para dar m·s
+	 segundos especificados entre el env√≠o de la se√±al SIGTERM y
+	 el cambio de nivel de ejecuci√≥n (puede servir para dar m√°s
 	 tiempo para cerrarse a algunos procesos).  
 	 </P
 ></TD
@@ -2162,7 +2162,7 @@ CLASS="acronym"
 CLASS="foreignphrase"
 >Advanced Power
 	  Management</I
->, permite manejar la energÌa
+>, permite manejar la energ√≠a
 	  consumida por el computador, por ejemplo para disminuirla
 	  cuando no se usa durante cierto tiempo o para apagarlo por
 	  software.
@@ -2188,7 +2188,7 @@ WIDTH="95%"
 CLASS="application"
 >LILO</SPAN
 > puede configurarse para
-	 presentar el prompt siempre (agregando una lÌnea con la
+	 presentar el prompt siempre (agregando una l√≠nea con la
 	 palabra <TT
 CLASS="literal"
 >prompt</TT
@@ -2197,8 +2197,8 @@ CLASS="literal"
 CLASS="filename"
 >/etc/lilo.conf</TT
 >) y para iniciar un
-	 sistema por defecto despuÈs de que transcurra un tiempo
-	 lÌmite (especificado en una lÌnea de la forma
+	 sistema por defecto despu√©s de que transcurra un tiempo
+	 l√≠mite (especificado en una l√≠nea de la forma
 	 <TT
 CLASS="literal"
 >delay=<TT
@@ -2226,7 +2226,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Con GRUB puede poner en el archivo de configuraciÛn una
+>Con GRUB puede poner en el archivo de configuraci√≥n una
 	 clave transformada con el algoritmo MD5 empleando
 	 <TT
 CLASS="literal"
@@ -2256,7 +2256,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Otra bit·cora que mantiene informaciÛn sobre logins de
+>Otra bit√°cora que mantiene informaci√≥n sobre logins de
 	 usuarios es <TT
 CLASS="filename"
 >/var/lastlog</TT
@@ -2327,7 +2327,7 @@ ACCESSKEY="U"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->AdministraciÛn de usuarios</TD
+>Administraci√≥n de usuarios</TD
 ></TR
 ></TABLE
 ></DIV

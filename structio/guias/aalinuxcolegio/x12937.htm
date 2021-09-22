@@ -4,13 +4,13 @@
 >Protocolos de soporte y de usuario</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="AdministraciÛn de una red con Linux"
+TITLE="Administraci√≥n de una red con Linux"
 HREF="c11890.htm"><LINK
 REL="PREVIOUS"
 TITLE="Direcciones, enrutamiento y transporte"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -54,7 +54,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->CapÌtulo 6. AdministraciÛn de una red con Linux</TD
+>Cap√≠tulo 6. Administraci√≥n de una red con Linux</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -120,7 +120,7 @@ CLASS="acronym"
 NAME="servred.clinfs"
 ></A
 ><P
->Puede distribuir utilizaciÛn de discos duros usando
+>Puede distribuir utilizaci√≥n de discos duros usando
       <SPAN
 CLASS="acronym"
 >NFS</SPAN
@@ -217,10 +217,10 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="configuracion-de-servicios-basicos"
->ConfiguraciÛn de servicios b·sicos</A
+>Configuraci√≥n de servicios b√°sicos</A
 ></H3
 ><P
->CÛmo se presentÛ en la lectura de la secciÛn
+>C√≥mo se present√≥ en la lectura de la secci√≥n
        <A
 HREF="c11890.htm#lectura-redes-protocolos-e-internet"
 >Redes,
@@ -230,8 +230,8 @@ HREF="c11890.htm#lectura-redes-protocolos-e-internet"
 CLASS="foreignphrase"
 >daemon</I
 >
-       que estÈ pendiente de atender conexiones.  Para disminuir el
-       n˙mero de procesos que deberÌan estar activos esperando conexiones
+       que est√© pendiente de atender conexiones.  Para disminuir el
+       n√∫mero de procesos que deber√≠an estar activos esperando conexiones
        por cada servicio, el programa <SPAN
 CLASS="application"
 >inetd</SPAN
@@ -243,7 +243,7 @@ CLASS="filename"
 >, ver 
        <A
 HREF="c8032.htm#inicializacion-del-sistema"
->InicializaciÛn del
+>Inicializaci√≥n del
 	 sistema</A
 >) espera conexiones en diversos puertos y 
        cuando recibe una inicia el <I
@@ -274,7 +274,7 @@ CLASS="application"
 CLASS="filename"
 >/etc/inetd.conf</TT
 > que puede referenciar 
-       servicios por nombres si estos est·n listados en
+       servicios por nombres si estos est√°n listados en
        <TT
 CLASS="filename"
 >/etc/services</TT
@@ -306,18 +306,18 @@ CLASS="literal"
 NAME="AEN12998"
 ></A
 ><P
->Archivo de configuraciÛn
+>Archivo de configuraci√≥n
       de <B
 CLASS="command"
 >inetd</B
 ></P
 ><P
->Cada lÌnea del archivo <TT
+>Cada l√≠nea del archivo <TT
 CLASS="filename"
 >/etc/inetd.conf</TT
 >
       puede ser un comentario (si comienza con el caracter "#") o puede
-      ser an·loga a:
+      ser an√°loga a:
        <PRE
 CLASS="screen"
 >&#13;smtp            stream  tcp     nowait  mail    /usr/sbin/exim exim -bs </PRE
@@ -338,8 +338,8 @@ CLASS="literal"
 CLASS="literal"
 >tcp</TT
 >,
-      sin espera.  Cada vez que haya una conexiÛn para este servicio
-      se iniciar· el programa <TT
+      sin espera.  Cada vez que haya una conexi√≥n para este servicio
+      se iniciar√° el programa <TT
 CLASS="literal"
 >/usr/sbin/exim</TT
 > con
@@ -369,7 +369,7 @@ CLASS="variablelist"
 	 <TT
 CLASS="filename"
 >/etc/services</TT
-> o puede ser una direcciÛn
+> o puede ser una direcci√≥n
 	 precedida por un puerto, o uno de los servicios
 	 <SPAN
 CLASS="acronym"
@@ -382,7 +382,7 @@ CLASS="filename"
 	</P
 ></DD
 ><DT
->Tipo de conexiÛn</DT
+>Tipo de conexi√≥n</DT
 ><DD
 ><P
 ><TT
@@ -446,14 +446,14 @@ CLASS="command"
 > debe
 	 esperar a que el proceso termine para recibir nuevas conexiones
 	 en el mismo puerto o no. Esto depende del tipo de servicio, la
-	 mayorÌa no requiere espera (porque emplean varios
+	 mayor√≠a no requiere espera (porque emplean varios
 	 hilos
 	 <A
 NAME="AEN13050"
 HREF="#FTN.AEN13050"
 >[3]</A
 >
-	 que emplean otro puerto por cada conexiÛn), aunque son
+	 que emplean otro puerto por cada conexi√≥n), aunque son
 	 excepciones <B
 CLASS="command"
 >talkd</B
@@ -464,7 +464,7 @@ CLASS="command"
 	 y <B
 CLASS="command"
 >tftp</B
->. DespuÈs de <TT
+>. Despu√©s de <TT
 CLASS="literal"
 >wait</TT
 >
@@ -472,14 +472,14 @@ CLASS="literal"
 CLASS="literal"
 >nowait</TT
 > puede venir separado por un punto
-	 el m·ximo n˙mero de conexiones que inetd debe aceptar para el
+	 el m√°ximo n√∫mero de conexiones que inetd debe aceptar para el
 	 servicio en 1 minuto (por defecto 256).  </P
 ></DD
 ><DT
 >Usuario</DT
 ><DD
 ><P
->Usuario a nombre del cual se iniciar· el proceso.
+>Usuario a nombre del cual se iniciar√° el proceso.
 	 <DIV
 CLASS="warning"
 ><P
@@ -510,7 +510,7 @@ CLASS="foreignphrase"
 ></TABLE
 ></DIV
 > Puede especificarse un
-	 grupo primario poniendolo a continuaciÛn del nombre separado
+	 grupo primario poniendolo a continuaci√≥n del nombre separado
 	 por el caracter "."
 	</P
 ></DD
@@ -518,7 +518,7 @@ CLASS="foreignphrase"
 >Programa</DT
 ><DD
 ><P
->Ruta del programa que atender· la conexiÛn.  Si se trata
+>Ruta del programa que atender√° la conexi√≥n.  Si se trata
 	 de un servicio interno se usa
 	 <TT
 CLASS="literal"
@@ -528,7 +528,7 @@ CLASS="literal"
 CLASS="literal"
 >echo</TT
 > que responde con los mensajes que
-	 recibe (˙til para medir y probar como se especifica en el
+	 recibe (√∫til para medir y probar como se especifica en el
 	 <SPAN
 CLASS="acronym"
 >RFC</SPAN
@@ -536,7 +536,7 @@ CLASS="acronym"
 CLASS="literal"
 >discard</TT
 > que
-	 descarta todo dato que recibe (tambiÈn ˙til para probar y
+	 descarta todo dato que recibe (tambi√©n √∫til para probar y
 	 medir como se describe en el <SPAN
 CLASS="acronym"
 >RFC</SPAN
@@ -549,7 +549,7 @@ CLASS="literal"
 CLASS="acronym"
 >RFC</SPAN
 > 864 responde generando caracteres
-	 hasta que la conexiÛn sea cerrada; <TT
+	 hasta que la conexi√≥n sea cerrada; <TT
 CLASS="literal"
 >daytime</TT
 >
@@ -561,7 +561,7 @@ CLASS="acronym"
 	 <TT
 CLASS="literal"
 >time</TT
-> hora actual en formato para m·quinas
+> hora actual en formato para m√°quinas
 	 de acuerdo al <SPAN
 CLASS="acronym"
 >RFC</SPAN
@@ -578,7 +578,7 @@ CLASS="filename"
 CLASS="acronym"
 >LAN</SPAN
 > como la especificada en nuestra
-      plataforma de referencia (sin conexiÛn a Internet)
+      plataforma de referencia (sin conexi√≥n a Internet)
       incluye:</P
 ><PRE
 CLASS="screen"
@@ -588,39 +588,39 @@ finger          stream  tcp     nowait  nobody  /usr/sbin/tcpd /usr/sbin/in.fing
 smtp            stream  tcp     nowait  mail    /usr/sbin/exim exim -bs
 	 </PRE
 ><P
->DespuÈs de modificar este archivo puede reiniciar
+>Despu√©s de modificar este archivo puede reiniciar
 	   <B
 CLASS="command"
 >inetd</B
 >, tal 
-	   como harÌa con otros servicios que se inician al arranque del 
+	   como har√≠a con otros servicios que se inician al arranque del 
 	   sistema (ver
       <A
 HREF="c8032.htm#inicializacion-del-sistema"
->InicializaciÛn del
+>Inicializaci√≥n del
       sistema</A
 >):</P
 ><PRE
 CLASS="screen"
 >&#13;/etc/init.d/inetd restart	  </PRE
 ><P
->o envÌando la seÒal SIGHUP al proceso.
+>o env√≠ando la se√±al SIGHUP al proceso.
       (ver <A
 HREF="x3282.htm#senales"
->SeÒales</A
+>Se√±ales</A
 >).</P
 ><A
 NAME="AEN13090"
 ></A
 ><P
 >En este
-      archivo se configuran las m·quinas a las que <B
+      archivo se configuran las m√°quinas a las que <B
 CLASS="command"
 >tcpd</B
 >
       no les da acceso.</P
 ><P
->Note que la ejecuciÛn de <B
+>Note que la ejecuci√≥n de <B
 CLASS="command"
 >telnet</B
 >,
@@ -636,7 +636,7 @@ CLASS="command"
 >tcpd</B
 >.  Este programa puede
       manejar conexiones de diversos servicios, registrar las
-      conexiones en la bit·cora y agregar un mÌnimo de seguridad
+      conexiones en la bit√°cora y agregar un m√≠nimo de seguridad
       incluyendo listas de control configurables en los archivos
       <TT
 CLASS="filename"
@@ -648,7 +648,7 @@ CLASS="filename"
 >.  En estos archivos se
       configuran con patrones los servicios, computadores y/o usuarios
       pueden iniciar conexiones, y los que no. Cuando recibe una
-      solicitud de conexiÛn <TT
+      solicitud de conexi√≥n <TT
 CLASS="literal"
 >tcpd</TT
 > primero lee los
@@ -656,17 +656,17 @@ CLASS="literal"
 CLASS="filename"
 >/etc/hosts.allow</TT
 > si ninguno
-      concuerda con la conexiÛn intenta con los de
+      concuerda con la conexi√≥n intenta con los de
       <TT
 CLASS="filename"
 >/etc/hosts.deny</TT
 > y si ninguno concuerda
-      permite la conexiÛn.  Para permitir acceso a estos servicios
-      sÛlo a computadores en la red privada
+      permite la conexi√≥n.  Para permitir acceso a estos servicios
+      s√≥lo a computadores en la red privada
       <TT
 CLASS="filename"
 >/etc/hosts.deny</TT
-> podrÌa ser:</P
+> podr√≠a ser:</P
 ><PRE
 CLASS="screen"
 >&#13;ALL: ALL
@@ -698,13 +698,13 @@ NAME="AEN13112"
 ><P
 >Con este
       protocolo de soporte pueden asociarse a direcciones IP nombres
-      dentro de un ·rbol de nombres. </P
+      dentro de un √°rbol de nombres. </P
 ><P
 >&#13;      <SPAN
 CLASS="acronym"
 >DNS</SPAN
 > permite asociar nombres a direcciones IP,
-     esto es importante para facilitarnos la identificaciÛn de
+     esto es importante para facilitarnos la identificaci√≥n de
      computadores en una red.
      </P
 ><P
@@ -726,8 +726,8 @@ CLASS="variablelist"
 ><DD
 ><P
 >Un usuario emplea nombres de dominios DNS al solicitar
-	  conexiones con m·quinas cuyos nombres describen posiciones
-	  en un ·rbol de nombres. Por ejemplo
+	  conexiones con m√°quinas cuyos nombres describen posiciones
+	  en un √°rbol de nombres. Por ejemplo
 	  <TT
 CLASS="literal"
 >structio.sourceforge.net</TT
@@ -740,13 +740,13 @@ CLASS="literal"
 ><P
 >Los programas emplean un resolvedor de nombres.  Este
 	  resolvedor recibe nombres con la estructura antes descrita,
-	  busca en un depÛsito
+	  busca en un dep√≥sito
 	  <A
 NAME="AEN13130"
 HREF="#FTN.AEN13130"
 >[4]</A
 > de nombres, de requerirlo trata de conectarse
-	  con uno o m·s servidores de nombres que puedan responder la
+	  con uno o m√°s servidores de nombres que puedan responder la
 	  consulta, envia la consulta y analiza la respuesta.
 	</P
 ><A
@@ -763,15 +763,15 @@ NAME="AEN13133"
 ><DD
 ><P
 >Un servidor de nombres, es un programa que
-	 adem·s de atender solicitudes de resolvedores, mantiene
+	 adem√°s de atender solicitudes de resolvedores, mantiene
 	 tablas donde asocia nombres con direcciones
 	 <SPAN
 CLASS="acronym"
 >IP</SPAN
-> de algunas zonas del ·rbol de
-	 nombres. TambiÈn mantiene direcciones de otros servidores de
+> de algunas zonas del √°rbol de
+	 nombres. Tambi√©n mantiene direcciones de otros servidores de
 	 nombres que puede emplear para actualizar las tablas de las
-	 zonas que mantiene y para obtener informaciÛn de otras zonas.
+	 zonas que mantiene y para obtener informaci√≥n de otras zonas.
 	 </P
 ></DD
 ></DL
@@ -794,26 +794,26 @@ CLASS="acronym"
        <SPAN
 CLASS="acronym"
 >IPs</SPAN
->, estos conforman un ·rbol dividido en
+>, estos conforman un √°rbol dividido en
        zonas manejadas por diversos servidores de nombres distribuidos
        en todo el mundo y conectados a Internet
        <A
 NAME="AEN13146"
 HREF="#FTN.AEN13146"
 >[5]</A
->, la raÌz de este ·rbol se denota con el car·cter
+>, la ra√≠z de este √°rbol se denota con el car√°cter
        '.'.  Un nombre se compone de partes separadas por el caracter
-       '.', cada parte se compone de letras may˙sculas o min˙sculas
-       sin distinciÛn (preferiblemente menos de 12), eventualmente
-       n˙meros y eventualmente guiones.  Las partes del nombre indican
-       la ruta entre el nodo y la raÌz, de forma an·loga a la ruta de
-       un archivo del sistema de archivos, sÛlo que un nombre
+       '.', cada parte se compone de letras may√∫sculas o min√∫sculas
+       sin distinci√≥n (preferiblemente menos de 12), eventualmente
+       n√∫meros y eventualmente guiones.  Las partes del nombre indican
+       la ruta entre el nodo y la ra√≠z, de forma an√°loga a la ruta de
+       un archivo del sistema de archivos, s√≥lo que un nombre
        <SPAN
 CLASS="acronym"
 >DNS</SPAN
 > completo comienza por la parte que
        corresponde a la hoja y termina en la parte que corresponde a
-       un hijo de la raÌz.  Por ejemplo en la direcciÛn
+       un hijo de la ra√≠z.  Por ejemplo en la direcci√≥n
        <TT
 CLASS="literal"
 >structio.sourceforge.net</TT
@@ -821,8 +821,8 @@ CLASS="literal"
        <TT
 CLASS="literal"
 >net</TT
-> es un nodo descendiente de la raÌz del
-       ·rbol de nombres.  A la parte descendiente de la raiz se le
+> es un nodo descendiente de la ra√≠z del
+       √°rbol de nombres.  A la parte descendiente de la raiz se le
        llama dominio de nivel superior (<SPAN
 CLASS="acronym"
 >TLD</SPAN
@@ -847,13 +847,13 @@ CLASS="variablelist"
 >.aero</DT
 ><DD
 ><P
->Industria de transporte aÈreo</P
+>Industria de transporte a√©reo</P
 ></DD
 ><DT
 >.biz</DT
 ><DD
 ><P
->Miscel·nea</P
+>Miscel√°nea</P
 ></DD
 ><DT
 >.com</DT
@@ -883,7 +883,7 @@ CLASS="variablelist"
 >.info</DT
 ><DD
 ><P
->InformaciÛn</P
+>Informaci√≥n</P
 ></DD
 ><DT
 >.int</DT
@@ -943,15 +943,15 @@ CLASS="acronym"
        <SPAN
 CLASS="acronym"
 >IP</SPAN
-> asociado con un nombre (resoluciÛn de
+> asociado con un nombre (resoluci√≥n de
        nombres) o el nombre asociado con una <SPAN
 CLASS="acronym"
 >IP</SPAN
 >
-       (resoluciÛn inversa).
+       (resoluci√≥n inversa).
        </P
 ><P
->Puede emplear el resolvedor de nombres desde la lÌnea de
+>Puede emplear el resolvedor de nombres desde la l√≠nea de
        comandos, por ejemplo con el programa <B
 CLASS="command"
 >dig</B
@@ -960,7 +960,7 @@ CLASS="command"
 CLASS="literal"
 >dnsutils</TT
 >).
-       Algunos de sus usos se ejemplifican a continuaciÛn:</P
+       Algunos de sus usos se ejemplifican a continuaci√≥n:</P
 ><P
 ></P
 ><DIV
@@ -996,20 +996,20 @@ CLASS="acronym"
 >dig structio.sourceforge.net txt</DT
 ><DD
 ><P
->Busca sÛlo registros tipo T_TXT, es decir con
+>Busca s√≥lo registros tipo T_TXT, es decir con
 	   texto arbitrario. Otras posibilidades son a (T_A)
-	   direcciÛn; any (T_ANY) todo tipo de informaciÛn; mx (T_MX)
+	   direcci√≥n; any (T_ANY) todo tipo de informaci√≥n; mx (T_MX)
 	   intercambiadores de correo; ns (T_NS) servidores de
 	   nombres; soa (T_SOA) zona de autoridad; hinfo (T_HINFO)
-	   informaciÛn de la m·quina; axfr (T_AXFR) zona de
+	   informaci√≥n de la m√°quina; axfr (T_AXFR) zona de
 	   transferencia.  </P
 ></DD
 ><DT
 >dig -x 192.25.206.10</DT
 ><DD
 ><P
->Para especificar resoluciÛn inversa.  TambiÈn
-	   podrÌa emplearse <B
+>Para especificar resoluci√≥n inversa.  Tambi√©n
+	   podr√≠a emplearse <B
 CLASS="command"
 >dig
 	    10.206.25.192.in-addr.arpa</B
@@ -1018,20 +1018,20 @@ CLASS="command"
 ></DL
 ></DIV
 ><P
->&#13;       En Internet puede consultarse informaciÛn sobre el registro de
+>&#13;       En Internet puede consultarse informaci√≥n sobre el registro de
        un dominio (incluyendo datos de quien lo registro) empleando
        <B
 CLASS="command"
 >whois</B
->, o informaciÛn sobre el nombre de
-       m·quina y dominio del computador que usa con
+>, o informaci√≥n sobre el nombre de
+       m√°quina y dominio del computador que usa con
        <B
 CLASS="command"
 >hostname</B
 > (ver <A
 HREF="x3773.htm#comandos-y-programas-utiles-al-hacer-scripts"
 >Comandos
-       y programas ˙tiles al hacer scripts</A
+       y programas √∫tiles al hacer scripts</A
 >).
        </P
 ><A
@@ -1039,7 +1039,7 @@ NAME="AEN13241"
 ></A
 ><P
 >&#13;      Archivo de
-      configuraciÛn del resolvedor de nombres, donde pueden especificarse
+      configuraci√≥n del resolvedor de nombres, donde pueden especificarse
       direcciones IP de servidores DNS. 
      </P
 ><P
@@ -1063,7 +1063,7 @@ CLASS="filename"
        <SPAN
 CLASS="acronym"
 >NIS</SPAN
-> tambiÈn en
+> tambi√©n en
        <TT
 CLASS="filename"
 >/etc/nsswitch.conf</TT
@@ -1072,7 +1072,7 @@ CLASS="filename"
 CLASS="filename"
 >/etc/resolv.conf</TT
 >) contiene direcciones de
-       servidores de nombres y configuraciÛn para buscar en ellos.
+       servidores de nombres y configuraci√≥n para buscar en ellos.
        Por ejemplo en nuestra plataforma de referencia si el servidor
        tiene <SPAN
 CLASS="acronym"
@@ -1088,18 +1088,18 @@ CLASS="screen"
 >&#13;search micolegio.edu.co
 nameserver 192.168.1.1 </PRE
 ><P
->&#13;       Si conectar· su sistema a Internet podrÌa incluir m·s
-       servidores de nombres especificando cada uno con lÌneas
+>&#13;       Si conectar√° su sistema a Internet podr√≠a incluir m√°s
+       servidores de nombres especificando cada uno con l√≠neas
        iniciadas con la palabra <TT
 CLASS="literal"
 >nameserver</TT
-> (podrÌa
-       especificarlos a continuaciÛn de su propio servidor para que la
-       informaciÛn de su servidor tenga prelaciÛn dentro de la
+> (podr√≠a
+       especificarlos a continuaci√≥n de su propio servidor para que la
+       informaci√≥n de su servidor tenga prelaci√≥n dentro de la
        <SPAN
 CLASS="acronym"
 >LAN</SPAN
->).  La lÌnea <TT
+>).  La l√≠nea <TT
 CLASS="literal"
 >search</TT
 >
@@ -1107,7 +1107,7 @@ CLASS="literal"
        ejemplo <TT
 CLASS="literal"
 >purpura</TT
-> ser· completado como
+> ser√° completado como
        <TT
 CLASS="literal"
 >purpura.micolegio.edu.co</TT
@@ -1123,21 +1123,21 @@ CLASS="screen"
 multi on
 	</PRE
 >
-       que indica en la primera lÌnea el orden para resolver nombres,
+       que indica en la primera l√≠nea el orden para resolver nombres,
        en este caso como <TT
 CLASS="literal"
 >hosts</TT
-> est· primero,
-       resolver· nombres primero revisando el archivo
+> est√° primero,
+       resolver√° nombres primero revisando el archivo
        <TT
 CLASS="filename"
 >/etc/hosts</TT
-> y en segundo lugar emplear· los
+> y en segundo lugar emplear√° los
        servidores de nombres configurados en
        <TT
 CLASS="filename"
 >/etc/resolv.conf</TT
-> (tambiÈn podrÌa
+> (tambi√©n podr√≠a
        especificarse <TT
 CLASS="literal"
 >nis</TT
@@ -1145,7 +1145,7 @@ CLASS="literal"
        resolvieran dominios usando <SPAN
 CLASS="acronym"
 >NIS</SPAN
->).  La lÌnea
+>).  La l√≠nea
        <B
 CLASS="command"
 >multi on</B
@@ -1158,7 +1158,7 @@ CLASS="acronym"
        <TT
 CLASS="filename"
 >/etc/hosts</TT
-> y no sÛlo la primera (˙til en
+> y no s√≥lo la primera (√∫til en
        una red <I
 CLASS="foreignphrase"
 >multihomed</I
@@ -1166,20 +1166,20 @@ CLASS="foreignphrase"
        <SPAN
 CLASS="acronym"
 >IP</SPAN
->s para una misma m·quina).  CÛmo en
+>s para una misma m√°quina).  C√≥mo en
        nuestra plataforma de referencia empleamos
        <SPAN
 CLASS="acronym"
 >DNS</SPAN
 > para resolver nombres de dominios, el
-       archivo de configuraciÛn de <SPAN
+       archivo de configuraci√≥n de <SPAN
 CLASS="acronym"
 >NIS</SPAN
 >
        (<TT
 CLASS="filename"
 >/etc/nsswitch.conf</TT
->) debe incluir la lÌnea
+>) debe incluir la l√≠nea
        (ver <A
 HREF="x12937.htm#servicio-nis"
 >Servicio NIS</A
@@ -1188,7 +1188,7 @@ HREF="x12937.htm#servicio-nis"
 CLASS="screen"
 >&#13;hosts: files dns </PRE
 ><P
->&#13;	que de forma an·loga a las lÌneas en
+>&#13;	que de forma an√°loga a las l√≠neas en
        <TT
 CLASS="filename"
 >/etc/hosts.conf</TT
@@ -1196,7 +1196,7 @@ CLASS="filename"
        <TT
 CLASS="filename"
 >/etc/hosts</TT
-> y despuÈs usar los servidores
+> y despu√©s usar los servidores
        de nombres <SPAN
 CLASS="acronym"
 >DNS</SPAN
@@ -1208,7 +1208,7 @@ CLASS="acronym"
        recursos (<SPAN
 CLASS="acronym"
 >RR</SPAN
-> del inglÈs
+> del ingl√©s
        <I
 CLASS="foreignphrase"
 >Resource Records</I
@@ -1222,13 +1222,13 @@ CLASS="screen"
 micolegio.edu.co.	            MX  10 servidor.micolegio.edu.co
 	 </PRE
 >
-       que describe informaciÛn de nombres Internet (indicado por la
+       que describe informaci√≥n de nombres Internet (indicado por la
        sigla <TT
 CLASS="literal"
 >IN</TT
-> de la primera lÌnea y asumida por
-       defecto en las demas).  Las dos primeras lÌneas son tipo
-       direcciÛn (el tipo <TT
+> de la primera l√≠nea y asumida por
+       defecto en las demas).  Las dos primeras l√≠neas son tipo
+       direcci√≥n (el tipo <TT
 CLASS="literal"
 >A</TT
 > --de
@@ -1249,14 +1249,14 @@ CLASS="foreignphrase"
 >Mail
        Exchange</I
 >).  Los dos primeros registros
-       presentan informaciÛn sobre servidor.micolegio.edu.co, la ausencia de otro nombre
-       al comienzo de la segunda lÌnea indica que es una segunda
-       direcciÛn para servidor.micolegio.edu.co.  Los registros tipo direcciÛn permiten
+       presentan informaci√≥n sobre servidor.micolegio.edu.co, la ausencia de otro nombre
+       al comienzo de la segunda l√≠nea indica que es una segunda
+       direcci√≥n para servidor.micolegio.edu.co.  Los registros tipo direcci√≥n permiten
        asociar una <SPAN
 CLASS="acronym"
 >IP</SPAN
-> con un nombre, asÌ en el
-       ejemplo anterior el nombre servidor.micolegio.edu.co se referir· a dos
+> con un nombre, as√≠ en el
+       ejemplo anterior el nombre servidor.micolegio.edu.co se referir√° a dos
        direcciones <SPAN
 CLASS="acronym"
 >IP</SPAN
@@ -1270,7 +1270,7 @@ CLASS="literal"
        emplea primero si hay varios intercambiadores de correo para un
        mismo dominio).  Note que los nombres de dominios completos
        terminan con un punto, esto es un requerimiento propio de la
-       configuraciÛn como se explica m·s adelante.
+       configuraci√≥n como se explica m√°s adelante.
        </P
 ><A
 NAME="AEN13296"
@@ -1278,7 +1278,7 @@ NAME="AEN13296"
 ><P
 >Los registros DNS
       de este tipo permiten identificar computadores que pueden resolver
-      direcciones de correo para un dominio (es la abreviaciÛn de
+      direcciones de correo para un dominio (es la abreviaci√≥n de
       Mail exchanger).  
      </P
 ><P
@@ -1296,7 +1296,7 @@ CLASS="literal"
 >NS</TT
 > que marca un servidor
        de nombres autoritario para un dominio (autoritario quiere
-       decir que su respuesta es la que se considera m·s acertada en
+       decir que su respuesta es la que se considera m√°s acertada en
        caso de que otros servidores den otras respuestas);
        <TT
 CLASS="literal"
@@ -1316,11 +1316,11 @@ NAME="AEN13307"
 ></A
 ><P
 >Los registros DNS
-      de tipo PTR permiten hacer resoluciÛn inversa, toda direcciÛn
+      de tipo PTR permiten hacer resoluci√≥n inversa, toda direcci√≥n
       IP debe especificarse invertida y terminar con el postfijo ...
      </P
 ><P
->Adem·s de asociar nombres a <SPAN
+>Adem√°s de asociar nombres a <SPAN
 CLASS="acronym"
 >IP</SPAN
 >s, pueden
@@ -1328,7 +1328,7 @@ CLASS="acronym"
 CLASS="acronym"
 >IP</SPAN
 >s a nombres para permitir hacer
-       resoluciÛn inversa (dada la <SPAN
+       resoluci√≥n inversa (dada la <SPAN
 CLASS="acronym"
 >IP</SPAN
 > encontrar el
@@ -1336,7 +1336,7 @@ CLASS="acronym"
        <SPAN
 CLASS="acronym"
 >PTR</SPAN
->, usando como nombre de m·quina la
+>, usando como nombre de m√°quina la
        <SPAN
 CLASS="acronym"
 >IP</SPAN
@@ -1365,7 +1365,7 @@ CLASS="acronym"
 ></H4
 ><P
 >Las consultas formuladas por los resolvedores de nombres
-       que no pueden ser resueltas por el depÛsito local del
+       que no pueden ser resueltas por el dep√≥sito local del
        resolvedor ni con otros mecanismos
        (e.g. <TT
 CLASS="filename"
@@ -1387,47 +1387,47 @@ TYPE="1"
 ></LI
 ><LI
 ><P
->El servidor busca la zona que sea ancestro m·s cercano
-	  de la informaciÛn buscada.</P
+>El servidor busca la zona que sea ancestro m√°s cercano
+	  de la informaci√≥n buscada.</P
 ></LI
 ><LI
 ><P
->Si la informaciÛn buscada est· entre las zonas
+>Si la informaci√≥n buscada est√° entre las zonas
 	  manejadas o referenciadas por el servidor, busca entre ellas
-	  hasta encontrar la informaciÛn o hasta encontrar un registro
+	  hasta encontrar la informaci√≥n o hasta encontrar un registro
 	  que referencie otro servidor de nombres autoritario o en
-	  ˙ltimo caso reporta que el dominio no fue encontrado.</P
+	  √∫ltimo caso reporta que el dominio no fue encontrado.</P
 ></LI
 ><LI
 ><P
->Si la informaciÛn no est· en las zonas manejadas por
-	  el servidor (o est· en una subzona), busca en un deposito local.
+>Si la informaci√≥n no est√° en las zonas manejadas por
+	  el servidor (o est√° en una subzona), busca en un deposito local.
 	 </P
 ></LI
 ><LI
 ><P
->Si no hay informaciÛn en el deposito local y est· en
+>Si no hay informaci√≥n en el deposito local y est√° en
 	  modo recursivo, empleando su resolvedor de nombres consulta
 	  al servidor encontrado en el paso 3 y retorna la respuesta
-	  adem·s de almacenarla en el deposito.  En modo iterativo
-	  sÛlo responde el nombre del servidor encontrado en el paso
+	  adem√°s de almacenarla en el deposito.  En modo iterativo
+	  s√≥lo responde el nombre del servidor encontrado en el paso
 	  3.</P
 ></LI
 ><LI
 ><P
->Una vez el resolvedor consigue la informaciÛn, la
-	  almacena temporalmente en un depÛsito local.</P
+>Una vez el resolvedor consigue la informaci√≥n, la
+	  almacena temporalmente en un dep√≥sito local.</P
 ></LI
 ></OL
 >
 	</P
 ><P
->Para distribuir la informaciÛn en los servidores de
-       nombres, el ·rbol de nombres se divide en zonas, cada una de
+>Para distribuir la informaci√≥n en los servidores de
+       nombres, el √°rbol de nombres se divide en zonas, cada una de
        las cuales puede ser atendida con registros autoritarios por un
-       servidor primario.  Para respaldar la informaciÛn de servidores
-       primarios, hay servidores secundarios que copian periÛdicamente
-       la informaciÛn y tambiÈn proveen informaciÛn autoritaria de la
+       servidor primario.  Para respaldar la informaci√≥n de servidores
+       primarios, hay servidores secundarios que copian peri√≥dicamente
+       la informaci√≥n y tambi√©n proveen informaci√≥n autoritaria de la
        zona.
       </P
 ><P
@@ -1440,7 +1440,7 @@ CLASS="acronym"
 CLASS="acronym"
 >TCP</SPAN
 > 53 (como
-       puertos de entrada y de salida, aunque para la comunicaciÛn con
+       puertos de entrada y de salida, aunque para la comunicaci√≥n con
        algunos programas cliente pueden requerirse puertos no
        privilegiados (<SPAN
 CLASS="acronym"
@@ -1455,7 +1455,7 @@ NAME="AEN13344"
 ></A
 ><P
 >Archivo
-       principal de configuraciÛn de <B
+       principal de configuraci√≥n de <B
 CLASS="command"
 >bind</B
 >
@@ -1465,7 +1465,7 @@ CLASS="command"
 CLASS="acronym"
 >DNS</SPAN
 > disponibles en
-       Internet est·n <SPAN
+       Internet est√°n <SPAN
 CLASS="application"
 >djbdns</SPAN
 > y
@@ -1476,7 +1476,7 @@ CLASS="application"
        <SPAN
 CLASS="application"
 >djbdns</SPAN
-> es m·s seguro,
+> es m√°s seguro,
        <SPAN
 CLASS="application"
 >bind</SPAN
@@ -1484,13 +1484,13 @@ CLASS="application"
        <TT
 CLASS="literal"
 >bind</TT
->, documentaciÛn en paquete
+>, documentaci√≥n en paquete
        <TT
 CLASS="literal"
 >bind-doc</TT
->) es m·s popular y ser· el servidor
-       que describimos en esta secciÛn.  La instalaciÛn por defecto de
-       este paquete dejar· una configuraciÛn sencilla que consta de:
+>) es m√°s popular y ser√° el servidor
+       que describimos en esta secci√≥n.  La instalaci√≥n por defecto de
+       este paquete dejar√° una configuraci√≥n sencilla que consta de:
   
 
        <P
@@ -1502,7 +1502,7 @@ CLASS="variablelist"
 >/etc/bind/named.conf</DT
 ><DD
 ><P
->Archivo de configuraciÛn principal que
+>Archivo de configuraci√≥n principal que
 	   define zonas y opciones del servidor.</P
 ></DD
 ><DT
@@ -1526,8 +1526,8 @@ CLASS="filename"
 ></DT
 ><DD
 ><P
->Que referencia los servidores de la raÌz del
-	   ·rbol de nombres.</P
+>Que referencia los servidores de la ra√≠z del
+	   √°rbol de nombres.</P
 ></DD
 ><DT
 ><TT
@@ -1540,8 +1540,8 @@ CLASS="filename"
 ></DT
 ><DD
 ><P
->Que incluyen registros para hacer resoluciÛn inversa
-	   de direcciones de la forma 0.*.*.* (tambiÈn localhost) y
+>Que incluyen registros para hacer resoluci√≥n inversa
+	   de direcciones de la forma 0.*.*.* (tambi√©n localhost) y
 	   255.*.*.* (broadcast).</P
 ></DD
 ></DL
@@ -1556,39 +1556,39 @@ CLASS="acronym"
        servidor de nombres.</P
 ><P
 >Para configurar una zona para su red local, es preferible
-       que emplee un nombre de dominio que no estÈ registrado en
-       Internet (a˙n si no planea conectarse a Internet a corto
+       que emplee un nombre de dominio que no est√© registrado en
+       Internet (a√∫n si no planea conectarse a Internet a corto
        plazo).  Cree un archivo para su zona, digamos
        <TT
 CLASS="filename"
 >/etc/bind/db.micolegio.edu.co</TT
 > y otro para
-       resoluciÛn inversa en su red, digamos
+       resoluci√≥n inversa en su red, digamos
        <TT
 CLASS="filename"
 >/etc/bind/db.192.168.1</TT
-> (que resolver·
+> (que resolver√°
        direcciones de la forma 192.168.1.*).</P
 ><P
->En el archivo de configuraciÛn principal
+>En el archivo de configuraci√≥n principal
        (<TT
 CLASS="filename"
 >/etc/bind/named.conf</TT
 >), debe agregar
-       entradas para la zona. Debe tener lÌneas como las siguientes,
+       entradas para la zona. Debe tener l√≠neas como las siguientes,
        aunque quitando o agregando comentarios de ser necesario (son
-       comentarios los textos iniciadas con // hasta final de lÌnea o
-       porciones encerradas entre /* y */ o lÌneas iniciadas con el
+       comentarios los textos iniciadas con // hasta final de l√≠nea o
+       porciones encerradas entre /* y */ o l√≠neas iniciadas con el
        caracter #).</P
 ><PRE
 CLASS="screen"
 >&#13;options {
   directory "/var/cache/bind";
   forwarders {
-	//Remplazar por direcciÛn del servidor DNS del proveedor si lo hay
-	// o comentar esta secciÛn.  Esta direcciÛn ser· usada en caso
+	//Remplazar por direcci√≥n del servidor DNS del proveedor si lo hay
+	// o comentar esta secci√≥n.  Esta direcci√≥n ser√° usada en caso
 	// de que este servidor no tenga un registro en una zona manejada
-	// por Èl o en el deposito.
+	// por √©l o en el deposito.
     1.2.3.4;
     };
     // Quitar comentarios si se hacen conexiones esporadicas a Internet
@@ -1599,7 +1599,7 @@ logging {
   category lame-servers { null; };
   category cname { null; };
   };
-  // Las siguientes lÌneas se comentan si la red no se conecta a
+  // Las siguientes l√≠neas se comentan si la red no se conecta a
   // Internet
 zone "." {
   type hint;
@@ -1635,29 +1635,29 @@ zone "1.168.192.in-addr.arpa" {
        <TT
 CLASS="literal"
 >master</TT
-> porque el servidor podr· dar
+> porque el servidor podr√° dar
        respuestas autoritarias sobre estas.
       </P
 ><P
 >Los archivos con registros de recursos de cada zona, pueden
-       tener comentarios en lÌneas que comienzan con ';'.  El archivo 
+       tener comentarios en l√≠neas que comienzan con ';'.  El archivo 
        <TT
 CLASS="filename"
 >/etc/bind/db.local</TT
 > que define una zona para la 
-       interfaz loopback ---que siempre tiene direcciÛn 127.0.0.1 y nombre 
+       interfaz loopback ---que siempre tiene direcci√≥n 127.0.0.1 y nombre 
        <TT
 CLASS="filename"
 >localhost</TT
->--- serÌa:</P
+>--- ser√≠a:</P
 ><PRE
 CLASS="screen"
 >&#13;@	IN	SOA	localhost. root.localhost. (
 			      1		; Serial
 			 604800		; Refresco
 			  86400		; Reintento
-			2419200		; ExpiraciÛn
-			 604800 )	; TTL MÌnimo
+			2419200		; Expiraci√≥n
+			 604800 )	; TTL M√≠nimo
 
 @	IN	NS	localhost.
 @	IN	A	127.0.0.1
@@ -1667,9 +1667,9 @@ CLASS="screen"
        autoridad usando un registro <SPAN
 CLASS="acronym"
 >SOA</SPAN
->; cÛmo el
-       registro ocupa m·s de una lÌnea se emplean parÈntesis para
-       delimitarlo.  El signo '@' es una abreviaciÛn del nombre de
+>; c√≥mo el
+       registro ocupa m√°s de una l√≠nea se emplean par√©ntesis para
+       delimitarlo.  El signo '@' es una abreviaci√≥n del nombre de
        dominio base, es decir el que proviene del archivo
        <TT
 CLASS="filename"
@@ -1685,8 +1685,8 @@ CLASS="literal"
 CLASS="acronym"
 >SOA</SPAN
 > tienen el nombre
-	completo de la m·quina que mantiene la informaciÛn (terminada
-	en punto), seguida de la direcciÛn electrÛnica del
+	completo de la m√°quina que mantiene la informaci√≥n (terminada
+	en punto), seguida de la direcci√≥n electr√≥nica del
 	administrador del servicio, pero remplazando el caracter '@'
 	por '.' y terminando con '.'  
        <A
@@ -1697,26 +1697,26 @@ HREF="#FTN.AEN13398"
 	<SPAN
 CLASS="acronym"
 >SOA</SPAN
-> incluyen: un n˙mero serial que los
+> incluyen: un n√∫mero serial que los
 	servidores secundarios usan para determinar cuando la
-	informaciÛn de la zona del primario a cambiado, el n˙mero de
+	informaci√≥n de la zona del primario a cambiado, el n√∫mero de
 	refresco indica cada cuantos segundos un servidor secundario
-	revisar· el primario para determinar si el n˙mero serial ha
-	aumentado, un n˙mero de reintentos que un servidor secundario
-	deberÌa efectuar en caso de ausencia de respuesta.  ExpiraciÛn
-	es el tiempo m·ximo en segundos que un servidor secundario
-	debe esperar antes de declarar la informaciÛn que tenga de una
-	zona como v·lida en ausencia de respuesta del servidor
-	primario.  MÌnimo <SPAN
+	revisar√° el primario para determinar si el n√∫mero serial ha
+	aumentado, un n√∫mero de reintentos que un servidor secundario
+	deber√≠a efectuar en caso de ausencia de respuesta.  Expiraci√≥n
+	es el tiempo m√°ximo en segundos que un servidor secundario
+	debe esperar antes de declarar la informaci√≥n que tenga de una
+	zona como v√°lida en ausencia de respuesta del servidor
+	primario.  M√≠nimo <SPAN
 CLASS="acronym"
 >TTL</SPAN
 > indica el tiempo
-	mÌnimo que los registros pueden estar en el deposito de otros
-	servidores de nombres.  Es el dato m·s importante.  Si no se
+	m√≠nimo que los registros pueden estar en el deposito de otros
+	servidores de nombres.  Es el dato m√°s importante.  Si no se
 	planean hacer cambios puede dejarse en un valor grande (3
-	dÌas), si se planea un cambio es mejor disminuir este valor
-	con suficiente anticipaciÛn y volverlo a un valor grande
-	despuÈs del cambio.  Note que para este ejemplo como se trata
+	d√≠as), si se planea un cambio es mejor disminuir este valor
+	con suficiente anticipaci√≥n y volverlo a un valor grande
+	despu√©s del cambio.  Note que para este ejemplo como se trata
 	de <TT
 CLASS="literal"
 >localhost</TT
@@ -1724,8 +1724,8 @@ CLASS="literal"
 	arbitrarios (en este caso muy grandes).
       </P
 ><P
->La informaciÛn de la zona raÌz corresponde a las
-	direcciones de los 13 servidores de la raÌz, puede obtenerse
+>La informaci√≥n de la zona ra√≠z corresponde a las
+	direcciones de los 13 servidores de la ra√≠z, puede obtenerse
 	con:</P
 ><PRE
 CLASS="screen"
@@ -1774,14 +1774,14 @@ CLASS="literal"
        <TT
 CLASS="filename"
 >/etc/bind/db.micolegio.edu.co</TT
-> serÌa:</P
+> ser√≠a:</P
 ><PRE
 CLASS="screen"
 >&#13;@       IN      SOA     servidor.micolegio.edu.co. root.localhost. (
                             1		; Serial
                           10800		; Refresco cada 3 horas
                            3600		; Reintento cada hora
-                        2419200		; Expiracion despuÈs de un mes
+                        2419200		; Expiracion despu√©s de un mes
                          259200 )	; TTL 3 dias
 
 @             NS        servidor
@@ -1796,12 +1796,12 @@ secretaria              A	192.168.1.100
 profesores              A	192.168.1.200
       </PRE
 ><P
->&#13;       Note que adem·s de indicar que el archivo tiene informaciÛn
+>&#13;       Note que adem√°s de indicar que el archivo tiene informaci√≥n
        autoritaria sobre la zona con un registro
        <SPAN
 CLASS="acronym"
 >SOA</SPAN
-> (que tiene par·metros m·s apropiados
+> (que tiene par√°metros m√°s apropiados
        para un servidor de nombres primario); este ejemplo tiene: un
        registro tipo <SPAN
 CLASS="acronym"
@@ -1811,12 +1811,12 @@ CLASS="acronym"
 CLASS="literal"
 >servidor</TT
 > como servidor de nombres.  Los
-       dem·s registros tipo A asocian nombres a direcciones en la red.
-       Note que todos los nombres de m·quinas excepto el del registro
+       dem√°s registros tipo A asocian nombres a direcciones en la red.
+       Note que todos los nombres de m√°quinas excepto el del registro
        <SPAN
 CLASS="acronym"
 >SOA</SPAN
-> como no terminan en punto ser·n
+> como no terminan en punto ser√°n
        completados con el nombre de la zona (micolegio.edu.co declarada en
        <TT
 CLASS="filename"
@@ -1887,7 +1887,7 @@ CLASS="screen"
 			      1		; Serial
 			  10800		; Refresco cada 3 horas
 			   3600		; Reintento cada hora
-			2419200		; Expiracion despuÈs de un mes
+			2419200		; Expiracion despu√©s de un mes
 			 259200 )	; TTL 3 dias
 @	IN	NS	servidor.micolegio.edu.co.
 1	IN	PTR	servidor.micolegio.edu.co
@@ -1902,18 +1902,18 @@ CLASS="screen"
 	</PRE
 >
 
-       DespuÈs de hacer sus cambios puede reiniciar
+       Despu√©s de hacer sus cambios puede reiniciar
 	<SPAN
 CLASS="application"
 >bind</SPAN
-> (lo cual limpiar· el depÛsito
-	y leer· de nuevo los archivos de configuraciÛn) con:
+> (lo cual limpiar√° el dep√≥sito
+	y leer√° de nuevo los archivos de configuraci√≥n) con:
 	<B
 CLASS="command"
 >/etc/init.d/bind restart</B
 > (ver <A
 HREF="c8032.htm#inicializacion-del-sistema"
->InicializaciÛn del
+>Inicializaci√≥n del
 	sistema</A
 >).
       </P
@@ -1932,11 +1932,11 @@ CLASS="acronym"
 CLASS="literal"
 >A</TT
 >, 
-	  deberÌa tener el correspondiente registro tipo 
+	  deber√≠a tener el correspondiente registro tipo 
 	  <TT
 CLASS="literal"
 >PTR</TT
-> para resoluciÛn inversa.
+> para resoluci√≥n inversa.
 	 </P
 ></LI
 ><LI
@@ -1945,7 +1945,7 @@ CLASS="literal"
 CLASS="literal"
 >CNAME</TT
 > el mismo 
-	  nombre con otros propÛsitos, ni emplee nombres de registros 
+	  nombre con otros prop√≥sitos, ni emplee nombres de registros 
 	  <TT
 CLASS="literal"
 >MX</TT
@@ -1974,13 +1974,13 @@ CLASS="literal"
 ><LI
 ><P
 >Si mantiene un servidor primario, cada vez que haga
-	  modificaciones a informaciÛn de la zona que maneja, recuerde
-	  aumentar el n˙mero serial del registro
+	  modificaciones a informaci√≥n de la zona que maneja, recuerde
+	  aumentar el n√∫mero serial del registro
 	  <SPAN
 CLASS="acronym"
 >SOA</SPAN
 > para que el o los servidores
-	  secundarios realicen la actualizaciÛn.
+	  secundarios realicen la actualizaci√≥n.
 	 </P
 ></LI
 ></UL
@@ -2006,7 +2006,7 @@ NAME="AEN13457"
 ><P
 >Este
        servicio permite compartir directorios de un servidor en uno
-       o m·s clientes.
+       o m√°s clientes.
      </P
 ><P
 >Como se describe en el <SPAN
@@ -2021,9 +2021,9 @@ NAME="AEN13463"
 HREF="#FTN.AEN13463"
 >[7]</A
 > permite acceder de forma transparente sistemas de
-      archivos compartidos que est·n en m·quinas remotas.  Hay muchas
+      archivos compartidos que est√°n en m√°quinas remotas.  Hay muchas
       posibilidades para usar este servicio, nuestra plataforma de
-      referencia lo aprovecha para distribuir informaciÛn de usuarios
+      referencia lo aprovecha para distribuir informaci√≥n de usuarios
       (directorio <TT
 CLASS="filename"
 >/home</TT
@@ -2035,7 +2035,7 @@ CLASS="filename"
       documentos disponibles en el servidor (directorio <TT
 CLASS="filename"
 >/usr</TT
->).  AsÌ mismo permite
+>).  As√≠ mismo permite
       aprovechar el espacio de sobra de cada cliente (directorio
       <TT
 CLASS="filename"
@@ -2047,7 +2047,7 @@ NAME="AEN13470"
 ></A
 ><P
 >Archivo
-       de configuraciÛn de NFS en un servidor, donde se especifica
+       de configuraci√≥n de NFS en un servidor, donde se especifica
        que directorios son exportables.
      </P
 ><P
@@ -2061,8 +2061,8 @@ CLASS="acronym"
 >NFS</SPAN
 > permite exportar directorios del
       computador en el que corre a computadores donde se ejecute el
-      cliente, mientras estos ˙ltimos tengan permiso para importar
-      tales directorios. Los directorios que se exportan, asÌ como las
+      cliente, mientras estos √∫ltimos tengan permiso para importar
+      tales directorios. Los directorios que se exportan, as√≠ como las
       restricciones sobre los clientes que pueden importarlos se
       especifican en el archivo <TT
 CLASS="filename"
@@ -2089,7 +2089,7 @@ CLASS="filename"
 CLASS="filename"
 >/var/mail</TT
 >.  Puede exportar con
-     permiso de sÛlo lectura (<TT
+     permiso de s√≥lo lectura (<TT
 CLASS="literal"
 >ro</TT
 >) el directorio
@@ -2097,7 +2097,7 @@ CLASS="literal"
 CLASS="filename"
 >/usr</TT
 >.  Todos estos
-     directorios pueden ser importados por m·quinas con nombres de la
+     directorios pueden ser importados por m√°quinas con nombres de la
      forma <TT
 CLASS="literal"
 ><TT
@@ -2107,7 +2107,7 @@ CLASS="replaceable"
 ></TT
 >.micolegio.edu.co</TT
 >.
-     La opciÛn <TT
+     La opci√≥n <TT
 CLASS="literal"
 >no_root_squash</TT
 > indica que los
@@ -2131,8 +2131,8 @@ CLASS="acronym"
 >NFS</SPAN
 >
       deben instalarse en todos los computadores (porque los
-      computadores clientes exportar·n el espacio que resta de su
-      particiÛn <TT
+      computadores clientes exportar√°n el espacio que resta de su
+      partici√≥n <TT
 CLASS="filename"
 >aux</TT
 > al
@@ -2162,7 +2162,7 @@ CLASS="literal"
 >, siguiendo el procedimiento usual
       (ver <A
 HREF="x7217.htm"
->AdministraciÛn
+>Administraci√≥n
       de programas</A
 >).  Como <SPAN
 CLASS="acronym"
@@ -2171,11 +2171,11 @@ CLASS="acronym"
       <SPAN
 CLASS="acronym"
 >RPC</SPAN
->, aseg˙rese tambiÈn de dar acceso a las
-      m·quinas de su dominio con <TT
+>, aseg√∫rese tambi√©n de dar acceso a las
+      m√°quinas de su dominio con <TT
 CLASS="literal"
 >portmap</TT
-> y que estÈ
+> y que est√©
       operando. Dado que <TT
 CLASS="literal"
 >portmap</TT
@@ -2185,8 +2185,8 @@ CLASS="command"
 >tcpd</B
 > (ver <A
 HREF="x12937.htm#configuracion-de-servicios-basicos"
->ConfiguraciÛn de
-      servicios b·sicos</A
+>Configuraci√≥n de
+      servicios b√°sicos</A
 >) este acceso se da o restringe
       modificando los archivos <TT
 CLASS="filename"
@@ -2199,7 +2199,7 @@ CLASS="filename"
       <TT
 CLASS="filename"
 >/etc/hosts.allow</TT
-> debe tener una lÌnea como:
+> debe tener una l√≠nea como:
    </P
 ><PRE
 CLASS="programlisting"
@@ -2209,20 +2209,20 @@ CLASS="programlisting"
 >Puede comprobar que <SPAN
 CLASS="application"
 >portmap</SPAN
-> est·
-      corriendo busc·ndolo entre los procesos (i.e <B
+> est√°
+      corriendo busc√°ndolo entre los procesos (i.e <B
 CLASS="command"
 >ps ax |
        grep "[p]ortmap"</B
->) o revisando los programas que est·n
+>) o revisando los programas que est√°n
       registrados para usar RPC con <TT
 CLASS="literal"
 >pmap_dump</TT
 >.
      </P
 ><P
->Una vez estÈ corriendo el servidor y el cliente NFS en
-      todas las m·quinas, puede montar (ver <A
+>Una vez est√© corriendo el servidor y el cliente NFS en
+      todas las m√°quinas, puede montar (ver <A
 HREF="x6433.htm#montaje-y-desmontaje-de-sistemas-de-archivos"
 >Montaje y
       desmontaje de sistemas de archivos</A
@@ -2243,12 +2243,12 @@ CLASS="filename"
 CLASS="filename"
 >/opt</TT
 > de cada cliente.  Mejor
-      a˙n, puede editar el archivo <TT
+      a√∫n, puede editar el archivo <TT
 CLASS="filename"
 >/etc/fstab</TT
 > para que cada vez que
-      cada m·quina inicie monte autom·ticamente ese directorio.  Por
-      ejemplo podrÌa agregar la siguiente lÌnea al archivo
+      cada m√°quina inicie monte autom√°ticamente ese directorio.  Por
+      ejemplo podr√≠a agregar la siguiente l√≠nea al archivo
       <TT
 CLASS="filename"
 >/etc/fstab</TT
@@ -2268,7 +2268,7 @@ CLASS="programlisting"
       <TT
 CLASS="filename"
 >/etc/fstab</TT
->, lÌneas de la forma
+>, l√≠neas de la forma
       "<TT
 CLASS="literal"
 >cliente<TT
@@ -2347,8 +2347,8 @@ NAME="AEN13551"
 HREF="#FTN.AEN13551"
 >[9]</A
 > es un servicio para centralizar nombres de usuarios,
-      claves, e informaciÛn de grupos en el servidor facilitando la
-      administraciÛn de usuarios.  Si adem·s de <SPAN
+      claves, e informaci√≥n de grupos en el servidor facilitando la
+      administraci√≥n de usuarios.  Si adem√°s de <SPAN
 CLASS="acronym"
 >NIS</SPAN
 >
@@ -2360,7 +2360,7 @@ CLASS="acronym"
 CLASS="filename"
 >/home</TT
 > del servidor en
-      cada cliente, puede centralizarse tambiÈn la informaciÛn de
+      cada cliente, puede centralizarse tambi√©n la informaci√≥n de
       todos los usuarios en el servidor.
     </P
 ><A
@@ -2368,21 +2368,21 @@ NAME="AEN13557"
 ></A
 ><P
 >Con este
-       servicios puede centralizarse informaciÛn de usuarios y claves
+       servicios puede centralizarse informaci√≥n de usuarios y claves
        en el servidor</P
 ><P
 ><SPAN
 CLASS="acronym"
 >NIS</SPAN
-> de forma an·loga a
+> de forma an√°loga a
       <SPAN
 CLASS="acronym"
 >DNS</SPAN
 > opera sobre un grupo de computadores
       (dominio) y mantiene bases de datos (mapas) centralizadas en un
       servidor maestro, que pueden ser consultadas por los clientes.
-      Para disminuir carga podrÌan ponerse servidores esclavos que
-      repliquen la informaciÛn del servidor maestro.</P
+      Para disminuir carga podr√≠an ponerse servidores esclavos que
+      repliquen la informaci√≥n del servidor maestro.</P
 ><P
 >Para usar <SPAN
 CLASS="acronym"
@@ -2403,7 +2403,7 @@ CLASS="acronym"
 CLASS="literal"
 >nis</TT
 >
-      tanto en clientes como servidor, al instalarlo podr· dar el
+      tanto en clientes como servidor, al instalarlo podr√° dar el
       dominio <SPAN
 CLASS="acronym"
 >NIS</SPAN
@@ -2417,12 +2417,12 @@ CLASS="filename"
 CLASS="filename"
 >/etc/nsswitch</TT
 > para cambiar el orden de
-      b˙squeda de usuarios, grupos y
+      b√∫squeda de usuarios, grupos y
       <I
 CLASS="foreignphrase"
 >shadow</I
->.  TambiÈn debe agregar
-      algunas lÌneas al final de los archivos
+>.  Tambi√©n debe agregar
+      algunas l√≠neas al final de los archivos
       <TT
 CLASS="filename"
 >/etc/passwd</TT
@@ -2444,9 +2444,9 @@ echo "+:::" &#62;&#62; /etc/group
 echo "+::::::::" &#62;&#62; /etc/shadow
 </PRE
 ><P
->Que agregan lÌneas con un "+" y tantos ":" como separadores
+>Que agregan l√≠neas con un "+" y tantos ":" como separadores
       hay en los respectivos archivos.  En el servidor los usuarios y
-      grupos que estÈn despuÈs de estas marcas no ser·n compartidos
+      grupos que est√©n despu√©s de estas marcas no ser√°n compartidos
       por <SPAN
 CLASS="acronym"
 >NIS</SPAN
@@ -2468,7 +2468,7 @@ TYPE="1"
 >Edite <TT
 CLASS="filename"
 >/etc/init.d/nis</TT
->, asegur·ndose
+>, asegur√°ndose
 	de dejar <TT
 CLASS="literal"
 >NISSERVER=master</TT
@@ -2495,7 +2495,7 @@ CLASS="filename"
 	cambie la regla <TT
 CLASS="literal"
 >all:</TT
-> para que incluya tambiÈn
+> para que incluya tambi√©n
 	<TT
 CLASS="literal"
 >shadow</TT
@@ -2516,13 +2516,13 @@ CLASS="command"
 >Una vez <SPAN
 CLASS="acronym"
 >NIS</SPAN
-> estÈ funcionando en clientes
+> est√© funcionando en clientes
       y servidor, puede agregar, eliminar o modificar usuarios y
       grupos con los comandos usuales (ver <A
 HREF="x5590.htm"
->AdministraciÛn de
+>Administraci√≥n de
       usuarios</A
->) y despuÈs de cada modificaciÛn, para que el
+>) y despu√©s de cada modificaci√≥n, para que el
       cambio sea notado por <SPAN
 CLASS="acronym"
 >NIS</SPAN
@@ -2537,7 +2537,7 @@ CLASS="command"
 >.
      </P
 ><P
->Para centralizar la informaciÛn de todos los usuarios en el
+>Para centralizar la informaci√≥n de todos los usuarios en el
       servidor puede usar <SPAN
 CLASS="acronym"
 >NFS</SPAN
@@ -2546,9 +2546,9 @@ CLASS="acronym"
 CLASS="acronym"
 >NIS</SPAN
 > funcione bien.  Para lograrlo se debe
-      hacer la administraciÛn de usuario siempre en el servidor (por
-      ejemplo agregar nuevos usuarios sÛlo desde el servidor) para que
-      los directorios queden allÌ; por otra parte debe montar el
+      hacer la administraci√≥n de usuario siempre en el servidor (por
+      ejemplo agregar nuevos usuarios s√≥lo desde el servidor) para que
+      los directorios queden all√≠; por otra parte debe montar el
       directorio <TT
 CLASS="filename"
 >/home</TT
@@ -2574,7 +2574,7 @@ servidor.micolegio.edu.co:/var/mail /var/mail nfs rw 0 0
 CLASS="filename"
 >/etc/exports</TT
 > del servidor
-      debe tener las lÌneas apropiadas para exportar <TT
+      debe tener las l√≠neas apropiadas para exportar <TT
 CLASS="filename"
 >/home</TT
 > y <TT
@@ -2599,13 +2599,13 @@ CLASS="literal"
 ></H3
 ><P
 >El protocolo ssh cuenta con dos versiones, un borrador de
-     la segunda de estas est· en proceso de desarrollo.  OpenSSH es la
-     implementaciÛn de cliente y servidor para estos protocolos, la
-     versiÛn disponible para Debian permite usar tanto ssh 1 como ssh
+     la segunda de estas est√° en proceso de desarrollo.  OpenSSH es la
+     implementaci√≥n de cliente y servidor para estos protocolos, la
+     versi√≥n disponible para Debian permite usar tanto ssh 1 como ssh
      2.</P
 ><P
 >&#13;     Tal como se describe en uno de los borradores de la
-      especificaciÛn temporal "<I
+      especificaci√≥n temporal "<I
 CLASS="citetitle"
 >SSH Protocol
       Architecture</I
@@ -2614,7 +2614,7 @@ CLASS="citetitle"
 CLASS="literal"
 >ssh</TT
 > es un protocolo para iniciar sesiones en
-      m·quinas remotas que ofrece autenticaciÛn, confidencialidad e
+      m√°quinas remotas que ofrece autenticaci√≥n, confidencialidad e
       integridad.  Consta de tres componentes:
 
       <P
@@ -2628,13 +2628,13 @@ TYPE="1"
 ></LI
 ><LI
 ><P
->Protocolo de autenticaciÛn de usuario. Que autentica al
+>Protocolo de autenticaci√≥n de usuario. Que autentica al
 	   usuario ante el servidor. </P
 ></LI
 ><LI
 ><P
->Protocolo de conexiÛn. Que multiplexa un canal encriptado
-	 en diversos canales lÛgicos.</P
+>Protocolo de conexi√≥n. Que multiplexa un canal encriptado
+	 en diversos canales l√≥gicos.</P
 ></LI
 ></OL
 >
@@ -2643,7 +2643,7 @@ TYPE="1"
 >&#13;      Este protocolo requiere que los servidores tengan "llaves", las
       cuales son usadas por los clientes cada vez que se conectan a un
       servidor para verificar que no fue suplantado. Una llave es un
-      n˙mero codificado y encriptado en un archivo. Para la encripciÛn
+      n√∫mero codificado y encriptado en un archivo. Para la encripci√≥n
       de llaves, OpenSSH ofrece los algoritmos <SPAN
 CLASS="acronym"
 >RSA</SPAN
@@ -2651,7 +2651,7 @@ CLASS="acronym"
       <SPAN
 CLASS="acronym"
 >DSA</SPAN
-> (de los cuales para la versiÛn 2
+> (de los cuales para la versi√≥n 2
       recomendamos <SPAN
 CLASS="acronym"
 >DSA</SPAN
@@ -2666,23 +2666,23 @@ CLASS="command"
 CLASS="application"
 >ssh</SPAN
 > preferiblemente tomando
-      la versiÛn m·s reciente del sitio de seguridad de Debian: <A
+      la versi√≥n m√°s reciente del sitio de seguridad de Debian: <A
 HREF="http://security.debian.org"
 TARGET="_top"
 >http://security.debian.org</A
 >
-      o compile las fuentes m·s recientes que puede obtener en <A
+      o compile las fuentes m√°s recientes que puede obtener en <A
 HREF="http://www.openssh.org"
 TARGET="_top"
 >http://www.openssh.org</A
 >.
       Cuando instale se generaran un par de "llaves" para su
-      computador, una p˙blica y una privada.  Una vez instalado podr·
-      afinar la configuraciÛn del servidor en el archivo
+      computador, una p√∫blica y una privada.  Una vez instalado podr√°
+      afinar la configuraci√≥n del servidor en el archivo
       <TT
 CLASS="filename"
 >/etc/ssh/sshd.conf</TT
-> que puede incluir lÌneas
+> que puede incluir l√≠neas
       como las siguientes:</P
 ><PRE
 CLASS="screen"
@@ -2698,18 +2698,18 @@ NAME="AEN13642"
 ></A
 ><P
 >Archivo
-       de configuraciÛn del servidor OpenSSH.
+       de configuraci√≥n del servidor OpenSSH.
        </P
 ><P
->&#13;      La ˙ltima lÌnea permitir· a los clientes que se conecten
+>&#13;      La √∫ltima l√≠nea permitir√° a los clientes que se conecten
       ejecutar aplicaciones de <I
 CLASS="foreignphrase"
 >X-Window</I
 >
-      y transmitir la informaciÛn gr·fica sobre la conexiÛn segura
+      y transmitir la informaci√≥n gr√°fica sobre la conexi√≥n segura
       (ver <A
 HREF="x1647.htm#telnet-y-ssh"
->la secciÛn de nombre <I
+>la secci√≥n de nombre <I
 ><B
 CLASS="command"
 >telnet</B
@@ -2717,12 +2717,12 @@ CLASS="command"
 CLASS="command"
 >ssh</B
 ></I
-> en CapÌtulo 2</A
+> en Cap√≠tulo 2</A
 >).
    </P
 ><P
->Un usuario tambiÈn puede crear un par de llaves que le
-      faciliten su autenticaciÛn al emplear <B
+>Un usuario tambi√©n puede crear un par de llaves que le
+      faciliten su autenticaci√≥n al emplear <B
 CLASS="command"
 >ssh</B
 > o
@@ -2731,9 +2731,9 @@ CLASS="command"
 >scp</B
 >.  Estos programas por defecto piden clave
       al usuario que se conecte a un servidor ssh.  Si un usuario genera
-      sus llaves p˙blica y privada, puede saltarse esta autenticaciÛn pues se 
-      har· de forma autom·tica con las llaves.  Para lograrlo su llave 
-      p˙blica debe estar en el computador al cual se conecta (en
+      sus llaves p√∫blica y privada, puede saltarse esta autenticaci√≥n pues se 
+      har√° de forma autom√°tica con las llaves.  Para lograrlo su llave 
+      p√∫blica debe estar en el computador al cual se conecta (en
       <TT
 CLASS="filename"
 >~/.ssh/authorized_keys</TT
@@ -2748,17 +2748,17 @@ NAME="AEN13654"
 ></A
 ><P
 >Un
-       usuario emplea este programa se usa para generar sus llaves ssh p˙blica 
+       usuario emplea este programa se usa para generar sus llaves ssh p√∫blica 
        y privada.
        </P
 ><P
->La generaciÛn de llaves puede hacerse con:</P
+>La generaci√≥n de llaves puede hacerse con:</P
 ><PRE
 CLASS="screen"
 >&#13;ssh-keygen -t dsa
 </PRE
 ><P
->&#13;      que por defecto dejar· su llave p˙blica en
+>&#13;      que por defecto dejar√° su llave p√∫blica en
       <TT
 CLASS="filename"
 >~/.ssh/id_dsa.pub</TT
@@ -2766,10 +2766,10 @@ CLASS="filename"
       <TT
 CLASS="filename"
 >~/.ssh/id_dsa</TT
-> (que adem·s quedar· protegida
+> (que adem√°s quedar√° protegida
       por una palabra clave que usted especifica).  Como el nombre lo 
-      Ìndica la llave privada no debe compartirla, por el contrario la 
-      llave p˙blica puede transmitirla y puede ser vista por cualquiera.</P
+      √≠ndica la llave privada no debe compartirla, por el contrario la 
+      llave p√∫blica puede transmitirla y puede ser vista por cualquiera.</P
 ><P
 >En el computador en el que desee conectarse, agregue en el
       archivo <TT
@@ -2783,15 +2783,15 @@ CLASS="filename"
       <SPAN
 CLASS="acronym"
 >DSA</SPAN
-> y una versiÛn de OpenSSH anterior a la
-      3.1), su llave p˙blica.  Por ejemplo el usuario <SPAN
+> y una versi√≥n de OpenSSH anterior a la
+      3.1), su llave p√∫blica.  Por ejemplo el usuario <SPAN
 CLASS="systemitem"
 >mario</SPAN
 > desde <SPAN
 CLASS="systemitem"
 >purpura.micolegio.edu.co</SPAN
 > puede configurar la
-      entrada con autenticaciÛn autom·tica a la cuenta
+      entrada con autenticaci√≥n autom√°tica a la cuenta
       <SPAN
 CLASS="systemitem"
 >pepe</SPAN
@@ -2811,12 +2811,12 @@ amarillo&#62; cat id_dsa_mario.pub &#62;&#62; ~/.ssh/authorized_keys
 NAME="AEN13672"
 ></A
 ><P
->Para automitizar autenticaciÛn en una cuenta,
+>Para automitizar autenticaci√≥n en una cuenta,
        en este archivo del directorio <TT
 CLASS="filename"
 >~/.ssh</TT
 > un usuario
-       puede mantener las llaves p˙blicas que pueden conectarse.
+       puede mantener las llaves p√∫blicas que pueden conectarse.
        </P
 ><P
 >Cuando mario se intente conectar desde purpura, a la
@@ -2824,22 +2824,22 @@ CLASS="filename"
 CLASS="systemitem"
 >pepe</SPAN
 > en
-     amarillo ya no tendr· que dar la clave de pepe en ese
+     amarillo ya no tendr√° que dar la clave de pepe en ese
      computador sino la palabra clave con la que protegio su llave
-     privada.  Incluso esta palabra clave puede darse una sÛla
-     vez, a˙n cuando se realicen diversas conexiones con:</P
+     privada.  Incluso esta palabra clave puede darse una s√≥la
+     vez, a√∫n cuando se realicen diversas conexiones con:</P
 ><PRE
 CLASS="screen"
 >&#13;purpura&#62; ssh-agent bash
 purpura&#62; ssh-add mario
 </PRE
 ><P
->&#13;      Tras lo cual mario teclear· una vez la palabra clave de su llave
-      privada, y despuÈs en esa sesiÛn de <B
+>&#13;      Tras lo cual mario teclear√° una vez la palabra clave de su llave
+      privada, y despu√©s en esa sesi√≥n de <B
 CLASS="command"
 >bash</B
 > todo 
-      ingreso que haga a la cuenta pepe en amarillo, no solicitar· 
+      ingreso que haga a la cuenta pepe en amarillo, no solicitar√° 
       clave alguna.</P
 ></DIV
 ><DIV
@@ -2855,33 +2855,33 @@ CLASS="acronym"
 ></A
 ></H3
 ><P
->En esta secciÛn se presenta configuraciÛn de un servidor
-    CVS y creaciÛn de repositorios (el uso de un repositorio y un 
+>En esta secci√≥n se presenta configuraci√≥n de un servidor
+    CVS y creaci√≥n de repositorios (el uso de un repositorio y un 
     servidor ya configurado puede verse en <A
 HREF="c2347.htm#uso-de-cvs"
->la secciÛn de nombre <I
+>la secci√≥n de nombre <I
 >Uso de CVS</I
-> en CapÌtulo 3</A
+> en Cap√≠tulo 3</A
 >).</P
 ><P
 >&#13;    Un servidor <SPAN
 CLASS="acronym"
 >CVS</SPAN
-> puede emplearse sin conexiÛn a una
+> puede emplearse sin conexi√≥n a una
       red, o bien en red con alguno de los protocolos rsh, ssh (ver
       <A
 HREF="x12937.htm#servicio-ssh"
 >Servicio ssh</A
 >) o pserver. Los
       dos primeros requieren que el usuario que se conecta tenga
-      cuenta (o una llave p˙blica ssh entre las llaves autorizadas de
+      cuenta (o una llave p√∫blica ssh entre las llaves autorizadas de
       una cuenta), mientras que pserver puede manejar su propio
       archivo de usuarios y claves.  En todos los casos requiere
       instalar <SPAN
 CLASS="acronym"
 >CVS</SPAN
-> y configurar un depÛsito. Si
-      usa ssh debe instalar tambiÈn el servidor
+> y configurar un dep√≥sito. Si
+      usa ssh debe instalar tambi√©n el servidor
       <B
 CLASS="command"
 >sshd</B
@@ -2895,20 +2895,20 @@ CLASS="filename"
 > (ver
       <A
 HREF="x12937.htm#configuracion-de-servicios-basicos"
->ConfiguraciÛn
-      de servicios b·sicos</A
->) la lÌnea:
+>Configuraci√≥n
+      de servicios b√°sicos</A
+>) la l√≠nea:
 <PRE
 CLASS="screen"
 >&#13;cvspserver      stream  tcp     nowait.400      root    /usr/sbin/tcpd
-/usr/bin/cvs -b /usr/bin ≠≠allow-root=/var/cvs pserver
+/usr/bin/cvs -b /usr/bin ¬≠¬≠allow-root=/var/cvs pserver
 </PRE
 >
 	(cambiando <TT
 CLASS="filename"
 >/var/cvs</TT
 > por el directorio donde
-	est· el depÛsito) y debe configurar los repositorios que
+	est√° el dep√≥sito) y debe configurar los repositorios que
 	desee poder acceder con pserver en 
       <TT
 CLASS="filename"
@@ -2927,17 +2927,17 @@ CLASS="application"
 HREF="x7217.htm#paquetes-en-debian"
 >Paquetes en Debian</A
 >), que le
-      permitir· activar o no el protocolo pserver y de requerirse har·
+      permitir√° activar o no el protocolo pserver y de requerirse har√°
       los cambios apropiados en <TT
 CLASS="filename"
 >/etc/inetd.conf</TT
 >.
-      El programa de instalaciÛn tambiÈn podr· inicializar un
+      El programa de instalaci√≥n tambi√©n podr√° inicializar un
       repositorio por usted (puede ser <TT
 CLASS="filename"
 >/var/cvs</TT
 >,
-      directorio que usted debe crear antes o durante la instalaciÛn
+      directorio que usted debe crear antes o durante la instalaci√≥n
       de cvs).</P
 ><A
 NAME="AEN13704"
@@ -2950,7 +2950,7 @@ NAME="AEN13704"
 NAME="AEN13707"
 ></A
 ><P
->&#13;       Es un protocolo de autenticaciÛn de cvs, que
+>&#13;       Es un protocolo de autenticaci√≥n de cvs, que
        permite manejar un archivo de usuarios y claves independiente
        de los usuarios y claves en el sistema.
        </P
@@ -2962,9 +2962,9 @@ CLASS="acronym"
       <SPAN
 CLASS="application"
 >ssh</SPAN
->) estÈ instalado, todo
-      usuario de la misma m·quina puede crear uno o m·s depÛsitos.
-      Tales depÛsitos podr·n ser accedidos por otros usuarios del
+>) est√© instalado, todo
+      usuario de la misma m√°quina puede crear uno o m√°s dep√≥sitos.
+      Tales dep√≥sitos podr√°n ser accedidos por otros usuarios del
       mismo sistema o de otro con <SPAN
 CLASS="application"
 >ssh</SPAN
@@ -2982,7 +2982,7 @@ HREF="c2347.htm#uso-de-cvs"
 CLASS="systemitem"
 >pepe</SPAN
 >
-      emplearÌa una secuencia de comandos como la siguiente para crear
+      emplear√≠a una secuencia de comandos como la siguiente para crear
       un repositorio en <TT
 CLASS="filename"
 >/home/pepe/cvs</TT
@@ -2998,8 +2998,8 @@ export CVSROOT=/home/pepe/cvs
 cvs init
 </PRE
 ><P
->Pepe mismo o alg˙n otro usuario del sistema que tenga
-      permiso de escritura en ese directorio podr· leer
+>Pepe mismo o alg√∫n otro usuario del sistema que tenga
+      permiso de escritura en ese directorio podr√° leer
       (<I
 CLASS="foreignphrase"
 >update</I
@@ -3015,13 +3015,13 @@ CLASS="screen"
 export CVSROOT=/home/pepe/cvs
 </PRE
 ><P
->TambiÈn puede usarlo vÌa ssh (por ejemplo desde otro
+>Tambi√©n puede usarlo v√≠a ssh (por ejemplo desde otro
       computador de la misma red) con
       <TT
 CLASS="literal"
 >CVS_RSH="ssh"</TT
->. O si durante la instalaciÛn o
-      reconfiguraciÛn de cvs el administrador activa el protocolo
+>. O si durante la instalaci√≥n o
+      reconfiguraci√≥n de cvs el administrador activa el protocolo
       pserver puede emplearse
       <TT
 CLASS="literal"
@@ -3031,7 +3031,7 @@ CLASS="literal"
 CLASS="systemitem"
 >pepe</SPAN
 > un usuario
-      de la m·quina donde est· el repositorio con permisos para leer
+      de la m√°quina donde est√° el repositorio con permisos para leer
       (o escribir) o un usuario para ese repositorio agregado en el
       archivo
       <TT
@@ -3044,8 +3044,8 @@ HREF="#FTN.AEN13730"
 >
      </P
 ><P
->Todo usuario con permiso de escritura en ese depÛsito podr·
-      ingresar un mÛdulo nuevo. Por ejemplo un usuario con permiso de
+>Todo usuario con permiso de escritura en ese dep√≥sito podr√°
+      ingresar un m√≥dulo nuevo. Por ejemplo un usuario con permiso de
       escritura y las variables <TT
 CLASS="envar"
 >CVS_RSH</TT
@@ -3053,11 +3053,11 @@ CLASS="envar"
       <TT
 CLASS="envar"
 >CVSROOT</TT
-> con los valores reciÈn presentados, puede
+> con los valores reci√©n presentados, puede
       ingresar todo el contenido del directorio <TT
 CLASS="filename"
 >~/quimica</TT
->` como mÛdulo
+>` como m√≥dulo
       <TT
 CLASS="literal"
 >laquimica</TT
@@ -3068,7 +3068,7 @@ CLASS="screen"
 cvs import laquimica start vendor
 </PRE
 ><P
->Tras lo cual el mismo usuario que importÛ el mÛdulo, o
+>Tras lo cual el mismo usuario que import√≥ el m√≥dulo, o
       cualquier otro con permiso de lectura, puede sacar una copia
       local con:</P
 ><PRE
@@ -3090,14 +3090,14 @@ CLASS="sect4"
 CLASS="sect4"
 ><A
 NAME="caso-correo-por-cada-actualizacion"
->Caso: Correo por cada actualizaciÛn</A
+>Caso: Correo por cada actualizaci√≥n</A
 ></H4
 ><P
 >Aprovechando la capacidad de <SPAN
 CLASS="acronym"
 >CVS</SPAN
 > de
-      ejecutar un script cuando actualiza la bit·cora y el script
+      ejecutar un script cuando actualiza la bit√°cora y el script
       <TT
 CLASS="literal"
 >syncmail</TT
@@ -3105,12 +3105,12 @@ CLASS="literal"
       <SPAN
 CLASS="acronym"
 >CVS</SPAN
-> para que por cada actualizaciÛn
+> para que por cada actualizaci√≥n
       (<I
 CLASS="foreignphrase"
 >commit</I
->) envÌe un correo a una
-      direcciÛn electrÛnica.  Para esto haga
+>) env√≠e un correo a una
+      direcci√≥n electr√≥nica.  Para esto haga
       <I
 CLASS="foreignphrase"
 >checkout</I
@@ -3124,22 +3124,22 @@ CLASS="screen"
 >&#13;cvs co CVSROOT
       </PRE
 ><P
->&#13;       En ese directorio copie el archivo syncmail que podr· descargar de:
+>&#13;       En ese directorio copie el archivo syncmail que podr√° descargar de:
        <A
 HREF="http://cvs-syncmail.sourceforge.net"
 TARGET="_top"
 >&#13;	http://cvs-syncmail.sourceforge.net</A
-> y despuÈs ejecute:</P
+> y despu√©s ejecute:</P
 ><PRE
 CLASS="screen"
 >&#13;chmod +x syncmail
 cvs add syncmail </PRE
 ><P
->&#13;       DespuÈs agregue al archivo <TT
+>&#13;       Despu√©s agregue al archivo <TT
 CLASS="filename"
 >checkoutlist</TT
 > la
-       lÌnea:</P
+       l√≠nea:</P
 ><PRE
 CLASS="screen"
 >&#13;syncmail	</PRE
@@ -3153,12 +3153,12 @@ CLASS="screen"
        <TT
 CLASS="filename"
 >loginfo</TT
->, agregando lÌneas como la siguiente:
+>, agregando l√≠neas como la siguiente:
       <PRE
 CLASS="screen"
 >&#13;^mimodulo $CVSROOT/CVSROOT/syncmail %{sVv} paz@micolegio.edu.co </PRE
 >
-      que indican que toda actualizaciÛn al mÛdulo
+      que indican que toda actualizaci√≥n al m√≥dulo
       <TT
 CLASS="literal"
 >mimodulo</TT
@@ -3167,15 +3167,15 @@ CLASS="literal"
 CLASS="systemitem"
 >paz@micolegio.edu.co</SPAN
 >.  La primera
-      parte de la lÌnea (<TT
+      parte de la l√≠nea (<TT
 CLASS="literal"
 >^mimodulo</TT
 >) es una
-      expresiÛn regular que se aplicar· al mÛdulo o puede ser
+      expresi√≥n regular que se aplicar√° al m√≥dulo o puede ser
       <TT
 CLASS="literal"
 >DEFAULT</TT
-> para indicar cualquier mÛdulo.
+> para indicar cualquier m√≥dulo.
       </P
 ></DIV
 ></DIV
@@ -3191,8 +3191,8 @@ NAME="servicio-de-correo"
 NAME="AEN13776"
 ></A
 ><P
->&#13;       Nombre del protocolo para transmisiÛn de correo
-       electrÛnico en Internet.</P
+>&#13;       Nombre del protocolo para transmisi√≥n de correo
+       electr√≥nico en Internet.</P
 ><A
 NAME="AEN13780"
 ></A
@@ -3254,10 +3254,10 @@ CLASS="acronym"
 CLASS="acronym"
 >IP</SPAN
 >.
-      En una situaciÛn tÌpica en la que un usuario <SPAN
+      En una situaci√≥n t√≠pica en la que un usuario <SPAN
 CLASS="systemitem"
 >pepe@primaria2.micolegio.edu.co</SPAN
-> envÌa un
+> env√≠a un
       mensaje al usuario <SPAN
 CLASS="systemitem"
 >paz@bachillerato3.micolegio.edu.co</SPAN
@@ -3269,7 +3269,7 @@ CLASS="systemitem"
 ><UL
 ><LI
 ><P
->Que haya conexiÛn fÌsica y a nivel de
+>Que haya conexi√≥n f√≠sica y a nivel de
 	  <SPAN
 CLASS="acronym"
 >TCP</SPAN
@@ -3337,7 +3337,7 @@ CLASS="application"
 CLASS="application"
 >evolution</SPAN
 > (a ese programa se le
-	 llamar· <SPAN
+	 llamar√° <SPAN
 CLASS="acronym"
 >MUA</SPAN
 > - <I
@@ -3370,7 +3370,7 @@ CLASS="acronym"
 CLASS="application"
 >exim</SPAN
 >, el
-      proceso serÌa:
+      proceso ser√≠a:
      </P
 ><DIV
 CLASS="procedure"
@@ -3414,15 +3414,15 @@ CLASS="application"
 CLASS="application"
 >exim</SPAN
 > a medida que
-	envÌa o intenta enviar mensajes (si un mensaje no puede ser
+	env√≠a o intenta enviar mensajes (si un mensaje no puede ser
 	enviado <SPAN
 CLASS="application"
 >exim</SPAN
 > puede reintentar el
-	envio cierto n˙mero de veces, haciendo pausas entre un intento
+	envio cierto n√∫mero de veces, haciendo pausas entre un intento
 	y otro).  </P
 ><P
-> Enviar un mensaje significa crear una conexiÛn
+> Enviar un mensaje significa crear una conexi√≥n
 	<SPAN
 CLASS="acronym"
 >TCP</SPAN
@@ -3433,8 +3433,8 @@ CLASS="acronym"
 	con otro <SPAN
 CLASS="acronym"
 >MTA</SPAN
-> que act˙e de intermediario,
-	tÌpicamente en el puerto <SPAN
+> que act√∫e de intermediario,
+	t√≠picamente en el puerto <SPAN
 CLASS="acronym"
 >TCP</SPAN
 > 25, y
@@ -3457,9 +3457,9 @@ CLASS="application"
 CLASS="acronym"
 >DNS</SPAN
 >, registros MX asociados con el dominio 
-	 de la direcciÛn, si los hay intenta enviar a cada uno en orden de 
+	 de la direcci√≥n, si los hay intenta enviar a cada uno en orden de 
 	 prioridad
-	--los registros MX con menor n˙mero tienen mayor prioridad
+	--los registros MX con menor n√∫mero tienen mayor prioridad
 	(ver <A
 HREF="x12937.htm#servicio-dns"
 >Servicio
@@ -3472,7 +3472,7 @@ HREF="x12937.htm#servicio-dns"
 CLASS="systemitem"
 >bachillerato3</SPAN
 > debe estar
-	  corriendo un proceso que acepte la conexiÛn en el puerto 25.
+	  corriendo un proceso que acepte la conexi√≥n en el puerto 25.
 	  Puede ser <SPAN
 CLASS="application"
 >exim</SPAN
@@ -3481,18 +3481,18 @@ CLASS="application"
 CLASS="application"
 >inetd</SPAN
 > que una vez realizada la
-	  conexiÛn ejecuta a <SPAN
+	  conexi√≥n ejecuta a <SPAN
 CLASS="application"
 >exim</SPAN
 > (ver
 	  <A
 HREF="x12937.htm#configuracion-de-servicios-basicos"
->&#13;	  ConfiguraciÛn de servicios b·sicos</A
->).  DespuÈs
+>&#13;	  Configuraci√≥n de servicios b√°sicos</A
+>).  Despu√©s
 	  <SPAN
 CLASS="application"
 >exim</SPAN
-> recibir· el mensaje
+> recibir√° el mensaje
 	  siguiendo el protocolo <SPAN
 CLASS="acronym"
 >SMTP</SPAN
@@ -3524,7 +3524,7 @@ CLASS="systemitem"
 ></LI
 ><LI
 ><P
->Cuando Paz lo desee, podr· emplear <B
+>Cuando Paz lo desee, podr√° emplear <B
 CLASS="command"
 >mail</B
 >
@@ -3533,7 +3533,7 @@ CLASS="command"
 CLASS="filename"
 >/var/mail/paz</TT
 > ---a medida que los lea
-	 saldr·n de ese archivo para quedar en
+	 saldr√°n de ese archivo para quedar en
 	<TT
 CLASS="filename"
 >~/mbox</TT
@@ -3543,7 +3543,7 @@ CLASS="filename"
 ></OL
 ></DIV
 ><P
->&#13;      Este es el esquema b·sico, aunque hay muchas otras situaciones
+>&#13;      Este es el esquema b√°sico, aunque hay muchas otras situaciones
       en las que se emplean otras posibilidades de
       <SPAN
 CLASS="acronym"
@@ -3565,7 +3565,7 @@ HREF="#FTN.AEN13902"
 CLASS="acronym"
 >MUA</SPAN
 > que pueda leer
-	  directamente los correos que est·n en
+	  directamente los correos que est√°n en
 	  <TT
 CLASS="filename"
 >/var/mail</TT
@@ -3590,7 +3590,7 @@ CLASS="acronym"
 	  <SPAN
 CLASS="acronym"
 >MUA</SPAN
->s con est·s caracterÌsticas son:
+>s con est√°s caracter√≠sticas son:
 	  <SPAN
 CLASS="application"
 >mail</SPAN
@@ -3648,7 +3648,7 @@ CLASS="application"
 	  <TT
 CLASS="filename"
 >/etc/exim/exim.conf</TT
-> o a˙n m·s sencillo
+> o a√∫n m√°s sencillo
 	  en Debian para muchas situaciones con el script
 	  <TT
 CLASS="literal"
@@ -3657,13 +3657,13 @@ CLASS="literal"
 	  se configuran como <SPAN
 CLASS="acronym"
 >MTA</SPAN
-> satÈlites con el
+> sat√©lites con el
 	  servidor como compuerta de correo (o <I
 CLASS="foreignphrase"
 >smart
 	  host</I
 >) ---es decir se configura en los
-	  clientes sin capacidad de recibir correos sino sÛlo de
+	  clientes sin capacidad de recibir correos sino s√≥lo de
 	  enviar todo correo a un computador (al servidor).  El
 	  <SPAN
 CLASS="acronym"
@@ -3689,8 +3689,8 @@ CLASS="acronym"
 CLASS="filename"
 >/var/mail</TT
 > del servidor en
-	  todos los clientes.  De forma que exista un ˙nico sitio
-	  fÌsico donde estÈn todos los correos, pero que desde todos
+	  todos los clientes.  De forma que exista un √∫nico sitio
+	  f√≠sico donde est√©n todos los correos, pero que desde todos
 	  los computadores cada usuario pueda acceder a su archivo de
 	  correos.
 	</P
@@ -3709,7 +3709,7 @@ TYPE="1"
 	<SPAN
 CLASS="acronym"
 >MUA</SPAN
->s que habr· disponibles (mÌnimo
+>s que habr√° disponibles (m√≠nimo
 	<SPAN
 CLASS="application"
 >mail</SPAN
@@ -3734,22 +3734,22 @@ CLASS="application"
 CLASS="literal"
 >exim</TT
 >).  En los clientes configurarlo como
-	sistema satÈlite. Como nombre de sistema emplee el dominio de
-	su instituciÛn, como computador del cual leer·n los correos y
+	sistema sat√©lite. Como nombre de sistema emplee el dominio de
+	su instituci√≥n, como computador del cual leer√°n los correos y
 	como <I
 CLASS="foreignphrase"
 >smart host</I
 > use el
-	servidor.  Para hacer un cambio en la configuraciÛn despuÈs de
+	servidor.  Para hacer un cambio en la configuraci√≥n despu√©s de
 	instalar puede emplear <SPAN
 CLASS="application"
 >eximconfig</SPAN
 >,
-	o con m·s pr·ctica <TT
+	o con m√°s pr√°ctica <TT
 CLASS="filename"
 >/etc/exim.conf</TT
 >.
-	Algunas lÌneas que ese archivo debe tener en el caso de
+	Algunas l√≠neas que ese archivo debe tener en el caso de
 	clientes, para enviar siempre por el servidor son:</P
 ><PRE
 CLASS="screen"
@@ -3768,7 +3768,7 @@ smarthost:
 end
 	  </PRE
 ><P
->&#13;	TambiÈn puede incluir reglas para reescribir direcciones de
+>&#13;	Tambi√©n puede incluir reglas para reescribir direcciones de
 	forma que parezcan provenir de servidor.micolegio.edu.co:
        </P
 ><PRE
@@ -3811,7 +3811,7 @@ CLASS="command"
 CLASS="acronym"
 >DNS</SPAN
 >.  Configure
-	como nombre del sistema el dominio de su instituciÛn, excluya
+	como nombre del sistema el dominio de su instituci√≥n, excluya
 	de los controles de <I
 CLASS="foreignphrase"
 >relaying</I
@@ -3824,11 +3824,11 @@ CLASS="literal"
 CLASS="filename"
 >/etc/exim/exim.conf</TT
 >,
-	entre las lÌneas que <SPAN
+	entre las l√≠neas que <SPAN
 CLASS="application"
 >eximconfig</SPAN
 >
-	incluye est·n las siguientes que configuran
+	incluye est√°n las siguientes que configuran
 	<SPAN
 CLASS="application"
 >procmail</SPAN
@@ -3851,7 +3851,7 @@ CLASS="screen"
 CLASS="filename"
 >.forward</TT
 >. Tenga en cuenta cambiar la
-	configuraciÛn por defecto que deja
+	configuraci√≥n por defecto que deja
 	<SPAN
 CLASS="application"
 >eximconfig</SPAN
@@ -3886,7 +3886,7 @@ CLASS="acronym"
 	direcciones <SPAN
 CLASS="acronym"
 >IP</SPAN
-> explÌcitas.
+> expl√≠citas.
        </P
 ><PRE
 CLASS="screen"
@@ -3902,10 +3902,10 @@ CLASS="screen"
     driver = ipliteral
           </PRE
 ><P
->&#13;	La configuraciÛn de <SPAN
+>&#13;	La configuraci√≥n de <SPAN
 CLASS="acronym"
 >DNS</SPAN
-> deberÌa tener en
+> deber√≠a tener en
 	cuenta emplear <SPAN
 CLASS="systemitem"
 >servidor.micolegio.edu.co</SPAN
@@ -3913,7 +3913,7 @@ CLASS="systemitem"
 	correo para el dominio <SPAN
 CLASS="systemitem"
 >micolegio.edu.co</SPAN
-> y tambiÈn como
+> y tambi√©n como
 	intercambiador de correo para cada cliente (es decir que todo
 	correo que vaya a uno de los clientes se redirija al
 	servidor).  Retomando el ejemplo de la zona de
@@ -3927,15 +3927,15 @@ HREF="x12937.htm#servicio-dns"
 	<TT
 CLASS="filename"
 >/etc/bind/db.micolegio.edu.co</TT
-> tendrÌa dos
-	nuevas lÌneas (con registros tipo MX):
+> tendr√≠a dos
+	nuevas l√≠neas (con registros tipo MX):
 	<PRE
 CLASS="screen"
 >&#13;@	IN	SOA	servidor.micolegio.edu.co. root.localhost. (
 			      1		; Serial
 			  10800		; Refresco cada 3 horas
 			   3600		; Reintento cada hora
-			2419200		; Expiracion despuÈs de un mes
+			2419200		; Expiracion despu√©s de un mes
 			 259200 )	; TTL 3 dias
 
 @		NS	servidor
@@ -3956,11 +3956,11 @@ profesores		A	192.168.1.200
 ></LI
 ></OL
 ><P
->Una vez haga cambios a la configuraciÛn de 
+>Una vez haga cambios a la configuraci√≥n de 
       <SPAN
 CLASS="application"
 >exim</SPAN
-> podr· realizar algunas pruebas 
+> podr√° realizar algunas pruebas 
       para verificar la forma de enrutamiento:</P
 ><PRE
 CLASS="screen"
@@ -3985,8 +3985,8 @@ CLASS="acronym"
 NAME="AEN14007"
 ></A
 ><P
->&#13;       En este modo de operaciÛn de FTP, el cliente espera del
-       servidor la especificaciÛn de la direcciÛn y el puerto del
+>&#13;       En este modo de operaci√≥n de FTP, el cliente espera del
+       servidor la especificaci√≥n de la direcci√≥n y el puerto del
        canal de datos.
      </P
 ><P
@@ -4002,12 +4002,12 @@ CLASS="acronym"
 >RFC</SPAN
 > 959)
       permite transmitir archivos de un computador a otro de forma
-      robusta y eficiente.  Este protocolo requiere una conexiÛn por
+      robusta y eficiente.  Este protocolo requiere una conexi√≥n por
       la que se transmiten comandos y respuestas a comandos
       (normalmente por el puerto 21) y otra por la que se transmiten
       datos (el puerto es escogido por el cliente o el servidor).
       Pueden realizarse conexiones en modo activo o pasivo, en el
-      primero el cliente establece la direcciÛn y el puerto para el
+      primero el cliente establece la direcci√≥n y el puerto para el
       canal de datos, en el segundo es el servidor el que los
       establece.  Al conectarse desde una red con direcciones privadas
       a un servidor <SPAN
@@ -4028,8 +4028,8 @@ CLASS="acronym"
       servidor <SPAN
 CLASS="acronym"
 >FTP</SPAN
-> anÛnimo, pero no para brindar
-      transmisiÛn de archivos a usuarios del sistema (que pueden
+> an√≥nimo, pero no para brindar
+      transmisi√≥n de archivos a usuarios del sistema (que pueden
       hacerlo con <B
 CLASS="command"
 >scp</B
@@ -4058,7 +4058,7 @@ ALIGN="CENTER"
 ALIGN="LEFT"
 ><P
 >Las claves transmitidas en sesiones de FTP viajan
-	por la red sin encripciÛn alguna.</P
+	por la red sin encripci√≥n alguna.</P
 ></TD
 ></TR
 ></TABLE
@@ -4067,7 +4067,7 @@ ALIGN="LEFT"
 NAME="AEN14043"
 ></A
 ><P
->&#13;       Archivo de configuraciÛn de <TT
+>&#13;       Archivo de configuraci√≥n de <TT
 CLASS="literal"
 >proftpd</TT
 >.
@@ -4084,12 +4084,12 @@ CLASS="application"
       <TT
 CLASS="literal"
 >proftpd</TT
->).  La configuraciÛn por defecto queda
+>).  La configuraci√≥n por defecto queda
       en <TT
 CLASS="filename"
 >/etc/proftpd.conf</TT
 > que permite a todos
-      los usuarios emplear ftp, permite ftp anÛnimo empleando los
+      los usuarios emplear ftp, permite ftp an√≥nimo empleando los
       archivos del directorio <TT
 CLASS="filename"
 >/var/ftp</TT
@@ -4105,19 +4105,19 @@ CLASS="filename"
 >.
      </P
 ><P
->Para limitar el servicio a ftp anÛnimo
+>Para limitar el servicio a ftp an√≥nimo
        (los usuarios pueden emplear scp para realizar copias), puede
-       agregar en la secciÛn general del archivo de configuraciÛn
-       limitaciÛn de acceso para todos los usuarios (con
+       agregar en la secci√≥n general del archivo de configuraci√≥n
+       limitaci√≥n de acceso para todos los usuarios (con
        <TT
 CLASS="literal"
 >LimitLOGIN</TT
->) y en la secciÛn
-       de ftp anÛnimo permitir acceso para todos los usuarios.  
+>) y en la secci√≥n
+       de ftp an√≥nimo permitir acceso para todos los usuarios.  
        El archivo <TT
 CLASS="filename"
 >/etc/proftpd.conf</TT
-> serÌa algo 
+> ser√≠a algo 
        como:
        <PRE
 CLASS="programlisting"
@@ -4208,7 +4208,7 @@ CLASS="acronym"
 CLASS="foreignphrase"
 >Hypertext Transfer Protocol</I
 >),
-      cuya versiÛn 1.1 est· definida en el <SPAN
+      cuya versi√≥n 1.1 est√° definida en el <SPAN
 CLASS="acronym"
 >RFC</SPAN
 >
@@ -4223,13 +4223,13 @@ CLASS="acronym"
 CLASS="acronym"
 >HTML</SPAN
 > con diversas codificaciones e
-	 idiomas, gr·ficas y otros tipos de informaciÛn a partir de
+	 idiomas, gr√°ficas y otros tipos de informaci√≥n a partir de
 	 <SPAN
 CLASS="acronym"
 >URL</SPAN
 >s solicitados por el navegador.  Cada
-	 tipo de informaciÛn solicitada por un cliente es transmitida
-	 por el servidor con una identificaciÛn
+	 tipo de informaci√≥n solicitada por un cliente es transmitida
+	 por el servidor con una identificaci√≥n
 	 <SPAN
 CLASS="acronym"
 >MIME</SPAN
@@ -4243,7 +4243,7 @@ CLASS="foreignphrase"
 NAME="AEN14077"
 HREF="#FTN.AEN14077"
 >[16]</A
->.  La identificaciÛn MIME es de la 
+>.  La identificaci√≥n MIME es de la 
       forma tipo/subtipo, las identificaciones registradas pueden
 	 consultarse en:
 	 <A
@@ -4255,7 +4255,7 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->Sirve como protocolo genÈrico para transmisiÛn de otros
+>Sirve como protocolo gen√©rico para transmisi√≥n de otros
 	 tipos de protocolos (e.g <SPAN
 CLASS="acronym"
 >FTP</SPAN
@@ -4272,7 +4272,7 @@ CLASS="acronym"
 ><LI
 ><P
 >Permite emplear intermediarios (proxys, compuertas y
-	    t˙neles), cada uno de los cuales puede tener un deposito.
+	    t√∫neles), cada uno de los cuales puede tener un deposito.
 	    Normalmente <SPAN
 CLASS="acronym"
 >HTTP</SPAN
@@ -4281,7 +4281,7 @@ CLASS="acronym"
 CLASS="acronym"
 >TCP</SPAN
 > 80 (si el servidor/proxy
-	    est· en otro puerto, puede especificarse en un
+	    est√° en otro puerto, puede especificarse en un
 	    <SPAN
 CLASS="acronym"
 >URL</SPAN
@@ -4302,7 +4302,7 @@ CLASS="foreignphrase"
 >Common
 	  Gateway Interface</I
 >) que respondan
-	  din·micamente a informaciÛn transmitida desde el
+	  din√°micamente a informaci√≥n transmitida desde el
 	  cliente. Por ejemplo el siguiente <SPAN
 CLASS="acronym"
 >URL</SPAN
@@ -4338,9 +4338,9 @@ TARGET="_top"
 CLASS="acronym"
 >CGI</SPAN
 >s son programas o scripts que
-	  reciben por entrada est·ndar y/o variables de ambiente,
+	  reciben por entrada est√°ndar y/o variables de ambiente,
 	  consultas hechas por un cliente y responden escribiendo en
-	  s·lida est·ndar la respuesta que dar· el servidor.</P
+	  s√°lida est√°ndar la respuesta que dar√° el servidor.</P
 ></LI
 ></UL
 >	
@@ -4355,17 +4355,17 @@ CLASS="application"
 CLASS="literal"
 >apache</TT
 >), 
-      que es el servidor m·s popular en Internet (puede consultar 
-      estadÌsticas en <A
+      que es el servidor m√°s popular en Internet (puede consultar 
+      estad√≠sticas en <A
 HREF="http://www.netcraft.com"
 TARGET="_top"
 >Netcraft</A
 >)
-      y para hacer m·s eficiente la conexiÛn sugerimos emplear 
+      y para hacer m√°s eficiente la conexi√≥n sugerimos emplear 
       <SPAN
 CLASS="application"
 >squid</SPAN
-> como proxy con depÛsito.</P
+> como proxy con dep√≥sito.</P
 ><A
 NAME="AEN14111"
 ></A
@@ -4377,8 +4377,8 @@ NAME="AEN14111"
       <TT
 CLASS="filename"
 >/etc/apache/httpd.conf</TT
->. La configuraciÛn
-      por defecto supone que las p·ginas por servir est·n en <TT
+>. La configuraci√≥n
+      por defecto supone que las p√°ginas por servir est√°n en <TT
 CLASS="filename"
 >/var/www</TT
 > y en los directorios
@@ -4402,20 +4402,20 @@ CLASS="filename"
       <TT
 CLASS="literal"
 >/cgi-bin</TT
->).  Entre sus caracterÌsticas est·n:
+>).  Entre sus caracter√≠sticas est√°n:
       </P
 ><A
 NAME="AEN14123"
 ></A
 ><P
->&#13;       Archivo de configuraciÛn de Apache.
+>&#13;       Archivo de configuraci√≥n de Apache.
      </P
 ><P
 ></P
 ><UL
 ><LI
 ><P
->Excelente implementaciÛn de <SPAN
+>Excelente implementaci√≥n de <SPAN
 CLASS="acronym"
 >HTTP</SPAN
 > 1.1 y
@@ -4426,12 +4426,12 @@ CLASS="acronym"
 ></LI
 ><LI
 ><P
->ConfiguraciÛn sencilla (en 
+>Configuraci√≥n sencilla (en 
 	<TT
 CLASS="filename"
 >/etc/apache/httpd.conf</TT
 >) y posibilidad de
-	emplear archivos de confioguraciÛn por cada usuario
+	emplear archivos de confioguraci√≥n por cada usuario
 	<TT
 CLASS="filename"
 >~/public_html/.htaccess</TT
@@ -4440,7 +4440,7 @@ CLASS="filename"
 ></LI
 ><LI
 ><P
->Cuenta con mÛdulos para soportar <SPAN
+>Cuenta con m√≥dulos para soportar <SPAN
 CLASS="acronym"
 >SSI</SPAN
 >
@@ -4462,8 +4462,8 @@ CLASS="acronym"
 CLASS="foreignphrase"
 >Secure
 	 Socket Layer</I
->) para trasmisiÛn encriptada y
-	autenticaciÛn b·sica para tener zonas restringidas con
+>) para trasmisi√≥n encriptada y
+	autenticaci√≥n b√°sica para tener zonas restringidas con
 	claves.</P
 ></LI
 ><LI
@@ -4472,8 +4472,8 @@ CLASS="foreignphrase"
 CLASS="foreignphrase"
 >Virtual
 	Host</I
->), para atender con un sÛlo servidor
-	diversos dominios.  Adem·s de la configuraciÛn
+>), para atender con un s√≥lo servidor
+	diversos dominios.  Adem√°s de la configuraci√≥n
 	<SPAN
 CLASS="acronym"
 >DNS</SPAN
@@ -4481,7 +4481,7 @@ CLASS="acronym"
 	registros <SPAN
 CLASS="acronym"
 >CNAME</SPAN
->), basta agregar una secciÛn
+>), basta agregar una secci√≥n
 	por cada dominio virtual, por ejemplo:</P
 ><PRE
 CLASS="programlisting"
@@ -4496,7 +4496,7 @@ CLASS="programlisting"
 NAME="AEN14151"
 ></A
 ><P
->&#13;       Archivo de configuraciÛn del proxy Squid.
+>&#13;       Archivo de configuraci√≥n del proxy Squid.
      </P
 ><P
 >&#13;       En cuanto a proxy, puede instalar <SPAN
@@ -4507,12 +4507,12 @@ CLASS="application"
 CLASS="literal"
 >squid</TT
 >).  Este programa permite definir 
-       listas de acceso y emplearlas para dar servicio sÛlo a las direcciones
-      con permiso.  La configuraciÛn por defecto del paquete deja
+       listas de acceso y emplearlas para dar servicio s√≥lo a las direcciones
+      con permiso.  La configuraci√≥n por defecto del paquete deja
       listo <SPAN
 CLASS="application"
 >squid</SPAN
-> para servir sÛlo al
+> para servir s√≥lo al
       computador donde se instala, para servir otros computadores de
       su red debe (1) agregar un <SPAN
 CLASS="acronym"
@@ -4526,8 +4526,8 @@ CLASS="acronym"
       <SPAN
 CLASS="acronym"
 >HTTP</SPAN
->, se hace con lÌneas como Èstas en las
-      secciones apropiadas del archivo de configuraciÛn
+>, se hace con l√≠neas como √©stas en las
+      secciones apropiadas del archivo de configuraci√≥n
       <TT
 CLASS="filename"
 >/etc/squid.conf</TT
@@ -4540,7 +4540,7 @@ CLASS="screen"
 CLASS="screen"
 >&#13;	http_access allow red</PRE
 > 
-      Tras hacer cambios en la configuraciÛn puede reiniciarlo con
+      Tras hacer cambios en la configuraci√≥n puede reiniciarlo con
       <PRE
 CLASS="screen"
 >&#13;/etc/init.d/squid restart
@@ -4549,11 +4549,11 @@ CLASS="screen"
      </P
 ><P
 >&#13;      Puede comprobar que funciona o diagnosticar errores revisando
-      las bit·coras del directorio
+      las bit√°coras del directorio
       <TT
 CLASS="filename"
 >/var/log/squid</TT
->.  Desde los clientes podr·
+>.  Desde los clientes podr√°
       configurar el navegador para que emplee este proxy que por
       defecto atiende el puerto 3128.  Por ejemplo con
       <B
@@ -4583,11 +4583,11 @@ CLASS="application"
       en <SPAN
 CLASS="guimenuitem"
 >Advanced/Proxies</SPAN
-> despuÈs de elegir
+> despu√©s de elegir
       <SPAN
 CLASS="guimenu"
 >Edit/Preferences</SPAN
-> en el men˙ principal.
+> en el men√∫ principal.
     </P
 ><A
 NAME="AEN14176"
@@ -4625,44 +4625,44 @@ CLASS="acronym"
       <B
 CLASS="command"
 >lpr</B
-> es un cliente.  En esta secciÛn se
-      dan detalles mÌnimos para configurar una impresora en red, la 
-      configuraciÛn de una impresora local a un computador y la 
-      configuraciÛn b·sica de <TT
+> es un cliente.  En esta secci√≥n se
+      dan detalles m√≠nimos para configurar una impresora en red, la 
+      configuraci√≥n de una impresora local a un computador y la 
+      configuraci√≥n b√°sica de <TT
 CLASS="filename"
 >/etc/printcap</TT
 > puede
-      consultarse en la secciÛn <A
+      consultarse en la secci√≥n <A
 HREF="x9697.htm#impresora"
->la secciÛn de nombre <I
+>la secci√≥n de nombre <I
 >Impresora</I
-> en CapÌtulo 5</A
+> en Cap√≠tulo 5</A
 > y
       el uso de la impresora una vez configurada en
       <A
 HREF="c2347.htm#impresion-y-formatos-para-impresion"
->la secciÛn de nombre <I
->ImpresiÛn y formatos para impresiÛn</I
-> en CapÌtulo 3</A
+>la secci√≥n de nombre <I
+>Impresi√≥n y formatos para impresi√≥n</I
+> en Cap√≠tulo 3</A
 >.
     </P
 ><P
 >La impresora de la red debe conectarse a un computador y
       configurarse como local en ese computador.  En el resto de
       computadores debe configurarse como impresora remota. Por ejemplo
-      si el comptuador al que est· conectado la impresora es
+      si el comptuador al que est√° conectado la impresora es
       <TT
 CLASS="literal"
 >rojo.micolegio.edu.co</TT
-> y allÌ se configura una impresora
+> y all√≠ se configura una impresora
       con nombre <TT
 CLASS="literal"
 >psprn</TT
->, en los dem·s computadores
+>, en los dem√°s computadores
       en el archivo <TT
 CLASS="filename"
 >/etc/printcap</TT
-> debe haber lÌneas 
+> debe haber l√≠neas 
       como:
       <PRE
 CLASS="screen"
@@ -4676,10 +4676,10 @@ NAME="AEN14196"
 ></A
 ><P
 >En el
-       archivo de configuraciÛn de impresoras, este "campo" en
+       archivo de configuraci√≥n de impresoras, este "campo" en
        el registro de una impresora indica que se trata de una
        impresora remota y permite especificar el nombre del computador
-       al que est· conectada.
+       al que est√° conectada.
      </P
 ><P
 >&#13;       El servidor <B
@@ -4689,17 +4689,17 @@ CLASS="command"
        arranque de <TT
 CLASS="literal"
 >rojo</TT
->, recibe conexiones sÛlo de las 
-       m·quinas especificadas en <TT
+>, recibe conexiones s√≥lo de las 
+       m√°quinas especificadas en <TT
 CLASS="filename"
 >/etc/hosts.equiv</TT
 > o
        <TT
 CLASS="filename"
 >/etc/hosts.lpd</TT
-> y podr· entonces imprimir
-       trabajos iniciados  por usuarios en tales m·quinas (agregue a uno
-       de esos archivos los computadores clientes que podr·n imprimir).  
+> y podr√° entonces imprimir
+       trabajos iniciados  por usuarios en tales m√°quinas (agregue a uno
+       de esos archivos los computadores clientes que podr√°n imprimir).  
        Para restringir acceso a una impresora de otra forma,  en 
        <TT
 CLASS="filename"
@@ -4712,7 +4712,7 @@ CLASS="literal"
        <TT
 CLASS="literal"
 >rm</TT
-> para indicar que tal impreso sÛlo imprimir·
+> para indicar que tal impreso s√≥lo imprimir√°
        trabajos de usuarios que tengan una cuenta en el mismo computador.
      </P
 ></DIV
@@ -4748,20 +4748,20 @@ TARGET="_top"
        <I
 CLASS="citetitle"
 >NET-3-HOWTO</I
-> SecciÛn 5.10.  Network
+> Secci√≥n 5.10.  Network
        Security and access control.
        </P
 ></LI
 ></UL
 ><H2
 CLASS="BRIDGEHEAD"
->ConfiguraciÛn de servicios b·sicos</H2
+>Configuraci√≥n de servicios b√°sicos</H2
 ><P
 ></P
 ><UL
 ><LI
 ><P
->Para conocer m·s sobre la configuraciÛn de 
+>Para conocer m√°s sobre la configuraci√≥n de 
 	<TT
 CLASS="literal"
 >inetd</TT
@@ -4769,7 +4769,7 @@ CLASS="literal"
 CLASS="literal"
 >tcpd</TT
 >,
-	puede consultar las p·ginas man de inetd, tcpd y hosts_access.</P
+	puede consultar las p√°ginas man de inetd, tcpd y hosts_access.</P
 ></LI
 ><LI
 ><P
@@ -4816,7 +4816,7 @@ CLASS="BRIDGEHEAD"
 ><UL
 ><LI
 ><P
->La versiÛn 3 de este protocolo est· descrita en el
+>La versi√≥n 3 de este protocolo est√° descrita en el
 	<SPAN
 CLASS="acronym"
 >RFC</SPAN
@@ -4829,7 +4829,7 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->P·ginas del manual de <TT
+>P√°ginas del manual de <TT
 CLASS="filename"
 >exports</TT
 >
@@ -4865,7 +4865,7 @@ CLASS="acronym"
 ><UL
 ><LI
 ><P
->Puede consultar una exposiciÛn no tÈcnica sobre
+>Puede consultar una exposici√≥n no t√©cnica sobre
 	<SPAN
 CLASS="acronym"
 >DNS</SPAN
@@ -4906,7 +4906,7 @@ TARGET="_top"
 CLASS="application"
 >djbdns</SPAN
 > es otro servidor de nombre (no 
-	tan popular), en su p·gina web puede consultarse informaciÛn 
+	tan popular), en su p√°gina web puede consultarse informaci√≥n 
 	concisa sobre <SPAN
 CLASS="acronym"
 >DNS</SPAN
@@ -4919,7 +4919,7 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->Una explicaciÛn corta para la configuraciÛn de
+>Una explicaci√≥n corta para la configuraci√≥n de
 	<SPAN
 CLASS="acronym"
 >DNS</SPAN
@@ -4927,7 +4927,7 @@ CLASS="acronym"
 CLASS="acronym"
 >LAN</SPAN
 > en
-	este artÌculo de Linux Gazette: <A
+	este art√≠culo de Linux Gazette: <A
 HREF="http://www.linuxgazette.com/issue44/pollman/dns.html"
 TARGET="_top"
 >http://www.linuxgazette.com/issue44/pollman/dns.html</A
@@ -4954,8 +4954,8 @@ CLASS="literal"
 	Debian, en el directorio <TT
 CLASS="filename"
 >/usr/doc/nis</TT
-> encontrar· un
-       documento muy pr·ctico y corto:
+> encontrar√° un
+       documento muy pr√°ctico y corto:
        <TT
 CLASS="filename"
 >nis.debian.howto</TT
@@ -4970,8 +4970,8 @@ TARGET="_top"
 ><SPAN
 CLASS="acronym"
 >NIS</SPAN
-> puede configurarse de forma m·s
-       segura de la presentada en esta guÌa, puede manejar sus propios
+> puede configurarse de forma m√°s
+       segura de la presentada en esta gu√≠a, puede manejar sus propios
 	archivos de claves y grupos, permite tener servidores maestros
        y esclavos y muchas otras posibilidades que se describen
        brevemente en ese archivo.
@@ -4979,7 +4979,7 @@ CLASS="acronym"
 ></LI
 ><LI
 ><P
->Una explicaciÛn sobre generalidades de <SPAN
+>Una explicaci√≥n sobre generalidades de <SPAN
 CLASS="acronym"
 >NIS</SPAN
 > en:
@@ -4991,7 +4991,7 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->Puede averiguar m·s sobre <SPAN
+>Puede averiguar m√°s sobre <SPAN
 CLASS="acronym"
 >NIS</SPAN
 > y sus
@@ -5003,7 +5003,7 @@ HREF="http://www.linuxdoc.org/HOWTO/NIS-HOWTO/index.html"
 TARGET="_top"
 >http://www.linuxdoc.org/HOWTO/NIS-HOWTO/index.html</A
 >
-	o en el capÌtulo "The Network Information System" de
+	o en el cap√≠tulo "The Network Information System" de
        "<I
 CLASS="citetitle"
 >Linux Network Administrators Guide</I
@@ -5048,11 +5048,11 @@ CLASS="acronym"
 ><UL
 ><LI
 ><P
->Para saber m·s sobre <SPAN
+>Para saber m√°s sobre <SPAN
 CLASS="acronym"
 >CVS</SPAN
 > puede
-       consultar la p·gina man. En Internet puede consultar
+       consultar la p√°gina man. En Internet puede consultar
 	"<I
 CLASS="citetitle"
 >CVS--Concurrent Versions System</I
@@ -5067,7 +5067,7 @@ TARGET="_top"
 >Open Source
 	 Development With CVS</A
 >. En particular sobre la
-       configuraciÛn de <SPAN
+       configuraci√≥n de <SPAN
 CLASS="application"
 >syncmail</SPAN
 > y <SPAN
@@ -5089,7 +5089,7 @@ CLASS="BRIDGEHEAD"
 ><UL
 ><LI
 ><P
->EspecificaciÛn de exim 3.3:
+>Especificaci√≥n de exim 3.3:
        <A
 HREF="http://www.exim.org/exim-html-3.30/doc/html/spec.html"
 TARGET="_top"
@@ -5105,22 +5105,22 @@ TARGET="_top"
 ><UL
 ><LI
 ><P
->Puede consultar m·s sobre <SPAN
+>Puede consultar m√°s sobre <SPAN
 CLASS="acronym"
 >CGI</SPAN
 >s en la
-	especificaciÛn: <A
+	especificaci√≥n: <A
 HREF="http://cgi-spec.golux.com/"
 TARGET="_top"
 >http://cgi-spec.golux.com/</A
 >
-	y m·s sobre la configuraciÛn de Apache para usar CGIs en este
+	y m√°s sobre la configuraci√≥n de Apache para usar CGIs en este
 	tutorial:
 	<A
 HREF="http://httpd.apache.org/docs/howto/cgi.html.html"
 TARGET="_top"
 >&#13;	  Dynamic Content with CGI</A
-> y en la especificaciÛn propu.
+> y en la especificaci√≥n propu.
        </P
 ></LI
 ></UL
@@ -5153,12 +5153,12 @@ CLASS="literal"
 	   <SPAN
 CLASS="application"
 >inetd</SPAN
->, despuÈs
-	 revise la respuesta que este da a una conexiÛn empleando
+>, despu√©s
+	 revise la respuesta que este da a una conexi√≥n empleando
 	 <B
 CLASS="command"
 >telnet</B
->. Describa los pasos que siguiÛ.</A
+>. Describa los pasos que sigui√≥.</A
 ></DT
 ></DL
 ></DD
@@ -5175,7 +5175,7 @@ CLASS="acronym"
 ><DT
 >2.1. <A
 HREF="x12937.htm#servred.servdns.1"
->Desde el intÈrprete de comandos øCÛmo puede determinar
+>Desde el int√©rprete de comandos ¬øC√≥mo puede determinar
 	 la <SPAN
 CLASS="acronym"
 >IP</SPAN
@@ -5190,11 +5190,11 @@ CLASS="acronym"
 	 <SPAN
 CLASS="acronym"
 >IP</SPAN
-> 204.152.184.85 y la direcciÛn de correo
-	 del contacto tÈcnico de <SPAN
+> 204.152.184.85 y la direcci√≥n de correo
+	 del contacto t√©cnico de <SPAN
 CLASS="systemitem"
 >sourceforge.net</SPAN
->?  øCu·les son
+>?  ¬øCu√°les son
 	 esos datos?</A
 ></DT
 ></DL
@@ -5212,14 +5212,14 @@ CLASS="acronym"
 ><DT
 >3.1. <A
 HREF="x12937.htm#servred.clinfs.1"
->En su m·quina cree los directorios <TT
+>En su m√°quina cree los directorios <TT
 CLASS="filename"
 >/aux</TT
 > y <TT
 CLASS="filename"
 >/mnt/tmp</TT
 >, ponga en el primero
-	 alg˙n archivo.  DespuÈs monte vÌa <SPAN
+	 alg√∫n archivo.  Despu√©s monte v√≠a <SPAN
 CLASS="acronym"
 >NFS</SPAN
 > el
@@ -5227,11 +5227,11 @@ CLASS="acronym"
 CLASS="filename"
 >/aux</TT
 > y
-	 mÛntelo en el directorio <TT
+	 m√≥ntelo en el directorio <TT
 CLASS="filename"
 >/mnt/tmp</TT
->. DespuÈs de que
-	 funcione, desmÛntelo.</A
+>. Despu√©s de que
+	 funcione, desm√≥ntelo.</A
 ></DT
 ><DT
 >3.2. <A
@@ -5244,7 +5244,7 @@ CLASS="filename"
 CLASS="filename"
 >/opt</TT
 > en otro
-	 computador de la red.  øQuÈ debe hacer para que en ese
+	 computador de la red.  ¬øQu√© debe hacer para que en ese
 	 computador se emplee la ruta <TT
 CLASS="filename"
 >/opt/bin</TT
@@ -5278,7 +5278,7 @@ CLASS="application"
 ><DT
 >4.2. <A
 HREF="x12937.htm#servred.mail.2"
->DespuÈs de configurar <SPAN
+>Despu√©s de configurar <SPAN
 CLASS="acronym"
 >NIS</SPAN
 >,
@@ -5290,7 +5290,7 @@ CLASS="acronym"
 CLASS="filename"
 >/var/mail</TT
 > del servidor
-	 en un cliente con la configuraciÛn del ejercicio anterior.
+	 en un cliente con la configuraci√≥n del ejercicio anterior.
 	 Tras esto compruebe que cada usuario puede revisar su correo
 	 con el programa <B
 CLASS="command"
@@ -5305,7 +5305,7 @@ HREF="x12937.htm#servred.mail.3"
 	 <B
 CLASS="command"
 >mail</B
-> config˙relo de forma que lea correo
+> config√∫relo de forma que lea correo
 	 de la cola <TT
 CLASS="filename"
 >/var/mail</TT
@@ -5375,12 +5375,12 @@ CLASS="literal"
 	   <SPAN
 CLASS="application"
 >inetd</SPAN
->, despuÈs
-	 revise la respuesta que este da a una conexiÛn empleando
+>, despu√©s
+	 revise la respuesta que este da a una conexi√≥n empleando
 	 <B
 CLASS="command"
 >telnet</B
->. Describa los pasos que siguiÛ.</P
+>. Describa los pasos que sigui√≥.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -5390,13 +5390,13 @@ CLASS="answer"
 >A <TT
 CLASS="filename"
 >/etc/inetd.conf</TT
-> debe agregarse la lÌnea: 
+> debe agregarse la l√≠nea: 
 	   <PRE
 CLASS="screen"
 >&#13;	     
 	     daytime stream tcp nowait root internal</PRE
 > 
-	   DespuÈs de reiniciar:
+	   Despu√©s de reiniciar:
 	   <B
 CLASS="command"
 >/etc/init.d/inetd restart</B
@@ -5433,7 +5433,7 @@ NAME="servred.servdns.1"
 ></A
 ><B
 >2.1. </B
->Desde el intÈrprete de comandos øCÛmo puede determinar
+>Desde el int√©rprete de comandos ¬øC√≥mo puede determinar
 	 la <SPAN
 CLASS="acronym"
 >IP</SPAN
@@ -5448,11 +5448,11 @@ CLASS="acronym"
 	 <SPAN
 CLASS="acronym"
 >IP</SPAN
-> 204.152.184.85 y la direcciÛn de correo
-	 del contacto tÈcnico de <SPAN
+> 204.152.184.85 y la direcci√≥n de correo
+	 del contacto t√©cnico de <SPAN
 CLASS="systemitem"
 >sourceforge.net</SPAN
->?  øCu·les son
+>?  ¬øCu√°les son
 	 esos datos?</P
 ></DIV
 ><DIV
@@ -5490,14 +5490,14 @@ NAME="servred.clinfs.1"
 ></A
 ><B
 >3.1. </B
->En su m·quina cree los directorios <TT
+>En su m√°quina cree los directorios <TT
 CLASS="filename"
 >/aux</TT
 > y <TT
 CLASS="filename"
 >/mnt/tmp</TT
 >, ponga en el primero
-	 alg˙n archivo.  DespuÈs monte vÌa <SPAN
+	 alg√∫n archivo.  Despu√©s monte v√≠a <SPAN
 CLASS="acronym"
 >NFS</SPAN
 > el
@@ -5505,11 +5505,11 @@ CLASS="acronym"
 CLASS="filename"
 >/aux</TT
 > y
-	 mÛntelo en el directorio <TT
+	 m√≥ntelo en el directorio <TT
 CLASS="filename"
 >/mnt/tmp</TT
->. DespuÈs de que
-	 funcione, desmÛntelo.</P
+>. Despu√©s de que
+	 funcione, desm√≥ntelo.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -5524,12 +5524,12 @@ CLASS="command"
 	  Agregar a <TT
 CLASS="filename"
 >/etc/exports</TT
-> la lÌnea:
+> la l√≠nea:
 	  <PRE
 CLASS="screen"
 >&#13;/aux localhost(rw)</PRE
 >
-	y despuÈs <B
+	y despu√©s <B
 CLASS="command"
 >mount -t nfs localhost:/aux /mnt/tmp</B
 ></P
@@ -5553,7 +5553,7 @@ CLASS="filename"
 CLASS="filename"
 >/opt</TT
 > en otro
-	 computador de la red.  øQuÈ debe hacer para que en ese
+	 computador de la red.  ¬øQu√© debe hacer para que en ese
 	 computador se emplee la ruta <TT
 CLASS="filename"
 >/opt/bin</TT
@@ -5569,7 +5569,7 @@ CLASS="answer"
 ><P
 ><B
 > </B
->En alg˙n archivo de inicializaciÛn (preferiblemente
+>En alg√∫n archivo de inicializaci√≥n (preferiblemente
 	  <TT
 CLASS="filename"
 >/etc/security/pam_env.conf</TT
@@ -5616,8 +5616,8 @@ CLASS="answer"
 >Ejecutar <B
 CLASS="command"
 >eximconfig</B
-> y elegir configuraciÛn 
-	   como sistema satÈlite como smart host usar servidor.  DespuÈs
+> y elegir configuraci√≥n 
+	   como sistema sat√©lite como smart host usar servidor.  Despu√©s
 	   <B
 CLASS="command"
 >mail -v root@servidor</B
@@ -5634,7 +5634,7 @@ NAME="servred.mail.2"
 ></A
 ><B
 >4.2. </B
->DespuÈs de configurar <SPAN
+>Despu√©s de configurar <SPAN
 CLASS="acronym"
 >NIS</SPAN
 >,
@@ -5646,7 +5646,7 @@ CLASS="acronym"
 CLASS="filename"
 >/var/mail</TT
 > del servidor
-	 en un cliente con la configuraciÛn del ejercicio anterior.
+	 en un cliente con la configuraci√≥n del ejercicio anterior.
 	 Tras esto compruebe que cada usuario puede revisar su correo
 	 con el programa <B
 CLASS="command"
@@ -5676,7 +5676,7 @@ CLASS="filename"
 CLASS="screen"
 >&#13;servidor.micolegio.edu.co:/var/mail /var/mail nfs rw 0 0 </PRE
 >
-	 y despuÈs <B
+	 y despu√©s <B
 CLASS="command"
 >mount -t nfs servidor.micolegio.edu.co:/var/mail /var/mail</B
 ></P
@@ -5696,7 +5696,7 @@ NAME="servred.mail.3"
 	 <B
 CLASS="command"
 >mail</B
-> config˙relo de forma que lea correo
+> config√∫relo de forma que lea correo
 	 de la cola <TT
 CLASS="filename"
 >/var/mail</TT
@@ -5718,7 +5718,7 @@ CLASS="answer"
 >En el caso de <B
 CLASS="command"
 >mutt</B
-> esa es la configuraciÛn por
+> esa es la configuraci√≥n por
 	 defecto.</P
 ></DIV
 ></DIV
@@ -5780,7 +5780,7 @@ CLASS="answer"
 ><P
 ><B
 > </B
->Entre los mÛdulos que carga apache, configurados en
+>Entre los m√≥dulos que carga apache, configurados en
 	  <TT
 CLASS="filename"
 >/etc/apache/httpd.conf</TT
@@ -5818,7 +5818,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->conexiÛn del inglÈs 
+>conexi√≥n del ingl√©s 
 	<I
 CLASS="foreignphrase"
 >sockets</I
@@ -5841,7 +5841,7 @@ VALIGN="TOP"
 WIDTH="95%"
 ><P
 >El primer argumento corresponde al 
-	nombre del comando, es ˙til al emplear <B
+	nombre del comando, es √∫til al emplear <B
 CLASS="command"
 >tcpd</B
 >
@@ -5863,7 +5863,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Hilos del inglÈs
+>Hilos del ingl√©s
 	   <I
 CLASS="foreignphrase"
 >threads</I
@@ -5885,7 +5885,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->DepÛsito es la traducciÛn que empleamos para
+>Dep√≥sito es la traducci√≥n que empleamos para
 	    <I
 CLASS="foreignphrase"
 >cache</I
@@ -5908,8 +5908,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Hay 13 servidores principales que manejan la raÌz de
-	 este ·rbol.
+>Hay 13 servidores principales que manejan la ra√≠z de
+	 este √°rbol.
 	</P
 ></TD
 ></TR
@@ -5966,7 +5966,7 @@ CLASS="foreignphrase"
 >Network File System</I
 > que en
 	castellano es sistema de archivos en red. Anque en el momento de
-	este escrito hay versiÛn 4, en Debian est· implementada la 3.
+	este escrito hay versi√≥n 4, en Debian est√° implementada la 3.
       </P
 ></TD
 ></TR
@@ -5985,19 +5985,19 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->DespuÈs de montar <TT
+>Despu√©s de montar <TT
 CLASS="filename"
 >/usr</TT
 > del servidor como <TT
 CLASS="filename"
 >/opt</TT
-> de cada cliente, podr·
-       ejecutar algunos programas que est·n en el servidor, desde el
+> de cada cliente, podr√°
+       ejecutar algunos programas que est√°n en el servidor, desde el
        directorio <TT
 CLASS="filename"
 >/opt</TT
-> (a˙n
-       para m·s comodidad puede agregar las rutas <TT
+> (a√∫n
+       para m√°s comodidad puede agregar las rutas <TT
 CLASS="filename"
 >/opt/bin</TT
 > a la variable de entorno
@@ -6027,7 +6027,7 @@ CLASS="foreignphrase"
 >Network Information
 	 System</I
 > que en castellano es sistema de
-	informaciÛn de la red
+	informaci√≥n de la red
        </P
 ></TD
 ></TR
@@ -6050,17 +6050,17 @@ WIDTH="95%"
 CLASS="acronym"
 >CVS</SPAN
 > tiene 2 o
-      3 campos, el primero es el nombre con el que se conectar· el
+      3 campos, el primero es el nombre con el que se conectar√° el
       usuario, el segundo la clave encriptada con
       <SPAN
 CLASS="acronym"
 >DES</SPAN
 > (ver <A
 HREF="x5590.htm"
->AdministraciÛn de
+>Administraci√≥n de
       usuarios</A
 >) y el tercer opcional es el nombre del usuario
-      local a nombre del cual modificar· el repositorio.  Este archivo
+      local a nombre del cual modificar√° el repositorio.  Este archivo
       puede administrarse con <SPAN
 CLASS="application"
 >htpasswd</SPAN
@@ -6131,7 +6131,7 @@ CLASS="application"
 > de <SPAN
 CLASS="systemitem"
 >primaria2</SPAN
-> se conectarÌa por
+> se conectar√≠a por
 	  el puerto 25 a <SPAN
 CLASS="application"
 >exim</SPAN
@@ -6140,25 +6140,25 @@ CLASS="application"
 CLASS="systemitem"
 >bachillerato3</SPAN
 > y
-	  enviarÌa el mensaje <TT
+	  enviar√≠a el mensaje <TT
 CLASS="literal"
 >MAIL FROM:
 	   pepe@primaria2.micolegio.edu.co</TT
->, despuÈs enviarÌa
+>, despu√©s enviar√≠a
 	  <TT
 CLASS="literal"
 >RCPT TO: paz@bachillerato3.micolegio.edu.co</TT
 >,
-	  despuÈs <TT
+	  despu√©s <TT
 CLASS="literal"
 >DATA</TT
-> y a continuaciÛn el cuerpo
+> y a continuaci√≥n el cuerpo
 	  del correo comenzando con el encabezado de acuerdo al
 	  <SPAN
 CLASS="acronym"
 >RFC</SPAN
 > 822, con un cuerpo de mensaje que
-	  emplee 7 bits y terminando con una lÌnea que sÛlo tenga un
+	  emplee 7 bits y terminando con una l√≠nea que s√≥lo tenga un
 	   punto. Por ejemplo</P
 ><PRE
 CLASS="screen"
@@ -6178,7 +6178,7 @@ CLASS="acronym"
 CLASS="command"
 >telnet localhost 25</B
 >.  Claro
-	  resulta m·s transparente empleando directamente
+	  resulta m√°s transparente empleando directamente
 	  <SPAN
 CLASS="application"
 >exim</SPAN
@@ -6221,7 +6221,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Otro caso tÌpico que evita tener
+>Otro caso t√≠pico que evita tener
       <SPAN
 CLASS="acronym"
 >MTA</SPAN
@@ -6252,11 +6252,11 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->&#13;	  Cada lÌnea de <TT
+>&#13;	  Cada l√≠nea de <TT
 CLASS="filename"
 >/etc/email-adresses</TT
-> ser·
-	  an·loga a la siguiente, que indica reescribir la direcciÛn
+> ser√°
+	  an√°loga a la siguiente, que indica reescribir la direcci√≥n
 	  del usuario <SPAN
 CLASS="systemitem"
 >pepe</SPAN
@@ -6310,16 +6310,16 @@ CLASS="command"
 	<SPAN
 CLASS="acronym"
 >FTP</SPAN
-> envÌa direcciÛn y puerto al que debe
-	conectarse el cliente para recibir la informaciÛn.  Si la
+> env√≠a direcci√≥n y puerto al que debe
+	conectarse el cliente para recibir la informaci√≥n.  Si la
 	respuesta es por ejemplo:</P
 ><PRE
 CLASS="screen"
 >&#13;227 Entering Passive Mode (152,2,210,81,230,214)
 	 </PRE
 ><P
->&#13;	el cliente debe abrir otra conexiÛn para recibir los datos con
-	la m·quina con <SPAN
+>&#13;	el cliente debe abrir otra conexi√≥n para recibir los datos con
+	la m√°quina con <SPAN
 CLASS="acronym"
 >IP</SPAN
 > <SPAN
@@ -6336,7 +6336,7 @@ CLASS="screen"
 >&#13;telnet 152.2.210.81 59094
 	 </PRE
 ><P
->&#13;	la conexiÛn abierta recibir· el contenido del archivo
+>&#13;	la conexi√≥n abierta recibir√° el contenido del archivo
 	<TT
 CLASS="filename"
 >README</TT
@@ -6344,7 +6344,7 @@ CLASS="filename"
 	<SPAN
 CLASS="acronym"
 >FTP</SPAN
-> en modo pasivo, podrÌa tambiÈn
+> en modo pasivo, podr√≠a tambi√©n
 	indicarse modo activo empleando port en lugar de
 	<B
 CLASS="command"
@@ -6353,12 +6353,12 @@ CLASS="command"
 CLASS="command"
 >port</B
 >
-	indica al servidor que inice una conexiÛn con cierta direcciÛn
-	y puerto para realizar la transmisiÛn, por ejemplo si en el
-	cliente con direcciÛn <SPAN
+	indica al servidor que inice una conexi√≥n con cierta direcci√≥n
+	y puerto para realizar la transmisi√≥n, por ejemplo si en el
+	cliente con direcci√≥n <SPAN
 CLASS="systemitem"
 >1.2.3.4</SPAN
-> se espera una conexiÛn
+> se espera una conexi√≥n
 	en el puerto 8000:
        </P
 ><PRE

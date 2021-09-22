@@ -1,24 +1,24 @@
 <HTML
 ><HEAD
 ><TITLE
->CompilaciÛn del kernel</TITLE
+>Compilaci√≥n del kernel</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="ActualizaciÛn del kernel de
+TITLE="Actualizaci√≥n del kernel de
    Debian Linux"
 HREF="a14885.htm"><LINK
 REL="PREVIOUS"
-TITLE="ActualizaciÛn del kernel de
+TITLE="Actualizaci√≥n del kernel de
    Debian Linux"
 HREF="a14885.htm"><LINK
 REL="NEXT"
-TITLE="InstalaciÛn del nuevo kernel"
+TITLE="Instalaci√≥n del nuevo kernel"
 HREF="x15453.htm"></HEAD
 ><BODY
 CLASS="sect1"
@@ -39,7 +39,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -56,7 +56,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->ApÈndice C. ActualizaciÛn del <I
+>Ap√©ndice C. Actualizaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 > de
@@ -81,7 +81,7 @@ CLASS="sect1"
 CLASS="sect1"
 ><A
 NAME="AEN14983"
->CompilaciÛn del <I
+>Compilaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 ></A
@@ -94,8 +94,8 @@ CLASS="foreignphrase"
 > no se necesita ser root ya
     que se puede realizar desde el directorio de un usuario, siempre y
     cuando se disponga de suficiente espacio en disco y de las
-    herramientas de compilaciÛn instaladas. En este instructivo se
-    utiliza la cuenta del root para efectos pr·cticos.
+    herramientas de compilaci√≥n instaladas. En este instructivo se
+    utiliza la cuenta del root para efectos pr√°cticos.
    </P
 ><DIV
 CLASS="sect2"
@@ -103,10 +103,10 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN14988"
->ObtenciÛn y descompresiÛn de los fuentes</A
+>Obtenci√≥n y descompresi√≥n de los fuentes</A
 ></H2
 ><P
->Obtenga una copia del cÛdigo fuentes del
+>Obtenga una copia del c√≥digo fuentes del
      <I
 CLASS="foreignphrase"
 >kernel</I
@@ -123,7 +123,7 @@ TARGET="_top"
      ejemplo, para el <I
 CLASS="foreignphrase"
 >kernel</I
-> versiÛn
+> versi√≥n
      2.2.18 el archivo a obtener es ya sea
      <TT
 CLASS="filename"
@@ -134,7 +134,7 @@ CLASS="filename"
 >linux-2.2.18.tgz</TT
 >
      (empaquetado con tar y comprimido con gzip). Los archivos
-     comprimidos con bzip2 normalmente son de menor tamaÒo.
+     comprimidos con bzip2 normalmente son de menor tama√±o.
     </P
 ></DIV
 ><DIV
@@ -143,11 +143,11 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN14997"
->DescompresiÛn de los fuentes</A
+>Descompresi√≥n de los fuentes</A
 ></H2
 ><P
->Antes de proceder a su descompresiÛn, verifique que disponga
-     de 70 o m·s MBytes libres en el disco duro, por ejemplo con el
+>Antes de proceder a su descompresi√≥n, verifique que disponga
+     de 70 o m√°s MBytes libres en el disco duro, por ejemplo con el
      comando df:
     </P
 ><PRE
@@ -190,7 +190,7 @@ CLASS="filename"
 TYPE="1"
 ><LI
 ><P
->ya existe un vÌnculo o un directorio con ese
+>ya existe un v√≠nculo o un directorio con ese
 	 nombre</P
 ></LI
 ><LI
@@ -212,7 +212,7 @@ TYPE="1"
 TYPE="1"
 ><LI
 ><P
->Si decidiÛ trabajar con el archivo
+>Si decidi√≥ trabajar con el archivo
 	<TT
 CLASS="filename"
 >linux-2.2.18.tar.bz2</TT
@@ -237,13 +237,13 @@ CLASS="prompt"
 >[root]#</TT
 > <B
 CLASS="command"
->tar ≠≠use-compress-program bunzip2 -xvf linux-2.2.18.tar.bz2</B
+>tar ¬≠¬≠use-compress-program bunzip2 -xvf linux-2.2.18.tar.bz2</B
 >
 </PRE
 ></LI
 ><LI
 ><P
->Si optÛ por usar el archivo <TT
+>Si opt√≥ por usar el archivo <TT
 CLASS="filename"
 >linux-2.2.18.tgz</TT
 >, el comando a
@@ -267,15 +267,15 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN15032"
->CreaciÛn de un archivo de configuraciÛn</A
+>Creaci√≥n de un archivo de configuraci√≥n</A
 ></H2
 ><P
->La definiciÛn de la configuraciÛn del nuevo
+>La definici√≥n de la configuraci√≥n del nuevo
      <I
 CLASS="foreignphrase"
 >kernel</I
 > es el punto crucial de la
-     compilaciÛn. Una buena configuraciÛn se alcanza sÛlamente:
+     compilaci√≥n. Una buena configuraci√≥n se alcanza s√≥lamente:
      </P
 ><P
 ></P
@@ -292,12 +292,12 @@ CLASS="foreignphrase"
 ></LI
 ><LI
 ><P
->Si define quÈ caracterÌsticas ofrecidas van a ser
+>Si define qu√© caracter√≠sticas ofrecidas van a ser
        soportadas por el nuevo <I
 CLASS="foreignphrase"
 >kernel</I
 >,
-       ya sea directamente dentro del n˙cleo o como mÛdulos.</P
+       ya sea directamente dentro del n√∫cleo o como m√≥dulos.</P
 ></LI
 ></OL
 ><P
@@ -340,7 +340,7 @@ CLASS="command"
 CLASS="command"
 >make config</B
 > ofrece un interfaz
-     primitivo basado en modo texto, sin ayuda ni men˙s. Los comandos
+     primitivo basado en modo texto, sin ayuda ni men√∫s. Los comandos
      <B
 CLASS="command"
 >make menuconfig</B
@@ -349,8 +349,8 @@ CLASS="command"
 >make
      xconfig</B
 > conducen a mejores interfaces de usuario, con
-     men˙s y quiz· lo m·s importante, con una ayuda contextual que
-     facilita en gran medida la configuraciÛn.
+     men√∫s y quiz√° lo m√°s importante, con una ayuda contextual que
+     facilita en gran medida la configuraci√≥n.
     </P
 ><P
 >Para el ejemplo se utiliza <B
@@ -362,12 +362,12 @@ CLASS="command"
 CLASS="command"
 >make xconfig</B
 >, pero
-      resulta m·s pr·ctica si no se dispone o no se quiere utilizar
+      resulta m√°s pr√°ctica si no se dispone o no se quiere utilizar
       <SPAN
 CLASS="application"
 >X Windows</SPAN
 >. Antes de proceder a
-      ejecutar este comando, c·mbiese al directorio apropiado:
+      ejecutar este comando, c√°mbiese al directorio apropiado:
     </P
 ><PRE
 CLASS="screen"
@@ -394,7 +394,7 @@ CLASS="command"
 </PRE
 ><P
 >Las diferentes opciones disponibles a partir
-     del men˙ inicial se presentan en forma ampliada en la siguiente
+     del men√∫ inicial se presentan en forma ampliada en la siguiente
      figura:
      </P
 ><DIV
@@ -409,7 +409,7 @@ CLASS="mediaobject"
 ><P
 ><IMG
 SRC="ck2218.png"
-ALT="Opciones de configuraciÛn del kernel 2.2.18"
+ALT="Opciones de configuraci√≥n del kernel 2.2.18"
 ></IMG
 ></P
 ></DIV
@@ -417,7 +417,7 @@ ALT="Opciones de configuraciÛn del kernel 2.2.18"
 ></P
 ></DIV
 ><P
->Un ejemplo de uno de los submen˙s expandido
+>Un ejemplo de uno de los submen√∫s expandido
      (<SPAN
 CLASS="guisubmenu"
 >Processor type and features</SPAN
@@ -436,7 +436,7 @@ CLASS="mediaobject"
 ><P
 ><IMG
 SRC="ckpr2218.png"
-ALT="Submenu expandido en la configuraciÛn del kernel 2.2.18"
+ALT="Submenu expandido en la configuraci√≥n del kernel 2.2.18"
 ></IMG
 ></P
 ></DIV
@@ -445,22 +445,22 @@ ALT="Submenu expandido en la configuraciÛn del kernel 2.2.18"
 ></DIV
 ><P
 >En esta pantalla se puede apreciar por ejemplo que en forma
-     predeterminada se ha desactivado la emulaciÛn matem·tica (<SPAN
+     predeterminada se ha desactivado la emulaci√≥n matem√°tica (<SPAN
 CLASS="guilabel"
 >Math
      emulation</SPAN
->) y que si se desea habilitar Èsta quedarÌa incluida
+>) y que si se desea habilitar √©sta quedar√≠a incluida
      necesariamente dentro del <I
 CLASS="foreignphrase"
 >kernel</I
-> y no como un mÛdulo (como lo
-     indican los parentesis rectangulares de esa opciÛn), contrario a
-     las opciones que est·n acompaÒadas por parÈntesis
-     angulares (&#38;lt;&#62;), que pueden compilarse o no como mÛdulos
+> y no como un m√≥dulo (como lo
+     indican los parentesis rectangulares de esa opci√≥n), contrario a
+     las opciones que est√°n acompa√±adas por par√©ntesis
+     angulares (&#38;lt;&#62;), que pueden compilarse o no como m√≥dulos
      si se desea.
     </P
 ><P
->Continuando con el ejemplo, si se ingresa al sub-men˙
+>Continuando con el ejemplo, si se ingresa al sub-men√∫
      <SPAN
 CLASS="guisubmenu"
 >Processor Family</SPAN
@@ -496,12 +496,12 @@ TYPE="1"
 CLASS="keycap"
 >Enter</B
 >] recorra todas y cada una de las opciones de los
-       submen˙s disponibles a partir del men˙ principal,</P
+       submen√∫s disponibles a partir del men√∫ principal,</P
 ></LI
 ><LI
 ><P
 > Con la ayuda de la barra espaciadora defina si habilita o
-       no el soporte para una u otra caracterÌstica, y si lo hace en
+       no el soporte para una u otra caracter√≠stica, y si lo hace en
        forma integrada al <I
 CLASS="foreignphrase"
 >kernel</I
@@ -509,18 +509,18 @@ CLASS="foreignphrase"
        posible.</P
 ><P
 >Al oprimir la barra espaciadora una o varias
-       veces seg˙n se necesite, es posible que visualice:
+       veces seg√∫n se necesite, es posible que visualice:
       </P
 ><P
 ></P
 ><UL
 ><LI
 ><P
->Un nuevo sub-men˙.</P
+>Un nuevo sub-men√∫.</P
 ></LI
 ><LI
 ><P
->Un asterisco (en ocasiones acompaÒado de sub-opciones),
+>Un asterisco (en ocasiones acompa√±ado de sub-opciones),
 	 indicando que se va a compilar integrado al <I
 CLASS="foreignphrase"
 >kernel</I
@@ -532,7 +532,7 @@ CLASS="foreignphrase"
 >La letra <B
 CLASS="keycap"
 >M</B
-> (en ocasiones acompaÒada de
+> (en ocasiones acompa√±ada de
 	 sub-opciones), indicando que se va a compilar en forma
 	 modular.
 	</P
@@ -543,7 +543,7 @@ CLASS="keycap"
 CLASS="keycap"
 >X</B
 >, similar al asterisco, pero
-	 sÛlo para opciones de selecciÛn m˙ltiple con ˙nica
+	 s√≥lo para opciones de selecci√≥n m√∫ltiple con √∫nica
 	 alternativa.
 	</P
 ></LI
@@ -561,7 +561,7 @@ CLASS="foreignphrase"
 ><LI
 ><P
 >Cuando haya llevado a cabo por completo los puntos 1 y 2,
-       desde el men˙ principal seleccione la opciÛn exit y responda
+       desde el men√∫ principal seleccione la opci√≥n exit y responda
        con <B
 CLASS="keycap"
 >Y</B
@@ -569,11 +569,11 @@ CLASS="keycap"
 CLASS="foreignphrase"
 >Yes</I
 >)
-       para grabar la configuraciÛn resultante en el archivo
+       para grabar la configuraci√≥n resultante en el archivo
        <TT
 CLASS="filename"
 >.config</TT
->, de lo contrario tendr· que
+>, de lo contrario tendr√° que
        volver a realizar todo el proceso otra vez.</P
 ></LI
 ></OL
@@ -584,8 +584,8 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN15126"
->Una guÌa de apoyo para definir un archivo de
-     configuraciÛn</A
+>Una gu√≠a de apoyo para definir un archivo de
+     configuraci√≥n</A
 ></H2
 ><P
 >La ayuda contextual de disponible con <B
@@ -596,9 +596,9 @@ CLASS="command"
 CLASS="command"
 >make xconfig</B
 > es
-      quiz·s lo suficientemente apropiada para facilitar el proceso de
-      definiciÛn del archivo de configuraciÛn, no obstante aquÌ se
-      presenta alguna ilustraciÛn adicional. </P
+      quiz√°s lo suficientemente apropiada para facilitar el proceso de
+      definici√≥n del archivo de configuraci√≥n, no obstante aqu√≠ se
+      presenta alguna ilustraci√≥n adicional. </P
 ><P
 ></P
 ><DIV
@@ -611,8 +611,8 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta opciÛn viene desactivada en forma predeterminada,
-       deshabilitando el uso de cÛdigo experimental en el
+>Esta opci√≥n viene desactivada en forma predeterminada,
+       deshabilitando el uso de c√≥digo experimental en el
        <I
 CLASS="foreignphrase"
 >kernel</I
@@ -625,7 +625,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Bajo esta secciÛn es posible definir entre otros:</P
+>Bajo esta secci√≥n es posible definir entre otros:</P
 ><P
 ></P
 ><UL
@@ -636,18 +636,18 @@ CLASS="guisubmenu"
 CLASS="foreignphrase"
 >kernel</I
 > para su procesador
-	  utilice la ayuda contextual para mayor ilustraciÛn.
+	  utilice la ayuda contextual para mayor ilustraci√≥n.
 	 </P
 ></LI
 ><LI
 ><P
->EmulaciÛn del procesador matem·tico (˙til con equipos
-	  386 y similares que vienen sin Èl). Deshabilitada en forma
+>Emulaci√≥n del procesador matem√°tico (√∫til con equipos
+	  386 y similares que vienen sin √©l). Deshabilitada en forma
 	  predeterminada.</P
 ></LI
 ><LI
 ><P
->Soporte para sistemas con m·s de 1 procesador
+>Soporte para sistemas con m√°s de 1 procesador
 	  (<SPAN
 CLASS="acronym"
 >SMP</SPAN
@@ -690,13 +690,13 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Si por alguna razÛn desea generar un
+>Si por alguna raz√≥n desea generar un
        <I
 CLASS="foreignphrase"
 >kernel</I
-> monolÌtico, sin mÛdulos,
-       desactive esta opciÛn.  Lo normal es por el contrario, no
-       realizar ning˙n cambio, aceptando la opciÛn
+> monol√≠tico, sin m√≥dulos,
+       desactive esta opci√≥n.  Lo normal es por el contrario, no
+       realizar ning√∫n cambio, aceptando la opci√≥n
        predeterminada.</P
 ></DD
 ><DT
@@ -706,7 +706,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta secciÛn incluye entre otros, soporte para:</P
+>Esta secci√≥n incluye entre otros, soporte para:</P
 ><P
 ></P
 ><UL
@@ -727,7 +727,7 @@ CLASS="acronym"
 ></LI
 ><LI
 ><P
->AdministraciÛn Avanzada de EnergÌa (<SPAN
+>Administraci√≥n Avanzada de Energ√≠a (<SPAN
 CLASS="acronym"
 >APM</SPAN
 >).</P
@@ -749,12 +749,12 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Habilite esta opciÛn si desea que el
+>Habilite esta opci√≥n si desea que el
 	<I
 CLASS="foreignphrase"
 >kernel</I
-> autom·ticamente
-	configure algunos dispositivos perifÈricos.</P
+> autom√°ticamente
+	configure algunos dispositivos perif√©ricos.</P
 ></DD
 ><DT
 ><SPAN
@@ -763,7 +763,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Bajo esta secciÛn se presenta soporte para:</P
+>Bajo esta secci√≥n se presenta soporte para:</P
 ><P
 ></P
 ><UL
@@ -774,7 +774,7 @@ CLASS="guisubmenu"
 ><LI
 ><P
 >Soporte mejorado para dispositivos de
-	  almacenamiento est·ndar <SPAN
+	  almacenamiento est√°ndar <SPAN
 CLASS="acronym"
 >IDE</SPAN
 > y </P
@@ -789,7 +789,7 @@ CLASS="acronym"
 CLASS="acronym"
 >IDE</SPAN
 >,
-	ser· necesario habilitar el soporte para el disco
+	ser√° necesario habilitar el soporte para el disco
 	<SPAN
 CLASS="acronym"
 >IDE</SPAN
@@ -797,7 +797,7 @@ CLASS="acronym"
       </P
 ><P
 >Para el ejemplo, se aceptaron los valores predeterminados
-	propuestos sin realizar ning˙n cambio.
+	propuestos sin realizar ning√∫n cambio.
        </P
 ></DD
 ><DT
@@ -807,7 +807,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta secciÛn es de vital importancia para equipos que van
+>Esta secci√≥n es de vital importancia para equipos que van
 	a operar en red. Las opciones que en forma predeterminada
 	vienen habilitadas son:</P
 ><P
@@ -854,7 +854,7 @@ CLASS="guimenuitem"
 CLASS="guimenuitem"
 >Network firewalls</SPAN
 >, para
-	  permitir que Linux act˙e como un equipo "corta fuegos" con
+	  permitir que Linux act√∫e como un equipo "corta fuegos" con
 	  posibilidad de filtrar paquetes y protegerse de accesos no
 	  autorizados de Internet, e </P
 ></LI
@@ -865,20 +865,20 @@ CLASS="guimenuitem"
 >IP firewalling</SPAN
 >, para poder
 	 acceder a equipos remotos (por ejemplo de Internet)
-	 utilizando enmascaramiento a travÈs de un equipo "corta
+	 utilizando enmascaramiento a trav√©s de un equipo "corta
 	 fuegos", de tal forma que los equipos de la red local no son
 	 visibles al mundo exterior, evitando la necesidad de
-	 direcciones IP v·lidas. </P
+	 direcciones IP v√°lidas. </P
 ></LI
 ></UL
 ><P
->En la pr·ctica, estas dos opciones permiten por ejemplo,
+>En la pr√°ctica, estas dos opciones permiten por ejemplo,
 	poder utilizar en forma compartida para una red local una
-	conexiÛn a Internet a travÈs de una sola lÌnea telefÛnica,
-	disponiendo de una seguridad b·sica.
+	conexi√≥n a Internet a trav√©s de una sola l√≠nea telef√≥nica,
+	disponiendo de una seguridad b√°sica.
       </P
 ><P
->Adicionalmente, entre otras est·n las opciones que
+>Adicionalmente, entre otras est√°n las opciones que
 	permiten a Linux actuar como un enrutador o dar soporte a
 	protocolos tales como <SPAN
 CLASS="acronym"
@@ -900,7 +900,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta opciÛn, que permite dar soporte a correo de voz, fax
+>Esta opci√≥n, que permite dar soporte a correo de voz, fax
 	y otros dispositivos multimedia que inteoperan con modems,
 	viene deshabilitada en forma predeterminada.</P
 ></DD
@@ -911,10 +911,10 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->En forma predeterminada esta opciÛn viene habilitada,
+>En forma predeterminada esta opci√≥n viene habilitada,
 	pero si usted no tiene o no desea usar un disco, unidad de
 	cinta, unidad de CD-ROM o cualquier otra unidad tipo SCSI,
-	desactÌvela.</P
+	desact√≠vela.</P
 ></DD
 ><DT
 ><SPAN
@@ -923,7 +923,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta opciÛn que hace referencia a la<I
+>Esta opci√≥n que hace referencia a la<I
 CLASS="foreignphrase"
 >&#13;	  Intelligent Input/Output (I20) architecture</I
 >,
@@ -937,7 +937,7 @@ CLASS="guisubmenu"
 ><DD
 ><P
 > Entre las diferentes alternativas disponibles en esta
-	secciÛn se destacan:</P
+	secci√≥n se destacan:</P
 ><P
 ></P
 ><UL
@@ -957,7 +957,7 @@ CLASS="guimenuitem"
 ></LI
 ></UL
 ><P
->Respecto a la primera opciÛn, al seleccionarla aparece un
+>Respecto a la primera opci√≥n, al seleccionarla aparece un
 	listado de tarjetas de red disponibles, incluyendo entre
 	otros, tarjetas <SPAN
 CLASS="acronym"
@@ -983,16 +983,16 @@ CLASS="acronym"
 CLASS="acronym"
 >PPP</SPAN
 > es necesario para permitir
-	conexiÛn a Internet por vÌa telefÛnica.</P
+	conexi√≥n a Internet por v√≠a telef√≥nica.</P
 ><P
->Para el ejemplo, se habilitÛ soporte integrado al
+>Para el ejemplo, se habilit√≥ soporte integrado al
 	<I
 CLASS="foreignphrase"
 >kernel</I
 > para la tarjeta de red
-	disponible y tambiÈn pero en forma modular para otras tarjetas
+	disponible y tambi√©n pero en forma modular para otras tarjetas
 	de red de las cuales eventualmente se pueda disponer. En
-	complemento, se habilitÛ el soporte para protocolo
+	complemento, se habilit√≥ el soporte para protocolo
 	<SPAN
 CLASS="acronym"
 >PPP</SPAN
@@ -1006,9 +1006,9 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta secciÛn permite soporte para transmisiÛn de datos
-	para radio aficionados. En forma predeterminada esta opciÛn
-	est· deshabilitada.</P
+>Esta secci√≥n permite soporte para transmisi√≥n de datos
+	para radio aficionados. En forma predeterminada esta opci√≥n
+	est√° deshabilitada.</P
 ></DD
 ><DT
 ><SPAN
@@ -1017,13 +1017,13 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta secciÛn permite soporte para trabajar con protocolos
+>Esta secci√≥n permite soporte para trabajar con protocolos
 	<SPAN
 CLASS="trademark"
 >IrDA</SPAN
 >&#8482;, relacionados con comunicaciones
-	inal·mbricas infrarojas, soportadas por la mayorÌa de
-	computadores port·tiles
+	inal√°mbricas infrarojas, soportadas por la mayor√≠a de
+	computadores port√°tiles
 	(<I
 CLASS="foreignphrase"
 >laptops</I
@@ -1047,15 +1047,15 @@ CLASS="acronym"
 CLASS="acronym"
 >RDSI</SPAN
 > como se
-	conoce en Colombia, es un tipo especial de servicio telefÛnico
-	completamente digital, disponible ˙nicamente en las
-	principales ciudades. Una lÌnea <SPAN
+	conoce en Colombia, es un tipo especial de servicio telef√≥nico
+	completamente digital, disponible √∫nicamente en las
+	principales ciudades. Una l√≠nea <SPAN
 CLASS="acronym"
 >RDSI</SPAN
 >
-	permite una mejor conexiÛn a Internet que a travÈs de una
-	lÌnea telefÛnica convencional. Habilite esta opciÛn si tiene
-	interÈs y en su ciudad cuenta con proveedores de enlaces
+	permite una mejor conexi√≥n a Internet que a trav√©s de una
+	l√≠nea telef√≥nica convencional. Habilite esta opci√≥n si tiene
+	inter√©s y en su ciudad cuenta con proveedores de enlaces
 	<SPAN
 CLASS="acronym"
 >RDSI</SPAN
@@ -1069,7 +1069,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Habilite esta opciÛn si usted tiene una unidad de
+>Habilite esta opci√≥n si usted tiene una unidad de
 	<SPAN
 CLASS="acronym"
 >CD-ROM</SPAN
@@ -1094,7 +1094,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Bajo esta secciÛn se define el soporte para dispositivos
+>Bajo esta secci√≥n se define el soporte para dispositivos
 	  de caracteres, entre otros:</P
 ><P
 ></P
@@ -1116,7 +1116,7 @@ CLASS="guisubmenu"
 ><LI
 ><P
 >Palancas de juegos (soporte deshabilitado por
-	  omisiÛn) </P
+	  omisi√≥n) </P
 ></LI
 ></UL
 ><P
@@ -1130,7 +1130,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Habilite esta opciÛn si su computador tiene puerto
+>Habilite esta opci√≥n si su computador tiene puerto
 	<SPAN
 CLASS="acronym"
 >USB</SPAN
@@ -1143,7 +1143,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta secciÛn determina el tipo de sistemas de archivos a
+>Esta secci√≥n determina el tipo de sistemas de archivos a
 	utilizar. Entre las opciones habilitadas en forma
 	predeterminada se destacan entre otros:</P
 ><P
@@ -1161,7 +1161,7 @@ CLASS="guimenuitem"
 >Para poder acceder a <SPAN
 CLASS="acronym"
 >CDROM</SPAN
-> est·ndares.</P
+> est√°ndares.</P
 ></DD
 ><DT
 ><SPAN
@@ -1171,7 +1171,7 @@ CLASS="guimenuitem"
 ><DD
 ><P
 >Sistema de archivos virtual que proporciona
-	  informaciÛn sobre el sistema operativo.</P
+	  informaci√≥n sobre el sistema operativo.</P
 ></DD
 ><DT
 ><SPAN
@@ -1180,7 +1180,7 @@ CLASS="guimenuitem"
 ></DT
 ><DD
 ><P
->El sistema de archivos est·ndar de Linux</P
+>El sistema de archivos est√°ndar de Linux</P
 ></DD
 ><DT
 >NFS filesystem support</DT
@@ -1198,7 +1198,7 @@ CLASS="acronym"
 ></DL
 ></DIV
 ><P
->Adicionalmente a estos sistemas de archivos podrÌa
+>Adicionalmente a estos sistemas de archivos podr√≠a
        resultar interesante habilitar el soporte para:</P
 ><P
 ></P
@@ -1212,7 +1212,7 @@ CLASS="guimenuitem"
 ></DT
 ><DD
 ><P
->Para poder colocar lÌmites al uso del disco.</P
+>Para poder colocar l√≠mites al uso del disco.</P
 ></DD
 ><DT
 ><SPAN
@@ -1255,13 +1255,13 @@ CLASS="guimenuitem"
 	   Workgroups (WfW), Windows 95/98, Windows NT y OS/2 Lan
 	   Manager. Si lo que se necesita es solamente acceder a un
 	   servidor Linux utilizando Samba no se necesita habilitar
-	   esta opciÛn. </P
+	   esta opci√≥n. </P
 ></DD
 ></DL
 ></DIV
 ><P
->Finalmente, parece interesante tambiÈn habilitar soporte
-	para el EspaÒol como idioma nativo preferido al momento de
+>Finalmente, parece interesante tambi√©n habilitar soporte
+	para el Espa√±ol como idioma nativo preferido al momento de
 	montar sistemas de archivos, definiendo como predeterminado a
 	<SPAN
 CLASS="acronym"
@@ -1276,7 +1276,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Bajo esta secciÛn se presentan dos opciones:</P
+>Bajo esta secci√≥n se presentan dos opciones:</P
 ><P
 ></P
 ><UL
@@ -1298,12 +1298,12 @@ CLASS="guimenuitem"
 ><P
 >La primera de ellas, habilitada en forma predeterminada,
        permite utilizar Linux en modo texto en una pantalla que cumpla
-       con el est·ndar <SPAN
+       con el est√°ndar <SPAN
 CLASS="acronym"
 >VGA</SPAN
-> genÈrico. La segunda
-       opciÛn, deshabilitada en forma predeterminada, permite
-       aprovechar algunas altas resoluciones en modo texto que podrÌa
+> gen√©rico. La segunda
+       opci√≥n, deshabilitada en forma predeterminada, permite
+       aprovechar algunas altas resoluciones en modo texto que podr√≠a
        ofrecer el <SPAN
 CLASS="acronym"
 >BIOS</SPAN
@@ -1317,7 +1317,7 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Habilite esta opciÛn si su computador tiene una tarjeta
+>Habilite esta opci√≥n si su computador tiene una tarjeta
        de sonido. Consulte la ayuda disponible.</P
 ></DD
 ><DT
@@ -1327,12 +1327,12 @@ CLASS="guisubmenu"
 ></DT
 ><DD
 ><P
->Esta opciÛn, principalmente ˙til para
+>Esta opci√≥n, principalmente √∫til para
 	<I
 CLASS="foreignphrase"
 >hackers</I
 >, permite tener cierto
-	control sobre el sistema a˙n si el sistema se cae haciendo uso
+	control sobre el sistema a√∫n si el sistema se cae haciendo uso
 	de la tecla de Peticiones del Sistema (<SPAN
 CLASS="acronym"
 >SysRQ</SPAN
@@ -1347,10 +1347,10 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN15408"
->CompilaciÛn</A
+>Compilaci√≥n</A
 ></H2
 ><P
->Como se mencionÛ, no se necesita ser
+>Como se mencion√≥, no se necesita ser
      <I
 CLASS="foreignphrase"
 >root</I
@@ -1433,12 +1433,12 @@ CLASS="command"
 CLASS="command"
 >make bzImage</B
 >
-     no es la ˙nica opciÛn. Consulte la documentaciÛn disponible bajo
+     no es la √∫nica opci√≥n. Consulte la documentaci√≥n disponible bajo
      el directorio <TT
 CLASS="filename"
 >linux/Documentation</TT
 > para obtener
-     alguna informaciÛn al respecto.
+     alguna informaci√≥n al respecto.
     </P
 ><P
 >Al ejecutar <TT
@@ -1464,7 +1464,7 @@ CLASS="filename"
 ></LI
 ><LI
 ><P
->Si se habilitaron los mÛdulos, ejecute:</P
+>Si se habilitaron los m√≥dulos, ejecute:</P
 ><PRE
 CLASS="screen"
 >&#13;<TT
@@ -1536,7 +1536,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->ActualizaciÛn del <I
+>Actualizaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 > de
@@ -1554,7 +1554,7 @@ ACCESSKEY="U"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->InstalaciÛn del nuevo <I
+>Instalaci√≥n del nuevo <I
 CLASS="foreignphrase"
 >kernel</I
 ></TD

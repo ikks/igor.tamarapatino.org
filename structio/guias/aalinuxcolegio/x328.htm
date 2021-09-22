@@ -4,13 +4,13 @@
 >Sistema de usuarios y manejo de clave</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="Primera exploraciÛn de Linux desde
+TITLE="Primera exploraci√≥n de Linux desde
    la perspectiva de un usuario"
 HREF="c84.htm"><LINK
 REL="PREVIOUS"
@@ -38,7 +38,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -55,7 +55,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->CapÌtulo 1. Primera exploraciÛn de Linux desde
+>Cap√≠tulo 1. Primera exploraci√≥n de Linux desde
    la perspectiva de un usuario</TD
 ><TD
 WIDTH="10%"
@@ -99,8 +99,8 @@ NAME="espper.esp"
 NAME="espper.cons"
 ></A
 ><P
->Se desplaza entre consolas virtuales y la sesiÛn
-	   gr·fica.</P
+>Se desplaza entre consolas virtuales y la sesi√≥n
+	   gr√°fica.</P
 ></LI
 ><LI
 ><A
@@ -122,28 +122,28 @@ NAME="lectura-sistema-de-usuarios-y-manejo-de-clave"
 ><P
 >Al igual que Unix, Linux es un sistema operativo
      multiusuario y multitarea.  Multitarea significa que se puede
-     realizar m·s de una tarea a la vez.  Multiusuario significa que
-     el sistema puede ser empleado por m·s de un usuario. Por ser
+     realizar m√°s de una tarea a la vez.  Multiusuario significa que
+     el sistema puede ser empleado por m√°s de un usuario. Por ser
      multiusuario, Unix debe diferenciar a los usuarios y su
-     informaciÛn, para lograrlo a cada usuario se le asigna una
-     identificaciÛn ˙nica (en inglÈs
+     informaci√≥n, para lograrlo a cada usuario se le asigna una
+     identificaci√≥n √∫nica (en ingl√©s
      <I
 CLASS="foreignphrase"
 >login</I
 >), un grupo, una clave de
-     acceso (en inglÈs <I
+     acceso (en ingl√©s <I
 CLASS="foreignphrase"
 >password</I
 >) y un
-     espacio independiente del espacio de los dem·s usuarios (ese
+     espacio independiente del espacio de los dem√°s usuarios (ese
      espacio se llama directorio personal y permite organizar
-     informaciÛn del usuario en archivos).  Unix brinda tambiÈn un
+     informaci√≥n del usuario en archivos).  Unix brinda tambi√©n un
      esquema de permisos, con el que un usuario puede conceder o
      quitar permisos para ver o modificar sus archivos a otros
      usuarios o a usuarios de su mismo grupo.  Gracias, al sistema de
      usuarios y al esquema de permisos no es posible que un usuario
      normal desconfigure el sistema completo o lo infecte con virus
-     ---la configuraciÛn general del sistema sÛlo puede cambiarla el
+     ---la configuraci√≥n general del sistema s√≥lo puede cambiarla el
      administrador del sistema, cuyo login es <TT
 CLASS="literal"
 >root</TT
@@ -153,18 +153,18 @@ CLASS="literal"
 NAME="AEN344"
 ></A
 ><P
->Tipo de sistema operativo, diseÒado
+>Tipo de sistema operativo, dise√±ado
      para ser usado por diversos usuarios.</P
 ><A
 NAME="AEN347"
 ></A
 ><P
->IdentificaciÛn ˙nica de un usuario
-     ante un sistema Unix, adem·s de esta identificaciÛn el usuario
+>Identificaci√≥n √∫nica de un usuario
+     ante un sistema Unix, adem√°s de esta identificaci√≥n el usuario
      requiere una clave.</P
 ><P
->Como usuario de Linux, usted tendr· un login, un grupo
-     principal, un espacio y una clave. Para evitar mala utilizaciÛn
+>Como usuario de Linux, usted tendr√° un login, un grupo
+     principal, un espacio y una clave. Para evitar mala utilizaci√≥n
      de los recursos por parte de otra persona a nombre suyo, su clave
      de acceso debe ser <SPAN
 CLASS="bold"
@@ -173,12 +173,12 @@ CLASS="emphasis"
 >secreta</B
 ></SPAN
 >.
-     Adem·s por seguridad, es recomendable que cada usuario cambie su
+     Adem√°s por seguridad, es recomendable que cada usuario cambie su
      clave de acceso al menos cada dos meses, empleando el comando
      <B
 CLASS="command"
 >passwd</B
-> desde un intÈrprete de
+> desde un int√©rprete de
      comandos
      <A
 NAME="AEN353"
@@ -193,15 +193,15 @@ NAME="AEN356"
 >Comando para cambiar la
      clave.</P
 ><P
->Puede entrar a una sesiÛn con su login y clave bien desde un
-     entorno gr·fico (con un programa llamado
+>Puede entrar a una sesi√≥n con su login y clave bien desde un
+     entorno gr√°fico (con un programa llamado
      <SPAN
 CLASS="application"
 >gdm</SPAN
 >) o bien desde una interfaz tipo
-     texto.  Su sistema Linux puede brindarle simult·neamente varias
+     texto.  Su sistema Linux puede brindarle simult√°neamente varias
      interfaces tipo texto ---llamadas consolas virtuales--- junto con
-     el entorno gr·fico.  Desde el entorno gr·fico puede pasar a una
+     el entorno gr√°fico.  Desde el entorno gr√°fico puede pasar a una
      consola virtual presionando
      <B
 CLASS="keycap"
@@ -212,7 +212,7 @@ NAME="AEN363"
 HREF="#FTN.AEN363"
 >[2]</A
 >, y desde una consola virtual puede retornar a la
-       sesiÛn gr·fica con <B
+       sesi√≥n gr√°fica con <B
 CLASS="keycap"
 >Ctrl-Alt-F7</B
 >
@@ -244,19 +244,19 @@ NAME="AEN381"
 >Secuencia de teclas para pasar a
      la primera consola virtual.</P
 ><P
->Cuando inicie una sesiÛn desde una consola virtual, entrar·
-     a un intÈrprete de comandos donde podr· dar comandos o ejecutar
-     programas.  En una sesiÛn gr·fica podr· emplear el ratÛn, por
-     ejemplo para elegir opciones de men˙s, a˙n cuando en Unix es
-     usual emplear un intÈrprete de comandos incluso desde sesiones
-     gr·ficas (porque es m·s efectivo trabajar con 10 dedos en el
-     teclado que con 2 sobre el ratÛn).  Los programas iniciados desde
+>Cuando inicie una sesi√≥n desde una consola virtual, entrar√°
+     a un int√©rprete de comandos donde podr√° dar comandos o ejecutar
+     programas.  En una sesi√≥n gr√°fica podr√° emplear el rat√≥n, por
+     ejemplo para elegir opciones de men√∫s, a√∫n cuando en Unix es
+     usual emplear un int√©rprete de comandos incluso desde sesiones
+     gr√°ficas (porque es m√°s efectivo trabajar con 10 dedos en el
+     teclado que con 2 sobre el rat√≥n).  Los programas iniciados desde
      una consola virtual, generalmente pueden interrumpirse con la
      secuencia de teclas <B
 CLASS="keycap"
 >Control-C</B
 >, para reiniciar la
-     sesiÛn gr·fica puede emplear la secuencia
+     sesi√≥n gr√°fica puede emplear la secuencia
      <B
 CLASS="keycap"
 >Ctrl-Alt-Backspace</B
@@ -267,19 +267,19 @@ NAME="AEN387"
 ></A
 ><P
 >Secuencia de teclas para
-     reiniciar una sesiÛn gr·fica (en su respuesta use la misma
-     notaciÛn de las guÌas).</P
+     reiniciar una sesi√≥n gr√°fica (en su respuesta use la misma
+     notaci√≥n de las gu√≠as).</P
 ><P
->Tenga en cuenta salir de su sesiÛn cuando termine de
+>Tenga en cuenta salir de su sesi√≥n cuando termine de
      trabajar y recuerde no apagar el computador sin antes haber
      "cerrado" el sistema operativo (si apaga el computador antes de
-     cerrar Linux puede que pierda informaciÛn).  Para salir de una
-     sesiÛn con un intÈrprete de comandos se emplea el comando
+     cerrar Linux puede que pierda informaci√≥n).  Para salir de una
+     sesi√≥n con un int√©rprete de comandos se emplea el comando
      <B
 CLASS="command"
 >exit</B
->, para salir de una sesiÛn gr·fica con
-     Gnome busque entre los men˙s la opciÛn
+>, para salir de una sesi√≥n gr√°fica con
+     Gnome busque entre los men√∫s la opci√≥n
      <SPAN
 CLASS="guimenuitem"
 >Logout</SPAN
@@ -288,8 +288,8 @@ CLASS="guimenuitem"
 CLASS="guimenuitem"
 >Salir</SPAN
 >.  La labor de "apagar" depende
-     de la polÌtica que el administrador haya escogido, eventualmente
-     usted podr· hacerlo desde los men˙s de
+     de la pol√≠tica que el administrador haya escogido, eventualmente
+     usted podr√° hacerlo desde los men√∫s de
      <SPAN
 CLASS="application"
 >gdm</SPAN
@@ -321,12 +321,12 @@ NAME="AEN402"
 CLASS="foreignphrase"
 >root</I
 >), recuerde que el
-     tambiÈn es una persona, es alguiÈn que est· sirviendole y
-     ayudando a mantener la red y los recursos de su instituciÛn (que
-     tambiÈn son suyos).  Seamos amables, respetuosos y humildes con
-     Èl y con los dem·s usuarios, ayudemos a cuidar la infraestructura
-     que tenemos (un dÌa podrÌa estar a nuestro cargo y nos gustarÌa
-     que los usuarios ayudar·n a cuidarla).
+     tambi√©n es una persona, es algui√©n que est√° sirviendole y
+     ayudando a mantener la red y los recursos de su instituci√≥n (que
+     tambi√©n son suyos).  Seamos amables, respetuosos y humildes con
+     √©l y con los dem√°s usuarios, ayudemos a cuidar la infraestructura
+     que tenemos (un d√≠a podr√≠a estar a nuestro cargo y nos gustar√≠a
+     que los usuarios ayudar√°n a cuidarla).
     </P
 ></DIV
 ><DIV
@@ -349,7 +349,7 @@ CLASS="citetitle"
 >Linux
        Installation and Getting Started</I
 >", escrito por Matt
-       Welsh y otras personas.  Est· disponible en Internet en <A
+       Welsh y otras personas.  Est√° disponible en Internet en <A
 HREF="http://www.linuxdoc.org/LDP/gs/node5.html#SECTION00500000000000000000"
 TARGET="_top"
 >http://www.linuxdoc.org/LDP/gs/node5.html#SECTION00500000000000000000</A
@@ -372,12 +372,12 @@ CLASS="qandaset"
 ><DT
 >1. <A
 HREF="x328.htm#espper.esp.1"
->Averig¸e su login y su clave con el
-	    administrador del sistema, uselos para entrar a una sesiÛn
-	    gr·fica con el escritorio <SPAN
+>Averig√ºe su login y su clave con el
+	    administrador del sistema, uselos para entrar a una sesi√≥n
+	    gr√°fica con el escritorio <SPAN
 CLASS="acronym"
 >GNOME</SPAN
-> y despuÈs
+> y despu√©s
 	    salga.
 	  </A
 ></DT
@@ -385,7 +385,7 @@ CLASS="acronym"
 >2. <A
 HREF="x328.htm#espper.cons.1"
 >Pase a consolas virtuales y regrese a
-	      modo gr·fico. Practique el uso de la secuencia de teclas
+	      modo gr√°fico. Practique el uso de la secuencia de teclas
 	      <B
 CLASS="keycap"
 >Ctrl-Alt-Backspace</B
@@ -396,7 +396,7 @@ CLASS="keycap"
 >3. <A
 HREF="x328.htm#espper.clave.1"
 >Empleando una consola virtual abra una
-	      sesiÛn con su login, cambie su clave (con el comando <B
+	      sesi√≥n con su login, cambie su clave (con el comando <B
 CLASS="command"
 >passwd</B
 >), 
@@ -417,12 +417,12 @@ NAME="espper.esp.1"
 ></A
 ><B
 >1. </B
->Averig¸e su login y su clave con el
-	    administrador del sistema, uselos para entrar a una sesiÛn
-	    gr·fica con el escritorio <SPAN
+>Averig√ºe su login y su clave con el
+	    administrador del sistema, uselos para entrar a una sesi√≥n
+	    gr√°fica con el escritorio <SPAN
 CLASS="acronym"
 >GNOME</SPAN
-> y despuÈs
+> y despu√©s
 	    salga.
 	  </P
 ><DIV
@@ -444,8 +444,8 @@ ALIGN="CENTER"
 ><TD
 ALIGN="LEFT"
 ><P
->No olvide salir de su sesiÛn cada vez que deje de
-		usarla.  Si la deja abierta alguien podrÌa actuar a nombre
+>No olvide salir de su sesi√≥n cada vez que deje de
+		usarla.  Si la deja abierta alguien podr√≠a actuar a nombre
 		suyo. 
 	    </P
 ></TD
@@ -459,12 +459,12 @@ CLASS="answer"
 ><B
 > </B
 >Una vez sabe login y clave prende un computador, espere hasta que 
-	      se inicie el modo gr·fico y un recuadro en el que diga Login y usted 
+	      se inicie el modo gr√°fico y un recuadro en el que diga Login y usted 
 	      pueda teclear su login y <B
 CLASS="keycap"
 >ENTER</B
-> despuÈs ver· otro recuadro 
-	      en el que se le pide la clave --no la ver· al teclear cuando termine presione 
+> despu√©s ver√° otro recuadro 
+	      en el que se le pide la clave --no la ver√° al teclear cuando termine presione 
 	      <B
 CLASS="keycap"
 >ENTER</B
@@ -483,7 +483,7 @@ NAME="espper.cons.1"
 ><B
 >2. </B
 >Pase a consolas virtuales y regrese a
-	      modo gr·fico. Practique el uso de la secuencia de teclas
+	      modo gr√°fico. Practique el uso de la secuencia de teclas
 	      <B
 CLASS="keycap"
 >Ctrl-Alt-Backspace</B
@@ -509,7 +509,7 @@ ALIGN="CENTER"
 ALIGN="LEFT"
 ><P
 >Nuevamente le recordamos no apagar el computador con el
-		interruptor o con el botÛn <SPAN
+		interruptor o con el bot√≥n <SPAN
 ><I
 CLASS="emphasis"
 >reset</I
@@ -541,7 +541,7 @@ NAME="espper.clave.1"
 ><B
 >3. </B
 >Empleando una consola virtual abra una
-	      sesiÛn con su login, cambie su clave (con el comando <B
+	      sesi√≥n con su login, cambie su clave (con el comando <B
 CLASS="command"
 >passwd</B
 >), 
@@ -569,26 +569,26 @@ ALIGN="CENTER"
 ><TD
 ALIGN="LEFT"
 ><P
->DespuÈs de abrir una consola virtual o de entrar a una
-	      sesiÛn del intÈrprete de comandos con su login, al terminar
-	      no olvide salir de la sesiÛn con el comando
+>Despu√©s de abrir una consola virtual o de entrar a una
+	      sesi√≥n del int√©rprete de comandos con su login, al terminar
+	      no olvide salir de la sesi√≥n con el comando
 	      <B
 CLASS="command"
 >exit</B
 >. Para evitar problemas de seguridad
-	      es recomendable que su clave tenga m·s de 6 caracteres
-	      (algunos sistemas sÛlo permiten hasta 8), que no sea una
-	      palabra que aparezca en diccionario alguno (de ning˙n idioma), 
+	      es recomendable que su clave tenga m√°s de 6 caracteres
+	      (algunos sistemas s√≥lo permiten hasta 8), que no sea una
+	      palabra que aparezca en diccionario alguno (de ning√∫n idioma), 
 	      tampoco debe ser su nombre, ni el nombre de su mascota, ni de un ser querido, 
-	      ni su direcciÛn, ni el nombre de bandas de rock (trate de imaginar que 
+	      ni su direcci√≥n, ni el nombre de bandas de rock (trate de imaginar que 
 	      clave usaria otra persona y NO use esa). Idee una palabra
-	      f·cil de recordar sÛlo para usted, no la anote en un papel y
-	      emplee preferiblemente signos de puntuaciÛn y n˙meros (pero no 
+	      f√°cil de recordar s√≥lo para usted, no la anote en un papel y
+	      emplee preferiblemente signos de puntuaci√≥n y n√∫meros (pero no 
 	      <B
 CLASS="keycap"
 >Backspace</B
->), a˙n mejor si idea un esquema que le permita 
-	      cambiarla con frecuencia.  Otra importante recomendaciÛn con 
+>), a√∫n mejor si idea un esquema que le permita 
+	      cambiarla con frecuencia.  Otra importante recomendaci√≥n con 
 	      respecto a la clave: <SPAN
 ><I
 CLASS="emphasis"
@@ -637,7 +637,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->IntÈrprete de comandos: en inglÈs
+>Int√©rprete de comandos: en ingl√©s
        <I
 CLASS="foreignphrase"
 >shell</I
@@ -665,7 +665,7 @@ WIDTH="95%"
 CLASS="keycap"
 >Ctrl-Alt-F1</B
 > o la
-       secuencia an·loga con <B
+       secuencia an√°loga con <B
 CLASS="keycap"
 >F2</B
 >, <B

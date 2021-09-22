@@ -4,16 +4,16 @@
 >Linux desde la perspectiva de un usuario con experiencia</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="PREVIOUS"
-TITLE="B˙squeda y consulta de documentaciÛn"
+TITLE="B√∫squeda y consulta de documentaci√≥n"
 HREF="x836.htm"><LINK
 REL="NEXT"
-TITLE="InformaciÛn personal y comunicaciÛn con otros
+TITLE="Informaci√≥n personal y comunicaci√≥n con otros
     usuarios"
 HREF="x1377.htm"></HEAD
 ><BODY
@@ -35,7 +35,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -72,7 +72,7 @@ CLASS="chapter"
 ><H1
 ><A
 NAME="exploracion-dos"
->CapÌtulo 2. Linux desde la perspectiva de un usuario con experiencia</A
+>Cap√≠tulo 2. Linux desde la perspectiva de un usuario con experiencia</A
 ></H1
 ><DIV
 CLASS="TOC"
@@ -89,7 +89,7 @@ HREF="c1054.htm#archivos-y-permisos"
 ><DT
 ><A
 HREF="x1377.htm"
->InformaciÛn personal y comunicaciÛn con otros
+>Informaci√≥n personal y comunicaci√≥n con otros
     usuarios</A
 ></DT
 ><DT
@@ -100,13 +100,13 @@ HREF="x1647.htm"
 ><DT
 ><A
 HREF="x2000.htm"
->EdiciÛn de texto</A
+>Edici√≥n de texto</A
 ></DT
 ></DL
 ></DIV
 ><H2
 CLASS="BRIDGEHEAD"
->P˙blico y logros</H2
+>P√∫blico y logros</H2
 ><P
 >Estudiantes, profesores, secretarias y personas que tienen
     alguna experiencia con Linux. </P
@@ -127,7 +127,7 @@ NAME="orgarch"
 NAME="infopub"
 ></A
 ><P
->Sabe mantener su informaciÛn p˙blica y puede consultar la de
+>Sabe mantener su informaci√≥n p√∫blica y puede consultar la de
       otros usuarios.
      </P
 ></LI
@@ -144,7 +144,7 @@ NAME="comred"
 NAME="servbas"
 ></A
 ><P
->Emplea los servicios de la intranet de la instituciÛn:
+>Emplea los servicios de la intranet de la instituci√≥n:
       <B
 CLASS="command"
 >telnet</B
@@ -197,7 +197,7 @@ NAME="orgarch.com"
 ></A
 ><P
 >Emplea comandos para manejo de directorios y archivos desde
-      un intÈrprete de comandos.</P
+      un int√©rprete de comandos.</P
 ></LI
 ></UL
 ><DIV
@@ -209,32 +209,32 @@ NAME="lectura-archivos-y-permisos"
 >Lectura: Archivos y permisos</A
 ></H2
 ><P
->En esta secciÛn se introducen diversos comandos para
+>En esta secci√≥n se introducen diversos comandos para
      administrar archivos y permisos.  Si bien estas operaciones
-     pueden hacerse con una herramienta gr·fica como Nautilus o el
+     pueden hacerse con una herramienta gr√°fica como Nautilus o el
      administrador de archivos de Gnome
      (<SPAN
 CLASS="application"
 >gmc</SPAN
->), resulta m·s r·pido emplear
+>), resulta m√°s r√°pido emplear
      comandos desde <SPAN
 CLASS="application"
 >bash</SPAN
 >, y en algunas
-     situaciones es la ˙nica opciÛn (por ejemplo si el modo gr·fico
+     situaciones es la √∫nica opci√≥n (por ejemplo si el modo gr√°fico
      falla o si emplea un sistema que no tenga X-Window).
    </P
 ><P
 >Un comando usualmente recibe opciones y parametros que
-     especifican que operaciÛn realizar; algunos parametros son
+     especifican que operaci√≥n realizar; algunos parametros son
      indispensables mientras que las opciones modifican el
      comportamiento por defecto de un comando (y por tanto son
      opcionales).  En la ayuda presentada por el comando
      <B
 CLASS="command"
 >man</B
-> y en estas guÌas emplemos como notaciÛn
-     los parÈntesis cuadrados <TT
+> y en estas gu√≠as emplemos como notaci√≥n
+     los par√©ntesis cuadrados <TT
 CLASS="option"
 >[ ]</TT
 > para encerrar
@@ -259,12 +259,12 @@ CLASS="replaceable"
 CLASS="command"
 >ls</B
 > puede recibir la
-     opciÛn <TT
+     opci√≥n <TT
 CLASS="option"
 >-l</TT
-> y una ruta como par·metro (las
+> y una ruta como par√°metro (las
      opciones suelen comenzar con uno o dos guiones).  Puede descubrir
-     que hace tal opciÛn y el par·metro tecleando <B
+     que hace tal opci√≥n y el par√°metro tecleando <B
 CLASS="command"
 >ls /
       -l</B
@@ -293,7 +293,7 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="administracion-de-archivos-directorios-y-enlaces"
->AdministraciÛn de archivos, directorios y enlaces</A
+>Administraci√≥n de archivos, directorios y enlaces</A
 ></H3
 ><P
 >El programa <B
@@ -301,13 +301,13 @@ CLASS="command"
 >ls</B
 > por defecto presenta los
       nombres de archivos que no comienzan con el caracter '.' y que
-      est·n en el directorio de trabajo del usuaurio.  Los archivos
+      est√°n en el directorio de trabajo del usuaurio.  Los archivos
       cuyos nombres comienzan con el caracter punto suelen llamarse
-      archivos de configuraciÛn, si desea verlos tambiÈn al usar el
+      archivos de configuraci√≥n, si desea verlos tambi√©n al usar el
       comando <B
 CLASS="command"
 >ls</B
->, puede emplear la opciÛn
+>, puede emplear la opci√≥n
       <TT
 CLASS="option"
 >-a</TT
@@ -320,7 +320,7 @@ CLASS="command"
 CLASS="command"
 >ls
       /usr/bin</B
->.  Adem·s de <TT
+>.  Adem√°s de <TT
 CLASS="option"
 >-a</TT
 > y
@@ -346,7 +346,7 @@ CLASS="mediaobject"
 ><P
 ><IMG
 SRC="perm.png"
-ALT="SesiÛn en la que se examinan archivoos y
+ALT="Sesi√≥n en la que se examinan archivoos y
 	  permisos"
 ></IMG
 ></P
@@ -355,8 +355,8 @@ ALT="SesiÛn en la que se examinan archivoos y
 ></P
 ></DIV
 ><P
->A continuaciÛn se presentan algunos programas para
-      administrar archivos, junto con una breve descripciÛn y unas
+>A continuaci√≥n se presentan algunos programas para
+      administrar archivos, junto con una breve descripci√≥n y unas
       pocas opciones ---Puede consultar todas las opciones que recibe
       un programa con <B
 CLASS="command"
@@ -368,7 +368,7 @@ NAME="AEN1124"
 ></A
 ><P
 >Comando para crear nuevos
-      enlaces a un archivo o enlaces simbÛlicos al nombre de un
+      enlaces a un archivo o enlaces simb√≥licos al nombre de un
       archivo.</P
 ><A
 NAME="AEN1128"
@@ -460,20 +460,20 @@ CLASS="screen"
 >&#13;ln carta.txt diario.txt
 </PRE
 >
-	 DespuÈs de hacerlo tanto <TT
+	 Despu√©s de hacerlo tanto <TT
 CLASS="filename"
 >carta.txt</TT
 > como
 	 <TT
 CLASS="filename"
 >diario.txt</TT
-> ser·n nombres que enlazar·n
-	 la misma informaciÛn.  La opciÛn <TT
+> ser√°n nombres que enlazar√°n
+	 la misma informaci√≥n.  La opci√≥n <TT
 CLASS="option"
 >-s</TT
 > indica
-	 que el enlace debe ser sÌmbolico, lo cual en general es m·s
-	 flexible que la opciÛn por defecto
+	 que el enlace debe ser s√≠mbolico, lo cual en general es m√°s
+	 flexible que la opci√≥n por defecto
 	 <A
 NAME="AEN1169"
 HREF="#FTN.AEN1169"
@@ -498,19 +498,19 @@ CLASS="replaceable"
 ><DD
 ><P
 >Crea un directorio con la ruta especificada.  Sin la
-	 opciÛn <TT
+	 opci√≥n <TT
 CLASS="option"
 >-p</TT
 > todos los directorios de la ruta
-	 excepto el ˙ltimo deben existir (el ˙ltimo es el nuevo
-	 directorio por crear).  Con la opciÛn <TT
+	 excepto el √∫ltimo deben existir (el √∫ltimo es el nuevo
+	 directorio por crear).  Con la opci√≥n <TT
 CLASS="option"
 >-p</TT
 >
 	 el comando <B
 CLASS="command"
 >mkdir</B
-> crear· todos los
+> crear√° todos los
 	 directorios necesarios para construir la ruta.
 	</P
 ></DD
@@ -533,7 +533,7 @@ CLASS="replaceable"
 ><DD
 ><P
 >Renombra o mueve el archivo fuente en la
-	 localizaciÛn/nombre destino.  
+	 localizaci√≥n/nombre destino.  
 	</P
 ></DD
 ><DT
@@ -575,7 +575,7 @@ ALIGN="CENTER"
 ><TD
 ALIGN="LEFT"
 ><P
->Una vez se borra un archivo no hay un mÈtodo sencillo
+>Una vez se borra un archivo no hay un m√©todo sencillo
 	  para recuperarlo.
 	  </P
 ></TD
@@ -583,7 +583,7 @@ ALIGN="LEFT"
 ></TABLE
 ></DIV
 >  
-	 La opciÛn <TT
+	 La opci√≥n <TT
 CLASS="option"
 >-i</TT
 > confirma antes de borrar cada
@@ -592,11 +592,11 @@ CLASS="option"
 >-rf</TT
 > permiten borrar
 	 directorios enteros junto con todos los subdirectorios que
-	 contengan (la opciÛn <TT
+	 contengan (la opci√≥n <TT
 CLASS="option"
 >-r</TT
-> por si sÛla borra
-	 en subdirectorios, la opciÛn <TT
+> por si s√≥la borra
+	 en subdirectorios, la opci√≥n <TT
 CLASS="option"
 >-f</TT
 > borra sin
@@ -626,10 +626,10 @@ CLASS="replaceable"
 ><DD
 ><P
 >Copia del archivo fuente al destino especificado.  Si
-	 se usa la opciÛn <TT
+	 se usa la opci√≥n <TT
 CLASS="option"
 >-rf</TT
-> tambiÈn se copiaran
+> tambi√©n se copiaran
 	 subdirectorios.
 	</P
 ></DD
@@ -645,16 +645,16 @@ CLASS="option"
 ><P
 >Para examinar espacio disponible en los dispositivos de
 	 almacenamiento, en particular el de las particiones cuyos
-	 sistemas de archivos estÈn montados (ver <A
+	 sistemas de archivos est√©n montados (ver <A
 HREF="x6433.htm#montaje-y-desmontaje-de-sistemas-de-archivos"
 >Montaje
 	 y desmontaje de sistemas de archivos</A
 >).  Puede
-	 emplearse con la opciÛn <TT
+	 emplearse con la opci√≥n <TT
 CLASS="option"
 >-h</TT
 > para obtener
-	 datos en unidades m·s conocidas (en Kilobytes, Megabytes y
+	 datos en unidades m√°s conocidas (en Kilobytes, Megabytes y
 	 Gigabytes)
 	 <A
 NAME="AEN1220"
@@ -696,8 +696,8 @@ CLASS="replaceable"
 ></TT
 > y sus archivos y
 	 subdirectorios.  Si no se especifica ruta alguna, este
-	 comando da informaciÛn sobre el directorio de trabajo.  La
-	 opciÛn <TT
+	 comando da informaci√≥n sobre el directorio de trabajo.  La
+	 opci√≥n <TT
 CLASS="literal"
 >-s</TT
 > presnta totales de cada ruta
@@ -707,14 +707,14 @@ CLASS="literal"
 ></DL
 ></DIV
 ><P
->Al usar la opciÛn <TT
+>Al usar la opci√≥n <TT
 CLASS="option"
 >-a</TT
 > con
       <B
 CLASS="command"
 >ls</B
->, por lo menos ver· dos directorios m·s:
+>, por lo menos ver√° dos directorios m√°s:
       <TT
 CLASS="filename"
 >.</TT
@@ -722,7 +722,7 @@ CLASS="filename"
 CLASS="filename"
 >..</TT
 >, el primero denota el directorio
-      que examinÛ y el segundo denota el directorio en el cual est· el
+      que examin√≥ y el segundo denota el directorio en el cual est√° el
       directorio examinado.  Por ejemplo si su directorio de trabajo
       es <TT
 CLASS="filename"
@@ -744,8 +744,8 @@ CLASS="filename"
 >.
     </P
 ><P
->En la mayorÌa de programas y en el intÈrprete de comandos
-      podr· emplear tanto <TT
+>En la mayor√≠a de programas y en el int√©rprete de comandos
+      podr√° emplear tanto <TT
 CLASS="literal"
 >.</TT
 > como
@@ -753,7 +753,7 @@ CLASS="literal"
 CLASS="literal"
 >..</TT
 > para referenciar archivos y subdirectorios
-      relativos al directorio de trabajo.  AsÌ mismo los archivos y
+      relativos al directorio de trabajo.  As√≠ mismo los archivos y
       directorios que esten en su directorio de trabajo puede
       referenciarlo sin prefijo alguno, por ejemplo <B
 CLASS="command"
@@ -763,7 +763,7 @@ CLASS="command"
 CLASS="command"
 >du</B
 > porque
-      muestra la utilizaciÛn de disco del directorio de trabajo.  Si
+      muestra la utilizaci√≥n de disco del directorio de trabajo.  Si
       en su directorio de trabajo tiene un directorio notas que tiene
       un archivo <TT
 CLASS="filename"
@@ -775,7 +775,7 @@ CLASS="command"
 >.
      </P
 ><P
->TambiÈn podr· emplear <TT
+>Tambi√©n podr√° emplear <TT
 CLASS="literal"
 >~</TT
 > que abrevia su
@@ -783,23 +783,23 @@ CLASS="literal"
 CLASS="filename"
 >/home/sulogin</TT
 >).  Por ejemplo si
-      desde un intÈrprete de comandos teclea <B
+      desde un int√©rprete de comandos teclea <B
 CLASS="command"
 >cd ~</B
 >,
-      despuÈs <B
+      despu√©s <B
 CLASS="command"
 >cd ../..</B
-> y despuÈs
+> y despu√©s
       <B
 CLASS="command"
 >pwd</B
-> ver· que estar· ubicado en el directorio
+> ver√° que estar√° ubicado en el directorio
       raiz.
      </P
 ><P
 >Otra facilidad que brinda el interprete de comandos es la
-      expansiÛn de nombres de archivos con los comodines * y ?.  ?
+      expansi√≥n de nombres de archivos con los comodines * y ?.  ?
       indica una letra mientras que * indica una cantidad cualquiera
       de letras.  Por ejemplo <B
 CLASS="command"
@@ -835,11 +835,11 @@ NAME="permisos"
 >Permisos</A
 ></H3
 ><P
->Para brindar algo de privacidad y protecciÛn cada archivo o
-      directorio tiene asociados permisos diferentes para el dueÒo,
-      para el grupo y para los dem·s usuarios.  En el caso de archivos
+>Para brindar algo de privacidad y protecci√≥n cada archivo o
+      directorio tiene asociados permisos diferentes para el due√±o,
+      para el grupo y para los dem√°s usuarios.  En el caso de archivos
       los permisos que pueden darse o quitarse son: (r) lectura, (w)
-      escritura y (x) ejecuciÛn. En el caso de directorios los
+      escritura y (x) ejecuci√≥n. En el caso de directorios los
       permisos son: (r) para listar los archivos, (w) para escribir,
       crear o borrar archivos y (x) para acceder a archivos del
       directorio.
@@ -851,18 +851,18 @@ HREF="#FTN.AEN1269"
      </P
 ><P
 >Desde un administrador de archivos, puede ver los permisos
-      de un archivo con el botÛn derecho del mouse cuando el puntero
-      est· sobre el archivo, escogiendo la opciÛn apropiada del men˙
+      de un archivo con el bot√≥n derecho del mouse cuando el puntero
+      est√° sobre el archivo, escogiendo la opci√≥n apropiada del men√∫
       que aparece.  Desde un interprete de comandos puede emplear el
       comando <B
 CLASS="command"
 >ls</B
-> con la opciÛn <TT
+> con la opci√≥n <TT
 CLASS="option"
 >-l</TT
 >.
       Un ejemplo del resultado de este comando se presenta a
-      continuaciÛn:
+      continuaci√≥n:
     </P
 ><PRE
 CLASS="screen"
@@ -871,30 +871,30 @@ CLASS="screen"
 lrwxrwxrwx    1 pepe   users          12 Nov 12  2000 a -&#62; /etc/hosts
 </PRE
 ><P
->La primera lÌnea presenta un directorio (la
+>La primera l√≠nea presenta un directorio (la
      <TT
 CLASS="literal"
 >d</TT
-> al principio de la lÌnea lo indica), la
-     segunda presenta un archivo (el guiÛn inicial lo indica) y la
+> al principio de la l√≠nea lo indica), la
+     segunda presenta un archivo (el gui√≥n inicial lo indica) y la
      tercera un enlace.  El nombre del directorio es <TT
 CLASS="filename"
 >graficas</TT
 > tiene 5 archivos, fue
-     modificado por ˙ltima vez el 21 de Febrero del aÒo en curso a las
-     6:31AM, el dueÒo es <TT
+     modificado por √∫ltima vez el 21 de Febrero del a√±o en curso a las
+     6:31AM, el due√±o es <TT
 CLASS="literal"
 >pepe</TT
 >, el grupo es
      <TT
 CLASS="literal"
 >users</TT
-> y el tamaÒo es 4096 bytes ---en realidad
-     el tamaÒo cobra sentido sÛlo en el caso de archivos como
+> y el tama√±o es 4096 bytes ---en realidad
+     el tama√±o cobra sentido s√≥lo en el caso de archivos como
      <TT
 CLASS="filename"
 >c.tar.gz</TT
-> cuyo tamaÒo es 62561 bytes.  Los tres 
+> cuyo tama√±o es 62561 bytes.  Los tres 
      caracteres <TT
 CLASS="literal"
 >rwx</TT
@@ -902,7 +902,7 @@ CLASS="literal"
 CLASS="literal"
 >d</TT
 >
-     inicial indican los permisos para el dueÒo, los tres siguientes
+     inicial indican los permisos para el due√±o, los tres siguientes
      <TT
 CLASS="literal"
 >r-x</TT
@@ -915,11 +915,11 @@ CLASS="literal"
      el mismo (primero lectura <TT
 CLASS="literal"
 >r</TT
->, despuÈs escritura
+>, despu√©s escritura
      <TT
 CLASS="literal"
 >w</TT
-> y despuÈs ejecuciÛn <TT
+> y despu√©s ejecuci√≥n <TT
 CLASS="literal"
 >x</TT
 >),
@@ -927,8 +927,8 @@ CLASS="literal"
 CLASS="filename"
 >x.tar.gz</TT
 > no es
-     ejecutable, que puede ser leido por el dueÒo y el grupo pero no
-     por los dem·s usuarios, adem·s puede ser escrito sÛlo por
+     ejecutable, que puede ser leido por el due√±o y el grupo pero no
+     por los dem√°s usuarios, adem√°s puede ser escrito s√≥lo por
       <TT
 CLASS="literal"
 >pepe</TT
@@ -940,24 +940,24 @@ CLASS="filename"
      <TT
 CLASS="filename"
 >/usr/bin/awk</TT
-> y que su tamaÒo y permisos
-      reales los heredar· de <TT
+> y que su tama√±o y permisos
+      reales los heredar√° de <TT
 CLASS="filename"
 >/usr/bin/awk</TT
 >.
      </P
 ><P
 >Los permisos de un archivo pueden ser modificados por el
-      dueÒo o por el administrador del sistema con el comando
+      due√±o o por el administrador del sistema con el comando
       <B
 CLASS="command"
 >chmod</B
-> que espera dos par·metros: cambio por
+> que espera dos par√°metros: cambio por
       realizar al permiso y nombre del archivo por cambiar.  Los
-      permisos se pueden especificar en octal o con una o m·s letras
+      permisos se pueden especificar en octal o con una o m√°s letras
       para identificar al usuario (u para el usuario, g para el grupo,
-      o para los dem·s usuarios y a para todos), un +, un - o un = y
-      despuÈs letras para identificar los permisos (r, w o x).  Por
+      o para los dem√°s usuarios y a para todos), un +, un - o un = y
+      despu√©s letras para identificar los permisos (r, w o x).  Por
       ejemplo
      </P
 ><P
@@ -972,7 +972,7 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Da a los dem·s usuarios y al grupo permiso de ejecuciÛn
+>Da a los dem√°s usuarios y al grupo permiso de ejecuci√≥n
 	 del archivo <TT
 CLASS="filename"
 >sube.sh</TT
@@ -991,8 +991,8 @@ CLASS="command"
 	 <TT
 CLASS="filename"
 >deu.txt</TT
-> tanto al dueÒo, como al grupo,
-	 como a los dem·s usuarios.  Este mismo resultado puede
+> tanto al due√±o, como al grupo,
+	 como a los dem√°s usuarios.  Este mismo resultado puede
 	obtenerse con el comando <B
 CLASS="command"
 >chmod -w deu.txt</B
@@ -1013,7 +1013,7 @@ CLASS="command"
 ><P
 >Cambia permisos del archivo (o directorio) textos, el
 	 usuario puede leer, ejecutar y escribir, el grupo puede leer
-	 y ejecutar mientras que los dem·s usuarios no tienen
+	 y ejecutar mientras que los dem√°s usuarios no tienen
 	 permisos.</P
 ></DD
 ></DL
@@ -1025,7 +1025,7 @@ NAME="AEN1316"
 >Comando para cambiar los
       permisos de sus archivos.</P
 ><P
->El dueÒo de un archivo pueden ser modificados sÛlo por el
+>El due√±o de un archivo pueden ser modificados s√≥lo por el
       administrador del sistema con el programa
       <B
 CLASS="command"
@@ -1043,7 +1043,7 @@ CLASS="screen"
 >&#13;chgrp estudiantes tarea1.txt
 </PRE
 ><P
->&#13;      Cambiar· el grupo del archivo <TT
+>&#13;      Cambiar√° el grupo del archivo <TT
 CLASS="filename"
 >tarea1.txt</TT
 > a
@@ -1072,10 +1072,10 @@ NAME="lecturas-recomendadas-archivos-y-permisos"
 ><UL
 ><LI
 ><P
->En estas guÌas puede consultar m·s sobre permisos
-       y administraciÛn, ver <A
+>En estas gu√≠as puede consultar m√°s sobre permisos
+       y administraci√≥n, ver <A
 HREF="x5590.htm"
->AdministraciÛn de
+>Administraci√≥n de
       usuarios</A
 >.  
       </P
@@ -1084,7 +1084,7 @@ HREF="x5590.htm"
 ><P
 >Cada uno de los comandos para administrar archivos es muy
        flexible y configurable por medio de opciones, recomendamos de
-      forma especial consultar las p·ginas <B
+      forma especial consultar las p√°ginas <B
 CLASS="command"
 >man</B
 > de
@@ -1093,12 +1093,12 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->La jerarquÌa de directorios, los archivos y los permisos se
+>La jerarqu√≠a de directorios, los archivos y los permisos se
        organizan en las particiones de un disco duro o en un disquette
-       empleando un sistema de archivo.  Puede conocer algo m·s sobre el
-       tema en la guÌa <A
+       empleando un sistema de archivo.  Puede conocer algo m√°s sobre el
+       tema en la gu√≠a <A
 HREF="x6433.htm"
->AdministraciÛn 
+>Administraci√≥n 
 	de archivos</A
 > o con <B
 CLASS="command"
@@ -1109,11 +1109,11 @@ CLASS="command"
 ><LI
 ><P
 >Como complemento a esta lectura, puede consultar varias
-       secciones de la documentaciÛn de fileutils con <B
+       secciones de la documentaci√≥n de fileutils con <B
 CLASS="command"
 >info
 	fileutils</B
-> o en lÌnea en <A
+> o en l√≠nea en <A
 HREF="http://www.gnu.org/manual/fileutils/html_mono/fileutils.html"
 TARGET="_top"
 >http://www.gnu.org/manual/fileutils/html_mono/fileutils.html</A
@@ -1136,13 +1136,13 @@ CLASS="qandaset"
 ><DT
 >1. <A
 HREF="c1054.htm#orgarch.com.1"
->øEn su directorio personal hay
-	   archivos de configuraciÛn? En caso afirmativo cite algunos.</A
+>¬øEn su directorio personal hay
+	   archivos de configuraci√≥n? En caso afirmativo cite algunos.</A
 ></DT
 ><DT
 >2. <A
 HREF="c1054.htm#orgarch.com.2"
->Estando en un intÈrprete de comandos vaya al directorio
+>Estando en un int√©rprete de comandos vaya al directorio
        <TT
 CLASS="filename"
 >/usr/share/pixmaps</TT
@@ -1150,8 +1150,8 @@ CLASS="filename"
        liste con <B
 CLASS="command"
 >ls</B
-> y caracteres comodÌn todos los
-       archivos con extensiÛn <TT
+> y caracteres comod√≠n todos los
+       archivos con extensi√≥n <TT
 CLASS="literal"
 >.xpm</TT
 >.  Desde
@@ -1177,7 +1177,7 @@ CLASS="filename"
 HREF="c1054.htm#orgarch.perm.1"
 >&#13;       Para mejorar la seguridad de sus archivos y evitar que otras
        personas puedan consultarlos, quite a su directorio el permiso
-       de ejecuciÛn para el grupo y para otros usuarios.</A
+       de ejecuci√≥n para el grupo y para otros usuarios.</A
 ></DT
 ><DT
 >4. <A
@@ -1202,8 +1202,8 @@ NAME="orgarch.com.1"
 ></A
 ><B
 >1. </B
->øEn su directorio personal hay
-	   archivos de configuraciÛn? En caso afirmativo cite algunos.</P
+>¬øEn su directorio personal hay
+	   archivos de configuraci√≥n? En caso afirmativo cite algunos.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -1226,7 +1226,7 @@ NAME="orgarch.com.2"
 ></A
 ><B
 >2. </B
->Estando en un intÈrprete de comandos vaya al directorio
+>Estando en un int√©rprete de comandos vaya al directorio
        <TT
 CLASS="filename"
 >/usr/share/pixmaps</TT
@@ -1234,8 +1234,8 @@ CLASS="filename"
        liste con <B
 CLASS="command"
 >ls</B
-> y caracteres comodÌn todos los
-       archivos con extensiÛn <TT
+> y caracteres comod√≠n todos los
+       archivos con extensi√≥n <TT
 CLASS="literal"
 >.xpm</TT
 >.  Desde
@@ -1284,7 +1284,7 @@ NAME="orgarch.perm.1"
 >
        Para mejorar la seguridad de sus archivos y evitar que otras
        personas puedan consultarlos, quite a su directorio el permiso
-       de ejecuciÛn para el grupo y para otros usuarios.</P
+       de ejecuci√≥n para el grupo y para otros usuarios.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -1352,9 +1352,9 @@ CLASS="command"
 >ln</B
 >
 	   es crear enlaces "duros", es decir asociar el nombre del
-	   enlace con la informaciÛn del archivo fuente. Un enlace
+	   enlace con la informaci√≥n del archivo fuente. Un enlace
 	   suave es una referencia al nombre de un archivo ---no a la
-	   informaciÛn
+	   informaci√≥n
 	  </P
 ></TD
 ></TR
@@ -1400,16 +1400,16 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Adem·s de estos tipos de permiso, en Linux, hay otros que
+>Adem√°s de estos tipos de permiso, en Linux, hay otros que
 	pueden aplicarse a programas y directorios para brindar algo
-	de seguridad o afectar el desempeÒo.  Por ejemplo el permiso
+	de seguridad o afectar el desempe√±o.  Por ejemplo el permiso
 	<TT
 CLASS="literal"
 >s</TT
 > (set-user-ID) en un programa hace que la
-	identificaciÛn del usuario que ejecuta el programa cambie por
-	la identificaciÛn del dueÒo del programa durante su
-	ejecuciÛn.</P
+	identificaci√≥n del usuario que ejecuta el programa cambie por
+	la identificaci√≥n del due√±o del programa durante su
+	ejecuci√≥n.</P
 ></TD
 ></TR
 ></TABLE
@@ -1457,7 +1457,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->B˙squeda y consulta de documentaciÛn</TD
+>B√∫squeda y consulta de documentaci√≥n</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -1467,7 +1467,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->InformaciÛn personal y comunicaciÛn con otros
+>Informaci√≥n personal y comunicaci√≥n con otros
     usuarios</TD
 ></TR
 ></TABLE

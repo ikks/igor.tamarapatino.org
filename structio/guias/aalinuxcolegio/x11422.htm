@@ -1,22 +1,22 @@
 <HTML
 ><HEAD
 ><TITLE
->InstalaciÛn de Debian</TITLE
+>Instalaci√≥n de Debian</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="AdministraciÛn de Linux en computadores aislados"
+TITLE="Administraci√≥n de Linux en computadores aislados"
 HREF="c8032.htm"><LINK
 REL="PREVIOUS"
 TITLE="Dispositivos y Linux"
 HREF="x9697.htm"><LINK
 REL="NEXT"
-TITLE="LocalizaciÛn y configuraciÛn de algunos programas"
+TITLE="Localizaci√≥n y configuraci√≥n de algunos programas"
 HREF="x11660.htm"></HEAD
 ><BODY
 CLASS="sect1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -54,7 +54,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->CapÌtulo 5. AdministraciÛn de Linux en computadores aislados</TD
+>Cap√≠tulo 5. Administraci√≥n de Linux en computadores aislados</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -75,7 +75,7 @@ CLASS="sect1"
 CLASS="sect1"
 ><A
 NAME="instalacion-de-debian"
->InstalaciÛn de Debian</A
+>Instalaci√≥n de Debian</A
 ></H1
 ><P
 >Indicadores de Logros: </P
@@ -97,8 +97,8 @@ HREF="a14434.htm#plataforma-de-referencia"
 ></UL
 ><P
 >&#13;    Hay diversas distribuciones de Linux, cada una con debilidades y
-   fortalezas propias.  Nuestra recomendaciÛn es la distribuciÛn
-   Debian 2.2. Que si bien no es la distribuciÛn m·s f·cil de
+   fortalezas propias.  Nuestra recomendaci√≥n es la distribuci√≥n
+   Debian 2.2. Que si bien no es la distribuci√≥n m√°s f√°cil de
    instalar, ofrece a cambio otras ventajas:
    </P
 ><P
@@ -106,20 +106,20 @@ HREF="a14434.htm#plataforma-de-referencia"
 ><UL
 ><LI
 ><P
->Es una distribuciÛn de caracter social, que antepone los
+>Es una distribuci√≥n de caracter social, que antepone los
       intereses de la comunidad a la publicidad o el beneficio de los
       desarrolladores.  </P
 ></LI
 ><LI
 ><P
->TÈcnicamente est· muy bien afinada y provee un excelente
+>T√©cnicamente est√° muy bien afinada y provee un excelente
      manejador de paquetes.  </P
 ></LI
 ><LI
 ><P
 >Con respecto a otras distribuciones ampliamente conocidas,
-     es la ˙nica sobre cuyo futuro podemos decidir, pues su desarrollo
-     es abierto a quiÈn quiera participar y es democr·tico.
+     es la √∫nica sobre cuyo futuro podemos decidir, pues su desarrollo
+     es abierto a qui√©n quiera participar y es democr√°tico.
      </P
 ></LI
 ></UL
@@ -129,34 +129,34 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="lectura-instalacion-de-debian"
->Lectura: InstalaciÛn de Debian</A
+>Lectura: Instalaci√≥n de Debian</A
 ></H2
 ><P
 ></P
 ><UL
 ><LI
 ><P
->Antes de iniciar la instalaciÛn haga un
+>Antes de iniciar la instalaci√≥n haga un
        listado del hardware que tiene disponible y de los recursos de
      hardware que emplean (ver<A
 HREF="x8783.htm"
->Hardware b·sico y
+>Hardware b√°sico y
 	Linux</A
 >).
       </P
 ></LI
 ><LI
 ><P
->Planee la forma como distribuir· el espacio en su(s)
-       disco(s) duro(s), las particiones que destinar· para los
-       directorios de Linux y la forma como arrancar· Linux y
+>Planee la forma como distribuir√° el espacio en su(s)
+       disco(s) duro(s), las particiones que destinar√° para los
+       directorios de Linux y la forma como arrancar√° Linux y
        eventualmente otro(s) sistema(s) operativo(s) (ver<A
 HREF="x9697.htm#discos-duros"
 >Discos duros</A
 >).  Tenga en cuenta
-       que podr· configurar el cargador de arranque para cargar m·s de
+       que podr√° configurar el cargador de arranque para cargar m√°s de
        un sistema operativo, ubicados en distintas particiones o en
-       distintos discos, pero que con algunas BIOS la informaciÛn para
+       distintos discos, pero que con algunas BIOS la informaci√≥n para
        arrancar Linux debe estar en los primeros 1024 cilindros de un
        disco (ver<A
 HREF="x9697.htm#discos-duros"
@@ -170,11 +170,11 @@ NAME="AEN11448"
 ></A
 ><P
 >Programa 
-	para DOS que permite cambiar el tamaÒo de una particiÛn FAT.
+	para DOS que permite cambiar el tama√±o de una partici√≥n FAT.
      </P
 ><P
 >De requerirlo cree espacio para las particiones que
-       planeÛ, si tiene DOS o Windows puede defragmentar y emplear el
+       plane√≥, si tiene DOS o Windows puede defragmentar y emplear el
        programa <TT
 CLASS="literal"
 >fips</TT
@@ -183,7 +183,7 @@ CLASS="literal"
 CLASS="filename"
 >/tools</TT
 > del CD 1), si tiene Linux puede
-       crear espacio con el program parted (Cambio del tamaÒo de un
+       crear espacio con el program parted (Cambio del tama√±o de un
        sistema de archivos ver <A
 HREF="x9697.htm#discos-duros"
 >Discos
@@ -193,11 +193,11 @@ HREF="x9697.htm#discos-duros"
 ></LI
 ><LI
 ><P
->De los mÈtodos de instalaciÛn posibles el m·s sencillo es
-       usar un CD-ROM. Si su BIOS lo permite, config˙rela para
+>De los m√©todos de instalaci√≥n posibles el m√°s sencillo es
+       usar un CD-ROM. Si su BIOS lo permite, config√∫rela para
        arrancar el sistema por el CD-ROM y emplee el CD 1 de
-       Debian. Si su BIOS no lo permite o si requiere otro mÈtodo de
-       instalaciÛn cree dos disquetes (de 1.44) con las imagenes:
+       Debian. Si su BIOS no lo permite o si requiere otro m√©todo de
+       instalaci√≥n cree dos disquetes (de 1.44) con las imagenes:
        <TT
 CLASS="filename"
 >rescue.bin</TT
@@ -219,7 +219,7 @@ CLASS="filename"
 CLASS="filename"
 >rescue.bin</TT
 > desde DOS/Windows en un
-       disquete (unidad A en terminologÌa DOS), puede emplear el
+       disquete (unidad A en terminolog√≠a DOS), puede emplear el
        programa <TT
 CLASS="filename"
 >rawrite2</TT
@@ -233,7 +233,7 @@ CLASS="programlisting"
 >&#13;rawrite2 -f rescue.bin -d a
 </PRE
 ><P
->&#13;       Desde Linux y otras versiones de Unix podrÌa usar
+>&#13;       Desde Linux y otras versiones de Unix podr√≠a usar
        <B
 CLASS="command"
 >dd</B
@@ -244,7 +244,7 @@ NAME="AEN11469"
 ></A
 ><P
 >Este programa permite
-	copiar informaciÛn por bloques. Es usado por ejemplo para copiar
+	copiar informaci√≥n por bloques. Es usado por ejemplo para copiar
 	la imagen de un disquete en un disquete.
      </P
 ><PRE
@@ -252,7 +252,7 @@ CLASS="programlisting"
 >&#13;dd if=rescue.bin of=/dev/fd0 bs=1024
 </PRE
 ><P
->&#13;       DespuÈs arranque el sistema iniciando por el disquete con
+>&#13;       Despu√©s arranque el sistema iniciando por el disquete con
        <TT
 CLASS="filename"
 >rescue.bin</TT
@@ -269,7 +269,7 @@ CLASS="mediaobject"
 ><P
 ><IMG
 SRC="inst22-1.png"
-ALT="InstalaciÛn de Debian 2.2xdvi"
+ALT="Instalaci√≥n de Debian 2.2xdvi"
 ></IMG
 ></P
 ></DIV
@@ -279,8 +279,8 @@ ALT="InstalaciÛn de Debian 2.2xdvi"
 >
 	</P
 ><P
->&#13;       Este disquete permitir· iniciar un sistema Linux mÌnimo para
-       iniciar una instalaciÛn o para recuperar un sistema que pueda
+>&#13;       Este disquete permitir√° iniciar un sistema Linux m√≠nimo para
+       iniciar una instalaci√≥n o para recuperar un sistema que pueda
        fallar
        <A
 NAME="AEN11487"
@@ -291,7 +291,7 @@ HREF="#FTN.AEN11487"
 ></LI
 ><LI
 ><P
->El programa de instalaciÛn le permitir· configurar un
+>El programa de instalaci√≥n le permitir√° configurar un
        teclado sencillo, (<TT
 CLASS="literal"
 >qwerty/us</TT
@@ -299,8 +299,8 @@ CLASS="literal"
        <TT
 CLASS="literal"
 >qwerty/es</TT
->) despuÈs de completar la
-       instalaciÛn podr· refinar su elecciÛn (ver<A
+>) despu√©s de completar la
+       instalaci√≥n podr√° refinar su elecci√≥n (ver<A
 HREF="x9697.htm#teclado"
 >Teclado</A
 >).
@@ -316,7 +316,7 @@ CLASS="mediaobject"
 ><P
 ><IMG
 SRC="inst22-2.png"
-ALT="InstalaciÛn de Debian 2.2xdvi"
+ALT="Instalaci√≥n de Debian 2.2xdvi"
 ></IMG
 ></P
 ></DIV
@@ -328,9 +328,9 @@ ALT="InstalaciÛn de Debian 2.2xdvi"
 ></LI
 ><LI
 ><P
->En la mayorÌa de computadores no requerir· cargar mÛdulos
-       adicionales para realizar la instalaciÛn, esto podrÌa ser
-       necesario si desea hacer una instalaciÛn en red (para
+>En la mayor√≠a de computadores no requerir√° cargar m√≥dulos
+       adicionales para realizar la instalaci√≥n, esto podr√≠a ser
+       necesario si desea hacer una instalaci√≥n en red (para
        configurar la tarjeta) o si su unidad de CD-ROM no es IDE/ATAPI
        (ver<A
 HREF="x9697.htm#unidades-de-cd-dash-rom-y-dvd"
@@ -341,103 +341,103 @@ HREF="x9697.htm#unidades-de-cd-dash-rom-y-dvd"
 ></LI
 ><LI
 ><P
->Durante la instalaciÛn eligiendo "Partition a Hard Disk"
-       podr· emplear el programa <TT
+>Durante la instalaci√≥n eligiendo "Partition a Hard Disk"
+       podr√° emplear el programa <TT
 CLASS="literal"
 >cfdisk</TT
 > (ver<A
 HREF="x9697.htm#discos-duros"
 >Discos duros</A
 >), para dividir el
-       espacio que abriÛ y marcar las particiones nuevas como Linux
+       espacio que abri√≥ y marcar las particiones nuevas como Linux
        (tipo 83) y una como Linux swap (tipo 82). Con
        <TT
 CLASS="literal"
 >cfdisk</TT
-> para dividir una particiÛn en dos,
-       primero debe borrarla y despuÈs crear dos nuevas.
+> para dividir una partici√≥n en dos,
+       primero debe borrarla y despu√©s crear dos nuevas.
       </P
 ></LI
 ><LI
 ><P
->Formatee cada particiÛn Linux para que pueda usar el
-       sistema de archivos ext2, para esto eliga la opciÛn del men˙
+>Formatee cada partici√≥n Linux para que pueda usar el
+       sistema de archivos ext2, para esto eliga la opci√≥n del men√∫
        "Initialize a Linux Partition" (ver<A
 HREF="x6433.htm#sistema-de-archivos-ext-two"
 >Sistema de archivos
        ext2</A
->).  Podr· especificar tambiÈn el directorio en el
-       que desea montar cada particiÛn que inicialice (si tiene otras
-       particiones Linux en algunos de sus discos tambiÈn podrÌa
+>).  Podr√° especificar tambi√©n el directorio en el
+       que desea montar cada partici√≥n que inicialice (si tiene otras
+       particiones Linux en algunos de sus discos tambi√©n podr√≠a
        escoger directorios para montarlas con "Mount a
        Previously-Initialized Partition" ver <A
 HREF="x6433.htm#montaje-y-desmontaje-de-sistemas-de-archivos"
 >Montaje
        y desmontaje de sistemas de archivos</A
 >).  Formatee y
-       active la particiÛn para swap con la opciÛn "Initialize and
+       active la partici√≥n para swap con la opci√≥n "Initialize and
        Activate a Swap Partition".
       </P
 ></LI
 ><LI
 ><P
 >Cuando termine de inicializar y activar todas las
-       particiones instale el kernel y los mÛdulos con la opciÛn del
-       men˙ "Install Operating System Kernel and Modules", despuÈs
-       podrÌa cargar algunos mÛdulos de acuerdo a los dispositivos de
+       particiones instale el kernel y los m√≥dulos con la opci√≥n del
+       men√∫ "Install Operating System Kernel and Modules", despu√©s
+       podr√≠a cargar algunos m√≥dulos de acuerdo a los dispositivos de
        su computador<A
 NAME="AEN11522"
 HREF="#FTN.AEN11522"
 >[3]</A
 >, pero esta
-       operaciÛn puede aplazarse hasta tener un sistema mÌnimo
-       funcionando ---podr· realizarla posteriormente con el programa
+       operaci√≥n puede aplazarse hasta tener un sistema m√≠nimo
+       funcionando ---podr√° realizarla posteriormente con el programa
        <TT
 CLASS="literal"
 >modconf</TT
 > (ver<A
 HREF="x8370.htm#modulos"
->MÛdulos</A
+>M√≥dulos</A
 >).
       </P
 ></LI
 ><LI
 ><P
->Si el computador que instala funcionar· en red LAN (por
+>Si el computador que instala funcionar√° en red LAN (por
        ejemplo en una red de computadores de un colegio), es
-       recomendable que intente cargar el mÛdulo apropiado para la
-       tarjeta de red, asÌ el programa de instalaciÛn le permitir·
-       especificar m·s informaciÛn sobre la red. Eventualmente puede
+       recomendable que intente cargar el m√≥dulo apropiado para la
+       tarjeta de red, as√≠ el programa de instalaci√≥n le permitir√°
+       especificar m√°s informaci√≥n sobre la red. Eventualmente puede
        querer emplear los siguientes datos generales:</P
 ><PRE
 CLASS="programlisting"
->&#13;DirecciÛn IP: 192.168.0.1
+>&#13;Direcci√≥n IP: 192.168.0.1
 Netmask: 255.255.255.0
 Gateway: 192.168.0.1
 Servidor DNS: 192.168.0.1
 </PRE
 ><P
->DirecciÛn IP que puede usar
-      durante una instalaciÛn en la que no desea tener en cuenta
+>Direcci√≥n IP que puede usar
+      durante una instalaci√≥n en la que no desea tener en cuenta
       detalles de la red (Ayuda: termina en .0.1). </P
 ><P
->&#13;       Con esta configuraciÛn puede escoger cualquier nombre para su
-       m·quina y su dominio.
+>&#13;       Con esta configuraci√≥n puede escoger cualquier nombre para su
+       m√°quina y su dominio.
       </P
 ></LI
 ><LI
 ><P
->Si elige instalar el cargador de arranque (opciÛn del men˙
-       "Make Linux Bootable directly from H.D"), podr· instalar LILO
-       bien en el MBR o en el primer sector de la particiÛn
+>Si elige instalar el cargador de arranque (opci√≥n del men√∫
+       "Make Linux Bootable directly from H.D"), podr√° instalar LILO
+       bien en el MBR o en el primer sector de la partici√≥n
        <TT
 CLASS="filename"
 >/</TT
->.  Si tiene sÛlo Windows en su disco
-       puede ser mejor instalarlo en el MBR ---cuando reinicie entrar·
-       a Linux y podr· configurar LILO para permitirle entrar tambiÈn
-       a Windows, ver m·s adelante---, si tiene otras particiones con
-       Linux que usen LILO o alg˙n otro cargador de arranque puede
+>.  Si tiene s√≥lo Windows en su disco
+       puede ser mejor instalarlo en el MBR ---cuando reinicie entrar√°
+       a Linux y podr√° configurar LILO para permitirle entrar tambi√©n
+       a Windows, ver m√°s adelante---, si tiene otras particiones con
+       Linux que usen LILO o alg√∫n otro cargador de arranque puede
        dejar LILO en el sector de arranque de <TT
 CLASS="filename"
 >/</TT
@@ -451,20 +451,20 @@ HREF="x9697.htm#discos-duros"
 ></LI
 ><LI
 ><P
->Cuando reinicie el computador entrar· al Linux que instalÛ
-       y el programa de instalaciÛn continuar·.  Por seguridad es
+>Cuando reinicie el computador entrar√° al Linux que instal√≥
+       y el programa de instalaci√≥n continuar√°.  Por seguridad es
        mejor emplear claves MD5 y Shadow (ver<A
 HREF="x5590.htm#usuarios"
 >Usuarios</A
 >).  Al elegir las tareas que
-       realizar· con su sistema es recomendable que instale
+       realizar√° con su sistema es recomendable que instale
        herramientas de desarrollo (para compilar programas ver <A
 HREF="x7217.htm#compilacion-e-instalacion-de-programas-a-partir-de-fuentes"
->CompilaciÛn
-       e instalaciÛn de programas a partir de fuentes</A
+>Compilaci√≥n
+       e instalaci√≥n de programas a partir de fuentes</A
 >).  Si por
-     alg˙n motivo se interrumpe o usted desea reiniciar el proceso de
-     instalaciÛn, use desde la cuenta root:
+     alg√∫n motivo se interrumpe o usted desea reiniciar el proceso de
+     instalaci√≥n, use desde la cuenta root:
 <PRE
 CLASS="programlisting"
 >&#13;dpkg-reconfigure base-config
@@ -474,16 +474,16 @@ CLASS="programlisting"
 CLASS="literal"
 >base-config</TT
 >), las acciones
-       realizadas durante la instalaciÛn se registran en la bitacora
+       realizadas durante la instalaci√≥n se registran en la bitacora
        <TT
 CLASS="filename"
 >/var/log/installer</TT
->.  TambiÈn podr· entrar
+>.  Tambi√©n podr√° entrar
        al programa <TT
 CLASS="literal"
 >dselect</TT
-> para refinar a˙n m·s la
-       selecciÛn de paquetes, o para instalar paquetes de otras
+> para refinar a√∫n m√°s la
+       selecci√≥n de paquetes, o para instalar paquetes de otras
        fuentes (ver <A
 HREF="x7217.htm#paquetes-en-debian"
 >Paquetes en
@@ -493,20 +493,20 @@ HREF="x7217.htm#paquetes-en-debian"
 ></LI
 ><LI
 ><P
->Mientras se instalan y configuran los paquetes, tendr· que
+>Mientras se instalan y configuran los paquetes, tendr√° que
        intervenir en ocasiones, por ejemplo para configurar X-Window.
-       Al igual que con mÛdulos para dispositivos, si no resulta
-       f·cil, no es indispensable que lo configure durante la
-       instalaciÛn (para configurar X-Window posteriormente vea <A
+       Al igual que con m√≥dulos para dispositivos, si no resulta
+       f√°cil, no es indispensable que lo configure durante la
+       instalaci√≥n (para configurar X-Window posteriormente vea <A
 HREF="x9697.htm#monitor-y-tarjeta-graficadora"
 >Monitor y tarjeta
        graficadora</A
->).  En ocasiones la instalaciÛn de paquetes
+>).  En ocasiones la instalaci√≥n de paquetes
        no se completa, es recomendable que entre al programa
        <TT
 CLASS="literal"
 >dselect</TT
-> y eliga la opciÛn
+> y eliga la opci√≥n
        <TT
 CLASS="literal"
 >Install</TT
@@ -515,10 +515,10 @@ CLASS="literal"
 ></LI
 ><LI
 ><P
->Una vez la instalaciÛn de paquetes concluya, si instalÛ
+>Una vez la instalaci√≥n de paquetes concluya, si instal√≥
        LILO en el MBR puede configurarlo para permitirle entrar a
        otros sistemas operativos. Por ejemplo si tiene Windows en la
-       particiÛn <TT
+       partici√≥n <TT
 CLASS="filename"
 >/dev/hda1</TT
 > (ver <A
@@ -536,7 +536,7 @@ CLASS="programlisting"
 </PRE
 >
        cambiando dos por la etiqueta con la que desee entrar al otro sistema, 
-       despuÈs ejecute <TT
+       despu√©s ejecute <TT
 CLASS="literal"
 >/sbin/lilo</TT
 >.  
@@ -544,7 +544,7 @@ CLASS="literal"
 ></LI
 ><LI
 ><P
->Para completar la instalaciÛn puede:
+>Para completar la instalaci√≥n puede:
       </P
 ><P
 ></P
@@ -557,7 +557,7 @@ CLASS="literal"
 CLASS="filename"
 >/etc/apt/sources.list</TT
 >, por ejemplo si
-	   tiene conexiÛn a Internet:
+	   tiene conexi√≥n a Internet:
 <PRE
 CLASS="programlisting"
 >&#13;deb http://non-us.debian.org/debian-non-US stable/non-US main contrib non-free.
@@ -572,21 +572,21 @@ HREF="x7217.htm#paquetes-en-debian"
 ></LI
 ><LI
 ><P
->Refinar configuraciÛn del teclado para espaÒol
+>Refinar configuraci√≥n del teclado para espa√±ol
 	 (ver <A
 HREF="x11660.htm#teclado-en-espanol"
 >Teclado en
-	espaÒol</A
+	espa√±ol</A
 >) </P
 ></LI
 ><LI
 ><P
 >Instalar
-	 locale para Colombia y configurar mensajes en espaÒol (ver
+	 locale para Colombia y configurar mensajes en espa√±ol (ver
 	 <A
 HREF="x11660.htm#locale-para-colombia-y-mensajes-en-espanol"
 >Locale
-	  para Colombia y mensajes en espaÒol</A
+	  para Colombia y mensajes en espa√±ol</A
 >) </P
 ></LI
 ><LI
@@ -609,14 +609,14 @@ HREF="x9697.htm#tarjetas-de-sonido"
 ><LI
 ><P
 >Configurar otros
-	dispositivos/servicios como impresiÛn (ver<A
+	dispositivos/servicios como impresi√≥n (ver<A
 HREF="x9697.htm#impresora"
 >Impresora</A
 >).  </P
 ></LI
 ><LI
 ><P
->Contarle a quienes desarrollan esta guÌa sobre
+>Contarle a quienes desarrollan esta gu√≠a sobre
 	su experiencia
 	<TT
 CLASS="literal"
@@ -634,13 +634,13 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="lecturas-recomendadas-instalacion-de-debian"
->Lecturas recomendadas: InstalaciÛn de Debian</A
+>Lecturas recomendadas: Instalaci√≥n de Debian</A
 ></H2
 ><P
 >Recomendamos de forma especial <SPAN
 ><I
 CLASS="emphasis"
->InstalaciÛn de
+>Instalaci√≥n de
       Debian Linux 2.2 para Intel x86</I
 ></SPAN
 > <A
@@ -650,7 +650,7 @@ TARGET="_top"
 >
    </P
 ><P
->Adem·s de otras secciones de este capÌtulo, en caso de que
+>Adem√°s de otras secciones de este cap√≠tulo, en caso de que
      las necesite, sugerimos algunas lecturas que pueden ayudarle a
      tomar decisiones al instalar Linux en su equipo:
      </P
@@ -659,10 +659,10 @@ TARGET="_top"
 ><UL
 ><LI
 ><P
->Durante el proceso de instalaciÛn puede necesitar conocer
+>Durante el proceso de instalaci√≥n puede necesitar conocer
        mejor su disco duro y el esquema de Linux para nombrar este
        tipo de dispositivos: The Linux System Administrators' Guide
-       (version 0.6.2), CapÌtulo 4. Using Disks and Other Storage
+       (version 0.6.2), Cap√≠tulo 4. Using Disks and Other Storage
        Media <A
 HREF="http://www.linuxdoc.org/LDP/sag/x754.html"
 TARGET="_top"
@@ -672,9 +672,9 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->Para entender como est· organizado lÛgicamente su disco,
+>Para entender como est√° organizado l√≥gicamente su disco,
        puede consultar The Linux System Administrators' Guide (version
-       0.6.2), capÌtulo 4. Using Disks and Other Storage Media <A
+       0.6.2), cap√≠tulo 4. Using Disks and Other Storage Media <A
 HREF="http://www.linuxdoc.org/LDP/sag/x885.html"
 TARGET="_top"
 >http://www.linuxdoc.org/LDP/sag/x885.html</A
@@ -683,12 +683,12 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->Para determinar como asignar espacio en la particiÛn
+>Para determinar como asignar espacio en la partici√≥n
        <TT
 CLASS="literal"
 >swap</TT
 >: The Linux System Administrators' Guide
-       (version 0.6.2), capÌtulo 5. Memory Management <A
+       (version 0.6.2), cap√≠tulo 5. Memory Management <A
 HREF="http://www.linuxdoc.org/LDP/sag/x1546.html"
 TARGET="_top"
 >http://www.linuxdoc.org/LDP/sag/x1546.html</A
@@ -703,7 +703,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="ejercicios-instalacion-de-debian"
->Ejercicios: InstalaciÛn de Debian</A
+>Ejercicios: Instalaci√≥n de Debian</A
 ></H2
 ><DIV
 CLASS="qandaset"
@@ -711,9 +711,9 @@ CLASS="qandaset"
 ><DT
 >1. <A
 HREF="x11422.htm#instala.instala.2"
->Verifique que puede teclear y ver los car·cteres de
-       espaÒol en las consolas virtuales y en X-Window, verifique que
-       los mensajes se presenten en espaÒol.</A
+>Verifique que puede teclear y ver los car√°cteres de
+       espa√±ol en las consolas virtuales y en X-Window, verifique que
+       los mensajes se presenten en espa√±ol.</A
 ></DT
 ><DT
 >2. <A
@@ -741,21 +741,21 @@ HREF="x11422.htm#instala.instala.4"
        <B
 CLASS="command"
 >free</B
->), verifique que el espacio swap estÈ
+>), verifique que el espacio swap est√©
        siendo usado. </A
 ></DT
 ><DT
 >4. <A
 HREF="x11422.htm#instala.instala.5"
->Revise los programas que est·n corriendo en su
-       m·quina. Revise la secuencia de inicializaciÛn.  Elimine de
+>Revise los programas que est√°n corriendo en su
+       m√°quina. Revise la secuencia de inicializaci√≥n.  Elimine de
        esta secuencia programas que no vaya a utilizar (si los deja
-       estar· desperdiciando memoria).</A
+       estar√° desperdiciando memoria).</A
 ></DT
 ><DT
 >5. <A
 HREF="x11422.htm#instala.instala.6"
->Verifique que estÈ instalada la documentaciÛn
+>Verifique que est√© instalada la documentaci√≥n
        y todos los programas recomendados en la plataforma de
        referencia (ver <A
 HREF="a14434.htm#plataforma-de-referencia"
@@ -770,12 +770,12 @@ HREF="x11422.htm#instala.instala.7"
 CLASS="filename"
 >/usr/share</TT
 >
-       busque los archivos de configuraciÛn de
+       busque los archivos de configuraci√≥n de
        <SPAN
 CLASS="application"
 >emacs</SPAN
 >, vea los directorios de las fuentes y
-       de ser posible instale paquetes que puedan ser ˙tiles para los
+       de ser posible instale paquetes que puedan ser √∫tiles para los
        usuarios finales (e.g <SPAN
 CLASS="application"
 >w3</SPAN
@@ -788,10 +788,10 @@ CLASS="application"
 ><DT
 >7. <A
 HREF="x11422.htm#instala.instala.9"
->Opcional: øEs posible generar su propia
-       distribuciÛn o elegir por lo menos paquetes para hacer la
-       instalaciÛn de una red con software homogÈneo? øQuÈ
-       distribuciÛn le permite hacer esto con facilidad?</A
+>Opcional: ¬øEs posible generar su propia
+       distribuci√≥n o elegir por lo menos paquetes para hacer la
+       instalaci√≥n de una red con software homog√©neo? ¬øQu√©
+       distribuci√≥n le permite hacer esto con facilidad?</A
 ></DT
 ></DL
 ><DIV
@@ -804,9 +804,9 @@ NAME="instala.instala.2"
 ></A
 ><B
 >1. </B
->Verifique que puede teclear y ver los car·cteres de
-       espaÒol en las consolas virtuales y en X-Window, verifique que
-       los mensajes se presenten en espaÒol.</P
+>Verifique que puede teclear y ver los car√°cteres de
+       espa√±ol en las consolas virtuales y en X-Window, verifique que
+       los mensajes se presenten en espa√±ol.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -851,7 +851,7 @@ CLASS="answer"
 ><P
 ><B
 > </B
->Puede intentarse la compilaciÛn de un programa
+>Puede intentarse la compilaci√≥n de un programa
 	  grande para tratar de verificar que procesador y memoria
           funcionan.</P
 ></DIV
@@ -870,7 +870,7 @@ NAME="instala.instala.4"
        <B
 CLASS="command"
 >free</B
->), verifique que el espacio swap estÈ
+>), verifique que el espacio swap est√©
        siendo usado. </P
 ></DIV
 ><DIV
@@ -895,10 +895,10 @@ NAME="instala.instala.5"
 ></A
 ><B
 >4. </B
->Revise los programas que est·n corriendo en su
-       m·quina. Revise la secuencia de inicializaciÛn.  Elimine de
+>Revise los programas que est√°n corriendo en su
+       m√°quina. Revise la secuencia de inicializaci√≥n.  Elimine de
        esta secuencia programas que no vaya a utilizar (si los deja
-       estar· desperdiciando memoria).</P
+       estar√° desperdiciando memoria).</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -910,7 +910,7 @@ CLASS="answer"
 CLASS="command"
 >ps</B
 >.  Buscar
-       en la secuencia de arranque del nivel en el que est· los
+       en la secuencia de arranque del nivel en el que est√° los
        que quiere eliminar y retirar el enlace apropiado de
        <TT
 CLASS="filename"
@@ -934,7 +934,7 @@ NAME="instala.instala.6"
 ></A
 ><B
 >5. </B
->Verifique que estÈ instalada la documentaciÛn
+>Verifique que est√© instalada la documentaci√≥n
        y todos los programas recomendados en la plataforma de
        referencia (ver <A
 HREF="a14434.htm#plataforma-de-referencia"
@@ -948,7 +948,7 @@ CLASS="answer"
 ><B
 > </B
 >Puede por ejemplo revisar la lista de los 
-	   programas que est·n instalados en su computador con el 
+	   programas que est√°n instalados en su computador con el 
 	   siguiente script awk (digamos que lo llama 
 	   <TT
 CLASS="filename"
@@ -987,12 +987,12 @@ NAME="instala.instala.7"
 CLASS="filename"
 >/usr/share</TT
 >
-       busque los archivos de configuraciÛn de
+       busque los archivos de configuraci√≥n de
        <SPAN
 CLASS="application"
 >emacs</SPAN
 >, vea los directorios de las fuentes y
-       de ser posible instale paquetes que puedan ser ˙tiles para los
+       de ser posible instale paquetes que puedan ser √∫tiles para los
        usuarios finales (e.g <SPAN
 CLASS="application"
 >w3</SPAN
@@ -1012,7 +1012,7 @@ CLASS="answer"
 CLASS="filename"
 >/usr/share/emacs/site-lisp/debian-startup.el</TT
 >
-       que indica que los archivos que se cargan al arranque est·n
+       que indica que los archivos que se cargan al arranque est√°n
        en: <TT
 CLASS="filename"
 >/etc/emacs/site-start.d</TT
@@ -1030,10 +1030,10 @@ NAME="instala.instala.9"
 ></A
 ><B
 >7. </B
->Opcional: øEs posible generar su propia
-       distribuciÛn o elegir por lo menos paquetes para hacer la
-       instalaciÛn de una red con software homogÈneo? øQuÈ
-       distribuciÛn le permite hacer esto con facilidad?</P
+>Opcional: ¬øEs posible generar su propia
+       distribuci√≥n o elegir por lo menos paquetes para hacer la
+       instalaci√≥n de una red con software homog√©neo? ¬øQu√©
+       distribuci√≥n le permite hacer esto con facilidad?</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -1075,7 +1075,7 @@ WIDTH="95%"
 >Estos disquetes
        permiten iniciar un sistema con hardware usual, hay otros
        disquetes para sistemas con discos o dispositivos no tan
-       comunes, ver manual de instalaciÛn.</P
+       comunes, ver manual de instalaci√≥n.</P
 ></TD
 ></TR
 ><TR
@@ -1093,14 +1093,14 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Para recuperar un computador con una particiÛn Linux,
-	 puede emplear el disquete de arranque, despuÈs de configurar
+>Para recuperar un computador con una partici√≥n Linux,
+	 puede emplear el disquete de arranque, despu√©s de configurar
 	 el teclado pase a la segunda consola virtual, monte el disco
 	 duro con la raiz de Linux e.g <TT
 CLASS="literal"
 >mount /dev/hda3
 	 /mnt</TT
->, establezcalo como nueva raÌz <TT
+>, establezcalo como nueva ra√≠z <TT
 CLASS="literal"
 >chroot
 	 /mnt</TT
@@ -1131,12 +1131,12 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Entre los mÛdulos presentados en
-       la secciÛn misc, dice <TT
+>Entre los m√≥dulos presentados en
+       la secci√≥n misc, dice <TT
 CLASS="literal"
 >sb</TT
 > "VIA 82Cxxx audio
-       support", deberÌa ser <TT
+       support", deber√≠a ser <TT
 CLASS="literal"
 >sb</TT
 > "SoundBlaster and
@@ -1202,7 +1202,7 @@ ACCESSKEY="U"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->LocalizaciÛn y configuraciÛn de algunos programas</TD
+>Localizaci√≥n y configuraci√≥n de algunos programas</TD
 ></TR
 ></TABLE
 ></DIV

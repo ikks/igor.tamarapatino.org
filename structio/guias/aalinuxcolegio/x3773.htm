@@ -1,23 +1,23 @@
 <HTML
 ><HEAD
 ><TITLE
->Scripts b·sicos para bash</TITLE
+>Scripts b√°sicos para bash</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="Linux desde la perspectiva de un usuario con m·s
+TITLE="Linux desde la perspectiva de un usuario con m√°s
    experiencia"
 HREF="c2347.htm"><LINK
 REL="PREVIOUS"
 TITLE="Procesos y tareas"
 HREF="x3282.htm"><LINK
 REL="NEXT"
-TITLE="ConfiguraciÛn de una sesiÛn"
+TITLE="Configuraci√≥n de una sesi√≥n"
 HREF="x4476.htm"></HEAD
 ><BODY
 CLASS="sect1"
@@ -38,7 +38,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -55,7 +55,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->CapÌtulo 3. Linux desde la perspectiva de un usuario con m·s
+>Cap√≠tulo 3. Linux desde la perspectiva de un usuario con m√°s
    experiencia</TD
 ><TD
 WIDTH="10%"
@@ -77,7 +77,7 @@ CLASS="sect1"
 CLASS="sect1"
 ><A
 NAME="scripts-basicos-para-bash"
->Scripts b·sicos para <SPAN
+>Scripts b√°sicos para <SPAN
 CLASS="application"
 >bash</SPAN
 ></A
@@ -131,7 +131,7 @@ NAME="script.programas"
 CLASS="application"
 >bash</SPAN
 > y
-       programas com˙nmente usados al hacer scripts.  </P
+       programas com√∫nmente usados al hacer scripts.  </P
 ></LI
 ></UL
 ><DIV
@@ -151,12 +151,12 @@ CLASS="application"
 CLASS="application"
 >bash</SPAN
 > es un archivo
-     tipo texto, cuyas lÌneas tienen comandos que son ejecutados
+     tipo texto, cuyas l√≠neas tienen comandos que son ejecutados
      (interpretados) por <SPAN
 CLASS="application"
 >bash</SPAN
 >.  Para lograr
-     que el intÈrprete de comandos intÈrprete las lÌneas de un archivo
+     que el int√©rprete de comandos int√©rprete las l√≠neas de un archivo
      puede:
    </P
 ><P
@@ -168,7 +168,7 @@ CLASS="application"
 CLASS="filename"
 >/bin/bash</TT
 > seguido del nombre
-       del archivo (o redireccionar la entrada est·ndar para que
+       del archivo (o redireccionar la entrada est√°ndar para que
        provenga del archivo).  </P
 ></LI
 ><LI
@@ -186,31 +186,31 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->Agregar en la primera lÌnea del archivo la cadena
+>Agregar en la primera l√≠nea del archivo la cadena
        <TT
 CLASS="literal"
 >#!/bin/bash</TT
->, dar permiso de ejecuciÛn al
-       archivo y teclear el nombre del archivo desde el intÈrprete de
+>, dar permiso de ejecuci√≥n al
+       archivo y teclear el nombre del archivo desde el int√©rprete de
        comandos ---como si fuera un nuevo comando.  </P
 ></LI
 ></UL
 ><P
->En este capÌtulo presentamos algunas facilidades que
+>En este cap√≠tulo presentamos algunas facilidades que
      <SPAN
 CLASS="application"
 >bash</SPAN
-> brinda y que resultan muy ˙tiles
-     para escribir scripts. Antes se presentar· como ejecuta
+> brinda y que resultan muy √∫tiles
+     para escribir scripts. Antes se presentar√° como ejecuta
      <SPAN
 CLASS="application"
 >bash</SPAN
 > una orden (lo cual en particulars
-     explica porque la primera lÌnea de un script para
+     explica porque la primera l√≠nea de un script para
      <SPAN
 CLASS="application"
 >bash</SPAN
-> deberÌa ser
+> deber√≠a ser
      <TT
 CLASS="literal"
 >#!/bin/bash</TT
@@ -222,7 +222,7 @@ CLASS="literal"
 CLASS="application"
 >bash</SPAN
 >, puede hacer
-     experimentos desde el intÈrprete de comandos mientras lee.
+     experimentos desde el int√©rprete de comandos mientras lee.
    </P
 ><DIV
 CLASS="sect3"
@@ -230,7 +230,7 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="ejecucion-de-un-comando-en-bash"
->EjecuciÛn de un comando en
+>Ejecuci√≥n de un comando en
       <SPAN
 CLASS="application"
 >bash</SPAN
@@ -248,10 +248,10 @@ CLASS="application"
 TYPE="1"
 ><LI
 ><P
->Primero realiza ciertas expansiones a la lÌnea de
-	comando, e identifica la orden, los par·metros y eventualmente
+>Primero realiza ciertas expansiones a la l√≠nea de
+	comando, e identifica la orden, los par√°metros y eventualmente
 	las variables de ambiente que se den junto con la orden (en
-	esta secciÛn se estudiar·n las expansiones y variables de
+	esta secci√≥n se estudiar√°n las expansiones y variables de
 	ambiente).
        </P
 ></LI
@@ -275,7 +275,7 @@ CLASS="application"
 ><P
 >Si la orden no va precedida de una ruta, busca un alias
 	que pueda corresponder con la orden y si lo encuentra lo
-	remplaza por su valor (m·s adelante en esta secciÛn
+	remplaza por su valor (m√°s adelante en esta secci√≥n
        explicaremos como manejar alias).  </P
 ></LI
 ><LI
@@ -292,13 +292,13 @@ CLASS="command"
        <TT
 CLASS="literal"
 >bg</TT
->) y en caso de serlo realiza la acciÛn
+>) y en caso de serlo realiza la acci√≥n
        correspondiente. 
        </P
 ></LI
 ><LI
 ><P
->Si la orden no est· precedida de una ruta, no es un alias
+>Si la orden no est√° precedida de una ruta, no es un alias
 	y no es un comando interno busca en varios directorios un
 	archivo ejecutable con el nombre dado y si lo encuentra en
 	alguno lo carga a memoria para ejecutarlo (el orden y los
@@ -306,8 +306,8 @@ CLASS="literal"
 	ambiente <TT
 CLASS="envar"
 >PATH</TT
-> que se explicar· en esta
-	secciÛn).
+> que se explicar√° en esta
+	secci√≥n).
        </P
 ></LI
 ><LI
@@ -330,7 +330,7 @@ CLASS="envar"
       <SPAN
 CLASS="application"
 >bash</SPAN
-> determinar· como ejecutarlo:
+> determinar√° como ejecutarlo:
      </P
 ><P
 ></P
@@ -347,10 +347,10 @@ CLASS="literal"
 CLASS="application"
 >bash</SPAN
 > emplea tal programa como
-	intÈrprete del archivo.  Como par·metros para el intÈrprete
-	emplea los que estÈn en la primera lÌnea del archivo, seguidos
-	del nombre del archivo y a continuaciÛn otros par·metros que
-	el usuario hubiera dado desde la lÌnea de comandos.
+	int√©rprete del archivo.  Como par√°metros para el int√©rprete
+	emplea los que est√©n en la primera l√≠nea del archivo, seguidos
+	del nombre del archivo y a continuaci√≥n otros par√°metros que
+	el usuario hubiera dado desde la l√≠nea de comandos.
        </P
 ></LI
 ><LI
@@ -369,13 +369,13 @@ NAME="AEN3852"
 HREF="#FTN.AEN3852"
 >[1]</A
 >.  Es decir lo trata como un script para el
-	  intÈrprete de comandos.
+	  int√©rprete de comandos.
        </P
 ></LI
 ><LI
 ><P
->Si el archivo es binario lo envÌa al kernel para su
-	ejecuciÛn.  El kernel podr· ejecutarlo si est· en un formato
+>Si el archivo es binario lo env√≠a al kernel para su
+	ejecuci√≥n.  El kernel podr√° ejecutarlo si est√° en un formato
 	reconocido (e.g el ejecutable producido por un compilador en
 	un formato reconocido por Linux ---ELF, a.out).
        </P
@@ -387,8 +387,8 @@ NAME="AEN3859"
 ><P
 >Con estos caracteres comienza
       un archivo tipo texto que debe ser interpretado cuando el
-      usuario solicita su ejecuciÛn, a continuaciÛn de ellos debe
-      estar la ruta del intÈrprete.</P
+      usuario solicita su ejecuci√≥n, a continuaci√≥n de ellos debe
+      estar la ruta del int√©rprete.</P
 ></DIV
 ><DIV
 CLASS="sect3"
@@ -400,13 +400,13 @@ NAME="ambiente-y-variables-de-ambiente"
 ></H3
 ><P
 >Una variable es un nombre al cual se le puede asociar un
-      valor, tal valor puede cambiar durante la ejecuciÛn de un
+      valor, tal valor puede cambiar durante la ejecuci√≥n de un
       programa ---es 'variable'.  Cada programa (incluyendo al
-      intÈrprete de comandos) se inicia en un ambiente el cual consta
+      int√©rprete de comandos) se inicia en un ambiente el cual consta
       de variables ---variables de ambiente--- que hereda del programa
-      que lo iniciÛ y que pueden tener un significado especial para el
+      que lo inici√≥ y que pueden tener un significado especial para el
       programa.  Las variables de ambiente que un programa usa se
-      especifican en la p·gina del manual del programa.
+      especifican en la p√°gina del manual del programa.
      </P
 ><A
 NAME="AEN3865"
@@ -428,14 +428,14 @@ CLASS="literal"
 CLASS="literal"
 >USER</TT
 > (su respuesta
-      debe estar en min˙sculas).</P
+      debe estar en min√∫sculas).</P
 ><P
 >Para asignar un valor a una variable de ambiente y crearla
       si no existe, teclee el nombre de la variable, en seguida el
-      car·cter '=' y despuÈs el valor. El valor puede constar de
-      letras, sÌmbolos o n˙meros, pero tenga en cuenta que hay algunos
+      car√°cter '=' y despu√©s el valor. El valor puede constar de
+      letras, s√≠mbolos o n√∫meros, pero tenga en cuenta que hay algunos
       caracteres con significado especial y que es mejor evitar en sus
-      primeros experimentos: $, {, }, `, ' (podr· escribirlos
+      primeros experimentos: $, {, }, `, ' (podr√° escribirlos
       precedidos de \ o encerrando el valor a asignar entre
       apostrofes).  Por ejemplo para asignar el valor
       <TT
@@ -466,14 +466,14 @@ CLASS="literal"
 >VAR</TT
 >.</P
 ><P
->DespuÈs de asignar una variable, puede emplear el valor
-      asociado a la misma en comandos que de al intÈrprete de
+>Despu√©s de asignar una variable, puede emplear el valor
+      asociado a la misma en comandos que de al int√©rprete de
       comandos, para hacerlo emplee el nombre de la variable precedido
-      del car·cter '$'.  Por ejemplo <B
+      del car√°cter '$'.  Por ejemplo <B
 CLASS="command"
 >ls -l $DIR</B
 >
-      listar· los archivos de la ruta asociada a la variable
+      listar√° los archivos de la ruta asociada a la variable
       <TT
 CLASS="literal"
 >DIR</TT
@@ -484,7 +484,7 @@ NAME="AEN3883"
 ></A
 ><P
 >Para emplear el valor de una
-      variable de ambiente en sus scripts para el intÈrprete de
+      variable de ambiente en sus scripts para el int√©rprete de
       comandos, debe anteponer este caracter al nombre de la
       variable.</P
 ><P
@@ -495,7 +495,7 @@ CLASS="application"
       <B
 CLASS="command"
 >echo</B
-> para enviar a salida est·ndar una cadena
+> para enviar a salida est√°ndar una cadena
       (por ejemplo <B
 CLASS="command"
 >echo tarea &#62; porhacer.txt</B
@@ -503,7 +503,7 @@ CLASS="command"
       dejar en el archivo <TT
 CLASS="filename"
 >porhacer.txt</TT
-> una lÌnea
+> una l√≠nea
       con la palabra <TT
 CLASS="literal"
 >tarea</TT
@@ -512,15 +512,15 @@ CLASS="literal"
       <B
 CLASS="command"
 >echo $DIR</B
-> presentar· el valor de la variable
+> presentar√° el valor de la variable
       <TT
 CLASS="envar"
 >DIR</TT
 >.
     </P
 ><P
->Orden para el intÈrprete de
-      comandos que le permitir· examinar el valor de la variable de
+>Orden para el int√©rprete de
+      comandos que le permitir√° examinar el valor de la variable de
       ambiente <TT
 CLASS="envar"
 >VAR</TT
@@ -534,7 +534,7 @@ CLASS="application"
       <B
 CLASS="command"
 >set</B
->. Algunas de las variables que ver· son:
+>. Algunas de las variables que ver√° son:
       <TT
 CLASS="envar"
 >USER</TT
@@ -545,20 +545,20 @@ CLASS="envar"
       es el login del usuario; <TT
 CLASS="envar"
 >UID</TT
-> con el n˙mero
+> con el n√∫mero
       que identifica al usuario; <TT
 CLASS="envar"
 >TERM</TT
 > mantiene el
-      nombre de la terminal que est· usando (ver <A
+      nombre de la terminal que est√° usando (ver <A
 HREF="x4476.htm#lectura-configuracion-de-una-sesion"
 >Lectura
-      ConfiguraciÛn de una sesiÛn</A
+      Configuraci√≥n de una sesi√≥n</A
 >); <TT
 CLASS="envar"
 >SHELL</TT
 > la
-      ruta y nombre del intÈrprete de comandos; <TT
+      ruta y nombre del int√©rprete de comandos; <TT
 CLASS="envar"
 >PWD</TT
 >
@@ -581,7 +581,7 @@ CLASS="application"
       <A
 HREF="x4476.htm#lectura-configuracion-de-una-sesion"
 >Lectura
-      ConfiguraciÛn de una sesiÛn</A
+      Configuraci√≥n de una sesi√≥n</A
 >); <TT
 CLASS="envar"
 >PATH</TT
@@ -623,7 +623,7 @@ CLASS="envar"
 CLASS="envar"
 >COLUMNS</TT
 > indican la cantidad de filas y
-      columnas de la terminal que est· usando;
+      columnas de la terminal que est√° usando;
       <TT
 CLASS="envar"
 >LANG</TT
@@ -639,7 +639,7 @@ CLASS="envar"
       con el usuario (ver <A
 HREF="x4476.htm#lectura-configuracion-de-una-sesion"
 >Lectura
-      ConfiguraciÛn de una sesiÛn</A
+      Configuraci√≥n de una sesi√≥n</A
 >); <TT
 CLASS="envar"
 >HOSTNAME</TT
@@ -648,7 +648,7 @@ CLASS="envar"
 CLASS="envar"
 >HISTFILE</TT
 > mantiene
-      el nombre del archivo con la historia de comandos, su tamaÒo lo
+      el nombre del archivo con la historia de comandos, su tama√±o lo
       limitan <TT
 CLASS="envar"
 >HISTFILESIZE</TT
@@ -660,7 +660,7 @@ CLASS="envar"
 CLASS="envar"
 >DISPLAY</TT
 > mantiene
-      la direcciÛn del servidor X-Window (see <A
+      la direcci√≥n del servidor X-Window (see <A
 HREF="x1647.htm#lectura-servicios-de-la-intranet"
 >Lectura Servicios de
       la Intranet</A
@@ -671,13 +671,13 @@ NAME="AEN3931"
 ></A
 ><P
 >Nombre de la variable de
-     ambiente que mantiene la direcciÛn del servidor X-Window.</P
+     ambiente que mantiene la direcci√≥n del servidor X-Window.</P
 ><P
 >&#13;     Cuando se inicia un programa desde <SPAN
 CLASS="application"
 >bash</SPAN
 >, el
-     ambiente que tendr· constar· de las variables que estÈn marcadas
+     ambiente que tendr√° constar√° de las variables que est√©n marcadas
      como exportables y de otras variables que se especifiquen al
      comienzo del comando (pueden separarse unas de otras con espacios
      y si el valor de alguna variable debe tener espacios puede
@@ -719,8 +719,8 @@ CLASS="envar"
 > tenga el valor
       1.</P
 ><P
->Para exportar una variable y lograr asÌ que forme parte del
-     ambiente de procesos creados por su sesiÛn, puede emplear bien
+>Para exportar una variable y lograr as√≠ que forme parte del
+     ambiente de procesos creados por su sesi√≥n, puede emplear bien
      <B
 CLASS="command"
 >declare -x </B
@@ -745,11 +745,11 @@ CLASS="replaceable"
 CLASS="emphasis"
 >VAR</I
 ></SPAN
->.  Empleando sÛlo
+>.  Empleando s√≥lo
      <B
 CLASS="command"
 >export</B
-> o sÛlo <B
+> o s√≥lo <B
 CLASS="command"
 >declare -x</B
 >
@@ -760,14 +760,14 @@ NAME="AEN3953"
 ></A
 ><P
 >Orden que debe dar en
-      un script para el intÈrprete de comandos, para exportar la
+      un script para el int√©rprete de comandos, para exportar la
       variable VAR al ambiente del proceso que inicie el
      script.</P
 ><P
 >En un script puede emplear ciertas variables especiales ($1,
-     $2, ...) para referenciar los par·metros que el usuario empleÛ al
-     iniciarlo.  $1 tendr· el valor del primer paramÈtro, $2 del
-     segundo y asÌ sucesivamente.  El siguiente script ejemplifica su
+     $2, ...) para referenciar los par√°metros que el usuario emple√≥ al
+     iniciarlo.  $1 tendr√° el valor del primer param√©tro, $2 del
+     segundo y as√≠ sucesivamente.  El siguiente script ejemplifica su
      uso:</P
 ><PRE
 CLASS="programlisting"
@@ -781,12 +781,12 @@ tar cvf $2.tar
 gzip $2.tar
 </PRE
 ><P
->&#13;     Este script recibe dos par·metros, el primero es una ruta y el
+>&#13;     Este script recibe dos par√°metros, el primero es una ruta y el
      segundo el nombre de un archivo.  Si el nombre del script es
      <TT
 CLASS="literal"
 >comp</TT
-> y tiene permiso de ejecuciÛn podrÌa
+> y tiene permiso de ejecuci√≥n podr√≠a
      usarse para crear un paquete comprimido
      <TT
 CLASS="filename"
@@ -807,8 +807,8 @@ CLASS="programlisting"
 CLASS="filename"
 >comp</TT
 >, suponiendo que es ejecutado desde el
-     mismo directorio donde se encuentra.  Si la ruta donde est· el
-     archivo est· en la variable <TT
+     mismo directorio donde se encuentra.  Si la ruta donde est√° el
+     archivo est√° en la variable <TT
 CLASS="envar"
 >PATH</TT
 >, no es
@@ -819,8 +819,8 @@ NAME="AEN3966"
 ></A
 ><P
 >En un script para el
-      intÈrprete de comandos se usa para referenciar el primer
-      par·metro que el usuario pase al ejecutarlo.</P
+      int√©rprete de comandos se usa para referenciar el primer
+      par√°metro que el usuario pase al ejecutarlo.</P
 ></DIV
 ><DIV
 CLASS="sect3"
@@ -850,7 +850,7 @@ NAME="AEN3975"
 ></A
 ><P
 >Referencia la cantidad de
-      par·metros que un script para <SPAN
+      par√°metros que un script para <SPAN
 CLASS="application"
 >bash</SPAN
 >
@@ -860,7 +860,7 @@ NAME="AEN3979"
 ></A
 ><P
 >Referencia todos los
-      par·metros que un script para <SPAN
+      par√°metros que un script para <SPAN
 CLASS="application"
 >bash</SPAN
 >
@@ -869,10 +869,10 @@ CLASS="application"
 NAME="AEN3983"
 ></A
 ><P
->Cuando la ejecuciÛn en
+>Cuando la ejecuci√≥n en
       primer plano de un comando termina, esta "variable" del
-      intÈrprete de comandos referencia el n˙mero retornado, es 0 sÛlo
-      si la operaciÛn fue exitosa.</P
+      int√©rprete de comandos referencia el n√∫mero retornado, es 0 s√≥lo
+      si la operaci√≥n fue exitosa.</P
 ><A
 NAME="AEN3986"
 ></A
@@ -883,15 +883,15 @@ NAME="AEN3986"
 NAME="AEN3989"
 ></A
 ><P
->Referencia la identificaciÛn
-      del proceso del intÈrprete de comandos desde el que se ejecuta un
+>Referencia la identificaci√≥n
+      del proceso del int√©rprete de comandos desde el que se ejecuta un
       script.</P
 ><A
 NAME="AEN3992"
 ></A
 ><P
->Referencia la identificaciÛn
-      del proceso del ˙ltimo comando ejecutado en segundo plano.</P
+>Referencia la identificaci√≥n
+      del proceso del √∫ltimo comando ejecutado en segundo plano.</P
 ><A
 NAME="AEN3995"
 ></A
@@ -910,32 +910,32 @@ CLASS="application"
 >, una cadena puede encerrarse entre dos
       caracteres como este, por ejemplo para incluir espacios.  Al
      encerrarla entre caracteres como este, se realizan expansiones
-      excepto expansiÛn de corchetes y de nombres de archivos.</P
+      excepto expansi√≥n de corchetes y de nombres de archivos.</P
 ><A
 NAME="AEN4002"
 ></A
 ><P
 >Secuencia que representa el
-      caracter fin de lÌnea en scripts para el intÈrprete de
+      caracter fin de l√≠nea en scripts para el int√©rprete de
       comandos.</P
 ><A
 NAME="AEN4005"
 ></A
 ><P
 >Secuencia que indica borrar
-      el caracter de la izquierda en scripts para el intÈrprete de
+      el caracter de la izquierda en scripts para el int√©rprete de
       comandos.</P
 ><A
 NAME="AEN4008"
 ></A
 ><P
->En el intÈrprete de comandos
+>En el int√©rprete de comandos
       puede usarse esta secuencia para producir el caracter '$'.</P
 ><A
 NAME="AEN4011"
 ></A
 ><P
->En el intÈrprete de comandos
+>En el int√©rprete de comandos
       puede usarse esta secuencia para producir el caracter
       tabulador.</P
 ><A
@@ -948,7 +948,7 @@ CLASS="application"
 >bash</SPAN
 >, una cadena puede encerrarse entre dos
       caracteres como este para evitar expansiones, por ejemplo para
-      incluir espacios y sÌmbolos reservados de <SPAN
+      incluir espacios y s√≠mbolos reservados de <SPAN
 CLASS="application"
 >bash</SPAN
 >
@@ -998,8 +998,8 @@ CLASS="replaceable"
 CLASS="bold"
 ><B
 CLASS="emphasis"
->ExpansiÛn de variables o
-	 par·metros</B
+>Expansi√≥n de variables o
+	 par√°metros</B
 ></SPAN
 ></DT
 ><DD
@@ -1008,18 +1008,18 @@ CLASS="emphasis"
 CLASS="literal"
 >$</TT
 >' es empleado para
-	 distinguir variables o bien par·metros de un script.  Las
+	 distinguir variables o bien par√°metros de un script.  Las
 	 variables son remplazadas por su valor, por ejemplo
 	 <B
 CLASS="command"
 >echo $PATH</B
-> presentar· el contenido de la
+> presentar√° el contenido de la
 	 variable <TT
 CLASS="envar"
 >PATH</TT
 >.
 	 
-	 En un script los par·metros se referencian con n˙meros,
+	 En un script los par√°metros se referencian con n√∫meros,
 	 <TT
 CLASS="literal"
 >$1</TT
@@ -1027,7 +1027,7 @@ CLASS="literal"
 CLASS="literal"
 >$2</TT
 > el
-	 segundo y asÌ sucesivamente.  Otros nombre especiales en un
+	 segundo y as√≠ sucesivamente.  Otros nombre especiales en un
 	 script son:
 	</P
 ><P
@@ -1042,7 +1042,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Es remplazado por la cantidad de par·metros que el
+>Es remplazado por la cantidad de par√°metros que el
 	     script recibe.
 	   </P
 ></DD
@@ -1053,8 +1053,8 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Que se expande a todos los par·metros que el script
-	    haya recibido, un par·metro se separa de otro con el valor de la
+>Que se expande a todos los par√°metros que el script
+	    haya recibido, un par√°metro se separa de otro con el valor de la
 	    variable <TT
 CLASS="envar"
 >IFS</TT
@@ -1068,14 +1068,14 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Todo programa al terminar debe retornar un n˙mero al
-	    sistema operativo, por convenciÛn 0 significa operaciÛne
-	    exitosa y n˙meros diferente representan errores.
+>Todo programa al terminar debe retornar un n√∫mero al
+	    sistema operativo, por convenci√≥n 0 significa operaci√≥ne
+	    exitosa y n√∫meros diferente representan errores.
 	    <TT
 CLASS="literal"
 >$?</TT
-> se expande al n˙mero retornado por
-	    el ˙ltimo programa ejecutado en primer plano. Un script
+> se expande al n√∫mero retornado por
+	    el √∫ltimo programa ejecutado en primer plano. Un script
 	    puede retornar un 3 en lugar de 0 con <TT
 CLASS="literal"
 >exit
@@ -1090,7 +1090,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Opciones que se pasaron al script durante su ejecuciÛn.
+>Opciones que se pasaron al script durante su ejecuci√≥n.
 	   </P
 ></DD
 ><DT
@@ -1100,7 +1100,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->IdentificaciÛn del proceso del intÈrprete de comandos.
+>Identificaci√≥n del proceso del int√©rprete de comandos.
  	   </P
 ></DD
 ><DT
@@ -1110,8 +1110,8 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->IdentificaciÛn del proceso del ˙ltimo comando que se
-	   ejecutÛ en segundo plano.
+>Identificaci√≥n del proceso del √∫ltimo comando que se
+	   ejecut√≥ en segundo plano.
 	   </P
 ></DD
 ><DT
@@ -1150,7 +1150,7 @@ CLASS="emphasis"
 CLASS="application"
 >bash</SPAN
 >
-	 los trata como una sola cadena.  Esto es ˙til por ejemplo
+	 los trata como una sola cadena.  Esto es √∫til por ejemplo
 	 cuando el nombre de un directorio o archivo tiene espacios,
 	 e.g. <B
 CLASS="command"
@@ -1160,12 +1160,12 @@ CLASS="command"
 	 '<TT
 CLASS="literal"
 >\</TT
->' seguido de un espacio, asÌ el efecto
-	 del ejemplo anterior tambiÈn podrÌa lograrse con <B
+>' seguido de un espacio, as√≠ el efecto
+	 del ejemplo anterior tambi√©n podr√≠a lograrse con <B
 CLASS="command"
 >cd
 	 los\ amigos</B
->. Hay otros caractÈres que pueden
+>. Hay otros caract√©res que pueden
 	 representarse con ayuda de '<TT
 CLASS="literal"
 >\</TT
@@ -1191,7 +1191,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Representa el caracter fin de lÌnea.  
+>Representa el caracter fin de l√≠nea.  
 	   </P
 ></DD
 ><DT
@@ -1212,7 +1212,7 @@ CLASS="literal"
 ><DD
 ><P
 >Representan los caracteres '\' '{' '}' y '$'
-	    respectivamente. Esto es ˙til para producir estos
+	    respectivamente. Esto es √∫til para producir estos
 	    caracteres sin que <SPAN
 CLASS="application"
 >bash</SPAN
@@ -1259,7 +1259,7 @@ CLASS="replaceable"
 CLASS="bold"
 ><B
 CLASS="emphasis"
->expansiÛn de corchetes</B
+>expansi√≥n de corchetes</B
 ></SPAN
 ></DT
 ><DD
@@ -1273,8 +1273,8 @@ CLASS="replaceable"
 	   letra2, ...</I
 ></TT
 > }</TT
-> ser· expandida a
-	   varias cadenas similares a la inicial pero la posiciÛn de
+> ser√° expandida a
+	   varias cadenas similares a la inicial pero la posici√≥n de
 	   <TT
 CLASS="literal"
 >{<TT
@@ -1284,19 +1284,19 @@ CLASS="replaceable"
 	   ...</I
 ></TT
 >}</TT
-> ser· remplazada por cada una
+> ser√° remplazada por cada una
 	   de las letras.  Por ejemplo <TT
 CLASS="literal"
 >ls
 	   /home/pepe/sal{a,e}n</TT
-> se expandir· a <TT
+> se expandir√° a <TT
 CLASS="literal"
 >ls
 	   /home/pepe/salan /home/pepe/salen</TT
 >.  Esta
-	   expansiÛn es la primera que se realiza cuando hay varias en
-	   un mismo comando, y sÛlo surge efecto si est· fuera de
-	   comillas o apÛstrofes.
+	   expansi√≥n es la primera que se realiza cuando hay varias en
+	   un mismo comando, y s√≥lo surge efecto si est√° fuera de
+	   comillas o ap√≥strofes.
 	</P
 ></DD
 ><DT
@@ -1319,12 +1319,12 @@ CLASS="replaceable"
 CLASS="bold"
 ><B
 CLASS="emphasis"
->sustituciÛn de comandos</B
+>sustituci√≥n de comandos</B
 ></SPAN
 ></DT
 ><DD
 ><P
->Un comando encerrado entre apÛstrofes invertidos (i.e
+>Un comando encerrado entre ap√≥strofes invertidos (i.e
 	 `<SPAN
 ><I
 CLASS="emphasis"
@@ -1337,16 +1337,16 @@ CLASS="literal"
 >" y "<TT
 CLASS="literal"
 >)</TT
->", ser·
-	 expandido al resultado que tal comando envÌe a salida
-	 est·ndar cuando es ejecutado.  Por ejemplo
+>", ser√°
+	 expandido al resultado que tal comando env√≠e a salida
+	 est√°ndar cuando es ejecutado.  Por ejemplo
 	</P
 ><PRE
 CLASS="programlisting"
 >&#13;TEXTOS=`ls *.txt`
 </PRE
 ><P
->&#13;	 asignar· a la variable <TT
+>&#13;	 asignar√° a la variable <TT
 CLASS="envar"
 >TEXTOS</TT
 > los nombres
@@ -1361,7 +1361,7 @@ CLASS="screen"
 >&#13;ls $(cat rutas.txt)
 </PRE
 ><P
->&#13;	 presentar· los archivos de los directorios que estÈn en el archivo 
+>&#13;	 presentar√° los archivos de los directorios que est√©n en el archivo 
 	 <TT
 CLASS="filename"
 >rutas.txt</TT
@@ -1394,8 +1394,8 @@ CLASS="emphasis"
 ></DT
 ><DD
 ><P
->Un texto que se encierra entre apÛstrofes no es expandido.
-	 Esto es ˙til cuando se requiere una cadena que tiene algunos
+>Un texto que se encierra entre ap√≥strofes no es expandido.
+	 Esto es √∫til cuando se requiere una cadena que tiene algunos
 	caracteres reservados para expansiones.  Por ejemplo</P
 ><PRE
 CLASS="programlisting"
@@ -1403,7 +1403,7 @@ CLASS="programlisting"
 echo '$N' es $N
 </PRE
 ><P
->&#13;	 enviar· a salida est·ndar <TT
+>&#13;	 enviar√° a salida est√°ndar <TT
 CLASS="computeroutput"
 >$N es 10</TT
 >
@@ -1415,7 +1415,7 @@ CLASS="literal"
 >$((<TT
 CLASS="replaceable"
 ><I
->expresiÛn</I
+>expresi√≥n</I
 ></TT
 >))</TT
 > -
@@ -1423,18 +1423,18 @@ CLASS="replaceable"
 CLASS="bold"
 ><B
 CLASS="emphasis"
->expansiÛn aritmÈtica</B
+>expansi√≥n aritm√©tica</B
 ></SPAN
 ></DT
 ><DD
 ><P
->Una expresiÛn aritmÈtica
+>Una expresi√≥n aritm√©tica
 	<A
 NAME="AEN4173"
 HREF="#FTN.AEN4173"
 >[2]</A
 >
-	ser· evaluada cuando se encierre entre <TT
+	ser√° evaluada cuando se encierre entre <TT
 CLASS="literal"
 >$((</TT
 > y
@@ -1474,13 +1474,13 @@ CLASS="replaceable"
 CLASS="bold"
 ><B
 CLASS="emphasis"
->ExpansiÛn de rutas</B
+>Expansi√≥n de rutas</B
 ></SPAN
 ></DT
 ><DD
 ><P
 >Algunos caracteres y secuencias son expandidos a nombres
-	de archivos. A continuaciÛn se presentan con ejemplos:
+	de archivos. A continuaci√≥n se presentan con ejemplos:
 	<P
 ></P
 ><UL
@@ -1489,7 +1489,7 @@ CLASS="emphasis"
 >&#13;	    <B
 CLASS="command"
 >echo *</B
->, presentar· todos los nombres de
+>, presentar√° todos los nombres de
 	    archivos del directorio de trabajo ---porque * expande a
 	    todos estos y <TT
 CLASS="literal"
@@ -1499,7 +1499,7 @@ CLASS="literal"
 	    <TT
 CLASS="literal"
 >*</TT
-> no ser· expandido y ser· mostrado por
+> no ser√° expandido y ser√° mostrado por
 	    <TT
 CLASS="literal"
 >echo</TT
@@ -1511,7 +1511,7 @@ CLASS="literal"
 >&#13;	   <B
 CLASS="command"
 >echo datos?.gnumeric</B
-> se expandir· a todos
+> se expandir√° a todos
 	    los nombres de archivos que comiencen por
 	    <TT
 CLASS="literal"
@@ -1528,8 +1528,8 @@ CLASS="literal"
 ><TT
 CLASS="literal"
 >echo ~/.*errors</TT
-> presentar· todos los
-	    nombres de archivos de configuraciÛn que estÈn en el directorio
+> presentar√° todos los
+	    nombres de archivos de configuraci√≥n que est√©n en el directorio
 	   del usuario y que terminen con errors.
 	  </P
 ></LI
@@ -1538,7 +1538,7 @@ CLASS="literal"
 ><B
 CLASS="command"
 >rm *[cho]</B
-> eliminar· todos los
+> eliminar√° todos los
 	   archivos que terminen con una de las letras
 	   <TT
 CLASS="literal"
@@ -1558,8 +1558,8 @@ CLASS="literal"
 >&#13;	   <B
 CLASS="command"
 >echo [0-9][a-z]*</B
-> presentar· todos los
-	   archivos que comiencen con un dÌgito seguido de una letra.
+> presentar√° todos los
+	   archivos que comiencen con un d√≠gito seguido de una letra.
 	   </P
 ></LI
 ></UL
@@ -1600,7 +1600,7 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="comandos-y-programas-utiles-al-hacer-scripts"
->Comandos y programas ˙tiles al hacer scripts</A
+>Comandos y programas √∫tiles al hacer scripts</A
 ></H3
 ><P
 >En un script puede emplear cualquier programa o comando,
@@ -1609,7 +1609,7 @@ NAME="comandos-y-programas-utiles-al-hacer-scripts"
 CLASS="application"
 >bash</SPAN
 > ignora comandos que comienzan con el
-      caracter '#'.  Esto es ˙til para agregar comentarios explicativos
+      caracter '#'.  Esto es √∫til para agregar comentarios explicativos
       a los scripts.
      </P
 ><A
@@ -1617,17 +1617,17 @@ NAME="AEN4223"
 ></A
 ><P
 >Caracter empleado al comienzo de
-      lÌneas en scripts para <SPAN
+      l√≠neas en scripts para <SPAN
 CLASS="application"
 >bash</SPAN
 > que indica que la
-      lÌnea entera es un comentario.</P
+      l√≠nea entera es un comentario.</P
 ><P
->A continuaciÛn introducimos algunos comandos de
+>A continuaci√≥n introducimos algunos comandos de
       <SPAN
 CLASS="application"
 >bash</SPAN
-> y programas ˙tiles al hacer scripts.
+> y programas √∫tiles al hacer scripts.
      </P
 ><A
 NAME="AEN4229"
@@ -1637,7 +1637,7 @@ NAME="AEN4229"
       <SPAN
 CLASS="application"
 >bash</SPAN
-> que lee una cadena de la entrada est·ndar
+> que lee una cadena de la entrada est√°ndar
       y la asigna a una variable de ambiente (o en su defecto a la
       variable <TT
 CLASS="literal"
@@ -1685,7 +1685,7 @@ NAME="AEN4254"
 ></A
 ><P
 >Programa que retorna el nombre
-    de la m·quina en la que se ejecuta.</P
+    de la m√°quina en la que se ejecuta.</P
 ><A
 NAME="AEN4258"
 ></A
@@ -1697,7 +1697,7 @@ NAME="AEN4262"
 ></A
 ><P
 >Programa que retorna
-      identificaciÛn y grupo(s) del usuario que lo ejecuta.</P
+      identificaci√≥n y grupo(s) del usuario que lo ejecuta.</P
 ><A
 NAME="AEN4266"
 ></A
@@ -1720,13 +1720,13 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Lee una lÌnea de entrada est·ndar y asigna las palabras
+>Lee una l√≠nea de entrada est√°ndar y asigna las palabras
 	 a las variables que sigan al comando <B
 CLASS="command"
 >read</B
 >.
-	 Puede especificarse un mensaje que se presentar· como prompt
-	 antes de empezar a leer con la opciÛn <TT
+	 Puede especificarse un mensaje que se presentar√° como prompt
+	 antes de empezar a leer con la opci√≥n <TT
 CLASS="option"
 >-p
 	 </TT
@@ -1749,12 +1749,12 @@ CLASS="screen"
 >&#13;read -p "Teclee nombre y apellido: " NOMBRE APELLIDO
 </PRE
 ><P
->&#13;	Si la lÌnea leÌda tiene m·s palabras que la cantidad de
-	variables, el resto ser·n ignoradas. Si tiene menos palabras,
-	las primeras variables (de izquierda a derecha) ser·n
-	empleadas y el resto quedar·n en blanco (i.e con la cadena
-	vacÌa "").  En caso de que no se den nombres de variables, la
-	lÌnea leÌda quedar· en la variable
+>&#13;	Si la l√≠nea le√≠da tiene m√°s palabras que la cantidad de
+	variables, el resto ser√°n ignoradas. Si tiene menos palabras,
+	las primeras variables (de izquierda a derecha) ser√°n
+	empleadas y el resto quedar√°n en blanco (i.e con la cadena
+	vac√≠a "").  En caso de que no se den nombres de variables, la
+	l√≠nea le√≠da quedar√° en la variable
 	<TT
 CLASS="envar"
 >REPLY</TT
@@ -1768,11 +1768,11 @@ CLASS="command"
 ><DD
 ><P
 >Con este comando puede definir alias para comandos,
-	 despuÈs de definir un alias <SPAN
+	 despu√©s de definir un alias <SPAN
 CLASS="application"
 >bash</SPAN
 >
-	 lo remplazar· por el comando completo.  Por ejemplo un alias
+	 lo remplazar√° por el comando completo.  Por ejemplo un alias
 	 para abreviar <B
 CLASS="command"
 >ls -l</B
@@ -1780,13 +1780,13 @@ CLASS="command"
 	 <B
 CLASS="command"
 >ll</B
->, que se definirÌa como:
+>, que se definir√≠a como:
 <PRE
 CLASS="screen"
 >&#13;alias ll="ls -l" 
 </PRE
 >
-	 Puede listar los alias definidos con la opciÛn
+	 Puede listar los alias definidos con la opci√≥n
 	 <TT
 CLASS="option"
 >-p</TT
@@ -1817,7 +1817,7 @@ CLASS="screen"
 >&#13;unalias ll
 </PRE
 ><P
->&#13;	 Si se emplea la opciÛn <TT
+>&#13;	 Si se emplea la opci√≥n <TT
 CLASS="option"
 >-a</TT
 >, el comando
@@ -1834,15 +1834,15 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Recibe como primer par·metro el nombre completo de una
-	 archivo, incluyendo su ruta y envÌa a salida est·ndar sÛlo la
+>Recibe como primer par√°metro el nombre completo de una
+	 archivo, incluyendo su ruta y env√≠a a salida est√°ndar s√≥lo la
 	 ruta.  Por ejemplo:</P
 ><PRE
 CLASS="screen"
 >&#13;dirname /usr/doc/xterm/README.Debian
 </PRE
 ><P
->&#13;	 presenta en salida est·ndar <TT
+>&#13;	 presenta en salida est√°ndar <TT
 CLASS="filename"
 >/usr/doc/xterm</TT
 >.
@@ -1855,11 +1855,11 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->An·logo a <B
+>An√°logo a <B
 CLASS="command"
 >dirname</B
->, pero envÌa a salida
-	 est·ndar el nombre del archivo.
+>, pero env√≠a a salida
+	 est√°ndar el nombre del archivo.
 	</P
 ></DD
 ><DT
@@ -1869,12 +1869,12 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->EnvÌa a salida est·ndar el nombre del computador en la
-	 red, esto tambiÈn puede verse en la variable de ambiente
+>Env√≠a a salida est√°ndar el nombre del computador en la
+	 red, esto tambi√©n puede verse en la variable de ambiente
 	 <TT
 CLASS="envar"
 >HOSTNAME</TT
->. Con la opciÛn <TT
+>. Con la opci√≥n <TT
 CLASS="option"
 >-f</TT
 >,
@@ -1882,23 +1882,23 @@ CLASS="option"
 CLASS="command"
 >hostname</B
 > presenta el nombre
-	 completo, con la opciÛn <TT
+	 completo, con la opci√≥n <TT
 CLASS="option"
 >-i</TT
-> la direcciÛn
-	 IP, con la opciÛn <TT
+> la direcci√≥n
+	 IP, con la opci√≥n <TT
 CLASS="option"
 >-d</TT
 > el dominio DNS, con
-	 la opciÛn <TT
+	 la opci√≥n <TT
 CLASS="option"
 >-a</TT
 > presenta nombres alternos de
-	 su m·quina y con la opciÛn <TT
+	 su m√°quina y con la opci√≥n <TT
 CLASS="option"
 >-y</TT
 > el dominio
-	 NIS ---este programa extrae parte de la informaciÛn del
+	 NIS ---este programa extrae parte de la informaci√≥n del
 	 archivo <TT
 CLASS="filename"
 >/etc/hosts</TT
@@ -1916,7 +1916,7 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Retorna el nombre del usuario que lo ejecuta. TambiÈn
+>Retorna el nombre del usuario que lo ejecuta. Tambi√©n
 	 puede verse en la variable de ambiente <TT
 CLASS="envar"
 >USER</TT
@@ -1930,20 +1930,20 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Retorna nombre y n˙mero del usuario que lo ejecuta, asÌ
-	 como nombre y n˙mero del grupo o grupos a los que
-	 pertenezca. Con la opciÛn -g sÛlo retorna el n˙mero del grupo
-	 principal, con -u retorna sÛlo el n˙mero del grupo principal,
+>Retorna nombre y n√∫mero del usuario que lo ejecuta, as√≠
+	 como nombre y n√∫mero del grupo o grupos a los que
+	 pertenezca. Con la opci√≥n -g s√≥lo retorna el n√∫mero del grupo
+	 principal, con -u retorna s√≥lo el n√∫mero del grupo principal,
 	 con <TT
 CLASS="option"
 >-G</TT
-> retorna los n˙meros de todos los
+> retorna los n√∫meros de todos los
 	 grupos a los que pertenece.  Estas opciones pueden seguirse
 	 de <TT
 CLASS="literal"
 >n</TT
 > para presentar nombres en lugar de
-	 n˙meros.
+	 n√∫meros.
 	</P
 ></DD
 ><DT
@@ -1958,21 +1958,21 @@ CLASS="command"
 	 <SPAN
 CLASS="application"
 >bash</SPAN
->. Los atributos pueden ser sÛlo lectura
-	 (opciÛn <TT
+>. Los atributos pueden ser s√≥lo lectura
+	 (opci√≥n <TT
 CLASS="option"
 >-r</TT
->), exportable (opciÛn
+>), exportable (opci√≥n
 	 <TT
 CLASS="option"
 >-x</TT
->) y variable entera (opciÛn
+>) y variable entera (opci√≥n
 	 <TT
 CLASS="option"
 >-i</TT
->).  Una variable de sÛlo lectura no puede
-	 ser modificada, y una variable entera sÛlo puede asociarse con
-	 n˙meros.
+>).  Una variable de s√≥lo lectura no puede
+	 ser modificada, y una variable entera s√≥lo puede asociarse con
+	 n√∫meros.
 	 <A
 NAME="AEN4357"
 HREF="#FTN.AEN4357"
@@ -1982,13 +1982,13 @@ HREF="#FTN.AEN4357"
 CLASS="command"
 >declare</B
 > seguido
-	 del cÛdigo de la opciÛn, por ejemplo para examinar las
-	 variables con atributo de sÛlo lectura <B
+	 del c√≥digo de la opci√≥n, por ejemplo para examinar las
+	 variables con atributo de s√≥lo lectura <B
 CLASS="command"
 >declare
 	 -r</B
 >. Para cambiar un atributo a una variable se
-	 emplea la opciÛn (precedida de <TT
+	 emplea la opci√≥n (precedida de <TT
 CLASS="option"
 >-</TT
 > o
@@ -2017,7 +2017,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="lecturas-recomendadas-scripts-basicos-para-bash"
->Lecturas recomendadas: Scripts b·sicos para
+>Lecturas recomendadas: Scripts b√°sicos para
      <SPAN
 CLASS="application"
 >bash</SPAN
@@ -2028,12 +2028,12 @@ CLASS="application"
 ><UL
 ><LI
 ><P
->Recomendamos de forma especial consultar la p·gina del
+>Recomendamos de forma especial consultar la p√°gina del
        manual de <SPAN
 CLASS="application"
 >bash</SPAN
 >.  Hay algunas partes
-       que complementan lo que se ha presentado en esta guÌa:
+       que complementan lo que se ha presentado en esta gu√≠a:
       </P
 ><P
 ></P
@@ -2043,14 +2043,14 @@ CLASS="application"
 >&#13;	 <SPAN
 CLASS="application"
 >bash</SPAN
-> puede hacer m·s expansiones
-	 de par·metros, con la sintaxis <TT
+> puede hacer m√°s expansiones
+	 de par√°metros, con la sintaxis <TT
 CLASS="literal"
 >${...}</TT
 >
 	 ---por ejemplo sustituciones en el valor de una variable---.
-	 Puede consultar la informaciÛn completa sobre este tema en la
-	 secciÛn "expansiÛn de par·metros".  </P
+	 Puede consultar la informaci√≥n completa sobre este tema en la
+	 secci√≥n "expansi√≥n de par√°metros".  </P
 ></LI
 ><LI
 ><P
@@ -2058,8 +2058,8 @@ CLASS="literal"
 	 <SPAN
 CLASS="application"
 >bash</SPAN
-> con otras caracterÌsticas que
-	 no se han presentado en esta guÌa: <B
+> con otras caracter√≠sticas que
+	 no se han presentado en esta gu√≠a: <B
 CLASS="command"
 >if</B
 >,
@@ -2083,9 +2083,9 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->&#13;       El intÈrprete de comandos es una parte importante de la
-       filosofÌa Unix, el libro cl·sico sobre este tema es de
-       Brian. W. Kernighan y Rob Pike "El Entorno de ProgramaciÛn
+>&#13;       El int√©rprete de comandos es una parte importante de la
+       filosof√≠a Unix, el libro cl√°sico sobre este tema es de
+       Brian. W. Kernighan y Rob Pike "El Entorno de Programaci√≥n
        UNIX", Prentice-Hall Hispanoamericana.  Este libro explica y
        muestra el uso de <SPAN
 CLASS="application"
@@ -2094,11 +2094,11 @@ CLASS="application"
        <SPAN
 CLASS="application"
 >bash</SPAN
-> ---la mayorÌa de caracterÌsticas de
+> ---la mayor√≠a de caracter√≠sticas de
        <SPAN
 CLASS="application"
 >csh</SPAN
-> est·n disponibles en
+> est√°n disponibles en
        <SPAN
 CLASS="application"
 >bash</SPAN
@@ -2117,7 +2117,7 @@ HREF="http://linuxdoc.org/LDP/abs/html/index.html"
 TARGET="_top"
 >http://linuxdoc.org/LDP/abs/html/index.html</A
 > o
-       ProgramaciÛn en BASH - COMO de introducciÛn <A
+       Programaci√≥n en BASH - COMO de introducci√≥n <A
 HREF="http://lucas.hispalinux.es/COMO-INSFLUG/COMOs/Bash-Prog-Intro-COMO/Bash-Prog-Intro-COMO.html"
 TARGET="_top"
 >http://lucas.hispalinux.es/COMO-INSFLUG/COMOs/Bash-Prog-Intro-COMO/Bash-Prog-Intro-COMO.html</A
@@ -2132,7 +2132,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="ejercicios-scripts-basicos-para-bash"
->Ejercicios: Scripts b·sicos para
+>Ejercicios: Scripts b√°sicos para
      <SPAN
 CLASS="application"
 >bash</SPAN
@@ -2150,13 +2150,13 @@ CLASS="application"
 >bash</SPAN
 >, que al ejecutarse busque entre
        sus directorios, todos los archivos, ordene los nombres
-       alfabÈticamente y le envÌe un correo con esa informaciÛn.
+       alfab√©ticamente y le env√≠e un correo con esa informaci√≥n.
        <SPAN
 ><I
 CLASS="emphasis"
 >Ayuda:</I
 ></SPAN
-> Puede emplear la opciÛn
+> Puede emplear la opci√≥n
        <TT
 CLASS="option"
 >-R</TT
@@ -2164,7 +2164,7 @@ CLASS="option"
 CLASS="command"
 >ls</B
 > para listar
-       subdirectorios, y la opciÛn <TT
+       subdirectorios, y la opci√≥n <TT
 CLASS="option"
 >-u</TT
 > de
@@ -2180,9 +2180,9 @@ HREF="x3773.htm#script.variables.1"
 CLASS="envar"
 >HOME</TT
 >
-       contiene el nombre de su directorio personal.  Compr˙ebelo y
-       despuÈs empleela para cambiarse a su directorio.  DespuÈs cambie
-       esta variable y explique que ocurre con el comodÌn '~'.</A
+       contiene el nombre de su directorio personal.  Compr√∫ebelo y
+       despu√©s empleela para cambiarse a su directorio.  Despu√©s cambie
+       esta variable y explique que ocurre con el comod√≠n '~'.</A
 ></DT
 ><DT
 >3. <A
@@ -2191,7 +2191,7 @@ HREF="x3773.htm#script.variables.2"
 CLASS="command"
 >man</B
 > presenta
-      p·ginas del manual, empleando el programa especificado en la
+      p√°ginas del manual, empleando el programa especificado en la
        variable de ambiente <TT
 CLASS="envar"
 >PAGER</TT
@@ -2215,29 +2215,29 @@ CLASS="command"
        <B
 CLASS="command"
 >more</B
-> para presentar informaciÛn y pruebe el
+> para presentar informaci√≥n y pruebe el
       cambio.</A
 ></DT
 ><DT
 >4. <A
 HREF="x3773.htm#script.expansiones.1"
->&#13;       øQuÈ hace el comando <B
+>&#13;       ¬øQu√© hace el comando <B
 CLASS="command"
 >echo `ls`</B
 > ? (note que
-      se usan apÛstrofes invertidos).</A
+      se usan ap√≥strofes invertidos).</A
 ></DT
 ><DT
 >5. <A
 HREF="x3773.htm#script.expansiones.2"
->&#13;       øQuÈ hace el comando <TT
+>&#13;       ¬øQu√© hace el comando <TT
 CLASS="userinput"
 ><B
 >N=6 echo "'1+$N' =
        $((1+$N))"</B
 ></TT
-> ?  DespuÈs de dar su respuesta,
-       compruÈbela empleando un intÈrprete de comandos.
+> ?  Despu√©s de dar su respuesta,
+       compru√©bela empleando un int√©rprete de comandos.
       </A
 ></DT
 ><DT
@@ -2272,11 +2272,11 @@ CLASS="filename"
 CLASS="envar"
 >PATH</TT
 > en el valor que tenga cuando el primer
-       script sea ejecutado, aÒadir a tal variable la ruta
+       script sea ejecutado, a√±adir a tal variable la ruta
        <TT
 CLASS="filename"
 >/opt/bin</TT
-> y debe crear un alÌas que cuando
+> y debe crear un al√≠as que cuando
        se ejecute muestre el contenido de la variable PATH (no olvide
        cambiar el modo del archivo <TT
 CLASS="filename"
@@ -2287,9 +2287,9 @@ CLASS="filename"
 ><DT
 >8. <A
 HREF="x3773.htm#script.programas.1"
->Haga un script que despuÈs de ejecutarse pida
-       al usuario 2 n˙meros y despuÈs presente la suma, la resta, el
-       producto y la divisiÛn.</A
+>Haga un script que despu√©s de ejecutarse pida
+       al usuario 2 n√∫meros y despu√©s presente la suma, la resta, el
+       producto y la divisi√≥n.</A
 ></DT
 ></DL
 ><DIV
@@ -2308,13 +2308,13 @@ CLASS="application"
 >bash</SPAN
 >, que al ejecutarse busque entre
        sus directorios, todos los archivos, ordene los nombres
-       alfabÈticamente y le envÌe un correo con esa informaciÛn.
+       alfab√©ticamente y le env√≠e un correo con esa informaci√≥n.
        <SPAN
 ><I
 CLASS="emphasis"
 >Ayuda:</I
 ></SPAN
-> Puede emplear la opciÛn
+> Puede emplear la opci√≥n
        <TT
 CLASS="option"
 >-R</TT
@@ -2322,7 +2322,7 @@ CLASS="option"
 CLASS="command"
 >ls</B
 > para listar
-       subdirectorios, y la opciÛn <TT
+       subdirectorios, y la opci√≥n <TT
 CLASS="option"
 >-u</TT
 > de
@@ -2360,9 +2360,9 @@ NAME="script.variables.1"
 CLASS="envar"
 >HOME</TT
 >
-       contiene el nombre de su directorio personal.  Compr˙ebelo y
-       despuÈs empleela para cambiarse a su directorio.  DespuÈs cambie
-       esta variable y explique que ocurre con el comodÌn '~'.</P
+       contiene el nombre de su directorio personal.  Compr√∫ebelo y
+       despu√©s empleela para cambiarse a su directorio.  Despu√©s cambie
+       esta variable y explique que ocurre con el comod√≠n '~'.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -2394,7 +2394,7 @@ NAME="script.variables.2"
 CLASS="command"
 >man</B
 > presenta
-      p·ginas del manual, empleando el programa especificado en la
+      p√°ginas del manual, empleando el programa especificado en la
        variable de ambiente <TT
 CLASS="envar"
 >PAGER</TT
@@ -2418,7 +2418,7 @@ CLASS="command"
        <B
 CLASS="command"
 >more</B
-> para presentar informaciÛn y pruebe el
+> para presentar informaci√≥n y pruebe el
       cambio.</P
 ></DIV
 ><DIV
@@ -2446,11 +2446,11 @@ NAME="script.expansiones.1"
 ><B
 >4. </B
 >
-       øQuÈ hace el comando <B
+       ¬øQu√© hace el comando <B
 CLASS="command"
 >echo `ls`</B
 > ? (note que
-      se usan apÛstrofes invertidos).</P
+      se usan ap√≥strofes invertidos).</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -2479,14 +2479,14 @@ NAME="script.expansiones.2"
 ><B
 >5. </B
 >
-       øQuÈ hace el comando <TT
+       ¬øQu√© hace el comando <TT
 CLASS="userinput"
 ><B
 >N=6 echo "'1+$N' =
        $((1+$N))"</B
 ></TT
-> ?  DespuÈs de dar su respuesta,
-       compruÈbela empleando un intÈrprete de comandos.
+> ?  Despu√©s de dar su respuesta,
+       compru√©bela empleando un int√©rprete de comandos.
       </P
 ></DIV
 ><DIV
@@ -2541,7 +2541,7 @@ sleep 90m
 echo "Hacer tareas"
 </PRE
 >
-        despuÈs ejecutarlo.</P
+        despu√©s ejecutarlo.</P
 ></DIV
 ></DIV
 ><DIV
@@ -2567,11 +2567,11 @@ CLASS="filename"
 CLASS="envar"
 >PATH</TT
 > en el valor que tenga cuando el primer
-       script sea ejecutado, aÒadir a tal variable la ruta
+       script sea ejecutado, a√±adir a tal variable la ruta
        <TT
 CLASS="filename"
 >/opt/bin</TT
-> y debe crear un alÌas que cuando
+> y debe crear un al√≠as que cuando
        se ejecute muestre el contenido de la variable PATH (no olvide
        cambiar el modo del archivo <TT
 CLASS="filename"
@@ -2605,9 +2605,9 @@ NAME="script.programas.1"
 ></A
 ><B
 >8. </B
->Haga un script que despuÈs de ejecutarse pida
-       al usuario 2 n˙meros y despuÈs presente la suma, la resta, el
-       producto y la divisiÛn.</P
+>Haga un script que despu√©s de ejecutarse pida
+       al usuario 2 n√∫meros y despu√©s presente la suma, la resta, el
+       producto y la divisi√≥n.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -2679,26 +2679,26 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->En la expresiÛn pueden emplearse los operadores -
+>En la expresi√≥n pueden emplearse los operadores -
 	   (unario y binario), + (unario y binario), ** para elevar a
 	   una potencia, * para multiplicar, / para divir, % para
-	   obtener residuo de una divisiÛn.  Hay operadores que operan
-	   a nivel de bits (representaciÛn binaria de los n˙meros que
+	   obtener residuo de una divisi√≥n.  Hay operadores que operan
+	   a nivel de bits (representaci√≥n binaria de los n√∫meros que
 	   operan): ~ para negar bits, &#38; para hacer "Y" entre bits
-	   de operandos y | para efectuar "O".  TambiÈn pueden
+	   de operandos y | para efectuar "O".  Tambi√©n pueden
 	   emplearse valores booleanos --- 0 se interpreta como falso
-	   y 1 como verdadero---, pueden compararse n˙meros con los
+	   y 1 como verdadero---, pueden compararse n√∫meros con los
 	   operadores &#62;, &#60;, &#60;= (menor o igual), &#62;= (mayor
 	   o igual), == (igualdad), != (diferentes) y pueden operarse
-	   booleanos con ! para negar, &#38;&#38; como conjunciÛn (Y)
-	   y || como disyunciÛn.  Los n˙meros pueden escribirse en
-	   decimal, o en otras bases empleando como prefijo del n˙mero
+	   booleanos con ! para negar, &#38;&#38; como conjunci√≥n (Y)
+	   y || como disyunci√≥n.  Los n√∫meros pueden escribirse en
+	   decimal, o en otras bases empleando como prefijo del n√∫mero
 	   la base seguida del caracter '<TT
 CLASS="literal"
 >#</TT
 >'
-	   (tambiÈn puede escribirse n˙meros en octal inici·ndolos con
-	   0 o en hexadecimal inici·ndolos con 0x).</P
+	   (tambi√©n puede escribirse n√∫meros en octal inici√°ndolos con
+	   0 o en hexadecimal inici√°ndolos con 0x).</P
 ></TD
 ></TR
 ><TR
@@ -2716,7 +2716,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Otros atributos pueden ser "funciÛn"
+>Otros atributos pueden ser "funci√≥n"
 	   <TT
 CLASS="option"
 >-f</TT
@@ -2786,7 +2786,7 @@ ACCESSKEY="U"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->ConfiguraciÛn de una sesiÛn</TD
+>Configuraci√≥n de una sesi√≥n</TD
 ></TR
 ></TABLE
 ></DIV

@@ -1,20 +1,20 @@
 <HTML
 ><HEAD
 ><TITLE
->ActualizaciÛn del kernel de
+>Actualizaci√≥n del kernel de
    Debian Linux</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="PREVIOUS"
-TITLE="Sobre estas guÌas"
+TITLE="Sobre estas gu√≠as"
 HREF="a14863.htm"><LINK
 REL="NEXT"
-TITLE="CompilaciÛn del kernel"
+TITLE="Compilaci√≥n del kernel"
 HREF="x14983.htm"></HEAD
 ><BODY
 CLASS="appendix"
@@ -35,7 +35,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -72,7 +72,7 @@ CLASS="appendix"
 ><H1
 ><A
 NAME="actualizacion-del-kernel-de-linux"
->ApÈndice C. ActualizaciÛn del <I
+>Ap√©ndice C. Actualizaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 > de
@@ -88,12 +88,12 @@ CLASS="TOC"
 ><DT
 ><A
 HREF="a14885.htm#AEN14901"
->IntroducciÛn</A
+>Introducci√≥n</A
 ></DT
 ><DT
 ><A
 HREF="x14983.htm"
->CompilaciÛn del <I
+>Compilaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 ></A
@@ -101,7 +101,7 @@ CLASS="foreignphrase"
 ><DT
 ><A
 HREF="x15453.htm"
->InstalaciÛn del nuevo <I
+>Instalaci√≥n del nuevo <I
 CLASS="foreignphrase"
 >kernel</I
 ></A
@@ -117,29 +117,29 @@ HREF="x15543.htm"
 >El <I
 CLASS="foreignphrase"
 >kernel</I
-> o n˙cleo es una de
+> o n√∫cleo es una de
    las partes esenciales de un sistema operativo. El
    <I
 CLASS="foreignphrase"
 >kernel</I
 > proporciona todos los
-   servicios b·sicos requeridos por otras partes del sistema operativo
-   y aplicaciones, y en complemento, se encarga de la administraciÛn
+   servicios b√°sicos requeridos por otras partes del sistema operativo
+   y aplicaciones, y en complemento, se encarga de la administraci√≥n
    de la memoria, los procesos y los discos.  El
    <I
 CLASS="foreignphrase"
 >kernel</I
 > es independiente de la
-   distribuciÛn Linux utilizada, de tal forma que el mismo
+   distribuci√≥n Linux utilizada, de tal forma que el mismo
    <I
 CLASS="foreignphrase"
 >kernel</I
-> deberÌa servir en cualquier
-   caso. La actualizaciÛn del <I
+> deber√≠a servir en cualquier
+   caso. La actualizaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 > se
-   divide en 2 partes: compilaciÛn e instalaciÛn del nuevo
+   divide en 2 partes: compilaci√≥n e instalaci√≥n del nuevo
    <I
 CLASS="foreignphrase"
 >kernel</I
@@ -151,7 +151,7 @@ CLASS="sect1"
 CLASS="sect1"
 ><A
 NAME="AEN14901"
->IntroducciÛn</A
+>Introducci√≥n</A
 ></H1
 ><DIV
 CLASS="sect2"
@@ -159,14 +159,14 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN14903"
->Acerca de esta guÌa</A
+>Acerca de esta gu√≠a</A
 ></H2
 ><P
->En esta guÌa se desarrolla el ejemplo de la compilaciÛn del
+>En esta gu√≠a se desarrolla el ejemplo de la compilaci√≥n del
      <I
 CLASS="foreignphrase"
 >kernel</I
-> versiÛn 2.2.18 bajo Debian
+> versi√≥n 2.2.18 bajo Debian
      2.1 Citius (<I
 CLASS="foreignphrase"
 >kernel</I
@@ -179,13 +179,13 @@ CLASS="foreignphrase"
 CLASS="foreignphrase"
 >kernel</I
 > 2.0.x o
-     2.2.x deber· consultar otros documentos que tratan
-     especÌficamente sobre el tema.
+     2.2.x deber√° consultar otros documentos que tratan
+     espec√≠ficamente sobre el tema.
     </P
 ><P
 >De cualquier forma al final de este instructivo se presentan
      algunas referencias de documentos disponibles en Internet para
-     mayor ilustraciÛn.
+     mayor ilustraci√≥n.
     </P
 ></DIV
 ><DIV
@@ -194,7 +194,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN14911"
->øPor quÈ compilar?</A
+>¬øPor qu√© compilar?</A
 ></H2
 ><P
 >Hay diversas razones para
@@ -205,7 +205,7 @@ CLASS="foreignphrase"
     Linux:
     </P
 ><P
->Es ˙til recompilar un <I
+>Es √∫til recompilar un <I
 CLASS="foreignphrase"
 >kernel</I
 >
@@ -221,7 +221,7 @@ CLASS="foreignphrase"
 TYPE="1"
 ><LI
 ><P
->Un sistema m·s r·pido, estable y robusto.</P
+>Un sistema m√°s r√°pido, estable y robusto.</P
 ></LI
 ><LI
 ><P
@@ -234,7 +234,7 @@ CLASS="foreignphrase"
 ></LI
 ><LI
 ><P
->Un sistema con soporte a caracterÌsticas especiales
+>Un sistema con soporte a caracter√≠sticas especiales
      disponibles pero no habilitadas en
      <I
 CLASS="foreignphrase"
@@ -248,29 +248,29 @@ CLASS="foreignphrase"
 CLASS="foreignphrase"
 >kernel</I
 > es instalar una nueva
-     versiÛn de la distribuciÛn Linux que estÈ utilizando. Dependiendo
+     versi√≥n de la distribuci√≥n Linux que est√© utilizando. Dependiendo
      de las circunstancias puede resultar conveniente o preferible lo
      uno o lo otro. Por ejemplo, si tiene un sistema Linux que le
-     costÛ esfuerzo y tiempo para instalar y configurar, y no desea
+     cost√≥ esfuerzo y tiempo para instalar y configurar, y no desea
      volver a realizar todo ese trabajo otra vez, es posible que
      recompilar el <I
 CLASS="foreignphrase"
 >kernel</I
-> sea lo m·s
-     sencillo para dar soluciÛn a su necesidad particular.
+> sea lo m√°s
+     sencillo para dar soluci√≥n a su necesidad particular.
     </P
 ><P
 >Recompilar el <I
 CLASS="foreignphrase"
 >kernel</I
 > de Linux
-     no es m·s que personalizar el
+     no es m√°s que personalizar el
      <I
 CLASS="foreignphrase"
 >kernel</I
 > y como con cualquier
-     aplicaciÛn, la personalizaciÛn se hace para sacar un mayor
-     provecho de las diferentes caracterÌsticas que ofrece el
+     aplicaci√≥n, la personalizaci√≥n se hace para sacar un mayor
+     provecho de las diferentes caracter√≠sticas que ofrece el
      software.
     </P
 ><DIV
@@ -287,12 +287,12 @@ CLASS="foreignphrase"
 >kernel</I
 > es recomendable que
       utilice un equipo donde usted pueda practicar sin temor de que
-      su sistema eventualmente vaya a quedar estropeado. No hay ning˙n
+      su sistema eventualmente vaya a quedar estropeado. No hay ning√∫n
       riesgo al compilar el <I
 CLASS="foreignphrase"
 >kernel</I
 >
-      (salvo que se quede sin espacio), en cambio, la instalaciÛn del
+      (salvo que se quede sin espacio), en cambio, la instalaci√≥n del
       mismo debe de realizarse con algo de cuidado.</P
 ></BLOCKQUOTE
 ></DIV
@@ -303,7 +303,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN14937"
->Versiones de producciÛn y de desarrollo.</A
+>Versiones de producci√≥n y de desarrollo.</A
 ></H2
 ><P
 >Los
@@ -311,11 +311,11 @@ NAME="AEN14937"
 CLASS="foreignphrase"
 >kernel</I
 >s pueden corresponder a
-    versiones de "producciÛn" o a versiones de "desarrollo". Las
-    versiones 2.0.x, 2.2.x y 2.4.x son versiones de producciÛn, por el
+    versiones de "producci√≥n" o a versiones de "desarrollo". Las
+    versiones 2.0.x, 2.2.x y 2.4.x son versiones de producci√≥n, por el
     contrario, las versiones 2.1.x y 2.3.x son versiones de
     desarrollo. En forma particular se tiene que, por ejemplo, la
-    versiÛn 2.2.17 o la versiÛn 2.2.18 son versiones de producciÛn,
+    versi√≥n 2.2.17 o la versi√≥n 2.2.18 son versiones de producci√≥n,
     estables y para usuarios finales y las versiones 2.1.1 o 2.1.2
     corresponden a versiones de desarrollo, inestables, utilizadas por
     desarrolladores o por ciertos usuarios que desean probar.
@@ -331,7 +331,7 @@ CLASS="important"
 CLASS="foreignphrase"
 >kernel</I
 >s de
-     desarrollo a menos que usted sepa lo que est· haciendo.</P
+     desarrollo a menos que usted sepa lo que est√° haciendo.</P
 ></BLOCKQUOTE
 ></DIV
 ></DIV
@@ -341,22 +341,22 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN14944"
->Acerca de los mÛdulos</A
+>Acerca de los m√≥dulos</A
 ></H2
 ><P
->Varias partes de cÛdigo del
+>Varias partes de c√≥digo del
      <I
 CLASS="foreignphrase"
 >kernel</I
 > pueden compilarse por
-     separado en forma de mÛdulos, dando flexibilidad al sistema. Los
-     mÛdulos no est·n enlazados directamente en el
+     separado en forma de m√≥dulos, dando flexibilidad al sistema. Los
+     m√≥dulos no est√°n enlazados directamente en el
      <I
 CLASS="foreignphrase"
 >kernel</I
 >, siendo necesario
-     insertarlos en Èl ya sea durante el proceso de arranque o si se
-     quiere, posteriormente, de tal forma que sÛlo se usan cuando se
+     insertarlos en √©l ya sea durante el proceso de arranque o si se
+     quiere, posteriormente, de tal forma que s√≥lo se usan cuando se
      necesitan, sin utilizar innecesariamente la memoria RAM del
      sistema.
     </P
@@ -367,7 +367,7 @@ CLASS="important"
 ><P
 ><B
 >Importante: </B
->Hay componentes que no deben compilarse como mÛdulos porque
+>Hay componentes que no deben compilarse como m√≥dulos porque
       son esenciales para hacer posible el arranque del sistema, por
       ejemplo el soporte para el sistema de archivos ext2, que Linux
       utiliza en forma predeterminada. Otros componentes si pueden
@@ -390,7 +390,7 @@ NAME="AEN14951"
 CLASS="foreignphrase"
 >kernel</I
 > varian considerablemente de
-     una versiÛn mayor del <I
+     una versi√≥n mayor del <I
 CLASS="foreignphrase"
 >kernel</I
 > a
@@ -404,18 +404,18 @@ CLASS="foreignphrase"
 >kernel</I
 > 2.2.x. Si es esa su
      necesidad, es mejor que consulte la nota respecto a la
-     instalaciÛn de <I
+     instalaci√≥n de <I
 CLASS="foreignphrase"
 >kernel</I
 >s 2.4.x, en
-     la secciÛn de IntroducciÛn de este documento.
+     la secci√≥n de Introducci√≥n de este documento.
     </P
 ><P
 >Para compilar un nuevo <I
 CLASS="foreignphrase"
 >kernel</I
 >
-     correspondiente a una misma versiÛn mayor del
+     correspondiente a una misma versi√≥n mayor del
      <I
 CLASS="foreignphrase"
 >kernel</I
@@ -428,16 +428,16 @@ CLASS="foreignphrase"
 CLASS="foreignphrase"
 >kernel</I
 >
-     2.2.12), seguramente no necesitar· software adicional al incluido
-     en la distribuciÛn Linux que estÈ empleando.
+     2.2.12), seguramente no necesitar√° software adicional al incluido
+     en la distribuci√≥n Linux que est√© empleando.
     </P
 ><P
 >Para compilar un nuevo <I
 CLASS="foreignphrase"
 >kernel</I
 >
-     generalmente no necesitar· software adicional al incluido en la
-     distribuciÛn Linux que estÈ empleando, a menos que se trate de un
+     generalmente no necesitar√° software adicional al incluido en la
+     distribuci√≥n Linux que est√© empleando, a menos que se trate de un
      <I
 CLASS="foreignphrase"
 >kernel</I
@@ -476,7 +476,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN14972"
->Tiempo de compilaciÛn</A
+>Tiempo de compilaci√≥n</A
 ></H2
 ><P
 >El tiempo necesario para compilar es muy variable,
@@ -494,12 +494,12 @@ CLASS="important"
 ><P
 ><B
 >Importante: </B
->El tiempo de compilaciÛn puede reducirse a la mitad o
+>El tiempo de compilaci√≥n puede reducirse a la mitad o
       menos, si primero se optimiza el disco duro donde se encuentra
       instalado Linux, utilizando el comando hdparm. Las mejoras en
-      velocidad de lectura/escritura en discos ser· mayor cuanto m·s
-      nuevos sean los discos. La optimizaciÛn de un disco debe
-      realizarse con cuidado ya que existe alg˙n riesgo de malograr
+      velocidad de lectura/escritura en discos ser√° mayor cuanto m√°s
+      nuevos sean los discos. La optimizaci√≥n de un disco debe
+      realizarse con cuidado ya que existe alg√∫n riesgo de malograr
       los archivos contenidos en el disco. Al final se presentan
       algunas referencias al respecto.  Una vez se consigue optimizar
       un disco, se configura el sistema operativo para trabajo en modo
@@ -520,8 +520,8 @@ NAME="AEN14977"
      <I
 CLASS="foreignphrase"
 >kernel</I
-> varÌa de acuerdo a la
-     versiÛn del <I
+> var√≠a de acuerdo a la
+     versi√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 > a utilizar. Los
@@ -529,7 +529,7 @@ CLASS="foreignphrase"
 CLASS="foreignphrase"
 >kernel</I
 > 2.2.18 ocupan
-     cerca de 92 MB, asÌ que para este caso tomado de ejemplo serÌa
+     cerca de 92 MB, as√≠ que para este caso tomado de ejemplo ser√≠a
      bueno disponer de al menos unos 100 MB libres.
     </P
 ></DIV
@@ -579,7 +579,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Sobre estas guÌas</TD
+>Sobre estas gu√≠as</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -589,7 +589,7 @@ VALIGN="top"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->CompilaciÛn del <I
+>Compilaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 ></TD

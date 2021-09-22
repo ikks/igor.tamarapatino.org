@@ -1,20 +1,20 @@
 <HTML
 ><HEAD
 ><TITLE
->InstalaciÛn del nuevo kernel</TITLE
+>Instalaci√≥n del nuevo kernel</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="ActualizaciÛn del kernel de
+TITLE="Actualizaci√≥n del kernel de
    Debian Linux"
 HREF="a14885.htm"><LINK
 REL="PREVIOUS"
-TITLE="CompilaciÛn del kernel"
+TITLE="Compilaci√≥n del kernel"
 HREF="x14983.htm"><LINK
 REL="NEXT"
 TITLE="Referencias"
@@ -38,7 +38,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -55,7 +55,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->ApÈndice C. ActualizaciÛn del <I
+>Ap√©ndice C. Actualizaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 > de
@@ -80,17 +80,17 @@ CLASS="sect1"
 CLASS="sect1"
 ><A
 NAME="AEN15453"
->InstalaciÛn del nuevo <I
+>Instalaci√≥n del nuevo <I
 CLASS="foreignphrase"
 >kernel</I
 ></A
 ></H1
 ><P
->Por el contrario, la instalaciÛn del nuevo
+>Por el contrario, la instalaci√≥n del nuevo
     <I
 CLASS="foreignphrase"
 >kernel</I
-> es tarea que sÛlo el root
+> es tarea que s√≥lo el root
     puede realizar.
    </P
 ><DIV
@@ -99,7 +99,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="AEN15458"
->InstalaciÛn de los archivos del <I
+>Instalaci√≥n de los archivos del <I
 CLASS="foreignphrase"
 >kernel</I
 ></A
@@ -115,8 +115,8 @@ TYPE="1"
 CLASS="filename"
 >/boot</TT
 > y tome atenta nota
-       de ello. Note que algunos archivos son vÌnculos
-       simbÛlicos.</P
+       de ello. Note que algunos archivos son v√≠nculos
+       simb√≥licos.</P
 ><PRE
 CLASS="screen"
 >&#13;<TT
@@ -128,7 +128,7 @@ CLASS="command"
 >
 </PRE
 ><P
->Algunos de los archivos allÌ contenidos son: </P
+>Algunos de los archivos all√≠ contenidos son: </P
 ><PRE
 CLASS="screen"
 >&#13;-rw-r--r--  1 root    root        4540 Feb 2 1999 boot.b
@@ -150,7 +150,7 @@ CLASS="screen"
 CLASS="filename"
 >/etc/lilo.conf</TT
 >, dando como un hecho que se
-       est· utilizando <SPAN
+       est√° utilizando <SPAN
 CLASS="application"
 >LILO</SPAN
 >:</P
@@ -165,7 +165,7 @@ CLASS="command"
 >
 </PRE
 ><P
->Por ejemplo, ese archivo podrÌa contener:</P
+>Por ejemplo, ese archivo podr√≠a contener:</P
 ><PRE
 CLASS="programlisting"
 >&#13;boot=/dev/hda1
@@ -186,7 +186,7 @@ image=/vmlinuz
 CLASS="filename"
 >bzImage</TT
 > generado durante la
-       compilaciÛn dentro del directorio <TT
+       compilaci√≥n dentro del directorio <TT
 CLASS="filename"
 >/boot</TT
 >.  Por ejemplo, de esta
@@ -228,18 +228,18 @@ CLASS="highlights"
 NAME="AEN15493"
 ></A
 ><P
->InstalaciÛn de los mÛdulos del
+>Instalaci√≥n de los m√≥dulos del
        <I
 CLASS="foreignphrase"
 >kernel</I
 ></P
 ></DIV
 ><P
->&#13;       Ahora proceda a instalar los mÛdulos.  Si est· instalando un
+>&#13;       Ahora proceda a instalar los m√≥dulos.  Si est√° instalando un
        <I
 CLASS="foreignphrase"
 >kernel</I
-> de la misma versiÛn del
+> de la misma versi√≥n del
        que ya tiene en el sistema, ejecute primero, por ejemplo:
       </P
 ><PRE
@@ -271,11 +271,11 @@ CLASS="highlights"
 NAME="AEN15506"
 ></A
 ><P
->EdiciÛn del archivo <TT
+>Edici√≥n del archivo <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
 > e
-	instalaciÛn de un nuevo <SPAN
+	instalaci√≥n de un nuevo <SPAN
 CLASS="acronym"
 >MBR</SPAN
 ></P
@@ -285,11 +285,11 @@ CLASS="acronym"
 CLASS="filename"
 >/etc/lilo.conf</TT
 > y adicione
-       una nueva secciÛn para el nuevo
+       una nueva secci√≥n para el nuevo
        <I
 CLASS="foreignphrase"
 >kernel</I
->, para el ejemplo, asÌ:
+>, para el ejemplo, as√≠:
       </P
 ><PRE
 CLASS="programlisting"
@@ -314,7 +314,7 @@ CLASS="important"
 ><P
 ><B
 >Importante: </B
->Note el cambio realizado en la lÌnea <TT
+>Note el cambio realizado en la l√≠nea <TT
 CLASS="option"
 >default</TT
 >.</P
@@ -323,7 +323,7 @@ CLASS="option"
 ></LI
 ><LI
 ><P
->UbÌquese dentro del directorio <TT
+>Ub√≠quese dentro del directorio <TT
 CLASS="filename"
 >/boot</TT
 >:</P
@@ -340,7 +340,7 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->Pruebe sin llevar a cabo la instalaciÛn del nuevo <SPAN
+>Pruebe sin llevar a cabo la instalaci√≥n del nuevo <SPAN
 CLASS="acronym"
 >MBR</SPAN
 >
@@ -358,7 +358,7 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->Si no observÛ nada anormal proceda a la instalaciÛn del
+>Si no observ√≥ nada anormal proceda a la instalaci√≥n del
        nuevo <SPAN
 CLASS="acronym"
 >MBR</SPAN
@@ -404,7 +404,7 @@ CLASS="foreignphrase"
 >&#13;       Al reiniciar, el comando <B
 CLASS="command"
 >uname -a</B
-> mostrar· algo similar a:
+> mostrar√° algo similar a:
       </P
 ><PRE
 CLASS="screen"
@@ -459,7 +459,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->CompilaciÛn del <I
+>Compilaci√≥n del <I
 CLASS="foreignphrase"
 >kernel</I
 ></TD

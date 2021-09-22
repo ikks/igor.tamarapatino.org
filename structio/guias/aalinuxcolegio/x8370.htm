@@ -1,22 +1,22 @@
 <HTML
 ><HEAD
 ><TITLE
->Kernel y mÛdulos</TITLE
+>Kernel y m√≥dulos</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="AdministraciÛn de Linux en computadores aislados"
+TITLE="Administraci√≥n de Linux en computadores aislados"
 HREF="c8032.htm"><LINK
 REL="PREVIOUS"
-TITLE="AdministraciÛn de Linux en computadores aislados"
+TITLE="Administraci√≥n de Linux en computadores aislados"
 HREF="c8032.htm"><LINK
 REL="NEXT"
-TITLE="Hardware b·sico y Linux"
+TITLE="Hardware b√°sico y Linux"
 HREF="x8783.htm"></HEAD
 ><BODY
 CLASS="sect1"
@@ -37,7 +37,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -54,7 +54,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->CapÌtulo 5. AdministraciÛn de Linux en computadores aislados</TD
+>Cap√≠tulo 5. Administraci√≥n de Linux en computadores aislados</TD
 ><TD
 WIDTH="10%"
 ALIGN="right"
@@ -75,7 +75,7 @@ CLASS="sect1"
 CLASS="sect1"
 ><A
 NAME="kernel-y-modulos"
->Kernel y mÛdulos</A
+>Kernel y m√≥dulos</A
 ></H1
 ><P
 >Indicadores de Logros:  </P
@@ -87,7 +87,7 @@ NAME="kernel-y-modulos"
 NAME="init.modulos"
 ></A
 ><P
->Maneja sistema de mÛdulos.</P
+>Maneja sistema de m√≥dulos.</P
 ></LI
 ><LI
 ><A
@@ -103,26 +103,26 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="lectura-kernel-y-modulos"
->Lectura: Kernel y mÛdulos</A
+>Lectura: Kernel y m√≥dulos</A
 ></H2
 ><P
->&#13;     En un sistema Linux la interacciÛn final con dispositivos la
+>&#13;     En un sistema Linux la interacci√≥n final con dispositivos la
      realizan los controladores o el kernel.  Dicho de otra forma, un
-     dispositivo sÛlo podr· ser usado si el kernel lo soporta o si
+     dispositivo s√≥lo podr√° ser usado si el kernel lo soporta o si
      existe un controlador capaz de controlarlo y si se configura
      apropiadamente para hacerlo.  Por esto, los dispositivos que se
      produzcan hoy, no pueden ser operados con controladores ya
-     existentes (a menos que los dispositivos hayan sido diseÒados
+     existentes (a menos que los dispositivos hayan sido dise√±ados
      para ser operados con estos ---caso que para algunos dispositivos
      como tarjetas de sonido, tarjetas de video o modems es poco
-     com˙n), por esto mismo, eventualmente, si actualiza el hardware
+     com√∫n), por esto mismo, eventualmente, si actualiza el hardware
      de su computador o si desea usar un cierto servicio del kernel,
-     tambiÈn deber· actualizar alg˙n mÛdulo o eventualmente el kernel
+     tambi√©n deber√° actualizar alg√∫n m√≥dulo o eventualmente el kernel
      completo.  Aunque algunos controladores autodetectan la
-     configuraciÛn del dispositivo, esto no siempre ocurre y en
-     algunos casos tendr· que probar (cacharrear), hasta hacer
-     funcionar el mÛdulo que maneja el dispositivo (en estas pruebas
-     la documentaciÛn del dispositivo, la del mÛdulo y estas guÌas,
+     configuraci√≥n del dispositivo, esto no siempre ocurre y en
+     algunos casos tendr√° que probar (cacharrear), hasta hacer
+     funcionar el m√≥dulo que maneja el dispositivo (en estas pruebas
+     la documentaci√≥n del dispositivo, la del m√≥dulo y estas gu√≠as,
      esperamos le sean de utilidad ---si desea experimentar
      rapidamente emplee <B
 CLASS="command"
@@ -130,22 +130,22 @@ CLASS="command"
 >).
     </P
 ><P
->Las fuentes en C de cada versiÛn del kernel cuentan con
+>Las fuentes en C de cada versi√≥n del kernel cuentan con
      controladores para diversos dispositivos.  Cuando se compila una
-     versiÛn, algunos de esos controladores pueden unirse con el
-     kernel mismo (est·ticamente), otros pueden dejarse como mÛdulos para
-     cargarse/descargarse cuando la parte est·tica del kernel este
+     versi√≥n, algunos de esos controladores pueden unirse con el
+     kernel mismo (est√°ticamente), otros pueden dejarse como m√≥dulos para
+     cargarse/descargarse cuando la parte est√°tica del kernel este
      operando,
-     otros pueden ser excluidos del proceso de compilaciÛn (y por lo
-     tanto no podr·n ser usados ni cuando el kernel estÈ operando).
+     otros pueden ser excluidos del proceso de compilaci√≥n (y por lo
+     tanto no podr√°n ser usados ni cuando el kernel est√© operando).
    </P
 ><A
 NAME="AEN8383"
 ></A
 ><P
->Durante la operaciÛn,
+>Durante la operaci√≥n,
        el kernel de Linux puede verse dividido en dos partes, una 
-       din·mica compuesta por controladores que el usuario o programas
+       din√°mica compuesta por controladores que el usuario o programas
        pueden cargar y descargar y la otra ... que es iniciada con todo
        el kernel y sirve de soporte para el resto.
      </P
@@ -155,22 +155,22 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="modulos"
->MÛdulos</A
+>M√≥dulos</A
 ></H3
 ><A
 NAME="AEN8388"
 ></A
 ><P
 >En este directorio
-       est·n los mÛdulos de las diversas versiones de kernels que tenga
+       est√°n los m√≥dulos de las diversas versiones de kernels que tenga
        disponibles.
      </P
 ><P
->En este contexto, mÛdulo se refiere a un controlador de
+>En este contexto, m√≥dulo se refiere a un controlador de
       un dispositivos o servicio que puede cargarse o descargarse
-      cuando el usuario o alg˙n dispositivo lo solicita (i.e
-      din·micamente).  Los mÛdulos que se distribuyen con en el kernel
-      est·n ubicados en el directorio <TT
+      cuando el usuario o alg√∫n dispositivo lo solicita (i.e
+      din√°micamente).  Los m√≥dulos que se distribuyen con en el kernel
+      est√°n ubicados en el directorio <TT
 CLASS="filename"
 >/lib/modules/<TT
 CLASS="replaceable"
@@ -184,13 +184,13 @@ CLASS="replaceable"
 ><I
 >version</I
 ></TT
-> es la versiÛn de su
+> es la versi√≥n de su
       kernel
       <A
 NAME="AEN8396"
 HREF="#FTN.AEN8396"
 >[1]</A
->, con la extensiÛn
+>, con la extensi√≥n
       <TT
 CLASS="literal"
 >.o</TT
@@ -200,7 +200,7 @@ NAME="AEN8400"
 HREF="#FTN.AEN8400"
 >[2]</A
 > organizados en directorios que indican el tipo de
-      dispositivo o el propÛsito, por ejemplo <TT
+      dispositivo o el prop√≥sito, por ejemplo <TT
 CLASS="filename"
 >fs</TT
 >
@@ -212,7 +212,7 @@ CLASS="filename"
      </P
 ><P
 >Para lograr configurar un dispositivo controlado por un
-      mÛdulo, puede emplear las herramientas del paquete
+      m√≥dulo, puede emplear las herramientas del paquete
       <TT
 CLASS="literal"
 >modutils</TT
@@ -228,24 +228,24 @@ TYPE="1"
 ><LI
 ><P
 >Asegurar que no haya conflictos entre el dispositivo con
-	otros y eventualmente conocer la configuraciÛn que usa
-	(algunos controladores autodetectan la configuraciÛn del
+	otros y eventualmente conocer la configuraci√≥n que usa
+	(algunos controladores autodetectan la configuraci√≥n del
 	dispositivo, pero no todos).
        </P
 ></LI
 ><LI
 ><P
->Encontrar un mÛdulo que pueda manejar el dispositivo.
+>Encontrar un m√≥dulo que pueda manejar el dispositivo.
        </P
 ></LI
 ><LI
 ><P
->Eventualmente pasar opciones al mÛdulo de acuerdo a la
-	configuraciÛn del dispositivo (e.g <SPAN
+>Eventualmente pasar opciones al m√≥dulo de acuerdo a la
+	configuraci√≥n del dispositivo (e.g <SPAN
 CLASS="acronym"
 >IRQ</SPAN
 > o
-	direcciÛn base).
+	direcci√≥n base).
        </P
 ></LI
 ></OL
@@ -254,8 +254,8 @@ NAME="AEN8421"
 ></A
 ><P
 >Este directorio
-       contiene la configuraciÛn de diversos mÛdulos que pueden cargarse.  
-       Con base en la informaciÛn de <TT
+       contiene la configuraci√≥n de diversos m√≥dulos que pueden cargarse.  
+       Con base en la informaci√≥n de <TT
 CLASS="filename"
 >/etc/modules</TT
 > y de
@@ -275,11 +275,11 @@ CLASS="literal"
 CLASS="filename"
 >/etc/modutils</TT
 >
-      (con la informaciÛn de esos archivos y de <TT
+      (con la informaci√≥n de esos archivos y de <TT
 CLASS="filename"
 >/etc/modules</TT
 >
-      se genera el archivo de configuraciÛn de mÛdulos 
+      se genera el archivo de configuraci√≥n de m√≥dulos 
       <TT
 CLASS="filename"
 >/etc/modules.conf</TT
@@ -295,39 +295,39 @@ NAME="AEN8436"
 ></A
 ><P
 >Nombre del programa que permite
-      listar los mÛdulos que haya cargados y el estado de cada
+      listar los m√≥dulos que haya cargados y el estado de cada
       uno.</P
 ><A
 NAME="AEN8440"
 ></A
 ><P
 >Nombre del programa que permite
-      descargar los mÛdulos que haya cargados.</P
+      descargar los m√≥dulos que haya cargados.</P
 ><A
 NAME="AEN8444"
 ></A
 ><P
 >Nombre del programa que permite
-      cargar un mÛdulo especÌfico.</P
+      cargar un m√≥dulo espec√≠fico.</P
 ><A
 NAME="AEN8448"
 ></A
 ><P
 >Nombre del programa que permite
-      mostrar las dependencias entre diversos mÛdulos.</P
+      mostrar las dependencias entre diversos m√≥dulos.</P
 ><A
 NAME="AEN8452"
 ></A
 ><P
 >Nombre del programa que permite
-      cargar un mÛdulo, cargando antes los mÛdulos de los cuales
+      cargar un m√≥dulo, cargando antes los m√≥dulos de los cuales
       dependa.</P
 ><A
 NAME="AEN8456"
 ></A
 ><P
 >Nombre del programa que permite
-      listar, cargar, descargar mÛdulo a travÈs de men˙s.</P
+      listar, cargar, descargar m√≥dulo a trav√©s de men√∫s.</P
 ><A
 NAME="AEN8460"
 ></A
@@ -357,8 +357,8 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Lista los mÛdulos cargados, de cada uno presenta nombre,
-	 tamaÒo, cuenta de usos y lista de mÛdulos que lo usan (es
+>Lista los m√≥dulos cargados, de cada uno presenta nombre,
+	 tama√±o, cuenta de usos y lista de m√≥dulos que lo usan (es
 	 equivalente a <B
 CLASS="command"
 >cat /proc/modules</B
@@ -371,23 +371,23 @@ CLASS="command"
 >rmmod <TT
 CLASS="replaceable"
 ><I
->mÛdulos</I
+>m√≥dulos</I
 ></TT
 ></B
 ></DT
 ><DD
 ><P
->Descarga uno o m·s mÛdulos cargados, mientras estos no
-	 estÈn siendo usados.  Con la opciÛn <TT
+>Descarga uno o m√°s m√≥dulos cargados, mientras estos no
+	 est√©n siendo usados.  Con la opci√≥n <TT
 CLASS="option"
 >-r</TT
 >
-	 intenta descargar recursivamente mÛdulos de los cuales el
-	 mÛdulo especificado dependa.  El comando <B
+	 intenta descargar recursivamente m√≥dulos de los cuales el
+	 m√≥dulo especificado dependa.  El comando <B
 CLASS="command"
 >rmmod
 	 -a</B
-> descarga todos los mÛdulos que no estÈn siendo
+> descarga todos los m√≥dulos que no est√©n siendo
 	 usados.
 	</P
 ></DD
@@ -397,7 +397,7 @@ CLASS="command"
 >insmod <TT
 CLASS="replaceable"
 ><I
->mÛdulo</I
+>m√≥dulo</I
 ></TT
 >
 	 <TT
@@ -412,20 +412,20 @@ CLASS="replaceable"
 ></DT
 ><DD
 ><P
->Trata de cargar el mÛdulo especificado.  Pueden pasarse
-	 opciones especÌficas para el mÛdulo, a continuaciÛn del
+>Trata de cargar el m√≥dulo especificado.  Pueden pasarse
+	 opciones espec√≠ficas para el m√≥dulo, a continuaci√≥n del
 	 nombre con la sintaxis
 	 <TT
 CLASS="varname"
->sÌmbolo</TT
+>s√≠mbolo</TT
 >=<TT
 CLASS="replaceable"
 ><I
 >valor</I
 ></TT
 >
-	 (los sÌmbolos posibles dependen del mÛdulo, pueden verse
-	 algunos en estas guÌas o en
+	 (los s√≠mbolos posibles dependen del m√≥dulo, pueden verse
+	 algunos en estas gu√≠as o en
 	 <TT
 CLASS="filename"
 >/usr/share/modconf/descr.gz</TT
@@ -434,7 +434,7 @@ CLASS="filename"
 CLASS="command"
 >modconf</B
 > --- o en
-	 ˙ltimo caso en las fuentes del mÛdulo en los macros
+	 √∫ltimo caso en las fuentes del m√≥dulo en los macros
 	 <TT
 CLASS="function"
 >MODULE_PARAM</TT
@@ -443,7 +443,7 @@ CLASS="function"
 CLASS="function"
 >MODULE_PARAM_DESCR</TT
 >). Puede indicarse una
-	 ruta no est·ndar para buscar mÛdulos estableciÈndola en la
+	 ruta no est√°ndar para buscar m√≥dulos estableci√©ndola en la
 	 variable <TT
 CLASS="envar"
 >MODPATH</TT
@@ -451,9 +451,9 @@ CLASS="envar"
 	 <TT
 CLASS="filename"
 >/etc/modules.conf</TT
->.  Dado que los mÛdulos
+>.  Dado que los m√≥dulos
 	 se enlazan directamente con el kernel, deben ser compilados
-	 para una versiÛn precisa, con la opciÛn <TT
+	 para una versi√≥n precisa, con la opci√≥n <TT
 CLASS="option"
 >-f</TT
 >
@@ -467,14 +467,14 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Como un mÛdulo puede requerir otros, hay dependencias
-	 que deben respetarse al cargar y descargar mÛdulos.
+>Como un m√≥dulo puede requerir otros, hay dependencias
+	 que deben respetarse al cargar y descargar m√≥dulos.
 	 <B
 CLASS="command"
 >depmod</B
 > permite calcular tales dependencias
-	 entre varios mÛdulos o entre todos los disponibles con la
-	 opciÛn <TT
+	 entre varios m√≥dulos o entre todos los disponibles con la
+	 opci√≥n <TT
 CLASS="option"
 >-a</TT
 >
@@ -496,8 +496,8 @@ CLASS="replaceable"
 ></TT
 >/modules.emp</TT
 >
-	 Cada lÌnea de ese archivo tiene el nombre de un mÛdulo
-	 seguido del caracter ':' y los mÛdulos de los cuales depende,
+	 Cada l√≠nea de ese archivo tiene el nombre de un m√≥dulo
+	 seguido del caracter ':' y los m√≥dulos de los cuales depende,
 	 separados por espacios.
 	</P
 ></DD
@@ -507,7 +507,7 @@ CLASS="command"
 >modprobe <TT
 CLASS="replaceable"
 ><I
->mÛdulo</I
+>m√≥dulo</I
 ></TT
 >
 	 <TT
@@ -519,18 +519,18 @@ CLASS="replaceable"
 ></DT
 ><DD
 ><P
->Emplea la informaciÛn de dependencias generada por
+>Emplea la informaci√≥n de dependencias generada por
 	 <B
 CLASS="command"
 >depmod</B
-> e informaciÛn de
+> e informaci√≥n de
 	 <TT
 CLASS="filename"
 >/etc/modules.conf</TT
-> para cargar el mÛdulo
-	 especificado, cargando antes todos los mÛdulos de los cuales
-	 dependa.  Para especificar el mÛdulo basta escribir el nombre
-	 (sin la ruta, ni la extensiÛn <TT
+> para cargar el m√≥dulo
+	 especificado, cargando antes todos los m√≥dulos de los cuales
+	 dependa.  Para especificar el m√≥dulo basta escribir el nombre
+	 (sin la ruta, ni la extensi√≥n <TT
 CLASS="literal"
 >.o</TT
 >) o uno de
@@ -543,7 +543,7 @@ CLASS="filename"
 CLASS="filename"
 >/etc/modutils</TT
 >).  Si hay
-	 lÌneas <TT
+	 l√≠neas <TT
 CLASS="literal"
 >pre-install</TT
 > o
@@ -559,15 +559,15 @@ CLASS="filename"
 CLASS="command"
 >modprobe</B
 > puede ejecutar un comando antes
-	 y/o despuÈs de cargar el mÛdulo.  Como opciones para cargar
-	 el mÛdulo usa prioritariamente las dadas en la lÌnea de
-	 comandos y despuÈs las especificadas en lÌneas de la forma
+	 y/o despu√©s de cargar el m√≥dulo.  Como opciones para cargar
+	 el m√≥dulo usa prioritariamente las dadas en la l√≠nea de
+	 comandos y despu√©s las especificadas en l√≠neas de la forma
 	 <TT
 CLASS="literal"
 >options <TT
 CLASS="replaceable"
 ><I
->mÛdulo</I
+>m√≥dulo</I
 ></TT
 >
 	 <TT
@@ -591,8 +591,8 @@ HREF="#FTN.AEN8535"
 ></DL
 ></DIV
 ><P
->Puede emplear estos programas para configurar sus mÛdulos y
-      puede hacer permanentes los cambios, agregando el mÛdulo y las
+>Puede emplear estos programas para configurar sus m√≥dulos y
+      puede hacer permanentes los cambios, agregando el m√≥dulo y las
       opciones en el archivo
       <TT
 CLASS="filename"
@@ -605,7 +605,7 @@ HREF="#FTN.AEN8541"
 >.
     </P
 ><P
->Para hacer m·s f·cil la configuraciÛn de mÛdulos, Debian
+>Para hacer m√°s f√°cil la configuraci√≥n de m√≥dulos, Debian
       ofrece las siguientes herramientas: </P
 ><P
 ></P
@@ -619,10 +619,10 @@ CLASS="command"
 ></DT
 ><DD
 ><P
->Para listar, cargar y descargar mÛdulos con men˙s. Este
-	 programa muestra los mÛdulos disponbiles en categorÌas y con
+>Para listar, cargar y descargar m√≥dulos con men√∫s. Este
+	 programa muestra los m√≥dulos disponbiles en categor√≠as y con
 	 ayudas sobre su uso y permite cargarlos o descargarlos del
-	 kernel, actualizando autom·ticamente los archivos
+	 kernel, actualizando autom√°ticamente los archivos
 	 <TT
 CLASS="filename"
 >/etc/modules</TT
@@ -635,14 +635,14 @@ CLASS="filename"
 CLASS="filename"
 >/etc/modutils</TT
 >)
-	 para que los mÛdulos configurados sean cargados
-	 autom·ticamente en el siguiente arranque.  La informaciÛn
-	 sobre los mÛdulos disponibles la obtiene del directorio
+	 para que los m√≥dulos configurados sean cargados
+	 autom√°ticamente en el siguiente arranque.  La informaci√≥n
+	 sobre los m√≥dulos disponibles la obtiene del directorio
 	 <TT
 CLASS="filename"
 >/lib/modules</TT
->, los mÛdulos cargados y sus
-	 par·metros los lee de <TT
+>, los m√≥dulos cargados y sus
+	 par√°metros los lee de <TT
 CLASS="filename"
 >/etc/modutils</TT
 > y
@@ -650,7 +650,7 @@ CLASS="filename"
 CLASS="filename"
 >/etc/modules.conf</TT
 > y la ayuda y la
-	 informaciÛn interna de los archivos en
+	 informaci√≥n interna de los archivos en
 	 <TT
 CLASS="filename"
 >/usr/share/modules.conf</TT
@@ -658,7 +658,7 @@ CLASS="filename"
 	 ---<B
 CLASS="command"
 >modconf</B
-> es un script para el intÈrprete
+> es un script para el int√©rprete
 	 de comandos.
 	</P
 ></DD
@@ -674,7 +674,7 @@ CLASS="command"
 CLASS="filename"
 >/etc/modules.conf</TT
 > a partir de la
-	 informaciÛn de los archivos del directorio
+	 informaci√≥n de los archivos del directorio
 	 <TT
 CLASS="filename"
 >/etc/modutils</TT
@@ -689,7 +689,7 @@ CLASS="filename"
 ></DIV
 ><P
 >Es posible que el kernel del que disponga no cuente con
-      mÛdulos que soporten ciertos dispositivos, en tal caso se puede:
+      m√≥dulos que soporten ciertos dispositivos, en tal caso se puede:
       </P
 ><P
 ></P
@@ -697,25 +697,25 @@ CLASS="filename"
 TYPE="1"
 ><LI
 ><P
->buscar en Internet un mÛdulo precompilado para la versiÛn
+>buscar en Internet un m√≥dulo precompilado para la versi√≥n
 	del kernel que tiene,
        </P
 ></LI
 ><LI
 ><P
->buscar fuentes de un mÛdulo o
+>buscar fuentes de un m√≥dulo o
        </P
 ></LI
 ><LI
 ><P
->buscar una versiÛn del kernel que incluya soporte para el
+>buscar una versi√≥n del kernel que incluya soporte para el
        dispositivo. 
        </P
 ></LI
 ></OL
 ><P
->En el ˙ltimo caso las instrucciones de la siguiente secciÛn
-      le ser·n de utilidad. </P
+>En el √∫ltimo caso las instrucciones de la siguiente secci√≥n
+      le ser√°n de utilidad. </P
 ></DIV
 ><DIV
 CLASS="sect3"
@@ -723,11 +723,11 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="configuracion-del-kernel"
->ConfiguraciÛn del kernel</A
+>Configuraci√≥n del kernel</A
 ></H3
 ><P
->Adem·s de cargar y descargar mÛdulos, algunas
-      caracterÌsticas del kernel pueden ser modificadas mientras est·
+>Adem√°s de cargar y descargar m√≥dulos, algunas
+      caracter√≠sticas del kernel pueden ser modificadas mientras est√°
       en funcionamiento el sistema, bien escribiendo en algunos
       archivos del directorio <TT
 CLASS="filename"
@@ -736,14 +736,14 @@ CLASS="filename"
       <B
 CLASS="command"
 >sysctl</B
->.  Este programa con la opciÛn
+>.  Este programa con la opci√≥n
       <TT
 CLASS="option"
 >-a</TT
 > presenta todas las variables modificables
       y su valor, entre otras encuentra variables que mantienen datos
       autodetectados en dispositivos (en particular del CDROM), datos
-      de la interacciÛn entre el kernel y el sistema de archivos (ver
+      de la interacci√≥n entre el kernel y el sistema de archivos (ver
       <A
 HREF="x6433.htm#sistema-de-archivos-ext-two"
 >Sistema de archivos
@@ -784,27 +784,27 @@ CLASS="filename"
 >.
     </P
 ><P
->En cuanto a los mÛdulos, las imagenes precompiladas del
-      kernel producidas por Debian incluyen est·ticamente varios
-      controladores comunes y pr·cticamente los dem·s controladores
-      los incluye como mÛdulos.  Por esto, si la versiÛn del kernel
+>En cuanto a los m√≥dulos, las imagenes precompiladas del
+      kernel producidas por Debian incluyen est√°ticamente varios
+      controladores comunes y pr√°cticamente los dem√°s controladores
+      los incluye como m√≥dulos.  Por esto, si la versi√≥n del kernel
       que tiene soporta sus dispositivos y los servicios que desea,
       casi con seguridad usted NO necesita recompilar el kernel (puede
       confirmar si la imagen que tiene, soporta el controlador como
-      mÛdulo revisando en el directorio de mÛdulos, o puede comprobar
-      si Èste se incluye est·ticamente, efectuando el segundo paso
-      para una instalaciÛn que se explica m·s adelante, usando como
-      archivo de configuraciÛn el de la imagen de su kernel).
+      m√≥dulo revisando en el directorio de m√≥dulos, o puede comprobar
+      si √©ste se incluye est√°ticamente, efectuando el segundo paso
+      para una instalaci√≥n que se explica m√°s adelante, usando como
+      archivo de configuraci√≥n el de la imagen de su kernel).
     </P
 ><P
 >Eventualmente, si su dispositivo no es detectado
-     autom·ticamente o el mÛdulo apropiado no es cargado
-     autom·ticamente
+     autom√°ticamente o el m√≥dulo apropiado no es cargado
+     autom√°ticamente
       <A
 NAME="AEN8594"
 HREF="#FTN.AEN8594"
 >[7]</A
->, tendr· que pasar los paramÈtros apropiados de una
+>, tendr√° que pasar los param√©tros apropiados de una
       de las dos siguientes formas:
     </P
 ><P
@@ -817,7 +817,7 @@ CLASS="variablelist"
 CLASS="bold"
 ><B
 CLASS="emphasis"
->Controlado est·tico</B
+>Controlado est√°tico</B
 ></SPAN
 ></DT
 ><DD
@@ -826,13 +826,13 @@ NAME="AEN8602"
 ></A
 ><P
 >Para configurar
-	controladores incluidos est·ticamente debe emplear el ...</P
+	controladores incluidos est√°ticamente debe emplear el ...</P
 ><P
->Pase los par·metros apropiados desde el cargador de
+>Pase los par√°metros apropiados desde el cargador de
 	arranque o configurelos de forma permanente con su cargardor
 	de arranque (ver <A
 HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
->Par·metros
+>Par√°metros
 	 desde el cargador de arranque</A
 >).
        </P
@@ -842,12 +842,12 @@ HREF="x5075.htm#parametros-desde-el-cargador-de-arranque"
 CLASS="bold"
 ><B
 CLASS="emphasis"
->MÛdulo (din·mico)</B
+>M√≥dulo (din√°mico)</B
 ></SPAN
 ></DT
 ><DD
 ><P
->Pase los paramÈtros de configuraciÛn a
+>Pase los param√©tros de configuraci√≥n a
 	<B
 CLASS="command"
 >insmod</B
@@ -863,8 +863,8 @@ CLASS="filename"
 	<TT
 CLASS="filename"
 >/etc/modutils</TT
-> (vea la secciÛn anterior
-	sobre mÛdulos).
+> (vea la secci√≥n anterior
+	sobre m√≥dulos).
        </P
 ></DD
 ></DL
@@ -874,20 +874,20 @@ NAME="AEN8616"
 ></A
 ><P
 >Nombre del programa que detecta
-      autom·ticamente que mÛdulos cargar.</P
+      autom√°ticamente que m√≥dulos cargar.</P
 ><P
->Eventualmente puede encontrar y usar alg˙n programa que le
-      ayude a determinar los par·metros apropiados y/o a realizar las
+>Eventualmente puede encontrar y usar alg√∫n programa que le
+      ayude a determinar los par√°metros apropiados y/o a realizar las
       configuraciones (algunos se mencionan en las secciones de este
-      capÌtulo), o tendr· que consultar los manuales del dispositivo o
+      cap√≠tulo), o tendr√° que consultar los manuales del dispositivo o
       incluso probar varias opciones hasta determinarlos.
      </P
 ><P
->Si tras consultar esta documentaciÛn o la del kernel o
-      cualquier otra m·s actualizada, determina que una versiÛn del
+>Si tras consultar esta documentaci√≥n o la del kernel o
+      cualquier otra m√°s actualizada, determina que una versi√≥n del
       kernel diferente a la que tiene, soporta cierto dispositivo o
-      servicio que requiere, el mÈtodo m·s sencillo que puede intentar
-      es instalar una imagÈn precompilada disponible en alg˙n depÛsito
+      servicio que requiere, el m√©todo m√°s sencillo que puede intentar
+      es instalar una imag√©n precompilada disponible en alg√∫n dep√≥sito
       de paquetes de Debian (el nombre es de la forma
       <TT
 CLASS="literal"
@@ -898,7 +898,7 @@ CLASS="replaceable"
 ></TT
 ></TT
 >).
-      Como parte del archivo oficial de Debian encontrar· imagenes
+      Como parte del archivo oficial de Debian encontrar√° imagenes
       recientes de las series 2.2.x y 2.0.x (por defecto Debian 2.2r5
       emplea el kernel 2.2.19).
     </P
@@ -906,19 +906,19 @@ CLASS="replaceable"
 NAME="AEN8624"
 ></A
 ><P
->Si requiere una versiÛn
+>Si requiere una versi√≥n
       del kernel diferente a la que tiene instalada, primero puede buscar
       un paquete cuyo nombre comience con ...</P
 ><P
->Fuera del depÛsito oficial encontrar· paquetes para Debian
-     2.2 de im·genes de la versiÛn 2.4.18 para diversos procesadores e
+>Fuera del dep√≥sito oficial encontrar√° paquetes para Debian
+     2.2 de im√°genes de la versi√≥n 2.4.18 para diversos procesadores e
      instrucciones en: <A
 HREF="http://www.fs.tum.de/~bunk/kernel-24.html"
 TARGET="_top"
 >http://www.fs.tum.de/~bunk/kernel-24.html</A
 >
-     La instalaciÛn es bastante directa y autom·tica (sÛlo debe tener
-     en cuenta agregar una lÌnea a <TT
+     La instalaci√≥n es bastante directa y autom√°tica (s√≥lo debe tener
+     en cuenta agregar una l√≠nea a <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
 >
@@ -928,14 +928,14 @@ CLASS="command"
 >).
      </P
 ><P
->En caso de requerir un kernel con una configuraciÛn muy
-      especial (por ejemplo, que incluya est·ticamente ciertos mÛdulos
-      o que excluya de la compilaciÛn mÛdulos para hacer un kernel
-      pequeÒo) o si requiere una versiÛn para la que que no haya
+>En caso de requerir un kernel con una configuraci√≥n muy
+      especial (por ejemplo, que incluya est√°ticamente ciertos m√≥dulos
+      o que excluya de la compilaci√≥n m√≥dulos para hacer un kernel
+      peque√±o) o si requiere una versi√≥n para la que que no haya
       imagenes precompiladas de Debian, recomendamos instalar primero
-      una versiÛn precompilada con una versiÛn cercana a la que desea
-      instalar, para tomar la configuraciÛn de esta y modificarla
-      antes de compilar la nueva versiÛn. Adem·s recomendamos esto
+      una versi√≥n precompilada con una versi√≥n cercana a la que desea
+      instalar, para tomar la configuraci√≥n de esta y modificarla
+      antes de compilar la nueva versi√≥n. Adem√°s recomendamos esto
       porque las imagenes precompiladas actualizan otros programas
       indispensables para las nuevas versiones del kernel ---en
       especial si cambia de la serie 2.2 a la serie 2.4 se deben
@@ -972,7 +972,7 @@ CLASS="literal"
      </P
 ><P
 >Para obtener las fuentes, puede recurrir a paquetes Debian
-     para algunas versiones de las fuentes en depÛsitos oficiales
+     para algunas versiones de las fuentes en dep√≥sitos oficiales
      (paquetes con nombres de la forma
      <TT
 CLASS="literal"
@@ -983,15 +983,15 @@ CLASS="replaceable"
 ></TT
 ></TT
 >)
-     y las fuentes de cualquier versiÛn en el sitio de desarrollo del
+     y las fuentes de cualquier versi√≥n en el sitio de desarrollo del
      kernel (<A
 HREF="http://www.kernel.org"
 TARGET="_top"
 >http://www.kernel.org</A
 >). Cuando
      obtenga fuentes del kernel de Linux, tenga en cuenta que el
-     segundo n˙mero de la versiÛn sea par ---si es impar se trata de
-     una versiÛn para desarrolladores pero NO para usuarios finales.
+     segundo n√∫mero de la versi√≥n sea par ---si es impar se trata de
+     una versi√≥n para desarrolladores pero NO para usuarios finales.
    </P
 ><A
 NAME="AEN8645"
@@ -1001,8 +1001,8 @@ NAME="AEN8645"
       un kernel, puede primero buscar paquetes cuyo nombre comienza
       con ...</P
 ><P
->En esta secciÛn presentamos un breve resumen de los pasos
-      requeridos en una compilaciÛn de kernels versiones 2.2.x y
+>En esta secci√≥n presentamos un breve resumen de los pasos
+      requeridos en una compilaci√≥n de kernels versiones 2.2.x y
       2.4.x, suponiendo que ya ha actualizado todas los programas que
       estas versiones requieren.
     </P
@@ -1011,7 +1011,7 @@ NAME="AEN8650"
 ></A
 ><P
 >Nombre del programa que permite
-    detectar la versiÛn disponible del kernel.</P
+    detectar la versi√≥n disponible del kernel.</P
 ><P
 ></P
 ><OL
@@ -1030,13 +1030,13 @@ make clean
 ></LI
 ><LI
 ><P
->PreparaciÛn de la versiÛn extra La versiÛn de un kernel
+>Preparaci√≥n de la versi√≥n extra La versi√≥n de un kernel
 	(que puede examinar con <B
 CLASS="command"
 >uname -r</B
 >) se
-	compone de 3 n˙meros separados por el caracter '.'
-	eventualmente seguidos de una cadena (versiÛn extra).  Usted
+	compone de 3 n√∫meros separados por el caracter '.'
+	eventualmente seguidos de una cadena (versi√≥n extra).  Usted
 	puede establecer esta cadena arbitrariamente y especificarla
 	en el archivo <TT
 CLASS="filename"
@@ -1054,11 +1054,11 @@ CLASS="programlisting"
       </P
 ><P
 >Cuando compile, instale y le funcione un nuevo kernel,
-	esa versiÛn ser· la reportada por <B
+	esa versi√≥n ser√° la reportada por <B
 CLASS="command"
 >uname -r</B
 >,
-	los mÛdulos que instale por defecto quedar·n en <TT
+	los m√≥dulos que instale por defecto quedar√°n en <TT
 CLASS="filename"
 >/lib/modules/<TT
 CLASS="replaceable"
@@ -1067,73 +1067,73 @@ CLASS="replaceable"
 ></TT
 ></TT
 >
-	y ser·n usados por <TT
+	y ser√°n usados por <TT
 CLASS="filename"
 >modutils</TT
 > (ver <A
 HREF="x8370.htm"
->Kernel y mÛdulos</A
+>Kernel y m√≥dulos</A
 >).
        </P
 ><P
->Si escoge una versiÛn extra que coincida con una ya
-	existente, los mÛdulos anteriores ser·n remplazados durante la
-	instalaciÛn.  Recomendamos emplear una versiÛn extra diferente
+>Si escoge una versi√≥n extra que coincida con una ya
+	existente, los m√≥dulos anteriores ser√°n remplazados durante la
+	instalaci√≥n.  Recomendamos emplear una versi√≥n extra diferente
 	a las que pueda haber, mantener el kernel original junto con
-	sus mÛdulos en disco y agregar una etiqueta y los datos
+	sus m√≥dulos en disco y agregar una etiqueta y los datos
 	requeridos por el cargador de arranque) ---mientras se
 	aprende, es muy normal producir kernels con configuraciones
-	erradas que no podr·n arrancar.
+	erradas que no podr√°n arrancar.
        </P
 ></LI
 ><LI
 ><P
->ConfiguraciÛn En general el paso m·s difÌcil es la
-	configuraciÛn de las caracterÌsticas que desea del kernel
-	(dada la gran cantidad de preguntas y de tÈrminos tÈcnicos,
-	que esperamos estÈn explicados a lo largo de este capÌtulo).
-	Para iniciar una configuraciÛn completa puede emplear
+>Configuraci√≥n En general el paso m√°s dif√≠cil es la
+	configuraci√≥n de las caracter√≠sticas que desea del kernel
+	(dada la gran cantidad de preguntas y de t√©rminos t√©cnicos,
+	que esperamos est√©n explicados a lo largo de este cap√≠tulo).
+	Para iniciar una configuraci√≥n completa puede emplear
 	<B
 CLASS="command"
 >make menuconfig</B
-> que presentar· men˙s y
-	ayuda, tenga en cuenta que algunas caracterÌsticas puede
-	incluirlas est·ticamente en el kernel y otras como mÛdulos
-	(las caracterÌsticas est·ticas aumentan el tamaÒo).
+> que presentar√° men√∫s y
+	ayuda, tenga en cuenta que algunas caracter√≠sticas puede
+	incluirlas est√°ticamente en el kernel y otras como m√≥dulos
+	(las caracter√≠sticas est√°ticas aumentan el tama√±o).
 	Alternativamente puede emplear <B
 CLASS="command"
 >make xconfig</B
 >
-	que presenta una interfaz gr·fica o <B
+	que presenta una interfaz gr√°fica o <B
 CLASS="command"
 >make
 	config</B
 > que presenta una serie de preguntas.  El
-	resultado de cualquier de estos mÈtodos es un archivo
+	resultado de cualquier de estos m√©todos es un archivo
 	<TT
 CLASS="filename"
 >.config</TT
 > con las variables de
-	configuraciÛn y sus valores.
+	configuraci√≥n y sus valores.
        </P
 ><A
 NAME="AEN8677"
 ></A
 ><P
 >Al configurar un kernel
-      antes de compilarlo, la informaciÛn de configuraciÛn queda en este
+      antes de compilarlo, la informaci√≥n de configuraci√≥n queda en este
       archivo.</P
 ><P
->Otra posibilidad es que emplee la configuraciÛn de un
+>Otra posibilidad es que emplee la configuraci√≥n de un
 	kernel ya instalado y la modifique para acomodarla a sus
-	necesidades.  En Debian los archivos de configuraciÛn del
+	necesidades.  En Debian los archivos de configuraci√≥n del
 	kernel
 	<A
 NAME="AEN8682"
 HREF="#FTN.AEN8682"
 >[8]</A
 >
-	est·n en el directorio <TT
+	est√°n en el directorio <TT
 CLASS="filename"
 >/boot</TT
 > con nombres
@@ -1147,17 +1147,17 @@ CLASS="replaceable"
 ></TT
 ></TT
 >.
-	Copie uno de estos que corresponda a una versiÛn cercana al
+	Copie uno de estos que corresponda a una versi√≥n cercana al
 	que desea compilar, al directorio con las fuentes con el
 	nombre <TT
 CLASS="filename"
 >.config</TT
-> despuÈs puede modificar la
-	configuraciÛn de cualquiera de las siguientes formas: (1)
+> despu√©s puede modificar la
+	configuraci√≥n de cualquiera de las siguientes formas: (1)
 	ejecutando <B
 CLASS="command"
 >make menuconfig</B
-> que leer· el
+> que leer√° el
 	archivo <TT
 CLASS="filename"
 >.config</TT
@@ -1170,7 +1170,7 @@ CLASS="command"
 CLASS="filename"
 >.config</TT
 > con un
-	editor de texto y ejecutando despuÈs <B
+	editor de texto y ejecutando despu√©s <B
 CLASS="command"
 >make
 	oldconfig</B
@@ -1179,17 +1179,17 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->CompilaciÛn Primero se calculan interdepencias entre
-	archivos fuente de acuerdo a la configuaciÛn con <B
+>Compilaci√≥n Primero se calculan interdepencias entre
+	archivos fuente de acuerdo a la configuaci√≥n con <B
 CLASS="command"
 >make
 	dep</B
->, despuÈs se compila una imagen del kernel con
+>, despu√©s se compila una imagen del kernel con
 	<B
 CLASS="command"
 >make bzImage</B
 > y finalmente se compilan
-	mÛdulos con <B
+	m√≥dulos con <B
 CLASS="command"
 >make modules</B
 >.
@@ -1197,23 +1197,23 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->InstalaciÛn Es necesario instalar la imagen del kernel,
-	los archivos auxiliares y mÛdulos, configurar el cargador de
-	arranque y eventualmente si est· compilando un kernel con
+>Instalaci√≥n Es necesario instalar la imagen del kernel,
+	los archivos auxiliares y m√≥dulos, configurar el cargador de
+	arranque y eventualmente si est√° compilando un kernel con
 	<B
 CLASS="command"
 >initrd</B
 > (los kernels 2.4 precompildos de
 	Debian por defecto lo usan) debe crear la imagen apropiada.
-	Antes de instalar mÛdulos.  En este punto es recomendable que saque 
+	Antes de instalar m√≥dulos.  En este punto es recomendable que saque 
 	una copia
-	de respaldo del directorio de mÛdulos (en caso de que este
-	remplazandolos por la versiÛn extra que escogiÛ). Para
+	de respaldo del directorio de m√≥dulos (en caso de que este
+	remplazandolos por la versi√≥n extra que escogi√≥). Para
 	instalar emplee <B
 CLASS="command"
 >make modules_install</B
 > que
-	copiar· todos los mÛdulos y las dependencias entre ellos al
+	copiar√° todos los m√≥dulos y las dependencias entre ellos al
 	directorio
 	<TT
 CLASS="filename"
@@ -1224,8 +1224,8 @@ CLASS="replaceable"
 ></TT
 ></TT
 >.
-	A continuaciÛn se presenta un ejemplo que debe adaptar a la
-	versiÛn de su kernel:
+	A continuaci√≥n se presenta un ejemplo que debe adaptar a la
+	versi√≥n de su kernel:
 <PRE
 CLASS="programlisting"
 >&#13;cd /usr/src/kernel-source-2.2.21
@@ -1238,9 +1238,9 @@ cp .config /boot/config-2.2.21-tobias
 >
        </P
 ><P
->DespuÈs deber· editar la configuraciÛn de su cargador de
+>Despu√©s deber√° editar la configuraci√≥n de su cargador de
 	arranque para que emplee la nueva imagen del kernel, por
-	ejemplo puede agregarse una secciÛn como:
+	ejemplo puede agregarse una secci√≥n como:
 <PRE
 CLASS="programlisting"
 >&#13;image=/vmlinuz-2.2.21-tobias
@@ -1258,15 +1258,15 @@ CLASS="literal"
 CLASS="acronym"
 >APM</SPAN
 >
-	quitando la ˙ltima lÌnea (ver 
+	quitando la √∫ltima l√≠nea (ver 
 	<A
 HREF="x8783.htm#bios-y-otras-caracteristicas"
 >BIOS y otras
-	caracterÌsticas</A
+	caracter√≠sticas</A
 >) 
        </P
 ><P
->Si est· compilando un kernel con
+>Si est√° compilando un kernel con
 	<B
 CLASS="command"
 >initrd</B
@@ -1277,7 +1277,7 @@ HREF="#FTN.AEN8715"
 >[9]</A
 >
 	(por ejemplo los kernel 2.4 para Debian lo emplean por
-	defecto), debe agregar a la misma secciÛn en
+	defecto), debe agregar a la misma secci√≥n en
 	  <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
@@ -1289,12 +1289,12 @@ CLASS="programlisting"
 >
        </P
 ><P
->DespuÈs debe ejecutar <B
+>Despu√©s debe ejecutar <B
 CLASS="command"
 >/sbin/lilo</B
 >
 	para poner un nuevo cargador de arranque en el MBR o en el
-	sector de arranque donde estÈ configurado.</P
+	sector de arranque donde est√© configurado.</P
 ><DIV
 CLASS="important"
 ><BLOCKQUOTE
@@ -1302,11 +1302,11 @@ CLASS="important"
 ><P
 ><B
 >Importante: </B
->DespuÈs de compilar un kernel, ejecute 
+>Despu√©s de compilar un kernel, ejecute 
 	   <B
 CLASS="command"
 >/sbin/lilo</B
-> a˙n si no modifica
+> a√∫n si no modifica
 	 <TT
 CLASS="filename"
 >/etc/lilo.conf</TT
@@ -1321,8 +1321,8 @@ NAME="AEN8725"
 ><P
 >Se trata de una imagen
       de un sistema de archivos para memoria RAM, que contiene algunos
-      mÛdulos y configuraciÛn de un sistema Linux mÌnimo.  Es cargado
-      antes del dispositivo raiz real en algunos sistemas donde est·
+      m√≥dulos y configuraci√≥n de un sistema Linux m√≠nimo.  Es cargado
+      antes del dispositivo raiz real en algunos sistemas donde est√°
       configurado.</P
 ></DIV
 ></DIV
@@ -1332,7 +1332,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="lecturas-recomendadadas-kernel-y-modulos"
->Lecturas recomendadas: Kernel y mÛdulos</A
+>Lecturas recomendadas: Kernel y m√≥dulos</A
 ></H2
 ><P
 ></P
@@ -1340,7 +1340,7 @@ NAME="lecturas-recomendadadas-kernel-y-modulos"
 ><LI
 ><P
 >Para manejar mejor las herramientas de
-	mÛdulos, puede consultar las p·ginas <B
+	m√≥dulos, puede consultar las p√°ginas <B
 CLASS="command"
 >man</B
 > de
@@ -1359,8 +1359,8 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->En caso de que estÈ interesado o que necesite m·s
-       informaciÛn sobre mÛdulos puede consultar "<I
+>En caso de que est√© interesado o que necesite m√°s
+       informaci√≥n sobre m√≥dulos puede consultar "<I
 CLASS="citetitle"
 >Introduction to
        Linux Kernel Modules</I
@@ -1373,7 +1373,7 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->Algunos mÛdulos que se distribuyen separados del kernel
+>Algunos m√≥dulos que se distribuyen separados del kernel
        requieren ser compilados.  Puede encontrar ayuda de como
        hacerlo en: <A
 HREF="http://www.scyld.com/expert/modules.html"
@@ -1385,7 +1385,7 @@ TARGET="_top"
 ><LI
 ><P
 >Otro documento donde puede consultar el proceso de
-       compilaciÛn est· disponible en Internet en: <A
+       compilaci√≥n est√° disponible en Internet en: <A
 HREF="http://structio.sourceforge.net/paz/actualiz-kernel.html"
 TARGET="_top"
 >http://structio.sourceforge.net/paz/actualiz-kernel.html</A
@@ -1400,7 +1400,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="ejercicios-kernel-y-modulos"
->Ejercicios: Kernel y mÛdulos</A
+>Ejercicios: Kernel y m√≥dulos</A
 ></H2
 ><DIV
 CLASS="qandaset"
@@ -1408,7 +1408,7 @@ CLASS="qandaset"
 ><DT
 >1. <A
 HREF="x8370.htm#init.kernel.1"
->øQuÈ versiÛn del kernel Linux tiene
+>¬øQu√© versi√≥n del kernel Linux tiene
        instalado su sistema? Ayuda: emplee el programa
        <TT
 CLASS="literal"
@@ -1418,15 +1418,15 @@ CLASS="literal"
 ><DT
 >2. <A
 HREF="x8370.htm#init.modulos.1"
->Revise los mÛdulos que est·n cargados en su sistema, y
-       trate de determinar que dispositivo controla o quÈ servicio
+>Revise los m√≥dulos que est√°n cargados en su sistema, y
+       trate de determinar que dispositivo controla o qu√© servicio
        presta cada uno. </A
 ></DT
 ><DT
 >3. <A
 HREF="x8370.htm#init.modulos.2"
->Examine el archivo de configuraciÛn de X-Window, si desea
-       experimentar con este, saque una copia y modifÌquelo
+>Examine el archivo de configuraci√≥n de X-Window, si desea
+       experimentar con este, saque una copia y modif√≠quelo
        directamente o por medio del programa
        <TT
 CLASS="literal"
@@ -1444,13 +1444,13 @@ CLASS="literal"
 ><DT
 >4. <A
 HREF="x8370.htm#init.modulos.3"
->Al cargar un mÛdulo, <B
+>Al cargar un m√≥dulo, <B
 CLASS="command"
 >insmod</B
 > revisa que
-       los sÌmbolos del kernel que el mÛdulo espera puedan ser
-       resueltos.  øQuÈ son estos sÌmbolos?  Describa tambiÈn como
-       buscÛ su respuesta.</A
+       los s√≠mbolos del kernel que el m√≥dulo espera puedan ser
+       resueltos.  ¬øQu√© son estos s√≠mbolos?  Describa tambi√©n como
+       busc√≥ su respuesta.</A
 ></DT
 ></DL
 ><DIV
@@ -1463,7 +1463,7 @@ NAME="init.kernel.1"
 ></A
 ><B
 >1. </B
->øQuÈ versiÛn del kernel Linux tiene
+>¬øQu√© versi√≥n del kernel Linux tiene
        instalado su sistema? Ayuda: emplee el programa
        <TT
 CLASS="literal"
@@ -1496,8 +1496,8 @@ NAME="init.modulos.1"
 ></A
 ><B
 >2. </B
->Revise los mÛdulos que est·n cargados en su sistema, y
-       trate de determinar que dispositivo controla o quÈ servicio
+>Revise los m√≥dulos que est√°n cargados en su sistema, y
+       trate de determinar que dispositivo controla o qu√© servicio
        presta cada uno. </P
 ></DIV
 ><DIV
@@ -1509,7 +1509,7 @@ CLASS="answer"
        Ejecutar <B
 CLASS="command"
 >lsmod</B
->, consultar informaciÛn de cada
+>, consultar informaci√≥n de cada
        uno por ejemplo con <B
 CLASS="command"
 >modconf</B
@@ -1527,8 +1527,8 @@ NAME="init.modulos.2"
 ></A
 ><B
 >3. </B
->Examine el archivo de configuraciÛn de X-Window, si desea
-       experimentar con este, saque una copia y modifÌquelo
+>Examine el archivo de configuraci√≥n de X-Window, si desea
+       experimentar con este, saque una copia y modif√≠quelo
        directamente o por medio del programa
        <TT
 CLASS="literal"
@@ -1566,13 +1566,13 @@ NAME="init.modulos.3"
 ></A
 ><B
 >4. </B
->Al cargar un mÛdulo, <B
+>Al cargar un m√≥dulo, <B
 CLASS="command"
 >insmod</B
 > revisa que
-       los sÌmbolos del kernel que el mÛdulo espera puedan ser
-       resueltos.  øQuÈ son estos sÌmbolos?  Describa tambiÈn como
-       buscÛ su respuesta.</P
+       los s√≠mbolos del kernel que el m√≥dulo espera puedan ser
+       resueltos.  ¬øQu√© son estos s√≠mbolos?  Describa tambi√©n como
+       busc√≥ su respuesta.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -1580,9 +1580,9 @@ CLASS="answer"
 ><B
 > </B
 > Son nombres de funciones o variables de las fuentes en C
-       del mÛdulo y del kernel, para que los mÛdulos puedan usar las
-       funciones y viceversa la ubicaciÛn en memoria de estos sÌmbolos
-       debe resolverse din·micamente.  Los sÌmbolos del kernel puede
+       del m√≥dulo y del kernel, para que los m√≥dulos puedan usar las
+       funciones y viceversa la ubicaci√≥n en memoria de estos s√≠mbolos
+       debe resolverse din√°micamente.  Los s√≠mbolos del kernel puede
        examinarse en
        <TT
 CLASS="filename"
@@ -1624,7 +1624,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->VersiÛn tal como la reporta <B
+>Versi√≥n tal como la reporta <B
 CLASS="command"
 >uname
 	 -r</B
@@ -1647,31 +1647,31 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Esta extensiÛn es tÌpica de <SPAN
+>Esta extensi√≥n es t√≠pica de <SPAN
 ><I
 CLASS="emphasis"
->cÛdigo
+>c√≥digo
 	objeto</I
 ></SPAN
-> que es cÛdigo generado por un compilador a
+> que es c√≥digo generado por un compilador a
 	partir de un archivo fuente (en el caso de Linux el compilador
 	es <TT
 CLASS="literal"
 >gcc</TT
->).  Puede "unirse" est·ticamente con
-	m·s cÛdigo objeto empleando un encadenador (en el caso de
+>).  Puede "unirse" est√°ticamente con
+	m√°s c√≥digo objeto empleando un encadenador (en el caso de
 	Linux el encadenador es <TT
 CLASS="literal"
 >ld</TT
->) o din·micamente
+>) o din√°micamente
 	usando <TT
 CLASS="literal"
 >/lib/ld.so</TT
 > (ver <A
 HREF="x7217.htm"
->AdministraciÛn de
+>Administraci√≥n de
 	programas</A
->) o en el caso de mÛdulos con
+>) o en el caso de m√≥dulos con
 	<TT
 CLASS="literal"
 >insmod</TT
@@ -1694,7 +1694,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->El archivo de configuraciÛn de
+>El archivo de configuraci√≥n de
 	<TT
 CLASS="literal"
 >modutils</TT
@@ -1721,7 +1721,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->La especificaciÛn de las rutas para buscar mÛdulos
+>La especificaci√≥n de las rutas para buscar m√≥dulos
 	   puede hacerse con <TT
 CLASS="envar"
 >MODPATH</TT
@@ -1729,7 +1729,7 @@ CLASS="envar"
 	   <TT
 CLASS="filename"
 >/etc/modules.conf</TT
-> en las lÌneas de la
+> en las l√≠neas de la
 	   forma
 	   <B
 CLASS="command"
@@ -1762,19 +1762,19 @@ WIDTH="95%"
 CLASS="filename"
 >/etc/modules.conf</TT
 >
-	   puede tener comentarios en lÌneas iniciadas con el caracter
-	   '#', puede tener lÌneas para: modificar las dependencias
-	   entre mÛdulos (below, above, probe, probeall, depfile);
-	   para manejar las rutas donde buscar mÛdulos (path, keep);
-	   para ejecutar comandos antes, en vez o despuÈs de instalar
-	   o descargar los mÛdulos (pre-install, install,
+	   puede tener comentarios en l√≠neas iniciadas con el caracter
+	   '#', puede tener l√≠neas para: modificar las dependencias
+	   entre m√≥dulos (below, above, probe, probeall, depfile);
+	   para manejar las rutas donde buscar m√≥dulos (path, keep);
+	   para ejecutar comandos antes, en vez o despu√©s de instalar
+	   o descargar los m√≥dulos (pre-install, install,
 	   post-install, pre-remove, remove, post-remove); para
-	   especificar opciones por defecto para algunos mÛdulos o
+	   especificar opciones por defecto para algunos m√≥dulos o
 	   <B
 CLASS="command"
 >insmod</B
 > (options, insmod_opt); para crear
-	   alias o para definir variables o tener en cuenta sÛlo
+	   alias o para definir variables o tener en cuenta s√≥lo
 	   ciertas partes del archivo (alias, define, if, else,
 	   elseif, endif).
 	  </P
@@ -1795,8 +1795,8 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Durante el arranque las dependencias entre mÛdulos son
-	generadas autom·ticamente y los mÛdulos especificados (junto
+>Durante el arranque las dependencias entre m√≥dulos son
+	generadas autom√°ticamente y los m√≥dulos especificados (junto
 	con sus opciones) en el archivo
 	<TT
 CLASS="filename"
@@ -1824,8 +1824,8 @@ WIDTH="95%"
 CLASS="command"
 >kmod</B
 > es el
-	programa que se encarga de cargar mÛdulos autom·ticamente por
-	demanda i.e. sin intervenciÛn del usuario
+	programa que se encarga de cargar m√≥dulos autom√°ticamente por
+	demanda i.e. sin intervenci√≥n del usuario
        </P
 ></TD
 ></TR
@@ -1844,7 +1844,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Los archivos de configuraciÛn del kernel
+>Los archivos de configuraci√≥n del kernel
 	son dejados en <TT
 CLASS="filename"
 >/boot</TT
@@ -1875,7 +1875,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Es una imagen de una particiÛn raÌz mÌnima que reside
+>Es una imagen de una partici√≥n ra√≠z m√≠nima que reside
 	  en memoria RAM, una imagen initrd suele tener controladores
 	  y configuraciones que el kernel debe configurar/realizar
 	  antes de emplear el dispositivo raiz real.
@@ -1927,7 +1927,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->AdministraciÛn de Linux en computadores aislados</TD
+>Administraci√≥n de Linux en computadores aislados</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
@@ -1941,7 +1941,7 @@ ACCESSKEY="U"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->Hardware b·sico y Linux</TD
+>Hardware b√°sico y Linux</TD
 ></TR
 ></TABLE
 ></DIV

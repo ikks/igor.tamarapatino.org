@@ -1,20 +1,20 @@
 <HTML
 ><HEAD
 ><TITLE
->ConfiguraciÛn de una sesiÛn</TITLE
+>Configuraci√≥n de una sesi√≥n</TITLE
 ><META
 NAME="GENERATOR"
-CONTENT="Modular DocBook HTML Stylesheet Version 1.72
+http-equiv="Content-Type" CONTENT="Modular DocBook HTML Stylesheet Version 1.72; charset=utf-8
 "><LINK
 REL="HOME"
 TITLE="Aprendiendo a Aprender Linux"
 HREF="book1.htm"><LINK
 REL="UP"
-TITLE="Linux desde la perspectiva de un usuario con m·s
+TITLE="Linux desde la perspectiva de un usuario con m√°s
    experiencia"
 HREF="c2347.htm"><LINK
 REL="PREVIOUS"
-TITLE="Scripts b·sicos para bash"
+TITLE="Scripts b√°sicos para bash"
 HREF="x3773.htm"><LINK
 REL="NEXT"
 TITLE="Desarrollo de habilidades para administrar computadores con
@@ -39,7 +39,7 @@ CELLSPACING="0"
 ><TH
 COLSPAN="3"
 ALIGN="center"
->Aprendiendo a Aprender Linux: GuÌas para colegios con plataforma de referencia
+>Aprendiendo a Aprender Linux: Gu√≠as para colegios con plataforma de referencia
    S-Helio 1.1</TH
 ></TR
 ><TR
@@ -56,7 +56,7 @@ ACCESSKEY="P"
 WIDTH="80%"
 ALIGN="center"
 VALIGN="bottom"
->CapÌtulo 3. Linux desde la perspectiva de un usuario con m·s
+>Cap√≠tulo 3. Linux desde la perspectiva de un usuario con m√°s
    experiencia</TD
 ><TD
 WIDTH="10%"
@@ -78,7 +78,7 @@ CLASS="sect1"
 CLASS="sect1"
 ><A
 NAME="configuracion-de-una-sesion"
->ConfiguraciÛn de una sesiÛn</A
+>Configuraci√≥n de una sesi√≥n</A
 ></H1
 ><P
 >Indicadores de Logros</P
@@ -118,13 +118,13 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="lectura-configuracion-de-una-sesion"
->Lectura: ConfiguraciÛn de una sesiÛn</A
+>Lectura: Configuraci√≥n de una sesi√≥n</A
 ></H2
 ><P
->En Linux puede iniciar una sesiÛn desde una consola virtual
+>En Linux puede iniciar una sesi√≥n desde una consola virtual
      o desde X-Window.  Lo que ocurre en cada caso es diferente, y
-     para lograr configurar la sesiÛn, es muy ˙til saber algunos de
-     los eventos que ocurren, asÌ como los archivos de configuraciÛn
+     para lograr configurar la sesi√≥n, es muy √∫til saber algunos de
+     los eventos que ocurren, as√≠ como los archivos de configuraci√≥n
      que se emplean y su formato --para editarlos de ser necesario.
    </P
 ><DIV
@@ -133,7 +133,7 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="una-sesion-con-bash"
->Una sesiÛn con
+>Una sesi√≥n con
       <SPAN
 CLASS="application"
 >bash</SPAN
@@ -145,10 +145,10 @@ HREF="x328.htm#lectura-sistema-de-usuarios-y-manejo-de-clave"
 >Lectura
        Sistema de usuarios y manejo de clave</A
 >) o inicia una
-       sesiÛn de <B
+       sesi√≥n de <B
 CLASS="command"
 >telnet</B
->, ver· un mensaje que
+>, ver√° un mensaje que
        presenta el sistema mientras espera que un usuario ingrese,
        algo como:</P
 ><PRE
@@ -161,12 +161,12 @@ oxigeno login:
       <TT
 CLASS="literal"
 >getty</TT
->. DespuÈs de que usted ingresa su login,
+>. Despu√©s de que usted ingresa su login,
       se inicia el programa <B
 CLASS="command"
 >login</B
 > el cual pide su
-      clave y despuÈs si la clave es correcta inicializa algunas
+      clave y despu√©s si la clave es correcta inicializa algunas
       variables de ambiente (e.g.  <TT
 CLASS="envar"
 >HOME</TT
@@ -175,16 +175,16 @@ CLASS="envar"
 CLASS="envar"
 >SHELL</TT
 >), muestra algunos mensajes (en
-      particular muestra el mensaje del dÌa ---archivo
+      particular muestra el mensaje del d√≠a ---archivo
       <TT
 CLASS="filename"
 >/etc/motd</TT
->) e inicia una sesiÛn de login
+>) e inicia una sesi√≥n de login
       interactiva con <SPAN
 CLASS="application"
 >bash</SPAN
 >, o con el
-      intÈrprete de comandos que haya configurado el usuario (puede
+      int√©rprete de comandos que haya configurado el usuario (puede
       configurarse con el programa <B
 CLASS="command"
 >chsh</B
@@ -193,7 +193,7 @@ CLASS="command"
       <B
 CLASS="command"
 >login</B
-> creando un archivo vacÌo
+> creando un archivo vac√≠o
       <TT
 CLASS="filename"
 >~/.hushlogin</TT
@@ -204,7 +204,7 @@ NAME="AEN4507"
 ></A
 ><P
 >Programa que espera en consolas
-      virtuales a que un usuario teclee su login para ejecutar despuÈs
+      virtuales a que un usuario teclee su login para ejecutar despu√©s
       el programa <TT
 CLASS="literal"
 >login</TT
@@ -224,16 +224,16 @@ NAME="AEN4517"
 ></A
 ><P
 >Programa que permite a un usuario
-      cambiar el intÈrprete de comandos por defecto.</P
+      cambiar el int√©rprete de comandos por defecto.</P
 ><P
 >Al iniciar <SPAN
 CLASS="application"
 >bash</SPAN
->, ejecutar· el
+>, ejecutar√° el
       script <TT
 CLASS="filename"
 >/etc/profile</TT
-> y despuÈs intentar·
+> y despu√©s intentar√°
       ejecutar uno de los archivos
       <TT
 CLASS="filename"
@@ -246,12 +246,12 @@ CLASS="filename"
       <TT
 CLASS="filename"
 >~/.profile</TT
-> (en ese orden y sÛlo se
-      ejecutar· el primero que encuentre).  El script
+> (en ese orden y s√≥lo se
+      ejecutar√° el primero que encuentre).  El script
       <TT
 CLASS="filename"
 >~/.bash_profile</TT
-> tambiÈn puede contener una
+> tambi√©n puede contener una
       llamada al script <TT
 CLASS="filename"
 >~/.bashrc</TT
@@ -260,7 +260,7 @@ CLASS="filename"
 CLASS="application"
 >bash</SPAN
 > lee cuando se usa en
-      modo interactivo pero no como intÈrprete de
+      modo interactivo pero no como int√©rprete de
       login
       <A
 NAME="AEN4530"
@@ -288,7 +288,7 @@ CLASS="filename"
 CLASS="filename"
 >~/.bashrc</TT
 >.  Por otra
-      parte, cuando cierra una sesiÛn interactiva con
+      parte, cuando cierra una sesi√≥n interactiva con
       <SPAN
 CLASS="application"
 >bash</SPAN
@@ -306,7 +306,7 @@ NAME="AEN4538"
       <SPAN
 CLASS="application"
 >bash</SPAN
-> cuando se inicia una sesiÛn intercativa
+> cuando se inicia una sesi√≥n intercativa
       de login.</P
 ><A
 NAME="AEN4543"
@@ -316,8 +316,8 @@ NAME="AEN4543"
       por <SPAN
 CLASS="application"
 >bash</SPAN
->, cuando se inicia una sesiÛn
-      interactiva de login, despuÈs de ejecutar
+>, cuando se inicia una sesi√≥n
+      interactiva de login, despu√©s de ejecutar
       <TT
 CLASS="filename"
 >/etc/profile</TT
@@ -330,14 +330,14 @@ NAME="AEN4549"
       <SPAN
 CLASS="application"
 >bash</SPAN
-> cuando se inicia una sesiÛn intercativa
+> cuando se inicia una sesi√≥n intercativa
       que no es de login, es decir cuando se abre una terminal en
       X-Window.</P
 ><P
 >Dado que <SPAN
 CLASS="application"
 >bash</SPAN
-> emplea la librerÌa
+> emplea la librer√≠a
       <TT
 CLASS="literal"
 >readline</TT
@@ -345,15 +345,15 @@ CLASS="literal"
 HREF="x2787.htm#ayudas-interactivas-de-bash"
 >Ayudas interactivas de
        bash</A
->), puede configurarse la interacciÛn.
+>), puede configurarse la interacci√≥n.
       <TT
 CLASS="literal"
 >readline</TT
-> lee la informaciÛn de configuraciÛn
+> lee la informaci√≥n de configuraci√≥n
       del archivo <TT
 CLASS="filename"
 >/etc/inputrc</TT
-> y despuÈs de
+> y despu√©s de
       <TT
 CLASS="filename"
 >~/.inputrc</TT
@@ -362,7 +362,7 @@ CLASS="filename"
 CLASS="envar"
 >INPUTRC</TT
 >.  En este archivo
-      de configuraciÛn pueden asociarse acciones con secuencias de
+      de configuraci√≥n pueden asociarse acciones con secuencias de
       teclas o pueden configurarse varios detalles de
       <TT
 CLASS="literal"
@@ -375,7 +375,7 @@ CLASS="application"
      <B
 CLASS="keycap"
 >TAB</B
-> debe incluir las siguientes lÌneas:
+> debe incluir las siguientes l√≠neas:
 <PRE
 CLASS="programlisting"
 >&#13;set editing-mode vi
@@ -386,8 +386,8 @@ TAB: complete
 CLASS="application"
 >bash</SPAN
 > permita ingresar y
-     presente caracteres propios de espaÒol (tildes, eÒe, diÈresis),
-     puede agregar a este archivo las siguientes lÌneas (y
+     presente caracteres propios de espa√±ol (tildes, e√±e, di√©resis),
+     puede agregar a este archivo las siguientes l√≠neas (y
      eventualmente configurar la variable <TT
 CLASS="envar"
 >LANG</TT
@@ -395,7 +395,7 @@ CLASS="envar"
      <TT
 CLASS="literal"
 >~/.bash_profile</TT
-> como se explica m·s adelante):</P
+> como se explica m√°s adelante):</P
 ><PRE
 CLASS="programlisting"
 >&#13;set input-meta on set output-meta on set convert-meta off
@@ -404,10 +404,10 @@ CLASS="programlisting"
 NAME="AEN4570"
 ></A
 ><P
->Archivo de configuraciÛn del usuario
-      de la librerÌa readline, en particular puede configurarse en el
+>Archivo de configuraci√≥n del usuario
+      de la librer√≠a readline, en particular puede configurarse en el
       teclas emacs o vi y la posibilidad de presentar caracteres de
-    espaÒol en <SPAN
+    espa√±ol en <SPAN
 CLASS="application"
 >bash</SPAN
 >.</P
@@ -420,7 +420,7 @@ CLASS="envar"
       (normalmente <TT
 CLASS="filename"
 >~/.bash_history</TT
->) y la m·xima
+>) y la m√°xima
       cantidad de comandos por almacenar se especifica en
       <TT
 CLASS="literal"
@@ -444,14 +444,14 @@ CLASS="application"
 HREF="x3773.htm#ambiente-y-variables-de-ambiente"
 >Ambiente y variables
       de ambiente</A
->), a continuaciÛn se presentan detalles de
+>), a continuaci√≥n se presentan detalles de
       otras: </P
 ><A
 NAME="AEN4585"
 ></A
 ><P
 >Nombre que corresponde a la
-      localizaciÛn para Colombia, debe establecerse en LANG, LANGUAGE
+      localizaci√≥n para Colombia, debe establecerse en LANG, LANGUAGE
       y LC_ALL para emplear caracteres y convenciones de
       Colombia.</P
 ><A
@@ -521,7 +521,7 @@ NAME="AEN4611"
 HREF="#FTN.AEN4611"
 >[2]</A
 >
-	   ---la configuraciÛn de estas variables puede ser examinada
+	   ---la configuraci√≥n de estas variables puede ser examinada
 	   con el programa <B
 CLASS="command"
 >locale</B
@@ -530,7 +530,7 @@ CLASS="command"
 	   presentan mensajes al usuario, el tipo de letra (porque
 	   varios lenguajes tienen su propio juego de caracteres), el
 	   orden en el que se presentan las fechas, el formato de
-	   n˙meros decimales, el formato de cantidades monetarias y
+	   n√∫meros decimales, el formato de cantidades monetarias y
 	   otros detalles.  Para activar un lenguaje particular basta
 	   poner las variables <TT
 CLASS="envar"
@@ -539,28 +539,28 @@ CLASS="envar"
 	   <TT
 CLASS="envar"
 >LANGUAGE</TT
-> en el cÛdigo del lenguaje o
+> en el c√≥digo del lenguaje o
 	   <I
 CLASS="foreignphrase"
 >locale</I
 > que se desea usar.
-	   En el caso de espaÒol el cÛdigo es <TT
+	   En el caso de espa√±ol el c√≥digo es <TT
 CLASS="literal"
 >es</TT
 > o
-	   si desea localizaciÛn a˙n m·s particular de Colombia puede
+	   si desea localizaci√≥n a√∫n m√°s particular de Colombia puede
 	   usar <TT
 CLASS="literal"
 >es_CO</TT
-> ---el cÛdigo para otros
-	   lenguajes sigue el est·ndar ISO 639 y generalmente
+> ---el c√≥digo para otros
+	   lenguajes sigue el est√°ndar ISO 639 y generalmente
 	   corresponde a las dos primeras letras del idioma cuando se
 	   escribe en el mismo idioma.  Las otras variables
 	   (<TT
 CLASS="envar"
 >LC_*</TT
 >) permiten afinar detalles de la
-	   localizaciÛn con cÛdigos diferentes a los de
+	   localizaci√≥n con c√≥digos diferentes a los de
 	   <TT
 CLASS="envar"
 >LANG</TT
@@ -571,13 +571,13 @@ CLASS="envar"
 	   <TT
 CLASS="envar"
 >LC_CTYPE</TT
-> se refiere al tipo y clasificaciÛn
+> se refiere al tipo y clasificaci√≥n
 	   de caracteres, <TT
 CLASS="envar"
 >LC_COLLATE</TT
 > a secuencias de
-	   varios caracteres que deben interpretarse como uno sÛlo
-	   (por ejemplo en espaÒol "ch" y "ll"),
+	   varios caracteres que deben interpretarse como uno s√≥lo
+	   (por ejemplo en espa√±ol "ch" y "ll"),
 	   <TT
 CLASS="envar"
 >LC_TIME</TT
@@ -586,7 +586,7 @@ CLASS="envar"
 CLASS="envar"
 >LC_NUMERIC</TT
 > al formato de
-	   n˙meros, <TT
+	   n√∫meros, <TT
 CLASS="envar"
 >LC_MONETARY</TT
 > al formato de
@@ -596,7 +596,7 @@ CLASS="envar"
 > al idioma
 	   de los mensajes.</P
 ><P
->&#13;	 Si despuÈs de configurar estas variables en el valor
+>&#13;	 Si despu√©s de configurar estas variables en el valor
 	 <TT
 CLASS="literal"
 >es_CO</TT
@@ -605,7 +605,7 @@ CLASS="literal"
 CLASS="application"
 >vi</SPAN
 > o si los programas no
-	 presentan mensajes en espaÒol (pruebe por ejemplo entrando a
+	 presentan mensajes en espa√±ol (pruebe por ejemplo entrando a
 	 <SPAN
 CLASS="application"
 >dselect</SPAN
@@ -616,7 +616,7 @@ CLASS="literal"
 > o recuerdele al administrador
 	 configurar el locale para Colombia (ver <A
 HREF="x11660.htm"
->LocalizaciÛn y configuraciÛn de algunos programas</A
+>Localizaci√≥n y configuraci√≥n de algunos programas</A
 >).
 	</P
 ></DD
@@ -637,7 +637,7 @@ NAME="AEN4642"
 HREF="#FTN.AEN4642"
 >[3]</A
 >
-	 que el usuario est· empleando, las variables
+	 que el usuario est√° empleando, las variables
 	 <TT
 CLASS="envar"
 >LINES</TT
@@ -645,19 +645,19 @@ CLASS="envar"
 CLASS="envar"
 >COLUMS</TT
 >
-	 mantienen el n˙mero de lÌneas y columnas de la terminal.  El
+	 mantienen el n√∫mero de l√≠neas y columnas de la terminal.  El
 	 valor especificado en <TT
 CLASS="envar"
 >TERM</TT
 > es empleado por
-	 el intÈrprete de comandos para enviar secuencias de
+	 el int√©rprete de comandos para enviar secuencias de
 	 control
 	 <A
 NAME="AEN4647"
 HREF="#FTN.AEN4647"
 >[4]</A
 > apropiadas para la pantalla y para interpretar la
-	 informaciÛn proveniente del teclado.  Por ejemplo si usted se
+	 informaci√≥n proveniente del teclado.  Por ejemplo si usted se
 	 conecta a un sistema Unix desde una terminal Wyse 60 debe
 	 poner en <TT
 CLASS="envar"
@@ -689,12 +689,12 @@ CLASS="literal"
 CLASS="filename"
 >/usr/share/terminfo</TT
 >, esa ruta es
-	 la ubicaciÛn de la base de datos <TT
+	 la ubicaci√≥n de la base de datos <TT
 CLASS="literal"
 >terminfo</TT
 >,
 	 la cual mantiene las secuencias de control para todas las
-	 terminales soportadas por su sistema ---m·s de 800.  Desde
+	 terminales soportadas por su sistema ---m√°s de 800.  Desde
 	 <SPAN
 CLASS="application"
 >bash</SPAN
@@ -714,7 +714,7 @@ CLASS="screen"
 >&#13;echo `tput bold`
 </PRE
 ><P
->&#13;	 Para configurar algunos par·metros de comunicaciÛn con su
+>&#13;	 Para configurar algunos par√°metros de comunicaci√≥n con su
 	 terminal emplee <B
 CLASS="command"
 >stty</B
@@ -737,8 +737,8 @@ CLASS="envar"
 	 <SPAN
 CLASS="application"
 >bash</SPAN
-> presenta al usuario cuando est·
-	 esperando informaciÛn.  <TT
+> presenta al usuario cuando est√°
+	 esperando informaci√≥n.  <TT
 CLASS="envar"
 >PS1</TT
 > es el prompt
@@ -753,7 +753,7 @@ CLASS="envar"
 	 <SPAN
 CLASS="application"
 >bash</SPAN
-> espera m·s informaciÛn para completar
+> espera m√°s informaci√≥n para completar
 	 un comando ---por ejemplo si usa <B
 CLASS="command"
 >cat
@@ -768,13 +768,13 @@ HREF="x2787.htm"
 >&#13;	 Estas variables pueden tener mensajes, secuencias de control
 	 para su terminal (por ejemplo para borrar pantalla o ubicar
 	 el cursor) y algunas secuencias de caracteres que se
-	 interpretan de forma especial.  El siguiente prompt borrar·
+	 interpretan de forma especial.  El siguiente prompt borrar√°
 	 pantalla antes de presentarse
 	 <A
 NAME="AEN4677"
 HREF="#FTN.AEN4677"
 >[5]</A
->, mostrar· el mensaje
+>, mostrar√° el mensaje
 	 <TT
 CLASS="computeroutput"
 >hola</TT
@@ -783,7 +783,7 @@ CLASS="computeroutput"
 CLASS="literal"
 >en</TT
 > y el nombre de la
-	 m·quina:
+	 m√°quina:
 	</P
 ><PRE
 CLASS="programlisting"
@@ -833,7 +833,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Nombre de la m·quina hasta el primer '.'
+>Nombre de la m√°quina hasta el primer '.'
 	   </P
 ></DD
 ><DT
@@ -843,7 +843,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Nombre completo de la m·quina.
+>Nombre completo de la m√°quina.
 	   </P
 ></DD
 ><DT
@@ -853,7 +853,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Nueva lÌnea.
+>Nueva l√≠nea.
 	   </P
 ></DD
 ><DT
@@ -863,7 +863,7 @@ CLASS="literal"
 ></DT
 ><DD
 ><P
->Nombre y versiÛn del intÈrprete de comandos.
+>Nombre y versi√≥n del int√©rprete de comandos.
 	   </P
 ></DD
 ><DT
@@ -918,12 +918,12 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="una-sesion-con-x-dash-window"
->Una sesiÛn con X-Window</A
+>Una sesi√≥n con X-Window</A
 ></H3
 ><P
->Una sesiÛn con un administrador de escritorio como Gnome
+>Una sesi√≥n con un administrador de escritorio como Gnome
       requiere una compleja infraestructura para funcionar.  Gnome es
-      un administrador de escritorio que maneja los men˙s y algunos
+      un administrador de escritorio que maneja los men√∫s y algunos
       programas como el manejador de archivos (otros administradores
       de escritorio son <SPAN
 CLASS="acronym"
@@ -934,24 +934,24 @@ CLASS="acronym"
 >XFCE</SPAN
 >).  Estos administradores de escritorio
       requieren un administrador de ventanas, el administrador de
-      ventanas ubica las ventanas y maneja las barras de tÌtulo y
+      ventanas ubica las ventanas y maneja las barras de t√≠tulo y
       controles de cada ventana (<I
 CLASS="foreignphrase"
 >Tab Window
       Manager</I
 >, XFWM, Sawfish y Enlightment son
       ejemplos de administradores de ventanas).  Los diversos
-      elementos gr·ficos (como textos, botones, men˙s, etc) son
-      presentados empleando una librerÌa de
+      elementos gr√°ficos (como textos, botones, men√∫s, etc) son
+      presentados empleando una librer√≠a de
       <I
 CLASS="foreignphrase"
 >widgets</I
 > (en el caso de Gnome se usa GTK,
-      otros ejemplo son Athena y Qt).  Estas librerÌas emplean
+      otros ejemplo son Athena y Qt).  Estas librer√≠as emplean
       X-Window, que se encarga finalmente de comunicarse con el
-      hardware para mostrar im·genes ---X-Window tambiÈn envÌa datos
-      por la red en caso de que inicien aplicaciones gr·ficas en
-      m·quinas remotas (ver <A
+      hardware para mostrar im√°genes ---X-Window tambi√©n env√≠a datos
+      por la red en caso de que inicien aplicaciones gr√°ficas en
+      m√°quinas remotas (ver <A
 HREF="x1647.htm#telnet-y-ssh"
 >telnet y
       ssh</A
@@ -963,16 +963,16 @@ HREF="x1647.htm#telnet-y-ssh"
 CLASS="command"
 >startx</B
 >, normalmente el administrador del
-     sistema configurar· un administrador de
+     sistema configurar√° un administrador de
      vistas
       <A
 NAME="AEN4751"
 HREF="#FTN.AEN4751"
 >[6]</A
 >
-      que se ejecutar· autom·ticamente duratne el arranque. El
-      administrador de vistas iniciar· X-Window y le permitir·
-      ingresar su login y su clave con un programa gr·fico.  En el
+      que se ejecutar√° autom√°ticamente duratne el arranque. El
+      administrador de vistas iniciar√° X-Window y le permitir√°
+      ingresar su login y su clave con un programa gr√°fico.  En el
       caso de GNOME, el administrador de vistas es
       <B
 CLASS="command"
@@ -995,21 +995,21 @@ CLASS="command"
 >gdmlogin</B
 > le permite configurar el
       administrador de escritorio que desea usar y el idioma en el que
-      desea iniciar su sesiÛn (es decir fijar· la variable de ambiente
+      desea iniciar su sesi√≥n (es decir fijar√° la variable de ambiente
      <TT
 CLASS="envar"
 >LANG</TT
->). Los eventos que ocurran despuÈs de que
+>). Los eventos que ocurran despu√©s de que
      teclee su login y clave dependen del administrador de escritorio
      que escoja.
      </P
 ><P
->Si escoge una sesiÛn sin administrador de escritorio
+>Si escoge una sesi√≥n sin administrador de escritorio
       (XSession), su archivo <TT
 CLASS="filename"
 >~/.xsession</TT
-> ser·
-      ejecutado o si no existe, se ejecutar· un script por defecto que
+> ser√°
+      ejecutado o si no existe, se ejecutar√° un script por defecto que
       iniciara un manejador de ventanas sencillo como
       <SPAN
 CLASS="application"
@@ -1021,16 +1021,16 @@ NAME="AEN4765"
 ></A
 ><P
 >Script ejecutado cuando se abre una
-      sesiÛn X sin administrador de escritorio alguno (XSession), la
-      ejecuciÛn de X termina cuando termine la de este script (por eso
-      el ultimo comando deberÌa ser un administrador de ventanas en
+      sesi√≥n X sin administrador de escritorio alguno (XSession), la
+      ejecuci√≥n de X termina cuando termine la de este script (por eso
+      el ultimo comando deber√≠a ser un administrador de ventanas en
       primer plano).</P
 ><P
->A continuaciÛn se presenta un archivo
+>A continuaci√≥n se presenta un archivo
       <TT
 CLASS="filename"
 >~/.xsession</TT
-> tÌpico:
+> t√≠pico:
 <PRE
 CLASS="programlisting"
 >&#13;#!/bin/sh
@@ -1051,18 +1051,18 @@ twm
 >
     </P
 ><P
->Note que este archivo es un script para el intÈrprete de
-      comandos ---debe darle permiso de ejecuciÛn para que funcione
+>Note que este archivo es un script para el int√©rprete de
+      comandos ---debe darle permiso de ejecuci√≥n para que funcione
       correctamente---, el cual inicializa variables de ambiente,
       ejecuta diversos programas en el fondo (una ventana con un
       mensaje, una terminal X, un reloj y una calculadora) y que el
-      ˙ltimo programa ejecutado (<SPAN
+      √∫ltimo programa ejecutado (<SPAN
 CLASS="application"
 >twm</SPAN
 >) no se
-      ejecuta en el fondo.  De hecho el ˙ltimo programa es un
+      ejecuta en el fondo.  De hecho el √∫ltimo programa es un
       manejador de ventanas (Tab Window Manager), y no debe ejecutarse
-      en el fondo porque la sesiÛn X se cerrar· cuando se cierre este.
+      en el fondo porque la sesi√≥n X se cerrar√° cuando se cierre este.
       Los programas <B
 CLASS="command"
 >xrdb</B
@@ -1070,8 +1070,8 @@ CLASS="command"
       <B
 CLASS="command"
 >xmodmap</B
->, que se explicar·n a continuaciÛn, no
-      son interactivos y terminan su ejecuciÛn rapidamente, por eso no
+>, que se explicar√°n a continuaci√≥n, no
+      son interactivos y terminan su ejecuci√≥n rapidamente, por eso no
       requieren ser ejecutados en el fondo.
     </P
 ><P
@@ -1081,14 +1081,14 @@ CLASS="command"
 NAME="AEN4776"
 HREF="#FTN.AEN4776"
 >[7]</A
-> y geometrÌa (i.e ubicaciÛn y tamaÒo de la ventana)
+> y geometr√≠a (i.e ubicaci√≥n y tama√±o de la ventana)
       se denominan recursos, usted puede ajustarlos y puede hacer sus
       cambios durables creando un archivo de recursos.  Para manejar
       recursos se emplea el programa <B
 CLASS="command"
 >xrdb</B
 > que en
-      particular permite mezclar los recursos del servidor X que est·
+      particular permite mezclar los recursos del servidor X que est√°
       corriendo con los de un archivo.  El archivo usual en el que se
       especifican recursos para aplicaciones X es
       <TT
@@ -1101,21 +1101,21 @@ NAME="AEN4781"
 ></A
 ><P
 >Archivo en el que un usuario puede
-     especificar recursos como fuentes, colores y geometrÌa (ubicaciÛn
-     y tamaÒo) de aplicaciones para X-Window.</P
+     especificar recursos como fuentes, colores y geometr√≠a (ubicaci√≥n
+     y tama√±o) de aplicaciones para X-Window.</P
 ><P
->Para iniciar una aplicaciÛn X con recursos diferentes a los
+>Para iniciar una aplicaci√≥n X con recursos diferentes a los
       que tiene por defecto o a los configurados en
      <TT
 CLASS="filename"
 >~/.Xresources</TT
 > puede emplear opciones en la
-     lÌnea de comando, por ejemplo para iniciar
+     l√≠nea de comando, por ejemplo para iniciar
      <B
 CLASS="command"
 >xterm</B
 > con un tipo de letra diferente se emplea
-     la opciÛn <TT
+     la opci√≥n <TT
 CLASS="option"
 >-fn</TT
 > seguida del nombre del tipo de
@@ -1130,8 +1130,8 @@ CLASS="screen"
       programa <SPAN
 CLASS="application"
 >fontsel</SPAN
->.  Para cambiar la geometrÌa
-      de una ventana (tamaÒo y ubicaciÛn) puede emplear la opciÛn
+>.  Para cambiar la geometr√≠a
+      de una ventana (tama√±o y ubicaci√≥n) puede emplear la opci√≥n
       <TT
 CLASS="option"
 >-geometry</TT
@@ -1143,7 +1143,7 @@ CLASS="option"
 CLASS="filename"
 >~/.xsession</TT
 >
-      de ejemplo (puede examinarse la geometrÌa de una ventana ya
+      de ejemplo (puede examinarse la geometr√≠a de una ventana ya
       abierta con el programa <B
 CLASS="command"
 >xwininfo</B
@@ -1156,7 +1156,7 @@ CLASS="option"
 CLASS="option"
 >-bg</TT
 > para especificar
-      colores de la letra y del fondo respectivamente; a continuaciÛn
+      colores de la letra y del fondo respectivamente; a continuaci√≥n
       de estas debe especificarse el nombre del color, el cual puede
       ser escogido con ayuda del programa <TT
 CLASS="literal"
@@ -1173,7 +1173,7 @@ CLASS="filename"
 >~/.Xresources</TT
 >
      pueden especificarse las propiedades de los ejemplos con las
-     siguientes lÌneas:
+     siguientes l√≠neas:
 <PRE
 CLASS="programlisting"
 >&#13;xterm*Foreground: yellow
@@ -1183,14 +1183,14 @@ xterm*font: -adobe-avant garde gothic-book-r-normal--14-120-75-*-p-80-iso8859-1
 </PRE
 >
 
-     Puede aprender m·s sobre recursos mientras explora los de las
+     Puede aprender m√°s sobre recursos mientras explora los de las
      aplicaciones abiertas con el programa <B
 CLASS="command"
 >editres</B
 >.
      </P
 ><P
->La configuraciÛn del teclado puede alterarse, por ejemplo
+>La configuraci√≥n del teclado puede alterarse, por ejemplo
      para intercambiar dos teclas o para activar teclas muertas en un
       teclado sin tildes
       <A
@@ -1202,7 +1202,7 @@ HREF="#FTN.AEN4803"
 CLASS="command"
 >xmodmap</B
 >.  Por ejemplo para configurar el
-      apÛstrofe como tecla muerta para la tilde en un teclado
+      ap√≥strofe como tecla muerta para la tilde en un teclado
        <TT
 CLASS="literal"
 >us</TT
@@ -1218,14 +1218,14 @@ NAME="AEN4808"
 ></A
 ><P
 >Programa usado para cambiar la
-    configuraciÛn del teclado en X-Window.</P
+    configuraci√≥n del teclado en X-Window.</P
 ><P
->La configuraciÛn del teclado puede mantenerse en el archivo
+>La configuraci√≥n del teclado puede mantenerse en el archivo
       <TT
 CLASS="filename"
 >~/.Xmodmap</TT
-> que normalmente es leÌdo cada
-      vez que inicia una sesiÛn gr·fica.  Por ejemplo para configurar
+> que normalmente es le√≠do cada
+      vez que inicia una sesi√≥n gr√°fica.  Por ejemplo para configurar
       teclas muertas para la virgulilla como <B
 CLASS="keycap"
 >~</B
@@ -1237,7 +1237,7 @@ CLASS="keycap"
       <B
 CLASS="keycap"
 >"</B
-> y la tecla m˙ltiple
+> y la tecla m√∫ltiple
       <A
 NAME="AEN4816"
 HREF="#FTN.AEN4816"
@@ -1258,12 +1258,12 @@ keycode 49=dead_grave dead_tilde
 </PRE
 >
 
-     Los cÛdigos de cada tecla pueden examinarse con el programa
+     Los c√≥digos de cada tecla pueden examinarse con el programa
       <B
 CLASS="command"
 >xev</B
->.  El mapa del teclado que est· configurado
-     en X-Window puede consultarse con la opciÛn
+>.  El mapa del teclado que est√° configurado
+     en X-Window puede consultarse con la opci√≥n
       <TT
 CLASS="option"
 >-pk</TT
@@ -1272,7 +1272,7 @@ CLASS="command"
 >xmodmap</B
 >, las teclas
       modificadoras (con significado especial) pueden consultarse con
-     la opciÛn <TT
+     la opci√≥n <TT
 CLASS="option"
 >-pm</TT
 >, los nombres de las teclas en el
@@ -1282,7 +1282,7 @@ CLASS="filename"
 >.
      </P
 ><P
->X-Window emplear· tipos de letra por defecto que puede
+>X-Window emplear√° tipos de letra por defecto que puede
       listar con los frogramas <B
 CLASS="command"
 >xfontsel</B
@@ -1291,7 +1291,7 @@ CLASS="command"
 CLASS="command"
 >xlsfonts</B
 >, si requiere otras fuentes que no
-      est·n disponibles en su servidor X, debe darla a conocer al
+      est√°n disponibles en su servidor X, debe darla a conocer al
       servidor X antes de usarla:
 <PRE
 CLASS="screen"
@@ -1308,19 +1308,19 @@ CLASS="sect3"
 CLASS="sect3"
 ><A
 NAME="una-sesion-con-gnome"
->Una sesiÛn con Gnome</A
+>Una sesi√≥n con Gnome</A
 ></H3
 ><P
->La mayorÌa de caracterÌsticas de Gnome pueden ser
+>La mayor√≠a de caracter√≠sticas de Gnome pueden ser
      configuradas desde el centro de control Gnome (ver <A
 HREF="x449.htm#lectura-escritorio-y-herramientas-gnome"
 >Lectura
      Escritorio y herramientas Gnome</A
 >), sin embargo como Gnome
-     emplea X-Window algunas caracterÌsticas deben configurarse de
-     forma diferente, por ejemplo la configuraciÛn del teclado y los
+     emplea X-Window algunas caracter√≠sticas deben configurarse de
+     forma diferente, por ejemplo la configuraci√≥n del teclado y los
      recursos de algunas aplicaciones X-Window los puede configurar
-     como se explicÛ en la secciÛn anterior (archivos
+     como se explic√≥ en la secci√≥n anterior (archivos
      <TT
 CLASS="filename"
 >~/.Xmodmap</TT
@@ -1328,47 +1328,47 @@ CLASS="filename"
      <TT
 CLASS="filename"
 >~/.Xresources</TT
->).  La configuraciÛn del
-     administrador de ventanas normalmente la podr· hacer desde el
+>).  La configuraci√≥n del
+     administrador de ventanas normalmente la podr√° hacer desde el
      centro de control Gnome.
     </P
 ><P
->Gnome permite resumir una sesiÛn en el estado que quedÛ la
-     ˙ltima vez que la cerrÛ (caracterÌstica llamada administraciÛn de
+>Gnome permite resumir una sesi√≥n en el estado que qued√≥ la
+     √∫ltima vez que la cerr√≥ (caracter√≠stica llamada administraci√≥n de
      sesiones).  Puede mantener varias sesiones de este tipo e
      iniciarlas escogiendo la que desee desde
      <SPAN
 CLASS="application"
 >gdmlogin</SPAN
->.  Para guardar una sesiÛn con un
-     nombre nuevo emplee el centro de control Gnome (men˙ Sesiones) o
+>.  Para guardar una sesi√≥n con un
+     nombre nuevo emplee el centro de control Gnome (men√∫ Sesiones) o
      edite el archivo <TT
 CLASS="filename"
 >~/.gnome/sessions</TT
 >.
     </P
 ><P
->La administraciÛn de sesiones funciona bien con aplicaciones
-     diseÒadas para Gnome, pero no siempre para otras.  Si debe
-     ejecutar alguna aplicaciÛn o comandos al inicio de cada sesiÛn
-     Gnome y no logra configurarlas con la administraciÛn de sesiones,
-     agrÈguelos al archivo <TT
+>La administraci√≥n de sesiones funciona bien con aplicaciones
+     dise√±adas para Gnome, pero no siempre para otras.  Si debe
+     ejecutar alguna aplicaci√≥n o comandos al inicio de cada sesi√≥n
+     Gnome y no logra configurarlas con la administraci√≥n de sesiones,
+     agr√©guelos al archivo <TT
 CLASS="filename"
 >~/.gnomerc</TT
 > o emplee el
-     centro de control Gnome (men˙ Sesiones) para especificar la
-     aplicaciÛn por iniciar.
+     centro de control Gnome (men√∫ Sesiones) para especificar la
+     aplicaci√≥n por iniciar.
     </P
 ><P
->La configuraciÛn de varias aplicaciones Gnome la encuentra
+>La configuraci√≥n de varias aplicaciones Gnome la encuentra
      en el directorio <TT
 CLASS="filename"
 >~/.gnome</TT
->.  Los men˙s que
-     Gnome presenta pueden ser configurados sÛlo por el administrador,
-     excepto el men˙ "Favoritos" que puede ser editado por cada
-     usuario.  Para editarlo emplee el botÛn derecho sobre el p·nel,
-     elija el men˙ p·nel y despuÈs ediciÛn de men˙s.
+>.  Los men√∫s que
+     Gnome presenta pueden ser configurados s√≥lo por el administrador,
+     excepto el men√∫ "Favoritos" que puede ser editado por cada
+     usuario.  Para editarlo emplee el bot√≥n derecho sobre el p√°nel,
+     elija el men√∫ p√°nel y despu√©s edici√≥n de men√∫s.
     </P
 ></DIV
 ></DIV
@@ -1378,23 +1378,23 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="lecturas-recomendadas-configuracion-de-una-sesion"
->Lecturas recomendadas: ConfiguraciÛn de una sesiÛn</A
+>Lecturas recomendadas: Configuraci√≥n de una sesi√≥n</A
 ></H2
 ><P
 ></P
 ><UL
 ><LI
 ><P
->Puede ver otra explicaciÛn sobre la configuraciÛn de
+>Puede ver otra explicaci√≥n sobre la configuraci√≥n de
        <SPAN
 CLASS="application"
 >bash</SPAN
 > en <I
 CLASS="citetitle"
->G.L.U.P. - GuÌa
+>G.L.U.P. - Gu√≠a
        de Linux Para el Usuario</I
->. SecciÛn 9.1
-       PersonalizaciÛn del <SPAN
+>. Secci√≥n 9.1
+       Personalizaci√≥n del <SPAN
 CLASS="application"
 >bash</SPAN
 >. <A
@@ -1409,7 +1409,7 @@ TARGET="_top"
 ><SPAN
 CLASS="application"
 >bash</SPAN
-> puede configurarse a˙n m·s con los
+> puede configurarse a√∫n m√°s con los
        comandos <B
 CLASS="command"
 >set</B
@@ -1417,8 +1417,8 @@ CLASS="command"
        <B
 CLASS="command"
 >shopt</B
->. Puede consultar m·s sobre ambos en la
-       p·gina del manual de <SPAN
+>. Puede consultar m√°s sobre ambos en la
+       p√°gina del manual de <SPAN
 CLASS="application"
 >bash</SPAN
 >.
@@ -1426,14 +1426,14 @@ CLASS="application"
 ></LI
 ><LI
 ><P
->La base de datos terminfo es com˙n a todos los sistemas
+>La base de datos terminfo es com√∫n a todos los sistemas
        libres tipo Unix (e.g FreeBSD, OpenBSD, Linux).  Dicha base e
-       informaciÛn sobre la misma pueden obtenerse en <A
+       informaci√≥n sobre la misma pueden obtenerse en <A
 HREF="http://www.tuxedo.org/~esr/terminfo/"
 TARGET="_top"
 >http://www.tuxedo.org/~esr/terminfo/</A
 >
-       Puede consultar m·s sobre terminales y terminfo en las p·ginas
+       Puede consultar m√°s sobre terminales y terminfo en las p√°ginas
        del manual de <B
 CLASS="command"
 >terminfo</B
@@ -1449,8 +1449,8 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->Puede aprender m·s sobre localizaciÛn e
-      internacionalizaciÛn en el manual info de gettext (Verr
+>Puede aprender m√°s sobre localizaci√≥n e
+      internacionalizaci√≥n en el manual info de gettext (Verr
       (<B
 CLASS="command"
 >info gettext</B
@@ -1458,15 +1458,15 @@ CLASS="command"
       ---<TT
 CLASS="literal"
 >gettext</TT
-> es la librerÌa usada por Linux
+> es la librer√≠a usada por Linux
       para manejar mensajes en varios idiomas.  En Internet puede
-      consultar el sitio del proyecto de internacionalizaciÛn de Linux
+      consultar el sitio del proyecto de internacionalizaci√≥n de Linux
       <A
 HREF="http://www.li18nux.org"
 TARGET="_top"
 >http://www.li18nux.org</A
 > o el proyecto de
-      localizaciÛn a espaÒol de Debian <A
+      localizaci√≥n a espa√±ol de Debian <A
 HREF="http://www.debian.org/international/spanish/proyectos.es.html"
 TARGET="_top"
 >http://www.debian.org/international/spanish/proyectos.es.html</A
@@ -1475,8 +1475,8 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->Para aprender m·s sobre la configuraciÛn y operaciÛn de
-      X-Window, puede consultar algunas p·ginas del manual (e.g
+>Para aprender m√°s sobre la configuraci√≥n y operaci√≥n de
+      X-Window, puede consultar algunas p√°ginas del manual (e.g
       <B
 CLASS="command"
 >xmodmap</B
@@ -1492,8 +1492,8 @@ CLASS="command"
 ></LI
 ><LI
 ><P
->Para aprender m·s sobre los recursos de X-Window (y sobre
-       X-Window) puede revisar la secciÛn "The X Resources" de
+>Para aprender m√°s sobre los recursos de X-Window (y sobre
+       X-Window) puede revisar la secci√≥n "The X Resources" de
        "<I
 CLASS="citetitle"
 >X Window User HOWTO</I
@@ -1512,8 +1512,8 @@ TARGET="_top"
 ></LI
 ><LI
 ><P
->&#13;       Para aprender m·s sobre el gestor de sesiones de Gnome puede
-       consultar la secciÛn "Gestor de Sesiones" de la GuÌa de usuario
+>&#13;       Para aprender m√°s sobre el gestor de sesiones de Gnome puede
+       consultar la secci√≥n "Gestor de Sesiones" de la Gu√≠a de usuario
        GNOME, disponible en su sistema en
        <TT
 CLASS="filename"
@@ -1534,7 +1534,7 @@ CLASS="sect2"
 CLASS="sect2"
 ><A
 NAME="ejercicios-configuracion-de-una-sesion"
->Ejercicios: ConfiguraciÛn de una sesiÛn</A
+>Ejercicios: Configuraci√≥n de una sesi√≥n</A
 ></H2
 ><DIV
 CLASS="qandaset"
@@ -1546,12 +1546,12 @@ HREF="x4476.htm#esppert.bash.1"
        <TT
 CLASS="filename"
 >~/.bash_profile</TT
-> y agregue lÌneas para que
+> y agregue l√≠neas para que
        ejecute el archivo <TT
 CLASS="filename"
 >~/.bashrc</TT
 > en caso de
-       que exista.  DespuÈs ejecute un intÈrprete de comandos de
+       que exista.  Despu√©s ejecute un int√©rprete de comandos de
        ingreso para comprobar que el cambio funciona.</A
 ></DT
 ><DT
@@ -1561,14 +1561,14 @@ HREF="x4476.htm#esppert.bash.2"
 CLASS="filename"
 >~/.bashrc</TT
 >
-       agregue la vÌa <TT
+       agregue la v√≠a <TT
 CLASS="filename"
 >/opt/bin</TT
 >
        a la variable de ambiente <TT
 CLASS="envar"
 >PATH</TT
-> y despuÈs
+> y despu√©s
        agregue y exporte la variable
        <TT
 CLASS="envar"
@@ -1582,36 +1582,36 @@ CLASS="literal"
 HREF="a14434.htm#plataforma-de-referencia"
 >Plataforma de
        referencia</A
->) y le permitir·n ejecutar algunos programas
-       que estÈn en el servidor.</A
+>) y le permitir√°n ejecutar algunos programas
+       que est√©n en el servidor.</A
 ></DT
 ><DT
 >3. <A
 HREF="x4476.htm#esppert.bash.3"
->Edite el archivo de configuraciÛn de <TT
+>Edite el archivo de configuraci√≥n de <TT
 CLASS="literal"
 >readline</TT
-> y agregue una lÌnea con:
+> y agregue una l√≠nea con:
 <PRE
 CLASS="programlisting"
 >&#13;"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
 </PRE
 >
-      despuÈs reinicie su sesiÛn de <SPAN
+      despu√©s reinicie su sesi√≥n de <SPAN
 CLASS="application"
 >bash</SPAN
 > y presione
        <B
 CLASS="keycap"
 >Control-x p</B
->.  øQuÈ acciÛn asociÛ con
+>.  ¬øQu√© acci√≥n asoci√≥ con
        esa secuencia de teclas?  <SPAN
 ><I
 CLASS="emphasis"
 >Ayuda</I
 ></SPAN
 >: para
-       entender la notaciÛn y las teclas vea la secciÛn sobre
+       entender la notaci√≥n y las teclas vea la secci√≥n sobre
        <SPAN
 CLASS="application"
 >emacs</SPAN
@@ -1623,17 +1623,17 @@ HREF="x2000.htm"
 ><DT
 >4. <A
 HREF="x4476.htm#esppert.bash.4"
->&#13;	Moment·neamente configure una sesiÛn de
+>&#13;	Moment√°neamente configure una sesi√≥n de
 	<SPAN
 CLASS="application"
 >bash</SPAN
 > para que presente mensajes en
-	otros idiomas (por ejemplo en inglÈs cuyo cÛdigo es
+	otros idiomas (por ejemplo en ingl√©s cuyo c√≥digo es
 	<TT
 CLASS="literal"
 >en</TT
->). Pruebe despuÈs su cambio examinando
-	los mensajes de alg˙n programa o una p·gina del/manual.
+>). Pruebe despu√©s su cambio examinando
+	los mensajes de alg√∫n programa o una p√°gina del/manual.
        </A
 ></DT
 ><DT
@@ -1650,7 +1650,7 @@ CLASS="application"
 >6. <A
 HREF="x4476.htm#esppert.gnome.1"
 >Configure GNOME para que al iniciar su
-       sesiÛn abra el calendario de Gnome (<SPAN
+       sesi√≥n abra el calendario de Gnome (<SPAN
 CLASS="application"
 >gnomecal</SPAN
 >)
@@ -1661,7 +1661,7 @@ CLASS="application"
        <SPAN
 CLASS="application"
 >gnomecal</SPAN
-> es una aplicaciÛn Gnome mientras que
+> es una aplicaci√≥n Gnome mientras que
        <SPAN
 CLASS="application"
 >emacs</SPAN
@@ -1685,7 +1685,7 @@ CLASS="emphasis"
 CLASS="command"
 >editres</B
 > para ver algunos o consultar la
-      secciÛn "X Resources" del manual de Emacs.</A
+      secci√≥n "X Resources" del manual de Emacs.</A
 ></DT
 ></DL
 ><DIV
@@ -1702,12 +1702,12 @@ NAME="esppert.bash.1"
        <TT
 CLASS="filename"
 >~/.bash_profile</TT
-> y agregue lÌneas para que
+> y agregue l√≠neas para que
        ejecute el archivo <TT
 CLASS="filename"
 >~/.bashrc</TT
 > en caso de
-       que exista.  DespuÈs ejecute un intÈrprete de comandos de
+       que exista.  Despu√©s ejecute un int√©rprete de comandos de
        ingreso para comprobar que el cambio funciona.</P
 ></DIV
 ><DIV
@@ -1743,14 +1743,14 @@ NAME="esppert.bash.2"
 CLASS="filename"
 >~/.bashrc</TT
 >
-       agregue la vÌa <TT
+       agregue la v√≠a <TT
 CLASS="filename"
 >/opt/bin</TT
 >
        a la variable de ambiente <TT
 CLASS="envar"
 >PATH</TT
-> y despuÈs
+> y despu√©s
        agregue y exporte la variable
        <TT
 CLASS="envar"
@@ -1764,8 +1764,8 @@ CLASS="literal"
 HREF="a14434.htm#plataforma-de-referencia"
 >Plataforma de
        referencia</A
->) y le permitir·n ejecutar algunos programas
-       que estÈn en el servidor.</P
+>) y le permitir√°n ejecutar algunos programas
+       que est√©n en el servidor.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -1795,30 +1795,30 @@ NAME="esppert.bash.3"
 ></A
 ><B
 >3. </B
->Edite el archivo de configuraciÛn de <TT
+>Edite el archivo de configuraci√≥n de <TT
 CLASS="literal"
 >readline</TT
-> y agregue una lÌnea con:
+> y agregue una l√≠nea con:
 <PRE
 CLASS="programlisting"
 >&#13;"\C-xp": "PATH=${PATH}\e\C-e\C-a\ef\C-f"
 </PRE
 >
-      despuÈs reinicie su sesiÛn de <SPAN
+      despu√©s reinicie su sesi√≥n de <SPAN
 CLASS="application"
 >bash</SPAN
 > y presione
        <B
 CLASS="keycap"
 >Control-x p</B
->.  øQuÈ acciÛn asociÛ con
+>.  ¬øQu√© acci√≥n asoci√≥ con
        esa secuencia de teclas?  <SPAN
 ><I
 CLASS="emphasis"
 >Ayuda</I
 ></SPAN
 >: para
-       entender la notaciÛn y las teclas vea la secciÛn sobre
+       entender la notaci√≥n y las teclas vea la secci√≥n sobre
        <SPAN
 CLASS="application"
 >emacs</SPAN
@@ -1837,7 +1837,7 @@ CLASS="answer"
 CLASS="envar"
 >PATH</TT
 >. Aunque en la
-       documentaciÛn de <TT
+       documentaci√≥n de <TT
 CLASS="literal"
 >readline</TT
 > dice que 
@@ -1855,7 +1855,7 @@ CLASS="keycap"
 CLASS="keycap"
 >r</B
 > lee de nuevo 
-       el archivo de configuraciÛn de readline,
+       el archivo de configuraci√≥n de readline,
        pero el archivo que lee es <TT
 CLASS="filename"
 >/etc/inputrc</TT
@@ -1885,17 +1885,17 @@ NAME="esppert.bash.4"
 ><B
 >4. </B
 >
-	Moment·neamente configure una sesiÛn de
+	Moment√°neamente configure una sesi√≥n de
 	<SPAN
 CLASS="application"
 >bash</SPAN
 > para que presente mensajes en
-	otros idiomas (por ejemplo en inglÈs cuyo cÛdigo es
+	otros idiomas (por ejemplo en ingl√©s cuyo c√≥digo es
 	<TT
 CLASS="literal"
 >en</TT
->). Pruebe despuÈs su cambio examinando
-	los mensajes de alg˙n programa o una p·gina del/manual.
+>). Pruebe despu√©s su cambio examinando
+	los mensajes de alg√∫n programa o una p√°gina del/manual.
        </P
 ></DIV
 ><DIV
@@ -1955,7 +1955,7 @@ NAME="esppert.gnome.1"
 ><B
 >6. </B
 >Configure GNOME para que al iniciar su
-       sesiÛn abra el calendario de Gnome (<SPAN
+       sesi√≥n abra el calendario de Gnome (<SPAN
 CLASS="application"
 >gnomecal</SPAN
 >)
@@ -1966,7 +1966,7 @@ CLASS="application"
        <SPAN
 CLASS="application"
 >gnomecal</SPAN
-> es una aplicaciÛn Gnome mientras que
+> es una aplicaci√≥n Gnome mientras que
        <SPAN
 CLASS="application"
 >emacs</SPAN
@@ -1977,7 +1977,7 @@ CLASS="answer"
 ><P
 ><B
 > </B
->Para que reinicie la aplicaciÛn Gnome
+>Para que reinicie la aplicaci√≥n Gnome
        basta salir de Gnome dejandola abierta, para que reinicie Emacs
        emplear panel de control Gnome.</P
 ></DIV
@@ -2007,7 +2007,7 @@ CLASS="emphasis"
 CLASS="command"
 >editres</B
 > para ver algunos o consultar la
-      secciÛn "X Resources" del manual de Emacs.</P
+      secci√≥n "X Resources" del manual de Emacs.</P
 ></DIV
 ><DIV
 CLASS="answer"
@@ -2051,12 +2051,12 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Cuando abre una terminal desde X-Window con un intÈrprete
-	de comandos se dice que el intÈrprete es interactivo pero no
-	de login.  Dado que un intÈrprete de login se ejecuta m·ximo
-	una vez cuando usted inicia una sesiÛn mientras que uno
+>Cuando abre una terminal desde X-Window con un int√©rprete
+	de comandos se dice que el int√©rprete es interactivo pero no
+	de login.  Dado que un int√©rprete de login se ejecuta m√°ximo
+	una vez cuando usted inicia una sesi√≥n mientras que uno
 	interactivo puede ejecutarse muchas (una por cada terminal que
-	abra), los archivos de configuraciÛn de cada uno son
+	abra), los archivos de configuraci√≥n de cada uno son
 	diferentes.
        </P
 ></TD
@@ -2076,18 +2076,18 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Un tÈrmino para denotar soporte de diversos idiomas es
+>Un t√©rmino para denotar soporte de diversos idiomas es
 	   NLS, que es sigla de <I
 CLASS="foreignphrase"
 >Native language
 	   support</I
 >.  No todos los programas de su
-	   sistema emplear·n esta caracterÌstica y algunos aunque la
-	   emplean a˙n no tienen soporte para espaÒol ---esa es otra
-	   oportunidad para ayudar.  Si est· interesado en colaborar
-	   en agregar soporte para espaÒol a Debian o traducir
-	   mensajes, p·ginas del manual o documentos, puede unirse al
-	   proyecto de traducciÛn <A
+	   sistema emplear√°n esta caracter√≠stica y algunos aunque la
+	   emplean a√∫n no tienen soporte para espa√±ol ---esa es otra
+	   oportunidad para ayudar.  Si est√° interesado en colaborar
+	   en agregar soporte para espa√±ol a Debian o traducir
+	   mensajes, p√°ginas del manual o documentos, puede unirse al
+	   proyecto de traducci√≥n <A
 HREF="http://www.debian.org/international/spanish/proyectos.es.html"
 TARGET="_top"
 >http://www.debian.org/international/spanish/proyectos.es.html</A
@@ -2110,7 +2110,7 @@ VALIGN="TOP"
 WIDTH="95%"
 ><P
 >En este contexto terminal se refiere al tipo
-	   de teclado y pantalla que est· empleando.</P
+	   de teclado y pantalla que est√° empleando.</P
 ></TD
 ></TR
 ><TR
@@ -2130,7 +2130,7 @@ WIDTH="95%"
 ><P
 >Secuencias de control se refiere a "instrucciones"
 	   para la terminal que indican operaciones como borrar
-	   pantalla, ubicar el cursor en una posiciÛn especÌfica,
+	   pantalla, ubicar el cursor en una posici√≥n espec√≠fica,
 	   cambiar colores, etc.
 	  </P
 ></TD
@@ -2150,9 +2150,9 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->El ejemplo usa sustituciÛn de comandos (ver <A
+>El ejemplo usa sustituci√≥n de comandos (ver <A
 HREF="x3773.htm"
->Scripts b·sicos para
+>Scripts b√°sicos para
 	    bash</A
 >) para sustituir el comando <TT
 CLASS="literal"
@@ -2179,7 +2179,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Administrador de vistas: del inglÈs
+>Administrador de vistas: del ingl√©s
 	<I
 CLASS="foreignphrase"
 >display manager</I
@@ -2201,7 +2201,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->Tipo de letra: del inglÈs
+>Tipo de letra: del ingl√©s
 	<I
 CLASS="foreignphrase"
 >font</I
@@ -2225,11 +2225,11 @@ VALIGN="TOP"
 WIDTH="95%"
 ><P
 >Teclas muertas son teclas que permiten ingresar
-	caracteres propios del espaÒol en teclados que no tienen teclas
-	para estos caracteres, por ejemplo cuando el apÛstrofe se
+	caracteres propios del espa√±ol en teclados que no tienen teclas
+	para estos caracteres, por ejemplo cuando el ap√≥strofe se
 	configura como tecla muerta para el acento, al presionar ' y
-	despuÈs a se produce ·; para producir el apÛstrofe su
-	presionarÌa el apÛstrofe y despuÈs la barra
+	despu√©s a se produce √°; para producir el ap√≥strofe su
+	presionar√≠a el ap√≥strofe y despu√©s la barra
 	espaciadora
        </P
 ></TD
@@ -2249,7 +2249,7 @@ ALIGN="LEFT"
 VALIGN="TOP"
 WIDTH="95%"
 ><P
->La tecla m˙ltiple o <SPAN
+>La tecla m√∫ltiple o <SPAN
 ><I
 CLASS="emphasis"
 >compose</I
@@ -2305,7 +2305,7 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->Scripts b·sicos para <SPAN
+>Scripts b√°sicos para <SPAN
 CLASS="application"
 >bash</SPAN
 ></TD
