@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.1.2//EN"
+            "http://www.oasis-open.org/docbook/xml/4.0/docbookx.dtd" >
+<!-- Created by parsewiki $Revision: 1.29 $ -->
+<article lang="es">
+<articleinfo>
+<title>Pistas para construir sitios web</title>
+<author>
+<firstname>Igor</firstname>
+<surname>Támara</surname>
+<affiliation>
+<orgname>Documentación</orgname>
+<address><street><ulink url="mailto:igor@tamarapatino.org">igor@tamarapatino.org</ulink> </street></address>
+
+</affiliation>
+</author>
+<revhistory>
+<revision><revnumber>0.1</revnumber><date>5 de septiembre de 2003</date></revision>
+</revhistory>
+<abstract>
+<para>Este documento muestra pistas de cómo se puede construir un  sitio web, el público objetivo son aquellas personas que desean  darse a conocer usando Internet.  No se necesita conocimiento técnico  previo.</para>
+</abstract>
+<legalnotice>
+<para>puede redistribuir esta información sin problema, en caso  de que quiera hacer modificaciones o republicarla, por favor contacte  al autor para poder llevar un registro.
+</para></legalnotice>
+
+</articleinfo>
+<sect1>
+<title>Cómo hacer un sitio web efectivo </title>
+
+<para>
+Usualmente se cree que el montaje de un sitio web solamente lo puede
+hacer un ingeniero de Sistemas, se busca mostrar cómo se puede
+organizar un equipo de trabajo interdisciplinario para distribuir las
+tareas y llevar a cabo un trabajo efectivo.
+</para>
+<para>
+Un sitio web siempre debe tener un propósito, y para buscar el
+propósito del sitio es indispensable centrar la atención en la
+información y los servicios que se desean prestar, en este sentido
+solamente quienes desean montar el sitio, son las que pueden guiar qué
+tipo de información es relevante colocar o no.
+</para>
+<para>
+En este mismo sentido se tiene que saber cuáles son los factores más
+importantes : el tiempo, el costo y la mantenibilidad.
+</para>
+<para>
+Estas tres variables están intimamente relacionadas y dependiendo de
+cuál es más importante, se le puede dar a una u otra más importancia.
+</para>
+</sect1>
+<sect1><title>Visibilidad del sitio </title>
+
+<para>
+Una de las primeras decisiones que se deben tomar es a quién va
+dirigido el sitio y cuál es la imagen que se debe proyectar, no a
+nivel visual, si no más bien a nivel no visual.   Es un sitio para
+niños? para diversión, educación, información, transacciones
+comerciales, temas técnicos.   
+</para>
+<para>
+Uno de los principales errores que se cometen es pensar primero en
+cómo se quiere que se vea el sitio, y no qué tipo de información se
+quiere presentar y el público al cuál va dirigido.  Finalmente todo lo
+que hay en un sitio web no es más que información : auditiva, textual,
+visual, o que subyace en cada uno de los elementos visibles o
+audibles.
+</para>
+<para>
+A continuación se describe quiénes serían las personas a las cuáles va
+dirigida la información.
+</para>
+<sect2>
+<title>Público objetivo </title>
+
+<para>
+Se debe especificar una clara diferencia de los visitantes del sitio,
+y para dar un ejemplo claro, se mostrará cómo podría hacerse en la
+Facultad de una Universidad :
+</para>
+<itemizedlist>
+<listitem><para>Estudiantes</para></listitem>
+<listitem><para>Profesores</para></listitem>
+<listitem><para>Exalumnos</para></listitem>
+<listitem><para>Administrativos</para></listitem>
+<listitem><para>Admisiones</para></listitem>
+</itemizedlist>
+<para>
+Cabe notar que es posible que entre estos grupos de personas haya
+algunos que deseen contar con información que sea pertinente para
+ambos, por ejemplo, el calendario académico de la universidad debe ser
+visible por estudiantes, profesores y personal administrativo.
+</para>
+<para>
+Una vez decidido el público a quien va dirigida la información se debe
+especificar qué tipo de contenido desearía ver cada uno.
+</para>
+</sect2>
+<sect2><title>Contenido </title>
+
+<para>
+Cuando alguien llegue al sitio, debería poder ver claramente cómo
+llegar a la información que desea ver.  Por ejemplo, a los estudiantes
+de la Universidad les interesa conocer sus notas, su horario de
+clases, información de las materias que en ese momento está tomando,
+información acerca de investigación.
+</para>
+<para>
+A los profesores les interesaría conocer su horario, llegar a las
+áreas en las cuáles puede publicar información a sus estudiantes,
+conocer con qué recursos cuenta para enriquecer sus labores
+académicas, tener la oportunidad de informarse cómo puede crecer
+dentro de su centro educativo.
+</para>
+<para>
+Para colocar otro ejemplo y guiar un poco sin entrar en muchos
+detalles, la Facultad está interesada en que los posibles candidatos a
+ser estudiantes conozcan cuáles son las ventajas y las distinciones
+que pueden llevar al futuro estudiante a elegir esa Facultad en dicha
+universidad.
+</para>
+<para>
+En este sentido es claro que debe haber información que es distinta
+para cada visitante, aunque pertenezca al mismo grupo, es así como
+Pepe Pérez estudiante debe ver sus notas y no tener permiso para ver
+las calificaciones de Juanita Rodríguez.
+</para>
+<para>
+Para aquellos que piensan en Mercadeo y Publicidad estos grupos
+distintos serían los clientes del sitio.
+</para>
+</sect2>
+<sect2><title>Diferenciando la forma del fondo (Información y Visualización) </title>
+
+<para>
+Una de las principales distinciones que se deben hacer es la
+diferenciación entre el contenido del sitio, el aspecto visual del
+mismo y los servicios ofrecidos.
+</para>
+<para>
+Un diseñador es experto en colocar un aspecto visual impactante, y
+debe estar en continuo contacto con quienes van a colocar el contenido
+y quienes van a hacer que los servicios realmente se den.
+</para>
+<para>
+Un sitio cargado de imágenes NO va a permitir que quienes entren
+puedan navegar rápido, por lo tanto es necesario decidir hasta dónde
+se va a llegar en el uso de gráficos, animaciones, video y sonido en
+un sitio web.
+</para>
+<para>
+Qué está buscando la gente que entra a un sitio?  Está buscando la
+información, y entre más rápido llegue a ella, más satisfecho estará
+de haber pasado por ahí.  El ejemplo más notable es
+<ulink url="http://www.google.com">google</ulink>, el buscador más utilizado actualmente
+en el mundo, si usted lo emplea, notará que tiene estrictamente lo
+necesario, un campo de búsqueda y una gráfica para llamar la atención
+acerca de eventos importantes.
+</para>
+<para>
+Un sitio con información que no es relevante o que tarda bastante
+tiempo, seguramente será aburrido de visitar frecuentemente, por lo
+tanto se debe tener en cuenta que tan periódicamente se esperaría que
+volvieran quienes visitan el sitio.
+</para>
+<para>
+Adicionalmente se debe tener en cuenta el tipo de servicios que
+prestaría el sitio, por ejemplo, búsqueda de información, se
+colocarían estadísticas? se armaría con información que reposaría en
+una base de datos?  O solamente se mostraría contenido estático.
+</para>
+</sect2>
+<sect2><title>Periodicidad de actualización </title>
+
+<para>
+Una vez que se ha decidido la carga del sitio, y la periodicidad de
+las visitas de los usuarios frecuentes o infrecuentes, es
+indispensable mantener información que sea pertinente, y que esté
+publicada en el momento adecuado.  Por lo tanto es necesario definir
+si hay una sección donde se mostrarán noticias o eventos en la cuál
+los visitantes esperarán encontrar información que les permita saber
+qué hay adicional a lo que había con anterioridad.
+</para>
+<para>
+Una vez que se establece una periodicidad, debe haber un equipo o unas
+personas responsables de proponer, aprobar y finalmente publicar
+información en el sitio, si es que la información es de carácter
+institucional, en caso de que el sitio sea visitado por personas que
+pueden publicar artículos de forma anónima o que tengan una visión que
+NO represente a la institución, se debe advertir que es de esta forma,
+o que los contenidos son institucionales.
+</para>
+<para>
+Una forma de garantizar que el sitio se mantiene con la información
+actualizada, es entender que aquellos que escriben tienen la
+oportunidad de aprender para que se desarrolle de esta forma, bien sea
+aprendiendo un lenguaje de marcado para publicar su información o
+aprendiendo a usar un administrador de contenido.
+</para>
+</sect2>
+<sect2><title>Privacidad </title>
+
+<para>
+Cuando un sitio es alimentado por varias personas, es deseable que se
+sepa exactamente quién está publicando los cambios, y que solamente
+las personas adecuadas puedan colocar en el sitio tales cambios.  Así
+mismo, es posible que dentro del sitio haya áreas restringidas para
+que solamente cierto grupo de usuarios puedan emplearlas.
+</para>
+<para>
+En otras palabras, hay secciones en las cuáles los usuarios del sitio
+deben poder identificarse claramente, y adicionalmente se debe
+asegurar que ellos son quienes realmente dicen ser.
+</para>
+</sect2>
+<sect2><title>Herramientas usuales </title>
+
+<para>
+To be written by hand or CMS.
+</para>
+</sect2>
+</sect1>
+<sect1><title>Roles en el sitio </title>
+
+<para>
+Who does what.
+</para>
+<sect2>
+<title>Escritores </title>
+
+<para>
+Those with ideas.
+</para>
+</sect2>
+<sect2><title>Diseñadores </title>
+
+<para>
+Those with taste.
+</para>
+</sect2>
+<sect2><title>Facilitadores </title>
+
+<para>
+The engineers.
+</para>
+</sect2>
+</sect1>
+<sect1><title>Explicando términos técnicos </title>
+
+<variablelist>
+<varlistentry><term>Dominio</term>
+<listitem><para>Es el nombre con los cuáles los humanos los  identificamos, por ejemplo <ulink url="http://www.debian.org">debian.org</ulink>,  <ulink url="http://www.gfc.edu.co">gfc.edu.co</ulink>, y que identifican de forma  única al sitio.  Hay empresas dedicadas a garantizar que los  nombres son asignados a las organizaciones correspondientes,  por ejemplo en Colombia la asignación de nombres la hace  la <ulink url="http://www.dominio.co">Universidad de los Andes</ulink>, aunque  uno puede comprar .org , .com a otras entidades.</para></listitem></varlistentry>
+</variablelist>
+<variablelist>
+<varlistentry><term>hosting </term>
+<listitem><para>Es el espacio en una máquina que permanece encendida  y conectada a Internet para almacenar los datos que va a tener  un sitio web.  Además es posible que tenga capacidades para  consultar bases de datos e intercambiar servicios con otros  sitios.</para></listitem></varlistentry>
+</variablelist>
+<variablelist>
+<varlistentry><term>Sitios estáticos </term>
+<listitem><para>Son aquellos cuyo contenido está escrito  de forma tal que siempre que se visite se va a ver exactamente  lo mismo.   Por ejemplo el sitio no consulta datos para  mostrarlos de acuerdo a un criterio de búsqueda.  No tiene nada  que ver con que se muevan imágenes o que el mouse cambie de  forma.</para></listitem></varlistentry>
+</variablelist>
+<variablelist>
+<varlistentry><term>Sitios dinámicos </term>
+<listitem><para>Esta clase de sitios hace consultas sobre  un sistema de información, un ejemplo clásico es el servicio de  consulta de libros de una biblioteca, o un sitio de compras.</para></listitem></varlistentry>
+</variablelist>
+<variablelist>
+<varlistentry><term>Correo electrónico </term>
+<listitem><para>Servicio que permite establecer comunicación  entre usuarios, es usual que cuando se compre un dominio se tenga  también cuentas de correo para las personas que estarán manejándolo,  por ejemplo, si se registra elparquemasecologicodetodos.org  se  podrían tener correos electrónicos como :</para></listitem></varlistentry>
+</variablelist>
+<itemizedlist>
+<listitem><para>visitas@elparquemasecologicodetodos.org</para></listitem>
+<listitem><para>info@elparquemasecologicodetodos.org</para></listitem>
+<listitem><para>webmaster@elparquemasecologicodetodos.org</para></listitem>
+<listitem><para>pepito@elparquemasecologicodetodos.org</para></listitem>
+</itemizedlist>
+</sect1>
+<sect1><title>Cuestiones legales </title>
+
+<para>
+dos n dont's
+</para>
+<sect2>
+<title>El texto y las imágenes </title>
+
+<para>
+How to produce and get them
+</para>
+</sect2>
+<sect2><title>Elección de la redistribución </title>
+
+<para>
+copyleft?
+</para>
+</sect2>
+</sect1>
+<sect1><title>Acerca de </title>
+
+<para>
+Este documento fue construido con experiencias propias del autor, y
+usted es bienvenido a hacer adiciones y mejoras al mimso.
+</para>
+</sect1>
+
+</article>

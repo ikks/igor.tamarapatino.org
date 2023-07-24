@@ -1,0 +1,140 @@
+# This file lists locales that you wish to have built. You can find a list
+# of valid supported locales at /usr/share/i18n/SUPPORTED. Other
+# combinations are possible, but may not be well tested. If you change
+# this file, you need to rerun locale-gen.
+#
+# XXX GENERATED XXX
+#
+# NOTE!!! If you change this file by hand, and want to continue
+# maintaining manually, remove the above line. Otherwise, use the command
+# "dpkg-reconfigure locales" to manipulate this file. You can manually
+# change this file without affecting the use of debconf, however, since it
+# does read in your changes.
+
+af_ZA ISO-8859-1
+ar_IN UTF-8
+be_BY CP1251
+bg_BG CP1251
+br_FR ISO-8859-1
+bs_BA ISO-8859-2
+ca_ES@euro ISO-8859-15
+ca_ES ISO-8859-1
+cs_CZ ISO-8859-2
+cy_GB ISO-8859-14
+da_DK ISO-8859-1
+de_AT@euro ISO-8859-15
+de_AT ISO-8859-1
+de_BE@euro ISO-8859-15
+de_BE ISO-8859-1
+de_CH ISO-8859-1
+de_CH.UTF-8 UTF-8
+de_DE@euro ISO-8859-15
+de_DE ISO-8859-1
+de_DE.UTF-8@euro UTF-8
+de_DE.UTF-8 UTF-8
+de_LU@euro ISO-8859-15
+de_LU ISO-8859-1
+el_GR ISO-8859-7
+el_GR.UTF-8 UTF-8
+en_AU ISO-8859-1
+en_BW ISO-8859-1
+en_CA ISO-8859-1
+en_DK ISO-8859-1
+en_GB ISO-8859-1
+en_GB.UTF-8 UTF-8
+en_HK ISO-8859-1
+en_IE@euro ISO-8859-15
+en_IE ISO-8859-1
+en_IN UTF-8
+en_NZ ISO-8859-1
+en_PH ISO-8859-1
+en_SG ISO-8859-1
+en_US ISO-8859-1
+en_US.UTF-8 UTF-8
+en_ZA ISO-8859-1
+en_ZW ISO-8859-1
+es_ES@euro ISO-8859-15
+es_ES ISO-8859-1
+es_US ISO-8859-1
+et_EE ISO-8859-1
+eu_ES@euro ISO-8859-15
+eu_ES ISO-8859-1
+fa_IR.UTF-8 UTF-8
+fi_FI@euro ISO-8859-15
+fi_FI ISO-8859-1
+fo_FO ISO-8859-1
+fr_BE@euro ISO-8859-15
+fr_BE ISO-8859-1
+fr_CA ISO-8859-1
+fr_CH ISO-8859-1
+fr_FR@euro ISO-8859-15
+fr_FR ISO-8859-1
+fr_FR.UTF-8 UTF-8
+fr_LU@euro ISO-8859-15
+fr_LU ISO-8859-1
+ga_IE@euro ISO-8859-15
+ga_IE ISO-8859-1
+gl_ES@euro ISO-8859-15
+gl_ES ISO-8859-1
+gv_GB ISO-8859-1
+he_IL ISO-8859-8
+hi_IN.UTF-8 UTF-8
+hr_HR ISO-8859-2
+hu_HU ISO-8859-2
+id_ID ISO-8859-1
+is_IS ISO-8859-1
+it_CH ISO-8859-1
+it_IT@euro ISO-8859-15
+it_IT ISO-8859-1
+iw_IL ISO-8859-8
+ja_JP.EUC-JP EUC-JP
+ja_JP.UTF-8 UTF-8
+ka_GE GEORGIAN-PS
+kl_GL ISO-8859-1
+ko_KR.EUC-KR EUC-KR
+ko_KR.UTF-8 UTF-8
+kw_GB ISO-8859-1
+lt_LT ISO-8859-13
+lv_LV ISO-8859-13
+mi_NZ ISO-8859-13
+mk_MK ISO-8859-5
+mr_IN.UTF-8 UTF-8
+ms_MY ISO-8859-1
+mt_MT ISO-8859-3
+nl_BE@euro ISO-8859-15
+nl_BE ISO-8859-1
+nl_NL@euro ISO-8859-15
+nl_NL ISO-8859-1
+nn_NO ISO-8859-1
+no_NO ISO-8859-1
+oc_FR ISO-8859-1
+pl_PL ISO-8859-2
+pt_BR ISO-8859-1
+pt_PT@euro ISO-8859-15
+pt_PT ISO-8859-1
+ro_RO ISO-8859-2
+ru_RU ISO-8859-5
+ru_RU.KOI8-R KOI8-R
+ru_RU.UTF-8 UTF-8
+ru_UA KOI8-U
+sk_SK ISO-8859-2
+sl_SI ISO-8859-2
+sq_AL ISO-8859-1
+sr_YU@cyrillic ISO-8859-5
+sr_YU ISO-8859-2
+sv_FI@euro ISO-8859-15
+sv_FI ISO-8859-1
+sv_SE ISO-8859-1
+ta_IN UTF-8
+te_IN UTF-8
+th_TH TIS-620
+tr_TR ISO-8859-9
+uk_UA KOI8-U
+vi_VN.UTF-8 UTF-8
+zh_CN.GB18030 GB18030
+zh_CN GB2312
+zh_CN.GBK GBK
+zh_CN.UTF-8 UTF-8
+zh_HK BIG5-HKSCS
+zh_HK.UTF-8 UTF-8
+zh_TW Big5

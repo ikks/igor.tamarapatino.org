@@ -1,0 +1,27 @@
+= Exportar una imagen =
+
+Exporta la imagen presentada en pantalla para un archivo de LaTeX
+en el archivo ''imagen.eps''
+ epspict "imagen.eps
+
+Una imagen se puede almacenar en un archivo gráfico y este puede
+importarse posteriormente, por ejemplo para colocarlo en el archivo
+''imagen.pict'' :
+ savepict "imagen.pict
+ loadpict "imagen.pict
+
+Adicionalmente se puede almacenar los procedimientos que se creen,
+por ejemplo, para almacenar en el archivo ''archivo.lgo'' :
+ editfile "archivo.lgo
+
+= Colores =
+
+Hay 16 colores disponibles, el siguiente procedimiento muestra
+los colores disponibles en su sistema :
+ to muestrecolores :l :t
+ setheading 0
+ for [i 0 l 1] [setpencolor :i label :i forward t]
+ end
+Se puede invocar con :
+ muestrecolores 15 20
+

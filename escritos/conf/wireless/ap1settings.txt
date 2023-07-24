@@ -1,0 +1,141 @@
+Intel PRO/Wireless 2011 LAN
+                             System Summary
+
+ Unit Name         Intel PRO/Wireless 2011 LAN
+ MAC Address (BSS) 00:03:47:14:AB:FD     Access Control    Disabled
+ IP Address        192.168.2.100         WLAP Mode         Enabled
+ Net_ID (ESS)      gfc
+                                         Model Number      A26488-002
+ Channel            11                   Serial Number     00034714ABFD
+                                         Hardware Revision A
+ Country           United States
+ Antenna Selection Diversity On          AP Firmware Ver.  02.21-01
+ WEP (Privacy)     Disabled              RF Firmware Ver.  V2.20-02
+ WEP Algorithm      40 bit shared key    HTML  File  Ver.  02.00-04
+
+ Current MUs          0                  Start Flashing All LEDs
+ Total Assoc          0                  Reset AP
+
+
+ System Up Time      47:15:56
+
+
+
+
+
+                          Access Point Installation
+
+
+   Unit Name           Intel PRO/Wireless 2011 LAN       .Additional Gateways
+
+   IP Address          192.168.2.100                       0.0.0.0        
+                                                           0.0.0.0        
+   .Gateway IP Address 192.168.2.2                         0.0.0.0        
+                                                           0.0.0.0        
+   .Subnet Mask        255.255.255.0                       0.0.0.0        
+                                                           0.0.0.0        
+   .Net_ID (ESS)       gfc                                 0.0.0.0        
+
+   .Antenna Selection  Diversity On
+
+   .DHCP               Disabled
+
+
+                             Special Functions Menu
+
+   Clear All Statistics      Use TFTP to update Access Point's:
+   Clear MU Table              Firmware   HTML file   BOTH
+   Clear ACL
+   Clear Address Filters     Use XMODEM to update Access Point's:
+                               Firmware   HTML file   BOTH
+   Load ACL from MU List
+                             Use TFTP to update ALL Access Points':
+   Modem Dialout               Firmware   HTML file
+   Modem Hangup
+                             Alter Filename(s)/HELP URL/TFTP Server
+   Reset AP                    .Firmware Filename dsap_fw.bin
+                               .HTML Filename     intl_htm.bin
+                               .HELP URL 
+                               .TFTP Server       157.235.99.33  
+   Restore Factory Config.     Save All APs
+   Save Configuration
+   Save Config. to All APs
+
+                             System Configuration
+
+ Channel                 11              .Access Control     Disabled
+                                         .Type Filtering     Disabled
+ .Ethernet Timeout        0
+                                         WNMP Functions      Enabled
+ .Telnet Logins        Enabled           .AP-AP State Xchg   Enabled
+
+ .Encryption Admin      Any              Ethernet Interface  On
+                                         PPP Interface       Off
+ .Agent Ad Interval       0              RF Interface        On
+ .S24 Mobile IP        Disabled
+ .Mobile-Home MD5 key  *******           Default Interface   Ethernet
+
+ .Web Server           Enabled           .MU-MU Disallowed   Off
+
+
+
+
+                               RF Configuration
+
+ .DTIM Interval            10             WLAP Mode            Enabled
+ .BC/MC Q Max              10
+ .Reassembly timeout     9000             WLAP Priority        8000 hex
+ .Max Retries (d)          15             WLAP Manual BSS ID  00:00:00:00:00:00
+ .Max Retries (v)           5
+ .Multicast Mask (d) 09000E00  hex        WLAP Hello Time        20
+ .Multicast Mask (v) 01005E00  hex        WLAP Max Age          100
+ .Beacon Interval         100  K-us       WLAP Forward Delay      5
+ .Accept Broadcast ESSID  DisabledFELLL	  
+ .MU Inactivity Timeout    60  min.       .WEP (Privacy)       Disabled
+ .Rate Control                            .WEP Algorithm    40 bit shared key
+   11   Mb/s              Optional        .Encryption Key ID     1
+    5.5 Mb/s              Optional        Encryption Key Maintenance
+    2   Mb/s              Required        Enable Strong Encryption
+    1   Mb/s              Required        .Short RF Preamble   Enabled
+ .RTS Threshold           2347 bytes
+ .CCA Mode                Carrier Sense
+ .CCA Energy Threshold      60
+
+
+                        Serial Port Configuration
+
+
+         Port Use        UI                  Answer Wait Time      60
+
+         Connect Mode    Answer              Inactivity Timeout     5
+
+         Modem Connected No                  PPP Timeout            3
+
+         Dialout Mode    Auto                PPP Terminates        10
+
+         Modem Speaker   On
+
+         Dialout Number  1234567
+
+
+
+                             SNMP Configuration
+
+ .SNMP Agent Mode          Read/Write  .Trap Host1 IP Address 0.0.0.0        
+                                       .Trap Host2 IP Address 0.0.0.0        
+ .Read-Only Community      *******
+ .Read-Write Community     *******
+ .All Traps                Disabled
+
+
+ Generic Traps:
+ .Cold Boot                Disabled
+ .Authentication failure   Disabled
+
+ Enterprise-Specific Traps:
+ .Radio Restart            Disabled
+ .Access Cntrl Violation   Disabled
+ .MU State Change          Disabled
+ .DHCP Change              Disabled
+ .WLAP Connection Change   Disabled
+

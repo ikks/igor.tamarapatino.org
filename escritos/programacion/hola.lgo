@@ -1,0 +1,38 @@
+to poligono :l :t
+rt 90
+repeat l [fd t lt 360/l]
+end
+
+to poli :l :t
+repeat l [fd t lt 360/l]
+end
+
+to escalera :e :t
+repeat e [fd t rt 90 fd t lt 90]
+rt 180
+fd e*t
+rt 90
+fd e*t
+end
+
+to estrella :l :t
+repeat l [poli l t rt 360/l]
+end
+
+to pruebacolores
+for [i 0 15 1] [setpencolor :i fd 10]
+end
+
+to colores :l :t
+for [i 0 l 1] [setpencolor :i fd t lt 360/l]
+end
+
+to muestrecolores :l :t
+setheading 0
+for [i 0 l 1] [setpencolor :i label :i forward t]
+end
+
+to mostrarcolores :l :t
+setheading 0
+for [i 0 l 1] [setpencolor :i label :i forward t]
+end

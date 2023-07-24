@@ -1,0 +1,79 @@
+= Alguien siempre intervino =
+
+La intervención humana siempre está presente, por ejemplo, cuando a un
+orangután se le ofrece un pincel y pintura para que los use,
+generalmente un humano lo está haciendo.  Si una máquina es capaz de
+mostrar un fractal, es porque hay algoritmos que se han programado en
+esta para que funcionen.  Si alguien toma una foto a una flor, debe
+haber logrado llegar a la región en la cuál esta se encontraba y
+posteriormente alguien debe haber revelado los rollos y digitalizado
+en el computador o debe haberse usado algún medio para lograr la
+captura de la imagen.
+
+
+= Empleando imágenes =
+
+El uso de material publicado en Internet o en cualquier otro medio
+como una revista, un periódico, una enciclopedia, que venga
+distribuido en medio impreso, digital o de cualquier otra índole debe
+tratarse con cuidado.
+
+Hacer una imagen requiere tiempo, y que la imagen quede visualmente
+agradable requiere mucha imaginación, ingenio y práctica.  Por lo
+tanto los autores de las mismas deben tener su recompensa.
+
+Usted debe colocar una sección especial en la cuál agradece a los
+autores el hecho de haber creado aquellos diseños, imágenes, tomado
+las fotos que emplea, y obviamente deberá obtener permiso explícito
+para cada una de aquellas creaciones que no sean hechas desde el
+principio por usted.
+
+Para cada imagen debe colocar :
+
+Fuente de donde obtuvo la imagen(Sitio en Internet, libro con
+editorial), fecha en que la consiguió, permiso que dio la persona para
+que usted lo republicara(tipo de política de distribución).
+
+= Los artistas =
+
+Si usted crea imágenes y ha usado software creado por otros, o ha
+empleado componentes para la digitalización de las mismas, un
+reconocimiento especial a aquellos que han permitido su uso, sería
+algo gratificante para ellos que usted en la sección de créditos
+especifique las herramientas empleadas para la creación de su obra.
+
+Adicionalmente permitiría a otros enterarse de la clase de equipo y
+programas con los cuáles usted dio vida a la creación.
+
+Por ejemplo, si empleó una cámara digital, sería bueno colocar la
+marca y la referencia, si utilizó software específico para la
+transmisión de la imagen, ese debería ser listado.  Por ejemplo el
+software empleado para que la imagen llegara de la cámara digital
+hacia el computador.
+
+Si usted creó la imagen con software específico, podría indicar el
+nombre del producto que empleó y la versión del mismo. Este escrito
+fue hecho con emacs.
+
+= Empleando sonido y videos =
+
+Las mismas políticas aplican a fotografías, videos, sonidos,
+animaciones, y en general cualquier obra que haya sido generada
+gracias a intervención humana.
+
+De la misma forma las invenciones musicales y las grabaciones que se
+hacen de la naturaleza requieren trabajo de alguien que se ha
+interesado por hacerlo.
+
+Intente usted mismo tomar una foto o hacer una imagen y calcule el
+tiempo que tarda en hacerlo.  También puede comparar la calidad de lo
+que usted hace y la calidad de aquello que otro hizo y que usted
+quiere incluir.  Una vez haga este ejercicio, es probable que usted se
+de cuenta que los autores merecen reconocimiento.
+
+Los autores hacen sus obras y fijan los derechos de reproducción de
+las mismas.  Por lo tanto se debe respetar la obra de los mismos.
+
+
+
+

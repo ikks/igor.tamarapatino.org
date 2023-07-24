@@ -1,0 +1,22 @@
+# /etc/fstab: filesystem table.
+#
+# filesystem  mountpoint  type  options  dump  pass
+/dev/hda2  /  ext3  defaults,errors=remount-ro  0  1
+/dev/hda7  none  swap  sw  0  0
+proc  /proc  proc  defaults  0  0
+/dev/fd0  /floppy  vfat  defaults,user,noauto,showexec,umask=022  0  0
+/dev/cdrom  /cdrom  iso9660  defaults,ro,user,noexec,noauto  0  0
+# partitions found by Knoppix
+/dev/hda1 /windos ntfs defaults,users,exec,ro,uid=igor,gid=users 0 0
+/dev/hda5 /mnt/hda5 ext3 defaults 0 0
+/dev/hda6 /mnt/hda6 ext3 defaults 0 0
+/dev/hda8 /mnt/hda8 ext3 defaults 0 0
+none            /proc/bus/usb             usbdevfs        defaults   0   0
+/mnt/hda8/isos/debian/binary-i386-1.iso /mnt/hda8/isos/debian/disco1 iso9660 defaults,loop,ro 0 0
+/mnt/hda8/isos/debian/binary-i386-2.iso /mnt/hda8/isos/debian/disco2 iso9660 defaults,loop,ro 0 0
+/mnt/hda8/isos/debian/binary-i386-3.iso /mnt/hda8/isos/debian/disco3 iso9660 defaults,loop,ro 0 0
+/mnt/hda8/isos/debian/binary-i386-4.iso /mnt/hda8/isos/debian/disco4 iso9660 defaults,loop,ro 0 0
+/mnt/hda8/isos/debian/binary-i386-5.iso /mnt/hda8/isos/debian/disco5 iso9660 defaults,loop,ro 0 0
+/mnt/hda8/isos/debian/binary-i386-6.iso /mnt/hda8/isos/debian/disco6 iso9660 defaults,loop,ro 0 0
+/mnt/hda8/isos/debian/binary-i386-7.iso /mnt/hda8/isos/debian/disco7 iso9660 defaults,loop,ro 0 0
+/dev/sda1 /media/dsc vfat w,noauto,user 0 0

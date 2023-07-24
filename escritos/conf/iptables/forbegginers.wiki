@@ -1,0 +1,31 @@
+Este es un listado de comandos útiles para emplear iptables
+
+Listado de las reglas para el filtro nat
+ iptables -t nat -n -L
+
+Eliminar la regla 2 para el filtro nat de la cadena PREROUTING
+ iptables -t nat --delete PREROUTING 2
+
+Hacer un proxy transparente con squid e iptables Asumiendo que la
+interfaz interna está en eth0
+
+ iptables -t nat -A PREROUTING -i eth0 -p tcp --dport 80 -j REDIRECT --to-port 3128
+
+Asegurarse que squid escucha en el puerto 3128 y que tiene las 
+siguientes opciones habilitadas:
+
+ httpd_accel_host virtual
+ httpd_accel_port 80
+ httpd_accel_with_proxy on
+ httpd_accel_uses_host_header on
+
+No se puede hacer un proxy transparente de ssl, es decir de https,
+puesto que el protocolo exige que no haya man in the middle :), 
+por lo tanto es indispensable configurar en el cliente el proxy 
+para poder emplear https.
+
+Adicionar una regla para evitar ser consultado por una dirección IP externa
+iptables -A INPUT -i eth1 -s 200.75.79.172 -j DROP
+
+Regla para evitar que envíen correos desde una IP dada.
+iptables -A INPUT -i eth1 -p TCP --dport 25 -s 200.75.79.172 -j REJECT

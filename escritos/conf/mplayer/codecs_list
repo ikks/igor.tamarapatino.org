@@ -1,0 +1,13 @@
+i386    @MAINSITE@ releases/codecs essential-20050412.tar.bz2
+alpha   @MAINSITE@ releases/codecs rp8codecs-alpha-20050115.tar.bz2
+ppc     @MAINSITE@ releases/codecs rp8codecs-ppc-20050115.tar.bz2
+ppc     @MAINSITE@ releases/codecs xanimdlls-ppc-20040626.tar.bz2
+
+#i386    @MAINSITE@ releases/codecs rp9codecs.tar.bz2 
+#i386    @MAINSITE@ releases/codecs qt6dlls.tar.bz2 
+#alpha   @MAINSITE@ releases/codecs rp8codecs-alpha.tar.bz2 
+#ppc     @MAINSITE@ releases/codecs rp8codecs-ppc.tar.bz2 
+#ppc     @MAINSITE@ releases/codecs xanimdlls-ppc.tar.bz2 
+#    @MAINSITE@releases/codecs win32codecs-lite.tar.bz2
+#INSTALL w32codec.tar.bz2 http://www.mplayerhq.hu/MPlayer/releases/      
+
