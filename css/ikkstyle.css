@@ -1,0 +1,142 @@
+body 
+{
+    background-color : #EEEEEE;
+    background-image : url("/images/fondotodo.jpg");
+}
+
+.page           
+{ 
+    margin: 2em auto;
+    width: 785px;
+    padding: 0.8em; 
+}
+
+body.educa
+{
+    background-color : #EEEEEE;
+    background-image : url("/images/fondoeduca.jpg");
+}
+
+body.educa
+{
+    background-color : #EEEEEE;
+    background-image : url("/images/fondoba.jpg");
+}
+
+body.apoyo
+{
+    background-color : #FFFFFF;
+}
+
+div.mapa
+{
+    text-align:center;
+}
+pre.bear
+{
+    border-style:dashed;
+    border-width:1pt;
+    background-color: #FFFFEE;
+    padding: 10pt;
+    margin: 10 50 10 20;
+    width: 300px;
+}
+
+div.main_content{
+    position: relative;
+}
+
+div.tweeter{
+    float: right;
+    position: relative;
+    text-align: left;
+    width: 300px;
+    padding-top: 50px;
+}
+
+.waprefix{
+    width:40px;
+}
+
+.waphonenumber{
+    width:100px;
+}
+
+/* <my:misbehavior xmlns:my="http://dean.edwards.name/space" id="noIE"> */
+/* version 1.0.4 */
+html{behavior:expression(function(element){
+runtimeStyle.behavior = "none"; // trash this expression
+/* <script type="text/javascript"> */
+var path; // the next (external) page
+// accoring to ppk at quirksmode.org, these are the appropriate offset parents
+var scrollParent = (document.compatMode != "CSS1Compat") ? document.body : document.documentElement;
+// catch onclick event for a hyperlink
+function intercept() {
+	// which link was clicked?
+	var link = event.srcElement;
+	var innerText = link.alt || link.title;
+	while (link && link.tagName != "A") link = link.parentElement;
+	if (!link) return;
+	innerText = link.innerText || link.alt || link.title || innerText;
+	// store the new location, we go there later
+	var href = link.href;
+	// is this an external link?
+	if (href.slice(0,4) == "http" && (!location.host || href.indexOf(location.host) == -1)) {
+		// prevent the link from being activated
+		event.returnValue = false;
+		// create the popup
+		var noIE = document.createElement("iframe");
+		noIE.id = "noIE_dekko";
+		// use the path we extracted earlier to locate the html for the popup
+		noIE.src = "noIE/index.html";
+		document.body.appendChild(noIE);
+		// fixed positioning tweak
+		if (document.body.currentStyle.backgroundImage == "none")
+			document.body.runtimeStyle.backgroundImage = "url(http:)"; // dummy
+		document.body.runtimeStyle.backgroundAttachment = "fixed";
+		// centre the popup
+		noIE.runtimeStyle.scrollParent = scrollParent;
+		noIE.runtimeStyle.screenLeft = (scrollParent.clientWidth - noIE.offsetWidth) / 2;
+		noIE.runtimeStyle.screenTop = (scrollParent.clientHeight - noIE.offsetHeight) / 3;
+		// force a quick repaint (not sure if this actually does anything)
+		offscreenBuffering = false;
+		// show the popup
+		noIE.style.visibility = "visible";
+		// preserve the link info
+		runtimeStyle.noIE = {href:href, innerText:innerText};
+	}
+};
+// initialisation...
+function init() {
+	// get the path to this style sheet
+	for (var i = 0; i < document.styleSheets.length; i++) {
+		path = document.styleSheets[i].href;
+		if (path.slice(-8) == "noIE.css") {
+			// remove the file name
+			path = path.slice(0, -8);
+			// stop looping
+			break;
+		}
+	}
+	// intercept hyperlinks
+	for (var i = 0; i < document.links.length; i++)
+		document.links[i].attachEvent("onclick", intercept);
+};
+if (document.readyState == "complete") init();
+else window.attachEvent("onload", init);
+/* </script> */
+}(this))}
+/* <style type="text/css"> */
+#noIE_dekko {
+	/* hide until centered */
+	visibility: hidden;
+	position: absolute;
+	left: expression(runtimeStyle.screenLeft+runtimeStyle.scrollParent.scrollLeft);
+	top: expression(runtimeStyle.screenTop+runtimeStyle.scrollParent.scrollTop);
+	width: 480px;
+	height: 160px;
+	/* always on top */
+	z-index: 99;
+}
+/* </style> */
+/* </my:misbehavior> */
