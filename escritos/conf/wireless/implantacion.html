@@ -3,126 +3,126 @@
 <html lang="es">
 <head>
 <!-- Created by parsewiki $Revision: 1.29 $ -->
-<title>ConfiguraciÛn de redes inal·mbricas y dispositivos</title>
+<title>Configuraci√≥n de redes inal√°mbricas y dispositivos</title>
 </head>
 <body>
-<div align="center"><h1>ConfiguraciÛn de redes inal·mbricas y dispositivos</h1>
-Vladimir T·mara e Igor T·mara<br>
+<div align="center"><h1>Configuraci√≥n de redes inal√°mbricas y dispositivos</h1>
+Vladimir T√°mara e Igor T√°mara<br>
 <em>Gimnasio Fidel Cano y Structio</em><br>
 <a href="mailto:igor@tamarapatino.org">igor@tamarapatino.org</a> <br>
-<br>versiÛn 0.2<br>
+<br>versi√≥n 0.2<br>
 <br><em>18 de agosto de 2003</em><br>
 </div>
 <blockquote>
-<p>Este escrito documenta el proceso de instalaciÛn de antenas y dispositivos  inal·mbricos (protocolo IEEE 802.11b) en el Gimnasio Fidel Cano. Presentamos  detalles tÈcnicos y de caracter legal que nos han permitido la implementaciÛn  de esta tecnologÌa en Colombia con un presupuesto bajo.</p>
+<p>Este escrito documenta el proceso de instalaci√≥n de antenas y dispositivos  inal√°mbricos (protocolo IEEE 802.11b) en el Gimnasio Fidel Cano. Presentamos  detalles t√©cnicos y de caracter legal que nos han permitido la implementaci√≥n  de esta tecnolog√≠a en Colombia con un presupuesto bajo.</p>
 </blockquote>
 
 
-<h2>IntroducciÛn </h2>
+<h2>Introducci√≥n </h2>
 
 <p>
-Este documento muestra la implementaciÛn de la
-<a href="http://www.gfc.edu.co/colegio/proyectos/conexioninternet/inalambrica/propuesta">propuesta</a> para interconectar dos redes de ·rea local ''Dos redes
+Este documento muestra la implementaci√≥n de la
+<a href="http://www.gfc.edu.co/colegio/proyectos/conexioninternet/inalambrica/propuesta">propuesta</a> para interconectar dos redes de √°rea local ''Dos redes
 Ethernet con TCP/IP, que emplean computadores con sistema operativo
 Linux'', ubicadas en 2 sedes del colegio, que se encuentran
 aproximadamente a una distancia de 150 metros.
 </p>
 <p>
-Concluimos que era mejor emplear tecnologÌa inal·mbrica para
-disminuir costos, no depeneder de entidades externas a la instituciÛn
-(que ocurrirÌa en caso de usarse los postes de la luz), ni ejecutar
+Concluimos que era mejor emplear tecnolog√≠a inal√°mbrica para
+disminuir costos, no depeneder de entidades externas a la instituci√≥n
+(que ocurrir√≠a en caso de usarse los postes de la luz), ni ejecutar
 obra civil en las calles que separan las sedes del colegio.  Aunque
 consideramos contratar una empresa, dados los costos, el deseo de
 aprender y dar a conocer lo aprendido y el apoyo, en especial de la
-AsociaciÛn de Padres de Familia del Gimnasio Fidel Cano, decidimos
-hacer la instalaciÛn completa por nuestra cuenta.
+Asociaci√≥n de Padres de Familia del Gimnasio Fidel Cano, decidimos
+hacer la instalaci√≥n completa por nuestra cuenta.
 </p>
 <p>
-El apoyo econÛmico para la compra de equipos fue dado por la AsociaciÛn de 
-Padres de Familia del Gimnasio Fidel Cano y por donantes, la investigaciÛn,
-pruebas e instalaciÛn fue realizada por voluntarios (Igor T·mara, Jorge T·mara, Vladimir T·mara, Claudia Vargas).
+El apoyo econ√≥mico para la compra de equipos fue dado por la Asociaci√≥n de 
+Padres de Familia del Gimnasio Fidel Cano y por donantes, la investigaci√≥n,
+pruebas e instalaci√≥n fue realizada por voluntarios (Igor T√°mara, Jorge T√°mara, Vladimir T√°mara, Claudia Vargas).
 </p>
 <p>
-A˙n no sabemos de otro colegio colombiano donde se haya implementado esta
-tecnologÌa, ni conocemos informaciÛn publicada por empresas que la han
-implementado, a˙n cuando cada vez sus costos son menores. 
+A√∫n no sabemos de otro colegio colombiano donde se haya implementado esta
+tecnolog√≠a, ni conocemos informaci√≥n publicada por empresas que la han
+implementado, a√∫n cuando cada vez sus costos son menores. 
 </p>
 
-<h2>Redes inal·mbricas y dispositivos </h2>
+<h2>Redes inal√°mbricas y dispositivos </h2>
 
 <p>
-El uso de dispositivos inal·mbricos para formar redes de ·rea local con
-computadores moviles (e.g port·tiles) es cada vez m·s com˙n, despuÈs de
-la estandarizaciÛn del protocolo IEEE 802.11b. 
+El uso de dispositivos inal√°mbricos para formar redes de √°rea local con
+computadores moviles (e.g port√°tiles) es cada vez m√°s com√∫n, despu√©s de
+la estandarizaci√≥n del protocolo IEEE 802.11b. 
 </p>
 <p>
 Esto ha permitido que los precios de dispositivos que lo soportan haya
-disminuido.  En estas redes mÛviles hay un "punto de acceso" ''en
-inglÈs acces point'' que se conecta a una red Ethernet y que
+disminuido.  En estas redes m√≥viles hay un "punto de acceso" ''en
+ingl√©s acces point'' que se conecta a una red Ethernet y que
 puede comunicarse con tarjetas especiales instaladas en cada
-computador portatil; para efectuar la comunicaciÛn se emplean ondas
-electrom·gnÈticas de baja potencia a una frecuencia de
+computador portatil; para efectuar la comunicaci√≥n se emplean ondas
+electrom√°gn√©ticas de baja potencia a una frecuencia de
 2.4GHz''Para comparar, por ejemplo, las emisoras AM en Colombia
 emplean frecuencias entre 535Khz y los 1.705Khz''.  
 </p>
 <p>
 El Ministerio de telecomunicaciones tiene claramente estipulado el uso
-de este tipo de frecuencia, seg˙n la ResoluciÛn 797 de 8 de Junio de
-2001 artÌiculo 3 tabla 3.6.  Seg˙n el cual podemos como colegio con
-propÛsito de educaciÛn o en ambientes de investigaciÛn emplear este
-espacio radioelÈctrico sin necesidad de tributar.
+de este tipo de frecuencia, seg√∫n la Resoluci√≥n 797 de 8 de Junio de
+2001 art√≠iculo 3 tabla 3.6.  Seg√∫n el cual podemos como colegio con
+prop√≥sito de educaci√≥n o en ambientes de investigaci√≥n emplear este
+espacio radioel√©ctrico sin necesidad de tributar.
 </p>
 <p>
 Dependiendo de la potencia del punto de acceso, cada portatil puede
-separarse hasta una distancia m·xima del punto de acceso (120 mt. en el
-caso del Intel 2011A con lÌnea de vista a 11MBps), la velocidad de
-transmisiÛn m·xima es de 11Mbps ''La velocidad de una red
-Ethernet tÌpica como la del colegio es 10Mbps, aunque cada vez son
-m·s populares de 100Mbps y existen de 1000Mbps''}, sin embargo en la
-pr·ctica la velocidad es menor porque depende de condiciones
-clim·ticas y disminiye si hay obst·culos (e.g paredes) entre punto de
-acceso y port·til.  
+separarse hasta una distancia m√°xima del punto de acceso (120 mt. en el
+caso del Intel 2011A con l√≠nea de vista a 11MBps), la velocidad de
+transmisi√≥n m√°xima es de 11Mbps ''La velocidad de una red
+Ethernet t√≠pica como la del colegio es 10Mbps, aunque cada vez son
+m√°s populares de 100Mbps y existen de 1000Mbps''}, sin embargo en la
+pr√°ctica la velocidad es menor porque depende de condiciones
+clim√°ticas y disminiye si hay obst√°culos (e.g paredes) entre punto de
+acceso y port√°til.  
 </p>
 <p>
 Los puntos de acceso y las tarjetas pueden encriptar/desencriptar
-informaciÛn con el esquema WEP (Wired Equivalent Privacy) ''El
+informaci√≥n con el esquema WEP (Wired Equivalent Privacy) ''El
 esquema WEP no es seguro por lo que deben emplearse otras
 aplicaciones para mejorar privacidad (e.g IPsec a nivel de IP, ssh,
-Kerberos en el caso de TCP o Radius para autenticaciÛn).''.
+Kerberos en el caso de TCP o Radius para autenticaci√≥n).''.
 </p>
 <p>
-Puede consultarse m·s sobre redes moviles con este protocolo por ejemplo en:
+Puede consultarse m√°s sobre redes moviles con este protocolo por ejemplo en:
 <a href="http://www.cis.ohio-state.edu/~jain/cis788-97/wireless_lans/index.htm">http://www.cis.ohio-state.edu/~jain/cis788-97/wireless_lans/index.htm</a>|
 </p>
 <p>
-Algunos puntos de acceso, adem·s de ofrecer la funcionalidad 
-descrita, pueden conectarse inal·mbricamente con otro punto de acceso
-y funcionar como puente entre dos redes de ·rea local.  Puede amplificarse 
-la seÒal de alguno (o de ambos) puntos de acceso empleando antenas, por 
-ejemplo si est·n muy separados o si hay obstaculos entre ellos.  
+Algunos puntos de acceso, adem√°s de ofrecer la funcionalidad 
+descrita, pueden conectarse inal√°mbricamente con otro punto de acceso
+y funcionar como puente entre dos redes de √°rea local.  Puede amplificarse 
+la se√±al de alguno (o de ambos) puntos de acceso empleando antenas, por 
+ejemplo si est√°n muy separados o si hay obstaculos entre ellos.  
 </p>
 <p>
 Existen antenas omnidireccionales y unidireccionales, las primeras
-emiten y captan seÒales que no necesitan una direcciÛn especÌfica para
-establecer la comunicaciÛn vÌa inal·mbrica, por otra parte las
+emiten y captan se√±ales que no necesitan una direcci√≥n espec√≠fica para
+establecer la comunicaci√≥n v√≠a inal√°mbrica, por otra parte las
 segundas necesitan estar colocadas de forma tal que apunten hacia el
-lugar con el cu·l se desea establecer el enlace.
+lugar con el cu√°l se desea establecer el enlace.
 </p>
 <p>
-Adicionalmente las antenas dependiendo de su especificaciÛn pueden
+Adicionalmente las antenas dependiendo de su especificaci√≥n pueden
 tener distintas potencias, que eventualmente pueden emplear unos
-amplificadores de seÒal para maximizar su alcance.
+amplificadores de se√±al para maximizar su alcance.
 </p>
 <p>
 OJO. Completar redes comunitarias
 </p>
 <p>
-Para el caso de interconexiÛn de las redes del colegio buscamos puntos de 
+Para el caso de interconexi√≥n de las redes del colegio buscamos puntos de 
 acceso con funcionalidad de puentes, que pudieran conectarse a antenas 
-y que adem·s pudieran ser configurados desde Linux (existen puntos de 
-acceso que sÛlo pueden configurarse con software para Windows).
-A continuaciÛn se presentan algunos ''Pueden consultarse m·s por 
-ejemplo en la secciÛn de dispositivos de <a href="http://www.amazon.com">http://www.amazon.com</a> o en 
+y que adem√°s pudieran ser configurados desde Linux (existen puntos de 
+acceso que s√≥lo pueden configurarse con software para Windows).
+A continuaci√≥n se presentan algunos ''Pueden consultarse m√°s por 
+ejemplo en la secci√≥n de dispositivos de <a href="http://www.amazon.com">http://www.amazon.com</a> o en 
 <a href="http://computers.cnet.com/hardware">http://computers.cnet.com/hardware</a>'':
 </p>
 <pre>
@@ -134,23 +134,23 @@ ejemplo en la secciÛn de dispositivos de <a href="http://www.amazon.com">http://
  Syslink &amp; WAP11 &amp; Si &amp; Si &amp; 300 &amp; 118 
 </pre>
 <p>
-Hoy se encuentran m·s marcas y modelos de este tipo de dispositivos a
+Hoy se encuentran m√°s marcas y modelos de este tipo de dispositivos a
 precios cada vez menores.  Aunque consideramos en un comienzo emplear
-dos Syslink WAP11 ---con base en este punto de acceso y antenas m·s
-econÛmicas se habÌa hecho un presupuesto inicial---, por informaciÛn
+dos Syslink WAP11 ---con base en este punto de acceso y antenas m√°s
+econ√≥micas se hab√≠a hecho un presupuesto inicial---, por informaci√≥n
 recibida en lista de correo del grupo de usuarios de wireless en el
-·rea de la bahÌa de San Francisco
+√°rea de la bah√≠a de San Francisco
 <a href="http://lists.bawug.org/mailman/listinfo/wireless">BAWUG</a> que
 indicaban inconvenientes del firmware de ese entonces del WAP11 (que
-haci·n que fuera necesario reiniciarlo manualmente periÛdicamente), y
-adem·s requerÌa Windows para configurarlo, el costo real serÌan unos
-200 dÛlares m·s por dispositivo para poder hacer la reconfiguraciÛn
-vÌa el puerto serial del computador, preferimos un punto de acceso m·s
+haci√°n que fuera necesario reiniciarlo manualmente peri√≥dicamente), y
+adem√°s requer√≠a Windows para configurarlo, el costo real ser√≠an unos
+200 d√≥lares m√°s por dispositivo para poder hacer la reconfiguraci√≥n
+v√≠a el puerto serial del computador, preferimos un punto de acceso m√°s
 costoso esperando menos inconvenientes.
 </p>
 <p>
-Con Los Access Point, despuÈs de m·s de 8 meses de uso diario, no se
-ha encontrado desconfiguraciÛn de los mismos, han trabajado
+Con Los Access Point, despu√©s de m√°s de 8 meses de uso diario, no se
+ha encontrado desconfiguraci√≥n de los mismos, han trabajado
 ininterrumpidamente.
 </p>
 <p>
@@ -158,101 +158,101 @@ El sitio de compra de los Access Point fue <a href="http://www.sparco.com">sparc
 <a href="http://www.hyperlinktech.com/">Hyperlink technologies</a>.
 </p>
 
-<h2>ImportaciÛn de dispositivos </h2>
+<h2>Importaci√≥n de dispositivos </h2>
 
 <p>
-Cuando se compran dispositivos con tarjeta de crÈdito, generalmente
-los bancos dueÒos de las tarjetas cobran la taza de cambio en el
+Cuando se compran dispositivos con tarjeta de cr√©dito, generalmente
+los bancos due√±os de las tarjetas cobran la taza de cambio en el
 momento en el que se hace efectivo el cobro, no en la fecha de compra,
-y dado que el peso colombiano frente al dÛlar se mantiene en una
-continua decadencia, los costos siempre son m·s altos que los
+y dado que el peso colombiano frente al d√≥lar se mantiene en una
+continua decadencia, los costos siempre son m√°s altos que los
 presupuestados inicialmente.
 </p>
 <p>
-Adicionalmente a los costos de envÌo de las compras hechas por
-Internet la DirecciÛn de Impuestos y Aduanas Nacionales DIAN cobra un
+Adicionalmente a los costos de env√≠o de las compras hechas por
+Internet la Direcci√≥n de Impuestos y Aduanas Nacionales DIAN cobra un
 porcentaje sobre el costo del equipo a importar.
 </p>
 <p>
-El costo es del 20% para equipos elÈctricos y electrÛnicos, y en
-teorÌa para compras por parte de instituciones educativas, hay
-exenciÛn  de impuestos, pero esto requiere un reconocimiento especial
-ante Colciencias del tipo de investigaciÛn ArtÌculo 27 Ley 633 de
+El costo es del 20% para equipos el√©ctricos y electr√≥nicos, y en
+teor√≠a para compras por parte de instituciones educativas, hay
+exenci√≥n  de impuestos, pero esto requiere un reconocimiento especial
+ante Colciencias del tipo de investigaci√≥n Art√≠culo 27 Ley 633 de
 2000.
 </p>
 <p>
 Las Cias o empresas importadoras, generalmente no prestan mucho apoyo
-para buscar la reducciÛn de impuestos, su trabajo se limita usualmente
+para buscar la reducci√≥n de impuestos, su trabajo se limita usualmente
 a garantizar que las personas paguen los impuestos determinados por la
 DIAN.
 </p>
 <p>
-Adicionalmente por la catalogaciÛn de las mercancÌas las CIAs, cobran
+Adicionalmente por la catalogaci√≥n de las mercanc√≠as las CIAs, cobran
 un porcentaje del costo de los equipos que se han importado.
 </p>
 <p>
-Las antenas fueron adquiridas a un proveedor que las exportÛ acogiÈndose
-a envÌo urgente de mercancÌas con un costo de aranceles del 20% y un
-costo de IVA del 16%.  Las mercancÌas llegaron y fueron pagos los
+Las antenas fueron adquiridas a un proveedor que las export√≥ acogi√©ndose
+a env√≠o urgente de mercanc√≠as con un costo de aranceles del 20% y un
+costo de IVA del 16%.  Las mercanc√≠as llegaron y fueron pagos los
 aranceles.
 </p>
 <p>
 Los Access Point fueron enviados por DHL, y se estuvo averiguando en
-la DIAN la posibilidad de acogerse a equipos de cÛmputo, pero dado que
-no eran considerados equipos con procesamiento autÛnomo, fueron
+la DIAN la posibilidad de acogerse a equipos de c√≥mputo, pero dado que
+no eran considerados equipos con procesamiento aut√≥nomo, fueron
 catalogados como equipos de conectividad, con un impuesto de
-importaciÛn del 15% e IVA del 16%.
+importaci√≥n del 15% e IVA del 16%.
 </p>
 <p>
 Aunque en Colombia para apoyar el uso de Internet hay exenciones de
-impuestos, la averiguaciÛn y la realizaciÛn de estos tr·mites implica
-costos y tiempos que podrÌan ser incrementados por el bodegaje y el
-costo de espera de las empresas importadoras.  Se optÛ por pagar los
-impuestos y evitar el pago de un abogado para lograr la exenciÛn de
+impuestos, la averiguaci√≥n y la realizaci√≥n de estos tr√°mites implica
+costos y tiempos que podr√≠an ser incrementados por el bodegaje y el
+costo de espera de las empresas importadoras.  Se opt√≥ por pagar los
+impuestos y evitar el pago de un abogado para lograr la exenci√≥n de
 impuestos.
 </p>
 <p>
 Dos opciones:
 </p>
 <ol>
-<li><p>contratar un abogado, esperar lo que tarde el proceso, pagar los  sobrecostos de la espera de la liberaciÛn de la mercancÌa </p></li>
-<li><p>Pagar los impuestos como lo harÌa una empresa.</p></li>
+<li><p>contratar un abogado, esperar lo que tarde el proceso, pagar los  sobrecostos de la espera de la liberaci√≥n de la mercanc√≠a </p></li>
+<li><p>Pagar los impuestos como lo har√≠a una empresa.</p></li>
 </ol>
 <p>
 A pesar de haber mostrado y llevado los certificados que
-acreditaban a la instituciÛn educativa para obtener reducciÛn de
-impuestos, decidimos acogernos a la segunda opciÛn, asumiendo costos
-de impuestos de importaciÛn de cerca del 33\% del valor real de los
+acreditaban a la instituci√≥n educativa para obtener reducci√≥n de
+impuestos, decidimos acogernos a la segunda opci√≥n, asumiendo costos
+de impuestos de importaci√≥n de cerca del 33\% del valor real de los
 dispositivos.
 </p>
 <p>
-Si hubiÈsemos escogido la primera opciÛn sufrÌamos el riesgo de tardar
-mucho tiempo y no contar con el servicio lo m·s pronto posible,
+Si hubi√©semos escogido la primera opci√≥n sufr√≠amos el riesgo de tardar
+mucho tiempo y no contar con el servicio lo m√°s pronto posible,
 adicionalmente, si los componentes tardan mucho tiempo en bodegaje,
-esto serÌa cargado a la cuenta, y podrÌa ser m·s costoso incluso que
+esto ser√≠a cargado a la cuenta, y podr√≠a ser m√°s costoso incluso que
 los componentes importados.
 </p>
 <p>
-En este sentido serÌa bueno contar con un poco m·s de apoyo y
+En este sentido ser√≠a bueno contar con un poco m√°s de apoyo y
 credibilidad por parte de las autoridades para no tardar en este tipo
-de tr·mites y hacer viable la masificaciÛn del uso de Internet por
+de tr√°mites y hacer viable la masificaci√≥n del uso de Internet por
 medio de estos servicios.
 </p>
 
-<h2>ConexiÛn de dispositivos </h2>
+<h2>Conexi√≥n de dispositivos </h2>
 
 <p>
-A continuaciÛn se presentan las opciones de conexiÛn de las dos redes
+A continuaci√≥n se presentan las opciones de conexi√≥n de las dos redes
 que se identificaron, las consideraciones que se tuvieron en cuenta, y
-la elecciÛn final.
+la elecci√≥n final.
 </p>
 <p>
 No basta con tener los dispositivos, estos deben ser configurados, y
-si la configuraciÛn se realiza efectivamente, se pueden aprovechar al
-m·ximo las capacidades de los mismos.
+si la configuraci√≥n se realiza efectivamente, se pueden aprovechar al
+m√°ximo las capacidades de los mismos.
 </p>
 <p>
-La elecciÛn de hardware hecha :
+La elecci√≥n de hardware hecha :
 </p>
 <ul>
 <li><p>Antena Omnidireccional 8 dBi Omnidirectional Antenna</p></li>
@@ -266,21 +266,21 @@ La elecciÛn de hardware hecha :
 <img src="images/yagi.jpg" alt="images/yagi.jpg">
 </p>
 <p>
-La primera fase de prueba lÛgica fue hecha con dos Access Point
+La primera fase de prueba l√≥gica fue hecha con dos Access Point
 separados a unos 10 metros de distancia para que emplearan las antenas
 con las que vienen, que en condiciones normales son capaces de
 comunicarse hasta 120 metros de distancia.
 </p>
 <p>
-La configuraciÛn inicial de los Access Point se logrÛ empleando los
-n˙meros IPs con los que vienen predeterminados de fabrica, se
+La configuraci√≥n inicial de los Access Point se logr√≥ empleando los
+n√∫meros IPs con los que vienen predeterminados de fabrica, se
 emplearon dos concentradores, dos computadores y dos access point, cada
 computador y cada access point estaban conectados a un concentrador,
 los concentradores no estaban conectados por un cable.
 </p>
 <p>
-A continuaciÛn algunos tiempos de respuesta empleando esta
-configuraciÛn desde un computador conectado al hub de un access point
+A continuaci√≥n algunos tiempos de respuesta empleando esta
+configuraci√≥n desde un computador conectado al hub de un access point
 a otro computador conectado al hub conectado al otro access point:
 </p>
 <pre>
@@ -302,28 +302,28 @@ conectadas cada una a un access point con tiempos de respuesta
 similares.
 </p>
 <p>
-Inicialmente se colocaron Access point con una m·scara de red que
-les permitiera vÌa broadcast enviar los paquetes de una sede a otra,
-esta configuraciÛn fue realmente sencilla y no requiriÛ ninguna
-modificaciÛn a ninguno de los elementos de red con los que se contaba
-en el colegio, a parte de la configuraciÛn de los access point:
+Inicialmente se colocaron Access point con una m√°scara de red que
+les permitiera v√≠a broadcast enviar los paquetes de una sede a otra,
+esta configuraci√≥n fue realmente sencilla y no requiri√≥ ninguna
+modificaci√≥n a ninguno de los elementos de red con los que se contaba
+en el colegio, a parte de la configuraci√≥n de los access point:
 </p>
 <p>
 <img src="images/hubap.png" alt="images/hubap.png">
 </p>
 <p>
-Otra posible configuraciÛn que podrÌa implementarse es la ubicaciÛn de
+Otra posible configuraci√≥n que podr√≠a implementarse es la ubicaci√≥n de
 un computador que hiciera las veces de enrutador entre una sede y otra
 para colocar un segmento adicional que mantuviera a los dos access
 point por fuera del broadcast de las dos redes independientemente, es
-decir, se requerirÌa dos computadores, con dos tarjetas de red, es
+decir, se requerir√≠a dos computadores, con dos tarjetas de red, es
 decir uno en cada sede para lograr este efecto.
 </p>
 <p>
 <img src="images/enruta.png" alt="images/enruta.png">
 </p>
 <p>
-Finalmente la configuraciÛn escogida fue colocar un computador para
+Finalmente la configuraci√≥n escogida fue colocar un computador para
 enrutar en una de las sedes que conecta a un access point y en la otra
 sede un access point colocado directamente al concentrador.
 </p>
@@ -331,20 +331,20 @@ sede un access point colocado directamente al concentrador.
 <img src="images/final.png" alt="images/final.png">
 </p>
 <p>
-En este esquema se muestra cÛmo estarÌan colocadas las antenas uni y
+En este esquema se muestra c√≥mo estar√≠an colocadas las antenas uni y
 omnidireccionales.
 </p>
 <p>
 <img src="images/solucion.png" alt="images/solucion.png">
 </p>
 <p>
-Este es un ejemplo de la configuraciÛn hecha a un access point.  Es
-indispensable entender que vÌa telnet se puede hacer la configuraciÛn
-de los dispositivos y lo que est· <a href="ap1settings.txt">aquÌ</a> presentado es la captura de la
-informaciÛn tal como est· configurado.
+Este es un ejemplo de la configuraci√≥n hecha a un access point.  Es
+indispensable entender que v√≠a telnet se puede hacer la configuraci√≥n
+de los dispositivos y lo que est√° <a href="ap1settings.txt">aqu√≠</a> presentado es la captura de la
+informaci√≥n tal como est√° configurado.
 </p>
 <p>
-Para la comunicaciÛn de la sede en la que se encuentra un computador
+Para la comunicaci√≥n de la sede en la que se encuentra un computador
 enrutando, es indispensable que hayan dos tarjetas de red, una va con
 cable cruzado al access point, y la otra va con un cable directo al
 hub, en caso de que se conecte el hub directamente al access point, el
@@ -354,14 +354,14 @@ cable es directo.
 <h3>Un computador como enrutador </h3>
 
 <p>
-Ojo, falta describir el proceso de configuraciÛn de paidos para que
+Ojo, falta describir el proceso de configuraci√≥n de paidos para que
 sea un enrutador entre las dos sedes.
 </p>
 
-<h3>El segmento con conexiÛn a Internet </h3>
+<h3>El segmento con conexi√≥n a Internet </h3>
 
 <p>
-Ojo, falta colocar cÛmo se coloca la ruta para que los computadores
+Ojo, falta colocar c√≥mo se coloca la ruta para que los computadores
 de primaria busquen a los de bachillerato y no se vayan a navegar a
 internet.
 </p>
@@ -370,7 +370,7 @@ internet.
 <h2>Agradecimientos </h2>
 
 <p>
-A Jorge T·mara por haberse subido a los sitios en los cu·les era
+A Jorge T√°mara por haberse subido a los sitios en los cu√°les era
 necesario colocar las antenas y pasar los cables para poderlos
 conectar al HUB.
 </p>
