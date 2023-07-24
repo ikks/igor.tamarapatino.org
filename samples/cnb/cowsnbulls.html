@@ -1,8 +1,10 @@
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="../../css/style.css">
-</head>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="../../css/style.css">
+  </head>
+  <body>
 <h1>Cows n Bulls</h1>
 <p>You are guessing a number of <span data-bind="text: sizecnb"></span> digits</p>
 <p>Cows: <span data-bind="text: cows"></span></p>
@@ -56,5 +58,5 @@ var ViewModel = function(nthing) {
 }
 ko.applyBindings(new ViewModel(4));
 </script>
-</body>
+  </body>
 </html>
