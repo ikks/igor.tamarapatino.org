@@ -1,5 +1,5 @@
 var zoom=17;
-var urlbase='//ikks.github.io/js/moinmoin-osm/'
+var urlbase='//igor.tamarapatino.org/js/moinmoin-osm/'
 var imaicon=urlbase+"img/mark.png";
 var icon = new OpenLayers.Icon(imaicon);
 var epsg4326 = new OpenLayers.Projection("EPSG:4326");
