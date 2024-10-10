@@ -701,7 +701,7 @@ span.ap-marker-container:hover span.ap-marker {
   font-variant-ligatures: none;
   max-width: 25%;
   max-height: 25%;
-  font-size: 18px;
+  font-size: inherit;
 }
 .ap-player .ap-overlay-keystrokes > div .ap-line {
   letter-spacing: normal;
@@ -721,6 +721,21 @@ span.ap-marker-container:hover span.ap-marker {
   font-size: 0.85em;
   border: none;
   margin: 0;
+}
+.ap-player .ap-overlay-keystrokes.fading {
+  animation: hide 3s forwards;
+}
+@keyframes hide {
+  0% {
+    opacity: 1;
+    height: 20px;
+    font-size: 18px;
+  }
+  100% {
+    opacity: 0;
+    height: 10px;
+    font-size: 10px;
+  }
 }
 .ap-player .ap-overlay-help {
   background-color: rgba(0, 0, 0, 0.8);

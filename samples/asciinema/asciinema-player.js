@@ -1433,7 +1433,7 @@ var AsciinemaPlayer = (function (exports) {
       '"\\u001b[5~"': "PgUp",
       '"\\u001b[6~"': "PgDn",
       '"\\u001b[57422u"': "PgDn",
-      '"\\u001b[57362u"': "Pau",
+      '"\\u001b[57362u"': "Pgup",
       '"\\u001bOP"': "F1",
       '"\\u001bOQ"': "F2",
       '"\\u001bOR"': "F3",
@@ -2734,7 +2734,7 @@ var AsciinemaPlayer = (function (exports) {
   });
   delegateEvents(["click"]);
 
-  const _tmpl$$1 = /*#__PURE__*/template(`<div class="ap-overlay ap-overlay-keystrokes" id="keystrokes" style><div><kbd></kbd></div></div>`);
+  const _tmpl$$1 = /*#__PURE__*/template(`<div id="keystrokes" style><div><kbd></kbd></div></div>`);
   var KeystrokesOverlay = (props => {
     return (() => {
       const _el$ = _tmpl$$1.cloneNode(true),
@@ -2743,6 +2743,7 @@ var AsciinemaPlayer = (function (exports) {
       const _ref$ = props.ref;
       typeof _ref$ === "function" ? use(_ref$, _el$) : props.ref = _el$;
       insert(_el$3, () => props.keystroke);
+      createRenderEffect(() => className(_el$, props.isKeystrokeFading ? "ap-overlay ap-overlay-keystrokes fading" : "ap-overlay ap-overlay-keystrokes"));
       return _el$;
     })();
   });
@@ -2792,6 +2793,7 @@ var AsciinemaPlayer = (function (exports) {
     const terminalRows = createMemo(() => terminalSize().rows || 24);
     const controlBarHeight = () => props.controls === false ? 0 : CONTROL_BAR_HEIGHT;
     const [isKeystrokeVisible, setisKeystrokeVisible] = createSignal(false);
+    const [isKeystrokeFading, setisKeyStrokeFading] = createSignal(false);
     const controlsVisible = () => props.controls === true || props.controls === "auto" && userActive();
     let frameRequestId;
     let userActivityTimeoutId;
@@ -2864,7 +2866,6 @@ var AsciinemaPlayer = (function (exports) {
     core.addEventListener("idle", () => {
       batch(() => {
         setIsPlaying(false);
-        setisKeystrokeVisible(false);
         onStopped();
       });
     });
@@ -2913,6 +2914,10 @@ var AsciinemaPlayer = (function (exports) {
       if (state.hideKeystroke) {
         return;
       }
+      setisKeyStrokeFading(false);
+      setTimeout(function () {
+        setisKeyStrokeFading(true);
+      }, 20);
       var pressed_key = printablekeypress(data, logger);
       if (pressed_key === "") {
         setisKeystrokeVisible(false);
@@ -2939,6 +2944,7 @@ var AsciinemaPlayer = (function (exports) {
     });
     core.addEventListener("seeked", () => {
       updateTime();
+      setisKeystrokeVisible(false);
     });
     core.addEventListener("terminalUpdate", () => {
       if (frameRequestId === undefined) {
@@ -3052,6 +3058,7 @@ var AsciinemaPlayer = (function (exports) {
       }
       if (e.key == " ") {
         core.togglePlay();
+        setisKeyStrokeFading(false);
       } else if (e.key == ".") {
         core.step();
         updateTime();
@@ -3290,6 +3297,9 @@ var AsciinemaPlayer = (function (exports) {
             },
             get keystroke() {
               return state.keystroke;
+            },
+            get isKeystrokeFading() {
+              return isKeystrokeFading();
             }
           });
         }
