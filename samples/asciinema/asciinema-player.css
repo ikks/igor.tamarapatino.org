@@ -723,17 +723,15 @@ span.ap-marker-container:hover span.ap-marker {
   margin: 0;
 }
 .ap-player .ap-overlay-keystrokes.fading {
-  animation: hide 3s forwards;
+  animation: hide 5s forwards;
 }
 @keyframes hide {
   0% {
     opacity: 1;
-    height: 20px;
     font-size: 18px;
   }
   100% {
     opacity: 0;
-    height: 10px;
     font-size: 10px;
   }
 }
