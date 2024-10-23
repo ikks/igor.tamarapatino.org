@@ -1,0 +1,7 @@
+{"version": 2, "width": 151, "height": 33, "timestamp": 1728746736, "idle_time_limit": 1.0, "env": {"SHELL": "/bin/bash", "TERM": "xterm-kitty"}}
+[0.005372, "o", "\u001b[?2004h~ "]
+[1.170298, "i", "\u001b"]
+[3.410597, "i", "\u0004"]
+[5.482426, "i", "\u0004"]
+[5.482751, "o", "\u001b[?2004l\r\r\n"]
+[5.48309, "o", "logout\r\n"]
