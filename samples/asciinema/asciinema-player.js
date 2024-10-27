@@ -1,1 +1,1 @@
-../asciinema-player/dist/bundle/asciinema-player.js
+/home/igor/playground/javascript/asciinema/asciinema-player/dist/bundle/asciinema-player.js
