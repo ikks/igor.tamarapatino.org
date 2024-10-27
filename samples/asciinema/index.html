@@ -7,12 +7,23 @@
     <script src="lib.js" type="text/javascript"></script>
     <script>
       window.onload = function () {
-        playthis("present.cast");
+        let select = document.getElementsByTagName('select')[0];
+        select.addEventListener("change", () => {
+          playthis(select.options[select.selectedIndex].dataset.ref);
+        });
+        let video = findGetParameter("video");
+        if (video === null ) {
+          select.value = "present";
+        } else {
+          select.value = video;
+        }
+        playthis(select.options[select.selectedIndex].dataset.ref);
       };
     </script>
   </head>
   <body bgcolor="black" text="white">
-    <select onchange="playthis(this.options[this.selectedIndex].dataset.ref)">
+    <div id="demo"></div>
+    <select >
       <option data-ref="abc.cast">abc</option>
       <option data-ref="arr.cast">arr</option>
       <option data-ref="allkeys.cast">allkeys</option>
@@ -53,7 +64,6 @@
         -
       </p>
     </div>
-    <div id="demo"></div>
     <script src="asciinema-player.min.js"></script>
   </body>
 </html>
